@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>영단어 카드 게임</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4f6fb;color:#202633}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
+.card{width:100%;max-width:430px;background:#fff;border-radius:22px;padding:24px;box-shadow:0 12px 36px rgba(0,0,0,.14)}
+h1{font-size:25px;text-align:center;margin:0 0 22px}
+.top{display:flex;justify-content:space-between;color:#6b7280;font-size:15px}
+.bar{height:9px;background:#e8edf7;border-radius:999px;overflow:hidden;margin:12px 0 26px}
+.fill{height:100%;width:0;background:#4f8cff;transition:width .25s}
+.question{text-align:center;font-size:28px;font-weight:800;margin:22px 0 28px;word-break:keep-all}
+button{display:block;width:100%;border:0;border-radius:13px;padding:15px;margin:10px 0;font-size:18px;background:#4f8cff;color:#fff;cursor:pointer}
+button:active{transform:scale(.985)}
+button:disabled{opacity:.92}
+.correct{background:#22a447!important}
+.wrong{background:#df3f4e!important}
+#result{min-height:58px;text-align:center;font-size:20px;font-weight:700;line-height:1.5;margin-top:14px}
+#next{display:none;background:#22a447}
+.end{text-align:center}
+.end strong{display:block;font-size:50px;margin:20px 0 8px}
+.small{font-size:14px;color:#6b7280;text-align:center;margin-top:14px}
+</style>
+</head>
+<body>
+<main class="card" id="card">
+  <h1>🎴 영단어 카드 게임</h1>
+  <div class="top">
+    <span>문제 <b id="current">1</b> / <b id="total">0</b></span>
+    <span>점수 <b id="score">0</b></span>
+  </div>
+  <div class="bar"><div class="fill" id="fill"></div></div>
+  <div class="question" id="question"></div>
+  <div id="choices"></div>
+  <div id="result"></div>
+  <button id="next" type="button">다음 문제 ▶</button>
+  <div class="small">인터넷 없이 실행되는 단일 HTML 파일입니다.</div>
+</main>
+
+<script>
+(function(){
+"use strict";
+
+var quiz=[
+["공격하다","attack",["attack","inject","shake","survive"]],
+["기회","opportunity",["record","opportunity","opposite","meal"]],
+["감염","infection",["infection","fever","symptom","device"]],
+["주사(주입)하다","inject",["protect","inject","allow","feed"]],
+["~대신에","instead of",["because","instead of","the same as","opposite"]],
+["증상","symptom",["cough","protect","symptom","cell"]],
+["허락하다","allow",["allow","contain","shake","medical"]],
+["위협","threat",["meal","threat","defense","work"]],
+["침입하다","invade",["invade","inject","attack","survive"]],
+["식사","meal",["meal","device","record","cell"]],
+["포함하다","contain",["contain","protect","shake","affect"]],
+["기침","cough",["cough","fever","infection","work"]],
+["흔들다","shake",["shake","feed","survive","allow"]],
+["세포","cell",["cell","device","part","meal"]],
+["독립적인","independent",["medical","independent","electronic","opposite"]],
+["면역 체계","immune system",["immune system","nervous system","device","cell"]],
+["신경계","nervous system",["immune system","nervous system","medical","attack"]],
+["영향을 미치다","affect",["affect","feed","allow","shake"]],
+["전자의","electronic",["electronic","medical","independent","record"]],
+["먹이를 주다","feed",["feed","contain","attack","protect"]],
+["통제할 수 없는","uncontrollable",["medical","uncontrollable","independent","device"]],
+["일하다","work",["work","record","attack","meal"]],
+["~와 같다","the same as",["instead of","the same as","because","opposite"]],
+["고통받다","suffer",["protect","suffer","feed","allow"]],
+["방어","defense",["defense","threat","attack","meal"]],
+["장치","device",["device","cell","electronic","medical"]],
+["직접적으로","directly",["directly","because","instead of","part"]],
+["보호하다","protect",["contain","protect","allow","affect"]],
+["의학의","medical",["medical","electronic","immune system","record"]],
+["열","fever",["fever","infection","symptom","cough"]]
+];
+
+function shuffle(arr){
+  var a=arr.slice();
+  for(var i=a.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var t=a[i]; a[i]=a[j]; a[j]=t;
+  }
+  return a;
+}
+
+quiz=shuffle(quiz);
+var index=0, score=0, locked=false;
+
+var current=document.getElementById("current");
+var total=document.getElementById("total");
+var scoreEl=document.getElementById("score");
+var fill=document.getElementById("fill");
+var question=document.getElementById("question");
+var choices=document.getElementById("choices");
+var result=document.getElementById("result");
+var next=document.getElementById("next");
+var card=document.getElementById("card");
+
+total.textContent=quiz.length;
+
+function show(){
+  locked=false;
+  current.textContent=index+1;
+  question.textContent=quiz[index][0];
+  result.textContent="";
+  next.style.display="none";
+  fill.style.width=(index/quiz.length*100)+"%";
+  choices.innerHTML="";
+
+  var answers=shuffle(quiz[index][2]);
+  answers.forEach(function(answer){
+    var btn=document.createElement("button");
+    btn.type="button";
+    btn.textContent=answer;
+    btn.onclick=function(){check(answer,btn);};
+    choices.appendChild(btn);
+  });
+}
+
+function check(answer,clicked){
+  if(locked)return;
+  locked=true;
+
+  var correct=quiz[index][1];
+  var buttons=choices.getElementsByTagName("button");
+
+  for(var i=0;i<buttons.length;i++){
+    buttons[i].disabled=true;
+    if(buttons[i].textContent===correct){
+      buttons[i].className="correct";
+    }
+  }
+
+  if(answer===correct){
+    score++;
+    scoreEl.textContent=score;
+    result.textContent="✅ 정답!";
+  }else{
+    clicked.className="wrong";
+    result.innerHTML="❌ 오답!<br>정답: <b>"+correct+"</b>";
+  }
+
+  fill.style.width=((index+1)/quiz.length*100)+"%";
+  next.style.display="block";
+}
+
+next.onclick=function(){
+  index++;
+  if(index>=quiz.length){
+    var percent=Math.round(score/quiz.length*100);
+    card.innerHTML=
+      '<div class="end">'+
+      '<h1>🎉 게임 종료</h1>'+
+      '<strong>'+score+' / '+quiz.length+'</strong>'+
+      '<div style="font-size:23px;margin-bottom:24px">'+percent+'점</div>'+
+      '<button type="button" id="restart">다시하기</button>'+
+      '</div>';
+    document.getElementById("restart").onclick=function(){location.reload();};
+  }else{
+    show();
+  }
+};
+
+show();
+})();
+</script>
+</body>
+</html>
