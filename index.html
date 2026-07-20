@@ -20,7 +20,6 @@ button:disabled{opacity:.92}
 .correct{background:#22a447!important}
 .wrong{background:#df3f4e!important}
 #result{min-height:58px;text-align:center;font-size:20px;font-weight:700;line-height:1.5;margin-top:14px}
-#next{display:none;background:#22a447}
 .end{text-align:center}
 .end strong{display:block;font-size:50px;margin:20px 0 8px}
 .small{font-size:14px;color:#6b7280;text-align:center;margin-top:14px}
@@ -37,7 +36,6 @@ button:disabled{opacity:.92}
   <div class="question" id="question"></div>
   <div id="choices"></div>
   <div id="result"></div>
-  <button id="next" type="button">다음 문제 ▶</button>
   <div class="small">인터넷 없이 실행되는 단일 HTML 파일입니다.</div>
 </main>
 
@@ -97,7 +95,6 @@ var fill=document.getElementById("fill");
 var question=document.getElementById("question");
 var choices=document.getElementById("choices");
 var result=document.getElementById("result");
-var next=document.getElementById("next");
 var card=document.getElementById("card");
 
 total.textContent=quiz.length;
@@ -107,7 +104,6 @@ function show(){
   current.textContent=index+1;
   question.textContent=quiz[index][0];
   result.textContent="";
-  next.style.display="none";
   fill.style.width=(index/quiz.length*100)+"%";
   choices.innerHTML="";
 
@@ -145,10 +141,10 @@ function check(answer,clicked){
   }
 
   fill.style.width=((index+1)/quiz.length*100)+"%";
-  next.style.display="block";
+  setTimeout(goNext,1000);
 }
 
-next.onclick=function(){
+function goNext(){
   index++;
   if(index>=quiz.length){
     var percent=Math.round(score/quiz.length*100);
@@ -163,7 +159,7 @@ next.onclick=function(){
   }else{
     show();
   }
-};
+}
 
 show();
 })();
