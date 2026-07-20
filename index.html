@@ -2,167 +2,27 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>영단어 카드 게임</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Word Bloom | 영단어 학습</title>
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4f6fb;color:#202633}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
-.card{width:100%;max-width:430px;background:#fff;border-radius:22px;padding:24px;box-shadow:0 12px 36px rgba(0,0,0,.14)}
-h1{font-size:25px;text-align:center;margin:0 0 22px}
-.top{display:flex;justify-content:space-between;color:#6b7280;font-size:15px}
-.bar{height:9px;background:#e8edf7;border-radius:999px;overflow:hidden;margin:12px 0 26px}
-.fill{height:100%;width:0;background:#4f8cff;transition:width .25s}
-.question{text-align:center;font-size:28px;font-weight:800;margin:22px 0 28px;word-break:keep-all}
-button{display:block;width:100%;border:0;border-radius:13px;padding:15px;margin:10px 0;font-size:18px;background:#4f8cff;color:#fff;cursor:pointer}
-button:active{transform:scale(.985)}
-button:disabled{opacity:.92}
-.correct{background:#22a447!important}
-.wrong{background:#df3f4e!important}
-#result{min-height:58px;text-align:center;font-size:20px;font-weight:700;line-height:1.5;margin-top:14px}
-.end{text-align:center}
-.end strong{display:block;font-size:50px;margin:20px 0 8px}
-.small{font-size:14px;color:#6b7280;text-align:center;margin-top:14px}
+:root{--ink:#1d2939;--muted:#667085;--line:#e6eaf0;--blue:#4f46e5;--lav:#f4f3ff;--green:#12b76a;--red:#f04438}*{box-sizing:border-box}body{margin:0;background:#f7f8fc;color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:1060px;margin:auto;padding:28px 20px 48px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}.brand{font-weight:800;font-size:22px;letter-spacing:-.7px}.brand span{color:var(--blue)}.profile{display:flex;align-items:center;gap:10px;font-size:14px}.avatar{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:#ddd6fe;font-weight:800}button{font:inherit;cursor:pointer;border:0}.layout{display:grid;grid-template-columns:190px 1fr;gap:24px}.nav,.panel,.game{background:#fff;border:1px solid var(--line);border-radius:20px}.nav{padding:12px;height:max-content}.nav button{width:100%;text-align:left;padding:12px 13px;background:transparent;border-radius:11px;color:var(--muted);font-size:14px;margin:2px 0}.nav button.active{background:var(--lav);color:var(--blue);font-weight:700}.view{display:none}.view.active{display:block}.hero{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.hero h1{font-size:26px;margin:0 0 6px;letter-spacing:-1px}.hero p{color:var(--muted);margin:0}.streak{border-radius:14px;background:#fff7e6;padding:10px 13px;font-size:13px}.game{padding:29px;max-width:640px}.game-top{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}.progress{height:8px;background:#eeefff;border-radius:99px;overflow:hidden;margin:15px 0 38px}.progress i{display:block;background:var(--blue);height:100%;transition:.25s}.tag{display:inline-block;color:#6941c6;background:#f4f3ff;padding:6px 10px;border-radius:99px;font-size:12px;font-weight:700}.word{font-size:40px;letter-spacing:-1.8px;margin:18px 0 8px}.hint{color:var(--muted);margin:0 0 25px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{padding:15px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;font-weight:600;transition:.15s}.choice:hover{border-color:#a5a1ff;background:#fafaff}.choice.correct{background:#ecfdf3;border-color:var(--green);color:#067647}.choice.wrong{background:#fef3f2;border-color:var(--red);color:#b42318}.choice:disabled{cursor:default}.feedback{height:28px;margin-top:16px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:19px 0}.stat,.panel{padding:18px}.stat b{display:block;font-size:23px;margin-top:6px}.label{font-size:12px;color:var(--muted)}.section-title{font-size:18px;margin:0 0 14px}.review-list,.ranking{display:grid;gap:9px}.review-item,.rank{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:12px;padding:12px}.review-item small,.rank small{color:var(--muted)}.pill{font-size:12px;background:#fff1f3;color:#c01048;padding:5px 8px;border-radius:99px}.chart{height:170px;display:flex;align-items:end;gap:13px;padding:12px 4px 0;border-bottom:1px solid var(--line)}.bar{flex:1;min-width:22px;background:#cbc9ff;border-radius:7px 7px 0 0;position:relative}.bar.today{background:var(--blue)}.bar em{position:absolute;top:-21px;font-size:11px;font-style:normal;color:var(--muted);left:50%;transform:translateX(-50%)}.chart-labels{display:flex;justify-content:space-around;color:var(--muted);font-size:11px;padding-top:7px}.parent-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.child-card{border:1px solid var(--line);border-radius:14px;padding:16px}.child-card h3{margin:0 0 5px}.child-card p{margin:0;color:var(--muted);font-size:13px}.child-card button{margin-top:13px;color:var(--blue);background:var(--lav);padding:8px 10px;border-radius:9px;font-size:12px;font-weight:700}.empty{color:var(--muted);font-size:14px}.result{text-align:center;padding:25px}.result strong{display:block;font-size:48px;color:var(--blue);margin:12px}.primary{margin-top:14px;background:var(--blue);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700}.notice{font-size:12px;color:var(--muted);margin-top:18px}@media(max-width:680px){.app{padding:18px 14px}.layout{display:block}.nav{display:flex;overflow:auto;margin-bottom:15px;padding:7px}.nav button{white-space:nowrap;width:auto}.hero{align-items:flex-start}.streak{display:none}.game{padding:21px}.word{font-size:33px}.choices{grid-template-columns:1fr}.stats,.parent-grid{grid-template-columns:1fr}.topbar{margin-bottom:16px}}
 </style>
 </head>
-<body>
-<main class="card" id="card">
-  <h1>🎴 영단어 카드 게임</h1>
-  <div class="top">
-    <span>문제 <b id="current">1</b> / <b id="total">0</b></span>
-    <span>점수 <b id="score">0</b></span>
-  </div>
-  <div class="bar"><div class="fill" id="fill"></div></div>
-  <div class="question" id="question"></div>
-  <div id="choices"></div>
-  <div id="result"></div>
-  <div class="small">인터넷 없이 실행되는 단일 HTML 파일입니다.</div>
-</main>
-
+<body><div class="app"><header class="topbar"><div class="brand">Word <span>Bloom</span></div><div class="profile"><div><b id="studentName">민준</b> <small>학습자</small></div><div class="avatar" id="avatar">민</div></div></header><div class="layout"><nav class="nav"><button class="active" data-view="play">🎴 오늘의 학습</button><button data-view="review">🔁 오답 복습</button><button data-view="stats">📊 나의 통계</button><button data-view="ranking">🏆 랭킹</button><button data-view="parent">👨‍👩‍👧 부모님</button></nav><main>
+<section id="play" class="view active"><div class="hero"><div><h1>오늘의 단어, 시작해 볼까요?</h1><p>정답을 고르고 매일의 성장을 쌓아 보세요.</p></div><div class="streak">🔥 <b id="streak">1</b>일 연속 학습</div></div><div class="game" id="game"></div></section>
+<section id="review" class="view"><div class="hero"><div><h1>오답 복습</h1><p>헷갈렸던 단어를 다시 익히면 오래 기억돼요.</p></div></div><div class="panel"><h2 class="section-title">복습할 단어 <span id="reviewCount"></span></h2><div class="review-list" id="reviewList"></div></div></section>
+<section id="stats" class="view"><div class="hero"><div><h1>나의 학습 통계</h1><p>이번 주의 꾸준함을 확인해 보세요.</p></div></div><div class="stats"><div class="panel stat"><span class="label">이번 주 학습</span><b id="weekSolved">0개</b></div><div class="panel stat"><span class="label">이번 주 정답률</span><b id="accuracy">0%</b></div><div class="panel stat"><span class="label">최고 점수</span><b id="best">0점</b></div></div><div class="panel"><h2 class="section-title">주간 학습량</h2><div class="chart" id="chart"></div><div class="chart-labels"><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span></div></div></section>
+<section id="ranking" class="view"><div class="hero"><div><h1>이번 달 랭킹</h1><p>친구들과 즐겁게 성장해요.</p></div></div><div class="panel"><div class="ranking" id="rankingList"></div></div></section>
+<section id="parent" class="view"><div class="hero"><div><h1>부모님 학습 기록</h1><p>아이의 공부 습관과 도움이 필요한 단어를 확인하세요.</p></div></div><div class="parent-grid"><div class="child-card"><h3>민준</h3><p>이번 주 <b id="parentSolved">0문제</b> · 정답률 <b id="parentAccuracy">0%</b></p><button data-view="review">오답 단어 보기 →</button></div><div class="child-card"><h3>이번 주 코멘트</h3><p id="comment">첫 학습을 시작해 보세요! 작은 습관이 큰 자신감이 됩니다.</p></div></div><p class="notice">이 화면은 부모 계정에서 자녀 학습 기록을 확인하는 예시입니다.</p></section>
+</main></div></div>
 <script>
-(function(){
-"use strict";
-
-var quiz=[
-["공격하다","attack",["attack","inject","shake","survive"]],
-["기회","opportunity",["record","opportunity","opposite","meal"]],
-["감염","infection",["infection","fever","symptom","device"]],
-["주사(주입)하다","inject",["protect","inject","allow","feed"]],
-["~대신에","instead of",["because","instead of","the same as","opposite"]],
-["증상","symptom",["cough","protect","symptom","cell"]],
-["허락하다","allow",["allow","contain","shake","medical"]],
-["위협","threat",["meal","threat","defense","work"]],
-["침입하다","invade",["invade","inject","attack","survive"]],
-["식사","meal",["meal","device","record","cell"]],
-["포함하다","contain",["contain","protect","shake","affect"]],
-["기침","cough",["cough","fever","infection","work"]],
-["흔들다","shake",["shake","feed","survive","allow"]],
-["세포","cell",["cell","device","part","meal"]],
-["독립적인","independent",["medical","independent","electronic","opposite"]],
-["면역 체계","immune system",["immune system","nervous system","device","cell"]],
-["신경계","nervous system",["immune system","nervous system","medical","attack"]],
-["영향을 미치다","affect",["affect","feed","allow","shake"]],
-["전자의","electronic",["electronic","medical","independent","record"]],
-["먹이를 주다","feed",["feed","contain","attack","protect"]],
-["통제할 수 없는","uncontrollable",["medical","uncontrollable","independent","device"]],
-["일하다","work",["work","record","attack","meal"]],
-["~와 같다","the same as",["instead of","the same as","because","opposite"]],
-["고통받다","suffer",["protect","suffer","feed","allow"]],
-["방어","defense",["defense","threat","attack","meal"]],
-["장치","device",["device","cell","electronic","medical"]],
-["직접적으로","directly",["directly","because","instead of","part"]],
-["보호하다","protect",["contain","protect","allow","affect"]],
-["의학의","medical",["medical","electronic","immune system","record"]],
-["열","fever",["fever","infection","symptom","cough"]]
-];
-
-function shuffle(arr){
-  var a=arr.slice();
-  for(var i=a.length-1;i>0;i--){
-    var j=Math.floor(Math.random()*(i+1));
-    var t=a[i]; a[i]=a[j]; a[j]=t;
-  }
-  return a;
-}
-
-quiz=shuffle(quiz);
-var index=0, score=0, locked=false;
-
-var current=document.getElementById("current");
-var total=document.getElementById("total");
-var scoreEl=document.getElementById("score");
-var fill=document.getElementById("fill");
-var question=document.getElementById("question");
-var choices=document.getElementById("choices");
-var result=document.getElementById("result");
-var card=document.getElementById("card");
-
-total.textContent=quiz.length;
-
-function show(){
-  locked=false;
-  current.textContent=index+1;
-  question.textContent=quiz[index][0];
-  result.textContent="";
-  fill.style.width=(index/quiz.length*100)+"%";
-  choices.innerHTML="";
-
-  var answers=shuffle(quiz[index][2]);
-  answers.forEach(function(answer){
-    var btn=document.createElement("button");
-    btn.type="button";
-    btn.textContent=answer;
-    btn.onclick=function(){check(answer,btn);};
-    choices.appendChild(btn);
-  });
-}
-
-function check(answer,clicked){
-  if(locked)return;
-  locked=true;
-
-  var correct=quiz[index][1];
-  var buttons=choices.getElementsByTagName("button");
-
-  for(var i=0;i<buttons.length;i++){
-    buttons[i].disabled=true;
-    if(buttons[i].textContent===correct){
-      buttons[i].className="correct";
-    }
-  }
-
-  if(answer===correct){
-    score++;
-    scoreEl.textContent=score;
-    result.textContent="✅ 정답!";
-  }else{
-    clicked.className="wrong";
-    result.innerHTML="❌ 오답!<br>정답: <b>"+correct+"</b>";
-  }
-
-  fill.style.width=((index+1)/quiz.length*100)+"%";
-  setTimeout(goNext,1000);
-}
-
-function goNext(){
-  index++;
-  if(index>=quiz.length){
-    var percent=Math.round(score/quiz.length*100);
-    card.innerHTML=
-      '<div class="end">'+
-      '<h1>🎉 게임 종료</h1>'+
-      '<strong>'+score+' / '+quiz.length+'</strong>'+
-      '<div style="font-size:23px;margin-bottom:24px">'+percent+'점</div>'+
-      '<button type="button" id="restart">다시하기</button>'+
-      '</div>';
-    document.getElementById("restart").onclick=function(){location.reload();};
-  }else{
-    show();
-  }
-}
-
-show();
-})();
-</script>
-</body>
-</html>
+const words=[['attack','공격하다'],['opportunity','기회'],['infection','감염'],['inject','주사하다'],['symptom','증상'],['defense','방어'],['protect','보호하다'],['survive','살아남다'],['contain','포함하다'],['threat','위협']];
+const state=JSON.parse(localStorage.getItem('wordBloom')||'{"history":[],"wrong":[],"best":0,"name":"민준"}'); let deck=[],index=0,score=0,locked=false;
+const save=()=>localStorage.setItem('wordBloom',JSON.stringify(state)); const shuffle=a=>[...a].sort(()=>Math.random()-.5);
+function start(review=false){deck=shuffle(review&&state.wrong.length?words.filter(w=>state.wrong.includes(w[0])):words).slice(0,5);index=0;score=0;renderQuestion()}
+function renderQuestion(){if(index>=deck.length)return finish(); locked=false;const [word,meaning]=deck[index], opts=shuffle([meaning,...shuffle(words.filter(w=>w[1]!==meaning)).slice(0,3).map(w=>w[1])]);document.querySelector('#game').innerHTML=`<div class="game-top"><span>문제 <b>${index+1}</b> / ${deck.length}</span><span>점수 <b>${score}</b></span></div><div class="progress"><i style="width:${index/deck.length*100}%"></i></div><span class="tag">영어 → 뜻</span><h2 class="word">${word}</h2><p class="hint">알맞은 뜻을 선택하세요</p><div class="choices">${opts.map(o=>`<button class="choice" data-answer="${o}">${o}</button>`).join('')}</div><div class="feedback"></div>`;document.querySelectorAll('.choice').forEach(b=>b.onclick=()=>answer(b,meaning,word))}
+function answer(button,meaning,word){if(locked)return;locked=true;const ok=button.dataset.answer===meaning;document.querySelectorAll('.choice').forEach(b=>{b.disabled=true;if(b.dataset.answer===meaning)b.classList.add('correct')});if(ok){score++;state.wrong=state.wrong.filter(w=>w!==word)}else{button.classList.add('wrong');if(!state.wrong.includes(word))state.wrong.push(word)}document.querySelector('.feedback').textContent=ok?'✨ 정답이에요!':'다음에 다시 복습해 봐요.';save();setTimeout(()=>{index++;renderQuestion()},800)}
+function finish(){const pct=Math.round(score/deck.length*100);state.best=Math.max(state.best,pct);state.history.push({date:new Date().toISOString(),score, total:deck.length});save();document.querySelector('#game').innerHTML=`<div class="result"><span class="tag">오늘의 학습 완료</span><strong>${pct}점</strong><p>${score}개를 맞혔어요. ${pct>=80?'정말 잘했어요!':'오답 복습에서 다시 만나봐요.'}</p><button class="primary" onclick="start()">새 게임 시작</button></div>`;updateDashboard()}
+function updateDashboard(){const week=state.history.filter(h=>Date.now()-new Date(h.date)<6048e5), solved=week.reduce((a,h)=>a+h.total,0), correct=week.reduce((a,h)=>a+h.score,0), pct=solved?Math.round(correct/solved*100):0;document.querySelector('#weekSolved').textContent=solved+'개';document.querySelector('#accuracy').textContent=pct+'%';document.querySelector('#best').textContent=state.best+'점';document.querySelector('#parentSolved').textContent=solved+'문제';document.querySelector('#parentAccuracy').textContent=pct+'%';document.querySelector('#comment').textContent=solved?`이번 주 ${solved}문제를 풀었어요. ${state.wrong.length?'오답 단어를 함께 복습해 주세요.':'완벽해요! 계속 응원해 주세요.'}`:'첫 학습을 시작해 보세요! 작은 습관이 큰 자신감이 됩니다.';document.querySelector('#reviewCount').textContent=state.wrong.length+'개';document.querySelector('#reviewList').innerHTML=state.wrong.length?state.wrong.map(w=>`<div class="review-item"><div><b>${w}</b><br><small>${words.find(x=>x[0]===w)[1]}</small></div><span class="pill">복습 필요</span></div>`).join(''):'<p class="empty">아직 복습할 단어가 없어요. 훌륭해요! 🎉</p>';const daily=Array(7).fill(0);week.forEach(h=>{let d=(new Date(h.date).getDay()+6)%7;daily[d]+=h.total});document.querySelector('#chart').innerHTML=daily.map((v,i)=>`<div class="bar ${i===((new Date().getDay()+6)%7)?'today':''}" style="height:${Math.max(8,Math.min(140,v*18))}px"><em>${v}</em></div>`).join('');const ranks=[['서연',96],['지호',92],[state.name,state.best||0],['하윤',78]];document.querySelector('#rankingList').innerHTML=ranks.sort((a,b)=>b[1]-a[1]).map((r,i)=>`<div class="rank"><b>${['🥇','🥈','🥉','4위'][i]} &nbsp;${r[0]}</b><small>${r[1]}점</small></div>`).join('')}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-view]').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.querySelectorAll(`[data-view="${b.dataset.view}"]`).forEach(x=>x.classList.add('active'));document.getElementById(b.dataset.view).classList.add('active');if(b.dataset.view==='play')start(false);updateDashboard()});updateDashboard();start();
+</script></body></html>
