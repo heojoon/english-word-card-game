@@ -35,4 +35,4 @@ window.QUIZ_STAGES.s6={
     ['pandemic','명/형','(전국적인) 유행병; 유행성의']
   ]
 };
-(function(){var s=document.createElement('script');s.src='avatar-art.js?v=20260910-1';document.head.appendChild(s)})();
+(function(){var s=document.createElement('script');s.src='avatar-art.js?v=20260910-2';document.head.appendChild(s)})();
