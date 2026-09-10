@@ -1,11 +1,14 @@
 (function(){
 'use strict';
 
-var SUPABASE_URL='https://uobagmggryhsqlpxhfob.supabase.co';
-var SUPABASE_KEY='sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
+var dbTarget=new URLSearchParams(window.location.search).get('db');
+var localHost=window.location.hostname==='localhost'||window.location.hostname==='127.0.0.1';
+var useLocalDb=dbTarget==='local'||(dbTarget!=='remote'&&localHost);
+var SUPABASE_URL=useLocalDb?'http://127.0.0.1:54321':'https://uobagmggryhsqlpxhfob.supabase.co';
+var SUPABASE_KEY=useLocalDb?'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH':'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
 var stages=window.QUIZ_STAGES||{};
 var classInfo={warrior:{label:'전사',icon:'⚔️'},mage:{label:'마법사',icon:'🔮'},pugilist:{label:'권투사',icon:'🥊'},ranger:{label:'궁수',icon:'🏹'}};
-var player='율이',stage='s1',selectedCharacter=null,characters=[],shopItems=[],inventory=[],redemptions=[];
+var defaultPlayers=['율이','아빠','손님'],players=defaultPlayers.slice(),player='율이',stage='s1',selectedCharacter=null,characters=[],shopItems=[],inventory=[],redemptions=[];
 var charClass='warrior',charAccent='violet';
 var deck=[],idx=0,correct=0,locked=false,currentEnglish='',timerId=null,deadline=0,currentAnswer='';
 var questionStartedAt=0,elapsedMs=0;
@@ -17,10 +20,36 @@ function headers(extra){var h={'apikey':SUPABASE_KEY,'Authorization':'Bearer '+S
 function fmtTime(ms){if(ms==null)return '-';return (ms/1000).toFixed(1)+'초'}
 function itemById(id){for(var i=0;i<shopItems.length;i++)if(String(shopItems[i].id)===String(id))return shopItems[i];return null}
 function classData(c){return classInfo[c]||classInfo.warrior}
-function avatarHtml(c,mini){var ci=classData(c.class),item=itemById(c.equipped_item_id);return '<span class="'+(mini?'mini-avatar':'avatar')+' '+esc(c.accent||'violet')+'">'+ci.icon+(item?'<span class="gear">'+esc(item.icon)+'</span>':'')+'</span>'}
+function itemArtClass(item){return 'item-'+esc(item&&item.code||'crystal')}
+function avatarHtml(c,mini){var ci=classData(c.class),item=itemById(c.equipped_item_id);return '<span class="'+(mini?'mini-avatar':'avatar')+' '+esc(c.accent||'violet')+'">'+ci.icon+(item?'<span class="gear '+itemArtClass(item)+'" aria-label="'+esc(item.name)+'"></span>':'')+'</span>'}
 function comboBonus(n){return Math.floor(n/5)}
 function earnedCoins(n,clear){return n+comboBonus(n)+(clear?10:0)}
-function liveScoreText(){return correct+'/'+deck.length+' · 🪙 +'+earnedCoins(correct,false)}
+function liveScoreText(){return correct+'/'+deck.length+' · ◆ +'+earnedCoins(correct,false)}
+
+function readCustomPlayers(){
+  try{var list=JSON.parse(localStorage.getItem('fantasyQuizPlayers')||'[]');return Array.isArray(list)?list.filter(function(x){return typeof x==='string'&&x.trim()}):[]}
+  catch(e){return[]}
+}
+function uniquePlayers(list){
+  var seen={};return list.map(function(x){return String(x).trim()}).filter(function(x){var k=x.toLocaleLowerCase();if(!x||seen[k])return false;seen[k]=true;return true})
+}
+function saveCustomPlayers(){
+  var defaults={};defaultPlayers.forEach(function(x){defaults[x.toLocaleLowerCase()]=true});
+  localStorage.setItem('fantasyQuizPlayers',JSON.stringify(players.filter(function(x){return !defaults[x.toLocaleLowerCase()]})))
+}
+function renderPlayerButtons(){
+  var box=el('playerList');box.innerHTML='';
+  players.forEach(function(name){var b=document.createElement('button');b.type='button';b.className='pick'+(name===player?' active':'');b.setAttribute('data-player',name);b.textContent=name;b.onclick=function(){switchPlayer(name)};box.appendChild(b)});
+  var add=document.createElement('button');add.type='button';add.className='pick add-player';add.id='addPlayerBtn';add.textContent='＋ 유저 추가';add.onclick=function(){el('playerNameInput').value='';openModal('playerModal');setTimeout(function(){el('playerNameInput').focus()},0)};box.appendChild(add)
+}
+async function loadPlayerList(){
+  var known=defaultPlayers.concat(readCustomPlayers());
+  try{var chars=await getAllCharacters();chars.forEach(function(c){if(c.player)known.push(c.player)})}catch(e){console.error(e)}
+  players=uniquePlayers(known);var saved=localStorage.getItem('fantasyQuizPlayer');if(saved&&players.indexOf(saved)>=0)player=saved;renderPlayerButtons()
+}
+async function switchPlayer(name){
+  if(name===player)return;player=name;localStorage.setItem('fantasyQuizPlayer',player);selectedCharacter=null;renderPlayerButtons();await loadCharacters();await Promise.all([renderHistory(),renderDashboard()])
+}
 
 async function apiGet(path){var r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{headers:headers()});if(!r.ok)throw new Error(await r.text());return r.json()}
 async function apiPost(path,body,prefer){var r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{method:'POST',headers:headers({'Content-Type':'application/json','Prefer':prefer||'return=representation'}),body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());var txt=await r.text();return txt?JSON.parse(txt):null}
@@ -57,10 +86,10 @@ function renderCharacters(){
   if(!characters.length){box.innerHTML='<div class="empty-box">아직 캐릭터가 없습니다.<br><b>＋ 캐릭터 만들기</b>로 첫 모험가를 생성하세요.</div>';el('startBtn').disabled=true;el('startBtn').textContent='캐릭터를 선택해 주세요';return}
   characters.forEach(function(c){
     var d=document.createElement('div');d.className='char-card'+(selectedCharacter&&c.id===selectedCharacter.id?' active':'');
-    d.innerHTML=avatarHtml(c,false)+'<div><div class="char-name">'+esc(c.name)+'</div><div class="char-meta">'+classData(c.class).label+' · '+esc(c.player)+'</div></div><div class="coin">🪙 '+c.coins+'</div>';
+    d.innerHTML=avatarHtml(c,false)+'<div><div class="char-name">'+esc(c.name)+'</div><div class="char-meta">'+classData(c.class).label+' · '+esc(c.player)+'</div></div><div class="coin">'+c.coins+'</div>';
     d.onclick=function(){selectedCharacter=c;localStorage.setItem('fantasyQuizCharacter:'+player,c.id);renderCharacters()};box.appendChild(d);
   });
-  el('startBtn').disabled=!selectedCharacter;el('startBtn').textContent=selectedCharacter?'⚔️ '+selectedCharacter.name+'으로 퀘스트 시작':'캐릭터를 선택해 주세요';
+  el('startBtn').disabled=!selectedCharacter;el('startBtn').textContent=selectedCharacter?selectedCharacter.name+'의 퀘스트 시작':'캐릭터를 선택해 주세요';
 }
 
 function openModal(id){el(id).classList.add('show')}
@@ -71,6 +100,15 @@ Array.prototype.forEach.call(document.querySelectorAll('.modal-backdrop'),functi
 el('newCharBtn').onclick=function(){el('charNameInput').value='';charClass='warrior';charAccent='violet';selectButtons('data-class',charClass);selectButtons('data-accent',charAccent);openModal('characterModal')};
 Array.prototype.forEach.call(document.querySelectorAll('[data-class]'),function(b){b.onclick=function(){charClass=this.getAttribute('data-class');selectButtons('data-class',charClass)}});
 Array.prototype.forEach.call(document.querySelectorAll('[data-accent]'),function(b){b.onclick=function(){charAccent=this.getAttribute('data-accent');selectButtons('data-accent',charAccent)}});
+el('createPlayerBtn').onclick=async function(){
+  var name=el('playerNameInput').value.trim().replace(/\s+/g,' ');
+  if(!name){alert('유저 이름을 입력해 주세요.');return}
+  if(!/^[가-힣A-Za-z0-9 _-]+$/.test(name)){alert('유저 이름에는 한글, 영문, 숫자, 공백, 밑줄과 하이픈만 사용할 수 있습니다.');return}
+  if(players.some(function(x){return x.toLocaleLowerCase()===name.toLocaleLowerCase()})){alert('이미 등록된 유저입니다.');return}
+  players.push(name);players=uniquePlayers(players);saveCustomPlayers();closeModal('playerModal');
+  player=name;localStorage.setItem('fantasyQuizPlayer',player);selectedCharacter=null;renderPlayerButtons();await loadCharacters();await Promise.all([renderHistory(),renderDashboard()]);el('newCharBtn').click()
+};
+el('playerNameInput').onkeydown=function(e){if(e.key==='Enter')el('createPlayerBtn').click()};
 el('createCharBtn').onclick=async function(){
   var name=el('charNameInput').value.trim();if(!name){alert('캐릭터 이름을 입력해 주세요.');return}
   this.disabled=true;this.textContent='생성 중...';
@@ -94,14 +132,14 @@ async function loadCharacterShopData(){
   }catch(e){console.error(e);inventory=[];redemptions=[]}
 }
 function isOwned(itemId){return inventory.some(function(x){return String(x.item_id)===String(itemId)})}
-function redemptionName(r){var it=itemById(r.item_id);return it?it.icon+' '+it.name:'선물'}
+function redemptionName(r){var it=itemById(r.item_id);return it?it.name:'선물'}
 function renderShop(){
   if(!selectedCharacter)return;
-  el('shopBalance').textContent=selectedCharacter.name+'의 보유 코인: 🪙 '+selectedCharacter.coins;
+  el('shopBalance').textContent=selectedCharacter.name+'의 보유 크리스털: ◆ '+selectedCharacter.coins;
   var box=el('shopList');box.innerHTML='';
   shopItems.forEach(function(it){
     var owned=isOwned(it.id),equipped=String(selectedCharacter.equipped_item_id||'')===String(it.id),d=document.createElement('div');d.className='shop-item';
-    d.innerHTML='<div class="shop-icon">'+esc(it.icon)+'</div><div class="shop-name">'+esc(it.name)+'</div><div class="shop-desc">'+esc(it.description)+'</div><div class="shop-price">🪙 '+it.price+'</div>';
+    d.innerHTML='<div class="shop-icon '+itemArtClass(it)+'" aria-label="'+esc(it.name)+'"></div><div class="shop-name">'+esc(it.name)+'</div><div class="shop-desc">'+esc(it.description)+'</div><div class="shop-price">'+it.price+'</div>';
     var b=document.createElement('button');b.type='button';b.className='shop-btn';
     if(it.category==='avatar'&&owned){b.textContent=equipped?'장착 중':'장착하기';b.disabled=equipped;b.onclick=function(){equipItem(it)}}
     else{b.textContent=it.category==='gift'?'교환 신청':'구매하기';b.disabled=selectedCharacter.coins<it.price;b.onclick=function(){purchaseItem(it)}}
@@ -113,7 +151,7 @@ function renderShop(){
 }
 el('shopBtn').onclick=async function(){if(!selectedCharacter){alert('먼저 캐릭터를 만들어 선택해 주세요.');return}await loadCharacterShopData();renderShop();openModal('shopModal')};
 async function purchaseItem(it){
-  if(it.category==='gift'&&!confirm(it.name+'을(를) 🪙 '+it.price+' 코인으로 교환 신청할까요?\n현실 선물은 보호자 승인 후 지급됩니다.'))return;
+  if(it.category==='gift'&&!confirm(it.name+'을(를) ◆ '+it.price+' 크리스털로 교환 신청할까요?\n현실 선물은 보호자 승인 후 지급됩니다.'))return;
   try{
     var rows=await rpc('purchase_shop_item',{p_character_id:selectedCharacter.id,p_item_id:it.id}),res=rows&&rows[0];
     if(res)selectedCharacter.coins=res.new_balance;
@@ -126,10 +164,8 @@ async function equipItem(it){
 }
 
 function selectButtons(attr,value){var bs=document.querySelectorAll('['+attr+']');for(var i=0;i<bs.length;i++)bs[i].classList.toggle('active',bs[i].getAttribute(attr)===value)}
-Array.prototype.forEach.call(document.querySelectorAll('[data-player]'),function(b){b.onclick=async function(){player=this.getAttribute('data-player');selectButtons('data-player',player);selectedCharacter=null;await loadCharacters();await Promise.all([renderHistory(),renderDashboard()])}});
-
 async function saveGameResult(clear,duration){
-  el('saveState').textContent='기록과 코인 저장 중...';
+  el('saveState').textContent='기록과 크리스털 저장 중...';
   if(!selectedCharacter){el('saveState').textContent='⚠ 캐릭터 정보 없음';return null}
   try{
     var rows=await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stages[stage].name,p_correct:correct,p_total:deck.length,p_cleared:clear,p_duration_ms:Math.round(duration)}),res=rows&&rows[0];
@@ -151,7 +187,7 @@ function better(a,b){
 }
 function rankRows(list,charMap){
   if(!list.length)return '<div class="empty">아직 기록이 없습니다.</div>';
-  return list.map(function(x,i){var c=x.character_id?charMap[x.character_id]:null,name=c?c.name:x.player,meta=x.stage+' · '+(x.cleared?'CLEAR '+fmtTime(x.duration_ms):'GAME OVER');return '<div class="rank-row"><div class="rank-no">'+(i+1)+'</div><div><b>'+esc(name)+'</b><div class="tiny">'+esc(x.player)+' · '+esc(meta)+'</div></div><div class="rank-score">'+x.correct+'/'+x.total+(x.coins_earned?'<div class="tiny">🪙 +'+x.coins_earned+'</div>':'')+'</div></div>'}).join('')
+  return list.map(function(x,i){var c=x.character_id?charMap[x.character_id]:null,name=c?c.name:x.player,meta=x.stage+' · '+(x.cleared?'CLEAR '+fmtTime(x.duration_ms):'GAME OVER');return '<div class="rank-row"><div class="rank-no">'+(i+1)+'</div><div><b>'+esc(name)+'</b><div class="tiny">'+esc(x.player)+' · '+esc(meta)+'</div></div><div class="rank-score">'+x.correct+'/'+x.total+(x.coins_earned?'<div class="tiny">◆ +'+x.coins_earned+'</div>':'')+'</div></div>'}).join('')
 }
 async function renderDashboard(){
   el('rankStatus').textContent='불러오는 중...';
@@ -162,8 +198,8 @@ async function renderDashboard(){
     rows.filter(function(x){return x.stage===stageName}).forEach(function(x){var key=x.character_id||x.player;if(!ids[key]||better(x,ids[key]))ids[key]=x});Object.keys(ids).forEach(function(k){stageBest.push(ids[k])});stageBest.sort(function(a,b){return better(a,b)?-1:better(b,a)?1:0});
     el('stageRanking').innerHTML=rankRows(stageBest.slice(0,8),charMap);
     var coinRank=chars.slice().sort(function(a,b){return b.coins-a.coins||new Date(a.created_at)-new Date(b.created_at)});
-    el('overallRanking').innerHTML=coinRank.length?coinRank.slice(0,8).map(function(c,i){return '<div class="rank-row"><div class="rank-no">'+(i+1)+'</div><div><b>'+esc(c.name)+'</b><div class="tiny">'+esc(c.player)+' · '+esc(classData(c.class).label)+'</div></div><div class="rank-score">🪙 '+c.coins+'</div></div>'}).join(''):'<div class="empty">아직 캐릭터가 없습니다.</div>';
-    var players=['율이','아빠','손님'],out='';players.forEach(function(p){out+='<div class="best-card"><b>'+p+'</b>';Object.keys(stages).forEach(function(k){var name=stages[k].name,best=null;rows.filter(function(x){return x.player===p&&x.stage===name}).forEach(function(x){if(better(x,best))best=x});out+='<div class="best-line"><span>'+name+'</span><span class="best-val">'+(best?(best.cleared?fmtTime(best.duration_ms):best.correct+'/'+best.total):'-')+'</span></div>'});out+='</div>'});el('bestGrid').innerHTML=out;
+    el('overallRanking').innerHTML=coinRank.length?coinRank.slice(0,8).map(function(c,i){return '<div class="rank-row"><div class="rank-no">'+(i+1)+'</div><div><b>'+esc(c.name)+'</b><div class="tiny">'+esc(c.player)+' · '+esc(classData(c.class).label)+'</div></div><div class="rank-score">◆ '+c.coins+'</div></div>'}).join(''):'<div class="empty">아직 캐릭터가 없습니다.</div>';
+    var out='';players.forEach(function(p){out+='<div class="best-card"><b>'+esc(p)+'</b>';Object.keys(stages).forEach(function(k){var name=stages[k].name,best=null;rows.filter(function(x){return x.player===p&&x.stage===name}).forEach(function(x){if(better(x,best))best=x});out+='<div class="best-line"><span>'+name+'</span><span class="best-val">'+(best?(best.cleared?fmtTime(best.duration_ms):best.correct+'/'+best.total):'-')+'</span></div>'});out+='</div>'});el('bestGrid').innerHTML=out;
     el('rankStatus').textContent='● 연결됨';
   }catch(e){console.error(e);el('rankStatus').textContent='연결 실패';el('stageRanking').innerHTML='<div class="empty">랭킹을 불러오지 못했습니다.</div>';el('overallRanking').innerHTML='';el('bestGrid').innerHTML=''}
 }
@@ -172,7 +208,7 @@ async function renderHistory(){
   try{
     var all=await Promise.all([getRecords(),getAllCharacters()]),rows=all[0],chars=all[1],map={};chars.forEach(function(c){map[c.id]=c});el('dbStatus').textContent='● 연결됨';
     if(!rows.length){box.innerHTML='<div class="empty">아직 저장된 점수가 없습니다.</div>';return}
-    box.innerHTML='';rows.forEach(function(x){var d=document.createElement('div'),date=new Date(x.created_at),c=x.character_id?map[x.character_id]:null;d.className='record';d.innerHTML='<div><b>'+esc(c?c.name:x.player)+'</b><br><span class="tiny">'+esc(x.stage)+' · '+date.toLocaleString('ko-KR')+' · '+(x.cleared?'CLEAR '+fmtTime(x.duration_ms):'GAME OVER')+(x.coins_earned?' · 🪙 +'+x.coins_earned:'')+'</span></div><div class="score">'+x.correct+'/'+x.total+'</div>';box.appendChild(d)})
+    box.innerHTML='';rows.forEach(function(x){var d=document.createElement('div'),date=new Date(x.created_at),c=x.character_id?map[x.character_id]:null;d.className='record';d.innerHTML='<div><b>'+esc(c?c.name:x.player)+'</b><br><span class="tiny">'+esc(x.stage)+' · '+date.toLocaleString('ko-KR')+' · '+(x.cleared?'CLEAR '+fmtTime(x.duration_ms):'GAME OVER')+(x.coins_earned?' · ◆ +'+x.coins_earned:'')+'</span></div><div class="score">'+x.correct+'/'+x.total+'</div>';box.appendChild(d)})
   }catch(e){console.error(e);el('dbStatus').textContent='연결 실패';box.innerHTML='<div class="empty">Supabase 기록을 불러오지 못했습니다.</div>'}
 }
 
@@ -201,7 +237,7 @@ function choose(button,chosen,answer){
     correct++;
     var bonus=(correct%5===0)?1:0;
     el('liveScore').textContent=liveScoreText();
-    el('feedback').textContent=bonus?'정답! 🪙 +1 · '+correct+' COMBO! 보너스 🪙 +1':'정답! 🪙 +1';
+    el('feedback').textContent=bonus?'정답! ◆ +1 · '+correct+' COMBO! 보너스 ◆ +1':'정답! ◆ +1';
     speakEnglish(currentEnglish);
     setTimeout(function(){idx++;renderQuestion()},900)
   }else{
@@ -216,7 +252,7 @@ async function finish(clear,answer,reason){
     var combo=comboBonus(correct),bits=['정답 '+correct+'문제 +'+correct];
     if(combo>0)bits.push('5연속 콤보 보너스 '+combo+'회 +'+combo);
     if(clear)bits.push('스테이지 클리어 +10');
-    el('rewardBox').innerHTML='🪙 <b>+'+res.coins_earned+' 코인 획득</b><br><span class="tiny">'+bits.join(' · ')+'</span><br>현재 보유: 🪙 '+res.balance;
+    el('rewardBox').innerHTML='◆ <b>+'+res.coins_earned+' 크리스털 획득</b><br><span class="tiny">'+bits.join(' · ')+'</span><br>현재 보유: ◆ '+res.balance;
     el('rewardBox').classList.remove('hide')
   }
   await Promise.all([loadCharacters(),renderHistory(),renderDashboard()])
@@ -225,8 +261,8 @@ async function finish(clear,answer,reason){
 el('startBtn').onclick=start;el('againBtn').onclick=start;el('homeBtn').onclick=function(){clearTimer();el('result').style.display='none';el('setup').classList.remove('hide');el('dashboardCard').classList.remove('hide');el('historyCard').classList.remove('hide');renderCharacters();renderHistory();renderDashboard()};
 
 async function init(){
-  var q=document.querySelector('.quest-head span');if(q)q.textContent='정답 1개마다 1코인 · 5연속 콤보마다 +1 · 스테이지 클리어 +10';
-  renderStageButtons();await loadShopItems();await loadCharacters();await Promise.all([renderHistory(),renderDashboard()])
+  var q=document.querySelector('.quest-head span');if(q)q.textContent='정답 1개마다 크리스털 1개 · 5연속 콤보마다 +1개 · 스테이지 클리어 +10개';
+  renderStageButtons();await loadPlayerList();await loadShopItems();await loadCharacters();await Promise.all([renderHistory(),renderDashboard()])
 }
 init();
 })();

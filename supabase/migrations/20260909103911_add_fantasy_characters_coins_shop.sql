@@ -1,0 +1,2 @@
+-- Historical migration marker.
+-- The executable schema baseline is captured in a later remote_schema migration.
