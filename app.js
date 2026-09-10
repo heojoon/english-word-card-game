@@ -18,6 +18,9 @@ function fmtTime(ms){if(ms==null)return '-';return (ms/1000).toFixed(1)+'초'}
 function itemById(id){for(var i=0;i<shopItems.length;i++)if(String(shopItems[i].id)===String(id))return shopItems[i];return null}
 function classData(c){return classInfo[c]||classInfo.warrior}
 function avatarHtml(c,mini){var ci=classData(c.class),item=itemById(c.equipped_item_id);return '<span class="'+(mini?'mini-avatar':'avatar')+' '+esc(c.accent||'violet')+'">'+ci.icon+(item?'<span class="gear">'+esc(item.icon)+'</span>':'')+'</span>'}
+function comboBonus(n){return Math.floor(n/5)}
+function earnedCoins(n,clear){return n+comboBonus(n)+(clear?10:0)}
+function liveScoreText(){return correct+'/'+deck.length+' · 🪙 +'+earnedCoins(correct,false)}
 
 async function apiGet(path){var r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{headers:headers()});if(!r.ok)throw new Error(await r.text());return r.json()}
 async function apiPost(path,body,prefer){var r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{method:'POST',headers:headers({'Content-Type':'application/json','Prefer':prefer||'return=representation'}),body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());var txt=await r.text();return txt?JSON.parse(txt):null}
@@ -189,20 +192,41 @@ function start(){
 function renderQuestion(){
   if(idx>=deck.length)return finish(true);
   locked=false;var q=deck[idx],item=q.item,enko=q.mode==='en-ko',pool=stages[stage].words,ds=distractors(item,pool),answer=enko?'['+item[1]+'] '+item[2]:item[0],opts=[answer];currentAnswer=answer;currentEnglish=item[0];shuffle(ds).slice(0,3).forEach(function(x){opts.push(enko?'['+x[1]+'] '+x[2]:x[0])});opts=shuffle(opts);
-  var ci=classData(selectedCharacter.class);el('gameAvatar').className='mini-avatar '+selectedCharacter.accent;el('gameAvatar').textContent=ci.icon;el('who').textContent=player;el('charName').textContent=selectedCharacter.name;el('stageName').textContent=stages[stage].name;el('liveScore').textContent=correct+'/'+deck.length;el('progress').style.width=(idx/deck.length*100)+'%';el('direction').textContent=enko?'영어 → 뜻':'뜻 → 영어';el('question').textContent=enko?item[0]:'['+item[1]+'] '+item[2];el('speakerBtn').classList.toggle('show',enko);el('hint').textContent=enko?'🔊 버튼으로 발음을 듣고 5초 안에 답하세요. 정답을 맞히면 발음이 다시 재생됩니다.':'정답 영어를 누르면 발음이 재생됩니다. 5초 안에 답하세요.';el('feedback').textContent='';var box=el('choices');box.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='choice';b.textContent=o;b.onclick=function(){choose(b,o,answer)};box.appendChild(b)});startTimer()
+  var ci=classData(selectedCharacter.class);el('gameAvatar').className='mini-avatar '+selectedCharacter.accent;el('gameAvatar').textContent=ci.icon;el('who').textContent=player;el('charName').textContent=selectedCharacter.name;el('stageName').textContent=stages[stage].name;el('liveScore').textContent=liveScoreText();el('progress').style.width=(idx/deck.length*100)+'%';el('direction').textContent=enko?'영어 → 뜻':'뜻 → 영어';el('question').textContent=enko?item[0]:'['+item[1]+'] '+item[2];el('speakerBtn').classList.toggle('show',enko);el('hint').textContent=enko?'🔊 버튼으로 발음을 듣고 5초 안에 답하세요. 정답을 맞히면 발음이 다시 재생됩니다.':'정답 영어를 누르면 발음이 재생됩니다. 5초 안에 답하세요.';el('feedback').textContent='';var box=el('choices');box.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='choice';b.textContent=o;b.onclick=function(){choose(b,o,answer)};box.appendChild(b)});startTimer()
 }
 function markCorrect(answer){var bs=el('choices').querySelectorAll('button');for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].textContent===answer)bs[i].classList.add('correct')}}
-function choose(button,chosen,answer){if(locked)return;locked=true;clearTimer();addQuestionTime();var ok=chosen===answer;markCorrect(answer);if(ok){correct++;el('liveScore').textContent=correct+'/'+deck.length;el('feedback').textContent='정답!';speakEnglish(currentEnglish);setTimeout(function(){idx++;renderQuestion()},900)}else{button.classList.add('wrong');el('feedback').textContent='오답! GAME OVER';setTimeout(function(){finish(false,answer,'wrong')},900)}}
+function choose(button,chosen,answer){
+  if(locked)return;locked=true;clearTimer();addQuestionTime();var ok=chosen===answer;markCorrect(answer);
+  if(ok){
+    correct++;
+    var bonus=(correct%5===0)?1:0;
+    el('liveScore').textContent=liveScoreText();
+    el('feedback').textContent=bonus?'정답! 🪙 +1 · '+correct+' COMBO! 보너스 🪙 +1':'정답! 🪙 +1';
+    speakEnglish(currentEnglish);
+    setTimeout(function(){idx++;renderQuestion()},900)
+  }else{
+    button.classList.add('wrong');el('feedback').textContent='오답! GAME OVER';setTimeout(function(){finish(false,answer,'wrong')},900)
+  }
+}
 function timeOut(){if(locked)return;locked=true;elapsedMs+=5000;questionStartedAt=0;markCorrect(currentAnswer);el('feedback').textContent='시간 초과! GAME OVER';setTimeout(function(){finish(false,currentAnswer,'timeout')},850)}
 async function finish(clear,answer,reason){
   clearTimer();if(window.speechSynthesis)window.speechSynthesis.cancel();el('game').style.display='none';el('result').style.display='block';el('historyCard').classList.remove('hide');el('dashboardCard').classList.remove('hide');el('finalScore').textContent=correct+'/'+deck.length;el('finalScore').classList.toggle('gameover',!clear);el('resultTag').textContent=clear?'STAGE CLEAR':'GAME OVER';el('resultTitle').textContent=clear?'퀘스트 클리어!':reason==='timeout'?'5초 시간 초과!':'한 문제 틀려서 종료!';el('resultText').textContent=clear?(selectedCharacter.name+' · '+stages[stage].name+' · 클리어 타임 '+fmtTime(elapsedMs)):(selectedCharacter.name+' · '+stages[stage].name+' · '+(idx+1)+'번째 문제에서 종료'+(answer?' · 정답: '+answer:''));el('rewardBox').classList.add('hide');el('rewardBox').innerHTML='';
   var res=await saveGameResult(clear,elapsedMs);
-  if(res&&clear){var bits=['기본 클리어 +10'];if(res.personal_best)bits.push('개인 최고 +5');if(res.stage_record)bits.push('스테이지 최속 +10');el('rewardBox').innerHTML='🪙 <b>+'+res.coins_earned+' 코인 획득</b><br><span class="tiny">'+bits.join(' · ')+'</span><br>현재 보유: 🪙 '+res.balance;el('rewardBox').classList.remove('hide')}
+  if(res){
+    var combo=comboBonus(correct),bits=['정답 '+correct+'문제 +'+correct];
+    if(combo>0)bits.push('5연속 콤보 보너스 '+combo+'회 +'+combo);
+    if(clear)bits.push('스테이지 클리어 +10');
+    el('rewardBox').innerHTML='🪙 <b>+'+res.coins_earned+' 코인 획득</b><br><span class="tiny">'+bits.join(' · ')+'</span><br>현재 보유: 🪙 '+res.balance;
+    el('rewardBox').classList.remove('hide')
+  }
   await Promise.all([loadCharacters(),renderHistory(),renderDashboard()])
 }
 
 el('startBtn').onclick=start;el('againBtn').onclick=start;el('homeBtn').onclick=function(){clearTimer();el('result').style.display='none';el('setup').classList.remove('hide');el('dashboardCard').classList.remove('hide');el('historyCard').classList.remove('hide');renderCharacters();renderHistory();renderDashboard()};
 
-async function init(){renderStageButtons();await loadShopItems();await loadCharacters();await Promise.all([renderHistory(),renderDashboard()])}
+async function init(){
+  var q=document.querySelector('.quest-head span');if(q)q.textContent='정답 1개마다 1코인 · 5연속 콤보마다 +1 · 스테이지 클리어 +10';
+  renderStageButtons();await loadShopItems();await loadCharacters();await Promise.all([renderHistory(),renderDashboard()])
+}
 init();
 })();
