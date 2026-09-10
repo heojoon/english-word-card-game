@@ -1,6 +1,6 @@
 (function(){'use strict';
 var art={
-  warrior:'assets/avatars/warrior.webp?v=20260910-2',
+  warrior:'assets/avatars/warrior.webp?v=20260910-4',
   mage:'assets/avatars/mage.webp?v=20260910-2',
   pugilist:'assets/avatars/pugilist.webp?v=20260910-2',
   ranger:'assets/avatars/ranger.webp?v=20260910-2'
@@ -37,7 +37,7 @@ function avatar(n){
   var g=n.querySelector('.gear');
   Array.prototype.forEach.call(n.childNodes,function(x){if(x.nodeType===3)x.nodeValue=''});
   var i=document.createElement('img');
-  i.className='avatar-art';i.src=art[k];i.alt=em[k]||'';i.draggable=false;
+  i.className='avatar-art';i.src=art[k];i.alt='';i.draggable=false;
   n.insertBefore(i,g||n.firstChild);
 }
 function classes(){
