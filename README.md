@@ -9,6 +9,28 @@
 - Frontend: GitHub Pages 정적 웹앱
 - Backend / DB: Supabase
 
+### Crystal Quest 정식 화면
+
+메인 `/` 화면은 승인된 Crystal Quest 시안을 실제 게임 데이터와 연결한 버전입니다.
+
+- 홈 / 장비 / 던전 / 전투 / 결과 / 상점의 모바일 우선 화면 전환
+- Supabase 플레이어, 캐릭터, 코인, 인벤토리, 보상 신청, 기록 연동
+- Stage 1~6 실제 단어 전체를 사용하는 양방향 4지선다 전투
+- 직업 특성, 슬롯별 장비, 클리어 보물상자, 발음, 일시정지, 키보드 입력
+- 로컬 DB 없이 UI를 체험할 때는 `/?demo=1` 사용
+
+### 독립 플레이 시안
+
+`playable-preview.html`은 승인된 1번 홈 화면을 실제 클릭 흐름으로 확장한 독립 HTML 시안입니다. 정적 서버에서 `/playable-preview.html`을 열면 됩니다.
+
+- 홈 / 장비 / 던전 / 상점 전환, 직업별 남녀 8종 선택
+- 더미 구매, 크리스털 잔액, 장착 외형, 현실 보상 신청
+- 3개 던전과 각각 3개 스테이지, 공통 5문제 체험 전투, 일시정지, 발음, 정답/오답/시간 초과, 보물상자와 기록
+- 상태는 `wordoria-playable-preview-v1` 키로 브라우저에 저장됩니다. 기존 게임 및 원격 DB 데이터와 연결하지 않습니다.
+- 우측 상단 지갑에서 시안용 크리스털 충전, 페이지 아래에서 초기화 가능
+
+장비는 SVG/CSS 레이어, 전투는 간단한 이동·피격 연출을 사용하는 인터랙션 시안입니다. 실제 애니메이션 리소스와 운영 게임 로직을 대체하지 않습니다.
+
 ---
 
 ## 1. 게임 기획
@@ -102,28 +124,30 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 
 현재 직업은 4종입니다.
 
-| Class | 표시명 | 이미지 |
-| --- | --- | --- |
-| `warrior` | 전사 | `assets/avatars/warrior.webp` |
-| `mage` | 마법사 | `assets/avatars/mage.webp` |
-| `pugilist` | 권투사 | `assets/avatars/pugilist.webp` |
-| `ranger` | 궁수 | `assets/avatars/ranger.webp` |
+| Class | 표시명 | 남성 이미지 | 여성 이미지 |
+| --- | --- | --- | --- |
+| `warrior` | 전사 | `assets/avatars/warrior.webp` | `assets/avatars/variants/warrior-female.webp` |
+| `mage` | 마법사 | `assets/avatars/mage.webp` | `assets/avatars/variants/mage-female.webp` |
+| `pugilist` | 권투사 | `assets/avatars/variants/pugilist-male.webp` | `assets/avatars/pugilist.webp` |
+| `ranger` | 궁수 | `assets/avatars/variants/ranger-male.webp` | `assets/avatars/ranger.webp` |
 
 캐릭터 생성 시 다음을 선택합니다.
 
 - 캐릭터 이름
 - 직업
+- 외형 (남성/여성)
 - 오라 색상
 
 오라 색상은 현재 보라, 빨강, 파랑, 초록, 금색을 지원합니다.
 
-앞에서 생성한 판타지풍 캐릭터 이미지를 실제 선택 UI에 사용하며, 생성된 캐릭터 카드와 문제 풀이 화면의 미니 아바타에도 동일한 직업 이미지가 표시됩니다.
+각 직업은 남성/여성 기본 외형을 하나씩 제공합니다. 생성 화면에서 선택한 외형은 캐릭터 카드와 문제 풀이 화면의 미니 아바타까지 동일하게 유지됩니다.
 
 캐릭터별로 다음 정보가 독립적으로 관리됩니다.
 
 - 이름
 - 플레이어
 - 직업
+- 외형 (`avatar_variant`)
 - 오라 색상
 - 보유 코인
 - 장착 아이템
@@ -228,8 +252,8 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 Browser
  ├─ index.html
  ├─ stages.js / stage6.js
- ├─ app.js
- ├─ avatar-art.js
+ ├─ crystal-game.js
+ ├─ playable-preview.css / crystal-game.css
  └─ assets/avatars/*.webp
 ```
 
@@ -263,10 +287,11 @@ PostgreSQL
 ```text
 .
 ├── index.html
-├── app.js
+├── crystal-game.js
+├── crystal-game.css
+├── playable-preview.css
 ├── stages.js
 ├── stage6.js
-├── avatar-art.js
 ├── assets/
 │   └── avatars/
 │       ├── warrior.webp
@@ -285,7 +310,7 @@ PostgreSQL
 - 문제 / 결과 / 랭킹 화면
 - 모바일 반응형 CSS
 
-### `app.js`
+### `crystal-game.js`
 
 - 게임 진행 로직
 - 5초 타이머
@@ -296,6 +321,8 @@ PostgreSQL
 - 캐릭터 관리
 - 상점 / 장착
 - 최근 기록 / 랭킹
+- 직업 특성 / 보물상자
+- 슬롯별 장비 외형
 
 ### `stages.js`, `stage6.js`
 

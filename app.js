@@ -8,8 +8,10 @@ var SUPABASE_URL=useLocalDb?'http://127.0.0.1:54321':'https://uobagmggryhsqlpxhf
 var SUPABASE_KEY=useLocalDb?'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH':'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
 var stages=window.QUIZ_STAGES||{};
 var classInfo={warrior:{label:'전사',icon:'⚔️'},mage:{label:'마법사',icon:'🔮'},pugilist:{label:'권투사',icon:'🥊'},ranger:{label:'궁수',icon:'🏹'}};
+var variantInfo={male:{label:'남자'},female:{label:'여자'}};
+var legacyVariant={warrior:'male',mage:'male',pugilist:'female',ranger:'female'};
 var defaultPlayers=['율이','아빠','손님'],players=defaultPlayers.slice(),player='율이',stage='s1',selectedCharacter=null,characters=[],shopItems=[],inventory=[],redemptions=[];
-var charClass='warrior',charAccent='violet';
+var charClass='warrior',charVariant='male',charAccent='violet';
 var deck=[],idx=0,correct=0,locked=false,currentEnglish='',timerId=null,deadline=0,currentAnswer='';
 var questionStartedAt=0,elapsedMs=0;
 
@@ -20,8 +22,10 @@ function headers(extra){var h={'apikey':SUPABASE_KEY,'Authorization':'Bearer '+S
 function fmtTime(ms){if(ms==null)return '-';return (ms/1000).toFixed(1)+'초'}
 function itemById(id){for(var i=0;i<shopItems.length;i++)if(String(shopItems[i].id)===String(id))return shopItems[i];return null}
 function classData(c){return classInfo[c]||classInfo.warrior}
+function characterVariant(c){return c.avatar_variant||localStorage.getItem('fantasyQuizAvatar:'+c.id)||legacyVariant[c.class]||'male'}
+function variantData(v){return variantInfo[v]||variantInfo.male}
 function itemArtClass(item){return 'item-'+esc(item&&item.code||'crystal')}
-function avatarHtml(c,mini){var ci=classData(c.class),item=itemById(c.equipped_item_id);return '<span class="'+(mini?'mini-avatar':'avatar')+' '+esc(c.accent||'violet')+'">'+ci.icon+(item?'<span class="gear '+itemArtClass(item)+'" aria-label="'+esc(item.name)+'"></span>':'')+'</span>'}
+function avatarHtml(c,mini){var ci=classData(c.class),item=itemById(c.equipped_item_id),variant=characterVariant(c);return '<span class="'+(mini?'mini-avatar':'avatar')+' '+esc(c.accent||'violet')+'" data-avatar-class="'+esc(c.class)+'" data-avatar-variant="'+esc(variant)+'">'+ci.icon+(item?'<span class="gear '+itemArtClass(item)+'" aria-label="'+esc(item.name)+'"></span>':'')+'</span>'}
 function comboBonus(n){return Math.floor(n/5)}
 function earnedCoins(n,clear){return n+comboBonus(n)+(clear?10:0)}
 function liveScoreText(){return correct+'/'+deck.length+' · ◆ +'+earnedCoins(correct,false)}
@@ -72,7 +76,7 @@ async function loadShopItems(){
 }
 async function loadCharacters(){
   try{
-    characters=await apiGet('game_characters?select=id,player,name,class,accent,coins,equipped_item_id,created_at&player=eq.'+encodeURIComponent(player)+'&order=created_at.asc');
+    characters=await apiGet('game_characters?select=*&player=eq.'+encodeURIComponent(player)+'&order=created_at.asc');
     var saved=localStorage.getItem('fantasyQuizCharacter:'+player),found=null;
     if(saved)found=characters.find(function(c){return c.id===saved})||null;
     if(!found&&selectedCharacter&&selectedCharacter.player===player)found=characters.find(function(c){return c.id===selectedCharacter.id})||null;
@@ -86,7 +90,7 @@ function renderCharacters(){
   if(!characters.length){box.innerHTML='<div class="empty-box">아직 캐릭터가 없습니다.<br><b>＋ 캐릭터 만들기</b>로 첫 모험가를 생성하세요.</div>';el('startBtn').disabled=true;el('startBtn').textContent='캐릭터를 선택해 주세요';return}
   characters.forEach(function(c){
     var d=document.createElement('div');d.className='char-card'+(selectedCharacter&&c.id===selectedCharacter.id?' active':'');
-    d.innerHTML=avatarHtml(c,false)+'<div><div class="char-name">'+esc(c.name)+'</div><div class="char-meta">'+classData(c.class).label+' · '+esc(c.player)+'</div></div><div class="coin">'+c.coins+'</div>';
+    d.innerHTML=avatarHtml(c,false)+'<div><div class="char-name">'+esc(c.name)+'</div><div class="char-meta">'+classData(c.class).label+' <span class="char-gender">'+variantData(characterVariant(c)).label+'</span> · '+esc(c.player)+'</div></div><div class="coin">'+c.coins+'</div>';
     d.onclick=function(){selectedCharacter=c;localStorage.setItem('fantasyQuizCharacter:'+player,c.id);renderCharacters()};box.appendChild(d);
   });
   el('startBtn').disabled=!selectedCharacter;el('startBtn').textContent=selectedCharacter?selectedCharacter.name+'의 퀘스트 시작':'캐릭터를 선택해 주세요';
@@ -97,8 +101,10 @@ function closeModal(id){el(id).classList.remove('show')}
 Array.prototype.forEach.call(document.querySelectorAll('[data-close]'),function(b){b.onclick=function(){closeModal(this.getAttribute('data-close'))}});
 Array.prototype.forEach.call(document.querySelectorAll('.modal-backdrop'),function(m){m.onclick=function(e){if(e.target===m)closeModal(m.id)}});
 
-el('newCharBtn').onclick=function(){el('charNameInput').value='';charClass='warrior';charAccent='violet';selectButtons('data-class',charClass);selectButtons('data-accent',charAccent);openModal('characterModal')};
-Array.prototype.forEach.call(document.querySelectorAll('[data-class]'),function(b){b.onclick=function(){charClass=this.getAttribute('data-class');selectButtons('data-class',charClass)}});
+function renderVariantChoices(){Array.prototype.forEach.call(document.querySelectorAll('.variant-preview'),function(x){x.setAttribute('data-avatar-class',charClass);var old=x.querySelector('.avatar-art');if(old)old.remove()})}
+el('newCharBtn').onclick=function(){el('charNameInput').value='';charClass='warrior';charVariant='male';charAccent='violet';selectButtons('data-class',charClass);selectButtons('data-variant',charVariant);selectButtons('data-accent',charAccent);renderVariantChoices();openModal('characterModal')};
+Array.prototype.forEach.call(document.querySelectorAll('[data-class]'),function(b){b.onclick=function(){charClass=this.getAttribute('data-class');selectButtons('data-class',charClass);renderVariantChoices()}});
+Array.prototype.forEach.call(document.querySelectorAll('[data-variant]'),function(b){b.onclick=function(){charVariant=this.getAttribute('data-variant');selectButtons('data-variant',charVariant)}});
 Array.prototype.forEach.call(document.querySelectorAll('[data-accent]'),function(b){b.onclick=function(){charAccent=this.getAttribute('data-accent');selectButtons('data-accent',charAccent)}});
 el('createPlayerBtn').onclick=async function(){
   var name=el('playerNameInput').value.trim().replace(/\s+/g,' ');
@@ -113,7 +119,13 @@ el('createCharBtn').onclick=async function(){
   var name=el('charNameInput').value.trim();if(!name){alert('캐릭터 이름을 입력해 주세요.');return}
   this.disabled=true;this.textContent='생성 중...';
   try{
-    var rows=await apiPost('game_characters',{player:player,name:name,class:charClass,accent:charAccent});
+    var rows;
+    try{rows=await apiPost('game_characters',{player:player,name:name,class:charClass,avatar_variant:charVariant,accent:charAccent})}
+    catch(variantError){
+      if(String(variantError.message).indexOf('avatar_variant')<0)throw variantError;
+      rows=await apiPost('game_characters',{player:player,name:name,class:charClass,accent:charAccent});
+      if(rows&&rows[0])localStorage.setItem('fantasyQuizAvatar:'+rows[0].id,charVariant);
+    }
     closeModal('characterModal');
     if(rows&&rows[0])localStorage.setItem('fantasyQuizCharacter:'+player,rows[0].id);
     await loadCharacters();await renderDashboard();
@@ -175,7 +187,7 @@ async function saveGameResult(clear,duration){
 }
 async function getRecords(){var url='game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned&player=eq.'+encodeURIComponent(player)+'&order=created_at.desc&limit=8';return apiGet(url)}
 async function getAllRecords(){return apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned&order=created_at.desc&limit=1000')}
-async function getAllCharacters(){return apiGet('game_characters?select=id,player,name,class,accent,coins,equipped_item_id,created_at&order=created_at.asc')}
+async function getAllCharacters(){return apiGet('game_characters?select=*&order=created_at.asc')}
 function rate(x){return x.total?x.correct/x.total:0}
 function better(a,b){
   if(!b)return true;
@@ -228,7 +240,7 @@ function start(){
 function renderQuestion(){
   if(idx>=deck.length)return finish(true);
   locked=false;var q=deck[idx],item=q.item,enko=q.mode==='en-ko',pool=stages[stage].words,ds=distractors(item,pool),answer=enko?'['+item[1]+'] '+item[2]:item[0],opts=[answer];currentAnswer=answer;currentEnglish=item[0];shuffle(ds).slice(0,3).forEach(function(x){opts.push(enko?'['+x[1]+'] '+x[2]:x[0])});opts=shuffle(opts);
-  var ci=classData(selectedCharacter.class);el('gameAvatar').className='mini-avatar '+selectedCharacter.accent;el('gameAvatar').textContent=ci.icon;el('who').textContent=player;el('charName').textContent=selectedCharacter.name;el('stageName').textContent=stages[stage].name;el('liveScore').textContent=liveScoreText();el('progress').style.width=(idx/deck.length*100)+'%';el('direction').textContent=enko?'영어 → 뜻':'뜻 → 영어';el('question').textContent=enko?item[0]:'['+item[1]+'] '+item[2];el('speakerBtn').classList.toggle('show',enko);el('hint').textContent=enko?'🔊 버튼으로 발음을 듣고 5초 안에 답하세요. 정답을 맞히면 발음이 다시 재생됩니다.':'정답 영어를 누르면 발음이 재생됩니다. 5초 안에 답하세요.';el('feedback').textContent='';var box=el('choices');box.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='choice';b.textContent=o;b.onclick=function(){choose(b,o,answer)};box.appendChild(b)});startTimer()
+  var ci=classData(selectedCharacter.class),gameAvatar=el('gameAvatar');gameAvatar.className='mini-avatar '+selectedCharacter.accent;gameAvatar.setAttribute('data-avatar-class',selectedCharacter.class);gameAvatar.setAttribute('data-avatar-variant',characterVariant(selectedCharacter));gameAvatar.textContent=ci.icon;el('who').textContent=player;el('charName').textContent=selectedCharacter.name;el('stageName').textContent=stages[stage].name;el('liveScore').textContent=liveScoreText();el('progress').style.width=(idx/deck.length*100)+'%';el('direction').textContent=enko?'영어 → 뜻':'뜻 → 영어';el('question').textContent=enko?item[0]:'['+item[1]+'] '+item[2];el('speakerBtn').classList.toggle('show',enko);el('hint').textContent=enko?'🔊 버튼으로 발음을 듣고 5초 안에 답하세요. 정답을 맞히면 발음이 다시 재생됩니다.':'정답 영어를 누르면 발음이 재생됩니다. 5초 안에 답하세요.';el('feedback').textContent='';var box=el('choices');box.innerHTML='';opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='choice';b.textContent=o;b.onclick=function(){choose(b,o,answer)};box.appendChild(b)});startTimer()
 }
 function markCorrect(answer){var bs=el('choices').querySelectorAll('button');for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].textContent===answer)bs[i].classList.add('correct')}}
 function choose(button,chosen,answer){
@@ -264,5 +276,11 @@ async function init(){
   var q=document.querySelector('.quest-head span');if(q)q.textContent='정답 1개마다 크리스털 1개 · 5연속 콤보마다 +1개 · 스테이지 클리어 +10개';
   renderStageButtons();await loadPlayerList();await loadShopItems();await loadCharacters();await Promise.all([renderHistory(),renderDashboard()])
 }
-init();
+init().then(function(){
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('preview')!=='character')return;
+  el('newCharBtn').click();
+  var previewClass=params.get('previewClass');
+  if(classInfo[previewClass]){charClass=previewClass;selectButtons('data-class',charClass);renderVariantChoices()}
+});
 })();

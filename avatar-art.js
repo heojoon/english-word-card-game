@@ -1,10 +1,11 @@
 (function(){'use strict';
 var art={
-  warrior:'assets/avatars/warrior.webp?v=20260910-4',
-  mage:'assets/avatars/mage.webp?v=20260910-2',
-  pugilist:'assets/avatars/pugilist.webp?v=20260910-2',
-  ranger:'assets/avatars/ranger.webp?v=20260910-2'
+  warrior:{male:'assets/avatars/warrior.webp?v=20260910-4',female:'assets/avatars/variants/warrior-female.webp?v=20260911-1'},
+  mage:{male:'assets/avatars/mage.webp?v=20260910-2',female:'assets/avatars/variants/mage-female.webp?v=20260911-1'},
+  pugilist:{male:'assets/avatars/variants/pugilist-male.webp?v=20260911-1',female:'assets/avatars/pugilist.webp?v=20260910-2'},
+  ranger:{male:'assets/avatars/variants/ranger-male.webp?v=20260911-1',female:'assets/avatars/ranger.webp?v=20260910-2'}
 };
+var defaults={warrior:'male',mage:'male',pugilist:'female',ranger:'female'};
 var em={'⚔️':'warrior','🔮':'mage','🥊':'pugilist','🏹':'ranger'};
 
 function addStyle(){
@@ -32,12 +33,12 @@ function avatar(n){
   if(!n)return;
   var old=n.querySelector('.avatar-art');
   if(old)return;
-  var k=findKey(n.textContent||'');
-  if(!k||!art[k])return;
+  var k=n.getAttribute('data-avatar-class')||findKey(n.textContent||''),v=n.getAttribute('data-avatar-variant')||defaults[k];
+  if(!k||!art[k]||!art[k][v])return;
   var g=n.querySelector('.gear');
   Array.prototype.forEach.call(n.childNodes,function(x){if(x.nodeType===3)x.nodeValue=''});
   var i=document.createElement('img');
-  i.className='avatar-art';i.src=art[k];i.alt='';i.draggable=false;
+  i.className='avatar-art';i.src=art[k][v];i.alt='';i.draggable=false;
   n.insertBefore(i,g||n.firstChild);
 }
 function classes(){
@@ -45,10 +46,10 @@ function classes(){
     var k=b.getAttribute('data-class'),x=b.querySelector('.ico');
     if(!x||!art[k]||x.querySelector('img'))return;
     x.textContent='';
-    var i=document.createElement('img');i.className='class-art';i.src=art[k];i.alt='';i.draggable=false;x.appendChild(i);
+    var i=document.createElement('img');i.className='class-art';i.src=art[k][defaults[k]];i.alt='';i.draggable=false;x.appendChild(i);
   });
 }
-function decorate(){addStyle();Array.prototype.forEach.call(document.querySelectorAll('.avatar,.mini-avatar'),avatar);classes()}
+function decorate(){addStyle();Array.prototype.forEach.call(document.querySelectorAll('.avatar,.mini-avatar,.variant-preview'),avatar);classes()}
 var scheduled=false;
 function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(function(){scheduled=false;decorate()})}
 var o=new MutationObserver(schedule);

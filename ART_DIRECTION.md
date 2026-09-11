@@ -4,6 +4,7 @@
 > Selected direction: **01 · Crystal Quest (크리스털 퀘스트)**  
 > Decision date: 2026-09-10  
 > Interactive reference: `art-direction.html?concept=crystal`
+> Playable HTML reference: `playable-preview.html` — home, equipment, dungeon, battle, and shop with connected dummy state
 
 This file is the canonical visual guide for new sessions and future implementation. If an older document or prototype conflicts with this guide, this guide wins for visual decisions.
 
@@ -79,6 +80,9 @@ Do not communicate success, rarity, danger, or selection by color alone. Pair co
 - Detailed enough to feel collectible, simplified enough to read at 64–128 px
 - Transparent-background WebP or PNG masters
 - Equipment must support visible layered slots: Head, Body, Weapon, Back, Aura, Pet
+- Every playable class ships with at least one male and one female base appearance.
+- Gender variants share the same class silhouette, prop, rendering quality, and palette; distinguish identity through face, hair, costume details, and proportions without sexualization.
+- Store the selected base appearance as `avatar_variant` (`male` or `female`) and preserve it consistently in creation, profile cards, status UI, and battle HUD.
 
 Class silhouette cues:
 
@@ -180,4 +184,3 @@ Do not ship:
 - Background detail that competes with learning content
 
 When uncertain, open `art-direction.html?concept=crystal` and match Direction 01.
-
