@@ -1,0 +1,27 @@
+{
+  "name": "wordoria-crystal-quest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wordoria Crystal Quest hybrid Android game",
+  "scripts": {
+    "build": "npm run build:native && node scripts/build-web.mjs",
+    "build:native": "esbuild mobile/native-entry.js --bundle --format=iife --minify --outfile=native-bridge.js",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "npm run android:sync && cap open android",
+    "android:debug": "npm run android:sync && cd android && ./gradlew assembleDebug",
+    "android:bundle": "npm run android:sync && cd android && ./gradlew bundleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.1",
+    "@capacitor/app": "8.1.1",
+    "@capacitor/core": "8.5.1",
+    "@capacitor/haptics": "8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.1",
+    "esbuild": "0.28.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

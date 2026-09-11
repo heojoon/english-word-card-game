@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5751D8</color>
+    <color name="colorPrimaryDark">#3E389F</color>
+    <color name="colorAccent">#60D9CF</color>
+    <color name="moonWhite">#F7F7FF</color>
+    <color name="nightViolet">#24214C</color>
+</resources>

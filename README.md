@@ -9,6 +9,34 @@
 - Frontend: GitHub Pages 정적 웹앱
 - Backend / DB: Supabase
 
+### Android 하이브리드 앱
+
+동일한 웹게임을 Capacitor 8 기반 네이티브 Android 앱으로 빌드할 수 있습니다. 앱 ID는 `com.wordoria.crystalquest`이며 Android 7(API 24) 이상을 지원합니다.
+
+```bash
+npm install
+npm run android:sync
+npm run android:open
+```
+
+디버그 APK 또는 Play Store용 App Bundle 빌드:
+
+```bash
+npm run android:debug
+npm run android:bundle
+```
+
+로컬 Android 빌드에는 JDK 21, Android Studio와 Android SDK 36이 필요합니다. `main`에 Android 관련 변경을 푸시하면 GitHub Actions의 **Android build** 워크플로가 디버그 APK를 14일간 아티팩트로 제공합니다.
+
+네이티브 앱에서는 다음 동작이 추가됩니다.
+
+- Android 물리 뒤로가기: 모달 닫기 → 전투 일시정지 → 홈 이동 → 앱 종료
+- 앱이 백그라운드로 이동할 때 전투 타이머 자동 일시정지
+- 정답, 오답, 보물 획득 시 네이티브 햅틱 피드백
+- 세로 화면 고정과 노치/시스템 바 안전 영역 대응
+- Crystal Quest 전용 런처 아이콘과 스플래시 화면
+- 앱 내부 `localhost`와 개발용 로컬 DB를 구분해 운영 Supabase HTTPS 사용
+
 ### Crystal Quest 정식 화면
 
 메인 `/` 화면은 승인된 Crystal Quest 시안을 실제 게임 데이터와 연결한 버전입니다.

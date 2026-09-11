@@ -1,0 +1,15 @@
+{
+  "appId": "com.wordoria.crystalquest",
+  "appName": "Wordoria",
+  "webDir": "dist",
+  "backgroundColor": "#F7F7FF",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#F7F7FF"
+  },
+  "plugins": {
+    "App": {
+      "disableBackButtonHandler": true
+    }
+  }
+}
