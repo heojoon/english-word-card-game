@@ -41,7 +41,7 @@ jobs:
       - run: npm run android:sync
       - name: Build debug APK
         working-directory: android
-        run: ./gradlew assembleDebug
+        run: bash ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: wordoria-debug-apk
