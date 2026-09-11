@@ -175,7 +175,8 @@
   function tick(){clearInterval(timerId);run.last=performance.now();timerId=setInterval(()=>{if(!run||run.done||run.paused||run.locked)return;const now=performance.now(),delta=now-run.last;run.last=now;run.remaining=Math.max(0,run.remaining-delta);run.elapsed+=delta;const el=$('timer');if(el){el.textContent=`${(run.remaining/1000).toFixed(1)} 초`;el.classList.toggle('danger',run.remaining<2000);}if(run.remaining<=0)answer(-1);},50);}
   function pause(){if(!run||run.done)return;run.paused=true;clearInterval(timerId);}
   function resume(){closeDialog();if(run&&!run.done){run.paused=false;tick();}}
-  function speak(text){if(!('speechSynthesis' in window)){toast('이 브라우저에서는 음성 읽기를 지원하지 않아요');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;speechSynthesis.speak(u);}
+  function cancelSpeech(){if(window.WordoriaNativeSpeech?.cancel)window.WordoriaNativeSpeech.cancel().catch(()=>{});if(window.speechSynthesis)speechSynthesis.cancel();}
+  function speak(text){if(window.WordoriaNativeSpeech?.speak){window.WordoriaNativeSpeech.speak(text,{lang:'en-US',rate:.82}).catch(()=>toast('기기 음성 엔진을 사용할 수 없어요'));return;}if(!('speechSynthesis' in window)){toast('이 브라우저에서는 음성 읽기를 지원하지 않아요');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;speechSynthesis.speak(u);}
   function answer(index){
     if(!run||run.done||run.paused||run.locked)return;run.locked=true;clearInterval(timerId);const q=run.question,chosen=q.choices[index],ok=chosen===q.answer;
     document.querySelectorAll('.answer').forEach((button,i)=>{button.disabled=true;button.classList.toggle('correct',q.choices[i]===q.answer);button.classList.toggle('wrong',i===index&&!ok);});
@@ -184,7 +185,7 @@
     nextTimer=setTimeout(()=>{if(!ok)return finishBattle(false,index<0?'timeout':'wrong');run.index++;if(run.index>=run.deck.length)return finishBattle(true);prepareQuestion();render();tick();},900);
   }
   async function finishBattle(clear,reason){
-    if(run.done)return;run.done=true;run.clear=clear;run.reason=reason;clearInterval(timerId);clearTimeout(nextTimer);if(window.speechSynthesis)speechSynthesis.cancel();
+    if(run.done)return;run.done=true;run.clear=clear;run.reason=reason;clearInterval(timerId);clearTimeout(nextTimer);cancelSpeech();
     if(demo){const coins=earnedCoins(run.correct,clear),id=`demo-${Date.now()}`;selectedCharacter.coins+=coins;run.result={game_score_id:id,coins_earned:coins,balance:selectedCharacter.coins};const row={id,player,stage:stages[selectedStage].name,correct:run.correct,total:run.deck.length,cleared:clear,character_id:selectedCharacter.id,duration_ms:Math.round(run.elapsed),coins_earned:coins,created_at:new Date().toISOString()};demoState.records.unshift(row);records=demoState.records;saveDemo();}
     else if(dbOnline){try{const rows=await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stages[selectedStage].name,p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed)});run.result=rows?.[0]||null;if(run.result)selectedCharacter.coins=run.result.balance;records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.error(error);run.saveError=true;}}
     go('result');

@@ -26,7 +26,7 @@ Core attributes:
 ## 2. Audience and Experience
 
 - Primary audience: upper-elementary and middle-school learners
-- Primary device: portrait mobile web/PWA
+- Primary device: portrait mobile web/PWA and Android hybrid app
 - Core fantasy: recover Word Crystals by defeating monsters with correct answers
 - Core interaction: `Study = Battle`
 - UI priority: question, remaining time, answer choices, and result feedback always outrank decoration
@@ -168,6 +168,7 @@ Keep the center and answer area free from persistent decorative effects. Strong 
 - Test character and item silhouettes at their actual gameplay size.
 - Keep the same object in the same color family across status, shop, inventory, and battle.
 - Test desktop and portrait mobile layouts for every major screen.
+- Test Android WebView builds with the same mobile readability, safe-area, and touch-target standards as the browser version.
 - Use CSS variables for all UI theme tokens.
 - Decorative art must never reduce answer readability or hide game state.
 

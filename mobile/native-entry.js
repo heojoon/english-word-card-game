@@ -1,9 +1,23 @@
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, registerPlugin } from '@capacitor/core';
 import { App } from '@capacitor/app';
 import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics';
 
 if (Capacitor.isNativePlatform()) {
+  const TextToSpeech = registerPlugin('WordoriaTextToSpeech');
+
   document.documentElement.classList.add('native-app');
+  window.WordoriaNativeSpeech = {
+    speak(text, options = {}) {
+      return TextToSpeech.speak({
+        text,
+        lang: options.lang || 'en-US',
+        rate: options.rate || 0.82
+      });
+    },
+    cancel() {
+      return TextToSpeech.cancel();
+    }
+  };
 
   App.addListener('backButton', () => {
     document.dispatchEvent(new CustomEvent('wordoria:native-back'));

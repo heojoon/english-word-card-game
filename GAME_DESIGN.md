@@ -1,7 +1,7 @@
 # 판타지 영단어 RPG 게임 기획서
 
-> 문서 버전: v0.3
-> 상태: Phase 1 구현 반영 / Phase 2 설계 기준
+> 문서 버전: v0.4
+> 상태: Phase 1 + Android Hybrid 구현 반영 / Phase 2 설계 기준
 > 프로젝트: `heojoon/english-word-card-game`
 > 확정 아트 방향: **01 · 크리스털 퀘스트** (`ART_DIRECTION.md`)
 
@@ -33,13 +33,13 @@
 1차:
 
 - Web
-- PWA
-- GitHub Pages 또는 상용 CDN/Hosting
+- GitHub Pages
 - 모바일 세로 화면 우선
+- Android 하이브리드 앱(Capacitor 8)
 
 2차:
 
-- Android
+- PWA 설치 경험 정리
 - iOS
 - 태블릿
 - 데스크톱 웹
@@ -1204,6 +1204,7 @@ admin_adjustment
 - 로컬 카탈로그 데이터: `supabase/seed.sql`
 - 운영 사용자 및 플레이 기록은 seed에 포함하지 않는다.
 - 브라우저 앱은 `localhost` 또는 `127.0.0.1`에서 로컬 API를 자동 사용하고, 배포 도메인에서는 원격 API를 사용한다.
+- Android 하이브리드 앱은 내부 `localhost`와 개발용 로컬 DB를 혼동하지 않도록 운영 Supabase HTTPS API를 사용한다.
 - 필요 시 `?db=local` 또는 `?db=remote`로 대상을 명시한다.
 
 ### 23.3 DB 변경 및 배포 절차
@@ -1419,7 +1420,7 @@ Study = Battle = Progress
 
 ### Phase 1 — Prototype
 
-현재 단계.
+완료된 현재 기반 단계.
 
 완료/진행 기능:
 
@@ -1437,7 +1438,28 @@ Shop
 Ranking
 Supabase
 Local DB / Migration Workflow
+Crystal Quest Production Screen
+Playable Preview
 ```
+
+### Phase 1.5 — Android Hybrid
+
+완료된 모바일 앱 테스트 단계.
+
+```text
+Capacitor 8 Android Shell
+Android App ID: com.wordoria.crystalquest
+Portrait Native App
+Safe Area / System Bar Handling
+Native Back Button
+Pause on Background
+Haptic Feedback
+Launcher Icon / Splash
+GitHub Actions Debug APK Build
+GitHub Prerelease APK Distribution
+```
+
+현재 Android 산출물은 직접 설치 테스트용 debug APK다. Play Store 운영 배포 전에는 release keystore, release signing, AAB, Play Console 등록을 별도 완료해야 한다.
 
 ### Phase 2 — RPG Core
 
@@ -1479,7 +1501,8 @@ Word CMS
 Analytics
 Anti-Cheat
 Payments
-Mobile App
+Release-signed Android App / Play Store
+iOS App
 Push Notification
 Operational Dashboard
 ```
@@ -1708,7 +1731,7 @@ BOSS DEFEATED
 
 ### 34.1 로컬 우선 개발
 
-기능 개발은 정적 프런트엔드와 로컬 Supabase를 함께 실행해 검증한다. DB 변경은 migration 파일을 먼저 만들고 로컬에서 재현한 후 원격에 배포한다.
+기능 개발은 정적 프런트엔드와 로컬 Supabase를 함께 실행해 검증한다. DB 변경은 migration 파일을 먼저 만들고 로컬에서 재현한 후 원격에 배포한다. Android 변경은 웹 번들 빌드와 Capacitor sync 이후 네이티브 빌드까지 확인한다.
 
 ```text
 로컬 Supabase 시작
@@ -1718,6 +1741,7 @@ BOSS DEFEATED
 → DB advisor와 migration dry-run 확인
 → 원격 DB migration 배포
 → main 브랜치 배포
+→ Android build workflow 확인
 → 운영 smoke test
 ```
 
@@ -1729,9 +1753,25 @@ BOSS DEFEATED
 - 새 유저가 캐릭터를 만들고 게임 결과와 코인을 저장할 수 있다.
 - 로컬/원격 migration 이력이 일치한다.
 - 프런트엔드 문법 검사와 핵심 사용자 흐름 테스트가 통과한다.
+- Android debug APK 빌드가 GitHub Actions에서 성공한다.
+- Android APK를 공개 테스트 릴리즈로 배포할 때는 debug signing 용도와 SHA-256을 명시한다.
 - 기존 데이터에 영향을 주는 변경은 배포 전 백업 및 롤백 전략을 확인한다.
 
-### 34.3 현재 알려진 보안 부채
+### 34.3 Android 릴리스 원칙
+
+현재 Android 앱은 Capacitor 8 기반 하이브리드 구조이며, 웹 게임과 동일한 `dist/` 번들을 사용한다.
+
+현재 테스트 배포 기준:
+
+- GitHub Actions: `Android build`
+- GitHub Release tag: `android-v1.0.0-beta.1`
+- APK: `wordoria-crystal-quest-debug.apk`
+- App ID: `com.wordoria.crystalquest`
+- Minimum Android: Android 7 / API 24
+
+debug APK는 가족/내부 테스트용이다. Play Store 운영 배포 기준 산출물은 release signing이 적용된 AAB로 한다.
+
+### 34.4 현재 알려진 보안 부채
 
 Phase 1은 인증 없는 가족용 프로토타입이므로 공개 `anon` 역할이 일부 읽기/생성 기능과 `SECURITY DEFINER` RPC를 호출할 수 있다. 이는 상용 보안 모델이 아니다.
 

@@ -7,6 +7,7 @@
 - 플레이: https://heojoon.github.io/english-word-card-game/
 - Repository: https://github.com/heojoon/english-word-card-game
 - Frontend: GitHub Pages 정적 웹앱
+- Android 테스트 APK: https://github.com/heojoon/english-word-card-game/releases/tag/android-v1.0.0-beta.1
 - Backend / DB: Supabase
 
 ### Android 하이브리드 앱
@@ -27,6 +28,15 @@ npm run android:bundle
 ```
 
 로컬 Android 빌드에는 JDK 21, Android Studio와 Android SDK 36이 필요합니다. `main`에 Android 관련 변경을 푸시하면 GitHub Actions의 **Android build** 워크플로가 디버그 APK를 14일간 아티팩트로 제공합니다.
+
+현재 공개 테스트용 APK:
+
+- Release: https://github.com/heojoon/english-word-card-game/releases/tag/android-v1.0.0-beta.1
+- Direct APK: https://github.com/heojoon/english-word-card-game/releases/download/android-v1.0.0-beta.1/wordoria-crystal-quest-debug.apk
+- Local artifact: `build-artifacts/wordoria-crystal-quest-debug.apk`
+- SHA-256: `136d3644522cc92ec42d7dc4666e360a87dc9fc8ae492c49ec42fb7f28f8d37c`
+
+이 APK는 debug signing으로 만든 직접 설치/테스트용 빌드입니다. Play Store 배포에는 release keystore, 서명 설정, AAB 생성, Play Console 등록이 별도로 필요합니다.
 
 네이티브 앱에서는 다음 동작이 추가됩니다.
 
@@ -281,6 +291,8 @@ Browser
  ├─ index.html
  ├─ stages.js / stage6.js
  ├─ crystal-game.js
+ ├─ mobile/native-entry.js
+ ├─ native-bridge.js
  ├─ playable-preview.css / crystal-game.css
  └─ assets/avatars/*.webp
 ```
@@ -293,6 +305,20 @@ Browser
 - `localStorage`에는 선택한 캐릭터 ID 등 일부 UI 상태만 저장
 
 핵심 게임/캐릭터/코인 데이터는 Supabase에 저장됩니다.
+
+### Android Native Shell
+
+Capacitor 8로 동일한 `dist/` 웹 번들을 Android WebView에 싣습니다.
+
+```text
+Capacitor Android
+ ├─ capacitor.config.json
+ ├─ mobile/native-entry.js
+ ├─ native-bridge.js
+ └─ android/
+```
+
+`mobile/native-entry.js`는 네이티브 환경에서만 로드되는 브리지 코드입니다. 앱 상태 변경, Android 뒤로가기, 햅틱 피드백을 처리하고 웹 브라우저에서는 기존 정적 게임처럼 동작합니다.
 
 ### Backend
 
@@ -317,6 +343,13 @@ PostgreSQL
 ├── index.html
 ├── crystal-game.js
 ├── crystal-game.css
+├── mobile/
+│   └── native-entry.js
+├── android/
+│   ├── app/
+│   └── gradlew
+├── capacitor.config.json
+├── package.json
 ├── playable-preview.css
 ├── stages.js
 ├── stage6.js
@@ -363,6 +396,19 @@ PostgreSQL
 - 캐릭터 생성 화면 이미지
 - 캐릭터 카드 이미지
 - 게임 화면 미니 아바타 이미지
+
+### `mobile/native-entry.js`
+
+- Capacitor App/Haptics 플러그인 연결
+- Android 물리 뒤로가기 처리
+- 앱 백그라운드 진입 시 전투 일시정지
+- 정답, 오답, 보상 이벤트 햅틱 피드백
+
+### `capacitor.config.json`, `android/`
+
+- Android 앱 ID와 앱 이름 설정
+- `dist/` 웹 번들을 네이티브 앱 자산으로 동기화
+- Android 런처 아이콘, 스플래시, 화면 방향, WebView 설정
 
 ---
 
@@ -541,6 +587,28 @@ https://heojoon.github.io/english-word-card-game/
 https://heojoon.github.io/english-word-card-game/?v=YYYYMMDD-N
 ```
 
+### Android 테스트 배포
+
+Android 테스트 배포는 GitHub Actions와 GitHub Releases를 사용합니다.
+
+```text
+main branch push
+    ↓
+Android build workflow
+    ↓
+debug APK artifact
+    ↓
+GitHub prerelease
+```
+
+현재 테스트 릴리즈는 `android-v1.0.0-beta.1`입니다.
+
+```text
+https://github.com/heojoon/english-word-card-game/releases/tag/android-v1.0.0-beta.1
+```
+
+Play Store 운영 배포로 전환할 때는 debug APK가 아니라 release signing이 적용된 AAB를 기준 산출물로 사용합니다.
+
 ---
 
 ## 14. 향후 개발 방향
@@ -561,6 +629,8 @@ https://heojoon.github.io/english-word-card-game/?v=YYYYMMDD-N
 - Supabase Auth 기반 개인 계정
 - 스테이지 관리용 관리자 화면
 - 사진에서 단어를 추출해 신규 Stage를 추가하는 관리 흐름
+- Android release signing / Play Store AAB 배포
+- 푸시 알림과 앱 업데이트 안내
 
 ---
 
@@ -586,6 +656,8 @@ Supabase 기록 저장
 랭킹 / 최고 기록 경쟁
    ↓
 상점에서 아바타 또는 현실 보상 구매
+   ↓
+Android APK로 직접 설치 테스트
    ↓
 반복 도전
 ```
