@@ -16,32 +16,66 @@
     shop:'<path d="M3 9h18l-2-6H5L3 9Zm1 1v11h16V10M9 21v-7h6v7"/>'
   };
   const svg = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${paths[name] || paths.aura}</svg>`;
+  const itemArt = item => {
+    if (item.art) return `<img src="${item.art}" alt="${item.name} 아이템 아트">`;
+    if (!item.id.startsWith('dawn-')) return svg(item.icon);
+    const gradientId = `blade-${item.id}`;
+    return `<svg class="crystal-blade" viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="${gradientId}" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="var(--blade-light)"/><stop offset=".48" stop-color="var(--blade-mid)"/><stop offset="1" stop-color="var(--blade-deep)"/>
+        </linearGradient>
+      </defs>
+      <g class="orbit">
+        <circle cx="60" cy="54" r="42"/><path d="M16 54h8M96 54h8M60 10v8M60 90v8"/>
+        <circle class="orbit-gem gem-one" cx="21" cy="38" r="4"/><circle class="orbit-gem gem-two" cx="99" cy="70" r="5"/>
+      </g>
+      <g class="rays"><path d="m60 3 4 13-4 6-4-6 4-13ZM106 37l-11 8-7-1 4-6 14-1ZM15 84l12-6 7 2-5 6-14-2Z"/></g>
+      <g class="blade">
+        <path class="blade-body" fill="url(#${gradientId})" d="M83 12 70 60 55 75 45 65l15-15 23-38Z"/>
+        <path class="blade-facet" d="m83 12-23 38 10 10 13-48ZM60 50l-5 25-10-10 15-15Z"/>
+        <path class="blade-ridge" d="M81 15 61 52 48 65"/>
+        <path class="guard" d="m39 59 9-9 22 22-9 9-5-8-9 5-8-19Z"/>
+        <path class="grip" d="m44 75 7 7-17 24-9-9 19-22Z"/>
+        <path class="pommel" d="m26 94 11 11-7 5-9-9 5-7Z"/>
+        <path class="crystal core" d="m61 58 7 7-6 10-9-9 8-8Z"/>
+        <path class="crystal side-crystal left" d="m42 54-3-12 10 7-7 5Z"/>
+        <path class="crystal side-crystal right" d="m73 72 12 3-8-10-4 7Z"/>
+        <path class="wing wing-left" d="M38 55 19 42l8 19 12 5Z"/>
+        <path class="wing wing-right" d="m73 73 19 13-8-19-12-5Z"/>
+        <circle class="legend-gem" cx="60" cy="65" r="5"/>
+      </g>
+      <g class="sparkles"><path d="m91 24 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5ZM26 72l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4Z"/></g>
+    </svg>`;
+  };
   const items = [
-    {id:'frostblade',name:'서리 결정검',slot:'weapon',filter:'weapon',icon:'sword',rarity:'epic',bonus:'ATK +8',equipped:true,desc:'정답 콤보가 이어질수록 검에 푸른 결정빛이 모여요.'},
-    {id:'guardian',name:'수호자의 갑옷',slot:'body',filter:'armor',icon:'armor',rarity:'rare',bonus:'DEF +11',equipped:true,desc:'모험가의 방어력을 높여 주는 맑은 은빛 갑옷이에요.'},
-    {id:'crown',name:'별빛 왕관',slot:'head',filter:'armor',icon:'crown',rarity:'rare',bonus:'LUK +2',equipped:true,desc:'보물상자에서 더 많은 크리스털을 발견할 행운을 줘요.'},
-    {id:'boots',name:'질풍의 장화',slot:'body',filter:'armor',icon:'boots',rarity:'normal',bonus:'HP +12',equipped:false,desc:'가볍고 튼튼한 장화. 오래 탐험할 수 있도록 체력을 높여요.'},
-    {id:'charm',name:'민트 기억 부적',slot:'aura',filter:'magic',icon:'charm',rarity:'epic',bonus:'MP +9',equipped:false,desc:'새 단어를 기억할 때마다 은은한 민트빛을 내는 부적이에요.'},
-    {id:'cape',name:'용기의 망토',slot:'back',filter:'magic',icon:'cape',rarity:'normal',bonus:'DEF +4',equipped:false,desc:'다음 도전을 향해 나아갈 용기를 북돋아 주는 망토예요.'}
+    {id:'dawn-4',name:'새벽 결정검',slot:'weapon',icon:'sword',rarity:'unique',stars:4,stat:'ATK',value:16,equipped:true,art:'assets/items/equipment/item_dawn_crystal_sword_unique.webp',desc:'수정 날개와 공명환이 펼쳐지는 유일한 형태의 결정검이에요.'},
+    {id:'guardian',name:'수호자의 갑옷',slot:'body',icon:'armor',rarity:'rare',stars:3,stat:'DEF',value:11,equipped:true,art:'assets/items/equipment/item_guardian_crystal_armor_rare.webp',desc:'모험가의 방어력을 높여 주는 맑은 은빛 갑옷이에요.'},
+    {id:'crown',name:'별빛 왕관',slot:'head',icon:'crown',rarity:'legendary',stars:5,stat:'LUK',value:8,equipped:true,art:'assets/items/equipment/item_starlight_crown_legendary.webp',desc:'다섯 별의 축복으로 보물 발견 확률을 크게 높이는 왕관이에요.'},
+    {id:'boots',name:'질풍의 장화',slot:'body',icon:'boots',rarity:'normal',stars:1,stat:'HP',value:12,equipped:false,art:'assets/items/equipment/item_gale_boots_normal.webp',desc:'가볍고 튼튼한 기본 장화. 오래 탐험할 수 있도록 체력을 높여요.'},
+    {id:'charm',name:'민트 기억 부적',slot:'aura',icon:'charm',rarity:'special',stars:2,stat:'MP',value:9,equipped:false,art:'assets/items/equipment/item_mint_memory_charm_special.webp',desc:'새 단어를 기억할 때마다 은은한 민트빛을 내는 특별한 부적이에요.'},
+    {id:'cape',name:'용기의 망토',slot:'back',icon:'cape',rarity:'rare',stars:3,stat:'DEF',value:7,equipped:false,art:'assets/items/equipment/item_courage_cape_rare.webp',desc:'다음 도전을 향해 나아갈 용기를 북돋아 주는 희귀 망토예요.'}
   ];
-  const rarityName = {normal:'일반',rare:'레어',epic:'에픽'};
+  const rarityName = {normal:'일반',special:'스페셜',rare:'레어',unique:'유니크',legendary:'레전더리'};
+  const slotName = {head:'HEAD',body:'BODY',weapon:'WEAPON',back:'BACK',aura:'AURA',pet:'PET'};
   const grid = document.getElementById('inventory-grid');
   const dialog = document.getElementById('item-dialog');
   const content = document.getElementById('dialog-content');
   const toast = document.getElementById('toast');
   let toastTimer;
-  let filter = 'all';
 
   document.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = svg(el.dataset.icon); });
   document.querySelectorAll('[data-nav-icon]').forEach(el => { el.innerHTML = svg(el.dataset.navIcon); });
 
   function renderItems() {
-    grid.innerHTML = items.filter(item => filter === 'all' || item.filter === filter).map(item => `
+    grid.innerHTML = items.map(item => `
       <button class="item-card ${item.equipped ? 'equipped' : ''}" type="button" data-item="${item.id}" data-rarity="${item.rarity}">
-        <span class="item-badge">${item.equipped ? '장착 중' : rarityName[item.rarity]}</span>
-        <span class="item-art">${svg(item.icon)}</span>
+        <span class="item-badge">${rarityName[item.rarity]}</span>
+        ${item.equipped ? '<span class="equipped-badge">장착 중</span>' : ''}
+        <span class="item-art"><i class="art-halo"></i>${itemArt(item)}</span>
+        <span class="star-rating" aria-label="${item.stars}성 등급">${'★'.repeat(item.stars)}</span>
         <h3>${item.name}</h3>
-        <p><span>${item.slot === 'weapon' ? '무기' : item.slot === 'body' ? '방어구' : item.slot === 'head' ? '머리' : item.slot === 'back' ? '등' : '마법'}</span><b>${item.bonus}</b></p>
+        <p><span>능력치</span><b>${item.stat} +${item.value}</b></p>
       </button>`).join('');
   }
 
@@ -50,11 +84,11 @@
       const slot = slotButton.dataset.slot;
       const item = items.find(entry => entry.slot === slot && entry.equipped);
       if (slotButton.classList.contains('locked')) return;
-      slotButton.classList.remove('rare', 'epic', 'empty');
+      slotButton.classList.remove('normal', 'special', 'rare', 'unique', 'legendary', 'empty');
       if (item) {
         slotButton.classList.add(item.rarity);
         slotButton.querySelector(':scope > span').outerHTML = `<span class="slot-icon" data-icon="${item.icon}">${svg(item.icon)}</span>`;
-        slotButton.setAttribute('aria-label', `${slotButton.querySelector('small').textContent} 장비, ${item.name} 장착 중`);
+        slotButton.setAttribute('aria-label', `${slotButton.querySelector('small').textContent} 장비, ${rarityName[item.rarity]} ${item.name} 장착 중`);
       } else {
         slotButton.classList.add('empty');
         slotButton.querySelector(':scope > span').outerHTML = '<span class="plus">＋</span>';
@@ -72,11 +106,12 @@
 
   function showItem(item) {
     content.innerHTML = `
-      <div class="dialog-kicker">${rarityName[item.rarity]} · ${item.slot.toUpperCase()}</div>
-      <div class="dialog-item">${svg(item.icon)}</div>
+      <div class="dialog-kicker">${rarityName[item.rarity]} · ${item.stars} STAR · ${slotName[item.slot]}</div>
+      <div class="dialog-item" data-rarity="${item.rarity}"><i class="art-halo"></i>${itemArt(item)}</div>
+      <div class="dialog-stars" aria-label="${item.stars}성 등급">${'★'.repeat(item.stars)}</div>
       <h2>${item.name}</h2>
       <p class="dialog-desc">${item.desc}</p>
-      <div class="compare"><span>${item.equipped ? '현재 적용 효과' : '장착 시 능력치 변화'}</span><b>${item.bonus}</b></div>
+      <div class="compare"><span>${item.equipped ? '현재 적용 능력치' : '장착 시 능력치'}</span><b>${item.stat} +${item.value}</b></div>
       <button class="equip-button" type="button" data-equip="${item.id}">${item.equipped ? '장착 해제' : '이 장비 장착하기'}</button>`;
     dialog.showModal();
   }
@@ -87,11 +122,7 @@
   document.addEventListener('click', event => {
     const button = event.target.closest('button');
     if (!button) return;
-    if (button.dataset.filter) {
-      filter = button.dataset.filter;
-      document.querySelectorAll('[data-filter]').forEach(tab => tab.setAttribute('aria-selected', String(tab === button)));
-      renderItems();
-    } else if (button.dataset.item) {
+    if (button.dataset.item) {
       showItem(items.find(item => item.id === button.dataset.item));
     } else if (button.dataset.slot) {
       const equipped = items.find(item => item.slot === button.dataset.slot && item.equipped);

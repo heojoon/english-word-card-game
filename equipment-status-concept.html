@@ -10,8 +10,8 @@
 </head>
 <body>
   <div class="concept-label" aria-hidden="true">
-    <span>CRYSTAL QUEST · SCREEN CONCEPT 01</span>
-    <span>EQUIPMENT &amp; STATUS</span>
+    <span>CRYSTAL QUEST · ITEM COLLECTION</span>
+    <span>RARITY ON EVERY ITEM</span>
   </div>
 
   <div class="phone-shell">
@@ -39,9 +39,9 @@
         <div class="stat-rail" aria-label="캐릭터 전투 능력치">
           <div><span>HP</span><strong>120</strong><i style="--value:84%"></i></div>
           <div><span>MP</span><strong>48</strong><i style="--value:52%"></i></div>
-          <div><span>ATK</span><strong>36</strong><small class="up">+8</small></div>
+          <div><span>ATK</span><strong>36</strong><small class="up">+16</small></div>
           <div><span>DEF</span><strong>28</strong><small class="up">+11</small></div>
-          <div><span>LUK</span><strong>12</strong><small>+2</small></div>
+          <div><span>LUK</span><strong>12</strong><small class="up">+8</small></div>
         </div>
 
         <div class="character-stage">
@@ -57,7 +57,7 @@
           <button class="gear-slot rare" type="button" data-slot="body" aria-label="몸 장비, 수호자의 갑옷 장착 중">
             <span class="slot-icon" data-icon="armor"></span><small>몸</small>
           </button>
-          <button class="gear-slot epic" type="button" data-slot="weapon" aria-label="무기 장비, 서리검 장착 중">
+          <button class="gear-slot unique" type="button" data-slot="weapon" aria-label="무기 장비, 유니크 새벽 결정검 장착 중">
             <span class="slot-icon" data-icon="sword"></span><small>무기</small>
           </button>
           <button class="gear-slot empty" type="button" data-slot="back" aria-label="등 장비 비어 있음">
@@ -83,14 +83,8 @@
 
       <section class="inventory" aria-labelledby="inventory-title">
         <div class="section-title">
-          <div><span>COLLECTION</span><h2 id="inventory-title">내 장비함 <small>6</small></h2></div>
+          <div><span>MY COLLECTION</span><h2 id="inventory-title">내 장비함 <small>6</small></h2></div>
           <button type="button" data-toast="크리스털 상점으로 이동해요">상점 가기 <b>›</b></button>
-        </div>
-        <div class="filter-tabs" role="tablist" aria-label="장비 종류">
-          <button type="button" role="tab" aria-selected="true" data-filter="all">전체</button>
-          <button type="button" role="tab" aria-selected="false" data-filter="weapon">무기</button>
-          <button type="button" role="tab" aria-selected="false" data-filter="armor">방어구</button>
-          <button type="button" role="tab" aria-selected="false" data-filter="magic">마법</button>
         </div>
         <div class="inventory-grid" id="inventory-grid"></div>
       </section>
