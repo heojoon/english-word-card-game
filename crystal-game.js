@@ -156,11 +156,13 @@
     document.body.dataset.screen=page;
     $('balance').textContent=selectedCharacter?num(selectedCharacter.coins):'—';
     const active=['stages','battle','result'].includes(page)?'dungeon':page;
-    $('nav').innerHTML=[['home','홈'],['gear','장비'],['dungeon','던전'],['shop','상점']].map(([id,label])=>`<button data-action="nav" data-page="${id}" ${active===id?'aria-current="page"':''}>${icon(id)}<span>${label}</span></button>`).join('');
+    const nav=$('nav');
+    nav.hidden=page==='battle';
+    nav.innerHTML=[['home','홈'],['dungeon','던전'],['gear','장비'],['shop','상점']].map(([id,label])=>`<button data-action="nav" data-page="${id}" ${active===id?'aria-current="page"':''}>${icon(id)}<span>${label}</span></button>`).join('');
     const renderer={home:renderHome,gear:renderGear,shop:renderShop,dungeon:renderDungeon,stages:renderStages,battle:renderBattle,result:renderResult}[page]||renderHome;
     $('screen').innerHTML=renderer();
   }
-  function go(target){page=target;render();$('screen').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});}
+  function go(target){page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});}
   function navigate(target){if(page==='battle'&&run&&!run.done){pause();modal(`<div class="eyebrow">PAUSED</div><h2>이번 도전을 마칠까요?</h2><p>지금까지 맞힌 문제의 보상과 기록은 저장됩니다.</p><div class="actions"><button class="secondary" data-action="resume">계속하기</button><button class="primary" data-action="leave" data-page="${target}">저장하고 이동</button></div>`);return;}go(target);}
   function profileBar(){return `<div class="profile-switch">${players.map(name=>`<button class="profile-chip ${name===player?'active':''}" data-action="player" data-player="${esc(name)}">${esc(name)}</button>`).join('')}<button class="profile-chip add" data-action="add-player">＋ 유저</button></div>`;}
   function renderHome(){
