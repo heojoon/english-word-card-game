@@ -40,6 +40,8 @@ npm run android:bundle
 
 네이티브 앱에서는 다음 동작이 추가됩니다.
 
+- 앱 시작 시 배포된 최신 스테이지 카탈로그를 확인하며, 실패하면 APK에 포함된 기본 스테이지로 실행
+- Supabase에서 받은 아이템 정보와 GitHub Pages의 최신 아이템 이미지를 사용하므로 콘텐츠 업데이트에 APK 재설치 불필요
 - Android 물리 뒤로가기: 모달 닫기 → 전투 일시정지 → 홈 이동 → 앱 종료
 - 앱이 백그라운드로 이동할 때 전투 타이머 자동 일시정지
 - 정답, 오답, 보물 획득 시 네이티브 햅틱 피드백
@@ -260,6 +262,21 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 
 새 스테이지 추가 시 동일한 구조로 `window.QUIZ_STAGES`에 등록하면 게임과 랭킹 UI가 자동으로 스테이지를 인식합니다.
 
+### APK 재설치 없는 콘텐츠 배포
+
+스테이지 파일을 추가하거나 수정한 뒤 아래 명령으로 원격 카탈로그를 생성하고 `main`에 배포합니다.
+
+```bash
+npm run build:content
+git add stages.js stage*.js content/catalog.json
+git commit -m "feat: update game content"
+git push origin main
+```
+
+자동 업데이트 기능이 포함된 APK를 한 번 설치한 이후에는 앱을 다시 열 때 최신 `content/catalog.json`을 확인합니다. 네트워크 오류, 잘못된 형식, 5초 초과가 발생하면 APK에 포함된 스테이지로 안전하게 되돌아갑니다.
+
+아이템 이름·가격·능력치·활성 상태는 기존처럼 Supabase `shop_items`를 배포하면 바로 반영됩니다. `art_path`가 `assets/items/...` 형태인 아이템 이미지는 Android 앱에서 GitHub Pages의 최신 파일을 사용하므로, 이미지 파일을 같은 경로로 `main`에 배포하면 APK 교체 없이 갱신됩니다. 외부 HTTPS 이미지 URL도 그대로 사용할 수 있습니다.
+
 ---
 
 ## 7. 클리어 타임 / 랭킹
@@ -291,6 +308,7 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 Browser
  ├─ index.html
  ├─ stages.js / stage6.js / stage7.js
+ ├─ remote-content.js / content/catalog.json
  ├─ crystal-game.js
  ├─ mobile/native-entry.js
  ├─ native-bridge.js
@@ -355,6 +373,9 @@ PostgreSQL
 ├── stages.js
 ├── stage6.js
 ├── stage7.js
+├── remote-content.js
+├── content/
+│   └── catalog.json
 ├── assets/
 │   └── avatars/
 │       ├── warrior.webp
@@ -391,6 +412,12 @@ PostgreSQL
 
 - 영단어 데이터
 - Stage 메타데이터
+
+### `remote-content.js`, `content/catalog.json`
+
+- Android 앱 시작 시 최신 스테이지 카탈로그 확인
+- 형식 검증 후 APK 기본 스테이지를 원격 데이터로 교체·추가
+- 원격 콘텐츠 실패 시 번들 데이터로 자동 복구
 
 ### `avatar-art.js`
 

@@ -1,4 +1,4 @@
-(() => {
+(async () => {
   'use strict';
 
   const $ = id => document.getElementById(id);
@@ -9,6 +9,7 @@
   const useLocalDb = params.get('db') === 'local' || (params.get('db') !== 'remote' && localHost && !nativeApp);
   const DB_URL = useLocalDb ? 'http://127.0.0.1:54321' : 'https://uobagmggryhsqlpxhfob.supabase.co';
   const DB_KEY = useLocalDb ? 'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH' : 'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
+  await (window.WORDORIA_CONTENT_READY || Promise.resolve());
   const stages = window.QUIZ_STAGES || {};
   const stageKeys = Object.keys(stages);
   const defaultPlayers = ['율이', '아빠', '손님'];
@@ -40,8 +41,14 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const num = value => Number(value || 0).toLocaleString('ko-KR');
   const rarityNames = {normal:'일반',special:'스페셜',rare:'레어',unique:'유니크',legendary:'레전더리'};
+  const deployedAssetUrl = path => {
+    if (!nativeApp || /^(?:https?:|data:|blob:)/i.test(path)) return path;
+    const cleanPath = String(path).replace(/^\/+/, '');
+    const version = encodeURIComponent(window.WORDORIA_CONTENT_VERSION || 'latest');
+    return `${window.WORDORIA_CONTENT_ORIGIN}/${cleanPath}${cleanPath.includes('?') ? '&' : '?'}content=${version}`;
+  };
   const itemArt = item => item?.art_path
-    ? `<img src="${esc(item.art_path)}" alt="${esc(item.name)} 아이템 아트">`
+    ? `<img src="${esc(deployedAssetUrl(item.art_path))}" data-local-art="${esc(item.art_path)}" alt="${esc(item.name)} 아이템 아트">`
     : `<span class="item-icon-text" aria-hidden="true">${esc(item?.icon||'◆')}</span>`;
   const shuffle = input => { const a=input.slice(); for(let i=a.length-1;i;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
 
@@ -239,6 +246,13 @@
     else if(action==='answer')answer(Number(b.dataset.index));else if(action==='pause'){pause();modal('<div class="eyebrow">PAUSED</div><h2>잠깐의 휴식</h2><p>시간도 함께 멈췄어요. 준비되면 다시 시작하세요.</p><button class="primary" data-action="resume">계속하기</button><button class="text-btn" data-action="leave" data-page="dungeon">도전을 저장하고 던전으로</button>');}else if(action==='resume')resume();else if(action==='leave'){closeDialog();await finishBattle(false,'leave');go(b.dataset.page);}
     else if(action==='speak')speak(run.question.entry[0]);else if(action==='chest')await claimChest(b);else if(action==='records')showRecords();else if(action==='stats')showStats();else if(action==='requests')showRequests();else if(action==='rankings')showRankings();else if(action==='wallet')modal(`<div class="eyebrow">CRYSTAL WALLET</div><h2>◆ ${num(selectedCharacter?.coins)}</h2><p>단어를 맞히고 모은 모험의 빛이에요.<br>아바타 장비와 보호자 보상에 사용할 수 있습니다.</p>`);
   });
+  document.addEventListener('error', event => {
+    const image = event.target;
+    if (!(image instanceof HTMLImageElement) || !image.dataset.localArt) return;
+    const fallback = image.dataset.localArt;
+    delete image.dataset.localArt;
+    if (image.getAttribute('src') !== fallback) image.src = fallback;
+  }, true);
   $('dialog').addEventListener('cancel',event=>{event.preventDefault();closeDialog();if(page==='battle'&&run?.paused)resume();});
   document.addEventListener('keydown',event=>{if(page==='battle'&&!$('dialog').open&&/^[1-4]$/.test(event.key)){event.preventDefault();answer(Number(event.key)-1);}if(event.key==='Enter'&&$('player-name'))createPlayer();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&page==='battle'&&run&&!run.done&&!run.paused){pause();modal('<h2>모험을 잠시 멈췄어요</h2><p>다시 준비되면 계속할 수 있어요.</p><button class="primary" data-action="resume">계속하기</button>');}});

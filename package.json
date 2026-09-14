@@ -4,7 +4,8 @@
   "private": true,
   "description": "Wordoria Crystal Quest hybrid Android game",
   "scripts": {
-    "build": "npm run build:native && node scripts/build-web.mjs",
+    "build": "npm run build:content && npm run build:native && node scripts/build-web.mjs",
+    "build:content": "node scripts/generate-content-catalog.mjs",
     "build:native": "esbuild mobile/native-entry.js --bundle --format=iife --minify --outfile=native-bridge.js",
     "android:sync": "npm run build && cap sync android",
     "android:open": "npm run android:sync && cap open android",

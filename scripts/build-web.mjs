@@ -16,6 +16,7 @@ const files = [
   'stages.js',
   'stage6.js',
   'stage7.js',
+  'remote-content.js',
   'avatar-art.js'
 ];
 
@@ -23,4 +24,5 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 await Promise.all(files.map(file => cp(new URL(file, root), new URL(file, dist))));
 await cp(new URL('assets/', root), new URL('assets/', dist), { recursive: true });
+await cp(new URL('content/', root), new URL('content/', dist), { recursive: true });
 console.log(`Prepared ${join('dist', '/')} for Capacitor.`);
