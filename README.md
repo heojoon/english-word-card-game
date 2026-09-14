@@ -53,7 +53,7 @@ npm run android:bundle
 
 - 홈 / 장비 / 던전 / 전투 / 결과 / 상점의 모바일 우선 화면 전환
 - Supabase 플레이어, 캐릭터, 코인, 인벤토리, 보상 신청, 기록 연동
-- Stage 1~6 실제 단어 전체를 사용하는 양방향 4지선다 전투
+- Stage 1~7 실제 단어 전체를 사용하는 양방향 4지선다 전투
 - 직업 특성, 슬롯별 장비, 클리어 보물상자, 발음, 일시정지, 키보드 입력
 - 로컬 DB 없이 UI를 체험할 때는 `/?demo=1` 사용
 
@@ -238,7 +238,7 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 
 ## 6. 스테이지 구성
 
-현재 Stage 1 ~ Stage 6까지 구현되어 있습니다.
+현재 Stage 1 ~ Stage 7까지 구현되어 있습니다.
 
 | Stage | 구성 | 문제 수 |
 | --- | --- | ---: |
@@ -248,6 +248,7 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 | Stage 4 | Day 14 + Unit Words | 54 |
 | Stage 5 | Day 15 + Unit 02 | 55 |
 | Stage 6 | Day 15 | 30 |
+| Stage 7 | Day 02 (031~060) | 30 |
 
 단어 데이터 형식은 다음과 같습니다.
 
@@ -255,7 +256,7 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 ['declare', '동', '선언하다, 표명하다']
 ```
 
-기본 스테이지 데이터는 `stages.js`, Stage 6 데이터는 `stage6.js`에 분리되어 있습니다.
+기본 스테이지 데이터는 `stages.js`, Stage 6~7 데이터는 각각 `stage6.js`, `stage7.js`에 분리되어 있습니다.
 
 새 스테이지 추가 시 동일한 구조로 `window.QUIZ_STAGES`에 등록하면 게임과 랭킹 UI가 자동으로 스테이지를 인식합니다.
 
@@ -289,7 +290,7 @@ GAME OVER가 되어도 종료 전까지 맞힌 문제의 **정답 코인 + 콤�
 ```text
 Browser
  ├─ index.html
- ├─ stages.js / stage6.js
+ ├─ stages.js / stage6.js / stage7.js
  ├─ crystal-game.js
  ├─ mobile/native-entry.js
  ├─ native-bridge.js
@@ -353,6 +354,7 @@ PostgreSQL
 ├── playable-preview.css
 ├── stages.js
 ├── stage6.js
+├── stage7.js
 ├── assets/
 │   └── avatars/
 │       ├── warrior.webp
@@ -385,7 +387,7 @@ PostgreSQL
 - 직업 특성 / 보물상자
 - 슬롯별 장비 외형
 
-### `stages.js`, `stage6.js`
+### `stages.js`, `stage6.js`, `stage7.js`
 
 - 영단어 데이터
 - Stage 메타데이터

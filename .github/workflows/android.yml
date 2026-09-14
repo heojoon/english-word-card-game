@@ -20,6 +20,7 @@ on:
       - 'playable-preview.js'
       - 'stages.js'
       - 'stage6.js'
+      - 'stage7.js'
       - 'avatar-art.js'
       - 'assets/**'
       - '.github/workflows/android.yml'

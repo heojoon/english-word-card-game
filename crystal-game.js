@@ -33,7 +33,7 @@
   const worlds = [
     {name:'속삭이는 숲',sub:'기초 단어 · 초록 정령의 산책길',tag:'CHAPTER 01',keys:stageKeys.slice(0,2)},
     {name:'서리 수정 동굴',sub:'동사와 표현 · 푸른 수정의 비밀',tag:'CHAPTER 02',keys:stageKeys.slice(2,4)},
-    {name:'별빛 마법 도서관',sub:'도전 단어 · 잃어버린 마법의 기록',tag:'CHAPTER 03',keys:stageKeys.slice(4,6)}
+    {name:'별빛 마법 도서관',sub:'도전 단어 · 잃어버린 마법의 기록',tag:'CHAPTER 03',keys:stageKeys.slice(4)}
   ];
   const legacyVariant = {warrior:'male',mage:'male',pugilist:'female',ranger:'female'};
   const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] || icons.aura}</svg>`;

@@ -15,6 +15,7 @@ const files = [
   'native-bridge.js',
   'stages.js',
   'stage6.js',
+  'stage7.js',
   'avatar-art.js'
 ];
 
