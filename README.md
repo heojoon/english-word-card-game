@@ -7,7 +7,7 @@
 - 플레이: https://heojoon.github.io/english-word-card-game/
 - Repository: https://github.com/heojoon/english-word-card-game
 - Frontend: GitHub Pages 정적 웹앱
-- Android 테스트 APK: https://github.com/heojoon/english-word-card-game/releases/tag/android-v1.0.0-beta.2
+- Android 테스트 APK: https://github.com/heojoon/english-word-card-game/releases/tag/android-v1.0.2-beta.3
 - Backend / DB: Supabase
 
 ### Android 하이브리드 앱
@@ -31,9 +31,9 @@ npm run android:bundle
 
 현재 공개 테스트용 APK:
 
-- Release: https://github.com/heojoon/english-word-card-game/releases/tag/android-v1.0.0-beta.2
-- Direct APK: https://github.com/heojoon/english-word-card-game/releases/download/android-v1.0.0-beta.2/app-debug.apk
-- SHA-256: `020d2c3c51d6a71857164fd3085ef709ca15e9eec683709311a2f8f9be71164d`
+- Release: https://github.com/heojoon/english-word-card-game/releases/tag/android-v1.0.2-beta.3
+- Direct APK: https://github.com/heojoon/english-word-card-game/releases/download/android-v1.0.2-beta.3/app-debug.apk
+- SHA-256: `6c152481e9b8183b3eb6d2ebdfb4f92fb4ee336007745110628f47ab3d7cde3e`
 
 이 APK는 debug signing으로 만든 직접 설치/테스트용 빌드입니다. Play Store 배포에는 release keystore, 서명 설정, AAB 생성, Play Console 등록이 별도로 필요합니다.
 
