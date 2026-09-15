@@ -23,7 +23,8 @@
     island:'<path d="m2 15 10-13 10 13-10 8-10-8Zm0 0h20M8 7l4 3 4-3m-4 8v8"/>', sound:'<path d="M4 9h4l5-5v16l-5-5H4V9Zm12-2c4 3 4 7 0 10m3-13c6 5 6 11 0 16"/>',
     pause:'<path d="M8 5v14m8-14v14"/>', trophy:'<path d="M7 3h10v6c0 7-10 7-10 0V3Zm0 2H3v4c0 3 4 3 4 3m10-7h4v4c0 3-4 3-4 3m-5 3v6m-4 0h8"/>',
     gift:'<path d="M3 9h18v5H3V9Zm2 5v7h14v-7M12 9v12M12 9C0 8 7-3 12 9Zm0 0c12-1 5-12 0 0Z"/>',
-    armor:'<path d="m8 3-5 4 3 5 2-1v10h8V11l2 1 3-5-5-4c0 4-8 4-8 0Z"/><path d="M12 8v13"/>'
+    armor:'<path d="m8 3-5 4 3 5 2-1v10h8V11l2 1 3-5-5-4c0 4-8 4-8 0Z"/><path d="M12 8v13"/>',
+    worldAdd:'<path d="M3 15 11 5l8 10-8 6-8-6Z"/><path d="M3 15h16M8 9l3 3 3-3M11 15v6M18 3v6M15 6h6"/>'
   };
   const classDefs = {
     warrior:{label:'전사',title:'CRYSTAL GUARDIAN',trait:'강인함 · 가끔 제한시간 +1초',paths:{male:'warrior.webp',female:'variants/warrior-female.webp'}},
@@ -154,7 +155,9 @@
 
   function render(){
     document.body.dataset.screen=page;
-    $('balance').textContent=selectedCharacter?num(selectedCharacter.coins):'—';
+    $('topbar-action').innerHTML=page==='dungeon'
+      ? `<a class="world-create-link" href="map-creator.html" aria-label="월드 만들기" title="월드 만들기">${icon('worldAdd')}</a>`
+      : `<button class="balance" data-action="wallet" aria-label="크리스털 지갑">◆ <span id="balance">${selectedCharacter?num(selectedCharacter.coins):'—'}</span></button>`;
     const active=['stages','battle','result'].includes(page)?'dungeon':page;
     const nav=$('nav');
     nav.hidden=page==='battle';

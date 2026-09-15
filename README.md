@@ -557,7 +557,7 @@ active
 
 브라우저에는 공개 사용을 전제로 하는 publishable key만 포함되어 있습니다.
 
-다만 현재 버전은 가족용 프로토타입 성격으로 기본 유저와 직접 추가한 닉네임을 선택하는 구조이며 별도 사용자 로그인 인증은 없습니다.
+다만 현재 게임 플레이 화면은 가족용 프로토타입 성격으로 기본 유저와 직접 추가한 닉네임을 선택하는 구조다. 교사용 `map-creator.html`은 AI 호출 비용과 학습 원본을 보호하기 위해 별도의 Supabase Auth 로그인을 요구한다.
 
 외부 공개 서비스로 확장할 경우 다음 작업이 필요합니다.
 
@@ -566,6 +566,49 @@ active
 - RLS 정책을 `auth.uid()` 기준으로 강화
 - 현실 보상 승인용 보호자/관리자 화면 분리
 - 관리자 전용 상품 등록/수정 권한 구성
+
+### AI 단어장 OCR / 월드 공방
+
+`map-creator.html`에서 Admin 또는 Teacher가 월드를 만들고, 영어 단어와 한글 뜻으로 구성된 단어장 사진을 업로드할 수 있다. 원본은 private `word-source-images` bucket에 임시 저장되고 `process-map-ocr` Edge Function이 OpenAI Responses API로 단어 쌍을 추출한다. 결과는 항상 검수 초안으로 저장되며 제작자가 수정한 뒤 공개한다.
+
+로컬 함수 secret 파일 `supabase/functions/.env`를 만들되 커밋하지 않는다.
+
+```dotenv
+OPENAI_API_KEY=개인_OpenAI_API_키
+OPENAI_VISION_MODEL=gpt-5-mini
+OCR_DAILY_LIMIT=20
+```
+
+로컬 실행:
+
+```bash
+supabase start
+supabase db reset --local
+supabase functions serve process-map-ocr --env-file supabase/functions/.env
+npm run build:creator
+python3 -m http.server 3000
+```
+
+처음 가입한 계정은 안전을 위해 Student로 생성된다. 로컬 Studio SQL Editor에서 승인할 계정만 Teacher로 변경한다.
+
+```sql
+update public.profiles
+set role = 'teacher', updated_at = now()
+where user_id = (
+  select id from auth.users where email = 'teacher@example.com'
+);
+```
+
+원격 배포 시 migration 적용 후 함수와 secret을 별도로 배포한다.
+
+```bash
+supabase db push --linked --dry-run
+supabase db push --linked
+supabase secrets set --env-file supabase/functions/.env --project-ref <project-ref>
+supabase functions deploy process-map-ocr --project-ref <project-ref>
+```
+
+OpenAI 키와 Supabase secret/service-role 키는 브라우저 번들, Android 번들, GitHub Actions 로그에 포함하지 않는다.
 
 ---
 

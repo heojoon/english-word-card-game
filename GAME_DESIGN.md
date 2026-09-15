@@ -1,7 +1,7 @@
 # 판타지 영단어 RPG 게임 기획서
 
-> 문서 버전: v0.4
-> 상태: Phase 1 + Android Hybrid 구현 반영 / Phase 2 설계 기준
+> 문서 버전: v0.5
+> 상태: Phase 1 + Android Hybrid 구현 반영 / Phase 2 및 사용자 제작 월드·맵 설계 기준
 > 프로젝트: `heojoon/english-word-card-game`
 > 확정 아트 방향: **01 · 크리스털 퀘스트** (`ART_DIRECTION.md`)
 
@@ -204,6 +204,27 @@ Phase 2 MVP:
 - 캐릭터가 저장된 유저는 다른 브라우저에서도 Supabase 데이터를 통해 발견된다.
 - 잘못된 이름과 중복 이름은 클라이언트와 DB 양쪽에서 거부된다.
 
+### 3.5 역할 및 콘텐츠 권한
+
+Phase 2 인증 계정에는 하나의 역할을 부여한다.
+
+| 기능 | Admin | Teacher | Student |
+|---|:---:|:---:|:---:|
+| 월드 생성 | 가능 | 가능 | 불가 |
+| 자신의 월드·맵 조회/수정/삭제 | 가능 | 가능 | 불가 |
+| 다른 사용자의 월드·맵 관리 | 가능 | 불가 | 불가 |
+| Public 맵 플레이 | 가능 | 가능 | 가능 |
+| 자신에게 허용된 Private 맵 플레이 | 가능 | 가능 | 가능 |
+| 전체 사용자 및 권한 관리 | 가능 | 불가 | 불가 |
+
+권한 원칙:
+
+- Admin은 모든 월드와 맵을 조회하고 운영 목적으로 관리할 수 있다.
+- Teacher는 자신이 만든 월드와 그 안의 맵만 생성·관리할 수 있다.
+- Student는 월드와 맵을 만들 수 없고, 접근 권한이 있는 맵만 플레이할 수 있다.
+- 역할과 소유권은 화면 숨김만으로 처리하지 않고 서버 권한과 RLS에서 함께 검증한다.
+- Private 맵 접근 권한은 인증 사용자의 고유 ID를 기준으로 부여한다. 닉네임은 권한 식별자로 사용하지 않는다.
+
 ---
 
 ## 4. 캐릭터 시스템
@@ -372,21 +393,126 @@ REPEAT   : 다음 몬스터 또는 재도전
 
 서바이벌의 긴장감은 유지하되 실패 전까지 얻은 코인을 보존하여, 한 번의 실수가 전체 학습 성과를 무효화하지 않도록 한다.
 
+### 6.2 월드·맵 제작 루프
+
+Admin과 Teacher의 콘텐츠 제작 흐름은 다음과 같다.
+
+```text
+월드 생성
+→ 월드 안에 맵 생성
+→ 영어 단어장 사진 촬영 또는 업로드
+→ AI OCR 분석
+→ 영어 단어·한글 뜻 쌍 자동 생성
+→ 제작자 검수 및 수정
+→ 총문제 수와 유형별 비율 설정
+→ Public 또는 Private 접근 권한 설정
+→ 미리보기
+→ 공개
+```
+
+사진은 맵의 배경 이미지가 아니라 **학습 문제 원본**으로 사용한다. 맵의 시각 표현은 크리스털 퀘스트의 공통 월드·던전 규칙을 따른다.
+
 ---
 
 ## 7. 문제 시스템
 
-### 7.1 현재 기본 문제 유형
+### 7.1 월드와 맵 구조
 
-현재 프로토타입의 문제 유형을 유지한다.
+- 월드(World)는 제작자가 만든 상위 콘텐츠 묶음이다.
+- 하나의 월드에는 하나 이상의 맵(Map)을 만들 수 있다.
+- 각 맵은 OCR로 생성한 단어 목록, 문제 설정, 접근 권한, 플레이 기록을 가진다.
+- 월드 생성 권한은 Admin과 Teacher에게만 있다.
+- 맵은 반드시 특정 월드 안에서 생성한다.
 
-- 영어 → 한글 뜻
-- 한글 뜻 → 영어
-- 4지선다
-- 문제 순서 랜덤
-- 출제 방향 랜덤
+맵 접근 유형:
 
-### 7.2 오답 보기 생성
+| 유형 | 접근 기준 |
+|---|---|
+| Public | 로그인한 모든 사용자가 플레이 가능 |
+| Private | 제작자가 등록한 사용자 ID의 계정만 플레이 가능 |
+
+Admin은 운영을 위해 모든 맵에 접근할 수 있다. Teacher도 다른 제작자의 Private 맵을 자동으로 열람할 수 없으며, 명시적으로 접근 대상에 포함된 경우에만 플레이할 수 있다.
+
+### 7.2 사진 OCR 기반 맵 생성
+
+맵의 문제 원본은 `영어 단어 : 한글 뜻` 구조의 단어장 사진이어야 한다.
+
+지원 예:
+
+```text
+survive : 살아남다
+investigate : 조사하다
+repeat : 반복하다
+```
+
+생성 절차:
+
+1. 제작자가 카메라로 촬영하거나 기기의 사진을 업로드한다.
+2. AI가 OCR로 사진의 텍스트와 행 구조를 분석한다.
+3. AI가 각 행을 영어 단어와 한글 뜻의 쌍으로 변환한다.
+4. 인식 결과, 누락 항목, 중복 항목, 신뢰도가 낮은 항목을 표시한다.
+5. 제작자가 단어와 뜻을 추가·수정·삭제하고 최종 승인한다.
+6. 승인된 단어 목록으로 문제를 생성한다.
+
+OCR 결과는 자동으로 공개하지 않는다. 제작자 검수와 미리보기를 통과한 맵만 공개할 수 있다. 영단어와 한글 뜻의 쌍을 만들 수 없는 이미지에는 재촬영 또는 직접 수정을 안내한다.
+
+### 7.3 맵 문제 유형
+
+맵 제작자는 다음 세 유형을 조합한다.
+
+#### Type A — 단답형 4지선다
+
+- 영어 단어를 보고 한글 뜻 고르기
+- 한글 뜻을 보고 영어 단어 고르기
+- 한 문제에 정답 1개와 오답 3개를 표시한다.
+- 두 출제 방향을 모두 지원하며, 문제 생성 시 출제 방향을 무작위로 섞는다.
+
+#### Type B — 단어 연결
+
+- 한 화면에 영어 단어 5개와 한글 뜻 5개를 표시한다.
+- 사용자는 서로 맞는 영어 단어와 한글 뜻을 연결한다.
+- 한 화면의 5쌍은 총문제 수에서 **5문제**로 계산한다.
+- Type B에 배정된 문제 수는 5개 단위로 구성하는 것을 기본으로 하며, 설정 UI에서 유효한 수가 되도록 자동 보정한다.
+
+#### Type C — 빠진 알파벳 넣기
+
+- 한글 뜻과 일부 알파벳이 빠진 영어 단어를 함께 표시한다.
+- 영어 단어 중간의 알파벳 1개 또는 2개를 빈칸으로 만든다.
+- 사용자는 4개의 보기 중 빈칸에 들어갈 정답을 고른다.
+- 알파벳 2개가 빠진 경우 보기는 두 글자의 순서를 포함한 하나의 답으로 표시한다.
+
+### 7.4 총문제 수와 유형 분배
+
+- 총문제 수는 제작자가 양의 정수로 직접 입력한다.
+- Type A/B/C의 분배 비율은 하나의 분할 게이지 바를 움직여 설정한다.
+- 세 유형의 비율 합계는 항상 100%가 되며, 한 유형을 0%로 설정할 수 있다.
+- 게이지 변경 즉시 각 유형에 배정될 실제 문제 수를 함께 보여 준다.
+- 정수 환산 과정에서 생기는 나머지는 총문제 수가 정확히 일치하도록 자동 배분한다.
+- Type B는 5문제 단위 제약을 먼저 만족시키고, 남는 문제는 Type A 또는 C에 배분한다.
+
+예:
+
+```text
+총문제 수: 30
+게이지: A 40% / B 30% / C 30%
+실제 배정: A 12 / B 10 / C 8
+```
+
+위 예시는 Type B를 5문제 단위로 맞춘 결과이며, UI에는 비율과 실제 배정 수를 항상 함께 표시한다.
+
+### 7.5 단어 수보다 총문제 수가 많은 경우
+
+생성된 맵의 고유 단어가 30개인데 총문제 수를 30개보다 크게 설정할 수 있다. 이 경우 고유 단어 목록을 모두 한 번씩 사용한 뒤 단어를 다시 섞어 중복 출제한다.
+
+반복 출제 원칙:
+
+- 가능한 한 모든 고유 단어를 한 차례 사용한 뒤 다음 반복 주기로 넘어간다.
+- 같은 단어가 연속으로 출제되지 않도록 한다.
+- 같은 단어라도 반복 주기에서 다른 문제 유형이나 출제 방향으로 나올 수 있다.
+- Type B 한 화면 안에는 같은 단어를 중복 배치하지 않는다.
+- 반복 여부와 예상 반복 횟수를 맵 공개 전 제작자에게 표시한다.
+
+### 7.6 오답 보기 생성
 
 오답 보기는 가능한 한 다음 조건을 우선한다.
 
@@ -395,7 +521,9 @@ REPEAT   : 다음 몬스터 또는 재도전
 - 비슷한 단어 길이
 - 의미가 헷갈릴 수 있는 단어
 
-### 7.3 품사 표시
+OCR로 승인된 같은 맵의 단어 목록을 우선 후보군으로 사용한다. 4지선다를 구성할 만큼 검수된 후보가 부족하면 맵 공개 전에 보강이 필요하다고 안내한다.
+
+### 7.7 품사 표시
 
 뜻 보기에는 다음과 같이 품사를 표시한다.
 
@@ -407,12 +535,10 @@ REPEAT   : 다음 몬스터 또는 재도전
 [숙어] 숙어 뜻
 ```
 
-### 7.4 향후 문제 유형
+### 7.8 향후 문제 유형
 
 추후 다음 문제 타입 추가:
 
-- 빈칸 채우기
-- 철자 맞추기
 - 듣고 맞추기
 - 문장 속 의미
 - 유의어
@@ -1097,6 +1223,8 @@ Word Dungeon
 
 ## 22. 전체 화면 흐름
 
+플레이어 흐름:
+
 ```text
 LOGIN
  │
@@ -1140,6 +1268,40 @@ CHARACTER STATUS
         CHARACTER HOME
 ```
 
+Admin/Teacher 제작 흐름:
+
+```text
+LOGIN
+  │
+  ▼
+CREATOR HOME
+  │
+  ├── WORLD CREATE
+  │      │
+  │      ▼
+  │    MAP CREATE
+  │      │
+  │      ▼
+  │    PHOTO CAPTURE / UPLOAD
+  │      │
+  │      ▼
+  │    AI OCR ANALYSIS
+  │      │
+  │      ▼
+  │    WORD PAIR REVIEW
+  │      │
+  │      ▼
+  │    QUESTION COUNT + TYPE RATIO
+  │      │
+  │      ▼
+  │    PUBLIC / PRIVATE ACCESS
+  │      │
+  │      ▼
+  │    PREVIEW → PUBLISH
+  │
+  └── MY WORLDS / MAPS
+```
+
 ---
 
 ## 23. 데이터베이스 설계 방향
@@ -1164,6 +1326,7 @@ reward_redemptions
 ```text
 users / auth.users
 profiles
+user_roles
 
 characters
 character_stats
@@ -1175,6 +1338,15 @@ stages
 stage_words
 monsters
 dungeons
+
+worlds
+maps
+map_access_grants
+map_source_images
+ocr_jobs
+map_words
+map_quiz_configs
+map_quiz_type_allocations
 
 game_sessions
 game_answers
@@ -1193,6 +1365,30 @@ user_achievements
 class_balance_config
 game_balance_config
 ```
+
+사용자 제작 콘텐츠의 핵심 관계:
+
+```text
+profiles 1 ── N worlds
+worlds   1 ── N maps
+maps     1 ── N map_source_images
+maps     1 ── N map_words
+maps     1 ── 1 map_quiz_configs
+maps     1 ── N map_access_grants
+maps     1 ── N game_sessions
+```
+
+주요 상태값:
+
+- `worlds.owner_user_id`: 월드 제작자
+- `maps.visibility`: `public` 또는 `private`
+- `maps.status`: `draft`, `processing`, `review`, `published`, `archived`
+- `map_access_grants.user_id`: Private 맵 접근 허용 사용자
+- `ocr_jobs.status`: `queued`, `processing`, `succeeded`, `failed`
+- `map_words.ocr_confidence`: OCR 인식 신뢰도
+- `map_words.review_status`: `pending`, `approved`, `rejected`
+- `map_quiz_configs.total_question_count`: 직접 입력한 총문제 수
+- `map_quiz_type_allocations`: A/B/C 비율과 실제 배정 문제 수
 
 ### 23.1 코인 원장
 
@@ -1248,6 +1444,9 @@ supabase migration new <change_name>
 서버에서 검증/계산해야 하는 항목:
 
 - 사용자 인증
+- 사용자 역할과 월드·맵 소유권
+- Public/Private 맵 접근 권한
+- OCR 원본 사진과 생성 결과 접근 권한
 - 문제 정답 여부
 - 획득 Coin
 - Combo Bonus
@@ -1273,6 +1472,8 @@ level = 99;
 - Supabase RPC 또는 Edge Function
 - 서버 시드 기반 랜덤
 - RLS
+- Admin/Teacher/Student 역할 기반 정책
+- Private 맵 사용자 ID 허용 목록 검증
 - 게임 세션 ID
 - 서버 측 정답 검증
 - 코인 지급 idempotency
@@ -1287,6 +1488,10 @@ level = 99;
 
 ### 콘텐츠
 
+- 전체 월드 및 맵 조회·관리
+- Teacher가 만든 콘텐츠의 운영 검수 및 비공개 전환
+- OCR 처리 상태와 실패 내역 확인
+- OCR 원본·인식 결과·제작자 수정 이력 확인
 - 단어 등록
 - 단어 수정
 - CSV/Excel 업로드
@@ -1315,10 +1520,23 @@ level = 99;
 ### 사용자
 
 - 계정 조회
+- Admin/Teacher/Student 역할 부여 및 변경
 - 캐릭터 조회
 - Coin 조정
 - 보상 승인
 - 부정 플레이 확인
+
+Teacher에게는 별도의 제작자 화면을 제공한다.
+
+- 자신의 월드 생성·수정·삭제
+- 자신의 월드 안에서 맵 생성·수정·삭제
+- 단어장 사진 촬영 또는 업로드
+- OCR 결과 검수 및 수정
+- 총문제 수 입력
+- A/B/C 유형 비율 게이지 설정
+- Public/Private 설정 및 Private 사용자 ID 관리
+- 맵 미리보기, 공개, 공개 중지
+- 자신의 맵별 플레이 및 학습 결과 확인
 
 ---
 
@@ -1347,6 +1565,27 @@ Dungeon 2
 - CSV 업로드
 - Excel 업로드
 - 교재/학년별 일괄 등록
+
+Admin과 Teacher가 만드는 사용자 제작 콘텐츠는 다음 구조를 사용한다.
+
+```text
+World
+ ├ Map A — OCR 단어 목록 / 퀴즈 설정 / 접근 권한
+ ├ Map B — OCR 단어 목록 / 퀴즈 설정 / 접근 권한
+ └ Map C — OCR 단어 목록 / 퀴즈 설정 / 접근 권한
+```
+
+공개 전 검증 조건:
+
+- OCR 처리 완료
+- 영어 단어와 한글 뜻 쌍에 미검수 항목 없음
+- 총문제 수가 1 이상
+- A/B/C 비율 합계가 100%
+- 실제 배정 문제 수 합계가 총문제 수와 일치
+- Type A 사용 시 4지선다 후보 구성 가능
+- Type B 사용 시 한 화면에 서로 다른 단어 5개 구성 가능
+- Private 맵은 접근 허용 사용자 ID가 1명 이상
+- 제작자 미리보기 완료
 
 ---
 
@@ -1410,10 +1649,20 @@ Study = Battle = Progress
 - Coin Ledger
 - Supabase CLI 로컬 개발 환경
 - 버전 관리되는 DB migration 및 개발 seed
+- 월드 공방 전용 Supabase Auth 로그인
+- Admin / Teacher / Student 역할과 제작 권한 RLS
+- Admin / Teacher 월드·맵 초안 생성
+- Private 단어장 사진 임시 업로드
+- OpenAI 이미지 입력 기반 OCR Edge Function
+- OCR 작업 상태와 실패 재시도 기반
+- 영어·한글 단어 쌍 검수·수정 화면
+- 총문제 수 입력 및 A/B/C 비율 게이지
+- Public / Private 맵 공개 설정
+- 공개 시 임시 원본 사진 삭제
 
 현재 프로토타입에는 아직 없는 주요 기능:
 
-- 실제 사용자 로그인
+- 게임 플레이 화면 전체의 실제 사용자 로그인 전환
 - 사용자 개인 비밀번호
 - 도적 직업
 - Level / EXP
@@ -1430,6 +1679,7 @@ Study = Battle = Progress
 - 부모 계정
 - 관리자 페이지
 - 서버 기반 완전한 Anti-Cheat
+- 공개된 사용자 제작 맵을 실제 A/B/C 전투 플레이로 실행하는 런타임
 
 ---
 
@@ -1507,6 +1757,23 @@ Achievements
 Pets
 Advanced Shop
 Character Customization
+```
+
+### Phase 3.5 — User-Created Learning Worlds
+
+```text
+Admin / Teacher / Student Role
+World Create / Manage
+Map Create / Manage
+Vocabulary Photo Capture / Upload
+AI OCR Processing
+Word Pair Review / Correction
+Total Question Count Input
+A/B/C Ratio Gauge
+Duplicate Question Scheduling
+Public / Private Map Access
+Creator Preview / Publish
+Map Learning Analytics
 ```
 
 ### Phase 4 — Commercial
@@ -1712,6 +1979,10 @@ BOSS DEFEATED
    - Unit/Day
    - Stage
    - Dungeon
+   - World/Map 소유권
+   - OCR 작업 및 검수 상태
+   - 퀴즈 유형별 비율과 실제 문제 수
+   - Public/Private 접근 허용 목록
 
 6. `ROADMAP.md`
    - 구현 Task
@@ -1738,9 +2009,10 @@ BOSS DEFEATED
 + Coin Economy
 + Ranking
 + Parent Reward
++ Teacher-Created World
 ```
 
-이 일곱 축을 중심으로 기능을 확장한다.
+이 여덟 축을 중심으로 기능을 확장한다.
 
 ---
 

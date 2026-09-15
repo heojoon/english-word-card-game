@@ -7,20 +7,20 @@
   <meta name="description" content="영단어 정답이 마법 공격이 되는 크리스털 퀘스트">
   <title>Wordoria · Crystal Quest</title>
   <link rel="stylesheet" href="playable-preview.css?v=20260911-2">
-  <link rel="stylesheet" href="crystal-game.css?v=20260915-answer-c">
+  <link rel="stylesheet" href="crystal-game.css?v=20260915-world-create">
   <script src="stages.js?v=20260909-rpg" defer></script>
   <script src="stage6.js?v=20260911-hq" defer></script>
   <script src="stage7.js?v=20260914-day02" defer></script>
   <script src="native-bridge.js?v=20260911-1" defer></script>
   <script src="remote-content.js?v=20260914-1" defer></script>
-  <script src="crystal-game.js?v=20260915-answer-c" defer></script>
+  <script src="crystal-game.js?v=20260915-world-create" defer></script>
 </head>
 <body data-screen="loading">
   <div class="preview-label"><span>CRYSTAL QUEST</span><span>STUDY = BATTLE</span></div>
   <div class="phone">
     <header class="topbar">
       <button data-action="home" class="wordmark" aria-label="Wordoria 홈">WORDORIA</button>
-      <button class="balance" data-action="wallet" aria-label="크리스털 지갑">◆ <span id="balance">—</span></button>
+      <span id="topbar-action" class="topbar-action"></span>
     </header>
     <main id="screen" tabindex="-1"><div class="boot"><i></i><b>모험가 기록을 불러오는 중…</b></div></main>
     <nav id="nav" aria-label="주 메뉴"></nav>
