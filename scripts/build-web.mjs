@@ -5,6 +5,9 @@ const root = new URL('../', import.meta.url);
 const dist = new URL('../dist/', import.meta.url);
 const files = [
   'index.html',
+  'app-config.js',
+  'title-screen.css',
+  'title-screen.js',
   'playable-preview.html',
   'playable-preview.css',
   'map-creator.html',

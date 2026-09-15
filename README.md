@@ -559,6 +559,18 @@ active
 
 다만 현재 게임 플레이 화면은 가족용 프로토타입 성격으로 기본 유저와 직접 추가한 닉네임을 선택하는 구조다. 교사용 `map-creator.html`은 AI 호출 비용과 학습 원본을 보호하기 위해 별도의 Supabase Auth 로그인을 요구한다.
 
+### 게임 대문과 로그인
+
+`index.html`의 대문 화면은 Supabase 이메일 로그인·회원가입과 `손님으로 시작` 입장을 제공한다. 로그인 세션은 Supabase JS가 브라우저에 유지하며, Guest 선택은 현재 브라우저 탭의 `sessionStorage`에만 유지된다. 이 단계의 인증은 게임 입장 게이트이며, 기존 닉네임 기반 캐릭터·점수·재화의 소유권은 아직 `auth.uid()`와 연결되지 않았다.
+
+대문 배경은 다음 안정 경로를 사용한다. 이후 동일 파일만 교체하면 HTML이나 CSS 변경 없이 배경을 갱신할 수 있다.
+
+```text
+assets/ui/crystal-quest/title/title-screen.webp
+```
+
+배경 경로와 우측 하단 배포 버전은 `app-config.js`에서 관리한다. 인증 UI를 변경한 뒤에는 `npm run build:auth`로 `title-screen.js`를 다시 생성한다.
+
 외부 공개 서비스로 확장할 경우 다음 작업이 필요합니다.
 
 - Supabase Auth 적용

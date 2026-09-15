@@ -1647,6 +1647,10 @@ Study = Battle = Progress
 - 현실 보상 교환 신청
 - Supabase 저장
 - Coin Ledger
+- Crystal Quest 대문 화면
+- Supabase 이메일 로그인·회원가입 입장 게이트
+- 로그인 없이 진행하는 Guest 입장
+- 교체 가능한 대문 배경 이미지와 화면 내 배포 버전 표기
 - Supabase CLI 로컬 개발 환경
 - 버전 관리되는 DB migration 및 개발 seed
 - 월드 공방 전용 Supabase Auth 로그인
@@ -1662,8 +1666,7 @@ Study = Battle = Progress
 
 현재 프로토타입에는 아직 없는 주요 기능:
 
-- 게임 플레이 화면 전체의 실제 사용자 로그인 전환
-- 사용자 개인 비밀번호
+- 인증 사용자 ID와 캐릭터·점수·재화 소유권의 완전한 연결
 - 도적 직업
 - Level / EXP
 - 캐릭터 상태창 완성

@@ -8,6 +8,9 @@
   <title>Wordoria · Crystal Quest</title>
   <link rel="stylesheet" href="playable-preview.css?v=20260911-2">
   <link rel="stylesheet" href="crystal-game.css?v=20260915-world-create">
+  <link rel="stylesheet" href="title-screen.css?v=20260915-1">
+  <script src="app-config.js?v=20260915-1" defer></script>
+  <script src="title-screen.js?v=20260915-1" defer></script>
   <script src="stages.js?v=20260909-rpg" defer></script>
   <script src="stage6.js?v=20260911-hq" defer></script>
   <script src="stage7.js?v=20260914-day02" defer></script>
@@ -15,9 +18,33 @@
   <script src="remote-content.js?v=20260914-1" defer></script>
   <script src="crystal-game.js?v=20260915-world-create" defer></script>
 </head>
-<body data-screen="loading">
+<body class="entry-active" data-screen="loading">
   <div class="preview-label"><span>CRYSTAL QUEST</span><span>STUDY = BATTLE</span></div>
   <div class="phone">
+    <section id="entry-screen" class="entry-screen" aria-labelledby="entry-game-title" aria-busy="true">
+      <img id="entry-background" class="entry-background" alt="크리스털 성문 앞에 모인 마법사, 전사, 궁수 모험가">
+      <div class="entry-shell">
+        <header class="entry-brand">
+          <span class="entry-brand-mark">WORDORIA</span>
+          <h1 id="entry-game-title" class="entry-title"><span>CRYSTAL</span><span>QUEST</span></h1>
+          <p class="entry-tagline">STUDY = BATTLE</p>
+        </header>
+        <form id="entry-form" class="entry-auth" novalidate>
+          <h2 id="entry-form-title">모험을 시작하세요</h2>
+          <div class="entry-fields">
+            <label><span>이메일 아이디</span><input id="entry-email" type="email" inputmode="email" autocomplete="username" placeholder="이메일 아이디" required></label>
+            <label><span>비밀번호</span><input id="entry-password" type="password" autocomplete="current-password" placeholder="비밀번호" required></label>
+            <label id="entry-confirm-wrap" hidden><span>비밀번호 확인</span><input id="entry-confirm-password" type="password" autocomplete="new-password" placeholder="비밀번호 확인"></label>
+          </div>
+          <button id="entry-submit" class="entry-submit" type="submit" disabled>확인 중…</button>
+          <div class="entry-secondary">
+            <button id="entry-switch-mode" type="button" disabled>회원가입</button><i aria-hidden="true"></i><button id="entry-guest" type="button" disabled>손님으로 시작</button>
+          </div>
+          <p id="entry-status" class="entry-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <small id="entry-release" class="entry-release"></small>
+    </section>
     <header class="topbar">
       <button data-action="home" class="wordmark" aria-label="Wordoria 홈">WORDORIA</button>
       <span id="topbar-action" class="topbar-action"></span>
@@ -25,6 +52,7 @@
     <main id="screen" tabindex="-1"><div class="boot"><i></i><b>모험가 기록을 불러오는 중…</b></div></main>
     <nav id="nav" aria-label="주 메뉴"></nav>
   </div>
+  <noscript>게임을 시작하려면 JavaScript를 활성화해 주세요.</noscript>
   <footer class="preview-footer"><span id="connection-status">데이터베이스 연결 중…</span></footer>
   <dialog id="dialog"><div id="dialog-content"></div><button class="dialog-close" data-action="close" aria-label="닫기">×</button></dialog>
   <div id="toast" role="status" aria-live="polite"></div>

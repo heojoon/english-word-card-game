@@ -1,12 +1,13 @@
 {
   "name": "wordoria-crystal-quest",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Wordoria Crystal Quest hybrid Android game",
   "scripts": {
-    "build": "npm run build:content && npm run build:native && npm run build:creator && node scripts/build-web.mjs",
+    "build": "npm run build:content && npm run build:native && npm run build:auth && npm run build:creator && node scripts/build-web.mjs",
     "build:content": "node scripts/generate-content-catalog.mjs",
     "build:native": "esbuild mobile/native-entry.js --bundle --format=iife --minify --outfile=native-bridge.js",
+    "build:auth": "esbuild title-screen-entry.js --bundle --format=iife --minify --outfile=title-screen.js",
     "build:creator": "esbuild map-creator-entry.js --bundle --format=iife --minify --outfile=map-creator.js",
     "android:sync": "npm run build && cap sync android",
     "android:open": "npm run android:sync && cap open android",
