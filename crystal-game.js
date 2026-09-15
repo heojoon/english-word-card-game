@@ -24,7 +24,12 @@
     pause:'<path d="M8 5v14m8-14v14"/>', trophy:'<path d="M7 3h10v6c0 7-10 7-10 0V3Zm0 2H3v4c0 3 4 3 4 3m10-7h4v4c0 3-4 3-4 3m-5 3v6m-4 0h8"/>',
     gift:'<path d="M3 9h18v5H3V9Zm2 5v7h14v-7M12 9v12M12 9C0 8 7-3 12 9Zm0 0c12-1 5-12 0 0Z"/>',
     armor:'<path d="m8 3-5 4 3 5 2-1v10h8V11l2 1 3-5-5-4c0 4-8 4-8 0Z"/><path d="M12 8v13"/>',
-    worldAdd:'<path d="M3 15 11 5l8 10-8 6-8-6Z"/><path d="M3 15h16M8 9l3 3 3-3M11 15v6M18 3v6M15 6h6"/>'
+    worldAdd:'<path d="M3 15 11 5l8 10-8 6-8-6Z"/><path d="M3 15h16M8 9l3 3 3-3M11 15v6M18 3v6M15 6h6"/>',
+    profile:'<circle cx="12" cy="8" r="4"/><path d="M4.5 21c.7-5 3.2-7.5 7.5-7.5s6.8 2.5 7.5 7.5"/>',
+    mail:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/>',
+    shield:'<path d="M12 3 5 6v5c0 4.8 2.8 8.1 7 10 4.2-1.9 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
+    friends:'<path d="M16 21v-2c0-2.2-1.8-4-4-4H6c-2.2 0-4 1.8-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-1a3 3 0 0 1 0 6m5 5v-2c0-1.6-1-3-2.4-3.6"/>',
+    group:'<path d="M4 20V9l8-5 8 5v11M8 20v-6h8v6M2 20h20"/>'
   };
   const classDefs = {
     warrior:{label:'전사',title:'CRYSTAL GUARDIAN',trait:'강인함 · 가끔 제한시간 +1초',paths:{male:'warrior.webp',female:'variants/warrior-female.webp'}},
@@ -58,6 +63,7 @@
   let allCharacters = [], characters = [], selectedCharacter = null, shopItems = [], inventory = [], redemptions = [], records = [];
   let dbOnline = demo, run = null, timerId = null, nextTimer = null, toastTimer = null;
   let newClass = 'warrior', newVariant = 'male', newAccent = 'violet', newCharacterName = '';
+  let accountProfile = null;
 
   const demoKey = 'wordoria-production-demo-v1';
   let demoState = {characters:[{id:'demo-mage',player:'율이',name:'블리자드',class:'mage',avatar_variant:'female',accent:'violet',coins:1250,equipped_items:{}}],records:[],inventory:[],redemptions:[]};
@@ -155,9 +161,10 @@
 
   function render(){
     document.body.dataset.screen=page;
-    $('topbar-action').innerHTML=page==='dungeon'
+    const contextAction=page==='dungeon'
       ? `<a class="world-create-link" href="map-creator.html" aria-label="월드 만들기" title="월드 만들기">${icon('worldAdd')}</a>`
       : `<button class="balance" data-action="wallet" aria-label="크리스털 지갑">◆ <span id="balance">${selectedCharacter?num(selectedCharacter.coins):'—'}</span></button>`;
+    $('topbar-action').innerHTML=`${contextAction}<button class="profile-button" data-action="profile" aria-label="내 프로필과 계정 설정" title="내 프로필">${icon('profile')}<i aria-hidden="true"></i></button>`;
     const active=['stages','battle','result'].includes(page)?'dungeon':page;
     const nav=$('nav');
     nav.hidden=page==='battle';
@@ -260,6 +267,50 @@
   function showRequests(){modal(`<div class="eyebrow">REWARD REQUESTS</div><h2>보상 신청 내역</h2><p>현실 보상은 보호자 승인 후 지급됩니다.</p>${redemptions.length?redemptions.map(r=>`<div class="record-row row"><b>${esc(itemById(r.item_id)?.name||'보상')}</b><span class="request-status ${esc(r.status)}">${({pending:'승인 대기',approved:'승인',fulfilled:'지급 완료',cancelled:'취소'})[r.status]||esc(r.status)}</span></div>`).join(''):'<div class="notice">아직 신청한 보상이 없어요.</div>'}`);}
   function showRankings(){const best={};records.filter(r=>r.stage===stages[selectedStage]?.name).forEach(r=>{const key=r.character_id||r.player,old=best[key];if(!old||Number(r.cleared)>Number(old.cleared)||(r.cleared===old.cleared&&r.correct>old.correct))best[key]=r;});const rows=Object.values(best).sort((a,b)=>Number(b.cleared)-Number(a.cleared)||b.correct-a.correct).slice(0,10);modal(`<div class="eyebrow">CRYSTAL RANKING</div><h2>${esc(stages[selectedStage]?.name||'스테이지')} 랭킹</h2><div class="ranking-list">${rows.map((r,i)=>{const c=allCharacters.find(x=>x.id===r.character_id);return `<div class="ranking-row"><span>${i+1}</span><b>${esc(c?.name||r.player)}<small>${esc(r.player)} · ${r.cleared?'CLEAR':'도전'}</small></b><span>${r.correct}/${r.total}</span></div>`;}).join('')||'<div class="notice">아직 랭킹 기록이 없어요.</div>'}</div>`);}
 
+  const roleLabels={admin:'관리자',teacher:'선생님',student:'학생'};
+  function profilePermissions(role){
+    if(role==='admin')return ['모든 월드와 맵 관리','사용자 및 계정 권한 관리','공개·비공개 맵 플레이'];
+    if(role==='teacher')return ['내 월드와 맵 만들기','AI 단어 추출 및 문제 구성','허용된 비공개 맵 플레이'];
+    return ['공개 맵 플레이','허용된 비공개 맵 플레이','학습 기록과 캐릭터 관리'];
+  }
+  async function loadAccountProfile(){
+    if(demo||window.WORDORIA_GUEST)return {display_name:player,login_id:null,role:'student',contact_email:null,guest:true};
+    const client=window.WORDORIA_AUTH_CLIENT;
+    if(!client)return {display_name:player,login_id:null,role:'student',contact_email:null,guest:true};
+    const session=window.WORDORIA_SESSION||(await client.auth.getSession()).data?.session;
+    if(!session)return {display_name:player,login_id:null,role:'student',contact_email:null,guest:true};
+    let result=await client.from('profiles').select('display_name,login_id,role,contact_email').eq('user_id',session.user.id).single();
+    if(result.error&&String(result.error.message).includes('contact_email'))result=await client.from('profiles').select('display_name,login_id,role').eq('user_id',session.user.id).single();
+    if(result.error)throw result.error;
+    return {...result.data,contact_email:result.data.contact_email||null,guest:false,user_id:session.user.id};
+  }
+  function profileMarkup(profile){
+    const role=profile.role||'student',roleLabel=roleLabels[role]||'학생',permissions=profilePermissions(role),email=profile.contact_email||'';
+    return `<section class="profile-sheet"><div class="profile-heading"><span class="profile-gem">${icon('profile')}</span><div><div class="eyebrow">MY CRYSTAL PROFILE</div><h2>${esc(profile.display_name||player)}</h2><span class="role-badge role-${esc(role)}">${icon('shield')} ${esc(roleLabel)}</span></div></div><div class="profile-account-card"><div class="profile-row"><span>로그인 아이디</span><b>${profile.guest?'게스트 모드':esc(profile.login_id||'아이디 정보 없음')}</b></div><div class="profile-row"><span>계정 권한</span><b>${esc(roleLabel)}</b></div></div><div class="profile-section-title"><span>${icon('mail')}</span><div><b>이메일 연동</b><small>계정 알림과 복구 기능에 사용할 이메일이에요.</small></div></div>${profile.guest?'<div class="profile-empty">로그인하면 이메일을 연동하고 계정 설정을 관리할 수 있어요.</div>':`<label class="profile-email-label" for="profile-email">연동 이메일</label><div class="profile-email-row"><input id="profile-email" class="field" type="email" inputmode="email" autocomplete="email" maxlength="254" value="${esc(email)}" placeholder="name@example.com"><button class="secondary" data-action="save-profile-email">${email?'변경':'연동'}</button></div><p class="profile-email-status">${email?'✓ 이메일 연동됨':'아직 연동된 이메일이 없습니다.'}</p>`}<div class="profile-section-title"><span>${icon('shield')}</span><div><b>내 권한</b><small>${esc(roleLabel)} 계정에서 사용할 수 있어요.</small></div></div><ul class="permission-list">${permissions.map(item=>`<li>${esc(item)}</li>`).join('')}</ul><div class="profile-future-grid"><button disabled><span>${icon('friends')}</span><b>친구</b><small>친구 추가 · 친구 맺기</small><i>준비 중</i></button><button disabled><span>${icon('group')}</span><b>내 그룹</b><small>그룹 참여 · 구성원 관리</small><i>준비 중</i></button></div><button class="profile-signout" data-action="signout">${profile.guest?'로그인 · 회원가입으로 이동':'로그아웃'}</button></section>`;
+  }
+  async function showProfile(){
+    modal('<div class="profile-loading"><i></i><b>프로필을 불러오는 중…</b></div>');
+    try{accountProfile=await loadAccountProfile();$('dialog-content').innerHTML=profileMarkup(accountProfile);}
+    catch(error){console.error(error);$('dialog-content').innerHTML='<div class="eyebrow">MY PROFILE</div><h2>프로필을 불러오지 못했어요</h2><p>네트워크 연결을 확인한 뒤 다시 시도해 주세요.</p><button class="primary" data-action="profile">다시 시도</button>';}
+  }
+  async function saveProfileEmail(button){
+    const input=$('profile-email'),email=input?.value.trim().toLocaleLowerCase('en-US')||'';
+    if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast('올바른 이메일 주소를 입력해 주세요');input?.focus();return;}
+    const client=window.WORDORIA_AUTH_CLIENT;
+    if(!client){toast('로그인 후 이메일을 연동할 수 있어요');return;}
+    const session=window.WORDORIA_SESSION||(await client.auth.getSession()).data?.session;
+    if(!session){toast('로그인 후 이메일을 연동할 수 있어요');return;}
+    button.disabled=true;button.textContent='저장 중…';
+    const {error}=await client.from('profiles').update({contact_email:email||null,updated_at:new Date().toISOString()}).eq('user_id',session.user.id);
+    if(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(String(error.message).includes('contact_email')?'최신 DB 마이그레이션을 적용해 주세요':'이메일을 저장하지 못했어요');return;}
+    accountProfile={...accountProfile,contact_email:email||null};$('dialog-content').innerHTML=profileMarkup(accountProfile);toast(email?'이메일을 연동했어요':'이메일 연동을 해제했어요');
+  }
+  async function signOut(){
+    const client=window.WORDORIA_AUTH_CLIENT;
+    if(!window.WORDORIA_GUEST&&!demo&&client)await client.auth.signOut();
+    sessionStorage.removeItem('wordoriaGuest');location.reload();
+  }
+
   async function switchPlayer(name){player=name;localStorage.setItem('fantasyQuizPlayer',player);chooseCharacter();await loadCharacterExtras();closeDialog();go('home');}
   async function createPlayer(){const input=$('player-name'),name=input?.value.trim().replace(/\s+/g,' ');if(!name||!/^[가-힣A-Za-z0-9 _-]{1,12}$/.test(name)){toast('사용할 수 있는 유저 이름을 입력해 주세요');return;}if(players.some(x=>x.toLocaleLowerCase()===name.toLocaleLowerCase())){toast('이미 등록된 유저예요');return;}const custom=readCustomPlayers();custom.push(name);localStorage.setItem('fantasyQuizPlayers',JSON.stringify(unique(custom)));players.push(name);await switchPlayer(name);showNewCharacter();}
   async function createCharacter(button){const input=$('character-name'),name=input?.value.trim();if(!name){toast('캐릭터 이름을 입력해 주세요');return;}button.disabled=true;button.textContent='생성 중…';try{let created;if(demo){created={id:`demo-${Date.now()}`,player,name,class:newClass,avatar_variant:newVariant,accent:newAccent,coins:0,equipped_items:{}};demoState.characters.push(created);saveDemo();}else{let rows;try{rows=await apiPost('game_characters',{player,name,class:newClass,avatar_variant:newVariant,accent:newAccent});}catch(error){if(!String(error.message).includes('avatar_variant'))throw error;rows=await apiPost('game_characters',{player,name,class:newClass,accent:newAccent});if(rows?.[0])localStorage.setItem(`fantasyQuizAvatar:${rows[0].id}`,newVariant);}created=rows?.[0];}if(created)localStorage.setItem(`fantasyQuizCharacter:${player}`,created.id);closeDialog();await refresh();toast('새 모험가가 길드에 합류했어요!');}catch(error){console.error(error);button.disabled=false;button.textContent='캐릭터 생성 →';toast('캐릭터 생성에 실패했습니다');}}
@@ -276,7 +327,7 @@
     else if(action==='slot'){const eq=equippedMap()[b.dataset.slot],owned=shopItems.find(i=>slotFor(i)===b.dataset.slot&&itemOwned(i));if(eq)showItem(eq);else if(owned)showItem(owned.id);else{filter='avatar';go('shop');toast('이 슬롯에 어울리는 아이템을 골라 보세요');}}
     else if(action==='world'){worldIndex=Number(b.dataset.index);go('stages');}else if(action==='stage'){selectedStage=b.dataset.stage;modal(`<div class="eyebrow">READY TO EXPLORE</div><h2>${esc(stages[selectedStage].name)}</h2><p>${esc(stages[selectedStage].desc)}를 모두 맞혀 수정 정령을 물리치세요.<br>문제당 5초, 오답 또는 시간 초과 시 종료됩니다.</p><button class="primary" data-action="start">준비됐어요 · 전투 시작 →</button><button class="text-btn" data-action="rankings">이 스테이지 랭킹 보기</button>`);}else if(action==='start'||action==='retry')startBattle();
     else if(action==='answer')answer(Number(b.dataset.index));else if(action==='dismiss-reward')continueAfterFeedback();else if(action==='pause'){pause();modal('<div class="eyebrow">PAUSED</div><h2>잠깐의 휴식</h2><p>시간도 함께 멈췄어요. 준비되면 다시 시작하세요.</p><button class="primary" data-action="resume">계속하기</button><button class="text-btn" data-action="leave" data-page="dungeon">도전을 저장하고 던전으로</button>');}else if(action==='resume')resume();else if(action==='leave'){closeDialog();await finishBattle(false,'leave');go(b.dataset.page);}
-    else if(action==='speak')speak(run.question.entry[0]);else if(action==='chest')await claimChest(b);else if(action==='records')showRecords();else if(action==='stats')showStats();else if(action==='requests')showRequests();else if(action==='rankings')showRankings();else if(action==='wallet')modal(`<div class="eyebrow">CRYSTAL WALLET</div><h2>◆ ${num(selectedCharacter?.coins)}</h2><p>단어를 맞히고 모은 모험의 빛이에요.<br>아바타 장비와 보호자 보상에 사용할 수 있습니다.</p>`);
+    else if(action==='speak')speak(run.question.entry[0]);else if(action==='chest')await claimChest(b);else if(action==='records')showRecords();else if(action==='stats')showStats();else if(action==='requests')showRequests();else if(action==='rankings')showRankings();else if(action==='wallet')modal(`<div class="eyebrow">CRYSTAL WALLET</div><h2>◆ ${num(selectedCharacter?.coins)}</h2><p>단어를 맞히고 모은 모험의 빛이에요.<br>아바타 장비와 보호자 보상에 사용할 수 있습니다.</p>`);else if(action==='profile')await showProfile();else if(action==='save-profile-email')await saveProfileEmail(b);else if(action==='signout')await signOut();
   });
   document.addEventListener('error', event => {
     const image = event.target;
