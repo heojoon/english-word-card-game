@@ -42,7 +42,14 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: gradle
-      - uses: android-actions/setup-android@v3
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          # The retired `tools` package is still part of the action's default
+          # package list, so install only the packages this project needs.
+          packages: ''
+      - name: Install Android SDK packages
+        run: sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
       - run: npm ci
       - run: npm run android:sync
       - name: Build debug APK
