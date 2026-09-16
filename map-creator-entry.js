@@ -17,6 +17,11 @@ const esc = value => String(value ?? '').replace(/[&<>'"]/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;',
 }[character]));
 const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const accountLabel = () => state.profile?.login_id
+  || state.profile?.display_name
+  || state.user?.user_metadata?.login_id
+  || state.user?.user_metadata?.display_name
+  || '현재 사용자';
 
 const state = {
   ready: false,
@@ -141,7 +146,7 @@ function renderBlocked() {
     <div class="login-crystal" style="margin-inline:auto" aria-hidden="true">◇</div>
     <div class="eyebrow" style="color:var(--violet)">ACCESS SEALED</div>
     <h1>제작 권한이 필요해요</h1>
-    <p>${esc(state.user?.email)} 계정은 현재 <b>${esc(state.profile?.role || 'student')}</b> 역할입니다.<br>관리자에게 Teacher 권한을 요청해 주세요.</p>
+    <p>${esc(accountLabel())} 계정은 현재 <b>${esc(state.profile?.role || 'student')}</b> 역할입니다.<br>관리자에게 Teacher 권한을 요청해 주세요.</p>
     <a class="primary" href="index.html">게임으로 돌아가기</a>
   </section>`;
 }
@@ -235,7 +240,7 @@ function renderCreator() {
     <div class="eyebrow">CRYSTAL CREATOR WORKSHOP</div>
     <h1>사진 한 장으로<br>새로운 단어 모험을</h1>
     <p>AI가 영어와 한글 뜻을 찾으면, 선생님이 마지막으로 확인해 퀘스트 맵을 완성합니다.</p>
-    <div class="identity-row"><span class="role-chip">${esc(state.profile.role)}</span><button class="link-button" data-action="logout">${esc(state.user.email)} · 로그아웃</button></div>
+    <div class="identity-row"><span class="role-chip">${esc(state.profile.role)}</span><button class="link-button" data-action="logout">${esc(accountLabel())} · 로그아웃</button></div>
   </section>
   ${stepRail()}
   ${worldCard()}
@@ -337,7 +342,7 @@ async function loadCreator() {
   state.session = sessionData.session;
   state.user = userData.user;
   if (state.user) {
-    const { data: profile, error } = await supabase.from('profiles').select('display_name,role').eq('user_id', state.user.id).maybeSingle();
+    const { data: profile, error } = await supabase.from('profiles').select('display_name,login_id,role').eq('user_id', state.user.id).maybeSingle();
     if (error) console.error(error);
     state.profile = profile;
     if (profile && ['admin', 'teacher'].includes(profile.role)) {

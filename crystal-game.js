@@ -112,8 +112,12 @@
   function title(kicker,name,desc){return `<div class="page-title"><div class="eyebrow">${kicker}</div><h1>${name}</h1><p>${desc}</p></div>`;}
   function unique(values){const seen=new Set();return values.map(v=>String(v).trim()).filter(v=>{const k=v.toLocaleLowerCase();if(!v||seen.has(k))return false;seen.add(k);return true;});}
   function selectedRecords(){return records.filter(r=>!selectedCharacter||!r.character_id||r.character_id===selectedCharacter.id);}
+  function solvedQuestionCount(record){
+    const correct=Math.max(0,Number(record.correct)||0);
+    return record.cleared?Math.max(correct,Number(record.total)||0):correct;
+  }
   function stats(){
-    const rows=selectedRecords(), answered=rows.reduce((n,r)=>n+Number(r.total||0),0), correct=rows.reduce((n,r)=>n+Number(r.correct||0),0), clears=rows.filter(r=>r.cleared).length;
+    const rows=selectedRecords(), answered=rows.reduce((n,r)=>n+solvedQuestionCount(r),0), correct=rows.reduce((n,r)=>n+Number(r.correct||0),0), clears=rows.filter(r=>r.cleared).length;
     const level=1+Math.floor(correct/100), exp=(correct%100)*10;
     return {answered,correct,clears,level,exp,accuracy:answered?Math.round(correct/answered*100):0,best:rows.reduce((n,r)=>Math.max(n,Number(r.correct||0)),0)};
   }
