@@ -146,7 +146,7 @@ Deno.serve(async (req) => {
 
     const { data: claimed } = await admin.from('email_verification_challenges').delete().eq('user_id', user.id).eq('code_mac', mac).select('email').maybeSingle();
     if (!claimed) return json({ error: '이미 사용되었거나 유효하지 않은 인증코드입니다.' }, 409);
-    const { data: profile } = await admin.from('profiles').select('email_reward_granted_at,email_reward_crystals').eq('user_id', user.id).single();
+    const { data: profile } = await admin.from('profiles').select('email_reward_granted_at,email_reward_crystals,crystal_balance').eq('user_id', user.id).single();
     const firstReward = !profile?.email_reward_granted_at;
     const verifiedAt = new Date().toISOString();
     const role = claimed.email === ADMIN_EMAIL ? 'admin' : 'student';
@@ -160,6 +160,7 @@ Deno.serve(async (req) => {
     if (firstReward) {
       updates.email_reward_granted_at = verifiedAt;
       updates.email_reward_crystals = Number(profile?.email_reward_crystals || 0) + 200;
+      updates.crystal_balance = Number(profile?.crystal_balance || 0) + 200;
     }
     const { error: updateError } = await admin.from('profiles').update(updates).eq('user_id', user.id);
     if (updateError) {

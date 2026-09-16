@@ -1,9 +1,9 @@
 (function(){'use strict';
 var art={
-  warrior:{male:'assets/avatars/warrior.webp?v=20260910-4',female:'assets/avatars/variants/warrior-female.webp?v=20260911-1'},
-  mage:{male:'assets/avatars/mage.webp?v=20260910-2',female:'assets/avatars/variants/mage-female.webp?v=20260911-1'},
-  pugilist:{male:'assets/avatars/variants/pugilist-male.webp?v=20260911-1',female:'assets/avatars/pugilist.webp?v=20260910-2'},
-  ranger:{male:'assets/avatars/variants/ranger-male.webp?v=20260911-1',female:'assets/avatars/ranger.webp?v=20260910-2'}
+  warrior:{male:'assets/avatars/warrior.webp?v=20260911-hq',female:'assets/avatars/variants/warrior-female.webp?v=20260911-hq'},
+  mage:{male:'assets/avatars/mage.webp?v=20260911-hq',female:'assets/avatars/variants/mage-female.webp?v=20260911-hq'},
+  pugilist:{male:'assets/avatars/variants/pugilist-male.webp?v=20260911-hq',female:'assets/avatars/pugilist.webp?v=20260911-hq'},
+  ranger:{male:'assets/avatars/variants/ranger-male.webp?v=20260911-hq',female:'assets/avatars/ranger.webp?v=20260911-hq'}
 };
 var defaults={warrior:'male',mage:'male',pugilist:'female',ranger:'female'};
 var em={'⚔️':'warrior','🔮':'mage','🥊':'pugilist','🏹':'ranger'};

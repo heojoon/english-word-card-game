@@ -82,6 +82,7 @@ Do not communicate success, rarity, danger, or selection by color alone. Pair co
 - Equipment must support visible layered slots: Head, Body, Weapon, Back, Aura, Pet
 - Every playable class ships with at least one male and one female base appearance.
 - Gender variants share the same class silhouette, prop, rendering quality, and palette; distinguish identity through face, hair, costume details, and proportions without sexualization.
+- Base portrait export standard: 512 × 512 transparent WebP, approximately 110–125 KB per character, using female mage as the quality reference. Use high-resolution masters rather than enlarging 80–128 px thumbnails. Validate real alpha over a colored background; a painted checkerboard is not transparency.
 - Store the selected base appearance as `avatar_variant` (`male` or `female`) and preserve it consistently in creation, profile cards, status UI, and battle HUD.
 
 Class silhouette cues:
