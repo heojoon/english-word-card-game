@@ -274,36 +274,65 @@
     return ['공개 맵 플레이','허용된 비공개 맵 플레이','학습 기록과 캐릭터 관리'];
   }
   async function loadAccountProfile(){
-    if(demo||window.WORDORIA_GUEST)return {display_name:player,login_id:null,role:'student',contact_email:null,guest:true};
+    if(demo||window.WORDORIA_GUEST)return {display_name:player,login_id:null,role:'student',contact_email:null,contact_email_active:false,guest:true};
     const client=window.WORDORIA_AUTH_CLIENT;
-    if(!client)return {display_name:player,login_id:null,role:'student',contact_email:null,guest:true};
+    if(!client)return {display_name:player,login_id:null,role:'student',contact_email:null,contact_email_active:false,guest:true};
     const session=window.WORDORIA_SESSION||(await client.auth.getSession()).data?.session;
-    if(!session)return {display_name:player,login_id:null,role:'student',contact_email:null,guest:true};
-    let result=await client.from('profiles').select('display_name,login_id,role,contact_email').eq('user_id',session.user.id).single();
-    if(result.error&&String(result.error.message).includes('contact_email'))result=await client.from('profiles').select('display_name,login_id,role').eq('user_id',session.user.id).single();
+    if(!session)return {display_name:player,login_id:null,role:'student',contact_email:null,contact_email_active:false,guest:true};
+    const result=await client.from('profiles').select('display_name,login_id,role,contact_email,contact_email_active,contact_email_verified_at,email_reward_granted_at,email_reward_crystals').eq('user_id',session.user.id).single();
     if(result.error)throw result.error;
     return {...result.data,contact_email:result.data.contact_email||null,guest:false,user_id:session.user.id};
   }
   function profileMarkup(profile){
-    const role=profile.role||'student',roleLabel=roleLabels[role]||'학생',permissions=profilePermissions(role),email=profile.contact_email||'';
-    return `<section class="profile-sheet"><div class="profile-heading"><span class="profile-gem">${icon('profile')}</span><div><div class="eyebrow">MY CRYSTAL PROFILE</div><h2>${esc(profile.display_name||player)}</h2><span class="role-badge role-${esc(role)}">${icon('shield')} ${esc(roleLabel)}</span></div></div><div class="profile-account-card"><div class="profile-row"><span>로그인 아이디</span><b>${profile.guest?'게스트 모드':esc(profile.login_id||'아이디 정보 없음')}</b></div><div class="profile-row"><span>계정 권한</span><b>${esc(roleLabel)}</b></div></div><div class="profile-section-title"><span>${icon('mail')}</span><div><b>이메일 연동</b><small>계정 알림과 복구 기능에 사용할 이메일이에요.</small></div></div>${profile.guest?'<div class="profile-empty">로그인하면 이메일을 연동하고 계정 설정을 관리할 수 있어요.</div>':`<label class="profile-email-label" for="profile-email">연동 이메일</label><div class="profile-email-row"><input id="profile-email" class="field" type="email" inputmode="email" autocomplete="email" maxlength="254" value="${esc(email)}" placeholder="name@example.com"><button class="secondary" data-action="save-profile-email">${email?'변경':'연동'}</button></div><p class="profile-email-status">${email?'✓ 이메일 연동됨':'아직 연동된 이메일이 없습니다.'}</p>`}<div class="profile-section-title"><span>${icon('shield')}</span><div><b>내 권한</b><small>${esc(roleLabel)} 계정에서 사용할 수 있어요.</small></div></div><ul class="permission-list">${permissions.map(item=>`<li>${esc(item)}</li>`).join('')}</ul><div class="profile-future-grid"><button disabled><span>${icon('friends')}</span><b>친구</b><small>친구 추가 · 친구 맺기</small><i>준비 중</i></button><button disabled><span>${icon('group')}</span><b>내 그룹</b><small>그룹 참여 · 구성원 관리</small><i>준비 중</i></button></div><button class="profile-signout" data-action="signout">${profile.guest?'로그인 · 회원가입으로 이동':'로그아웃'}</button></section>`;
+    const role=profile.role||'student',roleLabel=roleLabels[role]||'학생',permissions=profilePermissions(role),verified=Boolean(profile.contact_email_active&&profile.contact_email_verified_at),email=verified?(profile.contact_email||''):'';
+    const emailControl=profile.guest?'<div class="profile-empty">로그인하면 이메일을 인증하고 계정 설정을 관리할 수 있어요.</div>':verified?`<label class="profile-email-label" for="profile-email">인증된 이메일</label><div class="profile-email-row verified"><input id="profile-email" class="field" type="email" value="${esc(email)}" readonly aria-readonly="true"><button class="email-unlink" data-action="ask-unlink-email" aria-label="이메일 연동 해제" title="연동 해제">×</button></div><p class="profile-email-status">✓ 이메일 인증 완료 · 계정 보상 ${num(profile.email_reward_crystals)} ◆</p>`:`<label class="profile-email-label" for="profile-email">인증할 이메일</label><div class="profile-email-row"><input id="profile-email" class="field" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="name@example.com"><button class="secondary" data-action="send-profile-code">인증 메일</button></div><p class="profile-email-status pending">6자리 문자+숫자 코드를 이메일로 보내드려요.</p>`;
+    const roleControl=verified&&role!=='admin'?`<div class="role-picker" aria-label="계정 권한 선택"><button class="${role==='student'?'active':''}" data-action="select-profile-role" data-role="student" aria-pressed="${role==='student'}">학생</button><button class="${role==='teacher'?'active':''}" data-action="select-profile-role" data-role="teacher" aria-pressed="${role==='teacher'}">선생님</button></div>`:verified&&role==='admin'?'<div class="admin-fixed-note">heojoon48@gmail.com 인증 관리자 · 권한 고정</div>':'';
+    return `<section class="profile-sheet"><div class="profile-heading"><span class="profile-gem">${icon('profile')}</span><div><div class="eyebrow">MY CRYSTAL PROFILE</div><h2>${esc(profile.display_name||player)}</h2><span class="role-badge role-${esc(role)}">${icon('shield')} ${esc(roleLabel)}</span></div></div><div class="profile-account-card"><div class="profile-row"><span>로그인 아이디</span><b>${profile.guest?'게스트 모드':esc(profile.login_id||'아이디 정보 없음')}</b></div><div class="profile-row"><span>계정 권한</span><b>${esc(roleLabel)}</b></div></div><div class="profile-section-title"><span>${icon('mail')}</span><div><b>이메일 인증</b><small>인증을 완료하면 200 크리스털을 한 번 지급해요.</small></div></div>${emailControl}<div class="profile-section-title"><span>${icon('shield')}</span><div><b>내 권한</b><small>${verified?'인증된 계정의 역할을 선택할 수 있어요.':'이메일 인증 후 역할을 선택할 수 있어요.'}</small></div></div>${roleControl}<ul class="permission-list">${permissions.map(item=>`<li>${esc(item)}</li>`).join('')}</ul><div class="profile-future-grid"><button disabled><span>${icon('friends')}</span><b>친구</b><small>친구 추가 · 친구 맺기</small><i>준비 중</i></button><button disabled><span>${icon('group')}</span><b>내 그룹</b><small>그룹 참여 · 구성원 관리</small><i>준비 중</i></button></div><button class="profile-signout" data-action="signout">${profile.guest?'로그인 · 회원가입으로 이동':'로그아웃'}</button></section>`;
   }
   async function showProfile(){
     modal('<div class="profile-loading"><i></i><b>프로필을 불러오는 중…</b></div>');
     try{accountProfile=await loadAccountProfile();$('dialog-content').innerHTML=profileMarkup(accountProfile);}
     catch(error){console.error(error);$('dialog-content').innerHTML='<div class="eyebrow">MY PROFILE</div><h2>프로필을 불러오지 못했어요</h2><p>네트워크 연결을 확인한 뒤 다시 시도해 주세요.</p><button class="primary" data-action="profile">다시 시도</button>';}
   }
-  async function saveProfileEmail(button){
-    const input=$('profile-email'),email=input?.value.trim().toLocaleLowerCase('en-US')||'';
-    if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast('올바른 이메일 주소를 입력해 주세요');input?.focus();return;}
+  async function invokeProfileEmail(body){
     const client=window.WORDORIA_AUTH_CLIENT;
-    if(!client){toast('로그인 후 이메일을 연동할 수 있어요');return;}
-    const session=window.WORDORIA_SESSION||(await client.auth.getSession()).data?.session;
-    if(!session){toast('로그인 후 이메일을 연동할 수 있어요');return;}
-    button.disabled=true;button.textContent='저장 중…';
-    const {error}=await client.from('profiles').update({contact_email:email||null,updated_at:new Date().toISOString()}).eq('user_id',session.user.id);
-    if(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(String(error.message).includes('contact_email')?'최신 DB 마이그레이션을 적용해 주세요':'이메일을 저장하지 못했어요');return;}
-    accountProfile={...accountProfile,contact_email:email||null};$('dialog-content').innerHTML=profileMarkup(accountProfile);toast(email?'이메일을 연동했어요':'이메일 연동을 해제했어요');
+    if(!client)throw new Error('로그인 후 이메일을 인증할 수 있어요.');
+    const {data,error}=await client.functions.invoke('verify-profile-email',{body});
+    if(error){let message=error.message||'요청을 처리하지 못했습니다.';try{const payload=await error.context?.clone().json();if(payload?.error)message=payload.error;}catch{}throw new Error(message);}
+    if(data?.error)throw new Error(data.error);
+    return data;
+  }
+  function showVerificationCode(email){
+    modal(`<section class="verification-sheet"><div class="verification-icon">${icon('mail')}</div><div class="eyebrow">VERIFY YOUR EMAIL</div><h2>인증코드를 입력해 주세요</h2><p><b>${esc(email)}</b>로 보낸 6자리 문자+숫자 코드입니다.<br>코드는 10분 동안 유효해요.</p><label class="profile-email-label" for="profile-code">인증코드</label><input id="profile-code" class="field verification-code" type="text" inputmode="text" autocomplete="one-time-code" autocapitalize="characters" maxlength="6" placeholder="A1B2C3"><button class="primary" data-action="verify-profile-code" data-email="${esc(email)}">인증 완료</button><button class="text-btn resend-code" data-action="resend-profile-code" data-email="${esc(email)}">인증 메일 다시 보내기</button></section>`);
+    setTimeout(()=>$('profile-code')?.focus(),0);
+  }
+  async function sendProfileCode(button,emailOverride){
+    const input=$('profile-email'),email=input?.value.trim().toLocaleLowerCase('en-US')||'';
+    const target=(emailOverride||email).trim().toLocaleLowerCase('en-US');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(target)){toast('올바른 이메일 주소를 입력해 주세요');input?.focus();return;}
+    button.disabled=true;button.textContent='발송 중…';
+    try{await invokeProfileEmail({action:'send',email:target});showVerificationCode(target);toast('인증 메일을 보냈어요');}
+    catch(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(error.message);}
+  }
+  async function verifyProfileCode(button){
+    const input=$('profile-code'),code=input?.value.trim().toUpperCase()||'';
+    if(!/^[A-Z0-9]{6}$/.test(code)){toast('6자리 문자+숫자 코드를 입력해 주세요');input?.focus();return;}
+    button.disabled=true;button.textContent='확인 중…';
+    try{const result=await invokeProfileEmail({action:'verify',code});accountProfile=await loadAccountProfile();$('dialog-content').innerHTML=profileMarkup(accountProfile);toast(result.reward?`인증 완료! 보상 ${result.reward} 크리스털을 받았어요`:'이메일 인증이 완료됐어요');}
+    catch(error){console.error(error);button.disabled=false;button.textContent='인증 완료';toast(error.message);input?.select();}
+  }
+  function askUnlinkEmail(){
+    modal(`<section class="unlink-warning"><div class="verification-icon danger">×</div><div class="eyebrow">UNLINK EMAIL</div><h2>정말 이메일 연동을<br>해제하시겠습니까?</h2><p>${esc(accountProfile?.contact_email||'')} 정보는 안전한 기록을 위해 데이터베이스에 유지되지만 미사용 상태로 전환됩니다.</p><div class="actions"><button class="secondary" data-action="cancel-unlink-email">취소</button><button class="danger-action" data-action="confirm-unlink-email">연동 해제</button></div></section>`);
+  }
+  async function unlinkProfileEmail(button){
+    button.disabled=true;button.textContent='해제 중…';
+    try{await invokeProfileEmail({action:'unlink'});accountProfile=await loadAccountProfile();$('dialog-content').innerHTML=profileMarkup(accountProfile);toast('이메일 연동을 해제했어요');}
+    catch(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(error.message);}
+  }
+  async function selectProfileRole(button){
+    const role=button.dataset.role;
+    try{await invokeProfileEmail({action:'select-role',role});accountProfile=await loadAccountProfile();$('dialog-content').innerHTML=profileMarkup(accountProfile);toast(`${roleLabels[role]} 권한으로 변경했어요`);}
+    catch(error){console.error(error);toast(error.message);}
   }
   async function signOut(){
     const client=window.WORDORIA_AUTH_CLIENT;
@@ -327,7 +356,7 @@
     else if(action==='slot'){const eq=equippedMap()[b.dataset.slot],owned=shopItems.find(i=>slotFor(i)===b.dataset.slot&&itemOwned(i));if(eq)showItem(eq);else if(owned)showItem(owned.id);else{filter='avatar';go('shop');toast('이 슬롯에 어울리는 아이템을 골라 보세요');}}
     else if(action==='world'){worldIndex=Number(b.dataset.index);go('stages');}else if(action==='stage'){selectedStage=b.dataset.stage;modal(`<div class="eyebrow">READY TO EXPLORE</div><h2>${esc(stages[selectedStage].name)}</h2><p>${esc(stages[selectedStage].desc)}를 모두 맞혀 수정 정령을 물리치세요.<br>문제당 5초, 오답 또는 시간 초과 시 종료됩니다.</p><button class="primary" data-action="start">준비됐어요 · 전투 시작 →</button><button class="text-btn" data-action="rankings">이 스테이지 랭킹 보기</button>`);}else if(action==='start'||action==='retry')startBattle();
     else if(action==='answer')answer(Number(b.dataset.index));else if(action==='dismiss-reward')continueAfterFeedback();else if(action==='pause'){pause();modal('<div class="eyebrow">PAUSED</div><h2>잠깐의 휴식</h2><p>시간도 함께 멈췄어요. 준비되면 다시 시작하세요.</p><button class="primary" data-action="resume">계속하기</button><button class="text-btn" data-action="leave" data-page="dungeon">도전을 저장하고 던전으로</button>');}else if(action==='resume')resume();else if(action==='leave'){closeDialog();await finishBattle(false,'leave');go(b.dataset.page);}
-    else if(action==='speak')speak(run.question.entry[0]);else if(action==='chest')await claimChest(b);else if(action==='records')showRecords();else if(action==='stats')showStats();else if(action==='requests')showRequests();else if(action==='rankings')showRankings();else if(action==='wallet')modal(`<div class="eyebrow">CRYSTAL WALLET</div><h2>◆ ${num(selectedCharacter?.coins)}</h2><p>단어를 맞히고 모은 모험의 빛이에요.<br>아바타 장비와 보호자 보상에 사용할 수 있습니다.</p>`);else if(action==='profile')await showProfile();else if(action==='save-profile-email')await saveProfileEmail(b);else if(action==='signout')await signOut();
+    else if(action==='speak')speak(run.question.entry[0]);else if(action==='chest')await claimChest(b);else if(action==='records')showRecords();else if(action==='stats')showStats();else if(action==='requests')showRequests();else if(action==='rankings')showRankings();else if(action==='wallet')modal(`<div class="eyebrow">CRYSTAL WALLET</div><h2>◆ ${num(selectedCharacter?.coins)}</h2><p>단어를 맞히고 모은 모험의 빛이에요.<br>아바타 장비와 보호자 보상에 사용할 수 있습니다.</p>`);else if(action==='profile')await showProfile();else if(action==='send-profile-code')await sendProfileCode(b);else if(action==='resend-profile-code')await sendProfileCode(b,b.dataset.email);else if(action==='verify-profile-code')await verifyProfileCode(b);else if(action==='select-profile-role')await selectProfileRole(b);else if(action==='ask-unlink-email')askUnlinkEmail();else if(action==='cancel-unlink-email')$('dialog-content').innerHTML=profileMarkup(accountProfile);else if(action==='confirm-unlink-email')await unlinkProfileEmail(b);else if(action==='signout')await signOut();
   });
   document.addEventListener('error', event => {
     const image = event.target;

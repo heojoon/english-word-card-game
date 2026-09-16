@@ -601,14 +601,13 @@ npm run build:creator
 python3 -m http.server 3000
 ```
 
-처음 가입한 계정은 안전을 위해 Student로 생성된다. 로컬 Studio SQL Editor에서 승인할 계정만 Teacher로 변경한다.
+처음 가입한 계정은 Student로 생성된다. 프로필 이메일 인증을 완료하면 Student 또는 Teacher를 직접 선택할 수 있고, `heojoon48@gmail.com` 인증 계정은 Admin으로 고정된다.
 
-```sql
-update public.profiles
-set role = 'teacher', updated_at = now()
-where user_id = (
-  select id from auth.users where email = 'teacher@example.com'
-);
+프로필 인증 메일은 Resend를 사용하는 `verify-profile-email` Edge Function에서 발송한다. 운영 배포 전 Resend에서 발신 도메인을 인증하고 다음 secret을 설정한다.
+
+```dotenv
+RESEND_API_KEY=re_...
+WORDORIA_EMAIL_FROM=Wordoria <verify@your-domain.example>
 ```
 
 원격 배포 시 migration 적용 후 함수와 secret을 별도로 배포한다.
@@ -618,6 +617,7 @@ supabase db push --linked --dry-run
 supabase db push --linked
 supabase secrets set --env-file supabase/functions/.env --project-ref <project-ref>
 supabase functions deploy process-map-ocr --project-ref <project-ref>
+supabase functions deploy verify-profile-email --project-ref <project-ref>
 ```
 
 OpenAI 키와 Supabase secret/service-role 키는 브라우저 번들, Android 번들, GitHub Actions 로그에 포함하지 않는다.
