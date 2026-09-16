@@ -96,6 +96,14 @@ async function resolveAuthEmail(loginId, allowLegacyEmail) {
 function enterGame(kind, session = null) {
   window.WORDORIA_SESSION = session;
   window.WORDORIA_GUEST = kind === 'guest';
+  const next = params.get('next');
+  if (kind === 'account' && next) {
+    const nextUrl = new URL(next, location.href);
+    if (nextUrl.origin === location.origin && /\/map-creator\.html$/.test(nextUrl.pathname)) {
+      location.replace(nextUrl.href);
+      return;
+    }
+  }
   document.dispatchEvent(new CustomEvent('wordoria:entry', { detail: { kind, session } }));
   entry.classList.add('is-leaving');
   window.setTimeout(() => {

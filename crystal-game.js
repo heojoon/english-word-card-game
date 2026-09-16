@@ -59,6 +59,11 @@
     const version = encodeURIComponent(window.WORDORIA_CONTENT_VERSION || 'latest');
     return `${window.WORDORIA_CONTENT_ORIGIN}/${cleanPath}${cleanPath.includes('?') ? '&' : '?'}content=${version}`;
   };
+  const creatorHref = () => {
+    const url = new URL('map-creator.html', location.href);
+    if (params.has('db')) url.searchParams.set('db', params.get('db'));
+    return `${url.pathname.split('/').pop()}${url.search}`;
+  };
   const itemArt = item => item?.art_path
     ? `<img src="${esc(deployedAssetUrl(item.art_path))}" data-local-art="${esc(item.art_path)}" alt="${esc(item.name)} 아이템 아트">`
     : `<span class="item-icon-text" aria-hidden="true">${esc(item?.icon||'◆')}</span>`;
@@ -176,7 +181,7 @@
     const contextAction=page==='characters'
       ? ''
       : page==='dungeon'
-      ? `<a class="world-create-link" href="map-creator.html" aria-label="월드 만들기" title="월드 만들기">${icon('worldAdd')}</a>`
+      ? `<a class="world-create-link" href="${creatorHref()}" aria-label="월드 만들기" title="월드 만들기">${icon('worldAdd')}</a>`
       : `<button class="balance" data-action="wallet" aria-label="계정 크리스털 지갑">◆ <span id="balance">${selectedCharacter||accountMode?num(walletBalance()):'—'}</span></button>`;
     $('topbar-action').innerHTML=`${contextAction}<button class="profile-button" data-action="profile" aria-label="내 프로필과 계정 설정" title="내 프로필">${icon('profile')}<i aria-hidden="true"></i></button>`;
     const active=['stages','battle','result'].includes(page)?'dungeon':page;

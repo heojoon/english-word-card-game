@@ -2,7 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 
 const params = new URLSearchParams(location.search);
 const localHost = ['localhost', '127.0.0.1'].includes(location.hostname);
-const useLocalDb = params.get('db') === 'local' || (params.get('db') !== 'remote' && localHost);
+const nativeApp = document.documentElement.classList.contains('native-app') || Boolean(window.Capacitor?.isNativePlatform?.());
+const useLocalDb = params.get('db') === 'local' || (params.get('db') !== 'remote' && localHost && !nativeApp);
 const supabaseUrl = useLocalDb ? 'http://127.0.0.1:54321' : 'https://uobagmggryhsqlpxhfob.supabase.co';
 const supabaseKey = useLocalDb
   ? 'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH'
@@ -135,33 +136,13 @@ function stepRail() {
   </div>`;
 }
 
-function renderLogin() {
-  return `<section class="login-wrap">
-    <div class="login-card">
-      <div class="login-crystal" aria-hidden="true">◆</div>
-      <div class="eyebrow" style="color:var(--violet)">CREATOR ACCESS</div>
-      <h1>월드 공방 로그인</h1>
-      <p>Admin 또는 Teacher 계정으로 단어장 사진을 퀘스트 맵으로 바꿀 수 있어요.</p>
-      <form id="login-form">
-        <div class="field"><label for="email">이메일</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="password">비밀번호</label><input id="password" name="password" type="password" autocomplete="current-password" minlength="6" required></div>
-        <div class="login-actions">
-          <button class="secondary" type="button" data-action="signup">계정 만들기</button>
-          <button class="primary" type="submit">로그인</button>
-        </div>
-      </form>
-      <p class="status-note">새 계정의 기본 역할은 Student입니다. 관리자가 Teacher 또는 Admin 권한을 부여해야 공방을 사용할 수 있습니다.</p>
-    </div>
-  </section>`;
-}
-
 function renderBlocked() {
   return `<section class="blocked-card">
     <div class="login-crystal" style="margin-inline:auto" aria-hidden="true">◇</div>
     <div class="eyebrow" style="color:var(--violet)">ACCESS SEALED</div>
     <h1>제작 권한이 필요해요</h1>
     <p>${esc(state.user?.email)} 계정은 현재 <b>${esc(state.profile?.role || 'student')}</b> 역할입니다.<br>관리자에게 Teacher 권한을 요청해 주세요.</p>
-    <button class="primary" data-action="logout">다른 계정으로 로그인</button>
+    <a class="primary" href="index.html">게임으로 돌아가기</a>
   </section>`;
 }
 
@@ -268,13 +249,22 @@ function render() {
   const root = $('creator-app');
   if (!state.ready) {
     root.innerHTML = '<div class="loading-card"><i></i><b>월드 공방을 여는 중…</b></div>';
-  } else if (!state.session) {
-    root.innerHTML = renderLogin();
   } else if (!state.profile || !['admin', 'teacher'].includes(state.profile.role)) {
     root.innerHTML = renderBlocked();
   } else {
     root.innerHTML = renderCreator();
   }
+}
+
+function returnToEntry() {
+  const entryUrl = new URL('index.html', location.href);
+  const creatorUrl = new URL('map-creator.html', location.href);
+  if (params.has('db')) {
+    entryUrl.searchParams.set('db', params.get('db'));
+    creatorUrl.searchParams.set('db', params.get('db'));
+  }
+  entryUrl.searchParams.set('next', `${creatorUrl.pathname}${creatorUrl.search}`);
+  location.replace(entryUrl.href);
 }
 
 function resetMap() {
@@ -334,9 +324,18 @@ async function loadMap(mapId) {
 async function loadCreator() {
   state.ready = false;
   render();
-  const { data: sessionData } = await supabase.auth.getSession();
+  const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+  if (sessionError || !sessionData.session) {
+    returnToEntry();
+    return;
+  }
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+  if (userError || !userData.user) {
+    returnToEntry();
+    return;
+  }
   state.session = sessionData.session;
-  state.user = sessionData.session?.user || null;
+  state.user = userData.user;
   if (state.user) {
     const { data: profile, error } = await supabase.from('profiles').select('display_name,role').eq('user_id', state.user.id).maybeSingle();
     if (error) console.error(error);
@@ -579,17 +578,7 @@ async function publishMap() {
 document.addEventListener('submit', async event => {
   event.preventDefault();
   const form = event.target;
-  if (form.id === 'login-form') {
-    state.busy = true;
-    const fields = new FormData(form);
-    const { error } = await supabase.auth.signInWithPassword({
-      email: String(fields.get('email') || '').trim(),
-      password: String(fields.get('password') || ''),
-    });
-    state.busy = false;
-    if (error) return toast(`로그인 실패: ${error.message}`);
-    await loadCreator();
-  } else if (form.id === 'world-form') {
+  if (form.id === 'world-form') {
     const name = String(new FormData(form).get('worldName') || '').trim();
     if (!name) return toast('월드 이름을 입력해 주세요');
     state.busy = true;
@@ -655,16 +644,7 @@ document.addEventListener('click', async event => {
   const action = button.dataset.action;
   if (action === 'logout') {
     await supabase.auth.signOut();
-    location.reload();
-  } else if (action === 'signup') {
-    const form = $('login-form');
-    if (!form.reportValidity()) return;
-    const fields = new FormData(form);
-    const { error } = await supabase.auth.signUp({
-      email: String(fields.get('email') || '').trim(),
-      password: String(fields.get('password') || ''),
-    });
-    toast(error ? `계정 생성 실패: ${error.message}` : '계정을 만들었습니다. 이메일 확인 후 관리자가 Teacher 권한을 부여해야 합니다.');
+    returnToEntry();
   } else if (action === 'new-map') {
     resetMap();
     render();

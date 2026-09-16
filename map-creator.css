@@ -112,6 +112,7 @@ input[type="range"] { width: 100%; accent-color: var(--violet); }
 .loading-card { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--muted); font-size: 12px; }
 .blocked-card h1 { margin: 15px 0 10px; font-size: 24px; }
 .blocked-card p { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.blocked-card .primary { display: block; text-decoration: none; }
 
 #creator-toast { position: fixed; z-index: 50; left: 50%; bottom: max(22px, env(safe-area-inset-bottom)); transform: translate(-50%, 12px); width: max-content; max-width: calc(100% - 32px); padding: 13px 18px; border-radius: 14px; background: var(--ink); color: white; box-shadow: var(--shadow); font-size: 11px; opacity: 0; pointer-events: none; transition: .2s; }
 #creator-toast.show { opacity: 1; transform: translate(-50%, 0); }
