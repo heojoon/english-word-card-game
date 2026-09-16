@@ -147,7 +147,7 @@ function renderBlocked() {
 }
 
 function worldCard() {
-  const options = state.worlds.map(world => `<option value="${world.id}" ${state.worldId === world.id ? 'selected' : ''}>${esc(world.name)}</option>`).join('');
+  const options = state.worlds.map(world => `<option value="${world.id}" ${state.worldId === world.id ? 'selected' : ''}>${esc(world.name)} · ${esc(world.world_code)}</option>`).join('');
   const mapOptions = state.maps.map(map => `<option value="${map.id}" ${state.mapId === map.id ? 'selected' : ''}>${esc(map.title)} · ${map.status}</option>`).join('');
   return `<section class="forge-card">
     <div class="card-head"><div><div class="eyebrow" style="color:var(--violet)">WORLD & MAP</div><h2>모험의 이름을 정해요</h2></div><span class="step-no">01</span></div>
@@ -288,7 +288,7 @@ async function loadMaps() {
 }
 
 async function loadWorlds() {
-  const { data, error } = await supabase.from('worlds').select('id,name,description').order('created_at');
+  const { data, error } = await supabase.from('worlds').select('id,name,description,world_code').order('created_at');
   if (error) throw error;
   state.worlds = data || [];
   if (!state.worldId && state.worlds.length) state.worldId = state.worlds[0].id;

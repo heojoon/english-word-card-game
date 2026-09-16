@@ -17,7 +17,8 @@
   const accountUserId = accountSession?.user?.id || null;
   const accountMode = Boolean(accountUserId) && !demo;
   const stages = window.QUIZ_STAGES || {};
-  const stageKeys = Object.keys(stages);
+  const builtinStageKeys = Object.keys(stages);
+  let stageKeys = builtinStageKeys.slice();
   const defaultPlayers = ['율이', '아빠', '손님'];
   const icons = {
     home:'<path d="M3 10 12 3l9 7v10H5V10M9 20v-7h6v7"/>', gear:'<path d="m8 3-5 4 3 5 2-1v10h8V11l2 1 3-5-5-4c0 4-8 4-8 0Z"/>',
@@ -43,11 +44,12 @@
     pugilist:{label:'권투사',title:'COMBO MASTER',trait:'콤보 마스터 · 3콤보 보너스',skill:'러시 콤보',skillDesc:'3연속 정답마다 보너스 크리스털을 받아요.',stats:{hp:4,atk:5,def:3,luk:2},paths:{male:'variants/pugilist-male.webp',female:'pugilist.webp'}},
     ranger:{label:'궁수',title:'TREASURE HUNTER',trait:'보물 사냥꾼 · 상자 최소 20개',skill:'행운의 화살',skillDesc:'보물상자에서 최소 20 크리스털을 찾아요.',stats:{hp:3,atk:4,def:2,luk:5},paths:{male:'variants/ranger-male.webp',female:'ranger.webp'}}
   };
-  const worlds = [
-    {name:'속삭이는 숲',sub:'기초 단어 · 초록 정령의 산책길',tag:'CHAPTER 01',keys:stageKeys.slice(0,2)},
-    {name:'서리 수정 동굴',sub:'동사와 표현 · 푸른 수정의 비밀',tag:'CHAPTER 02',keys:stageKeys.slice(2,4)},
-    {name:'별빛 마법 도서관',sub:'도전 단어 · 잃어버린 마법의 기록',tag:'CHAPTER 03',keys:stageKeys.slice(4)}
+  const builtinWorlds = [
+    {name:'속삭이는 숲',sub:'기초 단어 · 초록 정령의 산책길',code:'F1A2',keys:builtinStageKeys.slice(0,2)},
+    {name:'서리 수정 동굴',sub:'동사와 표현 · 푸른 수정의 비밀',code:'I2C3',keys:builtinStageKeys.slice(2,4)},
+    {name:'별빛 마법 도서관',sub:'도전 단어 · 잃어버린 마법의 기록',code:'S3L4',keys:builtinStageKeys.slice(4)}
   ];
+  let worlds = builtinWorlds.slice(), creatorStageKeys = [], creatorContentError = '';
   const legacyVariant = {warrior:'male',mage:'male',pugilist:'female',ranger:'female'};
   const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] || icons.aura}</svg>`;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -69,7 +71,7 @@
     : `<span class="item-icon-text" aria-hidden="true">${esc(item?.icon||'◆')}</span>`;
   const shuffle = input => { const a=input.slice(); for(let i=a.length-1;i;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
 
-  let page = accountMode ? 'characters' : 'home', filter = 'all', worldIndex = 0, selectedStage = stageKeys[0];
+  let page = accountMode ? 'characters' : 'home', filter = 'all', worldIndex = 0, selectedStage = builtinStageKeys[0];
   let players = defaultPlayers.slice(), player = localStorage.getItem('fantasyQuizPlayer') || defaultPlayers[0];
   let allCharacters = [], characters = [], selectedCharacter = null, shopItems = [], inventory = [], redemptions = [], records = [];
   let dbOnline = demo, run = null, timerId = null, nextTimer = null, toastTimer = null;
@@ -123,10 +125,54 @@
     const hp=72+level*4+(classBonus.hp||0)+bonus.hp,mp=24+level*2+(classBonus.mp||0)+bonus.mp,atk=12+level*2+(classBonus.atk||0)+bonus.atk,def=10+level*2+(classBonus.def||0)+bonus.def,luk=5+Math.floor(level/2)+(classBonus.luk||0)+bonus.luk;
     return {hp,mp,atk,def,luk,power:hp*4+mp*2+atk*12+def*10+luk*8,equipped,bonus};
   }
-  function stageCleared(key){return records.some(r=>r.cleared&&r.stage===stages[key]?.name);}
+  function stageRecordName(key){return stages[key]?.recordName||stages[key]?.name;}
+  function stageCleared(key){return records.some(r=>r.cleared&&r.stage===stageRecordName(key));}
   function earnedCoins(count,clear=false){const interval=selectedCharacter?.class==='pugilist'?3:5;return count+Math.floor(count/interval)+(clear?10:0);}
 
+  function resetCreatorContent(){
+    creatorStageKeys.forEach(key=>delete stages[key]);creatorStageKeys=[];creatorContentError='';
+    stageKeys=builtinStageKeys.slice();worlds=builtinWorlds.slice();
+    if(worldIndex>=worlds.length)worldIndex=0;
+    if(!stages[selectedStage])selectedStage=builtinStageKeys[0];
+  }
+  function playableWords(rows){
+    const seen=new Set();return rows.map(row=>({english:String(row.english||'').trim(),korean:String(row.korean||'').trim(),rowOrder:Number(row.row_order||0)})).filter(row=>{
+      const key=row.english.toLocaleLowerCase('en-US');if(!key||!row.korean||seen.has(key))return false;seen.add(key);return true;
+    }).sort((a,b)=>a.rowOrder-b.rowOrder).map(row=>[row.english,'단어',row.korean]);
+  }
+  async function loadCreatorContent(){
+    if(!accountMode)return;
+    const [worldRows,mapRows,wordRows]=await Promise.all([
+      apiGet('worlds?select=id,name,description,world_code&order=created_at.asc'),
+      apiGet('maps?select=id,world_id,title,description,total_question_count,visibility,status,created_at&status=eq.published&order=created_at.asc'),
+      apiGet('map_words?select=map_id,row_order,english,korean,review_status&review_status=eq.approved&order=map_id.asc,row_order.asc')
+    ]);
+    const rowsByMap=new Map();wordRows.forEach(row=>{const rows=rowsByMap.get(row.map_id)||[];rows.push(row);rowsByMap.set(row.map_id,rows);});
+    const keysByWorld=new Map();
+    mapRows.forEach(map=>{
+      const words=playableWords(rowsByMap.get(map.id)||[]);if(words.length<4)return;
+      const key=`creator:${map.id}`,questionCount=Math.max(1,Math.min(500,Number(map.total_question_count)||words.length));
+      stages[key]={name:map.title,desc:map.description||`${words.length}개 단어 · 제작 맵`,words,questionCount,creator:true,mapId:map.id,visibility:map.visibility,recordName:`제작 맵 · ${map.id}`};
+      creatorStageKeys.push(key);stageKeys.push(key);
+      const keys=keysByWorld.get(map.world_id)||[];keys.push(key);keysByWorld.set(map.world_id,keys);
+    });
+    worldRows.forEach(world=>{const keys=keysByWorld.get(world.id)||[];if(!keys.length)return;worlds.push({name:world.name,sub:world.description||`선생님이 만든 단어 모험 · ${keys.length}개 맵`,code:world.world_code,keys,creator:true,worldId:world.id});});
+  }
+  function buildQuestionDeck(source){
+    const total=Math.max(1,Math.min(500,Number(source.questionCount)||source.words.length)),deck=[];
+    while(deck.length<total){
+      const cycle=shuffle(source.words);
+      if(deck.length&&cycle.length>1&&cycle[0][0].toLocaleLowerCase('en-US')===deck[deck.length-1].entry[0].toLocaleLowerCase('en-US')){
+        const swapIndex=cycle.findIndex(word=>word[0].toLocaleLowerCase('en-US')!==cycle[0][0].toLocaleLowerCase('en-US'));
+        if(swapIndex>0)[cycle[0],cycle[swapIndex]]=[cycle[swapIndex],cycle[0]];
+      }
+      cycle.some(entry=>{if(deck.length>=total)return true;deck.push({entry,mode:Math.random()<.5?'en-ko':'ko-en'});return false;});
+    }
+    return deck;
+  }
+
   async function loadAll(){
+    resetCreatorContent();
     if(demo){
       allCharacters=demoState.characters;shopItems=[
         {id:1,code:'gale_boots',name:'질풍의 장화',category:'avatar',price:100,icon:'◆',description:'첫 모험을 오래 이어갈 수 있도록 체력을 높이는 기본 장화입니다.',slot:'body',rarity:'normal',stars:1,stat_key:'hp',stat_value:12,art_path:'assets/items/equipment/item_gale_boots_normal.webp'},
@@ -152,6 +198,7 @@
         ]);dbOnline=true;
         if(accountMode){const tickets=await apiGet(`character_creation_tickets?select=id&owner_user_id=eq.${accountUserId}&consumed_by_character_id=is.null`);availableCharacterTickets=tickets.length;}
       } catch(error){console.error(error);dbOnline=false;allCharacters=[];shopItems=[];records=[];}
+      if(accountMode&&dbOnline){try{await loadCreatorContent();}catch(error){console.error(error);creatorContentError='제작 월드 목록을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.';}}
     }
     players=accountMode?[player]:unique(defaultPlayers.concat(allCharacters.map(c=>c.player),readCustomPlayers()));
     if(!players.includes(player))player=players[0];
@@ -187,7 +234,7 @@
     const active=['stages','battle','result'].includes(page)?'dungeon':page;
     const nav=$('nav');
     nav.hidden=page==='battle'||page==='characters';
-    nav.innerHTML=[['home','홈'],['dungeon','던전'],['gear','장비'],['shop','상점']].map(([id,label])=>`<button data-action="nav" data-page="${id}" ${active===id?'aria-current="page"':''}>${icon(id)}<span>${label}</span></button>`).join('');
+    nav.innerHTML=[['home','홈'],['dungeon','모험'],['gear','장비'],['shop','상점']].map(([id,label])=>`<button data-action="nav" data-page="${id}" ${active===id?'aria-current="page"':''}>${icon(id)}<span>${label}</span></button>`).join('');
     const renderer={characters:renderCharacterGate,home:renderHome,gear:renderGear,shop:renderShop,dungeon:renderDungeon,stages:renderStages,battle:renderBattle,result:renderResult}[page]||renderHome;
     $('screen').innerHTML=renderer();
   }
@@ -209,7 +256,7 @@
   function renderHome(){
     if(!selectedCharacter)return `${profileBar()}<div class="panel onboarding"><div class="result-symbol">${icon('sword')}</div><div class="eyebrow" style="color:var(--violet)">WELCOME, ADVENTURER</div><h1>${esc(player)}님의 모험가를 만들어 주세요</h1><p>직업과 모습을 고르면 단어 던전에 바로 입장할 수 있어요.<br>정답이 공격이 되고 크리스털이 보상으로 쌓입니다.</p>${!dbOnline&&!demo?'<div class="db-warning">현재 데이터베이스에 연결할 수 없어 캐릭터를 만들 수 없습니다.</div>':''}<button class="primary" data-action="new-character" ${!dbOnline&&!demo?'disabled':''}>첫 캐릭터 만들기 →</button></div>`;
     const c=selectedCharacter,d=characterDef(c),s=stats();
-    return `${profileBar()}<button class="hero" data-action="characters" aria-label="캐릭터 변경"><span class="level">LV.${s.level}</span><span class="hero-player">${esc(player)}의 모험가</span><span class="hero-hint">캐릭터 변경 ›</span><div class="hero-copy"><div class="eyebrow">${d.title}</div><h1>${esc(c.name)}</h1><p>${d.label} · ${d.trait.split(' · ')[0]}</p></div>${portrait()}</button><button class="panel progress-card" style="width:100%" data-action="stats"><span class="row small"><span>다음 레벨까지</span><b>${num(s.exp)} / 1,000 EXP</b></span><div class="xp"><i style="width:${s.exp/10}%"></i></div></button><div class="stats"><button class="panel stat" data-action="stats"><span>최고 콤보</span><b>${s.best}</b></button><button class="panel stat" data-action="stats"><span>정답률</span><b>${s.accuracy}%</b></button><button class="panel stat" data-action="records"><span>클리어</span><b>${s.clears}</b></button></div><button class="primary home-cta" data-action="nav" data-page="dungeon">WORD DUNGEON 입장 <span class="arrow">→</span></button>`;
+    return `${profileBar()}<button class="hero" data-action="characters" aria-label="캐릭터 변경"><span class="level">LV.${s.level}</span><span class="hero-player">${esc(player)}의 모험가</span><span class="hero-hint">캐릭터 변경 ›</span><div class="hero-copy"><div class="eyebrow">${d.title}</div><h1>${esc(c.name)}</h1><p>${d.label} · ${d.trait.split(' · ')[0]}</p></div>${portrait()}</button><button class="panel progress-card" style="width:100%" data-action="stats"><span class="row small"><span>다음 레벨까지</span><b>${num(s.exp)} / 1,000 EXP</b></span><div class="xp"><i style="width:${s.exp/10}%"></i></div></button><div class="stats"><button class="panel stat" data-action="stats"><span>최고 콤보</span><b>${s.best}</b></button><button class="panel stat" data-action="stats"><span>정답률</span><b>${s.accuracy}%</b></button><button class="panel stat" data-action="records"><span>클리어</span><b>${s.clears}</b></button></div><button class="primary home-cta" data-action="nav" data-page="dungeon">모험 떠나기 <span class="arrow">→</span></button>`;
   }
   function itemOwned(item){return inventory.some(x=>String(x.item_id)===String(item.id));}
   function renderItemCard(item,ownedView=false){const owned=itemOwned(item),eq=Object.values(equippedMap()).some(id=>String(id)===String(item.id)),gear=item.category==='avatar';return `<button class="item" data-action="item" data-id="${item.id}" ${gear?`data-rarity="${esc(item.rarity||'normal')}"`:''}>${gear?`<span class="item-rarity">${rarityNames[item.rarity]||'일반'} · ${'★'.repeat(Number(item.stars||1))}</span>`:''}${ownedView?`<span class="item-status">${eq?'장착 중':'보유'}</span>`:''}<span class="item-art">${itemArt(item)}</span><b>${esc(item.name)}</b>${gear?`<span class="item-stat">${esc(String(item.stat_key||'').toUpperCase())} +${num(item.stat_value)}</span>`:''}<small class="${owned?'owned':''}">${owned?(eq?'✓ 장착 중':'✓ 보유 중'):`${num(item.price)} ◆`}</small></button>`;}
@@ -226,8 +273,8 @@
     return `${title('CRYSTAL BOUTIQUE','모험을 빛내는 상점','열심히 모은 크리스털로 나만의 이야기를 꾸며요.')}<div class="panel row"><span class="small muted">계정 공용 크리스털</span><b style="color:var(--violet)">◆ ${num(walletBalance())}</b></div><div class="tabs" aria-label="상점 분류">${[['all','전체'],['avatar','아바타'],['reward','현실 보상']].map(([key,label])=>`<button data-action="filter" data-filter="${key}" class="${filter===key?'active':''}" aria-pressed="${filter===key}">${label}</button>`).join('')}</div><div class="items catalog">${visible.map(item=>renderItemCard(item)).join('')||'<div class="empty-state">판매 중인 상품이 없어요.</div>'}</div><button class="secondary" style="width:100%;margin-top:15px" data-action="requests">보상 신청 내역 (${redemptions.length}) →</button>`;
   }
   function noCharacter(message){return `${title('CHOOSE YOUR HERO','모험가가 필요해요',message)}<button class="primary" data-action="new-character" ${!dbOnline&&!demo?'disabled':''}>캐릭터 만들기 →</button>`;}
-  function renderDungeon(){return `${title('WORD DUNGEON','오늘은 어디로 떠날까요?','한 단어, 한 번의 공격. 잃어버린 크리스털을 되찾아요.')}${worlds.map((w,i)=>{const count=w.keys.filter(stageCleared).length;return `<button class="dungeon-card" data-action="world" data-index="${i}"><span class="island">${icon('island')}</span><span class="eyebrow" style="color:var(--violet)">${w.tag}</span><h2>${w.name}</h2><p>${w.sub}</p><span class="row small"><span class="badge">${w.keys.length} STAGES · ${count} CLEAR</span><span>탐험하기 →</span></span></button>`;}).join('')}<div class="notice">각 문제는 5초 서바이벌로 진행됩니다. 오답 또는 시간 초과 시 종료되지만, 그전까지 획득한 크리스털은 저장돼요.</div><button class="secondary" style="width:100%" data-action="records">모험 기록 보기</button>`;}
-  function renderStages(){const w=worlds[worldIndex];return `<button class="text-btn" data-action="nav" data-page="dungeon">← 던전 목록</button>${title(w.tag,w.name,'도전할 길을 선택하세요. 마지막에는 보물상자가 기다려요.')}<div class="stage-list">${w.keys.map((key,i)=>{const s=stages[key];return `<button class="stage-btn" data-action="stage" data-stage="${key}"><span class="stage-no">${String(stageKeys.indexOf(key)+1).padStart(2,'0')}</span><span><b>${esc(s.name)}</b><small>${esc(s.desc||`${s.words.length}문제`)} · 5초 서바이벌</small>${stageCleared(key)?'<span class="stage-status">✓ CLEAR</span>':''}</span><span>→</span></button>`;}).join('')}</div><div class="notice">정답 +1 ◆ · 콤보 보너스 · 클리어 +10 ◆<br>스테이지는 횟수 제한 없이 다시 도전할 수 있어요.</div>`;}
+  function renderDungeon(){return `${title('WORLD ADVENTURE','어떤 월드로 떠날까요?','월드를 선택하면 그 안의 맵을 볼 수 있어요.')}<label class="world-search"><span class="world-search-icon" aria-hidden="true">⌕</span><input id="world-search" type="search" autocomplete="off" maxlength="60" placeholder="월드 이름 또는 4자리 고유키 검색" aria-label="월드 이름 또는 고유키 검색"></label><div id="world-list">${worlds.map((w,i)=>{const count=w.keys.filter(stageCleared).length,search=`${w.name} ${w.code}`.toLocaleLowerCase();return `<button class="dungeon-card${w.creator?' creator-world':''}" data-action="world" data-index="${i}" data-world-search="${esc(search)}"><span class="island">${icon('island')}</span><span class="eyebrow world-code" style="color:var(--violet)">WORLD ${esc(w.code)}</span><h2>${esc(w.name)}</h2><p>${esc(w.sub)}</p><span class="row small"><span class="badge">${w.keys.length} MAPS · ${count} CLEAR</span><span>맵 보기 →</span></span></button>`;}).join('')}</div><div id="world-empty" class="panel empty-state" hidden>검색 조건과 일치하는 월드가 없어요.</div>${creatorContentError?`<div class="notice db-warning">${esc(creatorContentError)}</div>`:''}<button class="secondary" style="width:100%" data-action="records">모험 기록 보기</button>`;}
+  function renderStages(){const w=worlds[worldIndex]||worlds[0];return `<button class="text-btn" data-action="nav" data-page="dungeon">← 월드 목록</button>${title(`WORLD ${w.code}`,w.name,'도전할 맵을 선택하세요. 마지막에는 보물상자가 기다려요.')}<div class="stage-list">${w.keys.map((key,i)=>{const s=stages[key];return `<button class="stage-btn" data-action="stage" data-stage="${key}"><span class="stage-no">${String(i+1).padStart(2,'0')}</span><span><b>${esc(s.name)}</b><small>${esc(s.desc||`${s.words.length}문제`)}${s.creator?` · ${s.questionCount}문제`:''} · 5초 서바이벌</small>${stageCleared(key)?'<span class="stage-status">✓ CLEAR</span>':''}</span><span>→</span></button>`;}).join('')}</div><div class="notice">정답 +1 ◆ · 콤보 보너스 · 클리어 +10 ◆<br>맵은 횟수 제한 없이 다시 도전할 수 있어요.</div>`;}
 
   function posMatch(a,b){return a[1]===b[1]||a[1].includes(b[1])||b[1].includes(a[1]);}
   function formScore(a,b){let score=Math.max(0,5-Math.abs(a[0].length-b[0].length));if(a[0][0]===b[0][0])score+=3;if(a[1]===b[1])score+=6;else if(posMatch(a,b))score+=4;return score+Math.random()*2;}
@@ -237,7 +284,7 @@
   function startBattle(){
     if(!selectedCharacter){closeDialog();go('home');toast('먼저 캐릭터를 만들어 주세요');return;}
     clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();const source=stages[selectedStage];
-    run={deck:shuffle(source.words).map(w=>({entry:w,mode:Math.random()<.5?'en-ko':'ko-en'})),index:0,correct:0,elapsed:0,locked:false,paused:false,done:false,clear:false,result:null,chest:false,treasure:0};
+    run={deck:buildQuestionDeck(source),index:0,correct:0,elapsed:0,locked:false,paused:false,done:false,clear:false,result:null,chest:false,treasure:0};
     prepareQuestion();closeDialog();go('battle');tick();
   }
   function prepareQuestion(){const item=run.deck[run.index],timing=questionDuration();run.question=makeQuestion(item.entry,stages[selectedStage].words,item.mode);run.remaining=timing.duration;run.maxTime=timing.duration;run.skill=timing.skill;run.last=performance.now();run.locked=false;}
@@ -282,8 +329,8 @@
   }
   async function finishBattle(clear,reason){
     if(run.done)return;run.done=true;run.clear=clear;run.reason=reason;run.feedbackPending=false;clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();
-    if(demo){const coins=earnedCoins(run.correct,clear),id=`demo-${Date.now()}`;selectedCharacter.coins+=coins;run.result={game_score_id:id,coins_earned:coins,balance:selectedCharacter.coins};const row={id,player,stage:stages[selectedStage].name,correct:run.correct,total:run.deck.length,cleared:clear,character_id:selectedCharacter.id,duration_ms:Math.round(run.elapsed),coins_earned:coins,created_at:new Date().toISOString()};demoState.records.unshift(row);records=demoState.records;saveDemo();}
-    else if(dbOnline){try{const rows=await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stages[selectedStage].name,p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed)});run.result=rows?.[0]||null;if(run.result){if(accountMode)accountCrystals=Number(run.result.balance);else selectedCharacter.coins=run.result.balance;}records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.error(error);run.saveError=true;}}
+    if(demo){const coins=earnedCoins(run.correct,clear),id=`demo-${Date.now()}`;selectedCharacter.coins+=coins;run.result={game_score_id:id,coins_earned:coins,balance:selectedCharacter.coins};const row={id,player,stage:stageRecordName(selectedStage),correct:run.correct,total:run.deck.length,cleared:clear,character_id:selectedCharacter.id,duration_ms:Math.round(run.elapsed),coins_earned:coins,created_at:new Date().toISOString()};demoState.records.unshift(row);records=demoState.records;saveDemo();}
+    else if(dbOnline){try{const rows=await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stageRecordName(selectedStage),p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed)});run.result=rows?.[0]||null;if(run.result){if(accountMode)accountCrystals=Number(run.result.balance);else selectedCharacter.coins=run.result.balance;}records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.error(error);run.saveError=true;}}
     go('result');
   }
   function renderResult(){const r=run,result=r.result,earned=result?.coins_earned??earnedCoins(r.correct,r.clear);return `<section class="result"><div class="result-symbol">${icon(r.clear?'trophy':'aura')}</div><div class="eyebrow" style="color:var(--violet)">${r.clear?'STAGE CLEAR':'KEEP EXPLORING'}</div><h1>${r.clear?'크리스털을 되찾았어요!':r.reason==='timeout'?'시간이 다 되었어요':'다음엔 더 멀리 갈 수 있어요'}</h1><p>${esc(stages[selectedStage].name)} · ${r.correct} / ${r.deck.length} 정답<br>${r.clear?'당신의 단어가 던전을 다시 빛나게 했어요.':'이번에 배운 단어는 다음 모험의 힘이 됩니다.'}</p><div class="reward-number">◆ +${num(earned)}</div><div class="panel row small reward-breakdown"><span>정답 <b>${r.correct}</b> · 클리어 <b>${r.clear?'+10':'—'}</b></span><span>풀이 시간 <b>${(r.elapsed/1000).toFixed(1)}초</b></span></div><div class="save-state">${r.saveError?'⚠ 기록 저장에 실패했습니다':demo?'✓ 체험 기록 저장 완료':'✓ Supabase 기록 저장 완료'}</div>${r.clear?`<button class="chest" data-action="chest" ${r.chest||!result?.game_score_id?'disabled':''}>${icon('chest')}<b>${r.chest?`보물상자 +${r.treasure} ◆ 획득 완료`:'보물상자 열기'}</b><div class="small" style="margin-top:7px">${r.chest?'보상이 지갑에 추가되었어요':'추가 크리스털 10–30개를 얻어요'}</div></button>`:''}<button class="primary" data-action="retry">다시 도전하기 →</button><div class="actions"><button class="secondary" data-action="nav" data-page="dungeon">다른 던전</button><button class="secondary" data-action="nav" data-page="home">홈으로</button></div></section>`;}
@@ -296,7 +343,9 @@
   function showRecords(){const rows=selectedRecords().slice(0,20);modal(`<div class="eyebrow">ADVENTURE JOURNAL</div><h2>모험 기록</h2><p>${esc(selectedCharacter?.name||player)}의 최근 도전입니다.</p>${rows.length?rows.map(r=>`<div class="record-row row"><div><b>${esc(r.stage)}</b><small>${new Date(r.created_at).toLocaleString('ko-KR')} · ${r.correct}/${r.total} 정답</small></div><span>${r.cleared?'CLEAR':'도전'}<small>+${num(r.coins_earned)} ◆</small></span></div>`).join(''):'<div class="notice">아직 모험 기록이 없어요.</div>'}`);}
   function showStats(){const s=stats();modal(`<div class="eyebrow">ADVENTURER STATUS</div><h2>${esc(selectedCharacter.name)} · LV.${s.level}</h2><p>${characterDef(selectedCharacter).label} · ${characterDef(selectedCharacter).trait}</p><div class="record-row row"><span>경험치</span><b>${s.exp} / 1,000</b></div><div class="record-row row"><span>최고 콤보</span><b>${s.best}</b></div><div class="record-row row"><span>누적 정답</span><b>${s.correct} / ${s.answered}</b></div><div class="record-row row"><span>정답률</span><b>${s.accuracy}%</b></div><div class="record-row row"><span>클리어</span><b>${s.clears}</b></div><button class="primary" data-action="records">모험 기록 보기</button>`);}
   function showRequests(){modal(`<div class="eyebrow">REWARD REQUESTS</div><h2>보상 신청 내역</h2><p>현실 보상은 보호자 승인 후 지급됩니다.</p>${redemptions.length?redemptions.map(r=>`<div class="record-row row"><b>${esc(itemById(r.item_id)?.name||'보상')}</b><span class="request-status ${esc(r.status)}">${({pending:'승인 대기',approved:'승인',fulfilled:'지급 완료',cancelled:'취소'})[r.status]||esc(r.status)}</span></div>`).join(''):'<div class="notice">아직 신청한 보상이 없어요.</div>'}`);}
-  function showRankings(){const best={};records.filter(r=>r.stage===stages[selectedStage]?.name).forEach(r=>{const key=r.character_id||r.player,old=best[key];if(!old||Number(r.cleared)>Number(old.cleared)||(r.cleared===old.cleared&&r.correct>old.correct))best[key]=r;});const rows=Object.values(best).sort((a,b)=>Number(b.cleared)-Number(a.cleared)||b.correct-a.correct).slice(0,10);modal(`<div class="eyebrow">CRYSTAL RANKING</div><h2>${esc(stages[selectedStage]?.name||'스테이지')} 랭킹</h2><div class="ranking-list">${rows.map((r,i)=>{const c=allCharacters.find(x=>x.id===r.character_id);return `<div class="ranking-row"><span>${i+1}</span><b>${esc(c?.name||r.player)}<small>${esc(r.player)} · ${r.cleared?'CLEAR':'도전'}</small></b><span>${r.correct}/${r.total}</span></div>`;}).join('')||'<div class="notice">아직 랭킹 기록이 없어요.</div>'}</div>`);}
+  function rankingMarkup(){const best={};records.filter(r=>r.stage===stageRecordName(selectedStage)).forEach(r=>{const key=r.character_id||r.player,old=best[key];if(!old||Number(r.cleared)>Number(old.cleared)||(r.cleared===old.cleared&&r.correct>old.correct))best[key]=r;});const rows=Object.values(best).sort((a,b)=>Number(b.cleared)-Number(a.cleared)||b.correct-a.correct).slice(0,10);return `<div class="ranking-list">${rows.map((r,i)=>{const c=allCharacters.find(x=>x.id===r.character_id);return `<div class="ranking-row"><span>${i+1}</span><b>${esc(c?.name||r.player)}<small>${esc(r.player)} · ${r.cleared?'CLEAR':'도전'}</small></b><span>${r.correct}/${r.total}</span></div>`;}).join('')||'<div class="notice">아직 랭킹 기록이 없어요. 첫 기록의 주인공이 되어 보세요!</div>'}</div>`;}
+  function showMapStart(){const stage=stages[selectedStage];modal(`<div class="eyebrow">MAP RANKING · TOP 10</div><h2>${esc(stage?.name||'맵')}</h2><p>${esc(stage?.desc||'단어 모험')} · 문제당 5초</p>${rankingMarkup()}<button class="primary" data-action="start">START</button>`);}
+  function showRankings(){modal(`<div class="eyebrow">CRYSTAL RANKING · TOP 10</div><h2>${esc(stages[selectedStage]?.name||'맵')} 랭킹</h2>${rankingMarkup()}`);}
 
   const roleLabels={admin:'관리자',teacher:'선생님',student:'학생'};
   function profilePermissions(role){
@@ -386,9 +435,21 @@
     else if(action==='enter-game'){if(selectedCharacter)go('home');}else if(action==='open-character-create'||action==='new-character')showNewCharacter();else if(action==='cancel-character-create'){characterCreating=false;render();}else if(action==='buy-character-ticket')await buyCharacterTicket(b);else if(action==='class'){if($('character-name'))newCharacterName=$('character-name').value;newClass=b.dataset.value;renderCharacterForm();}else if(action==='variant'){if($('character-name'))newCharacterName=$('character-name').value;newVariant=b.dataset.value;renderCharacterForm();}else if(action==='accent'){if($('character-name'))newCharacterName=$('character-name').value;newAccent=b.dataset.value;renderCharacterForm();}else if(action==='create-character')await createCharacter(b);
     else if(action==='item')showItem(id);else if(action==='filter'){filter=b.dataset.filter;render();}else if(action==='buy')await purchase(itemById(id));else if(action==='equip')await equip(itemById(id));
     else if(action==='slot'){const eq=equippedMap()[b.dataset.slot],owned=shopItems.find(i=>slotFor(i)===b.dataset.slot&&itemOwned(i));if(eq)showItem(eq);else if(owned)showItem(owned.id);else{filter='avatar';go('shop');toast('이 슬롯에 어울리는 아이템을 골라 보세요');}}
-    else if(action==='world'){worldIndex=Number(b.dataset.index);go('stages');}else if(action==='stage'){selectedStage=b.dataset.stage;modal(`<div class="eyebrow">READY TO EXPLORE</div><h2>${esc(stages[selectedStage].name)}</h2><p>${esc(stages[selectedStage].desc)}를 모두 맞혀 수정 정령을 물리치세요.<br>문제당 5초, 오답 또는 시간 초과 시 종료됩니다.</p><button class="primary" data-action="start">준비됐어요 · 전투 시작 →</button><button class="text-btn" data-action="rankings">이 스테이지 랭킹 보기</button>`);}else if(action==='start'||action==='retry')startBattle();
+    else if(action==='world'){worldIndex=Number(b.dataset.index);go('stages');}else if(action==='stage'){selectedStage=b.dataset.stage;showMapStart();}else if(action==='start'||action==='retry')startBattle();
     else if(action==='answer')answer(Number(b.dataset.index));else if(action==='dismiss-reward')continueAfterFeedback();else if(action==='pause'){pause();modal('<div class="eyebrow">PAUSED</div><h2>잠깐의 휴식</h2><p>시간도 함께 멈췄어요. 준비되면 다시 시작하세요.</p><button class="primary" data-action="resume">계속하기</button><button class="text-btn" data-action="leave" data-page="dungeon">도전을 저장하고 던전으로</button>');}else if(action==='resume')resume();else if(action==='leave'){closeDialog();await finishBattle(false,'leave');go(b.dataset.page);}
     else if(action==='speak')speak(run.question.entry[0]);else if(action==='chest')await claimChest(b);else if(action==='records')showRecords();else if(action==='stats')showStats();else if(action==='requests')showRequests();else if(action==='rankings')showRankings();else if(action==='wallet')modal(`<div class="eyebrow">ACCOUNT CRYSTAL WALLET</div><h2>◆ ${num(walletBalance())}</h2><p>계정의 모든 캐릭터가 함께 사용하는 크리스털이에요.<br>어떤 캐릭터로 모아도 같은 지갑에 쌓입니다.</p>`);else if(action==='profile')await showProfile();else if(action==='send-profile-code')await sendProfileCode(b);else if(action==='resend-profile-code')await sendProfileCode(b,b.dataset.email);else if(action==='verify-profile-code')await verifyProfileCode(b);else if(action==='select-profile-role')await selectProfileRole(b);else if(action==='ask-unlink-email')askUnlinkEmail();else if(action==='cancel-unlink-email')$('dialog-content').innerHTML=profileMarkup(accountProfile);else if(action==='confirm-unlink-email')await unlinkProfileEmail(b);else if(action==='signout')await signOut();
+  });
+  document.addEventListener('input',event=>{
+    if(event.target.id!=='world-search')return;
+    const query=event.target.value.trim().toLocaleLowerCase();
+    let visible=0;
+    document.querySelectorAll('[data-world-search]').forEach(card=>{
+      const matches=!query||card.dataset.worldSearch.includes(query);
+      card.hidden=!matches;
+      if(matches)visible++;
+    });
+    const empty=$('world-empty');
+    if(empty)empty.hidden=visible>0;
   });
   document.addEventListener('error', event => {
     const image = event.target;
