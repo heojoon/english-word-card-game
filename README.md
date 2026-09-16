@@ -581,13 +581,14 @@ assets/ui/crystal-quest/title/title-screen.webp
 
 ### AI 단어장 OCR / 월드 공방
 
-`map-creator.html`에서 Admin 또는 Teacher가 월드를 만들고, 영어 단어와 한글 뜻으로 구성된 단어장 사진을 업로드할 수 있다. 원본은 private `word-source-images` bucket에 임시 저장되고 `process-map-ocr` Edge Function이 OpenAI Responses API로 단어 쌍을 추출한다. 결과는 항상 검수 초안으로 저장되며 제작자가 수정한 뒤 공개한다.
+`map-creator.html`에서 Admin 또는 Teacher가 월드를 만들고, 영어 단어와 한글 뜻으로 구성된 단어장 사진을 업로드할 수 있다. 원본은 private `word-source-images` bucket에 임시 저장되고 `process-map-ocr` Edge Function이 Gemini API의 이미지 입력과 Structured Outputs로 단어 쌍을 추출한다. 결과는 항상 검수 초안으로 저장되며 제작자가 수정한 뒤 공개한다.
 
 로컬 함수 secret 파일 `supabase/functions/.env`를 만들되 커밋하지 않는다.
 
 ```dotenv
-OPENAI_API_KEY=개인_OpenAI_API_키
-OPENAI_VISION_MODEL=gpt-5-mini
+GEMINI_API_KEYS=교체한_Gemini_API_키_1,교체한_Gemini_API_키_2
+GEMINI_REVIEW_MODEL=gemini-2.5-flash-lite
+GEMINI_REVIEW_RPM=12
 OCR_DAILY_LIMIT=20
 ```
 
@@ -620,7 +621,7 @@ supabase functions deploy process-map-ocr --project-ref <project-ref>
 supabase functions deploy verify-profile-email --project-ref <project-ref>
 ```
 
-OpenAI 키와 Supabase secret/service-role 키는 브라우저 번들, Android 번들, GitHub Actions 로그에 포함하지 않는다.
+Gemini 키와 Supabase secret/service-role 키는 브라우저 번들, Android 번들, GitHub Actions 로그에 포함하지 않는다. `GEMINI_API_KEYS`의 여러 키는 인증 장애 시 순차 대체용이며 Gemini 사용량 제한은 API 키가 아니라 Google Cloud 프로젝트 단위로 적용된다.
 
 ---
 

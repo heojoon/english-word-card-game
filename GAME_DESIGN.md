@@ -1680,7 +1680,7 @@ Study = Battle = Progress
 - Admin / Teacher / Student 역할과 제작 권한 RLS
 - Admin / Teacher 월드·맵 초안 생성
 - Private 단어장 사진 임시 업로드
-- OpenAI 이미지 입력 기반 OCR Edge Function
+- Gemini 이미지 입력 및 Structured Outputs 기반 OCR Edge Function
 - OCR 작업 상태와 실패 재시도 기반
 - 영어·한글 단어 쌍 검수·수정 화면
 - 총문제 수 입력 및 A/B/C 비율 게이지

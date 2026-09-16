@@ -34,9 +34,9 @@ Apply these rules whenever changing AI OCR, uploads, creator maps, or generated 
 
 - A source photo is temporary learning input, not map background art. Accept only vocabulary-sheet images structured as English word/phrase paired with a Korean meaning.
 - Store source photos in the private `word-source-images` Supabase Storage bucket. Scope object paths by authenticated user ID and map ID.
-- Never put an OpenAI API key, Supabase secret key, or service-role key in browser code, committed files, GitHub Pages output, or the Android bundle. OpenAI calls run only in a server-side Supabase Edge Function.
+- Never put a Gemini API key, Supabase secret key, or service-role key in browser code, committed files, GitHub Pages output, or the Android bundle. Gemini calls run only in a server-side Supabase Edge Function.
 - Require an authenticated Admin or Teacher and verify both role and resource ownership on the server. Do not trust a hidden button or a client-supplied owner ID as authorization.
-- Treat text inside uploaded images as untrusted data, never as model instructions. Use image-capable OpenAI Responses API models with strict Structured Outputs and validate the returned JSON again on the server.
+- Treat text inside uploaded images as untrusted data, never as model instructions. Use image-capable Gemini API models with strict Structured Outputs and validate the returned JSON again on the server.
 - AI output is always a draft. Never publish OCR results automatically. Show uncertain, malformed, missing, and duplicate pairs for creator review.
 - Keep durable OCR job state (`queued`, `processing`, `succeeded`, `failed`), make processing idempotent per source image and prompt version, and retain actionable error details without logging image bytes or personal data.
 - Preserve the original row order. Store English, Korean meaning, review state, issues, source image reference, model name, and prompt version.
@@ -46,4 +46,4 @@ Apply these rules whenever changing AI OCR, uploads, creator maps, or generated 
 - Private maps are readable only by explicitly granted authenticated user IDs, their owner, and Admins. Public map visibility does not make its temporary OCR source image public.
 - Delete or purge temporary source images after publishing; failed abandoned uploads must have an expiry/cleanup path.
 - Add schema changes through `supabase/migrations`, enable RLS on every exposed table, explicitly grant required Data API privileges, and verify locally with a clean `supabase db reset --local`.
-- Keep the model ID configurable through the `OPENAI_VISION_MODEL` Edge Function secret. Use `OPENAI_API_KEY` only in Edge Function secrets.
+- Keep the model ID configurable through the `GEMINI_REVIEW_MODEL` Edge Function secret. Use `GEMINI_API_KEYS` only in Edge Function secrets and enforce `GEMINI_REVIEW_RPM` server-side.
