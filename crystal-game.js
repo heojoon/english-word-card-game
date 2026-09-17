@@ -315,7 +315,7 @@
     prepareQuestion();render();if(!run.paused)tick();
   }
   function updateEnemyApproach(){
-    const arena=$('arena'),enemy=arena?.querySelector('.enemy'),hero=arena?.querySelector('.portrait');
+    const arena=$('arena'),enemy=arena?.querySelector('.enemy'),hero=arena?.querySelector('.battle-hero, .portrait');
     if(!arena||!enemy||!hero||!run)return;
     const progress=Math.min(1,Math.max(0,1-run.remaining/run.maxTime));
     const contactLeft=hero.offsetLeft+hero.offsetWidth*.99;
