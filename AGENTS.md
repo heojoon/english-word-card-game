@@ -47,3 +47,22 @@ Apply these rules whenever changing AI OCR, uploads, creator maps, or generated 
 - Delete or purge temporary source images after publishing; failed abandoned uploads must have an expiry/cleanup path.
 - Add schema changes through `supabase/migrations`, enable RLS on every exposed table, explicitly grant required Data API privileges, and verify locally with a clean `supabase db reset --local`.
 - Keep the model ID configurable through the `GEMINI_REVIEW_MODEL` Edge Function secret. Use `GEMINI_API_KEYS` only in Edge Function secrets and enforce `GEMINI_REVIEW_RPM` server-side.
+
+## Build and deployment
+
+Use the following process whenever the user asks to deploy this repository. Do not spend time rediscovering the deployment mechanism unless these instructions or the repository configuration have changed.
+
+1. Run `npm run build` and resolve any build failure before deployment.
+2. Review `git status` and the diff. Commit only the intended source, generated bundle, and asset changes; do not include unrelated working-tree changes.
+3. Before pushing, inspect the complete deployment diff against `origin/main`. Do not infer that a deployment is frontend-only:
+   - If `supabase/migrations/**` changed, run `supabase db reset --local`, then `supabase migration list --linked` and `supabase db push --linked --dry-run`. Review the exact pending migrations, apply them with `supabase db push --linked`, and verify with `supabase migration list --linked` again.
+   - If `supabase/functions/<name>/**` changed, deploy every changed function with `supabase functions deploy <name> --project-ref <project-ref>`. Determine `<project-ref>` from the linked Supabase project; never hard-code secrets or print them in logs.
+   - If a changed function needs new or updated secrets, ensure they are configured with `supabase secrets set` before deploying the function. Never commit `supabase/functions/.env` or copy secret values into browser code, Android bundles, commands recorded in Git, or logs.
+   - Database migrations and Edge Functions are not deployed by GitHub Pages. Do not omit these steps when the deployment diff contains corresponding changes. Deploy backend dependencies before publishing frontend code that relies on them.
+4. Push the deployment commit to `origin/main` with `git push origin main`.
+5. GitHub Pages automatically deploys from the repository root of the `main` branch using the legacy branch-based Pages workflow. The production URL is `https://heojoon.github.io/english-word-card-game/`.
+6. Verify the `pages build and deployment` run for the pushed commit with `gh run list` and `gh run watch <run-id> --exit-status`. Do not report deployment as complete until this workflow succeeds.
+7. A push to `main` also starts `.github/workflows/android.yml` when one of its configured paths changes. This produces the `wordoria-debug-apk` artifact; report its status separately from the GitHub Pages deployment.
+8. Report the outcome of each applicable deployment target separately: database migrations, Edge Functions and secrets, GitHub Pages, and Android build. Any failed or skipped required target means the overall deployment is not complete.
+
+Use the project-specific Supabase commands and function names documented in `README.md`. Discover current CLI flags with `supabase <group> <command> --help` rather than relying on remembered syntax.
