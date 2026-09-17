@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Wordoria · 펫과 오라 디자인 시안</title>
+  <style>
+    :root{color-scheme:light;--ink:#24214c;--muted:#74718a;--violet:#5751d8;--mint:#60d9cf;--surface:#f7f7ff}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at 50% 0,#ecebff 0,#f7f7ff 43%,#f3f6ff 100%);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
+    main{width:min(1120px,100%);margin:0 auto;padding:30px 18px 70px}
+    a{color:var(--violet)}
+    header{max-width:760px;margin-bottom:25px}
+    .eyebrow{color:var(--violet);font-size:.76rem;font-weight:800;letter-spacing:.12em}
+    h1{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.055em;margin:9px 0 12px}
+    p{line-height:1.65;color:var(--muted)}
+    .intro{margin:0 0 20px}
+    .rarity-picker{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 27px}
+    button{font:inherit;cursor:pointer}
+    .rarity-picker button{border:1px solid #d8d8ed;border-radius:999px;background:#fff;color:var(--ink);padding:9px 15px;min-height:44px;font-weight:700}
+    .rarity-picker button[aria-pressed="true"]{background:var(--violet);color:#fff;border-color:var(--violet)}
+    .rarity-picker button:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+    section{margin-top:34px}
+    h2{font-size:1.35rem;margin:0 0 6px}
+    .section-note{font-size:.9rem;margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:14px}
+    .card{--edge:#a9adba;position:relative;border-radius:25px;background:#fff;padding:4px;box-shadow:0 12px 34px #5751d818;min-width:0}
+    .card::before{content:"";position:absolute;inset:0;border-radius:25px;background:var(--edge);pointer-events:none}
+    .card[data-rarity="normal"]{--edge:#9ea5b5}
+    .card[data-rarity="special"]{--edge:#32b879}
+    .card[data-rarity="rare"]{--edge:#e35560}
+    .card[data-rarity="unique"]{--edge:#e8b53e}
+    .card[data-rarity="legendary"]{--edge:conic-gradient(from 24deg,#eb6b9a,#e8b53e,#67d6ba,#5d87e8,#a573e6,#eb6b9a)}
+    .card-inner{position:relative;height:100%;border-radius:21px;background:linear-gradient(150deg,#fff,#f8f8ff 70%,#edf5ff);overflow:hidden;display:flex;flex-direction:column}
+    .card-top{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:12px 12px 0;font-size:.71rem;font-weight:800}
+    .card-top .type{color:var(--muted)}
+    .card-top .grade{background:#edeafd;border-radius:999px;padding:4px 7px;color:var(--violet)}
+    .art{height:165px;display:grid;place-items:center;padding:3px 9px;background:radial-gradient(circle at 50% 60%,#e9ebff 0,#f7f8ff 56%,transparent 75%)}
+    .art img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 9px 9px #43417629)}
+    .card-info{padding:0 13px 14px;margin-top:auto}
+    .card-info b{display:block;font-size:.96rem;letter-spacing:-.04em}
+    .card-info span{display:block;color:var(--muted);font-size:.75rem;margin-top:4px}
+    .compare{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+    .compare .art{height:130px}
+    .compare .card-info{min-height:57px}
+    .footnote{font-size:.83rem;margin-top:18px}
+    @media(max-width:670px){main{padding:24px 14px 54px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.art{height:130px}.card-top{padding:10px 8px 0}.card-info{padding:0 9px 11px}.compare{overflow-x:auto;grid-template-columns:repeat(5,145px);padding-bottom:8px}}
+    @media(prefers-reduced-motion:no-preference){.rarity-picker button,.card{transition:transform .16s ease,box-shadow .16s ease}.rarity-picker button:hover{transform:translateY(-2px)}.card:hover{transform:translateY(-3px);box-shadow:0 16px 37px #5751d829}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <a href="index.html">← 게임으로</a>
+      <div class="eyebrow" style="margin-top:22px">CRYSTAL QUEST · ITEM CONCEPTS</div>
+      <h1>같은 아이템, 다른 등급</h1>
+      <p class="intro">펫 10종과 오라 10종의 디자인 시안입니다. 그림과 이름은 고정하고 카드 테두리·등급 배지·별 개수만 바꿉니다. 아래 버튼으로 전체 카드의 등급을 바꿔 보세요.</p>
+    </header>
+    <nav class="rarity-picker" id="rarity-picker" aria-label="등급별 테두리 미리보기"></nav>
+    <section aria-labelledby="comparison-title">
+      <h2 id="comparison-title">하나의 그림, 다섯 가지 등급</h2>
+      <p class="section-note">조약돌 슬라임의 동일한 원본 이미지를 다섯 카드에 재사용합니다.</p>
+      <div class="compare" id="compare"></div>
+    </section>
+    <section aria-labelledby="pets-title"><h2 id="pets-title">펫 · 10종</h2><p class="section-note">작은 화면에서도 한눈에 알아볼 수 있는 동행 정령들</p><div class="grid" id="pets"></div></section>
+    <section aria-labelledby="auras-title"><h2 id="auras-title">오라 · 10종</h2><p class="section-note">캐릭터의 질문·선택지를 가리지 않는 크리스털 빛</p><div class="grid" id="auras"></div></section>
+    <p class="footnote">이 화면은 디자인 검토용입니다. 아이템 구매·장착·등급 효과는 아직 연결되지 않았습니다. 상세 기획은 <a href="ITEM_DESIGN.md">ITEM_DESIGN.md</a>에 있습니다.</p>
+  </main>
+  <script>
+    const grades=[['normal','일반','#9ea5b5'],['special','스페셜','#32b879'],['rare','레어','#e35560'],['unique','유니크','#e8b53e'],['legendary','레전더리','rainbow']];
+    const pets=[
+      ['조약돌 슬라임','pet_pebble_slime'],['민트 참새','pet_mint_sparrow'],['종이배 토끼','pet_paperboat_rabbit'],['반짝꼬리 여우','pet_sparktail_fox'],['구름방울 고양이','pet_cloudbubble_cat'],
+      ['유리껍질 달팽이','pet_glass_shell_snail'],['파란리본 올빼미','pet_blue_ribbon_owl'],['책송이 다람쥐','pet_bookbud_squirrel'],['안개뿔 사슴','pet_mist_horn_deer'],['프리즘 수호룡','pet_prism_guardian_dragon']
+    ];
+    const auras=[
+      ['새벽 물결','aura_dawn_wave'],['맑은 메아리','aura_clear_echo'],['작은 책갈피','aura_little_bookmark'],['첫빛 결정','aura_firstlight_crystal'],['민트 숨결','aura_mint_breath'],
+      ['서리 나침반','aura_frost_compass'],['은종 파동','aura_silver_bell_wave'],['라일락 책고리','aura_lilac_book_ring'],['별자리 고리','aura_constellation_ring'],['워드 크리스털 후광','aura_word_crystal_halo']
+    ];
+    let selected=0;
+    const card=([name,id],type,gradeIndex)=>{const [grade,label]=grades[gradeIndex];return `<article class="card" data-rarity="${grade}"><div class="card-inner"><div class="card-top"><span class="type">${type}</span><span class="grade">${label} · ${'★'.repeat(gradeIndex+1)}</span></div><div class="art"><img src="assets/items/concepts/${id}.png" alt="${name} 디자인 시안" loading="lazy"></div><div class="card-info"><b>${name}</b><span>등급만 변경 · 원본 그림 동일</span></div></div></article>`};
+    function render(){
+      document.getElementById('rarity-picker').innerHTML=grades.map(([key,label],i)=>`<button type="button" data-grade="${i}" aria-pressed="${selected===i}">${label} ${i+1}★</button>`).join('');
+      document.getElementById('pets').innerHTML=pets.map(item=>card(item,'PET',selected)).join('');
+      document.getElementById('auras').innerHTML=auras.map(item=>card(item,'AURA',selected)).join('');
+      document.getElementById('compare').innerHTML=grades.map((_,i)=>card(pets[0],'PET',i)).join('');
+    }
+    document.getElementById('rarity-picker').addEventListener('click',event=>{const button=event.target.closest('button[data-grade]');if(!button)return;selected=Number(button.dataset.grade);render()});
+    render();
+  </script>
+</body>
+</html>
