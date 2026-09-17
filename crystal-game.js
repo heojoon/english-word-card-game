@@ -292,7 +292,11 @@
     prepareQuestion();closeDialog();go('battle');tick();
   }
   function prepareQuestion(){const item=run.deck[run.index],timing=questionDuration();run.question=makeQuestion(item.entry,stages[selectedStage].words,item.mode);run.remaining=timing.duration;run.maxTime=timing.duration;run.skill=timing.skill;run.last=performance.now();run.locked=false;}
-  function renderBattle(){const q=run.question,total=run.deck.length,boss=run.index===total-1;return `<div class="battle-top row"><div class="stage-copy"><div class="eyebrow" style="color:var(--violet)">${esc(stages[selectedStage].name)} · ${run.index+1}/${total}</div><b>${esc(stages[selectedStage].desc||'Word Quest')}</b></div><button class="icon-btn" data-action="pause" aria-label="일시정지">${icon('pause')}</button></div><div class="arena ${run.skill?'skill':''}" id="arena"><div class="arena-floor"></div>${portrait()}${run.skill?`<span class="skill-chip">${run.skill}</span>`:''}<div class="arena-time" id="arena-time" aria-label="남은 제한시간"><small>TIME LIMIT</small><strong id="timer">${(run.remaining/1000).toFixed(1)}<span>초</span></strong></div><span class="enemy-label">${boss?'BOSS · 수정 정령':'LV. 1 · 민트 슬라임'}</span><div class="enemy ${boss?'boss':''}"></div><div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div><div class="arena-feedback" id="arena-feedback"></div></div><div class="row small" style="margin-top:12px"><b>${run.index} / ${total} 처치</b><span style="color:var(--violet)">${run.correct} COMBO · ◆ +${earnedCoins(run.correct)}</span></div><div class="xp"><i style="width:${run.index/total*100}%"></i></div><div class="question-card"><h1 class="${q.prompt.length>28?'long-question':''}">${esc(q.prompt)}</h1></div><div class="answers">${q.choices.map((answer,i)=>`<button class="answer" data-action="answer" data-index="${i}"><span>${i+1}</span>${esc(answer)}</button>`).join('')}</div>`;}
+  function battleHeroMarkup(){
+    if(selectedCharacter?.class==='warrior'&&variantOf(selectedCharacter)==='male')return '<div class="battle-hero battle-hero-warrior" aria-label="남성 전사"><span class="battle-sprite" aria-hidden="true"></span></div>';
+    return portrait();
+  }
+  function renderBattle(){const q=run.question,total=run.deck.length,boss=run.index===total-1;return `<div class="battle-top row"><div class="stage-copy"><div class="eyebrow" style="color:var(--violet)">${esc(stages[selectedStage].name)} · ${run.index+1}/${total}</div><b>${esc(stages[selectedStage].desc||'Word Quest')}</b></div><button class="icon-btn" data-action="pause" aria-label="일시정지">${icon('pause')}</button></div><div class="arena ${run.skill?'skill':''}" id="arena"><div class="arena-floor"></div>${battleHeroMarkup()}${run.skill?`<span class="skill-chip">${run.skill}</span>`:''}<div class="arena-time" id="arena-time" aria-label="남은 제한시간"><small>TIME LIMIT</small><strong id="timer">${(run.remaining/1000).toFixed(1)}<span>초</span></strong></div><span class="enemy-label">${boss?'BOSS · 수정 정령':'LV. 1 · 민트 슬라임'}</span><div class="enemy ${boss?'boss':''}"></div><div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div><div class="arena-feedback" id="arena-feedback"></div></div><div class="row small" style="margin-top:12px"><b>${run.index} / ${total} 처치</b><span style="color:var(--violet)">${run.correct} COMBO · ◆ +${earnedCoins(run.correct)}</span></div><div class="xp"><i style="width:${run.index/total*100}%"></i></div><div class="question-card"><h1 class="${q.prompt.length>28?'long-question':''}">${esc(q.prompt)}</h1></div><div class="answers">${q.choices.map((answer,i)=>`<button class="answer" data-action="answer" data-index="${i}"><span>${i+1}</span>${esc(answer)}</button>`).join('')}</div>`;}
   function spiritMessage(count){const lines=['좋아! 단어의 힘이 반짝였어.','정확했어! 이 단어는 이제 네 편이야.','멋진 공격이야! 다음 단어도 가 보자.','발음까지 기억하면 더 강해져!','집중력이 크리스털처럼 빛나고 있어!'];return lines[(count-1)%lines.length];}
   function rewardJourney(total,count){const stops=Math.max(1,Math.ceil(total/5)),lit=Math.ceil(count/5);return `<div class="reward-journey" aria-label="${lit}/${stops} 체크포인트"><b class="journey-caption">체크포인트 ${lit} / ${stops}</b><div class="journey-track"><i style="width:${Math.min(100,lit/stops*100)}%"></i><span style="left:${Math.min(100,lit/stops*100)}%"></span></div></div>`;}
   function showBattleReward(q,gain){
@@ -319,6 +323,13 @@
     arena.style.setProperty('--enemy-approach',`${-travel*progress}px`);
     arena.style.setProperty('--time-progress',`${progress*100}%`);
   }
+  function setHeroAttackTravel(){
+    const arena=$('arena'),hero=arena?.querySelector('.battle-hero'),enemy=arena?.querySelector('.enemy');
+    if(!arena||!hero||!enemy)return;
+    const heroBox=hero.getBoundingClientRect(),enemyBox=enemy.getBoundingClientRect();
+    const travel=Math.max(0,Math.min(arena.clientWidth*.52,enemyBox.left-heroBox.right+heroBox.width*.28));
+    arena.style.setProperty('--hero-travel',`${travel}px`);
+  }
   function tick(){clearInterval(timerId);run.last=performance.now();updateEnemyApproach();timerId=setInterval(()=>{if(!run||run.done||run.paused||run.locked)return;const now=performance.now(),delta=now-run.last;run.last=now;run.remaining=Math.max(0,run.remaining-delta);run.elapsed+=delta;const el=$('timer'),timeBox=$('arena-time');if(el)el.firstChild.textContent=(run.remaining/1000).toFixed(1);if(timeBox)timeBox.classList.toggle('danger',run.remaining<2000);updateEnemyApproach();if(run.remaining<=0)answer(-1);},50);}
   function pause(){if(!run||run.done)return;run.paused=true;clearInterval(timerId);}
   function resume(){closeDialog();if(run&&!run.done){run.paused=false;tick();}}
@@ -327,9 +338,9 @@
   function answer(index){
     if(!run||run.done||run.paused||run.locked)return;run.locked=true;clearInterval(timerId);const q=run.question,chosen=q.choices[index],ok=chosen===q.answer;
     document.querySelectorAll('.answer').forEach((button,i)=>{button.disabled=true;button.classList.toggle('correct',q.choices[i]===q.answer);button.classList.toggle('wrong',i===index&&!ok);});
-    if(ok){run.correct++;const gain=earnedCoins(run.correct)-earnedCoins(run.correct-1);document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));$('arena').classList.add('hit');$('arena-feedback').textContent=`${run.correct} COMBO! ◆ +${gain}`;speak(q.entry[0]);run.feedbackPending=true;nextTimer=setTimeout(continueAfterFeedback,showBattleReward(q,gain));return;}
+    if(ok){run.correct++;const gain=earnedCoins(run.correct)-earnedCoins(run.correct-1);document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));setHeroAttackTravel();$('arena').classList.add('hit');$('arena-feedback').textContent=`${run.correct} COMBO! ◆ +${gain}`;speak(q.entry[0]);run.feedbackPending=true;nextTimer=setTimeout(()=>{nextTimer=setTimeout(continueAfterFeedback,showBattleReward(q,gain));},1050);return;}
     else{document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'error'}}));$('arena').classList.add('wrong');$('arena-feedback').textContent=index<0?'시간 초과!':'아쉬워요!';}
-    nextTimer=setTimeout(()=>finishBattle(false,index<0?'timeout':'wrong'),900);
+    nextTimer=setTimeout(()=>finishBattle(false,index<0?'timeout':'wrong'),1450);
   }
   async function finishBattle(clear,reason){
     if(run.done)return;run.done=true;run.clear=clear;run.reason=reason;run.feedbackPending=false;clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();
