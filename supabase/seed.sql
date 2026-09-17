@@ -11,10 +11,10 @@ values
   ('cape', '용기의 망토', 'avatar', 450, '◆', '수정 장식과 민트 안감이 모험가를 지켜 주는 희귀 망토입니다.', false, 'back', 'rare', 3, 'def', 7, 'assets/items/equipment/item_courage_cape_rare.webp'),
   ('wings', '하늘 결정 날개', 'avatar', 900, '◆', '민트빛 핵으로 움직이는 유니크 등 장비입니다.', false, 'back', 'unique', 4, 'luk', 6, 'assets/items/equipment/item_sky_crystal_wings_unique.webp'),
   ('pet', '워드 크리스털 정령', 'avatar', 1500, '◆', '배운 단어의 빛을 모아 행운을 가져오는 전설의 동행 정령입니다.', false, 'pet', 'legendary', 5, 'luk', 12, 'assets/items/equipment/item_word_crystal_sprite_legendary.webp'),
-  ('ranger_violet_crystal_skin', '보랏빛 결정 궁수', 'avatar', 2000, '◆', '은보랏빛 트윈테일과 결정 장궁으로 모습을 바꾸는 여성 궁수 전용 스킨입니다.', false, 'skin', 'legendary', 5, null, 0, 'assets/avatars/skins/ranger-female-violet-crystal.webp'),
-  ('snack', '간식 1개', 'gift', 60, '🍪', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'normal', 1, null, 0, ''),
-  ('drink', '원하는 음료 1잔', 'gift', 90, '🥤', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'normal', 1, null, 0, ''),
-  ('wish', '소원권 1회', 'gift', 150, '🎫', '보호자 승인 후 사용할 수 있는 현실 선물입니다.', true, null, 'normal', 1, null, 0, '')
+  ('ranger_violet_crystal_skin', '보랏빛 결정 궁수', 'avatar', 2000, '◆', '은보랏빛 트윈테일과 결정 장궁으로 모습을 바꾸는 여성 궁수 전용 스킨입니다.', false, 'skin', 'unique', 4, null, 0, 'assets/avatars/skins/ranger-female-violet-crystal.webp'),
+  ('snack', '간식 1개', 'gift', 60, '🍪', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, ''),
+  ('drink', '원하는 음료 1잔', 'gift', 90, '🥤', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, ''),
+  ('wish', '소원권 1회', 'gift', 150, '🎫', '보호자 승인 후 사용할 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, '')
 on conflict (code) do update
 set name = excluded.name,
     category = excluded.category,
