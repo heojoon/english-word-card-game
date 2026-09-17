@@ -11,3 +11,4 @@ android/build/
 *.aab
 .agents/
 supabase/functions/.env
+assets/characters/warrior/review/
