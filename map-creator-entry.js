@@ -41,9 +41,9 @@ const state = {
   total: 30,
   ratioA: 40,
   ratioB: 30,
-  file: null,
-  previewUrl: '',
-  source: null,
+  files: [],
+  previewUrls: [],
+  sources: [],
   words: [],
   deletedWordIds: new Set(),
   processMessage: '',
@@ -120,14 +120,38 @@ function refreshActionAvailability() {
   const saveButton = $('save-draft-button');
   const analyzeButton = $('analyze-button');
   if (saveButton) saveButton.disabled = !available;
-  if (analyzeButton) analyzeButton.disabled = !available || (!state.file && !state.source);
+  if (analyzeButton) analyzeButton.disabled = !available || (!state.files.length && !state.sources.some(source => source.status !== 'purged'));
 }
 
 function currentStep() {
   if (state.mapStatus === 'published') return 4;
   if (state.words.length) return 3;
-  if (state.file || state.source) return 2;
+  if (state.files.length || state.sources.some(source => source.status !== 'purged')) return 2;
   return 1;
+}
+
+function orderWordsBySources(words, sources) {
+  const sourceOrder = new Map(sources.map((source, index) => [source.id, index]));
+  const ordered = [...words].sort((left, right) => {
+    const leftSource = sourceOrder.get(left.source_image_id) ?? Number.MAX_SAFE_INTEGER;
+    const rightSource = sourceOrder.get(right.source_image_id) ?? Number.MAX_SAFE_INTEGER;
+    return leftSource - rightSource || left.row_order - right.row_order;
+  }).map((word, index) => ({ ...word, row_order: index + 1, issues: [...(word.issues || [])] }));
+  const firstByEnglish = new Map();
+  ordered.forEach(word => {
+    const key = String(word.english || '').trim().toLocaleLowerCase('en-US');
+    if (!key) return;
+    const first = firstByEnglish.get(key);
+    if (!first) {
+      firstByEnglish.set(key, word);
+      return;
+    }
+    [first, word].forEach(item => {
+      item.needs_review = true;
+      if (!item.issues.includes('여러 사진에서 같은 영어 항목이 중복되었습니다.')) item.issues.push('여러 사진에서 같은 영어 항목이 중복되었습니다.');
+    });
+  });
+  return ordered;
 }
 
 function stepRail() {
@@ -169,23 +193,25 @@ function worldCard() {
 }
 
 function uploadCard() {
+  const activeSourceCount = state.sources.filter(source => source.status !== 'purged').length;
+  const selectedCount = activeSourceCount + state.files.length;
   return `<section class="forge-card">
     <div class="card-head"><div><div class="eyebrow" style="color:var(--violet)">AI WORD SCAN</div><h2>단어장 사진을 올려요</h2></div><span class="step-no">02</span></div>
     <div class="upload-zone">
       <div>
-        ${state.previewUrl ? `<img class="source-preview" src="${esc(state.previewUrl)}" alt="선택한 단어장 사진 미리보기">` : '<span class="upload-symbol" aria-hidden="true">⌁</span>'}
-        <b>${state.file ? esc(state.file.name) : state.source ? '업로드된 사진을 다시 분석할 수 있어요' : '사진을 가져올 방법을 선택하세요'}</b>
-        <small>영어 단어와 한글 뜻이 행 단위로 보이는 사진<br>JPEG · PNG · WebP, 최대 6MB</small>
+        ${state.previewUrls.length ? `<div class="source-preview-grid">${state.previewUrls.map((url, index) => `<figure class="source-preview-item"><img class="source-preview" src="${esc(url)}" alt="선택한 단어장 사진 ${index + 1} 미리보기"><figcaption>${index + 1}. ${esc(state.files[index].name)}</figcaption><button type="button" data-action="remove-photo" data-index="${index}" aria-label="${index + 1}번 사진 선택 취소">×</button></figure>`).join('')}</div>` : '<span class="upload-symbol" aria-hidden="true">⌁</span>'}
+        <b>${selectedCount ? `${selectedCount}장 선택됨 · 최대 5장` : '사진을 가져올 방법을 선택하세요'}</b>
+        <small>영어 단어와 한글 뜻이 행 단위로 보이는 사진<br>JPEG · PNG · WebP, 장당 최대 6MB · 최대 5장</small>
       </div>
       <div class="upload-actions" aria-label="단어장 사진 가져오기">
         <label class="upload-choice"><input id="source-camera" type="file" accept="image/jpeg,image/png,image/webp" capture="environment"><span>카메라 촬영</span></label>
-        <label class="upload-choice"><input id="source-gallery" type="file" accept="image/jpeg,image/png,image/webp"><span>사진첩 선택</span></label>
-        <label class="upload-choice"><input id="source-file" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"><span>파일 선택</span></label>
+        <label class="upload-choice"><input id="source-gallery" type="file" accept="image/jpeg,image/png,image/webp" multiple><span>사진첩 선택</span></label>
+        <label class="upload-choice"><input id="source-file" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" multiple><span>파일 선택</span></label>
       </div>
     </div>
-    <button id="analyze-button" class="primary" data-action="analyze" ${(!state.file && !state.source) || !state.worldId || !state.mapTitle || state.busy ? 'disabled' : ''}>${state.source && !state.file ? 'AI 분석 다시 시도' : '업로드하고 AI 분석 시작'} →</button>
-    ${state.busy ? '<div class="processing"><i></i><b>사진에서 단어와 뜻을 찾고 있어요…</b></div>' : ''}
-    ${state.processMessage ? `<p class="status-note ${state.processMessage.startsWith('오류:') ? 'error' : ''}">${esc(state.processMessage)}</p>` : ''}
+    <button id="analyze-button" class="primary" data-action="analyze" ${!selectedCount || !state.worldId || !state.mapTitle || state.busy ? 'disabled' : ''}>${!state.files.length && activeSourceCount ? 'AI 분석 다시 시도' : `${state.files.length}장 업로드하고 AI 분석 시작`} →</button>
+    ${state.busy ? `<div class="processing"><i></i><b>${esc(state.processMessage || '사진에서 단어와 뜻을 찾고 있어요…')}</b></div>` : ''}
+    ${state.processMessage && !state.busy ? `<p class="status-note ${state.processMessage.startsWith('오류:') ? 'error' : ''}">${esc(state.processMessage)}</p>` : ''}
   </section>`;
 }
 
@@ -277,10 +303,10 @@ function returnToEntry() {
 }
 
 function resetMap() {
-  if (state.previewUrl) URL.revokeObjectURL(state.previewUrl);
+  state.previewUrls.forEach(url => URL.revokeObjectURL(url));
   Object.assign(state, {
     mapId: '', mapStatus: 'draft', mapTitle: '', mapDescription: '', visibility: 'private', accessIds: '',
-    total: 30, ratioA: 40, ratioB: 30, file: null, previewUrl: '', source: null, words: [],
+    total: 30, ratioA: 40, ratioB: 30, files: [], previewUrls: [], sources: [], words: [],
     deletedWordIds: new Set(), processMessage: '',
   });
 }
@@ -321,13 +347,13 @@ async function loadMap(mapId) {
   const [{ data: words, error: wordsError }, { data: grants, error: grantsError }, { data: sources }] = await Promise.all([
     supabase.from('map_words').select('id,row_order,english,korean,needs_review,issues,review_status,source_image_id').eq('map_id', mapId).order('row_order'),
     supabase.from('map_access_grants').select('user_id').eq('map_id', mapId),
-    supabase.from('map_source_images').select('id,bucket_id,object_path,mime_type,file_size,status').eq('map_id', mapId).order('created_at', { ascending: false }).limit(1),
+    supabase.from('map_source_images').select('id,bucket_id,object_path,mime_type,file_size,status,created_at').eq('map_id', mapId).order('created_at'),
   ]);
   if (wordsError) throw wordsError;
   if (grantsError) throw grantsError;
-  state.words = words || [];
+  state.words = orderWordsBySources(words || [], sources || []);
   state.accessIds = (grants || []).map(item => item.user_id).join('\n');
-  state.source = sources?.[0] || null;
+  state.sources = sources || [];
 }
 
 async function loadCreator() {
@@ -409,14 +435,28 @@ async function prepareImage(file) {
   return new File([blob], `${file.name.replace(/\.[^.]+$/, '') || 'vocabulary'}.jpg`, { type: 'image/jpeg' });
 }
 
+async function refreshWordsFromSources(mapId) {
+  const { data, error } = await supabase.from('map_words')
+    .select('id,row_order,english,korean,needs_review,issues,review_status,source_image_id')
+    .eq('map_id', mapId);
+  if (error) throw error;
+  state.words = orderWordsBySources(data || [], state.sources);
+}
+
 async function uploadAndAnalyze() {
   state.busy = true;
   state.processMessage = '';
   render();
   try {
     const mapId = await persistMap('processing');
-    if (state.file) {
-      const file = await prepareImage(state.file);
+    const activeSources = state.sources.filter(source => source.status !== 'purged');
+    if (activeSources.length + state.files.length > 5) throw new Error('단어장 사진은 최대 5장까지 올릴 수 있습니다.');
+    const newSources = [];
+    while (state.files.length) {
+      const originalFile = state.files[0];
+      state.processMessage = `${activeSources.length + newSources.length + 1}번째 사진을 업로드하고 있어요…`;
+      render();
+      const file = await prepareImage(originalFile);
       const extension = file.type === 'image/png' ? 'png' : file.type === 'image/webp' ? 'webp' : 'jpg';
       const path = `${state.user.id}/${mapId}/${crypto.randomUUID()}.${extension}`;
       const { error: uploadError } = await supabase.storage.from('word-source-images').upload(path, file, {
@@ -436,25 +476,34 @@ async function uploadAndAnalyze() {
         await supabase.storage.from('word-source-images').remove([path]);
         throw sourceError;
       }
-      state.source = source;
-      state.file = null;
+      newSources.push(source);
+      state.sources.push(source);
+      state.files.shift();
+      URL.revokeObjectURL(state.previewUrls.shift());
     }
-    if (!state.source) throw new Error('분석할 사진이 없습니다.');
+    const sourcesToAnalyze = newSources.length ? newSources : activeSources;
+    if (!sourcesToAnalyze.length) throw new Error('분석할 사진이 없습니다.');
 
-    const { data, error } = await supabase.functions.invoke('process-map-ocr', {
-      body: { mapId, sourceImageId: state.source.id },
-    });
-    if (error) {
-      let detail = error.message;
-      if (error.context instanceof Response) {
-        try { detail = (await error.context.json()).error || detail; } catch {}
+    for (let index = 0; index < sourcesToAnalyze.length; index += 1) {
+      state.processMessage = `${index + 1}/${sourcesToAnalyze.length}번째 사진에서 단어와 뜻을 찾고 있어요…`;
+      render();
+      const source = sourcesToAnalyze[index];
+      const { data, error } = await supabase.functions.invoke('process-map-ocr', {
+        body: { mapId, sourceImageId: source.id },
+      });
+      if (error) {
+        let detail = error.message;
+        if (error.context instanceof Response) {
+          try { detail = (await error.context.json()).error || detail; } catch {}
+        }
+        throw new Error(`${index + 1}번째 사진: ${detail}`);
       }
-      throw new Error(detail);
+      if (!data?.words?.length) throw new Error(`${index + 1}번째 사진: ${data?.error || 'AI가 단어 쌍을 찾지 못했습니다.'}`);
+      source.status = 'review';
     }
-    if (!data?.words?.length) throw new Error(data?.error || 'AI가 단어 쌍을 찾지 못했습니다.');
-    state.words = data.words;
+    await refreshWordsFromSources(mapId);
     state.mapStatus = 'review';
-    state.processMessage = `${state.words.length}개의 단어 쌍을 찾았습니다. 노란 행을 특히 확인해 주세요.`;
+    state.processMessage = `${sourcesToAnalyze.length}장의 사진에서 ${state.words.length}개의 단어 쌍을 찾았습니다. 노란 행을 특히 확인해 주세요.`;
     toast('AI 분석이 완료되었습니다');
   } catch (error) {
     state.processMessage = `오류: ${error.message}`;
@@ -483,7 +532,6 @@ async function saveWords() {
   const existing = cleaned.filter(word => word.id);
   const added = cleaned.filter(word => !word.id);
   await Promise.all(existing.map(word => supabase.from('map_words').update({
-    row_order: word.row_order,
     english: word.english,
     korean: word.korean,
     needs_review: false,
@@ -494,7 +542,7 @@ async function saveWords() {
   if (added.length) {
     const { error } = await supabase.from('map_words').insert(added.map(word => ({
       map_id: state.mapId,
-      source_image_id: state.source?.id || null,
+      source_image_id: null,
       owner_user_id: state.user.id,
       row_order: word.row_order,
       english: word.english,
@@ -505,12 +553,7 @@ async function saveWords() {
     })));
     if (error) throw error;
   }
-  const { data, error } = await supabase.from('map_words')
-    .select('id,row_order,english,korean,needs_review,issues,review_status,source_image_id')
-    .eq('map_id', state.mapId)
-    .order('row_order');
-  if (error) throw error;
-  state.words = data || [];
+  await refreshWordsFromSources(state.mapId);
 }
 
 function accessUserIds() {
@@ -562,13 +605,15 @@ async function publishMap() {
     }
 
     let purgeWarning = '';
-    if (state.source?.object_path && state.source.status !== 'purged') {
-      const { error: purgeError } = await supabase.storage.from('word-source-images').remove([state.source.object_path]);
+    const sourcesToPurge = state.sources.filter(source => source.object_path && source.status !== 'purged');
+    if (sourcesToPurge.length) {
+      const { error: purgeError } = await supabase.storage.from('word-source-images').remove(sourcesToPurge.map(source => source.object_path));
       if (purgeError) {
-        purgeWarning = ' 원본 사진 자동 삭제는 실패해 만료 정리가 필요합니다.';
+        purgeWarning = ' 일부 원본 사진 자동 삭제는 실패해 만료 정리가 필요합니다.';
       } else {
-        await supabase.from('map_source_images').update({ status: 'purged', updated_at: new Date().toISOString() }).eq('id', state.source.id);
-        state.source.status = 'purged';
+        const sourceIds = sourcesToPurge.map(source => source.id);
+        await supabase.from('map_source_images').update({ status: 'purged', updated_at: new Date().toISOString() }).in('id', sourceIds);
+        sourcesToPurge.forEach(source => { source.status = 'purged'; });
       }
     }
     state.mapStatus = 'published';
@@ -616,13 +661,13 @@ document.addEventListener('change', async event => {
     if (!id) resetMap(); else await loadMap(id);
     render();
   } else if (['source-camera', 'source-gallery', 'source-file'].includes(target.id)) {
-    const file = target.files?.[0];
-    if (!file) return;
-    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) return toast('JPEG, PNG, WebP 사진만 선택해 주세요');
-    if (state.previewUrl) URL.revokeObjectURL(state.previewUrl);
-    state.file = file;
-    state.previewUrl = URL.createObjectURL(file);
-    state.source = null;
+    const files = [...(target.files || [])];
+    if (!files.length) return;
+    if (files.some(file => !['image/jpeg', 'image/png', 'image/webp'].includes(file.type))) return toast('JPEG, PNG, WebP 사진만 선택해 주세요');
+    const activeSourceCount = state.sources.filter(source => source.status !== 'purged').length;
+    if (activeSourceCount + state.files.length + files.length > 5) return toast('단어장 사진은 최대 5장까지 선택할 수 있어요');
+    state.files.push(...files);
+    state.previewUrls.push(...files.map(file => URL.createObjectURL(file)));
     state.processMessage = '';
     render();
   } else if (target.name === 'visibility') {
@@ -664,6 +709,14 @@ document.addEventListener('click', async event => {
     render();
   } else if (action === 'analyze') {
     await uploadAndAnalyze();
+  } else if (action === 'remove-photo') {
+    const index = Number(button.dataset.index);
+    if (Number.isInteger(index) && state.files[index]) {
+      state.files.splice(index, 1);
+      URL.revokeObjectURL(state.previewUrls.splice(index, 1)[0]);
+      state.processMessage = '';
+      render();
+    }
   } else if (action === 'remove-word') {
     const index = Number(button.dataset.index);
     const [removed] = state.words.splice(index, 1);

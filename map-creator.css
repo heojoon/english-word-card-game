@@ -90,7 +90,11 @@ input[type="range"] { width: 100%; accent-color: var(--violet); }
 .upload-choice span { min-height: 42px; padding: 8px 5px; border: 1px solid #c9c3e1; border-radius: 12px; display: grid; place-items: center; background: white; color: var(--ink); font-size: 10px; font-weight: 800; line-height: 1.25; box-shadow: 0 5px 14px rgba(87, 81, 216, .08); }
 .upload-choice input:focus-visible + span { outline: 3px solid rgba(87, 81, 216, .25); outline-offset: 2px; }
 .upload-choice:active span { transform: translateY(1px); }
-.source-preview { width: 100%; max-height: 280px; margin-bottom: 12px; border-radius: 15px; object-fit: contain; background: #e9e7f2; }
+.source-preview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-bottom: 12px; }
+.source-preview-item { position: relative; min-width: 0; padding: 6px; border: 1px solid #d9d4ea; border-radius: 14px; background: white; }
+.source-preview { width: 100%; aspect-ratio: 4 / 3; border-radius: 10px; object-fit: cover; background: #e9e7f2; }
+.source-preview-item figcaption { overflow: hidden; margin-top: 5px; color: var(--muted); font-size: 9px; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
+.source-preview-item button { position: absolute; top: 10px; right: 10px; width: 26px; height: 26px; border: 1px solid #ffffffcc; border-radius: 50%; background: #24214cdb; color: white; font-size: 17px; line-height: 1; }
 .processing { display: flex; align-items: center; gap: 10px; justify-content: center; margin-top: 13px; color: var(--violet); font-size: 11px; }
 .processing i, .loading-card i { width: 19px; height: 19px; border: 3px solid #d7d2ef; border-top-color: var(--violet); border-radius: 50%; animation: spin .8s linear infinite; }
 
