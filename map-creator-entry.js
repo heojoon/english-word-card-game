@@ -171,14 +171,18 @@ function worldCard() {
 function uploadCard() {
   return `<section class="forge-card">
     <div class="card-head"><div><div class="eyebrow" style="color:var(--violet)">AI WORD SCAN</div><h2>단어장 사진을 올려요</h2></div><span class="step-no">02</span></div>
-    <label class="upload-zone" for="source-photo">
-      <input id="source-photo" type="file" accept="image/jpeg,image/png,image/webp" capture="environment">
+    <div class="upload-zone">
       <div>
         ${state.previewUrl ? `<img class="source-preview" src="${esc(state.previewUrl)}" alt="선택한 단어장 사진 미리보기">` : '<span class="upload-symbol" aria-hidden="true">⌁</span>'}
-        <b>${state.file ? esc(state.file.name) : state.source ? '업로드된 사진을 다시 분석할 수 있어요' : '촬영하거나 사진 선택'}</b>
+        <b>${state.file ? esc(state.file.name) : state.source ? '업로드된 사진을 다시 분석할 수 있어요' : '사진을 가져올 방법을 선택하세요'}</b>
         <small>영어 단어와 한글 뜻이 행 단위로 보이는 사진<br>JPEG · PNG · WebP, 최대 6MB</small>
       </div>
-    </label>
+      <div class="upload-actions" aria-label="단어장 사진 가져오기">
+        <label class="upload-choice"><input id="source-camera" type="file" accept="image/jpeg,image/png,image/webp" capture="environment"><span>카메라 촬영</span></label>
+        <label class="upload-choice"><input id="source-gallery" type="file" accept="image/jpeg,image/png,image/webp"><span>사진첩 선택</span></label>
+        <label class="upload-choice"><input id="source-file" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"><span>파일 선택</span></label>
+      </div>
+    </div>
     <button id="analyze-button" class="primary" data-action="analyze" ${(!state.file && !state.source) || !state.worldId || !state.mapTitle || state.busy ? 'disabled' : ''}>${state.source && !state.file ? 'AI 분석 다시 시도' : '업로드하고 AI 분석 시작'} →</button>
     ${state.busy ? '<div class="processing"><i></i><b>사진에서 단어와 뜻을 찾고 있어요…</b></div>' : ''}
     ${state.processMessage ? `<p class="status-note ${state.processMessage.startsWith('오류:') ? 'error' : ''}">${esc(state.processMessage)}</p>` : ''}
@@ -611,7 +615,7 @@ document.addEventListener('change', async event => {
     const id = target.value;
     if (!id) resetMap(); else await loadMap(id);
     render();
-  } else if (target.id === 'source-photo') {
+  } else if (['source-camera', 'source-gallery', 'source-file'].includes(target.id)) {
     const file = target.files?.[0];
     if (!file) return;
     if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) return toast('JPEG, PNG, WebP 사진만 선택해 주세요');

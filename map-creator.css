@@ -80,11 +80,16 @@ input[type="range"] { width: 100%; accent-color: var(--violet); }
 .visibility-options span { min-height: 52px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 14px; background: white; font-size: 12px; font-weight: 750; }
 .visibility-options input:checked + span { border: 2px solid var(--violet); background: #efedff; color: var(--violet); }
 
-.upload-zone { min-height: 165px; padding: 19px; border: 2px dashed #bcb5db; border-radius: 19px; display: grid; place-items: center; text-align: center; background: linear-gradient(145deg, #f5f1ff, #eefaf8); cursor: pointer; }
-.upload-zone input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.upload-zone { min-height: 165px; padding: 19px; border: 2px dashed #bcb5db; border-radius: 19px; display: grid; place-items: center; gap: 15px; text-align: center; background: linear-gradient(145deg, #f5f1ff, #eefaf8); }
 .upload-symbol { width: 58px; height: 58px; display: grid; place-items: center; margin: 0 auto 10px; border-radius: 20px; background: white; color: var(--violet); box-shadow: var(--shadow); font-size: 25px; }
 .upload-zone b { display: block; font-size: 13px; }
 .upload-zone small { display: block; margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.upload-actions { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.upload-choice { position: relative; cursor: pointer; }
+.upload-choice input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.upload-choice span { min-height: 42px; padding: 8px 5px; border: 1px solid #c9c3e1; border-radius: 12px; display: grid; place-items: center; background: white; color: var(--ink); font-size: 10px; font-weight: 800; line-height: 1.25; box-shadow: 0 5px 14px rgba(87, 81, 216, .08); }
+.upload-choice input:focus-visible + span { outline: 3px solid rgba(87, 81, 216, .25); outline-offset: 2px; }
+.upload-choice:active span { transform: translateY(1px); }
 .source-preview { width: 100%; max-height: 280px; margin-bottom: 12px; border-radius: 15px; object-fit: contain; background: #e9e7f2; }
 .processing { display: flex; align-items: center; gap: 10px; justify-content: center; margin-top: 13px; color: var(--violet); font-size: 11px; }
 .processing i, .loading-card i { width: 19px; height: 19px; border: 3px solid #d7d2ef; border-top-color: var(--violet); border-radius: 50%; animation: spin .8s linear infinite; }
