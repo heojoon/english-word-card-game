@@ -54,8 +54,8 @@ ${_}`}var x=class extends Error{constructor({message:e,code:r,cause:s,name:n}){v
         <small>\uC601\uC5B4 \uB2E8\uC5B4\uC640 \uD55C\uAE00 \uB73B\uC774 \uD589 \uB2E8\uC704\uB85C \uBCF4\uC774\uB294 \uC0AC\uC9C4<br>JPEG \xB7 PNG \xB7 WebP, \uC7A5\uB2F9 \uCD5C\uB300 6MB \xB7 \uCD5C\uB300 5\uC7A5</small>
       </div>
       <div class="upload-actions" aria-label="\uB2E8\uC5B4\uC7A5 \uC0AC\uC9C4 \uAC00\uC838\uC624\uAE30">
-        <label class="upload-choice"><input id="source-camera" type="file" accept="image/jpeg,image/png,image/webp" capture="environment"><span>\uCE74\uBA54\uB77C \uCD2C\uC601</span></label>
-        <label class="upload-choice"><input id="source-gallery" type="file" accept="image/jpeg,image/png,image/webp" multiple><span>\uC0AC\uC9C4\uCCA9 \uC120\uD0DD</span></label>
+        <label class="upload-choice"><input id="source-camera" type="file" accept="image/*" capture="environment"><span>\uCE74\uBA54\uB77C \uCD2C\uC601</span></label>
+        <label class="upload-choice"><input id="source-gallery" type="file" accept="image/*" multiple><span>\uC0AC\uC9C4\uCCA9 \uC120\uD0DD</span></label>
         <label class="upload-choice"><input id="source-file" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" multiple><span>\uD30C\uC77C \uC120\uD0DD</span></label>
       </div>
     </div>

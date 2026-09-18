@@ -204,8 +204,8 @@ function uploadCard() {
         <small>영어 단어와 한글 뜻이 행 단위로 보이는 사진<br>JPEG · PNG · WebP, 장당 최대 6MB · 최대 5장</small>
       </div>
       <div class="upload-actions" aria-label="단어장 사진 가져오기">
-        <label class="upload-choice"><input id="source-camera" type="file" accept="image/jpeg,image/png,image/webp" capture="environment"><span>카메라 촬영</span></label>
-        <label class="upload-choice"><input id="source-gallery" type="file" accept="image/jpeg,image/png,image/webp" multiple><span>사진첩 선택</span></label>
+        <label class="upload-choice"><input id="source-camera" type="file" accept="image/*" capture="environment"><span>카메라 촬영</span></label>
+        <label class="upload-choice"><input id="source-gallery" type="file" accept="image/*" multiple><span>사진첩 선택</span></label>
         <label class="upload-choice"><input id="source-file" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" multiple><span>파일 선택</span></label>
       </div>
     </div>
