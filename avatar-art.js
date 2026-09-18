@@ -1,7 +1,7 @@
 (function(){'use strict';
 var art={
   warrior:{male:'assets/avatars/warrior.webp?v=20260911-hq',female:'assets/avatars/variants/warrior-female.webp?v=20260911-hq'},
-  mage:{male:'assets/avatars/mage.webp?v=20260911-hq',female:'assets/avatars/variants/mage-female.webp?v=20260911-hq'},
+  mage:{male:'assets/avatars/mage.webp?v=20260918-casting',female:'assets/avatars/variants/mage-female.webp?v=20260918-casting'},
   pugilist:{male:'assets/avatars/variants/pugilist-male.webp?v=20260911-hq',female:'assets/avatars/pugilist.webp?v=20260911-hq'},
   ranger:{male:'assets/avatars/variants/ranger-male.webp?v=20260911-hq',female:'assets/avatars/ranger.webp?v=20260917-skins'}
 };
