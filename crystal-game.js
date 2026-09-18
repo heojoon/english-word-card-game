@@ -301,9 +301,11 @@
   }
   function prepareQuestion(){const item=run.deck[run.index],timing=questionDuration();run.question=makeQuestion(item.entry,stages[selectedStage].words,item.mode);run.remaining=timing.duration;run.maxTime=timing.duration;run.skill=timing.skill;run.last=performance.now();run.locked=false;}
   function battleHeroMarkup(){
-    if(selectedCharacter?.class==='warrior'){
-      const variant=variantOf(selectedCharacter),label=variant==='female'?'여성 전사':'남성 전사';
-      return `<div class="battle-hero battle-hero-warrior battle-hero-${variant}" aria-label="${label}"><span class="battle-sprite" aria-hidden="true"></span></div>`;
+    const heroClass=selectedCharacter?.class;
+    if(heroClass==='warrior'||heroClass==='mage'){
+      const variant=variantOf(selectedCharacter);
+      const classLabel=heroClass==='mage'?'마법사':'전사';
+      return `<div class="battle-hero battle-hero-${heroClass} battle-hero-${variant}" aria-label="${variant==='female'?'여성':'남성'} ${classLabel}"><span class="battle-sprite" aria-hidden="true"></span>${heroClass==='mage'?'<span class="battle-projectile" aria-hidden="true"></span>':''}</div>`;
     }
     return portrait();
   }
