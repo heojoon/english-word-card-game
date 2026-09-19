@@ -70,7 +70,7 @@ html.native-app body[data-screen=battle] .battle-reward-layer{top:calc(51px + en
 .arena.wrong .battle-hero-ranger .battle-sprite{background-image:url('assets/characters/ranger/char_ranger_male_sd_hit_strip.png?v=20260919-knockdown');background-position:0 0;background-size:300% 100%;animation:ranger-hit-frames .67s steps(2,end) .04s both}
 .arena.wrong .battle-hero-ranger.battle-hero-female .battle-sprite{background-image:url('assets/characters/ranger/char_ranger_female_sd_hit_strip.png?v=20260919-knockdown')}
 .arena.wrong .battle-hero-ranger~.enemy{animation:enemy-attack .48s both}
-@keyframes warrior-approach-strike{0%,12%{transform:translateX(0)}34%,72%{transform:translateX(var(--hero-travel,100px))}100%{transform:translateX(0)}}
+@keyframes warrior-approach-strike{0%,12%{transform:translateX(0)}34%,100%{transform:translateX(var(--hero-travel,100px))}}
 @keyframes warrior-attack-frames{from{background-position:0 0}to{background-position:100% 0}}
 @keyframes enemy-knockout{0%,18%{transform:translateX(var(--enemy-approach,0)) scale(1)}38%{transform:translateX(calc(var(--enemy-approach,0px) + 17px)) translateY(-11px) rotate(9deg) scale(.96)}75%{transform:translateX(calc(var(--enemy-approach,0px) + 30px)) translateY(25px) rotate(76deg) scale(.85);opacity:.72}100%{transform:translateX(calc(var(--enemy-approach,0px) + 38px)) translateY(44px) rotate(92deg) scale(.65);opacity:0}}
 @keyframes enemy-label-out{to{opacity:0;transform:translateX(var(--enemy-approach,0)) translateY(8px)}}
