@@ -1,0 +1,16 @@
+{
+  "image": "char_ranger_female_sd_attack_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "anchor": { "x": 0.5, "y": 0.975 },
+  "frames": [
+    { "index": 0, "name": "ready", "x": 0, "y": 0, "durationMs": 140 },
+    { "index": 1, "name": "anticipation", "x": 320, "y": 0, "durationMs": 110 },
+    { "index": 2, "name": "draw", "x": 640, "y": 0, "durationMs": 110 },
+    { "index": 3, "name": "full_draw", "x": 960, "y": 0, "durationMs": 130 },
+    { "index": 4, "name": "release", "x": 1280, "y": 0, "durationMs": 90, "hit": true, "projectile": true },
+    { "index": 5, "name": "follow_through", "x": 1600, "y": 0, "durationMs": 180 }
+  ]
+}
