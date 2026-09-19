@@ -303,7 +303,7 @@
   function battleHeroMarkup(){
     const heroClass=selectedCharacter?.class;
     const variant=variantOf(selectedCharacter);
-    if(heroClass==='warrior'||heroClass==='mage'||(heroClass==='pugilist'&&variant==='male')){
+    if(heroClass==='warrior'||heroClass==='mage'||heroClass==='pugilist'){
       const classLabel={warrior:'전사',mage:'마법사',pugilist:'권투사'}[heroClass];
       return `<div class="battle-hero battle-hero-${heroClass} battle-hero-${variant}" aria-label="${variant==='female'?'여성':'남성'} ${classLabel}"><span class="battle-sprite" aria-hidden="true"></span>${heroClass==='mage'?'<span class="battle-projectile" aria-hidden="true"></span>':''}</div>`;
     }
