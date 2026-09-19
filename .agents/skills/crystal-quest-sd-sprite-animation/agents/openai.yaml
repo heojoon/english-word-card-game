@@ -1,0 +1,4 @@
+interface:
+  display_name: "Crystal Quest SD Sprite Animation"
+  short_description: "Create SD melee, ranged, projectile, and hit animations"
+  default_prompt: "Create a Crystal Quest SD character and production-ready melee or ranged attack, projectile, and hit sprite strips from an approved identity reference."
