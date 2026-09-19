@@ -14,6 +14,43 @@ Treat Direction 01 as a locked product decision. Do not switch to the Arcade Gui
 
 Keep visual work mobile-first, readable for upper-elementary and middle-school learners, and consistent with the `Study = Battle` loop. Gameplay information must remain clearer than decorative art.
 
+## SD character battle sprite animation
+
+All production battle scenes must use animated Crystal Quest SD/chibi character sprites. Treat static profile portraits in battle as temporary fallback content only; replace them with SD sprite animation as each class and gender variant becomes available. Do not convert the game to pixel art.
+
+Before creating or integrating battle sprites, read `ART_DIRECTION.md`, the character and battle sections of `GAME_DESIGN.md`, and the `crystal-quest-sd-sprite-animation` skill. Use the approved full-body identity art as the authority for the face, hair, costume, class silhouette, palette, prop, age tone, and proportions.
+
+Apply these rules to every playable class and gender variant:
+
+- Use youthful, nonsexualized SD proportions with a large readable head and hands, compact body, clear class silhouette, and one consistent facing direction.
+- Every battle character must have, at minimum, idle, attack, and hit/knockdown animation states. Add skill, projectile, victory, recovery, or defeat states when the class design requires them.
+- Define the animation contract before production: action, facing direction, frame count, runtime cell size, bottom-center anchor, effect bounds, frame names, timing, hit frame, and destination filenames.
+- Use 320 × 320 px square runtime cells and a bottom-center anchor (`x: 0.5`, `y: 0.975`) by default. A different or wider cell is allowed when a weapon, cape, hair, projectile, or effect would otherwise be cropped; never shrink the character merely to force an effect into the default cell.
+- Keep character scale and the ground line stable across every frame and state. No hair, feet, gloves, weapons, projectiles, or effects may cross a cell boundary or be clipped.
+- Export runtime sheets as horizontal RGBA PNG strips with real transparent alpha. Never ship a painted white, black, or checkerboard background. Verify transparency over both a light background and a saturated Crystal Violet (`#5751D8`) background.
+- Preserve white costume regions when removing a white source background. Do not use indiscriminate color-key removal that creates transparent holes in clothing, eyes, highlights, or effects.
+- Keep generation originals, approved source frames, normalized runtime frames, the runtime strip, review composites, and preview animations separate. Do not overwrite an approved runtime asset before frame-by-frame and in-engine review passes.
+- Store a JSON file beside each runtime strip. Record the image filename, frame width and height, frame count, layout, normalized anchor, frame names, per-frame duration, and gameplay events such as `hit: true`.
+- Use deterministic frame ordering and equal-sized runtime slots. For a strip with `N` frames, configure CSS sprite playback using `background-size: N00% 100%` and `steps(N - 1, end)` when animating from the first slot to the last with `background-position: 0` through `100%`.
+- Synchronize damage, enemy reaction, crystal effects, sound, and haptics to the declared contact frame rather than to the beginning of the animation.
+- Keep each class motion readable at the actual mobile battle size. Melee classes may approach the enemy; ranged classes should cast or fire without hiding the character unless a dedicated full-motion strip intentionally includes both character and projectile.
+- Respect `prefers-reduced-motion` with a shorter readable version of the same state change. Reduced motion must not remove gameplay feedback or make hit timing ambiguous.
+- Integrate a new sprite only for the exact class and gender variant it depicts. Other variants must retain their current approved asset or fallback until their own matching animation exists.
+- Test idle, attack, hit, final-frame hold, loop/reset behavior, mobile viewport layout, asset loading, console errors, and first-to-last state transitions in the browser. Run `npm run build` before declaring integration complete.
+
+Use the following asset organization unless an established class folder requires a compatible variation:
+
+```text
+assets/characters/<class>/
+├── source-frames/<action>-<variant>/
+├── <action>-<variant>/01.png ... NN.png
+├── char_<class>_<variant>_sd_<action>_strip.png
+├── char_<class>_<variant>_sd_<action>_strip.json
+└── review/
+```
+
+Recommended attack beats are `ready → anticipation → strike/contact → follow-through → recovery`. Recommended hit beats are `guard/notice → impact → strongest recoil → knockdown or recovery`. Shorter source sequences may omit intermediate beats, but they must still communicate anticipation/contact or impact/reaction clearly at gameplay size.
+
 ## AI OCR and creator-map implementation
 
 The approved creator flow is:

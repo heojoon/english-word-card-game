@@ -1,0 +1,18 @@
+{
+  "image": "char_fighter_male_sd_attack_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 5,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frames": [
+    { "index": 0, "name": "ready", "x": 0, "y": 0, "durationMs": 140 },
+    { "index": 1, "name": "anticipation", "x": 320, "y": 0, "durationMs": 90 },
+    { "index": 2, "name": "strike", "x": 640, "y": 0, "durationMs": 80 },
+    { "index": 3, "name": "follow_through", "x": 960, "y": 0, "durationMs": 90 },
+    { "index": 4, "name": "heavy_contact", "x": 1280, "y": 0, "durationMs": 160, "hit": true }
+  ]
+}

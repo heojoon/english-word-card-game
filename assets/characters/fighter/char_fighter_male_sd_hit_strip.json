@@ -1,0 +1,16 @@
+{
+  "image": "char_fighter_male_sd_hit_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frames": [
+    { "index": 0, "name": "impact", "x": 0, "y": 0, "durationMs": 90 },
+    { "index": 1, "name": "recoil", "x": 320, "y": 0, "durationMs": 140 },
+    { "index": 2, "name": "knockdown", "x": 640, "y": 0, "durationMs": 260 }
+  ]
+}
