@@ -23,7 +23,7 @@ Before creating or integrating battle sprites, read `ART_DIRECTION.md`, the char
 Apply these rules to every playable class and gender variant:
 
 - Use youthful, nonsexualized SD proportions with a large readable head and hands, compact body, clear class silhouette, and one consistent facing direction.
-- Every battle character must have, at minimum, idle, attack, and hit/knockdown animation states. Add skill, projectile, victory, recovery, or defeat states when the class design requires them.
+- Every battle character must have, at minimum, idle, attack, and hit/knockdown animation states. The standard hit/knockdown strip uses exactly three frames: `guard/notice → impact/strongest recoil → complete knockdown`, with the third frame held until the battle state changes. It must not recover to idle inside the hit strip. Add skill, projectile, victory, recovery, or defeat states when the class design requires them.
 - Define the animation contract before production: action, facing direction, frame count, runtime cell size, bottom-center anchor, effect bounds, frame names, timing, hit frame, and destination filenames.
 - Use 320 × 320 px square runtime cells and a bottom-center anchor (`x: 0.5`, `y: 0.975`) by default. A different or wider cell is allowed when a weapon, cape, hair, projectile, or effect would otherwise be cropped; never shrink the character merely to force an effect into the default cell.
 - Keep character scale and the ground line stable across every frame and state. No hair, feet, gloves, weapons, projectiles, or effects may cross a cell boundary or be clipped.
