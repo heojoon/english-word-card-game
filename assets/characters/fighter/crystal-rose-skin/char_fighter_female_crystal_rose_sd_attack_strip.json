@@ -1,0 +1,18 @@
+{
+  "image": "char_fighter_female_crystal_rose_sd_attack_strip.png",
+  "spacedReviewImage": "review/char_fighter_female_crystal_rose_sd_attack_spaced_100px.png",
+  "sourceFrameGapPx": 100,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 5,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": { "x": 0.5, "y": 0.975 },
+  "frames": [
+    { "index": 0, "name": "ready", "durationMs": 120 },
+    { "index": 1, "name": "anticipation", "durationMs": 100 },
+    { "index": 2, "name": "straight_contact", "durationMs": 90, "hit": true },
+    { "index": 3, "name": "uppercut_follow_through", "durationMs": 140 },
+    { "index": 4, "name": "recovery", "durationMs": 110 }
+  ]
+}
