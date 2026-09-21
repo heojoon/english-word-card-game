@@ -137,6 +137,48 @@
       oscillator.connect(gain);gain.connect(master);oscillator.start(start+delay);oscillator.stop(start+delay+duration+.03);
     });
   }
+  function playChestTapSound(tap){
+    const audio=prepareGameAudio();
+    if(!audio||audio.state==='closed')return;
+    const step=Math.max(1,Math.min(3,Number(tap)||1)),start=audio.currentTime+.012,master=audio.createGain();
+    master.gain.setValueAtTime(.0001,start);
+    master.gain.exponentialRampToValueAtTime(step===3?.2:.14,start+.008);
+    master.gain.exponentialRampToValueAtTime(.0001,start+(step===3?.46:.25));
+    master.connect(audio.destination);
+    const knock=audio.createOscillator(),knockGain=audio.createGain();
+    knock.type='triangle';
+    knock.frequency.setValueAtTime(150+step*22,start);
+    knock.frequency.exponentialRampToValueAtTime(82+step*10,start+.11);
+    knockGain.gain.setValueAtTime(.7,start);
+    knockGain.gain.exponentialRampToValueAtTime(.0001,start+.13);
+    knock.connect(knockGain);knockGain.connect(master);knock.start(start);knock.stop(start+.15);
+    const chime=audio.createOscillator(),chimeGain=audio.createGain();
+    chime.type='sine';
+    chime.frequency.setValueAtTime([523.25,659.25,783.99][step-1],start+.035);
+    chimeGain.gain.setValueAtTime(.0001,start+.035);
+    chimeGain.gain.exponentialRampToValueAtTime(step===3?.5:.34,start+.048);
+    chimeGain.gain.exponentialRampToValueAtTime(.0001,start+(step===3?.42:.22));
+    chime.connect(chimeGain);chimeGain.connect(master);chime.start(start+.035);chime.stop(start+(step===3?.45:.25));
+  }
+  function playCrystalRewardSound(){
+    const audio=prepareGameAudio();
+    if(!audio||audio.state==='closed')return;
+    const start=audio.currentTime+.02,master=audio.createGain();
+    master.gain.setValueAtTime(.0001,start);
+    master.gain.exponentialRampToValueAtTime(.14,start+.025);
+    master.gain.exponentialRampToValueAtTime(.0001,start+1.32);
+    master.connect(audio.destination);
+    [[659.25,0,.48],[783.99,.11,.5],[1046.5,.23,.68],[1318.51,.38,.76]].forEach(([frequency,delay,duration],index)=>{
+      const oscillator=audio.createOscillator(),gain=audio.createGain();
+      oscillator.type=index<2?'triangle':'sine';
+      oscillator.frequency.setValueAtTime(frequency,start+delay);
+      oscillator.frequency.exponentialRampToValueAtTime(frequency*1.018,start+delay+duration);
+      gain.gain.setValueAtTime(.0001,start+delay);
+      gain.gain.exponentialRampToValueAtTime(index===3?.4:.27,start+delay+.018);
+      gain.gain.exponentialRampToValueAtTime(.0001,start+delay+duration);
+      oscillator.connect(gain);gain.connect(master);oscillator.start(start+delay);oscillator.stop(start+delay+duration+.03);
+    });
+  }
   function modal(html){if(page==='battle'&&run&&!run.done)pause();$('dialog-content').innerHTML=html;if(!$('dialog').open)$('dialog').showModal();}
   function closeDialog(){if($('dialog').open)$('dialog').close();}
   function title(kicker,name,desc){return `<div class="page-title"><div class="eyebrow">${kicker}</div><h1>${name}</h1><p>${desc}</p></div>`;}
@@ -495,7 +537,7 @@
   async function equip(item){if(!item||!itemOwned(item))return;if(isSkin(item)&&!skinEligible(item)){toast(`${skinRequirement(item)} 캐릭터만 이 스킨을 장착할 수 있어요`);return;}const slot=slotFor(item),map=equippedMap(),isEquipped=String(map[slot])===String(item.id);try{if(demo){if(isEquipped)delete map[slot];else map[slot]=item.id;selectedCharacter.equipped_items=map;saveDemo();}else{await rpc('equip_avatar_slot',{p_character_id:selectedCharacter.id,p_item_id:isEquipped?null:item.id,p_slot:slot});await loadAll();}closeDialog();render();toast(isEquipped?'스킨 장착을 해제했어요':'장착했어요! 캐릭터 모습이 바뀌었어요');}catch(error){console.error(error);toast(String(error.message).includes('female pugilist')?'여성 권투사만 장착할 수 있어요':String(error.message).includes('female ranger')?'여성 궁수만 장착할 수 있어요':'장비 슬롯 기능을 사용하려면 최신 DB 마이그레이션이 필요합니다');}}
   async function claimChestReward(){let reward;if(demo){const min=selectedCharacter.class==='ranger'?20:10;reward=min+Math.floor(Math.random()*(31-min));selectedCharacter.coins+=reward;saveDemo();}else{const rows=await rpc('claim_stage_treasure',{p_character_id:selectedCharacter.id,p_game_score_id:run.result.game_score_id});reward=rows?.[0]?.reward;if(accountMode)accountCrystals=Number(rows?.[0]?.balance??accountCrystals);else selectedCharacter.coins=rows?.[0]?.balance??selectedCharacter.coins;}return reward;}
   function resultNext(){if(!run?.clear)return;run.resultStep='chest';render();requestAnimationFrame(()=>$('screen')?.focus());}
-  async function tapChest(button){if(!run?.clear||run.chest||!run.result?.game_score_id||button.classList.contains('opening'))return;run.chestClicks=Math.min(3,(run.chestClicks||0)+1);button.style.setProperty('--chest-progress',`${run.chestClicks/3*100}%`);button.setAttribute('aria-label',`보상 상자 ${run.chestClicks}/3회 열기`);button.classList.remove('shake-one','shake-two');void button.offsetWidth;button.classList.add(run.chestClicks===1?'shake-one':run.chestClicks===2?'shake-two':'opening');document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:run.chestClicks===3?'success':'light'}}));if(run.chestClicks<3){button.parentElement.querySelector('.chest-progress-copy strong').textContent=`${run.chestClicks} / 3`;button.parentElement.querySelector('.chest-progress-copy span').textContent=run.chestClicks===1?'좋아요! 한 번 더!':'마지막 한 번!';button.parentElement.querySelectorAll('.chest-pips i')[run.chestClicks-1]?.classList.add('filled');return;}button.disabled=true;try{const [reward]=await Promise.all([claimChestReward(),new Promise(resolve=>setTimeout(resolve,900))]);run.chest=true;run.treasure=reward;run.resultStep='reward';render();}catch(error){console.error(error);run.chestClicks=2;render();toast('보물상자를 열지 못했어요. 다시 시도해 주세요');}}
+  async function tapChest(button){if(!run?.clear||run.chest||!run.result?.game_score_id||button.classList.contains('opening'))return;run.chestClicks=Math.min(3,(run.chestClicks||0)+1);playChestTapSound(run.chestClicks);button.style.setProperty('--chest-progress',`${run.chestClicks/3*100}%`);button.setAttribute('aria-label',`보상 상자 ${run.chestClicks}/3회 열기`);button.classList.remove('shake-one','shake-two');void button.offsetWidth;button.classList.add(run.chestClicks===1?'shake-one':run.chestClicks===2?'shake-two':'opening');document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:run.chestClicks===3?'success':'light'}}));if(run.chestClicks<3){button.parentElement.querySelector('.chest-progress-copy strong').textContent=`${run.chestClicks} / 3`;button.parentElement.querySelector('.chest-progress-copy span').textContent=run.chestClicks===1?'좋아요! 한 번 더!':'마지막 한 번!';button.parentElement.querySelectorAll('.chest-pips i')[run.chestClicks-1]?.classList.add('filled');return;}button.disabled=true;try{const [reward]=await Promise.all([claimChestReward(),new Promise(resolve=>setTimeout(resolve,900))]);run.chest=true;run.treasure=reward;run.resultStep='reward';render();playCrystalRewardSound();}catch(error){console.error(error);run.chestClicks=2;render();toast('보물상자를 열지 못했어요. 다시 시도해 주세요');}}
   function receiveReward(){if(!run?.chest)return;go('stages');toast(`크리스털 ${num(run.treasure)}개를 받았어요!`);}
 
   document.addEventListener('pointerdown',prepareGameAudio,{once:true,passive:true});
