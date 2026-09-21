@@ -41,7 +41,7 @@
   const classDefs = {
     warrior:{label:'전사',title:'CRYSTAL GUARDIAN',trait:'강인함 · 가끔 제한시간 +1초',skill:'수호의 시간',skillDesc:'위기의 순간에 문제 제한시간을 1초 늘려요.',stats:{hp:5,atk:3,def:5,luk:1},paths:{male:'warrior.webp',female:'variants/warrior-female.webp'}},
     mage:{label:'마법사',title:'ARCANE SCHOLAR',trait:'타임 스톱 · 가끔 시간 정지',skill:'타임 스톱',skillDesc:'집중력이 빛나면 문제 시간을 잠시 멈춰요.',stats:{hp:2,atk:5,def:2,luk:3},paths:{male:'mage.webp',female:'variants/mage-female.webp'}},
-    pugilist:{label:'권투사',title:'COMBO MASTER',trait:'콤보 마스터 · 3콤보 보너스',skill:'러시 콤보',skillDesc:'3연속 정답마다 보너스 크리스털을 받아요.',stats:{hp:4,atk:5,def:3,luk:2},paths:{male:'variants/pugilist-male.webp',female:'pugilist.webp'}},
+    pugilist:{label:'권투사',title:'COMBO MASTER',trait:'콤보 마스터 · 3콤보 보너스',skill:'러시 콤보',skillDesc:'3연속 정답마다 보너스 크리스털을 받아요.',stats:{hp:4,atk:5,def:3,luk:2},paths:{male:'variants/pugilist-male.webp',female:'pugilist.webp?v=20260921-alpha'}},
     ranger:{label:'궁수',title:'TREASURE HUNTER',trait:'보물 사냥꾼 · 상자 최소 20개',skill:'행운의 화살',skillDesc:'보물상자에서 최소 20 크리스털을 찾아요.',stats:{hp:3,atk:4,def:2,luk:5},paths:{male:'variants/ranger-male.webp',female:'ranger.webp'}}
   };
   const builtinWorlds = [

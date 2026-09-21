@@ -24,7 +24,7 @@
   const classes = [
     {id:'mage',label:'마법사',name:'블리자드',title:'ARCANE SCHOLAR',trait:'서리 기록관',paths:['mage.webp','variants/mage-female.webp']},
     {id:'warrior',label:'전사',name:'아이언하트',title:'CRYSTAL GUARDIAN',trait:'크리스털 수호자',paths:['warrior.webp','variants/warrior-female.webp']},
-    {id:'pugilist',label:'권투사',name:'레드스트라이크',title:'COMBO MASTER',trait:'불꽃의 도전자',paths:['variants/pugilist-male.webp','pugilist.webp']},
+    {id:'pugilist',label:'권투사',name:'레드스트라이크',title:'COMBO MASTER',trait:'불꽃의 도전자',paths:['variants/pugilist-male.webp','pugilist.webp?v=20260921-alpha']},
     {id:'ranger',label:'궁수',name:'로빈리프',title:'FOREST SEEKER',trait:'숲의 단어 수호자',paths:['variants/ranger-male.webp','ranger.webp']}
   ];
   const items = [
