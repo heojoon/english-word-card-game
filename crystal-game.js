@@ -110,6 +110,33 @@
     return `<div class="portrait">${eq.aura?'<div class="equipped-aura"></div>':''}${eq.back?'<div class="equipped-back"></div>':''}<img src="${imagePath(c)}" alt="${esc(characterDef(c).label)} ${variantOf(c)==='female'?'여성':'남성'} 캐릭터">${eq.head?icon('crown').replace('<svg ','<svg class="equipped-head" '):''}${eq.pet?`<div class="equipped-pet">${icon('pet')}</div>`:''}</div>`;
   }
   function toast(message){$('toast').textContent=message;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2400);}
+  let gameAudioContext;
+  function prepareGameAudio(){
+    const AudioContext=window.AudioContext||window.webkitAudioContext;
+    if(!AudioContext)return null;
+    if(!gameAudioContext)gameAudioContext=new AudioContext();
+    if(gameAudioContext.state==='suspended')gameAudioContext.resume().catch(()=>{});
+    return gameAudioContext;
+  }
+  function playStageClearSound(){
+    const audio=prepareGameAudio();
+    if(!audio||audio.state==='closed')return;
+    const start=audio.currentTime+.035,master=audio.createGain();
+    master.gain.setValueAtTime(.0001,start);
+    master.gain.exponentialRampToValueAtTime(.16,start+.025);
+    master.gain.exponentialRampToValueAtTime(.0001,start+1.15);
+    master.connect(audio.destination);
+    [[523.25,0,.38],[659.25,.16,.44],[783.99,.32,.72],[1046.5,.52,.58]].forEach(([frequency,delay,duration],index)=>{
+      const oscillator=audio.createOscillator(),gain=audio.createGain();
+      oscillator.type=index===3?'sine':'triangle';
+      oscillator.frequency.setValueAtTime(frequency,start+delay);
+      oscillator.frequency.exponentialRampToValueAtTime(frequency*1.012,start+delay+duration);
+      gain.gain.setValueAtTime(.0001,start+delay);
+      gain.gain.exponentialRampToValueAtTime(index===3?.42:.3,start+delay+.018);
+      gain.gain.exponentialRampToValueAtTime(.0001,start+delay+duration);
+      oscillator.connect(gain);gain.connect(master);oscillator.start(start+delay);oscillator.stop(start+delay+duration+.03);
+    });
+  }
   function modal(html){if(page==='battle'&&run&&!run.done)pause();$('dialog-content').innerHTML=html;if(!$('dialog').open)$('dialog').showModal();}
   function closeDialog(){if($('dialog').open)$('dialog').close();}
   function title(kicker,name,desc){return `<div class="page-title"><div class="eyebrow">${kicker}</div><h1>${name}</h1><p>${desc}</p></div>`;}
@@ -234,6 +261,7 @@
 
   function render(){
     document.body.dataset.screen=page;
+    document.body.dataset.resultStep=page==='result'&&run?.clear?(run.resultStep||'summary'):'';
     const contextAction=page==='characters'
       ? ''
       : page==='dungeon'
@@ -367,8 +395,9 @@
     if(demo){const coins=earnedCoins(run.correct,clear),id=`demo-${Date.now()}`;selectedCharacter.coins+=coins;run.result={game_score_id:id,coins_earned:coins,balance:selectedCharacter.coins};const row={id,player,stage:stageRecordName(selectedStage),correct:run.correct,total:run.deck.length,cleared:clear,character_id:selectedCharacter.id,duration_ms:Math.round(run.elapsed),coins_earned:coins,created_at:new Date().toISOString()};demoState.records.unshift(row);records=demoState.records;saveDemo();}
     else if(dbOnline){try{const rows=await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stageRecordName(selectedStage),p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed)});run.result=rows?.[0]||null;if(run.result){if(accountMode)accountCrystals=Number(run.result.balance);else selectedCharacter.coins=run.result.balance;}records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.error(error);run.saveError=true;}}
     go('result');
+    if(clear){playStageClearSound();document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));}
   }
-  function clearSummaryMarkup(r,earned){return `<section class="result clear-result"><div class="eyebrow clear-title">STAGE CLEAR</div><h1>클리어!</h1><p class="clear-stage">${esc(stages[selectedStage].name)}</p><div class="clear-stats"><div><span>클리어 타임</span><strong>${(r.elapsed/1000).toFixed(1)}<small>초</small></strong></div><div><span>푼 문제</span><strong>${r.correct}<small> / ${r.deck.length}</small></strong></div><div><span>획득 크리스털</span><strong class="crystal-value">◆ ${num(earned)}</strong></div></div><div class="save-state">${r.saveError?'⚠ 기록 저장에 실패했습니다':demo?'✓ 체험 기록 저장 완료':'✓ 기록 저장 완료'}</div><button class="primary clear-next" data-action="result-next">보상 상자 확인하기 <span>→</span></button></section>`;}
+  function clearSummaryMarkup(r,earned){return `<section class="result clear-result"><div class="clear-portal" aria-hidden="true"><i></i><i></i><i></i></div><div class="clear-shards" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="clear-content"><div class="clear-crown" aria-hidden="true"><i></i></div><div class="eyebrow clear-title">STAGE CLEAR</div><div class="clear-sigil" aria-hidden="true"><i></i><b>◆</b></div><h1>클리어!</h1><p class="clear-stage">${esc(stages[selectedStage].name)}</p><div class="clear-stats"><div><span>클리어 타임</span><strong>${(r.elapsed/1000).toFixed(1)}<small>초</small></strong></div><div><span>푼 문제</span><strong>${r.correct}<small> / ${r.deck.length}</small></strong></div><div><span>획득 크리스털</span><strong class="crystal-value">◆ ${num(earned)}</strong></div></div><button class="primary clear-next" data-action="result-next">보상 상자 확인하기 <span>→</span></button></div></section>`;}
   function chestMarkup(r){const clicks=r.chestClicks||0,progress=clicks/3*100,label=clicks===0?'상자를 터치해 주세요':clicks===1?'좋아요! 한 번 더!':'마지막 한 번!';return `<section class="result chest-result"><div class="eyebrow">CLEAR REWARD</div><h1>보상 상자가 도착했어요!</h1><p>세 번 터치해서 잠든 보물을 깨워 보세요.</p><button class="treasure-chest-button" data-action="chest-tap" style="--chest-progress:${progress}%" aria-label="보상 상자 ${clicks}/3회 열기" ${!r.result?.game_score_id?'disabled':''}><span class="chest-ring" aria-hidden="true"><i></i><i></i><i></i></span><span class="reward-chest" aria-hidden="true"><i class="chest-glow"></i><img class="chest-art chest-art-closed" src="assets/ui/crystal-quest/rewards/ui_reward_chest_guardian_closed.webp" alt=""><img class="chest-art chest-art-open" src="assets/ui/crystal-quest/rewards/ui_reward_chest_guardian_open.webp" alt=""></span><span class="chest-sparkles" aria-hidden="true">✦ ✧ ✦</span></button><div class="chest-progress-copy"><strong>${clicks} / 3</strong><span>${r.result?.game_score_id?label:'보상 기록을 저장해야 상자를 열 수 있어요'}</span></div><div class="chest-pips" aria-hidden="true">${[1,2,3].map(n=>`<i class="${clicks>=n?'filled':''}"></i>`).join('')}</div></section>`;}
   function crystalRewardMarkup(r){return `<section class="result crystal-reveal"><div class="reward-radiance" aria-hidden="true"></div><div class="eyebrow">TREASURE FOUND</div><h1>크리스털 획득!</h1><div class="giant-crystal" aria-hidden="true"><img src="assets/ui/crystal-quest/rewards/ui_reward_crystal_bloom.webp" alt=""></div><div class="reward-amount"><strong>+${num(r.treasure)}</strong><span>크리스털</span></div><p>보상이 계정 지갑에 안전하게 담겼어요.</p><button class="primary reward-claim" data-action="receive-reward">받기</button></section>`;}
   function renderResult(){const r=run,result=r.result,earned=result?.coins_earned??earnedCoins(r.correct,r.clear);if(!r.clear)return `<section class="result"><div class="result-symbol">${icon('aura')}</div><div class="eyebrow" style="color:var(--violet)">KEEP EXPLORING</div><h1>${r.reason==='timeout'?'시간이 다 되었어요':'다음엔 더 멀리 갈 수 있어요'}</h1><p>${esc(stages[selectedStage].name)} · ${r.correct} / ${r.deck.length} 정답<br>이번에 배운 단어는 다음 모험의 힘이 됩니다.</p><div class="reward-number">◆ +${num(earned)}</div><div class="panel row small reward-breakdown"><span>정답 <b>${r.correct}</b></span><span>풀이 시간 <b>${(r.elapsed/1000).toFixed(1)}초</b></span></div><button class="primary" data-action="retry">다시 도전하기 →</button><div class="actions"><button class="secondary" data-action="nav" data-page="dungeon">다른 던전</button><button class="secondary" data-action="nav" data-page="home">홈으로</button></div></section>`;if(r.resultStep==='chest')return chestMarkup(r);if(r.resultStep==='reward')return crystalRewardMarkup(r);return clearSummaryMarkup(r,earned);}
@@ -469,6 +498,7 @@
   async function tapChest(button){if(!run?.clear||run.chest||!run.result?.game_score_id||button.classList.contains('opening'))return;run.chestClicks=Math.min(3,(run.chestClicks||0)+1);button.style.setProperty('--chest-progress',`${run.chestClicks/3*100}%`);button.setAttribute('aria-label',`보상 상자 ${run.chestClicks}/3회 열기`);button.classList.remove('shake-one','shake-two');void button.offsetWidth;button.classList.add(run.chestClicks===1?'shake-one':run.chestClicks===2?'shake-two':'opening');document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:run.chestClicks===3?'success':'light'}}));if(run.chestClicks<3){button.parentElement.querySelector('.chest-progress-copy strong').textContent=`${run.chestClicks} / 3`;button.parentElement.querySelector('.chest-progress-copy span').textContent=run.chestClicks===1?'좋아요! 한 번 더!':'마지막 한 번!';button.parentElement.querySelectorAll('.chest-pips i')[run.chestClicks-1]?.classList.add('filled');return;}button.disabled=true;try{const [reward]=await Promise.all([claimChestReward(),new Promise(resolve=>setTimeout(resolve,900))]);run.chest=true;run.treasure=reward;run.resultStep='reward';render();}catch(error){console.error(error);run.chestClicks=2;render();toast('보물상자를 열지 못했어요. 다시 시도해 주세요');}}
   function receiveReward(){if(!run?.chest)return;go('stages');toast(`크리스털 ${num(run.treasure)}개를 받았어요!`);}
 
+  document.addEventListener('pointerdown',prepareGameAudio,{once:true,passive:true});
   document.addEventListener('click',async event=>{const b=event.target.closest('button[data-action]');if(!b||b.disabled)return;const action=b.dataset.action,id=b.dataset.id;
     if(action==='nav')navigate(b.dataset.page);else if(action==='home')navigate('home');else if(action==='close'){closeDialog();if(page==='battle'&&run?.paused)resume();}
     else if(action==='player')await switchPlayer(b.dataset.player);else if(action==='add-player')showNewPlayer();else if(action==='create-player')await createPlayer();
