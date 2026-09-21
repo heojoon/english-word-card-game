@@ -191,7 +191,7 @@
         {id:8,code:'crown',name:'별빛 왕관',category:'avatar',price:1200,icon:'◆',description:'다섯 별의 축복으로 보물 발견의 행운을 높이는 왕관입니다.',slot:'head',rarity:'legendary',stars:5,stat_key:'luk',stat_value:8,art_path:'assets/items/equipment/item_starlight_crown_legendary.webp'},
         {id:9,code:'pet',name:'워드 크리스털 정령',category:'avatar',price:1500,icon:'◆',description:'배운 단어의 빛을 모아 행운을 가져오는 전설의 동행 정령입니다.',slot:'pet',rarity:'legendary',stars:5,stat_key:'luk',stat_value:12,art_path:'assets/items/equipment/item_word_crystal_sprite_legendary.webp'},
         {id:10,code:'ranger_violet_crystal_skin',name:'보랏빛 결정 궁수',category:'avatar',price:2000,icon:'◆',description:'은보랏빛 트윈테일과 결정 장궁으로 모습을 바꾸는 여성 궁수 전용 스킨입니다.',slot:'skin',rarity:'unique',stars:4,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/ranger-female-violet-crystal.webp'},
-        {id:11,code:'pugilist_crystal_rose_skin',name:'크리스털 로즈 권투사',category:'avatar',price:2000,icon:'◆',description:'장미빛 결정 건틀릿과 금장 전투복으로 모습을 바꾸는 여성 권투사 전용 스킨입니다. 전용 펀치와 피격 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/pugilist-female-crystal-rose.webp'},
+        {id:11,code:'pugilist_crystal_rose_skin',name:'크리스털 로즈 권투사',category:'avatar',price:2000,icon:'◆',description:'장미빛 결정 건틀릿과 금장 전투복으로 모습을 바꾸는 여성 권투사 전용 스킨입니다. 전용 펀치와 피격 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/pugilist-female-crystal-rose-profile-v2.jpg'},
         {id:5,code:'snack',name:'간식 1개',category:'gift',price:60,icon:'🍪',description:'보호자 승인 후 받을 수 있어요.',rarity:'special',stars:2}
       ];records=demoState.records;dbOnline=true;
     } else {
