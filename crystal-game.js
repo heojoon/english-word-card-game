@@ -83,6 +83,18 @@
   try { demoState = {...demoState,...JSON.parse(localStorage.getItem(demoKey) || '{}')}; } catch {}
   const saveDemo = () => localStorage.setItem(demoKey, JSON.stringify(demoState));
   const walletBalance = () => accountMode ? accountCrystals : Number(selectedCharacter?.coins || 0);
+  const emitAudio = (id, type='sfx', options) => document.dispatchEvent(new CustomEvent('wordoria:audio',{detail:{id,type,options}}));
+  const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  function battleContactDelay(){
+    if(reducedMotion())return 120;
+    return {warrior:420,mage:560,pugilist:450,ranger:560}[selectedCharacter?.class]||420;
+  }
+  function syncBGM(target=page){
+    if(target==='battle'){emitAudio(run?.index===run?.deck?.length-1?'BOSS_BGM':'BATTLE_BGM','bgm',{crossfadeMs:350});return;}
+    if(target==='result'&&run?.clear){emitAudio('ENDING_BGM','bgm',{crossfadeMs:420});return;}
+    if(target==='result'){window.wordoriaSound?.fadeOut(300);return;}
+    emitAudio('MENU_BGM','bgm',{crossfadeMs:350});
+  }
 
   function headers(extra={}) { return {'apikey':DB_KEY,'Authorization':`Bearer ${accountSession?.access_token || DB_KEY}`,...extra}; }
   async function apiGet(path){const r=await fetch(`${DB_URL}/rest/v1/${path}`,{headers:headers()});if(!r.ok)throw new Error(await r.text());return r.json();}
@@ -316,6 +328,7 @@
     nav.innerHTML=[['home','홈'],['dungeon','모험'],['gear','장비'],['shop','상점']].map(([id,label])=>`<button data-action="nav" data-page="${id}" ${active===id?'aria-current="page"':''}>${icon(id)}<span>${label}</span></button>`).join('');
     const renderer={characters:renderCharacterGate,home:renderHome,gear:renderGear,shop:renderShop,dungeon:renderDungeon,stages:renderStages,battle:renderBattle,result:renderResult}[page]||renderHome;
     $('screen').innerHTML=renderer();
+    syncBGM(page);
   }
   function go(target){page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});}
   function navigate(target){if(page==='battle'&&run&&!run.done){pause();modal(`<div class="eyebrow">PAUSED</div><h2>이번 도전을 마칠까요?</h2><p>지금까지 맞힌 문제의 보상과 기록은 저장됩니다.</p><div class="actions"><button class="secondary" data-action="resume">계속하기</button><button class="primary" data-action="leave" data-page="${target}">저장하고 이동</button></div>`);return;}go(target);}
@@ -421,15 +434,15 @@
     arena.style.setProperty('--hero-travel',`${travel}px`);
   }
   function tick(){clearInterval(timerId);run.last=performance.now();updateEnemyApproach();timerId=setInterval(()=>{if(!run||run.done||run.paused||run.locked)return;const now=performance.now(),delta=now-run.last;run.last=now;run.remaining=Math.max(0,run.remaining-delta);run.elapsed+=delta;const el=$('timer'),timeBox=$('arena-time');if(el)el.firstChild.textContent=(run.remaining/1000).toFixed(1);if(timeBox)timeBox.classList.toggle('danger',run.remaining<2000);updateEnemyApproach();if(run.remaining<=0)answer(-1);},50);}
-  function pause(){if(!run||run.done)return;run.paused=true;clearInterval(timerId);}
-  function resume(){closeDialog();if(run&&!run.done){run.paused=false;tick();}}
+  function pause(){if(!run||run.done)return;run.paused=true;clearInterval(timerId);window.wordoriaSound?.pauseBGM();}
+  function resume(){closeDialog();if(run&&!run.done){run.paused=false;window.wordoriaSound?.resumeBGM();tick();}}
   function cancelSpeech(){if(window.WordoriaNativeSpeech?.cancel)window.WordoriaNativeSpeech.cancel().catch(()=>{});if(window.speechSynthesis)speechSynthesis.cancel();}
   function speak(text){if(window.WordoriaNativeSpeech?.speak){window.WordoriaNativeSpeech.speak(text,{lang:'en-US',rate:.82}).catch(()=>toast('기기 음성 엔진을 사용할 수 없어요'));return;}if(!('speechSynthesis' in window)){toast('이 브라우저에서는 음성 읽기를 지원하지 않아요');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;speechSynthesis.speak(u);}
   function answer(index){
     if(!run||run.done||run.paused||run.locked)return;run.locked=true;clearInterval(timerId);const q=run.question,chosen=q.choices[index],ok=chosen===q.answer;
     document.querySelectorAll('.answer').forEach((button,i)=>{button.disabled=true;button.classList.toggle('correct',q.choices[i]===q.answer);button.classList.toggle('wrong',i===index&&!ok);});
-    if(ok){run.correct++;const gain=earnedCoins(run.correct)-earnedCoins(run.correct-1);document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));setHeroAttackTravel();$('arena').classList.add('hit');$('arena-feedback').textContent=`${run.correct} COMBO! ◆ +${gain}`;speak(q.entry[0]);run.feedbackPending=true;nextTimer=setTimeout(()=>{nextTimer=setTimeout(continueAfterFeedback,showBattleReward(q,gain));},1050);return;}
-    else{document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'error'}}));$('arena').classList.add('wrong');$('arena-feedback').textContent=index<0?'시간 초과!':'아쉬워요!';}
+    if(ok){run.correct++;const gain=earnedCoins(run.correct)-earnedCoins(run.correct-1),contact=battleContactDelay(),attackEvent=run.skill?'ATTACK_SPECIAL':selectedCharacter?.class==='pugilist'?'ATTACK_HEAVY':'ATTACK_LIGHT';emitAudio(attackEvent);setTimeout(()=>{emitAudio('ENEMY_HIT');if(run.correct%5===0)emitAudio('CRITICAL_HIT');},contact);setTimeout(()=>emitAudio('ENEMY_DEATH'),contact+150);document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));setHeroAttackTravel();$('arena').classList.add('hit');$('arena-feedback').textContent=`${run.correct} COMBO! ◆ +${gain}`;speak(q.entry[0]);run.feedbackPending=true;nextTimer=setTimeout(()=>{nextTimer=setTimeout(continueAfterFeedback,showBattleReward(q,gain));},1050);return;}
+    else{emitAudio('ATTACK_LIGHT');setTimeout(()=>emitAudio('PLAYER_HIT'),reducedMotion()?100:210);setTimeout(()=>emitAudio('PLAYER_DEATH'),reducedMotion()?260:650);document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'error'}}));$('arena').classList.add('wrong');$('arena-feedback').textContent=index<0?'시간 초과!':'아쉬워요!';}
     nextTimer=setTimeout(()=>finishBattle(false,index<0?'timeout':'wrong'),1450);
   }
   async function finishBattle(clear,reason){
@@ -437,6 +450,7 @@
     if(demo){const coins=earnedCoins(run.correct,clear),id=`demo-${Date.now()}`;selectedCharacter.coins+=coins;run.result={game_score_id:id,coins_earned:coins,balance:selectedCharacter.coins};const row={id,player,stage:stageRecordName(selectedStage),correct:run.correct,total:run.deck.length,cleared:clear,character_id:selectedCharacter.id,duration_ms:Math.round(run.elapsed),coins_earned:coins,created_at:new Date().toISOString()};demoState.records.unshift(row);records=demoState.records;saveDemo();}
     else if(dbOnline){try{const rows=await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stageRecordName(selectedStage),p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed)});run.result=rows?.[0]||null;if(run.result){if(accountMode)accountCrystals=Number(run.result.balance);else selectedCharacter.coins=run.result.balance;}records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.error(error);run.saveError=true;}}
     go('result');
+    emitAudio(clear?'GAME_VICTORY':'GAME_DEFEAT');
     if(clear){playStageClearSound();document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));}
   }
   function clearSummaryMarkup(r,earned){return `<section class="result clear-result"><div class="clear-portal" aria-hidden="true"><i></i><i></i><i></i></div><div class="clear-shards" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="clear-content"><div class="clear-crown" aria-hidden="true"><i></i></div><div class="eyebrow clear-title">STAGE CLEAR</div><div class="clear-sigil" aria-hidden="true"><i></i><b>◆</b></div><h1>클리어!</h1><p class="clear-stage">${esc(stages[selectedStage].name)}</p><div class="clear-stats"><div><span>클리어 타임</span><strong>${(r.elapsed/1000).toFixed(1)}<small>초</small></strong></div><div><span>푼 문제</span><strong>${r.correct}<small> / ${r.deck.length}</small></strong></div><div><span>획득 크리스털</span><strong class="crystal-value">◆ ${num(earned)}</strong></div></div><button class="primary clear-next" data-action="result-next">보상 상자 확인하기 <span>→</span></button></div></section>`;}
@@ -542,6 +556,7 @@
 
   document.addEventListener('pointerdown',prepareGameAudio,{once:true,passive:true});
   document.addEventListener('click',async event=>{const b=event.target.closest('button[data-action]');if(!b||b.disabled)return;const action=b.dataset.action,id=b.dataset.id;
+    if(['close','cancel-character-create'].includes(action))emitAudio('UI_CANCEL');else if(['start','retry','resume','create-character','buy','equip','receive-reward'].includes(action))emitAudio('UI_CONFIRM');else if(action!=='answer')emitAudio('UI_CLICK');
     if(action==='nav')navigate(b.dataset.page);else if(action==='home')navigate('home');else if(action==='close'){closeDialog();if(page==='battle'&&run?.paused)resume();}
     else if(action==='player')await switchPlayer(b.dataset.player);else if(action==='add-player')showNewPlayer();else if(action==='create-player')await createPlayer();
     else if(action==='characters')showCharacters();else if(action==='select-character'){selectedCharacter=characters.find(c=>c.id===id)||selectedCharacter;localStorage.setItem(`fantasyQuizCharacter:${player}`,selectedCharacter.id);await loadCharacterExtras();if(accountMode)render();else{closeDialog();render();}}

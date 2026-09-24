@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "settingsKey": "wordoria.audio.settings.v1",
+  "defaults": { "masterVolume": 0.8, "bgmVolume": 0.5, "sfxVolume": 0.75, "muted": false },
+  "events": {
+    "MENU_BGM": { "category": "bgm", "volume": 0.5, "loop": true, "sources": ["assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg", "assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3"] },
+    "BATTLE_BGM": { "category": "bgm", "volume": 0.5, "loop": true, "sources": ["assets/audio/bgm/battle/bgm_battle_word_crystal_loop.ogg", "assets/audio/bgm/battle/bgm_battle_word_crystal_loop.mp3"] },
+    "BOSS_BGM": { "category": "bgm", "volume": 0.55, "loop": true, "sources": ["assets/audio/bgm/boss/bgm_boss_crystal_guardian_loop.ogg", "assets/audio/bgm/boss/bgm_boss_crystal_guardian_loop.mp3"] },
+    "ENDING_BGM": { "category": "bgm", "volume": 0.5, "loop": true, "sources": ["assets/audio/bgm/ending/bgm_ending_wordoria_home_loop.ogg", "assets/audio/bgm/ending/bgm_ending_wordoria_home_loop.mp3"] },
+    "ATTACK_LIGHT": { "category": "sfx", "volume": 0.68, "variants": 3, "pitchVariation": 0.045, "sources": ["assets/audio/sfx/combat/attack/sfx_combat_attack_light_01.wav", "assets/audio/sfx/combat/attack/sfx_combat_attack_light_02.wav", "assets/audio/sfx/combat/attack/sfx_combat_attack_light_03.wav"] },
+    "ATTACK_HEAVY": { "category": "sfx", "volume": 0.82, "variants": 2, "pitchVariation": 0.035, "sources": ["assets/audio/sfx/combat/attack/sfx_combat_attack_heavy_01.wav", "assets/audio/sfx/combat/attack/sfx_combat_attack_heavy_02.wav"] },
+    "ATTACK_SPECIAL": { "category": "sfx", "volume": 0.86, "variants": 2, "pitchVariation": 0.025, "sources": ["assets/audio/sfx/combat/special/sfx_combat_special_crystal_01.wav", "assets/audio/sfx/combat/special/sfx_combat_special_crystal_02.wav"] },
+    "PLAYER_HIT": { "category": "sfx", "volume": 0.76, "variants": 3, "pitchVariation": 0.04, "sources": ["assets/audio/sfx/combat/hit/sfx_combat_hit_player_01.wav", "assets/audio/sfx/combat/hit/sfx_combat_hit_player_02.wav", "assets/audio/sfx/combat/hit/sfx_combat_hit_player_03.wav"] },
+    "ENEMY_HIT": { "category": "sfx", "volume": 0.78, "variants": 3, "pitchVariation": 0.05, "sources": ["assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_01.wav", "assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_02.wav", "assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_03.wav"] },
+    "CRITICAL_HIT": { "category": "sfx", "volume": 0.92, "variants": 2, "pitchVariation": 0.025, "sources": ["assets/audio/sfx/combat/critical/sfx_combat_critical_01.wav", "assets/audio/sfx/combat/critical/sfx_combat_critical_02.wav"] },
+    "PLAYER_JUMP": { "category": "sfx", "volume": 0.55, "sources": ["assets/audio/sfx/character/jump/sfx_character_jump_01.wav"] },
+    "PLAYER_LAND": { "category": "sfx", "volume": 0.58, "sources": ["assets/audio/sfx/character/landing/sfx_character_land_01.wav"] },
+    "PLAYER_DEATH": { "category": "sfx", "volume": 0.75, "sources": ["assets/audio/sfx/character/death/sfx_character_player_death_01.wav"] },
+    "ENEMY_DEATH": { "category": "sfx", "volume": 0.75, "sources": ["assets/audio/sfx/character/death/sfx_character_enemy_death_01.wav"] },
+    "GAME_VICTORY": { "category": "sfx", "volume": 0.82, "sources": ["assets/audio/sfx/system/victory/sfx_system_victory_01.wav"] },
+    "GAME_DEFEAT": { "category": "sfx", "volume": 0.72, "sources": ["assets/audio/sfx/system/defeat/sfx_system_defeat_01.wav"] },
+    "UI_CLICK": { "category": "sfx", "volume": 0.42, "variants": 2, "pitchVariation": 0.025, "sources": ["assets/audio/sfx/ui/click/sfx_ui_click_01.wav", "assets/audio/sfx/ui/click/sfx_ui_click_02.wav"] },
+    "UI_CONFIRM": { "category": "sfx", "volume": 0.5, "sources": ["assets/audio/sfx/ui/confirm/sfx_ui_confirm_01.wav"] },
+    "UI_CANCEL": { "category": "sfx", "volume": 0.46, "sources": ["assets/audio/sfx/ui/cancel/sfx_ui_cancel_01.wav"] },
+    "ITEM_ACQUIRED": { "category": "sfx", "volume": 0.68, "sources": ["assets/audio/sfx/system/notification/sfx_system_item_acquired_01.wav"] }
+  }
+}

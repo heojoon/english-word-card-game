@@ -18,6 +18,7 @@ const files = [
   'equipment-status-concept.js',
   'crystal-game.css',
   'crystal-game.js',
+  'sound-manager.js',
   'native-bridge.js',
   'stages.js',
   'stage6.js',
