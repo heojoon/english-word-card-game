@@ -56,7 +56,7 @@ extension=${output_strip##*.}
 stem=${output_strip%.*}
 spaced_output="${stem}_spaced_master.${extension}"
 ffmpeg -loglevel error -y "${spaced_inputs[@]}" \
-  -filter_complex "hstack=inputs=${#frames[@]},format=rgba" "$spaced_output"
+  -filter_complex "hstack=inputs=$((${#spaced_inputs[@]} / 2)),format=rgba" "$spaced_output"
 
 echo "Runtime strip: $output_strip"
 echo "Spaced master: $spaced_output"
