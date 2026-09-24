@@ -13,6 +13,7 @@ values
   ('pet', '워드 크리스털 정령', 'avatar', 1500, '◆', '배운 단어의 빛을 모아 행운을 가져오는 전설의 동행 정령입니다.', false, 'pet', 'legendary', 5, 'luk', 12, 'assets/items/equipment/item_word_crystal_sprite_legendary.webp'),
   ('ranger_violet_crystal_skin', '보랏빛 결정 궁수', 'avatar', 2000, '◆', '은보랏빛 트윈테일과 결정 장궁으로 모습을 바꾸는 여성 궁수 전용 스킨입니다.', false, 'skin', 'unique', 4, null, 0, 'assets/avatars/skins/ranger-female-violet-crystal.webp'),
   ('pugilist_crystal_rose_skin', '크리스털 로즈 권투사', 'avatar', 2000, '◆', '장미빛 결정 건틀릿과 금장 전투복으로 모습을 바꾸는 여성 권투사 전용 스킨입니다. 전용 펀치와 피격 애니메이션이 적용됩니다.', false, 'skin', 'legendary', 5, null, 0, 'assets/avatars/skins/pugilist-female-crystal-rose-profile-v3.webp'),
+  ('mage_arcane_necromancer_skin', '비전 네크로맨서', 'avatar', 2000, '◆', '해골 지팡이와 보랏빛 영혼불을 두른 남성 마법사 전용 스킨입니다. 전용 주문 공격과 피격/쓰러짐 애니메이션이 적용됩니다.', false, 'skin', 'legendary', 5, null, 0, 'assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp'),
   ('snack', '간식 1개', 'gift', 60, '🍪', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, ''),
   ('drink', '원하는 음료 1잔', 'gift', 90, '🥤', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, ''),
   ('wish', '소원권 1회', 'gift', 150, '🎫', '보호자 승인 후 사용할 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, '')

@@ -1,0 +1,62 @@
+{
+  "id": "mage_male_arcane_necromancer",
+  "class": "mage",
+  "variant": "male",
+  "sourceReference": "User-provided necromancer mage illustration",
+  "identityMaster": "source/identity-master.png",
+  "profileImage": "../../../avatars/skins/mage-male-arcane-necromancer-profile-v2.webp",
+  "runtime": {
+    "frameWidth": 320,
+    "frameHeight": 320,
+    "anchor": { "x": 0.5, "y": 0.975 },
+    "facing": "right"
+  },
+  "approvedIdentity": {
+    "hair": "auburn brown, tousled",
+    "eyes": "bright blue",
+    "costume": "indigo and Crystal Violet robe with pale silver rune trim",
+    "prop": "moonstone staff with violet crystal orb",
+    "tone": "youthful, friendly Crystal Quest magic; no horror or skeletal motifs"
+  },
+  "plannedStates": {
+    "idle": ["ready"],
+    "attack": ["ready", "anticipation", "charge", "aim", "release", "attack-peak"],
+    "hit": ["guard-notice", "impact-recoil", "knockdown-hold"]
+  },
+  "hit": {
+    "image": "char_mage_male_arcane_necromancer_sd_hit_strip.png",
+    "frameWidth": 320,
+    "frameHeight": 320,
+    "frameCount": 3,
+    "layout": "horizontal",
+    "facing": "right",
+    "anchor": { "x": 0.5, "y": 0.975 },
+    "spacedReviewImage": "review/char_mage_male_arcane_necromancer_sd_hit_spaced_master.png",
+    "sourceFrameGapPx": 50,
+    "frames": [
+      { "index": 0, "name": "guard-notice", "durationMs": 100 },
+      { "index": 1, "name": "impact-recoil", "durationMs": 170, "events": { "hit": true } },
+      { "index": 2, "name": "knockdown-hold", "durationMs": 550, "finalHold": true }
+    ]
+  },
+  "attack": {
+    "image": "char_mage_male_arcane_necromancer_sd_attack_strip.png",
+    "frameWidth": 320,
+    "frameHeight": 320,
+    "frameCount": 6,
+    "layout": "horizontal",
+    "facing": "right",
+    "anchor": { "x": 0.5, "y": 0.975 },
+    "spacedReviewImage": "review/char_mage_male_arcane_necromancer_sd_attack_spaced_master.png",
+    "sourceFrameGapPx": 50,
+    "frames": [
+      { "index": 0, "name": "ready", "durationMs": 140 },
+      { "index": 1, "name": "anticipation", "durationMs": 110 },
+      { "index": 2, "name": "charge", "durationMs": 110 },
+      { "index": 3, "name": "aim", "durationMs": 130 },
+      { "index": 4, "name": "release", "durationMs": 90, "events": { "release": true } },
+      { "index": 5, "name": "attack-peak", "durationMs": 180, "events": { "hit": true } }
+    ]
+  },
+  "status": "identity, shop/profile art, attack, and hit/knockdown strips integrated for the male mage arcane necromancer skin"
+}

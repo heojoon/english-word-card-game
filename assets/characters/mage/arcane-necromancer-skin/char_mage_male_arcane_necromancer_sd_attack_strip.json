@@ -1,0 +1,19 @@
+{
+  "image": "char_mage_male_arcane_necromancer_sd_attack_strip.png",
+  "spacedReviewImage": "review/char_mage_male_arcane_necromancer_sd_attack_spaced_master.png",
+  "sourceFrameGapPx": 50,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": { "x": 0.5, "y": 0.975 },
+  "frames": [
+    { "index": 0, "name": "ready", "durationMs": 140 },
+    { "index": 1, "name": "anticipation", "durationMs": 110 },
+    { "index": 2, "name": "charge", "durationMs": 110 },
+    { "index": 3, "name": "aim", "durationMs": 130 },
+    { "index": 4, "name": "release", "durationMs": 90, "events": { "release": true } },
+    { "index": 5, "name": "attack-peak", "durationMs": 180, "events": { "hit": true } }
+  ]
+}
