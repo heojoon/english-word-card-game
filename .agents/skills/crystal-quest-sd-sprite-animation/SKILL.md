@@ -28,8 +28,10 @@ Use the installed `imagegen` skill for generation or image edits. Use the genera
 4. Generate a full strip first only when the entire character, prop, and effect can remain well inside each slot. For attack and hit/knockdown sheets, require exact slot count, one complete character per slot, stable scale/ground line, one direction, and **exactly 50 px of fully transparent space between every adjacent source/review frame**. Record this as `sourceFrameGapPx: 50`; it is not optional and may not be replaced with an approximate or variable gutter.
 5. If any frame crosses a slot, loses the character, crops a prop/effect, or becomes hard to extract, stop repairing the crowded strip. Generate smaller 2–3-frame groups with larger slots or isolated frames from the same canonical reference. Consistency is judged against the reference and neighboring approved frames, not assumed from the generator.
 6. Normalize frames with one shared scale and bottom-center anchor. Preserve source masters, extracted frames, runtime frames, runtime strip, spaced review master, and preview separately. For projectile frames, widen the runtime frame rather than shrinking the character until the effect fits.
+   - When a user supplies a flattened preview sheet as the chosen artwork, archive the original sheet before extraction. Treat its poses, order, and intended silhouette scale as fixed; do not let a background-removal edit redesign the character.
+   - Do not use broad Crystal Violet/blue color-key removal on a mage or effect-heavy sprite: it can erase purple robes, runes, and spell glows. Prefer a true-alpha edit, then compare every cutout directly against the supplied sheet.
 7. Assemble the runtime strip only from independently verified frames. Use `scripts/assemble_strip.sh` when FFmpeg is available. The 50 px source/review gap must be removed when packing the runtime strip, so runtime slots remain contiguous and CSS `background-size`/`steps()` indexing stays correct. Preserve a separate 50 px-gapped source or review master; do not use it as the runtime strip.
-8. Inspect each frame and the whole sequence over both light and saturated backgrounds, at source resolution and actual gameplay size. Integrate only after all quality gates pass.
+8. Inspect each frame and the whole sequence over both light and saturated backgrounds, at source resolution and actual gameplay size. For a supplied panel sheet, include a cell-grid and ground-line composite at the actual battle scale; compare body scale and feet separately from tall staves or spell effects. Integrate only after all quality gates pass.
 
 ## Ranged attack contract
 
@@ -47,10 +49,12 @@ When creating a bow, spell, or thrown-weapon attack, read the ranged pattern in 
 
 - Exact frame count and equal runtime slots.
 - Every attack and hit/knockdown generated source sheet and spaced review master has exactly 50 px of transparent gap between adjacent frames, recorded in its manifest as `sourceFrameGapPx: 50`.
+- Verify the gapped-master width is `frameCount × frameWidth + (frameCount - 1) × 50`; verify it includes every frame, not merely the first alternating frames and gaps.
 - Same identity, costume, palette, facing direction, character scale, and ground line throughout.
 - One complete character in every frame unless the runtime contract explicitly separates character and projectile layers.
 - No cropped hair, feet, weapon, staff, cape, projectile, glow, or impact effect.
 - No pixels from adjacent frames inside a frame crop; retain a meaningful transparent safety band.
+- Inspect both inner left/right safety bands for isolated seam fragments after extraction or alpha edits. Reject an isolated sliver unless it is visibly part of that frame's intended effect.
 - Real RGBA transparency, not a checkerboard, black rectangle, gradient, or painted matte.
 - Attack anticipation, release, and final active attack pose read at gameplay size; frame 06 must not recover to idle. Hit animation must instead read as notice, impact, and complete knockdown at gameplay size.
 - Ranged attacks visibly connect weapon/cast origin → release → projectile travel → contact; damage feedback occurs at contact, not at anticipation.

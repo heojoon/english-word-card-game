@@ -108,6 +108,14 @@ Under `prefers-reduced-motion`, shorten wind-up and flight but retain release, v
 
 An RGBA file can still contain an opaque painted background. Verify alpha numerically and visually over at least two contrasting colors. Background-removal edits sometimes redraw or retain gradients; reject those outputs if foreground identity or glow edges change.
 
+### User-supplied panel sheets
+
+When the user selects a six-panel preview sheet as the desired attack art, preserve that source sheet unchanged beside the extracted frames. Its left-to-right pose order, character design, and intended scale are the authority. A transparent-background edit is permitted only to remove the backdrop; it must not reinterpret the pose, costume, staff, or effects. Compare the cutout with the source before accepting it.
+
+Avoid broad blue or violet chroma-key removal on magic users. Crystal Violet backgrounds can be close to robe shadows, runes, and spell glows, so a key that clears the background can silently cut holes in the foreground. Prefer an alpha-aware edit and inspect the result over white and Crystal Violet. If a key is unavoidable, limit it to a measured background range and reject any foreground loss.
+
+For a pre-aligned sheet, render a six-cell review composite with cell boundaries and a ground-line guide at runtime resolution, then a second composite at the actual battle display size. Measure lower foreground bounds as a diagnostic, but visually judge feet/body alignment independently of an upward staff or an outward spell effect. Inspect the inner left/right safety bands of every normalized cell for single-pixel or thin-slice remnants from neighboring panels.
+
 For safe extraction, foreground bounds must not touch slot edges. Every attack and hit/knockdown generated source sheet and review master uses a fixed **50 px fully transparent gap** between adjacent frames; record `sourceFrameGapPx: 50` in its manifest. The gap is an inter-frame separator, not part of a runtime frame and not a substitute for each frame's own safety margin. Runtime strips normally remain tightly packed in equal slots after the 50 px gaps are removed; the gapped master is an archival/re-extraction asset.
 
 Crop only after inspecting foreground bounds. Edge masking is acceptable only for confirmed stray neighbor pixels in a transparent safety band. Never erase a legitimate projectile, prop tip, hair, or glow merely to make dimensions pass.
@@ -136,6 +144,9 @@ Review frame-by-frame, then as motion:
 - reversed facing direction;
 - missing character or detached body part;
 - adjacent-frame contamination;
+- supplied-source fidelity: no altered pose, costume, staff, or effect caused by background extraction;
+- gapped-master geometry: all frames present and width equals `N × frameWidth + (N - 1) × 50`;
+- seam fragments at inner cell edges, especially after AI background extraction;
 - cropped effect or misleading continuous beam;
 - fake transparency or dark alpha halo;
 - action timing: readable anticipation, release, and a final active attack or impact pose (never recovery in frame 06);

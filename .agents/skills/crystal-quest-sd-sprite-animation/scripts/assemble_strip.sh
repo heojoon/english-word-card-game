@@ -55,8 +55,17 @@ ffmpeg -loglevel error -y "${runtime_inputs[@]}" \
 extension=${output_strip##*.}
 stem=${output_strip%.*}
 spaced_output="${stem}_spaced_master.${extension}"
+spaced_input_count=$((${#spaced_inputs[@]} / 2))
 ffmpeg -loglevel error -y "${spaced_inputs[@]}" \
-  -filter_complex "hstack=inputs=$((${#spaced_inputs[@]} / 2)),format=rgba" "$spaced_output"
+  -filter_complex "hstack=inputs=${spaced_input_count},format=rgba" "$spaced_output"
+
+spaced_dimensions=$(ffprobe -v error -select_streams v:0 \
+  -show_entries stream=width,height -of csv=s=x:p=0 "$spaced_output")
+expected_spaced_width=$((${#frames[@]} * frame_width + (${#frames[@]} - 1) * source_frame_gap_px))
+[[ "$spaced_dimensions" == "${expected_spaced_width}x${frame_height}" ]] || {
+  echo "Spaced master is $spaced_dimensions; expected ${expected_spaced_width}x${frame_height}." >&2
+  exit 1
+}
 
 echo "Runtime strip: $output_strip"
 echo "Spaced master: $spaced_output"
