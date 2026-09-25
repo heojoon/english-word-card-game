@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f3ff">
+  <title>Wordoria · 캐릭터 선택 UX 3안</title>
+  <link rel="stylesheet" href="character-select-concepts.css?v=20260925-3">
+  <script src="character-select-concepts.js?v=20260925-3" defer></script>
+</head>
+<body>
+  <main class="prototype">
+    <header class="proposal-bar">
+      <div><span>CRYSTAL QUEST · UX PROPOSAL</span><strong>캐릭터 선택 3안</strong></div>
+      <nav aria-label="디자인 시안 선택">
+        <a href="?concept=carousel" data-concept="carousel" aria-current="page"><b>01</b> 크리스털 링</a>
+        <a href="?concept=deck" data-concept="deck"><b>02</b> 히어로 덱</a>
+        <a href="?concept=stage" data-concept="stage"><b>03</b> 소환 무대</a>
+      </nav>
+    </header>
+
+    <section class="phone" data-mode="carousel" aria-label="캐릭터 선택 화면 미리보기">
+      <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+      <header class="game-head">
+        <button class="round-button" type="button" aria-label="뒤로 가기">‹</button>
+        <div><span>YOUR ADVENTURER</span><h1>함께할 영웅을 골라요</h1></div>
+        <button class="wallet" type="button" aria-label="보유 크리스털 1250개">◆ 1,250</button>
+      </header>
+
+      <div class="mode-note" aria-live="polite">
+        <span id="mode-kicker">01 · CRYSTAL RING</span>
+        <p id="mode-description">돌아가는 링에서 한눈에 찾고, 앞으로 온 카드를 다시 눌러 시작해요.</p>
+      </div>
+
+      <section class="card-viewport" aria-label="보유 캐릭터 목록">
+        <div class="orbit" id="orbit"></div>
+        <button class="orbit-arrow previous" type="button" aria-label="이전 캐릭터">‹</button>
+        <button class="orbit-arrow next" type="button" aria-label="다음 캐릭터">›</button>
+        <div class="ground-glow" aria-hidden="true"></div>
+      </section>
+
+      <section class="hero-detail" id="hero-detail" aria-live="polite">
+        <div class="owned-roster" id="owned-roster" aria-label="보유 캐릭터 5명"></div>
+        <div class="identity">
+          <span class="level" id="hero-level">LV. 18</span>
+          <div><span id="hero-class">WARRIOR · 전사</span><h2 id="hero-name">아이언하트</h2></div>
+          <span class="ready-mark">READY</span>
+        </div>
+        <div class="stats" id="hero-stats"></div>
+        <div class="skill">
+          <div class="skill-icon" id="skill-icon">＋1</div>
+          <div><span>SPECIAL SKILL</span><strong id="skill-name">강인함</strong><p id="skill-copy">15% 확률로 문제 제한시간이 1초 늘어나요.</p></div>
+        </div>
+        <button class="play-hint" type="button" id="play-hint"><span>이 캐릭터를 한 번 더 누르면</span><strong>모험 시작</strong><b>›</b></button>
+      </section>
+
+      <footer class="collection-foot">
+        <span><b id="position">1</b> / 5 보유 캐릭터</span>
+        <div id="dots" aria-label="캐릭터 위치"></div>
+        <button type="button" id="add-character">＋ 새 캐릭터</button>
+      </footer>
+    </section>
+  </main>
+
+  <dialog id="start-dialog">
+    <div class="dialog-crystal">◆</div>
+    <span>ADVENTURE READY</span>
+    <h2><b id="dialog-name">아이언하트</b>와<br>모험을 시작할까요?</h2>
+    <p>더미 페이지에서는 실제 게임으로 이동하지 않아요.</p>
+    <div><button type="button" data-close>다시 고르기</button><button type="button" data-start>모험 시작</button></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
