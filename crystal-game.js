@@ -90,6 +90,7 @@
     if(reducedMotion())return 120;
     const skinCode=itemById(equippedMap(selectedCharacter).skin)?.code;
     if(skinCode==='mage_arcane_necromancer_skin')return 830;
+    if(skinCode==='warrior_golden_radiance_skin')return 780;
     return {warrior:420,mage:560,pugilist:450,ranger:560}[selectedCharacter?.class]||420;
   }
   function syncBGM(target=page){
@@ -277,6 +278,7 @@
         {id:10,code:'ranger_violet_crystal_skin',name:'보랏빛 결정 궁수',category:'avatar',price:2000,icon:'◆',description:'은보랏빛 트윈테일과 결정 장궁으로 모습을 바꾸는 여성 궁수 전용 스킨입니다.',slot:'skin',rarity:'unique',stars:4,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/ranger-female-violet-crystal.webp'},
         {id:11,code:'pugilist_crystal_rose_skin',name:'크리스털 로즈 권투사',category:'avatar',price:2000,icon:'◆',description:'장미빛 결정 건틀릿과 금장 전투복으로 모습을 바꾸는 여성 권투사 전용 스킨입니다. 전용 펀치와 피격 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/pugilist-female-crystal-rose-profile-v3.webp'},
         {id:12,code:'mage_arcane_necromancer_skin',name:'비전 네크로맨서',category:'avatar',price:2000,icon:'◆',description:'해골 지팡이와 보랏빛 영혼불을 두른 남성 마법사 전용 스킨입니다. 전용 주문 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp'},
+        {id:13,code:'warrior_golden_radiance_skin',name:'황금빛 광휘의 검사',category:'avatar',price:2000,icon:'◆',description:'황금 결정과 성광 대검을 든 남성 전사 전용 스킨입니다. 전용 대검 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/warrior-male-golden-radiance.webp'},
         {id:5,code:'snack',name:'간식 1개',category:'gift',price:60,icon:'🍪',description:'보호자 승인 후 받을 수 있어요.',rarity:'special',stars:2}
       ];records=demoState.records;dbOnline=true;
     } else {
@@ -368,9 +370,10 @@
     if(item?.code==='ranger_violet_crystal_skin')return c?.class==='ranger'&&variantOf(c)==='female';
     if(item?.code==='pugilist_crystal_rose_skin')return c?.class==='pugilist'&&variantOf(c)==='female';
     if(item?.code==='mage_arcane_necromancer_skin')return c?.class==='mage'&&variantOf(c)==='male';
+    if(item?.code==='warrior_golden_radiance_skin')return c?.class==='warrior'&&variantOf(c)==='male';
     return !isSkin(item);
   }
-  function skinRequirement(item){if(item?.code==='pugilist_crystal_rose_skin')return '여성 권투사 전용';if(item?.code==='mage_arcane_necromancer_skin')return '남성 마법사 전용';return '여성 궁수 전용';}
+  function skinRequirement(item){if(item?.code==='pugilist_crystal_rose_skin')return '여성 권투사 전용';if(item?.code==='mage_arcane_necromancer_skin')return '남성 마법사 전용';if(item?.code==='warrior_golden_radiance_skin')return '남성 전사 전용';return '여성 궁수 전용';}
   function renderItemCard(item,ownedView=false){const owned=itemOwned(item),eq=Object.values(equippedMap()).some(id=>String(id)===String(item.id)),gear=item.category==='avatar',skin=isSkin(item),rarity=displayRarity(item);return `<button class="item" data-action="item" data-id="${item.id}" data-rarity="${rarity}"><span class="item-rarity">${rarityNames[rarity]}</span>${ownedView?`<span class="item-status">${eq?'장착 중':'보유'}</span>`:''}<span class="item-art">${itemArt(item)}</span><b>${esc(item.name)}</b>${gear?`<span class="item-stat">${skin?`${skinRequirement(item)} 스킨`:`${esc(String(item.stat_key||'').toUpperCase())} +${num(item.stat_value)}`}</span>`:''}<small class="${owned?'owned':''}">${owned?(eq?'✓ 장착 중':'✓ 보유 중'):`${num(item.price)} ◆`}</small></button>`;}
   function renderGear(){
     if(!selectedCharacter)return noCharacter('장비를 사용하려면 모험가가 필요해요.');

@@ -1,0 +1,16 @@
+{
+  "image": "char_warrior_male_golden_radiance_sd_hit_strip.png",
+  "spacedReviewImage": "review/char_warrior_male_golden_radiance_sd_hit_spaced_master.png",
+  "sourceFrameGapPx": 50,
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": { "x": 0.5, "y": 0.975 },
+  "frames": [
+    { "index": 0, "name": "guard-notice", "durationMs": 100 },
+    { "index": 1, "name": "impact-recoil", "durationMs": 170, "events": { "hit": true } },
+    { "index": 2, "name": "knockdown-hold", "durationMs": 550, "finalHold": true }
+  ]
+}

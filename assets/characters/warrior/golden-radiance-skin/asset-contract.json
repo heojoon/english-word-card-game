@@ -1,0 +1,66 @@
+{
+  "id": "warrior_male_golden_radiance",
+  "name": "황금빛 광휘의 검사",
+  "class": "warrior",
+  "variant": "male",
+  "sourceReference": "assets/avatars/warrior.webp",
+  "identityMaster": "source/identity-master.png",
+  "profileImage": "../../../avatars/skins/warrior-male-golden-radiance.webp",
+  "runtime": {
+    "frameWidth": 512,
+    "frameHeight": 320,
+    "anchor": { "x": 0.5, "y": 0.975 },
+    "facing": "right",
+    "wideCellReason": "The greatsword and bounded golden slash crescents require a wider cell without shrinking the character."
+  },
+  "approvedIdentity": {
+    "hair": "warm chestnut brown, tousled",
+    "eyes": "bright blue",
+    "costume": "moon-white and pale-silver plate with restrained Treasure Gold trim and a royal-blue cape",
+    "emblem": "luminous golden lion crest",
+    "prop": "large pale-silver greatsword with a warm golden crystal core",
+    "effect": "bounded golden crescent light with three to five large faceted crystal motes",
+    "tone": "youthful, confident, friendly Crystal Quest hero; no full-gold armor"
+  },
+  "attack": {
+    "image": "char_warrior_male_golden_radiance_sd_attack_strip.png",
+    "spacedReviewImage": "review/char_warrior_male_golden_radiance_sd_attack_spaced_master.png",
+    "sourceFrameGapPx": 50,
+    "frameWidth": 512,
+    "frameHeight": 320,
+    "frameCount": 6,
+    "layout": "horizontal",
+    "facing": "right",
+    "anchor": { "x": 0.5, "y": 0.975 },
+    "frames": [
+      { "index": 0, "name": "ready", "durationMs": 140 },
+      { "index": 1, "name": "anticipation", "durationMs": 110 },
+      { "index": 2, "name": "charge", "durationMs": 110 },
+      { "index": 3, "name": "aim-lunge", "durationMs": 130 },
+      { "index": 4, "name": "strike-contact", "durationMs": 90, "events": { "hit": true } },
+      { "index": 5, "name": "attack-peak", "durationMs": 180 }
+    ]
+  },
+  "hit": {
+    "image": "char_warrior_male_golden_radiance_sd_hit_strip.png",
+    "spacedReviewImage": "review/char_warrior_male_golden_radiance_sd_hit_spaced_master.png",
+    "sourceFrameGapPx": 50,
+    "frameWidth": 512,
+    "frameHeight": 320,
+    "frameCount": 3,
+    "layout": "horizontal",
+    "facing": "right",
+    "anchor": { "x": 0.5, "y": 0.975 },
+    "frames": [
+      { "index": 0, "name": "guard-notice", "durationMs": 100 },
+      { "index": 1, "name": "impact-recoil", "durationMs": 170, "events": { "hit": true } },
+      { "index": 2, "name": "knockdown-hold", "durationMs": 550, "finalHold": true }
+    ]
+  },
+  "generation": {
+    "tool": "built-in image generation",
+    "date": "2026-09-25",
+    "attackMethod": "three isolated two-pose groups; the rejected crowded six-pose master is retained under source for audit",
+    "status": "asset package generated and normalized; not yet wired to shop or battle runtime"
+  }
+}
