@@ -14,13 +14,13 @@
     "wideCellReason": "The greatsword and bounded golden slash crescents require a wider cell without shrinking the character."
   },
   "approvedIdentity": {
-    "hair": "warm chestnut brown, tousled",
+    "hair": "vivid royal/cobalt blue, tousled, with lighter blue highlights",
     "eyes": "bright blue",
-    "costume": "moon-white and pale-silver plate with restrained Treasure Gold trim and a royal-blue cape",
+    "costume": "fully polished golden plate armor with amber-gold shadows, pale warm-gold edge highlights, and a rich crimson-red cape",
     "emblem": "luminous golden lion crest",
     "prop": "large pale-silver greatsword with a warm golden crystal core",
     "effect": "bounded golden crescent light with three to five large faceted crystal motes",
-    "tone": "youthful, confident, friendly Crystal Quest hero; no full-gold armor"
+    "tone": "youthful, confident, friendly Crystal Quest hero; full-gold armor is an intentional user-approved skin exception"
   },
   "attack": {
     "image": "char_warrior_male_golden_radiance_sd_attack_strip.png",
@@ -60,7 +60,7 @@
   "generation": {
     "tool": "built-in image generation",
     "date": "2026-09-25",
-    "attackMethod": "three isolated two-pose groups; the rejected crowded six-pose master is retained under source for audit",
-    "status": "asset package generated and normalized; not yet wired to shop or battle runtime"
+    "attackMethod": "nine isolated frames generated from the revised canonical identity and normalized independently; full-sheet drafts are retained under source for audit",
+    "status": "revised blue-hair, red-cape, full-gold identity and matching attack/hit runtime assets generated, normalized, reviewed, and wired to the battle runtime"
   }
 }
