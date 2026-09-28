@@ -6,6 +6,13 @@
   "sourceReference": "assets/avatars/warrior.webp",
   "identityMaster": "source/identity-master.png",
   "profileImage": "../../../avatars/skins/warrior-male-golden-radiance.webp",
+  "profileComposition": {
+    "framing": "waist-up three-quarter portrait",
+    "visible": ["head", "shoulders", "chest armor", "arms and hands", "red cape", "greatsword upper section"],
+    "exclude": ["legs", "boots"],
+    "sourceMaster": "source/profile-waist-up.png",
+    "background": "transparent"
+  },
   "runtime": {
     "frameWidth": 512,
     "frameHeight": 320,

@@ -17,6 +17,7 @@ Use the installed `imagegen` skill for generation or image edits. Use the genera
 
 1. Establish the asset contract before generation: action, facing direction, frame count, runtime frame size, anchor, effect bounds, file names, and whether frame 01 must match an existing idle pose.
 2. Make or approve one full-body SD identity frame. Preserve youthful, nonsexualized proportions, a large readable head and hands, compact body, class silhouette, and real transparent alpha. Do not use a profile portrait as the runtime frame without adapting it to a stable full-body ground line.
+   - Keep profile/status portrait framing separate from runtime identity frames. For the male Golden Radiance Warrior skin, the approved profile art is a centered waist-up three-quarter portrait: show the complete head, shoulders, chest armor, arms/hands, red cape, and a readable section of the greatsword; omit legs and boots. Preserve genuine transparent alpha. Keep the full-body SD identity master as the authority for battle sprite proportions and pose continuity.
 3. Write explicit animation beats for every frame. For six-frame attacks:
    - attack: ready → anticipation → charge → aim → release → final attack pose;
    - Frame 06 is always an active, readable attack pose or impact/strike peak. It must not be a recovery, return-to-idle, or neutral pose.
@@ -67,3 +68,9 @@ Do not silently accept generation defects. Regenerate the smallest affected unit
 ## Detailed guidance
 
 Read [references/prompt-and-review.md](references/prompt-and-review.md) when writing prompts, handling projectile spacing, diagnosing alpha problems, or preparing deliverables.
+
+### Golden Radiance Warrior profile framing
+
+- Profile asset: `assets/avatars/skins/warrior-male-golden-radiance.webp`.
+- Approved composition: square transparent waist-up portrait, centered three-quarter view, with blue hair, red cape, full-gold armor, lion crest, and visible greatsword.
+- Keep the profile master under `assets/characters/warrior/golden-radiance-skin/source/profile-waist-up.png`; do not substitute it for the full-body `source/identity-master.png` used to guide battle sprites.
