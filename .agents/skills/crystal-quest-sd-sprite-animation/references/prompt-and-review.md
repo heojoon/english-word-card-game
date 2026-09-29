@@ -8,7 +8,7 @@ Give the image model, in order:
 
 1. **Intended use** — production sprite for a mobile-first 2D browser RPG.
 2. **Canonical identity** — exact face, hair, costume colors and motifs, class prop, age tone, and proportions from the attached reference.
-3. **Output geometry** — horizontal strip or isolated frame, exact frame count, equal slots, direction, full-body requirement, stable ground line, transparent safety margins, and an exact 50 px transparent gap between adjacent frames in every attack or hit/knockdown generated source sheet or review master.
+3. **Output geometry** — horizontal strip or isolated frame, exact frame count, equal slots, direction, full-body requirement for character frames, stable character ground line, transparent safety margins, and an exact 50 px transparent gap between adjacent frames in every attack, projectile, or hit/knockdown generated source sheet or review master.
 4. **Frame beats** — one concrete pose/action per numbered frame. Standard hit/knockdown assets use exactly three frames: guard/notice, impact/strongest recoil, and complete knockdown with a final-frame hold.
 5. **Effect behavior** — effect origin, whether detached, travel direction and distance, size, and fade. State that a projectile is not a continuous beam when applicable.
 6. **Style** — polished SD/chibi Crystal Quest art, clean anime-inspired rendering, clear silhouette at 128 px, no pixel art.
@@ -93,8 +93,8 @@ Projectile prompts should specify:
 
 - exact left-to-right or right-to-left travel direction;
 - launch origin and the point at which the effect becomes detached;
-- a readable leading edge and a short trailing effect;
-- increasing travel distance without changing projectile identity or scale unexpectedly;
+- a readable leading edge and short trail for arrows, or a compact stable silhouette for an orb;
+- screen-space travel handled separately from the art frames, without changing projectile identity or scale unexpectedly;
 - one bounded contact frame followed by a burst or fade;
 - no character, scenery, floor, target enemy, continuous beam, or cropped glow.
 
@@ -103,6 +103,16 @@ At integration time, map the release cue to projectile start and the projectile 
 For six-frame CSS strips, use `background-size: 600% 100%` and animate from `background-position: 0` through `100%` with `steps(5, end)`. Frame 06 remains the character's active attack peak, not a recovery. Delay the projectile so `launch` aligns with the character's `release`, translate the overlay toward the current enemy distance, and synchronize enemy reaction, sound, and haptics to projectile `contact`. If a legacy character manifest labels release with `hit: true`, interpret that as a launch cue; projectile contact remains the authoritative ranged-impact event.
 
 Under `prefers-reduced-motion`, shorten wind-up and flight but retain release, visible direction, contact, and enemy feedback. A projectile-only frame must never replace a character frame, and a continuous beam is valid only when the class design explicitly calls for one.
+
+### Mage flame orb example
+
+The shipped male arcane necromancer skin uses the same two-layer pattern with a purple burning sphere. Its character strip remains six complete, right-facing 320 × 320 frames with a bottom-center anchor. The separate projectile strip has six centered 320 × 320 frames: `charge → launch → near-travel → far-travel → contact → flame-burst`. The projectile manifest marks `release` on launch and `hit` on contact. The character manifest marks `release` on its casting frame; its final active attack pose is not a second hit. Use the existing identity master and the orb in the character's casting hand as the authority for the sphere's violet flame, amethyst core, and pale highlights.
+
+For this orb, the generation originals are separate transparent orb and contact-burst masters. Normalize each into equal RGBA cells, then assemble a contiguous runtime strip and a separate review master with exactly 50 px fully transparent gaps. Check all six cells over Moon White and Crystal Violet, including inner safety bands and the glow's alpha. At mobile scale, keep the traveling sphere distinct from the orb still drawn in the character pose; the detached sphere should clearly move toward the enemy and burst there.
+
+In `crystal-game.css`, the current necromancer example plays the character strip for `.76s` after `.08s`, then starts projectile frames and travel together for `.25s` after `.64s`. Thus launch aligns with the character's release and projectile contact occurs near `.84s`; `crystal-game.js` uses the same contact delay for enemy-hit audio and haptics, while CSS delays enemy and crystal feedback to contact. The shorter reduced-motion sequence keeps release before contact near `.17s`. These values belong to this skin, not every mage or ranger: calculate each new attack's release and contact from its own manifest and CSS timings.
+
+Keep the projectile's visual travel on its overlay and the character's full-body pose on its own layer. Anchor the overlay at the casting hand or bow release point, calculate translation from the current enemy position, and check both narrow and wide mobile arenas. For each variant, confirm idle → attack → contact/burst → reset and idle → hit → final knockdown hold in a browser; verify asset responses and console errors. If only a synthetic arena was tested, record that limit before claiming full in-game verification.
 
 ## Alpha and spacing
 
@@ -116,7 +126,7 @@ Avoid broad blue or violet chroma-key removal on magic users. Crystal Violet bac
 
 For a pre-aligned sheet, render a six-cell review composite with cell boundaries and a ground-line guide at runtime resolution, then a second composite at the actual battle display size. Measure lower foreground bounds as a diagnostic, but visually judge feet/body alignment independently of an upward staff or an outward spell effect. Inspect the inner left/right safety bands of every normalized cell for single-pixel or thin-slice remnants from neighboring panels.
 
-For safe extraction, foreground bounds must not touch slot edges. Every attack and hit/knockdown generated source sheet and review master uses a fixed **50 px fully transparent gap** between adjacent frames; record `sourceFrameGapPx: 50` in its manifest. The gap is an inter-frame separator, not part of a runtime frame and not a substitute for each frame's own safety margin. Runtime strips normally remain tightly packed in equal slots after the 50 px gaps are removed; the gapped master is an archival/re-extraction asset.
+For safe extraction, foreground bounds must not touch slot edges. Every attack, projectile, and hit/knockdown multi-frame generated source sheet and review master uses a fixed **50 px fully transparent gap** between adjacent frames; record `sourceFrameGapPx: 50` in its manifest. The gap is an inter-frame separator, not part of a runtime frame and not a substitute for each frame's own safety margin. Runtime strips normally remain tightly packed in equal slots after the 50 px gaps are removed; the gapped master is an archival/re-extraction asset.
 
 Crop only after inspecting foreground bounds. Edge masking is acceptable only for confirmed stray neighbor pixels in a transparent safety band. Never erase a legitimate projectile, prop tip, hair, or glow merely to make dimensions pass.
 
@@ -129,8 +139,9 @@ source/                       generation originals
 source-frames/<action>/       lossless extracted/approved frames
 <action>/01.png ... NN.png    normalized runtime frames
 char_<id>_<action>_strip.png  tightly packed runtime strip
+char_<id>_<action>_strip.json per-layer frame, anchor, timing, and event contract
 review/*_spaced_master.png    wide-slot archival master
-review/*_preview.png          labeled or stacked review image
+review/*_preview.png          labeled or stacked light/violet and mobile review image
 ```
 
 Use repository naming conventions when they differ. Do not overwrite approved runtime assets until the preview and in-engine playback pass.
