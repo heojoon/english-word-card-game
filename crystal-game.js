@@ -87,9 +87,9 @@
   const emitAudio = (id, type='sfx', options) => document.dispatchEvent(new CustomEvent('wordoria:audio',{detail:{id,type,options}}));
   const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   function battleContactDelay(){
-    if(reducedMotion())return itemById(equippedMap(selectedCharacter).skin)?.code==='mage_arcane_necromancer_skin'?170:120;
+    if(reducedMotion())return selectedCharacter?.class==='mage'?170:120;
     const skinCode=itemById(equippedMap(selectedCharacter).skin)?.code;
-    if(skinCode==='mage_arcane_necromancer_skin')return 840;
+    if(selectedCharacter?.class==='mage'||skinCode==='mage_arcane_necromancer_skin')return 840;
     if(skinCode==='warrior_golden_radiance_skin')return 780;
     return {warrior:420,mage:560,pugilist:450,ranger:560}[selectedCharacter?.class]||420;
   }
@@ -456,7 +456,7 @@
   function answer(index){
     if(!run||run.done||run.paused||run.locked)return;run.locked=true;clearInterval(timerId);const q=run.question,chosen=q.choices[index],ok=chosen===q.answer;
     document.querySelectorAll('.answer').forEach((button,i)=>{button.disabled=true;button.classList.toggle('correct',q.choices[i]===q.answer);button.classList.toggle('wrong',i===index&&!ok);});
-    if(ok){run.correct++;const gain=earnedCoins(run.correct)-earnedCoins(run.correct-1),contact=battleContactDelay(),necromancer=itemById(equippedMap(selectedCharacter).skin)?.code==='mage_arcane_necromancer_skin',attackEvent=run.skill?'ATTACK_SPECIAL':selectedCharacter?.class==='pugilist'?'ATTACK_HEAVY':'ATTACK_LIGHT';emitAudio(attackEvent);setTimeout(()=>{emitAudio('ENEMY_HIT');if(run.correct%5===0)emitAudio('CRITICAL_HIT');if(necromancer)document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));},contact);setTimeout(()=>emitAudio('ENEMY_DEATH'),contact+150);if(!necromancer)document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));setHeroAttackTravel();$('arena').classList.add('hit');$('arena-feedback').textContent=`${run.correct} COMBO! ◆ +${gain}`;speak(q.entry[0]);run.feedbackPending=true;nextTimer=setTimeout(()=>{nextTimer=setTimeout(continueAfterFeedback,showBattleReward(q,gain));},1050);return;}
+    if(ok){run.correct++;const gain=earnedCoins(run.correct)-earnedCoins(run.correct-1),contact=battleContactDelay(),rangedMage=selectedCharacter?.class==='mage',attackEvent=run.skill?'ATTACK_SPECIAL':selectedCharacter?.class==='pugilist'?'ATTACK_HEAVY':'ATTACK_LIGHT';emitAudio(attackEvent);setTimeout(()=>{emitAudio('ENEMY_HIT');if(run.correct%5===0)emitAudio('CRITICAL_HIT');if(rangedMage)document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));},contact);setTimeout(()=>emitAudio('ENEMY_DEATH'),contact+150);if(!rangedMage)document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));setHeroAttackTravel();$('arena').classList.add('hit');$('arena-feedback').textContent=`${run.correct} COMBO! ◆ +${gain}`;speak(q.entry[0]);run.feedbackPending=true;nextTimer=setTimeout(()=>{nextTimer=setTimeout(continueAfterFeedback,showBattleReward(q,gain));},1050);return;}
     else{emitAudio('ATTACK_LIGHT');setTimeout(()=>emitAudio('PLAYER_HIT'),reducedMotion()?100:210);setTimeout(()=>emitAudio('PLAYER_DEATH'),reducedMotion()?260:650);document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'error'}}));$('arena').classList.add('wrong');$('arena-feedback').textContent=index<0?'시간 초과!':'아쉬워요!';}
     nextTimer=setTimeout(()=>finishBattle(false,index<0?'timeout':'wrong'),1450);
   }

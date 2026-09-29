@@ -1,0 +1,106 @@
+{
+  "image": "char_mage_sd_projectile_blue_orb_strip.png",
+  "spacedReviewImage": "review/char_mage_sd_projectile_blue_orb_spaced_master.png",
+  "sourceImage": "source/projectile/blue-orb-generated-original.png",
+  "sourceFrameGapPx": 50,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "effectBounds": {
+    "maxWidth": 260,
+    "maxHeight": 260
+  },
+  "sharedVariants": [
+    "mage-male",
+    "mage-female"
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "name": "charge",
+      "durationMs": 50
+    },
+    {
+      "index": 1,
+      "name": "launch",
+      "durationMs": 50,
+      "events": {
+        "release": true
+      }
+    },
+    {
+      "index": 2,
+      "name": "near-travel",
+      "durationMs": 50
+    },
+    {
+      "index": 3,
+      "name": "far-travel",
+      "durationMs": 50
+    },
+    {
+      "index": 4,
+      "name": "contact",
+      "durationMs": 50,
+      "events": {
+        "hit": true
+      }
+    },
+    {
+      "index": 5,
+      "name": "blue-crystal-burst",
+      "durationMs": 50,
+      "events": {
+        "fade": true
+      }
+    }
+  ],
+  "motionContract": "Same six-frame order, delay, duration, screen-space flight, and contact timing as the arcane necromancer projectile; circular blue crystal orb replaces its purple flame.",
+  "action": "blue circular orb shot",
+  "runtimeContract": {
+    "cellSize": [
+      320,
+      320
+    ],
+    "layout": "horizontal RGBA PNG, 6 contiguous equal cells",
+    "characterLayers": {
+      "mage-male": "char_mage_male_sd_cast_full_strip.png",
+      "mage-female": "char_mage_female_sd_cast_full_strip.png"
+    },
+    "characterFrame": "Hold the first full-body cast pose, which is also the resting pose, during projectile travel.",
+    "projectileAnchor": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "projectileOriginCss": {
+      "leftPx": 64,
+      "bottomPx": 30,
+      "displaySizePx": 96
+    },
+    "launchDelayMs": 640,
+    "projectileDurationMs": 250,
+    "releaseAtMs": 690,
+    "contactAtMs": 840,
+    "reducedMotion": {
+      "launchDelayMs": 90,
+      "projectileDurationMs": 100,
+      "contactAtMs": 170
+    },
+    "contactEvents": [
+      "enemy reaction",
+      "crystal shards",
+      "hit audio",
+      "success haptic"
+    ],
+    "runtimeFilename": "char_mage_sd_projectile_blue_orb_strip.png",
+    "manifestFilename": "char_mage_sd_projectile_blue_orb_strip.json",
+    "characterFrame01MustMatchIdle": true
+  },
+  "projectileFrame01MustMatchIdle": false
+}
