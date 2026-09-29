@@ -61,7 +61,7 @@
       }
     }
   ],
-  "motionContract": "Same six-frame order, delay, duration, screen-space flight, and contact timing as the arcane necromancer projectile; circular blue crystal orb replaces its purple flame.",
+  "motionContract": "Retains the existing six-frame mage cast animation at double frame-transition speed, then launches a separate circular blue crystal orb using the same projectile sequence.",
   "action": "blue circular orb shot",
   "runtimeContract": {
     "cellSize": [
@@ -73,7 +73,7 @@
       "mage-male": "char_mage_male_sd_cast_full_strip.png",
       "mage-female": "char_mage_female_sd_cast_full_strip.png"
     },
-    "characterFrame": "Hold the first full-body cast pose, which is also the resting pose, during projectile travel.",
+    "characterFrame": "Play the existing six-frame full-body mage cast strip during the attack.",
     "projectileAnchor": {
       "x": 0.5,
       "y": 0.5
@@ -83,14 +83,16 @@
       "bottomPx": 30,
       "displaySizePx": 96
     },
-    "launchDelayMs": 640,
+    "launchDelayMs": 390,
     "projectileDurationMs": 250,
-    "releaseAtMs": 690,
-    "contactAtMs": 840,
+    "releaseAtMs": 440,
+    "contactAtMs": 590,
     "reducedMotion": {
-      "launchDelayMs": 90,
+      "characterAttackDurationMs": 225,
+      "characterReleaseAtMs": 190,
+      "launchDelayMs": 170,
       "projectileDurationMs": 100,
-      "contactAtMs": 170
+      "contactAtMs": 250
     },
     "contactEvents": [
       "enemy reaction",
@@ -100,7 +102,31 @@
     ],
     "runtimeFilename": "char_mage_sd_projectile_blue_orb_strip.png",
     "manifestFilename": "char_mage_sd_projectile_blue_orb_strip.json",
-    "characterFrame01MustMatchIdle": true
+    "characterFrame01MustMatchIdle": false,
+    "characterAttackDurationMs": 450,
+    "characterReleaseAtMs": 440,
+    "characterStrip": {
+      "mage-male": {
+        "image": "char_mage_male_sd_cast_full_strip.png",
+        "cellSize": [
+          384,
+          384
+        ],
+        "frameCount": 6
+      },
+      "mage-female": {
+        "image": "char_mage_female_sd_cast_full_strip.png",
+        "cellSize": [
+          384,
+          384
+        ],
+        "frameCount": 6
+      },
+      "transitionCount": 5,
+      "transitionIntervalMs": 90,
+      "durationMs": 450,
+      "animation": "steps(5,end)"
+    }
   },
   "projectileFrame01MustMatchIdle": false
 }

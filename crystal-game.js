@@ -87,9 +87,10 @@
   const emitAudio = (id, type='sfx', options) => document.dispatchEvent(new CustomEvent('wordoria:audio',{detail:{id,type,options}}));
   const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   function battleContactDelay(){
-    if(reducedMotion())return selectedCharacter?.class==='mage'?170:120;
     const skinCode=itemById(equippedMap(selectedCharacter).skin)?.code;
-    if(selectedCharacter?.class==='mage'||skinCode==='mage_arcane_necromancer_skin')return 840;
+    if(reducedMotion())return skinCode==='mage_arcane_necromancer_skin'?170:selectedCharacter?.class==='mage'?250:120;
+    if(skinCode==='mage_arcane_necromancer_skin')return 840;
+    if(selectedCharacter?.class==='mage')return 590;
     if(skinCode==='warrior_golden_radiance_skin')return 780;
     return {warrior:420,mage:560,pugilist:450,ranger:560}[selectedCharacter?.class]||420;
   }
