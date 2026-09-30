@@ -181,7 +181,18 @@ html.native-app body[data-screen=battle] .battle-reward-layer{top:calc(51px + en
 .story-skill-slot{margin-left:auto}
 .story-skill-slot .story-action-icon{width:46px;height:46px;flex-basis:46px}
 .story-action-slot b,.story-action-slot small{display:none}
-.story-hp{position:absolute;z-index:9;left:auto;right:12px;top:61px;padding:5px 8px;background:#fff;border:1px solid #f2c8d0;color:#e65b70;font-size:13px;letter-spacing:2px;box-shadow:0 2px 8px #51438b12}
-.arena.story-stunned .battle-hero{transform:rotate(78deg) translateY(12px);transform-origin:50% 88%;filter:grayscale(.35);transition:none}
+.story-hp{position:absolute;z-index:9;left:12px;right:auto;top:12px;padding:5px 8px;background:#fff;border:1px solid #f2c8d0;color:#e65b70;font-size:13px;letter-spacing:2px;box-shadow:0 2px 8px #51438b12}
+.arena.story-stunned .battle-hero{animation:story-knockdown-pose .18s ease-out forwards!important;transform-origin:50% 88%;filter:grayscale(.25)}
+.arena.story-stunned .battle-hero.battle-hero .battle-sprite{animation:story-knockdown-frames .18s steps(2,end) forwards!important}
+@keyframes story-knockdown-pose{0%{transform:translateX(0) rotate(0)}22%{transform:translateX(-7px) rotate(-9deg)}100%{transform:rotate(78deg) translateY(12px)}}
+@keyframes story-knockdown-frames{from{background-position:0 0}to{background-position:100% 0}}
 .arena.story-stunned .battle-sprite{animation:none!important}
 @media(prefers-reduced-motion:reduce){.arena.story-stunned .battle-hero{transition:none}}
+
+.story-time-meter{margin:5px 0 8px;padding:7px 10px 8px;border:1px solid #f2c8d0;border-radius:12px;background:linear-gradient(110deg,#fff,#fff6f7);box-shadow:0 3px 10px #ef5b6710;color:#b84c5a}
+.story-time-meter-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.story-time-meter-label small{font-size:8px;letter-spacing:.13em;font-weight:900;color:#9a6c75}
+.story-time-meter-label strong{font-size:12px;line-height:1;font-variant-numeric:tabular-nums;color:#dc5261}
+.story-time-track{height:6px;overflow:hidden;border-radius:99px;background:#f6dfe2}
+.story-time-track i{display:block;width:100%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#f7a071,#ef5b67);transition:width .15s linear}
+.story-time-meter.danger{border-color:#ef5b67;background:#fff0f1}
