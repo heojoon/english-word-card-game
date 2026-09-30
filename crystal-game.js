@@ -35,6 +35,9 @@
     sword:'<path d="m14 3 7-1-1 7-11 11-5-5L14 3ZM3 13l8 8m-7-3-3 3M16 6l-8 9"/>', chest:'<path d="M3 10V7c0-5 18-5 18 0v3M3 10h18v11H3V10Zm7-3h4v8h-4V7Z"/><path d="M6 11v10m12-10v10"/>',
     island:'<path d="m2 15 10-13 10 13-10 8-10-8Zm0 0h20M8 7l4 3 4-3m-4 8v8"/>', sound:'<path d="M4 9h4l5-5v16l-5-5H4V9Zm12-2c4 3 4 7 0 10m3-13c6 5 6 11 0 16"/>',
     pause:'<path d="M8 5v14m8-14v14"/>', trophy:'<path d="M7 3h10v6c0 7-10 7-10 0V3Zm0 2H3v4c0 3 4 3 4 3m10-7h4v4c0 3-4 3-4 3m-5 3v6m-4 0h8"/>',
+    hourglass:'<path d="M6 3h12M6 21h12M7 4c0 4 2 6 5 8-3 2-5 4-5 8m10-16c0 4-2 6-5 8 3 2 5 4 5 8"/><path d="M9 17h6"/>',
+    combo:'<path d="M7 3h10M7 21h10M8 4c0 4 2 6 4 8-2 2-4 4-4 8m8-16c0 4-2 6-4 8 2 2 4 4 4 8"/><path d="m12 8 1.2 2.3L16 11l-2 1.7.2 2.8-2.2-1.3-2.2 1.3.2-2.8-2-1.7 2.8-.7L12 8Z"/>',
+    arrow:'<path d="M4 17 17 4m-9 0h9v9"/><path d="M5 8v11h11"/>',
     gift:'<path d="M3 9h18v5H3V9Zm2 5v7h14v-7M12 9v12M12 9C0 8 7-3 12 9Zm0 0c12-1 5-12 0 0Z"/>',
     armor:'<path d="m8 3-5 4 3 5 2-1v10h8V11l2 1 3-5-5-4c0 4-8 4-8 0Z"/><path d="M12 8v13"/>', boots:'<path d="M8 3h7v9l4 3c1.3.9 2 2.1 2 4H8V3Z"/><path d="M8 12h7m-7 3h10M5 19h16"/>',
     worldAdd:'<path d="M3 15 11 5l8 10-8 6-8-6Z"/><path d="M3 15h16M8 9l3 3 3-3M11 15v6M18 3v6M15 6h6"/>',
@@ -79,7 +82,7 @@
 
   let page = accountMode ? 'characters' : 'home', filter = 'item', worldIndex = 0, selectedStage = builtinStageKeys[0];
   let players = defaultPlayers.slice(), player = localStorage.getItem('fantasyQuizPlayer') || defaultPlayers[0];
-  let allCharacters = [], characters = [], selectedCharacter = null, shopItems = [], inventory = [], redemptions = [], records = [];
+  let allCharacters = [], characters = [], selectedCharacter = null, shopItems = [], inventory = [], redemptions = [], records = [], storySkillIcons = [], storySkillDefinitions = [];
   let dbOnline = demo, run = null, timerId = null, nextTimer = null, toastTimer = null;
   let newClass = 'warrior', newVariant = 'male', newAccent = 'violet', newCharacterName = '';
   let accountProfile = null, accountCrystals = 0, availableCharacterTickets = 0, characterCreating = false;
@@ -287,7 +290,17 @@
         {id:12,code:'mage_arcane_necromancer_skin',name:'비전 네크로맨서',category:'avatar',price:2000,icon:'◆',description:'해골 지팡이와 보랏빛 영혼불을 두른 남성 마법사 전용 스킨입니다. 전용 주문 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp'},
         {id:13,code:'warrior_golden_radiance_skin',name:'황금빛 광휘의 검사',category:'avatar',price:2000,icon:'◆',description:'황금 결정과 성광 대검을 든 남성 전사 전용 스킨입니다. 전용 대검 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/warrior-male-golden-radiance.webp'},
         {id:5,code:'snack',name:'간식 1개',category:'gift',price:60,icon:'🍪',description:'보호자 승인 후 받을 수 있어요.',rarity:'special',stars:2}
-      ];records=demoState.records;dbOnline=true;
+      ];records=demoState.records;storySkillIcons=[
+        {code:'guardian_crystal',label:'수호 결정',icon_key:'shield',gem_color:'#e4e1ff',glow_color:'#c9c4ff',icon_color:'#5751D8'},
+        {code:'time_crystal',label:'시간 결정',icon_key:'hourglass',gem_color:'#d9f8f2',glow_color:'#a5e5dc',icon_color:'#2d958b'},
+        {code:'combo_crystal',label:'콤보 결정',icon_key:'combo',gem_color:'#e4e1ff',glow_color:'#c9c4ff',icon_color:'#5751D8'},
+        {code:'fortune_crystal',label:'행운 결정',icon_key:'arrow',gem_color:'#d9f8f2',glow_color:'#a5e5dc',icon_color:'#2d958b'}
+      ];storySkillDefinitions=[
+        {class_code:'warrior',skill_code:'guardian_time',skill_name:'수호의 시간',description:'위기의 순간에 문제 제한시간을 1초 늘려요.',icon_code:'guardian_crystal'},
+        {class_code:'mage',skill_code:'time_stop',skill_name:'타임 스톱',description:'집중력이 빛나면 문제 시간을 잠시 멈춰요.',icon_code:'time_crystal'},
+        {class_code:'pugilist',skill_code:'rush_combo',skill_name:'러시 콤보',description:'3연속 정답마다 보너스 크리스털을 받아요.',icon_code:'combo_crystal'},
+        {class_code:'ranger',skill_code:'lucky_arrow',skill_name:'행운의 화살',description:'보물상자에서 최소 20 크리스털을 찾아요.',icon_code:'fortune_crystal'}
+      ];dbOnline=true;
     } else {
       try {
         if(accountMode){
@@ -299,8 +312,12 @@
           apiGet('shop_items?select=id,code,name,category,price,icon,description,repeatable,slot,rarity,stars,stat_key,stat_value,art_path&active=eq.true&order=price.asc'),
           apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000')
         ]);dbOnline=true;
+        try{[storySkillIcons,storySkillDefinitions]=await Promise.all([
+          apiGet('story_skill_icons?select=code,label,icon_key,asset_path,gem_color,glow_color,icon_color&active=eq.true&order=code.asc'),
+          apiGet('story_skill_definitions?select=class_code,skill_code,skill_name,description,icon_code&active=eq.true&order=class_code.asc')
+        ]);}catch(error){storySkillIcons=[];storySkillDefinitions=[];console.warn('Story skill icon catalog unavailable; using built-in defaults.',error);}
         if(accountMode){const tickets=await apiGet(`character_creation_tickets?select=id&owner_user_id=eq.${accountUserId}&consumed_by_character_id=is.null`);availableCharacterTickets=tickets.length;}
-      } catch(error){console.error(error);dbOnline=false;allCharacters=[];shopItems=[];records=[];}
+      } catch(error){console.error(error);dbOnline=false;allCharacters=[];shopItems=[];records=[];storySkillIcons=[];storySkillDefinitions=[];}
       if(accountMode&&dbOnline){try{await loadCreatorContent();}catch(error){console.error(error);creatorContentError='제작 월드 목록을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.';}}
     }
     players=accountMode?[player]:unique(defaultPlayers.concat(allCharacters.map(c=>c.player),readCustomPlayers()));
@@ -425,7 +442,19 @@
     }
     return portrait();
   }
-  function storyBattleActions(){const skill=classDefs[selectedCharacter?.class]?.skill||'직업 스킬';return `<div class="story-action-bar" aria-label="전투 아이템 및 스킬"><button class="story-action-slot" type="button" disabled aria-label="아이템 슬롯 1, 장착된 아이템 없음"><span class="story-action-icon">Ⅰ</span><b>아이템 1</b><small>비어 있음</small></button><button class="story-action-slot" type="button" disabled aria-label="아이템 슬롯 2, 장착된 아이템 없음"><span class="story-action-icon">Ⅱ</span><b>아이템 2</b><small>비어 있음</small></button><button class="story-action-slot story-skill-slot" type="button" disabled aria-label="${esc(skill)} 스킬, 효과 설정 필요"><span class="story-action-icon">✦</span><b>${esc(skill)}</b><small>스킬</small></button></div>`;}
+  function storyBattleActions(){
+    const defaults={warrior:['수호의 시간','guardian_crystal','shield'],mage:['타임 스톱','time_crystal','hourglass'],pugilist:['러시 콤보','combo_crystal','combo'],ranger:['행운의 화살','fortune_crystal','arrow']};
+    const classCode=selectedCharacter?.class||'warrior',fallback=defaults[classCode]||defaults.warrior;
+    const definition=storySkillDefinitions.find(row=>row.class_code===classCode);
+    const catalogIcon=storySkillIcons.find(row=>row.code===definition?.icon_code);
+    const skill=definition?.skill_name||fallback[0],iconData=catalogIcon||{icon_key:fallback[2],gem_color:'#d9f8f2',glow_color:'#a5e5dc',icon_color:'#2d958b'};
+    const color=(value,backup)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:backup;
+    const candidatePath=String(iconData.asset_path||'');
+    const assetPath=/^assets\/[A-Za-z0-9_./-]+\.(?:png|webp|svg)$/i.test(candidatePath)&&!candidatePath.split('/').includes('..')?candidatePath:'';
+    const art=assetPath?`<img src="${esc(deployedAssetUrl(assetPath))}" alt="" aria-hidden="true">`:icon(iconData.icon_key);
+    const skillStyle=`--skill-gem:${color(iconData.gem_color,'#d9f8f2')};--skill-ring:${color(iconData.glow_color,'#a5e5dc')};--skill-ink:${color(iconData.icon_color,'#2d958b')}`;
+    return `<div class="story-action-bar" aria-label="전투 아이템 및 스킬"><button class="story-action-slot story-empty-slot" type="button" disabled aria-label="아이템 슬롯 1, 장착된 아이템 없음"><span class="story-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><b>아이템 1</b><small>비어 있음</small></button><button class="story-action-slot story-empty-slot" type="button" disabled aria-label="아이템 슬롯 2, 장착된 아이템 없음"><span class="story-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><b>아이템 2</b><small>비어 있음</small></button><button class="story-action-slot story-skill-slot" style="${skillStyle}" type="button" disabled aria-label="${esc(skill)} 스킬, 효과 설정 필요"><span class="story-action-icon" aria-hidden="true">${art}</span><b>${esc(skill)}</b><small>직업 스킬</small></button></div>`;
+  }
   function renderBattle(){const q=run.question,total=run.deck.length,boss=run.story&&run.index===total-1,mobMarkup=run.story?Array.from({length:Math.max(0,run.matchBoard.length-run.matched.size)},(_,i)=>`<div class="enemy story-mob" aria-hidden="true" style="right:${18+i*34}px;bottom:${24+(i%2)*35}px"></div>`).join(''):`<div class="enemy ${boss?'boss':''}"></div>`;const story=run.story,fever=story&&run.fever;return fever?renderFeverBattle():`<div class="battle-top row"><div class="stage-copy"><div class="eyebrow" style="color:var(--violet)">${story?`STORY LV.1 · 웨이브 ${Math.floor(run.index/5)+1}/${Math.ceil(total/5)} · `:''}${esc(stages[selectedStage].name)} · ${run.index}/${total}</div><b>${esc(stages[selectedStage].desc||'Word Quest')}</b></div><button class="icon-btn" data-action="pause" aria-label="일시정지">${icon('pause')}</button></div><div class="arena ${run.skill?'skill':''} ${story&&run.attack?'hit':''}" id="arena"><div class="arena-floor"></div>${battleHeroMarkup()}${run.skill?`<span class="skill-chip">${run.skill}</span>`:''}${story?`<div class="arena-time story-time" id="arena-time"><small>TIME LEFT</small><strong id="timer">${(Math.max(0,run.storyTimeLimit-run.elapsed)/1000).toFixed(1)}<span>초</span></strong></div>`:`<div class="arena-time" id="arena-time" aria-label="남은 제한시간"><small>TIME LIMIT</small><strong id="timer">${(run.remaining/1000).toFixed(1)}<span>초</span></strong></div>`}<span class="enemy-label">${story?`남은 몬스터 ${run.matchBoard.length-run.matched.size}마리`:'LV. 1 · 민트 슬라임'}</span>${mobMarkup}<div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div>${story?'':`<div class="arena-feedback" id="arena-feedback">${esc(run.matchFeedback||'')}</div>`}</div>${story&&run.matchFeedback?`<div class="story-match-feedback ${run.matchFeedbackType||''}" role="status" aria-live="polite">${esc(run.matchFeedback)}</div>`:''}<div class="row small story-progress"><b>${story?'영어 단어 연결':`${run.index} / ${total} 처치`}</b><span style="color:var(--violet)">${run.correct} 처치 · ◆ +${earnedCoins(run.correct)}</span></div><div class="xp"><i style="width:${run.index/total*100}%"></i></div>${story?`${storyBattleActions()}<div class="story-match-board"><div class="story-match-column">${run.matchKo.map(item=>`<button class="story-match-item ${run.matched.has(item.id)?'matched':''} ${run.selectedKo===item.id?'selected':''}" data-action="story-pick" data-side="ko" data-id="${item.id}" ${run.matched.has(item.id)?'disabled':''}>${esc(item.entry[2])}</button>`).join('')}</div><div class="story-match-column">${run.matchEn.map(item=>`<button class="story-match-item ${run.matched.has(item.id)?'matched':''} ${run.selectedEn===item.id?'selected':''}" data-action="story-pick" data-side="en" data-id="${item.id}" ${run.matched.has(item.id)?'disabled':''}>${esc(item.entry[0])}</button>`).join('')}</div></div>`:`<div class="question-card"><h1 class="${q.prompt.length>28?'long-question':''}">${esc(q.prompt)}</h1></div><div class="answers">${q.choices.map((answer,i)=>`<button class="answer" data-action="answer" data-index="${i}"><span>${i+1}</span>${esc(answer)}</button>`).join('')}</div>`}`;}
   function spiritMessage(count){const lines=['좋아! 단어의 힘이 반짝였어.','정확했어! 이 단어는 이제 네 편이야.','멋진 공격이야! 다음 단어도 가 보자.','발음까지 기억하면 더 강해져!','집중력이 크리스털처럼 빛나고 있어!'];return lines[(count-1)%lines.length];}
   function rewardJourney(total,count){const stops=Math.max(1,Math.ceil(total/5)),lit=Math.ceil(count/5);return `<div class="reward-journey" aria-label="${lit}/${stops} 체크포인트"><b class="journey-caption">체크포인트 ${lit} / ${stops}</b><div class="journey-track"><i style="width:${Math.min(100,lit/stops*100)}%"></i><span style="left:${Math.min(100,lit/stops*100)}%"></span></div></div>`;}

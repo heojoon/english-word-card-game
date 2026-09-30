@@ -1,5 +1,10 @@
 # Repository instructions
 
+## Response style
+
+- Keep responses about tasks as concise as possible; summarize the result and only include essential details.
+- Use the user's language when practical.
+
 ## Approved visual direction
 
 The final visual direction for this game is **Direction 01: Crystal Quest (크리스털 퀘스트)**.
