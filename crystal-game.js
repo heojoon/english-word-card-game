@@ -86,7 +86,7 @@
   let dbOnline = demo, run = null, timerId = null, nextTimer = null, toastTimer = null;
   let newClass = 'warrior', newVariant = 'male', newAccent = 'violet', newCharacterName = '';
   let accountProfile = null, accountCrystals = 0, availableCharacterTickets = 0, characterCreating = false;
-  let characterArmedId = null, characterSwipeStart = null, suppressCharacterClickUntil = 0;
+  let characterArmedId = null, characterPreviewId = null, characterSwipeStart = null, suppressCharacterClickUntil = 0;
 
   const demoKey = 'wordoria-production-demo-v1';
   let demoState = {characters:[{id:'demo-mage',player:'율이',name:'블리자드',class:'mage',avatar_variant:'female',accent:'violet',coins:1250,equipped_items:{}}],records:[],inventory:[],redemptions:[],characterTickets:0};
@@ -345,6 +345,8 @@
   async function refresh(){await loadAll();render();}
 
   function render(){
+    const previousHeroTransforms=new Map();
+    if(page==='characters')document.querySelectorAll('.select-hero-card[data-id]').forEach(card=>previousHeroTransforms.set(card.dataset.id,getComputedStyle(card).transform));
     document.body.dataset.screen=page;
     document.body.dataset.resultStep=page==='result'&&run?.clear?(run.resultStep||'summary'):'';
     const contextAction=page==='characters'||page==='dungeon'||page==='story'
@@ -359,19 +361,30 @@
     nav.innerHTML=[['home','홈'],['dungeon','모험'],['gear','장비'],['shop','상점']].map(([id,label])=>`<button data-action="nav" data-page="${id}" ${active===id?'aria-current="page"':''}>${icon(id)}<span>${label}</span></button>`).join('');
     const renderer={characters:renderCharacterGate,home:renderHome,gear:renderGear,shop:renderShop,dungeon:renderDungeon,survival:renderSurvival,story:renderStory,stages:renderStages,battle:renderBattle,result:renderResult}[page]||renderHome;
     $('screen').innerHTML=renderer();
+    if(page==='characters'&&previousHeroTransforms.size&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      $('screen').querySelectorAll('.select-hero-card[data-id]').forEach(card=>{
+        const previous=previousHeroTransforms.get(card.dataset.id);
+        if(!previous)return;
+        const next=getComputedStyle(card).transform;
+        if(previous===next)return;
+        card.animate([{transform:previous},{transform:next}],{duration:560,easing:'cubic-bezier(.2,.78,.22,1)'});
+      });
+    }
     if(page==='battle'&&run?.story){run.mobs.forEach(mob=>{mob.element=$('arena')?.querySelector(`[data-mob-id="${mob.id}"]`)||null;});}
     syncBGM(page);
   }
-  function go(target){page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});}
+  function go(target){if(target==='characters'){characterArmedId=null;characterPreviewId=selectedCharacter?.id||null;}page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});}
   function navigate(target){if(page==='battle'&&run&&!run.done){pause();modal(`<div class="eyebrow">PAUSED</div><h2>이번 도전을 마칠까요?</h2><p>지금까지 맞힌 문제의 보상과 기록은 저장됩니다.</p><div class="actions"><button class="secondary" data-action="resume">계속하기</button><button class="primary" data-action="leave" data-page="${target}">저장하고 이동</button></div>`);return;}go(target);}
   function profileBar(){if(accountMode)return '';return `<div class="profile-switch">${players.map(name=>`<button class="profile-chip ${name===player?'active':''}" data-action="player" data-player="${esc(name)}">${esc(name)}</button>`).join('')}<button class="profile-chip add" data-action="add-player">＋ 유저</button></div>`;}
   function classStatsMarkup(d){return `<div class="class-stat-grid" aria-label="${esc(d.label)} 기본 능력치">${Object.entries({hp:'체력',atk:'공격',def:'방어',luk:'행운'}).map(([key,label])=>`<span><small>${label}</small><i>${'<b></b>'.repeat(d.stats[key])}</i></span>`).join('')}</div>`;}
   function characterSelectMarkup(){
-    const selectedIndex=Math.max(0,characters.findIndex(c=>c.id===selectedCharacter?.id));
+    const previewCharacter=characters.find(c=>c.id===characterPreviewId)||selectedCharacter;
+    const selectedIndex=Math.max(0,characters.findIndex(c=>c.id===previewCharacter?.id));
     const relative=index=>{let value=index-selectedIndex;if(value>characters.length/2)value-=characters.length;if(value<-characters.length/2)value+=characters.length;return value;};
-    const cards=characters.map((c,index)=>{const d=characterDef(c),slot=relative(index),distance=Math.abs(slot),active=c.id===selectedCharacter?.id,visible=distance<=2;return `<button class="select-hero-card ${active?'active':''} ${visible?'':'out-of-view'}" style="--slot:${slot};--distance:${distance};--depth:${10-distance}" data-action="select-character" data-id="${c.id}" aria-pressed="${active}" aria-label="${esc(c.name)} ${active?'다시 눌러 플레이':'선택'}"><span class="select-card-face"><img src="${imagePath(c)}" alt=""><span class="select-card-copy"><small>LV.${stats(c).level} · ${esc(d.label)}</small><b>${esc(c.name)}</b></span>${active?'<i>선택됨</i>':''}</span></button>`;}).join('');
-    const d=characterDef(selectedCharacter),s=stats(),armed=characterArmedId===selectedCharacter?.id;
-    return `<section class="character-select" data-view="stage"><div class="character-card-stage" tabindex="0" aria-label="보유 캐릭터 소환 무대. 좌우로 밀거나 방향키로 캐릭터를 선택하세요"><div class="character-card-orbit">${cards}</div><div class="character-stage-glow" aria-hidden="true"></div></div><article class="selected-hero-detail"><div class="selected-hero-title"><span class="level">LV.${s.level}</span><div><small>${esc(d.title)} · ${esc(d.label)}</small><h2>${esc(selectedCharacter.name)}</h2></div><b>${armed?'한 번 더 누르기':'READY'}</b></div><div class="selected-hero-skill"><span>✦</span><div><small>SPECIAL SKILL · ${esc(d.skill)}</small><strong>${esc(d.skillDesc)}</strong></div></div>${classStatsMarkup(d)}</article></section>`;
+    const cards=characters.map((c,index)=>{const d=characterDef(c),slot=relative(index),distance=Math.abs(slot),active=c.id===characterArmedId,visible=distance<=2;return `<button class="select-hero-card ${active?'active':''} ${visible?'':'out-of-view'}" style="--slot:${slot};--distance:${distance};--depth:${10-distance}" data-action="select-character" data-id="${c.id}" aria-pressed="${active}" aria-label="${esc(c.name)} ${active?'선택됨':'선택'}"><span class="select-card-face"><img src="${imagePath(c)}" alt=""><span class="select-card-copy"><small>LV.${stats(c).level} · ${esc(d.label)}</small><b>${esc(c.name)}</b></span>${active?'<i><span aria-hidden="true">✓</span> 선택됨</i>':''}</span></button>`;}).join('');
+    const d=characterDef(previewCharacter),s=stats(previewCharacter),armed=characterArmedId===previewCharacter?.id;
+    const pages=characters.map((c,index)=>`<button class="character-page-dot ${index===selectedIndex?'current':''}" data-action="character-page" data-index="${index}" aria-label="${index+1}번 ${esc(c.name)} 카드로 이동" aria-current="${index===selectedIndex?'true':'false'}"></button>`).join('');
+    return `<section class="character-select" data-view="stage"><div class="character-card-stage" tabindex="0" aria-label="보유 캐릭터 소환 무대. 좌우로 밀거나 방향키로 캐릭터를 둘러보세요"><div class="character-card-orbit">${cards}</div><div class="character-stage-glow" aria-hidden="true"></div><nav class="character-carousel-nav" aria-label="캐릭터 카드 이동"><button data-action="character-step" data-direction="-1" aria-label="이전 캐릭터" ${characters.length<2?'disabled':''}>‹</button><div class="character-page-dots">${pages}</div><button data-action="character-step" data-direction="1" aria-label="다음 캐릭터" ${characters.length<2?'disabled':''}>›</button></nav></div><article class="selected-hero-detail"><div class="selected-hero-title"><span class="level">LV.${s.level}</span><div><small>${esc(d.title)} · ${esc(d.label)}</small><h2>${esc(previewCharacter.name)}</h2></div><b>${armed?'한 번 더 눌러 시작':'카드 선택 대기'}</b></div><div class="selected-hero-skill"><span>✦</span><div><small>SPECIAL SKILL · ${esc(d.skill)}</small><strong>${esc(d.skillDesc)}</strong></div></div>${classStatsMarkup(d)}</article></section>`;
   }
   function characterCreatorMarkup(){
     const d=classDefs[newClass],first=characters.length===0;
@@ -635,12 +648,10 @@
   async function switchPlayer(name){player=name;localStorage.setItem('fantasyQuizPlayer',player);chooseCharacter();await loadCharacterExtras();closeDialog();go('home');}
   async function shiftCharacterSelection(direction){
     if(characters.length<2||!selectedCharacter)return;
-    const current=Math.max(0,characters.findIndex(c=>c.id===selectedCharacter.id));
-    selectedCharacter=characters[(current+direction+characters.length)%characters.length];
+    const current=Math.max(0,characters.findIndex(c=>c.id===(characterPreviewId||selectedCharacter.id)));
+    characterPreviewId=characters[(current+direction+characters.length)%characters.length].id;
     characterArmedId=null;
-    localStorage.setItem(`fantasyQuizCharacter:${player}`,selectedCharacter.id);
     render();
-    await loadCharacterExtras();
   }
   async function createPlayer(){const input=$('player-name'),name=input?.value.trim().replace(/\s+/g,' ');if(!name||!/^[가-힣A-Za-z0-9 _-]{1,12}$/.test(name)){toast('사용할 수 있는 유저 이름을 입력해 주세요');return;}if(players.some(x=>x.toLocaleLowerCase()===name.toLocaleLowerCase())){toast('이미 등록된 유저예요');return;}const custom=readCustomPlayers();custom.push(name);localStorage.setItem('fantasyQuizPlayers',JSON.stringify(unique(custom)));players.push(name);await switchPlayer(name);showNewCharacter();}
   async function createCharacter(button){const input=$('character-name'),name=input?.value.trim();if(!name){toast('캐릭터 이름을 입력해 주세요');input?.focus();return;}button.disabled=true;button.textContent='생성 중…';try{let created;if(demo){if(demoState.characters.filter(c=>c.player===player).length&&!(demoState.characterTickets>0))throw new Error('character creation ticket required');created={id:`demo-${Date.now()}`,player,name,class:newClass,avatar_variant:newVariant,accent:newAccent,coins:0,equipped_items:{}};demoState.characters.push(created);if(demoState.characters.filter(c=>c.player===player).length>1)demoState.characterTickets--;saveDemo();}else if(accountMode){const rows=await rpc('create_account_character',{p_name:name,p_class:newClass,p_avatar_variant:newVariant,p_accent:newAccent});created=Array.isArray(rows)?rows[0]:rows;}else{let rows;try{rows=await apiPost('game_characters',{player,name,class:newClass,avatar_variant:newVariant,accent:newAccent});}catch(error){if(!String(error.message).includes('avatar_variant'))throw error;rows=await apiPost('game_characters',{player,name,class:newClass,accent:newAccent});if(rows?.[0])localStorage.setItem(`fantasyQuizAvatar:${rows[0].id}`,newVariant);}created=rows?.[0];}if(created)localStorage.setItem(`fantasyQuizCharacter:${player}`,created.id);closeDialog();characterCreating=false;await refresh();if(accountMode)go('characters');toast('새 모험가가 길드에 합류했어요!');}catch(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(String(error.message).includes('ticket')?'캐릭터 추가권이 필요해요':'캐릭터 생성에 실패했습니다');}}
@@ -657,7 +668,6 @@
     const stage=event.target.closest('.character-card-stage');
     if(!stage)return;
     characterSwipeStart={pointerId:event.pointerId,x:event.clientX,y:event.clientY};
-    stage.setPointerCapture?.(event.pointerId);
   });
   document.addEventListener('pointerup',async event=>{
     const start=characterSwipeStart;
@@ -682,7 +692,8 @@
     if(['close','cancel-character-create'].includes(action))emitAudio('UI_CANCEL');else if(['start','retry','resume','create-character','buy','equip','receive-reward'].includes(action))emitAudio('UI_CONFIRM');else if(action!=='answer')emitAudio('UI_CLICK');
     if(action==='nav')navigate(b.dataset.page);else if(action==='home')navigate('home');else if(action==='close'){closeDialog();if(page==='battle'&&run?.paused)resume();}
     else if(action==='player')await switchPlayer(b.dataset.player);else if(action==='add-player')showNewPlayer();else if(action==='create-player')await createPlayer();
-    else if(action==='characters')showCharacters();else if(action==='select-character'){if(accountMode&&characterArmedId===id&&selectedCharacter?.id===id){go('home');return;}selectedCharacter=characters.find(c=>c.id===id)||selectedCharacter;characterArmedId=id;localStorage.setItem(`fantasyQuizCharacter:${player}`,selectedCharacter.id);if(accountMode){render();await loadCharacterExtras();}else{await loadCharacterExtras();closeDialog();render();}}
+    else if(action==='characters')showCharacters();else if(action==='select-character'){if(accountMode&&characterArmedId===id&&selectedCharacter?.id===id){go('home');return;}selectedCharacter=characters.find(c=>c.id===id)||selectedCharacter;characterPreviewId=selectedCharacter.id;characterArmedId=id;localStorage.setItem(`fantasyQuizCharacter:${player}`,selectedCharacter.id);if(accountMode){render();await loadCharacterExtras();}else{await loadCharacterExtras();closeDialog();render();}}
+    else if(action==='character-step')await shiftCharacterSelection(Number(b.dataset.direction));else if(action==='character-page'){characterPreviewId=characters[Number(b.dataset.index)]?.id||selectedCharacter?.id;characterArmedId=null;render();}
     else if(action==='enter-game'){if(selectedCharacter)go('home');}else if(action==='open-character-create'||action==='new-character')showNewCharacter();else if(action==='cancel-character-create'){characterCreating=false;render();}else if(action==='buy-character-ticket')await buyCharacterTicket(b);else if(action==='buy-character-ticket-and-create'){if(await buyCharacterTicket(b)){closeDialog();showNewCharacter();}}else if(action==='class'){if($('character-name'))newCharacterName=$('character-name').value;newClass=b.dataset.value;renderCharacterForm();}else if(action==='variant'){if($('character-name'))newCharacterName=$('character-name').value;newVariant=b.dataset.value;renderCharacterForm();}else if(action==='accent'){if($('character-name'))newCharacterName=$('character-name').value;newAccent=b.dataset.value;renderCharacterForm();}else if(action==='create-character')await createCharacter(b);
     else if(action==='item')showItem(id);else if(action==='filter'){filter=b.dataset.filter;render();}else if(action==='buy')await purchase(itemById(id));else if(action==='equip')await equip(itemById(id));
     else if(action==='slot'){const eq=equippedMap()[b.dataset.slot],owned=shopItems.find(i=>slotFor(i)===b.dataset.slot&&itemOwned(i));if(eq)showItem(eq);else if(owned)showItem(owned.id);else{filter=b.dataset.slot==='skin'?'skin':'item';go('shop');toast('이 슬롯에 어울리는 아이템을 골라 보세요');}}
