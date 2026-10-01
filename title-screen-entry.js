@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 const params = new URLSearchParams(location.search);
 const localHost = ['localhost', '127.0.0.1'].includes(location.hostname);
 const nativeApp = document.documentElement.classList.contains('native-app') || Boolean(window.Capacitor?.isNativePlatform?.());
-const useLocalDb = params.get('db') === 'local' || (params.get('db') !== 'remote' && localHost && !nativeApp);
+const useLocalDb = params.get('db') === 'local' && localHost && !nativeApp;
 const supabaseUrl = useLocalDb ? 'http://127.0.0.1:54321' : 'https://uobagmggryhsqlpxhfob.supabase.co';
 const publishableKey = useLocalDb
   ? 'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH'

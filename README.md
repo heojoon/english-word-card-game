@@ -601,8 +601,10 @@ supabase start
 supabase db reset --local
 supabase functions serve process-map-ocr --env-file supabase/functions/.env
 npm run build:creator
-python3 -m http.server 3000
+npm run dev
 ```
+
+로컬 OCR 함수와 로컬 DB를 함께 시험할 때는 브라우저 주소에 `?db=local`을 붙인다. 일반 로컬 플레이는 운영 DB에 연결한다.
 
 처음 가입한 계정은 Student로 생성된다. 프로필 이메일 인증을 완료하면 Student 또는 Teacher를 직접 선택할 수 있고, `heojoon48@gmail.com` 인증 계정은 Admin으로 고정된다.
 
@@ -636,10 +638,10 @@ Supabase CLI와 Docker를 실행한 상태에서 다음 순서로 시작합니�
 ```bash
 supabase start
 supabase db reset --local
-python3 -m http.server 3000
+npm run dev
 ```
 
-브라우저에서 `http://127.0.0.1:3000`을 열면 앱이 로컬 Supabase(`127.0.0.1:54321`)를 자동으로 사용합니다. `?db=remote`를 붙이면 localhost에서도 원격 DB를 명시적으로 사용할 수 있습니다.
+브라우저에서 `http://127.0.0.1:3000`을 열면 운영 Supabase를 사용합니다. 로컬 Supabase를 테스트할 때만 `?db=local`을 붙이세요. 로컬 DB를 사용하려면 Supabase CLI와 Docker를 실행한 뒤 `supabase start` 및 `supabase db reset --local`을 먼저 실행해야 합니다.
 
 로컬 DB는 `supabase/migrations/`의 스키마와 `supabase/seed.sql`의 비민감 상점 데이터로 재구성됩니다. 운영 캐릭터와 플레이 기록은 로컬로 복사하지 않습니다.
 
