@@ -745,6 +745,14 @@
     await shiftCharacterSelection(event.key==='ArrowRight'?1:-1);
   });
   document.addEventListener('click',event=>{if(page!=='battle'||!run||run.done||run.feedbackPending)return;if(event.target.closest('.story-match-item,.fever-crystal,[data-action],dialog'))return;if(event.target.closest('#arena,.fever-screen')){if(run.paused)resume();else{pause();modal('<div class="eyebrow">PAUSED</div><h2>잠깐의 휴식</h2><div class="actions pause-actions"><button class="primary" data-action="resume">계속</button><button class="secondary" data-action="leave" data-page="home">홈으로</button></div>',{closable:false});}}});
+  document.addEventListener('click',event=>{
+    const scene=event.target.closest('.story-vn');
+    if(!scene||event.target.closest('.story-vn-skip')||!['storyIntro','storyEpilogue'].includes(page))return;
+    const lines=page==='storyEpilogue'?storyEpilogueLines:storyIntroLines;
+    if(storyDialogueIndex<lines.length-1){storyDialogueIndex++;render();}
+    else if(page==='storyEpilogue')go('home');
+    else startBattle();
+  });
   document.addEventListener('click',async event=>{const b=event.target.closest('button[data-action]');if(!b||b.disabled)return;const action=b.dataset.action,id=b.dataset.id;
     if(action==='select-character'&&performance.now()<suppressCharacterClickUntil)return;
     if(['close','cancel-character-create'].includes(action))emitAudio('UI_CANCEL');else if(['start','retry','resume','create-character','buy','equip','receive-reward'].includes(action))emitAudio('UI_CONFIRM');else if(action!=='answer')emitAudio('UI_CLICK');
