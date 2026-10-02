@@ -221,3 +221,51 @@ html.native-app body[data-screen=battle] .battle-reward-layer{top:calc(51px + en
 @media(prefers-reduced-motion:reduce){.fever-intro,.fever-intro h1,.fever-intro-crystal,.fever-intro-flames i{animation:none}.fever-intro-flames{opacity:.28}}
 
 .arena.story-stunned .battle-hero-female .battle-sprite{background-image:url('assets/characters/warrior/char_warrior_female_babypink_sd_knockdown_strip.png?v=20261002');background-size:300% 100%;animation:story-knockdown-frames 1s steps(2,end) .04s both!important}
+/* Story mode visual novel introduction */
+.story-vn{min-height:calc(100dvh - 120px);display:flex;flex-direction:column;justify-content:flex-end;gap:0;padding:14px 0 18px;}
+.story-vn-scene{position:relative;min-height:clamp(270px,48vh,440px);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border:1px solid #d8d3f5;border-radius:26px;background:radial-gradient(ellipse at 50% 76%,#b5f2dd 0 12%,transparent 48%),linear-gradient(180deg,#dff5ff 0%,#ebeaff 49%,#a9d8c5 100%);box-shadow:inset 0 0 0 4px #ffffff73,0 14px 32px #3932741c;}
+.story-vn-scene:before,.story-vn-scene:after{content:"";position:absolute;bottom:-38px;width:80%;height:60%;border-radius:50% 50% 0 0;background:linear-gradient(145deg,#81c5a7,#4d947f);filter:drop-shadow(0 -12px 20px #fff8);}
+.story-vn-scene:before{left:-22%;transform:rotate(-8deg)}.story-vn-scene:after{right:-24%;height:68%;background:linear-gradient(145deg,#70b79e,#418570);transform:rotate(9deg)}
+.story-vn-scene.library-scene{background:radial-gradient(ellipse at 50% 45%,#aaa4f6 0%,#7770cc 48%,#39376f 100%)}.story-vn-scene.library-scene:before,.story-vn-scene.library-scene:after{bottom:0;width:32%;height:76%;border-radius:12px 12px 0 0;background:repeating-linear-gradient(180deg,#c8a775 0 5px,#765c9c 5px 33px,#453b76 33px 39px);box-shadow:inset 0 0 0 8px #322e625c;filter:drop-shadow(0 0 16px #d1c7ff4d)}.story-vn-scene.library-scene:before{left:0;transform:none}.story-vn-scene.library-scene:after{right:0;height:83%;transform:none}.story-vn-scene.library-scene .story-vn-orb{top:11%;color:#fff5be;text-shadow:0 0 20px #fff,0 0 52px #a59aff}
+.story-vn-scene.forest-scene{background:#b7e8d8 url('assets/story/chapter-1-whispering-forest-nvl.png') center 56%/cover no-repeat}
+.story-vn-scene.forest-scene:before,.story-vn-scene.forest-scene:after{display:none}
+.story-vn-scene.forest-scene .story-vn-orb{display:none}
+.story-vn-orb{position:absolute;top:14%;left:50%;transform:translateX(-50%);color:#fff3b0;font-size:47px;text-shadow:0 0 18px #fff,0 0 42px #8879f4;animation:vn-orb-glow 2.5s ease-in-out infinite alternate}
+.story-vn-forest{position:absolute;z-index:2;top:15px;left:15px;padding:7px 10px;border:1px solid #ffffffc9;border-radius:999px;background:#ffffffb8;color:#555077;font-size:9px;font-weight:850;letter-spacing:.04em;backdrop-filter:blur(8px)}
+.story-vn-party{position:relative;z-index:3;display:flex;align-items:flex-end;justify-content:center;gap:clamp(0px,3vw,17px);width:100%;height:78%;padding:0 9px}
+.story-vn-party img{width:31%;max-width:145px;height:92%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 9px 8px #24315c35)}.story-vn-party img:first-child{height:83%}
+.story-vn-speaker{position:relative;z-index:2;align-self:flex-start;margin:-24px 0 0 18px;padding:9px 18px;border:2px solid white;border-radius:13px 13px 13px 4px;background:linear-gradient(135deg,#7868ef,#5751d8);box-shadow:0 6px 16px #30287b40;color:#fff;font-size:13px;font-weight:900}
+.story-vn-speaker.warrior{background:linear-gradient(135deg,#f3b54b,#d98638)}.story-vn-speaker.ranger{background:linear-gradient(135deg,#60c9a7,#308c78)}.story-vn-speaker.party{background:linear-gradient(135deg,#7868ef,#5751d8)}.story-vn-speaker.scene{background:linear-gradient(135deg,#77738c,#55516e)}
+.story-vn-speaker.fighter{background:linear-gradient(135deg,#e79b54,#b75d35)}.story-vn-speaker.demon{background:linear-gradient(135deg,#64366f,#342452);box-shadow:0 0 20px #b044b76b}
+.story-vn-dialogue{position:relative;z-index:1;min-height:145px;margin-top:-1px;padding:20px 16px 13px 104px;border:1px solid #d9d4f2;border-radius:18px;background:linear-gradient(145deg,#fff,#f5f3ff);box-shadow:0 12px 28px #39327420;cursor:pointer;outline:none}
+.story-vn-dialogue:focus-visible{box-shadow:0 0 0 3px #60d9cf,0 12px 28px #39327420}.story-vn-face{position:absolute;left:11px;bottom:11px;width:82px;height:108px;display:grid;place-items:end center;overflow:hidden;border:1px solid #d9d4f2;border-radius:15px;background:radial-gradient(ellipse at 50% 80%,#bcb4f5,#efedff 72%)}
+.story-vn-face.warrior{background:radial-gradient(ellipse at 50% 80%,#f5cd8e,#fff7e9 72%)}.story-vn-face.ranger{background:radial-gradient(ellipse at 50% 80%,#9bdfc7,#e8fff6 72%)}.story-vn-face img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.story-vn-face.fighter{background:radial-gradient(ellipse at 50% 80%,#f2b986,#fff1e7 72%)}.story-vn-face.demon{border-color:#d8b5ed;background:radial-gradient(ellipse at 50% 70%,#8a4c9c,#322448 72%)}
+.story-vn-dialogue p{min-height:56px;margin:0 0 13px;color:#302d50;font-size:15px;font-weight:750;line-height:1.65;word-break:keep-all}
+.story-vn-progress{display:flex;justify-content:space-between;align-items:center;color:#85809e;font-size:10px;font-weight:800}.story-vn-progress b{color:var(--violet);font-size:11px}
+.story-vn-skip{align-self:flex-end;margin:10px 3px 0;padding:8px 12px;border:0;border-radius:999px;background:#ebe9f6;color:#625d7d;font:inherit;font-size:10px;font-weight:800}
+@keyframes vn-orb-glow{from{opacity:.72;transform:translateX(-50%) scale(.94)}to{opacity:1;transform:translateX(-50%) scale(1.07)}}
+@media(max-height:700px){.story-vn{min-height:auto;padding-top:4px}.story-vn-scene{min-height:38vh}.story-vn-dialogue{min-height:126px;padding-top:15px}.story-vn-face{height:92px}.story-vn-dialogue p{font-size:14px;min-height:48px;margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.story-vn-orb{animation:none}}
+
+/* VN layout: show only the current speaker and keep all scene taps advancing. */
+.story-vn{position:relative;min-height:calc(100dvh - 98px);display:flex;flex-direction:column;justify-content:flex-end;gap:0;padding:42px 0 12px;cursor:pointer;outline:none;user-select:none}
+.story-vn-scene{flex:1;min-height:clamp(250px,54vh,480px);width:100%;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border:0;border-radius:0;background:radial-gradient(ellipse at 50% 82%,#b5f2dd 0 12%,transparent 48%),linear-gradient(180deg,#dff5ff 0%,#ebeaff 49%,#a9d8c5 100%);box-shadow:none}
+.story-vn-scene:before,.story-vn-scene:after{width:68%;height:42%;bottom:-24%;filter:none;opacity:.82}
+.story-vn-scene:before{left:-23%}.story-vn-scene:after{right:-23%;height:48%}
+.story-vn-scene.library-scene{background:radial-gradient(ellipse at 50% 45%,#aaa4f6 0%,#7770cc 48%,#39376f 100%)}
+.story-vn-scene.library-scene:before,.story-vn-scene.library-scene:after{bottom:0;width:28%;height:75%;border-radius:11px 11px 0 0;background:repeating-linear-gradient(180deg,#c8a775 0 5px,#765c9c 5px 33px,#453b76 33px 39px);box-shadow:inset 0 0 0 7px #322e625c;filter:drop-shadow(0 0 16px #d1c7ff4d);opacity:1}
+.story-vn-scene.library-scene:before{left:0}.story-vn-scene.library-scene:after{right:0;height:83%}
+.story-vn-scene.library-scene{background-color:#35305f;background-image:linear-gradient(180deg,#24214c22,#24214c24),url('assets/story/chapter-1-starlight-library-nvl.png');background-position:center,center 53%;background-size:cover;background-repeat:no-repeat}
+.story-vn-scene.library-scene:before,.story-vn-scene.library-scene:after,.story-vn-scene.library-scene .story-vn-orb{display:none}
+.story-vn-character{position:relative;z-index:3;width:auto;height:clamp(235px,53vh,440px);max-width:82%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 12px #24214c4a)}
+.story-vn-character.fighter{filter:drop-shadow(0 12px 12px #552c174d)}.story-vn-character.demon{filter:drop-shadow(0 0 24px #db76ff)}
+.story-vn-dialogue{position:relative;z-index:4;min-height:134px;margin:-1px 8px 0;padding:25px 17px 13px;border:1px solid #ffffffb8;border-radius:18px;background:#f7f7ffe0;box-shadow:0 12px 28px #24214c29,inset 0 0 0 1px #ffffff80;backdrop-filter:blur(13px);cursor:pointer}
+.story-vn-dialogue p{min-height:51px;margin:0 0 12px;color:#302d50;font-size:15px;font-weight:750;line-height:1.6;word-break:keep-all}
+.story-vn-speaker{position:absolute;left:13px;top:-15px;margin:0;padding:7px 14px;border:1px solid #ffffffd9;border-radius:11px;background:#7868efe8;color:white;font-size:12px;box-shadow:0 5px 15px #30287b35;backdrop-filter:blur(10px)}
+.story-vn-speaker.fighter{background:#c87343e8}.story-vn-speaker.ranger{background:#308c78e8}.story-vn-speaker.demon{background:#45305de8}
+.story-vn-progress b{color:var(--violet)}
+.story-vn-skip{position:absolute;z-index:8;top:8px;right:8px;margin:0;padding:8px 12px;border:1px solid #ffffff9c;border-radius:999px;background:#ffffff78;color:#393552;font:inherit;font-size:10px;font-weight:850;box-shadow:0 4px 12px #25214c17;backdrop-filter:blur(10px);cursor:pointer}
+.story-vn-skip:hover{background:#ffffffb8}
+@media(max-height:700px){.story-vn{min-height:calc(100dvh - 72px);padding-top:36px}.story-vn-scene{min-height:45vh}.story-vn-character{height:44vh}.story-vn-dialogue{min-height:116px;padding-top:22px}.story-vn-dialogue p{min-height:44px;font-size:14px;margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.story-vn-orb{animation:none}}
