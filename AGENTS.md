@@ -114,7 +114,7 @@ Apply these rules whenever changing AI OCR, uploads, creator maps, or generated 
 - When requested questions exceed unique source words, exhaust a shuffled unique cycle before repeating and avoid immediate duplicates. Never duplicate a word inside one Type B board.
 - Private maps are readable only by explicitly granted authenticated user IDs, their owner, and Admins. Public map visibility does not make its temporary OCR source image public.
 - Delete or purge temporary source images after publishing; failed abandoned uploads must have an expiry/cleanup path.
-- Add schema changes through `supabase/migrations`, enable RLS on every exposed table, explicitly grant required Data API privileges, and verify locally with a clean `supabase db reset --local`.
+- Add schema changes through `supabase/migrations`, enable RLS on every exposed table, and explicitly grant required Data API privileges. Apply database updates directly to the linked remote database; do not run local database migrations or resets.
 - Keep the model ID configurable through the `GEMINI_REVIEW_MODEL` Edge Function secret. Use `GEMINI_API_KEYS` only in Edge Function secrets and enforce `GEMINI_REVIEW_RPM` server-side.
 
 ## Build and deployment
@@ -124,7 +124,7 @@ Use the following process whenever the user asks to deploy this repository. Do n
 1. Run `npm run build` and resolve any build failure before deployment.
 2. Review `git status` and the diff. Commit only the intended source, generated bundle, and asset changes; do not include unrelated working-tree changes.
 3. Before pushing, inspect the complete deployment diff against `origin/main`. Do not infer that a deployment is frontend-only:
-   - If `supabase/migrations/**` changed, run `supabase db reset --local`, then `supabase migration list --linked` and `supabase db push --linked --dry-run`. Review the exact pending migrations, apply them with `supabase db push --linked`, and verify with `supabase migration list --linked` again.
+   - If `supabase/migrations/**` changed, apply the updates directly to the linked remote database. Run `supabase migration list --linked` and `supabase db push --linked --dry-run`, review the exact pending migrations, then apply them with `supabase db push --linked` and verify with `supabase migration list --linked` again. Do not run `supabase db reset --local` or apply migrations to a local database.
    - If `supabase/functions/<name>/**` changed, deploy every changed function with `supabase functions deploy <name> --project-ref <project-ref>`. Determine `<project-ref>` from the linked Supabase project; never hard-code secrets or print them in logs.
    - If a changed function needs new or updated secrets, ensure they are configured with `supabase secrets set` before deploying the function. Never commit `supabase/functions/.env` or copy secret values into browser code, Android bundles, commands recorded in Git, or logs.
    - Database migrations and Edge Functions are not deployed by GitHub Pages. Do not omit these steps when the deployment diff contains corresponding changes. Deploy backend dependencies before publishing frontend code that relies on them.
