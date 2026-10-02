@@ -1,0 +1,12 @@
+﻿{
+  "image": "char_warrior_female_babypink_sd_knockdown_strip.png",
+  "frameWidth": 724,
+  "frameHeight": 724,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": { "x": 0.5, "y": 0.975 },
+  "frameNames": ["notice", "impact", "knockdown"],
+  "durationsMs": [420, 360, 1000],
+  "events": [{ "frame": 2, "hit": true, "state": "knockdown" }],
+  "sourceFrameGapPx": 0
+}
