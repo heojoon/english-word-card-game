@@ -15,6 +15,7 @@ values
   ('pugilist_crystal_rose_skin', '크리스털 로즈 권투사', 'avatar', 400, '◆', '장미빛 결정 건틀릿과 금장 전투복으로 모습을 바꾸는 여성 권투사 전용 스킨입니다. 전용 펀치와 피격 애니메이션이 적용됩니다.', false, 'skin', 'legendary', 5, null, 0, 'assets/avatars/skins/pugilist-female-crystal-rose-profile-v3.webp'),
   ('mage_arcane_necromancer_skin', '비전 네크로맨서', 'avatar', 400, '◆', '해골 지팡이와 보랏빛 영혼불을 두른 남성 마법사 전용 스킨입니다. 전용 주문 공격과 피격/쓰러짐 애니메이션이 적용됩니다.', false, 'skin', 'legendary', 5, null, 0, 'assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp'),
   ('warrior_golden_radiance_skin', '황금빛 광휘의 검사', 'avatar', 400, '◆', '황금 결정과 성광 대검을 든 남성 전사 전용 스킨입니다. 전용 대검 공격과 피격/쓰러짐 애니메이션이 적용됩니다.', false, 'skin', 'legendary', 5, null, 0, 'assets/avatars/skins/warrior-male-golden-radiance.webp'),
+  ('warrior_female_golden_radiance_skin', 'Female Golden Radiance Warrior', 'avatar', 2000, '*', 'A female warrior skin with silver-white armor, a crimson cape, and a greatsword. Includes dedicated battle animations.', false, 'skin', 'legendary', 5, null, 0, 'assets/avatars/skins/warrior-female-golden-radiance.png'),
   ('snack', '간식 1개', 'gift', 60, '🍪', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, ''),
   ('drink', '원하는 음료 1잔', 'gift', 90, '🥤', '보호자 승인 후 받을 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, ''),
   ('wish', '소원권 1회', 'gift', 200, '🎫', '보호자 승인 후 사용할 수 있는 현실 선물입니다.', true, null, 'special', 2, null, 0, '')

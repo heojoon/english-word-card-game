@@ -1,0 +1,92 @@
+{
+  "image": "char_warrior_female_golden_radiance_sd_hit_strip.png",
+  "spacedReviewImage": "../review/char_warrior_female_golden_radiance_sd_hit_spaced_master.png",
+  "sourceFrameGapPx": 50,
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "impact-recoil",
+      "durationMs": 170,
+      "events": {
+        "hit": true
+      }
+    },
+    {
+      "index": 2,
+      "name": "knockdown-hold",
+      "durationMs": 550,
+      "finalHold": true
+    }
+  ],
+  "reviewComposites": [
+    "hit-light.jpg",
+    "hit-violet.jpg"
+  ],
+  "normalization": [
+    {
+      "frame": 1,
+      "sourceSize": [
+        688,
+        724
+      ],
+      "sourceAlphaBounds": [
+        17,
+        110,
+        688,
+        690
+      ],
+      "normalizedSize": [
+        347,
+        300
+      ]
+    },
+    {
+      "frame": 2,
+      "sourceSize": [
+        654,
+        724
+      ],
+      "sourceAlphaBounds": [
+        0,
+        19,
+        654,
+        700
+      ],
+      "normalizedSize": [
+        288,
+        300
+      ]
+    },
+    {
+      "frame": 3,
+      "sourceSize": [
+        715,
+        724
+      ],
+      "sourceAlphaBounds": [
+        0,
+        77,
+        698,
+        644
+      ],
+      "normalizedSize": [
+        369,
+        300
+      ]
+    }
+  ]
+}

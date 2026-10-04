@@ -1,0 +1,56 @@
+{
+  "id": "warrior_female_golden_radiance",
+  "name": "Golden Radiance Warrior (Female)",
+  "class": "warrior",
+  "variant": "female",
+  "shopCode": "warrior_female_golden_radiance_skin",
+  "sourceReference": "source/profile-reference.png",
+  "identityMaster": "source/identity-master.png",
+  "runtime": {
+    "frameWidth": 512,
+    "frameHeight": 320,
+    "anchor": {
+      "x": 0.5,
+      "y": 0.975
+    },
+    "facing": "right",
+    "status": "normalized attack and hit strips wired to the warrior battle screen"
+  },
+  "approvedIdentity": {
+    "hair": "long golden-blonde hair",
+    "eyes": "bright blue",
+    "costume": "fully covered silver-white plate armor with ornate gold trim and crimson cape",
+    "emblem": "blue star crystal brooch",
+    "prop": "large pale-silver greatsword with gold fittings",
+    "tone": "youthful, confident, friendly Crystal Quest hero"
+  },
+  "attackSource": {
+    "image": "review/char_warrior_female_golden_radiance_sd_attack_spaced_master.png",
+    "frameCount": 6,
+    "sourceFrameGapPx": 50,
+    "gapCheck": "verified; 5 gutters are each exactly 50 fully transparent pixels",
+    "frames": [
+      "ready",
+      "anticipation",
+      "charge",
+      "aim-lunge",
+      "strike-contact",
+      "attack-peak"
+    ],
+    "runtimeStrip": "attack/char_warrior_female_golden_radiance_sd_attack_strip.png",
+    "status": "runtime strip generated and alpha checked over light and Crystal Violet backgrounds"
+  },
+  "hitSource": {
+    "image": "review/char_warrior_female_golden_radiance_sd_hit_spaced_master.png",
+    "frameCount": 3,
+    "sourceFrameGapPx": 50,
+    "gapCheck": "verified; 2 gutters are each exactly 50 fully transparent pixels",
+    "frames": [
+      "guard-notice",
+      "impact-recoil",
+      "knockdown-hold"
+    ],
+    "runtimeStrip": "hit/char_warrior_female_golden_radiance_sd_hit_strip.png",
+    "status": "runtime strip generated and alpha checked over light and Crystal Violet backgrounds"
+  }
+}
