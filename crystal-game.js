@@ -54,9 +54,7 @@
     ranger:{label:'궁수',title:'TREASURE HUNTER',trait:'보물 사냥꾼 · 상자 최소 20개',skill:'행운의 화살',skillDesc:'보물상자에서 최소 20 크리스털을 찾아요.',stats:{hp:3,atk:4,def:2,luk:5},paths:{male:'variants/ranger-male.webp',female:'ranger.webp'}}
   };
   const builtinWorlds = [
-    {name:'속삭이는 숲',sub:'기초 단어 · 초록 정령의 산책길',code:'F1A2',keys:builtinStageKeys.slice(0,2)},
-    {name:'서리 수정 동굴',sub:'동사와 표현 · 푸른 수정의 비밀',code:'I2C3',keys:builtinStageKeys.slice(2,4)},
-    {name:'별빛 마법 도서관',sub:'도전 단어 · 잃어버린 마법의 기록',code:'S3L4',keys:builtinStageKeys.slice(4)}
+    {name:'속삭이는 숲',sub:'기초부터 도전까지 · 모든 단어가 이어지는 숲길',code:'F1A2',keys:builtinStageKeys.slice()}
   ];
   let worlds = builtinWorlds.slice(), creatorStageKeys = [], creatorContentError = '';
   const legacyVariant = {warrior:'male',mage:'male',pugilist:'female',ranger:'female'};
