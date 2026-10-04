@@ -144,6 +144,7 @@
       if (!entry || entry.category !== 'sfx') return null;
       const context = this.ensureContext();
       if (!context || context.state !== 'running') return null;
+      if (entry.synthesis) return this.playSynthSFX(id, entry, context, options);
       const buffer = await this.loadBuffer(this.pickSource(id, entry));
       if (!buffer) return null;
       const source = context.createBufferSource(), gain = context.createGain();
@@ -159,10 +160,45 @@
       return voice;
     }
 
+    playSynthSFX(id, entry, context, options = {}) {
+      const start = context.currentTime + 0.006, duration = entry.synthesis === 'balloon-pop' ? 0.14 : 0.25;
+      const envelope = context.createGain(), volume = clamp((options.volume ?? entry.volume ?? 1) * (0.96 + Math.random() * 0.08));
+      envelope.gain.setValueAtTime(0.0001, start);
+      envelope.gain.exponentialRampToValueAtTime(volume, start + 0.008);
+      envelope.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+      envelope.connect(this.sfxGain);
+      const sources = [];
+      const track = source => {
+        sources.push(source);
+        source.onended = () => { source.disconnect(); sources.splice(sources.indexOf(source), 1); if (!sources.length) { this.activeSFX.delete(voice); envelope.disconnect(); } };
+      };
+      const voice = { id, stop: () => sources.forEach(source => { try { source.stop(); } catch {} }) };
+      if (entry.synthesis === 'balloon-squeak') {
+        const oscillator = context.createOscillator(), filter = context.createBiquadFilter();
+        oscillator.type = 'triangle';
+        oscillator.frequency.setValueAtTime(240, start);
+        oscillator.frequency.exponentialRampToValueAtTime(620, start + 0.09);
+        oscillator.frequency.exponentialRampToValueAtTime(330, start + duration);
+        filter.type = 'bandpass'; filter.frequency.setValueAtTime(1150, start); filter.Q.value = 1.4;
+        oscillator.connect(filter); filter.connect(envelope); track(oscillator); oscillator.start(start); oscillator.stop(start + duration + 0.01);
+      } else if (entry.synthesis === 'balloon-pop') {
+        const length = Math.ceil(context.sampleRate * 0.11), buffer = context.createBuffer(1, length, context.sampleRate), data = buffer.getChannelData(0);
+        for (let i = 0; i < length; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / length);
+        const noise = context.createBufferSource(), filter = context.createBiquadFilter();
+        noise.buffer = buffer; filter.type = 'bandpass'; filter.frequency.value = 1050; filter.Q.value = 0.7;
+        noise.connect(filter); filter.connect(envelope); track(noise); noise.start(start);
+        const thump = context.createOscillator(); thump.type = 'sine'; thump.frequency.setValueAtTime(175, start); thump.frequency.exponentialRampToValueAtTime(58, start + 0.1);
+        const thumpGain = context.createGain(); thumpGain.gain.setValueAtTime(0.52 * volume, start); thumpGain.gain.exponentialRampToValueAtTime(0.0001, start + 0.1);
+        thump.connect(thumpGain); thumpGain.connect(this.sfxGain); track(thump); thump.start(start); thump.stop(start + 0.11);
+      }
+      this.activeSFX.add(voice);
+      return voice;
+    }
+
     stopSFX(id) {
       for (const voice of [...this.activeSFX]) {
         if (id && voice.id !== id) continue;
-        try { voice.source.stop(); } catch {}
+        try { if (voice.stop) voice.stop(); else voice.source.stop(); } catch {}
         this.activeSFX.delete(voice);
       }
     }
