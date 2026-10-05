@@ -1,0 +1,44 @@
+{
+  "image": "char_fighter_male_crystal_noir_sd_hit_strip.png",
+  "spacedReviewImage": "review/char_fighter_male_crystal_noir_sd_hit_spaced_50px.png",
+  "sourceFrameGapPx": 50,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "notice_guard",
+      "durationMs": 120,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "index": 1,
+      "name": "impact_strongest_recoil",
+      "durationMs": 140,
+      "x": 320,
+      "y": 0
+    },
+    {
+      "index": 2,
+      "name": "complete_knockdown",
+      "durationMs": null,
+      "hold": true,
+      "x": 640,
+      "y": 0
+    }
+  ],
+  "sourceFrames": [
+    "source-frames/hit-generated-01.png",
+    "source-frames/hit-generated-02.png",
+    "source-frames/hit-generated-03.png"
+  ],
+  "holdFinalFrameUntilBattleStateChanges": true
+}
