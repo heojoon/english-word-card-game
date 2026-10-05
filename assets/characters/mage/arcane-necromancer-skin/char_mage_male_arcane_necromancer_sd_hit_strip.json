@@ -7,10 +7,44 @@
   "frameCount": 3,
   "layout": "horizontal",
   "facing": "right",
-  "anchor": { "x": 0.5, "y": 0.975 },
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
   "frames": [
-    { "index": 0, "name": "guard-notice", "durationMs": 100 },
-    { "index": 1, "name": "impact-recoil", "durationMs": 170, "events": { "hit": true } },
-    { "index": 2, "name": "knockdown-hold", "durationMs": 550, "finalHold": true }
-  ]
+    {
+      "index": 0,
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "impact-recoil",
+      "durationMs": 170,
+      "events": {
+        "hit": true
+      }
+    },
+    {
+      "index": 2,
+      "name": "knockdown-hold",
+      "durationMs": 550,
+      "finalHold": true
+    }
+  ],
+  "normalization": {
+    "referenceFrame": 2,
+    "referenceName": "knockdown-hold",
+    "referenceBasis": "character silhouette/head scale in the fallen pose",
+    "targetAnchorPx": {
+      "x": 160,
+      "y": 312
+    },
+    "frameScaleFactors": [
+      0.75,
+      0.75,
+      1.0
+    ],
+    "method": "Scale the guard and recoil poses to 75% of their extracted source size to match the fallen character scale; preserve the bottom-center anchor. Keep knockdown unchanged."
+  }
 }
