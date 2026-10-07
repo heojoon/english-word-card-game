@@ -123,9 +123,11 @@
     emitAudio('MENU_BGM','bgm',{crossfadeMs:350});
   }
 
+  const API_TIMEOUT_MS=15000;
+  async function fetchWithTimeout(url,options={}){const controller=new AbortController();let timedOut=false;const timeout=setTimeout(()=>{timedOut=true;controller.abort();},API_TIMEOUT_MS);try{return await fetch(url,{...options,signal:controller.signal});}catch(error){if(timedOut)throw new Error('데이터베이스 응답 시간이 초과되었어요. 네트워크를 확인한 뒤 다시 연결해 주세요.');throw error;}finally{clearTimeout(timeout);}}
   function headers(extra={}) { return {'apikey':DB_KEY,'Authorization':`Bearer ${accountSession?.access_token || DB_KEY}`,...extra}; }
-  async function apiGet(path){const r=await fetch(`${DB_URL}/rest/v1/${path}`,{headers:headers()});if(!r.ok)throw new Error(await r.text());return r.json();}
-  async function apiPost(path,body,prefer='return=representation'){const r=await fetch(`${DB_URL}/rest/v1/${path}`,{method:'POST',headers:headers({'Content-Type':'application/json','Prefer':prefer}),body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());const text=await r.text();return text?JSON.parse(text):null;}
+  async function apiGet(path){const r=await fetchWithTimeout(`${DB_URL}/rest/v1/${path}`,{headers:headers()});if(!r.ok)throw new Error(await r.text());return r.json();}
+  async function apiPost(path,body,prefer='return=representation'){const r=await fetchWithTimeout(`${DB_URL}/rest/v1/${path}`,{method:'POST',headers:headers({'Content-Type':'application/json','Prefer':prefer}),body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());const text=await r.text();return text?JSON.parse(text):null;}
   const rpc = (name,body) => apiPost(`rpc/${name}`,body);
   const characterDef = c => classDefs[c?.class] || classDefs.warrior;
   const variantOf = c => c?.avatar_variant || localStorage.getItem(`fantasyQuizAvatar:${c?.id}`) || legacyVariant[c?.class] || 'male';
@@ -319,7 +321,10 @@
     } else {
       try {
         if(accountMode){
-          const profileResult=await window.WORDORIA_AUTH_CLIENT.from('profiles').select('display_name,login_id,role,crystal_balance').eq('user_id',accountUserId).single();
+          const profileController=new AbortController(),profileTimeout=setTimeout(()=>profileController.abort(),API_TIMEOUT_MS);
+          let profileResult;
+          try{profileResult=await window.WORDORIA_AUTH_CLIENT.from('profiles').select('display_name,login_id,role,crystal_balance').eq('user_id',accountUserId).abortSignal(profileController.signal).single();}finally{clearTimeout(profileTimeout);}
+          if(profileResult.error)throw profileResult.error;
           if(profileResult.data){accountProfile=profileResult.data;accountCrystals=Number(profileResult.data.crystal_balance||0);player=profileResult.data.login_id||profileResult.data.display_name||player;}
         }
         [allCharacters,shopItems,records]=await Promise.all([
@@ -357,7 +362,7 @@
       rpc('get_story_potion_inventory',{p_character_id:selectedCharacter.id})
     ]);inventory=owned;redemptions=[...pending,...completed];potionInventory=potions?.[0]||{red_potion_count:0,blue_potion_count:0,equipped_slot_1:null,equipped_slot_2:null};}catch(error){console.error(error);inventory=[];redemptions=[];potionInventory={red_potion_count:0,blue_potion_count:0,equipped_slot_1:null,equipped_slot_2:null};}
   }
-  function setConnection(){$('connection-status').textContent=demo?'체험 모드 · 이 브라우저에 저장됩니다':dbOnline?(useLocalDb?'● 로컬 Supabase 연결됨':'● Supabase 연결됨'):'데이터베이스 연결 실패 · 로컬 Supabase를 실행하거나 ?demo=1을 사용하세요';$('connection-status').classList.toggle('connection-error',!dbOnline);}
+  function setConnection(){$('connection-status').textContent=demo?'체험 모드 · 이 브라우저에 저장됩니다':dbOnline?(useLocalDb?'● 로컬 Supabase 연결됨':'● Supabase 연결됨'):'데이터베이스 연결이 지연되거나 실패했어요';$('connection-status').classList.toggle('connection-error',!dbOnline);}
   async function refresh(){await loadAll();render();}
 
   let storyDialogueIndex = 0;
@@ -479,6 +484,7 @@
   function renderCharacterGate(){
     const creating=characterCreating||!characters.length;
     const loginLabel=accountProfile?.login_id||player;
+    if(creating&&!dbOnline&&!demo)return `<section class="character-gate"><div class="panel onboarding"><div class="result-symbol">${icon('island')}</div><div class="eyebrow" style="color:var(--danger)">CONNECTION INTERRUPTED</div><h1>계정 데이터를 불러오지 못했어요</h1><p>네트워크를 확인한 뒤 다시 연결해 주세요.</p><button class="primary" data-action="retry-database">다시 연결</button></div></section>`;
     if(creating)return `<section class="character-gate"><header class="character-gate-heading"><div><span class="eyebrow">CREATE YOUR HERO</span><h1>${characters.length?'새 모험가 합류':'모험을 함께할 영웅을 만드세요'}</h1><p><b>@${esc(loginLabel)}</b> 계정에 저장됩니다. 캐릭터 이름은 로그인 아이디와 별개예요.</p></div><span class="gate-crystal" title="계정 공용 크리스털">◆ ${num(walletBalance())}</span></header>${characterCreatorMarkup()}</section>`;
     return `<section class="character-gate"><header class="character-gate-heading character-choice-heading"><div><span class="eyebrow">CHOOSE YOUR HERO</span></div><button class="character-add-button" data-action="open-character-create" aria-label="캐릭터 추가" title="캐릭터 추가">＋</button></header>${characterSelectMarkup()}</section>`;
   }
@@ -844,6 +850,7 @@
     else if(page==='storyEpilogue')go('home');
     else startBattle();
   });
+  document.addEventListener('click',async event=>{const button=event.target.closest('button[data-action="retry-database"]');if(!button)return;event.preventDefault();event.stopImmediatePropagation();button.disabled=true;button.textContent='연결 중…';await refresh();toast(dbOnline?'데이터베이스에 다시 연결했어요.':'연결하지 못했어요. 잠시 후 다시 시도해 주세요.');},true);
   document.addEventListener('click',async event=>{const b=event.target.closest('button[data-action]');if(!b||b.disabled)return;const action=b.dataset.action,id=b.dataset.id;
     if(action==='select-character'&&performance.now()<suppressCharacterClickUntil)return;
     if(['close','cancel-character-create'].includes(action))emitAudio('UI_CANCEL');else if(['start','retry','resume','create-character','buy','buy-potion','equip','receive-reward'].includes(action))emitAudio('UI_CONFIRM');else if(action!=='answer'&&action!=='fever-pick')emitAudio('UI_CLICK');

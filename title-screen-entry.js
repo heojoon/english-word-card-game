@@ -8,7 +8,26 @@ const supabaseUrl = useLocalDb ? 'http://127.0.0.1:54321' : 'https://uobagmggryh
 const publishableKey = useLocalDb
   ? 'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH'
   : 'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
+const REQUEST_TIMEOUT_MS = 15000;
+function fetchWithTimeout(input, options = {}) {
+  const controller = new AbortController();
+  const externalSignal = options.signal;
+  let timedOut = false;
+  const relayAbort = () => controller.abort();
+  if (externalSignal?.aborted) controller.abort();
+  else externalSignal?.addEventListener('abort', relayAbort, { once: true });
+  const timeout = setTimeout(() => { timedOut = true; controller.abort(); }, REQUEST_TIMEOUT_MS);
+  return fetch(input, { ...options, signal: controller.signal }).catch(error => {
+    if (timedOut) throw new Error('서버 응답이 지연되고 있어요. 네트워크를 확인한 뒤 다시 시도해 주세요.');
+    throw error;
+  }).finally(() => {
+    clearTimeout(timeout);
+    externalSignal?.removeEventListener('abort', relayAbort);
+  });
+}
 const supabase = createClient(supabaseUrl, publishableKey, {
+  global: { fetch: fetchWithTimeout },
+  db: { retry: false },
   auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
 });
 
