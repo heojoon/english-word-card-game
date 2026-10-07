@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "56524c77e9d2",
+  "contentVersion": "5e96d1c99134",
   "stages": {
     "s1": {
       "name": "Stage 1",
@@ -306,7 +306,8 @@
           "형",
           "불가능한, 믿기 어려운"
         ]
-      ]
+      ],
+      "learningLevel": "middle"
     },
     "s2": {
       "name": "Stage 2",
@@ -562,7 +563,8 @@
           "명",
           "가치"
         ]
-      ]
+      ],
+      "learningLevel": "middle"
     },
     "s3": {
       "name": "Stage 3",
@@ -823,7 +825,8 @@
           "명",
           "(작품) 한 점; 작품"
         ]
-      ]
+      ],
+      "learningLevel": "middle"
     },
     "s4": {
       "name": "Stage 4",
@@ -1099,7 +1102,8 @@
           "명",
           "손실"
         ]
-      ]
+      ],
+      "learningLevel": "middle"
     },
     "s5": {
       "name": "Stage 5",
@@ -1380,7 +1384,8 @@
           "명/형",
           "(전국적인) 유행병; 유행성의"
         ]
-      ]
+      ],
+      "learningLevel": "middle"
     },
     "s6": {
       "name": "Stage 6",
@@ -1536,7 +1541,8 @@
           "명/형",
           "(전국적인) 유행병; 유행성의"
         ]
-      ]
+      ],
+      "learningLevel": "middle"
     },
     "s7": {
       "name": "Stage 7",
@@ -1692,7 +1698,8 @@
           "동/명",
           "무너지다, 쓰러지다; 붕괴, 쓰러짐"
         ]
-      ]
+      ],
+      "learningLevel": "middle"
     }
   }
 }

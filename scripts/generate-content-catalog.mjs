@@ -4,11 +4,13 @@ import vm from 'node:vm';
 
 const root = new URL('../', import.meta.url);
 const files = (await readdir(root, { withFileTypes: true }))
-  .filter(entry => entry.isFile() && (entry.name === 'stages.js' || /^stage\d+\.js$/.test(entry.name)))
+  .filter(entry => entry.isFile() && (entry.name === 'stages.js' || entry.name === 'elementary-stages.js' || /^stage\d+\.js$/.test(entry.name)))
   .map(entry => entry.name)
   .sort((a, b) => {
     if (a === 'stages.js') return -1;
     if (b === 'stages.js') return 1;
+    if (a === 'elementary-stages.js') return 1;
+    if (b === 'elementary-stages.js') return -1;
     return Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]);
   });
 const context = {
@@ -22,13 +24,14 @@ for (const file of files) {
 
 const stages = context.window.QUIZ_STAGES || {};
 for (const [key, stage] of Object.entries(stages)) {
-  if (!/^s\d+$/.test(key) || !stage?.name || !Array.isArray(stage.words) || !stage.words.length) {
+  if (!/^[se]\d+$/.test(key) || !stage?.name || !Array.isArray(stage.words) || !stage.words.length) {
     throw new Error(`Invalid stage definition: ${key}`);
   }
   if (!stage.words.every(row => Array.isArray(row) && row.length === 3 && row.every(value => String(value).trim()))) {
     throw new Error(`Invalid word row in ${key}`);
   }
 }
+for(const [key,stage] of Object.entries(stages)){stage.learningLevel=stage.learningLevel||(key.startsWith('e')?'elementary':'middle');if(!['elementary','middle'].includes(stage.learningLevel))throw new Error(`Invalid learning level: ${key}`);}
 const serializedStages = JSON.stringify(stages);
 const catalog = {
   schemaVersion: 1,

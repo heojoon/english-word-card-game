@@ -8,16 +8,17 @@
   <title>Wordoria · Crystal Quest</title>
   <link rel="stylesheet" href="playable-preview.css?v=20260911-2">
   <link rel="stylesheet" href="crystal-game.css?v=20260930-story-circular-skill-icons">
-  <link rel="stylesheet" href="title-screen.css?v=20260915-2">
+  <link rel="stylesheet" href="title-screen.css?v=20261007-learning-levels">
   <script src="app-config.js?v=20260916-2" defer></script>
-  <script src="title-screen.js?v=20261007-db-timeout" defer></script>
+  <script src="title-screen.js?v=20261007-learning-levels" defer></script>
   <script src="stages.js?v=20260909-rpg" defer></script>
   <script src="stage6.js?v=20260911-hq" defer></script>
   <script src="stage7.js?v=20260914-day02" defer></script>
   <script src="native-bridge.js?v=20260911-1" defer></script>
-  <script src="remote-content.js?v=20260914-1" defer></script>
+  <script src="elementary-stages.js" defer></script>
+  <script src="remote-content.js?v=20261007-learning-levels" defer></script>
   <script src="sound-manager.js?v=20260921-1" defer></script>
-  <script src="crystal-game.js?v=20261007-syntax-fix" defer></script>
+  <script src="crystal-game.js?v=20261007-learning-levels" defer></script>
 </head>
 <body class="entry-active" data-screen="loading">
   <div class="preview-label"><span>CRYSTAL QUEST</span><span>STUDY = BATTLE</span></div>
@@ -36,6 +37,7 @@
             <label><span>로그인 아이디</span><input id="entry-email" type="text" inputmode="text" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" placeholder="아이디" required></label>
             <label><span>비밀번호</span><input id="entry-password" type="password" autocomplete="current-password" placeholder="비밀번호" required></label>
             <label id="entry-confirm-wrap" hidden><span>비밀번호 확인</span><input id="entry-confirm-password" type="password" autocomplete="new-password" placeholder="비밀번호 확인"></label>
+            <label id="entry-level-wrap" hidden><span>당신의 레벨</span><select id="entry-learning-level" aria-label="당신의 레벨"><option value="">당신의 레벨을 선택하세요</option><option value="elementary">초등학생</option><option value="middle">중학생</option><option value="high" disabled>고등학생 · 준비 중</option><option value="adult" disabled>일반인 · 준비 중</option></select></label>
           </div>
           <button id="entry-submit" class="entry-submit" type="submit" disabled>확인 중…</button>
           <div class="entry-secondary">

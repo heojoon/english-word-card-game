@@ -39,6 +39,8 @@ const entry = document.getElementById('entry-screen');
 const form = document.getElementById('entry-form');
 const email = document.getElementById('entry-email');
 const password = document.getElementById('entry-password');
+const learningLevel = document.getElementById('entry-learning-level');
+const levelWrap = document.getElementById('entry-level-wrap');
 const confirmWrap = document.getElementById('entry-confirm-wrap');
 const confirmPassword = document.getElementById('entry-confirm-password');
 const submit = document.getElementById('entry-submit');
@@ -64,7 +66,7 @@ function setStatus(message = '', type = '') {
 function setBusy(nextBusy) {
   busy = nextBusy;
   entry.setAttribute('aria-busy', String(nextBusy));
-  [email, password, confirmPassword, submit, switchMode, guest].forEach(control => {
+  [email, password, confirmPassword, learningLevel, submit, switchMode, guest].forEach(control => {
     control.disabled = nextBusy;
   });
   submit.textContent = nextBusy ? '확인 중…' : mode === 'login' ? '로그인' : '계정 만들기';
@@ -75,6 +77,8 @@ function setMode(nextMode) {
   const signingUp = mode === 'signup';
   heading.textContent = signingUp ? '새 모험가 계정' : '모험을 시작하세요';
   confirmWrap.hidden = !signingUp;
+  levelWrap.hidden = !signingUp;
+  learningLevel.required = signingUp;
   confirmPassword.required = signingUp;
   switchMode.textContent = signingUp ? '로그인으로 돌아가기' : '회원가입';
   submit.textContent = signingUp ? '계정 만들기' : '로그인';
@@ -155,6 +159,10 @@ async function handleSubmit(event) {
     return;
   }
 
+  if (mode === 'signup' && !['elementary', 'middle'].includes(learningLevel.value)) {
+    setStatus('당신의 레벨을 선택해 주세요.', 'error');
+    return;
+  }
   setBusy(true);
   setStatus(mode === 'login' ? '모험가 기록을 확인하고 있어요…' : '새 계정을 만들고 있어요…');
   let authEmail;
@@ -180,7 +188,7 @@ async function handleSubmit(event) {
   const { data, error } = await supabase.auth.signUp({
     email: authEmail,
     password: passwordValue,
-    options: { data: { login_id: loginId, display_name: enteredLoginId } }
+    options: { data: { login_id: loginId, display_name: enteredLoginId, learning_level: learningLevel.value } }
   });
   if (error) {
     setStatus(friendlyError(error), 'error');
