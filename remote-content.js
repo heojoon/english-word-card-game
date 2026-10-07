@@ -25,8 +25,9 @@
       throw new Error('unsupported content catalog');
     }
     Object.entries(catalog.stages).forEach(([key, stage]) => {
-      if (!/^s\d+$/.test(key) || !stage?.name || !Array.isArray(stage.words) || !stage.words.length) return;
+      if (!/^[se]\d+$/.test(key) || !stage?.name || !Array.isArray(stage.words) || !stage.words.length) return;
       if (!stage.words.every(row => Array.isArray(row) && row.length === 3 && row.every(value => String(value).trim()))) return;
+      if(!['elementary','middle'].includes(stage.learningLevel||'middle'))return;
       window.QUIZ_STAGES[key] = stage;
     });
     window.WORDORIA_CONTENT_VERSION = catalog.contentVersion || 'remote';

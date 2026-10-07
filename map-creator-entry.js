@@ -36,7 +36,7 @@ const state = {
   mapStatus: 'draft',
   mapTitle: '',
   mapDescription: '',
-  visibility: 'private',
+  learningLevel: 'middle', visibility: 'private',
   accessIds: '',
   total: 30,
   ratioA: 40,
@@ -186,7 +186,7 @@ function worldCard() {
       <div class="inline-form"><input id="world-name" name="worldName" type="text" maxlength="60" placeholder="예: 별빛 중등 영단어"><button class="compact-action" type="submit">월드 생성</button></div>
     </form>
     ${state.worldId ? `<div class="field"><label for="map-select">이 월드의 맵</label><div class="inline-form"><select id="map-select"><option value="">새 맵 만들기</option>${mapOptions}</select><button class="compact-action" type="button" data-action="new-map">새 맵</button></div></div>` : ''}
-    <div class="field"><label for="map-title">맵 이름</label><input id="map-title" data-state="mapTitle" type="text" maxlength="80" value="${esc(state.mapTitle)}" placeholder="예: Unit 2 · 동사의 수정길"></div>
+    <div class="field"><label for="map-learning-level">학습 레벨</label><select id="map-learning-level" data-state="learningLevel"><option value="elementary" ${state.learningLevel === 'elementary' ? 'selected' : ''}>초등학생</option><option value="middle" ${state.learningLevel === 'middle' ? 'selected' : ''}>중학생</option><option disabled>고등학생 · 준비 중</option><option disabled>일반인 · 준비 중</option></select></div><div class="field"><label for="map-title">맵 이름</label><input id="map-title" data-state="mapTitle" type="text" maxlength="80" value="${esc(state.mapTitle)}" placeholder="예: Unit 2 · 동사의 수정길"></div>
     <div class="field"><label for="map-description">맵 설명</label><textarea id="map-description" data-state="mapDescription" maxlength="240" placeholder="학생들이 배우게 될 내용을 적어 주세요.">${esc(state.mapDescription)}</textarea></div>
     <button id="save-draft-button" class="secondary" style="width:100%;margin-top:12px" data-action="save-draft" ${!state.worldId || !state.mapTitle || state.busy ? 'disabled' : ''}>맵 초안 저장</button>
   </section>`;
@@ -305,7 +305,7 @@ function returnToEntry() {
 function resetMap() {
   state.previewUrls.forEach(url => URL.revokeObjectURL(url));
   Object.assign(state, {
-    mapId: '', mapStatus: 'draft', mapTitle: '', mapDescription: '', visibility: 'private', accessIds: '',
+    mapId: '', mapStatus: 'draft', mapTitle: '', mapDescription: '', learningLevel: 'middle', visibility: 'private', accessIds: '',
     total: 30, ratioA: 40, ratioB: 30, files: [], previewUrls: [], sources: [], words: [],
     deletedWordIds: new Set(), processMessage: '',
   });
@@ -315,7 +315,7 @@ async function loadMaps() {
   state.maps = [];
   if (!state.worldId) return;
   const { data, error } = await supabase.from('maps')
-    .select('id,title,description,visibility,status,total_question_count,type_a_ratio,type_b_ratio,type_c_ratio')
+    .select('id,title,description,visibility,status,learning_level,total_question_count,type_a_ratio,type_b_ratio,type_c_ratio')
     .eq('world_id', state.worldId)
     .order('created_at', { ascending: false });
   if (error) throw error;
@@ -338,7 +338,7 @@ async function loadMap(mapId) {
   Object.assign(state, {
     mapTitle: map.title,
     mapDescription: map.description,
-    visibility: map.visibility,
+    learningLevel: map.learning_level || 'middle', visibility: map.visibility,
     mapStatus: map.status,
     total: map.total_question_count,
     ratioA: map.type_a_ratio,
@@ -390,7 +390,7 @@ async function persistMap(status = state.mapStatus === 'published' ? 'review' : 
   const payload = {
     title: state.mapTitle.trim(),
     description: state.mapDescription.trim(),
-    visibility: state.visibility,
+    learning_level: state.learningLevel, visibility: state.visibility,
     status,
     total_question_count: value.total,
     type_a_ratio: value.aRatio,
@@ -582,7 +582,7 @@ async function publishMap() {
     const { error: mapError } = await supabase.from('maps').update({
       title: state.mapTitle.trim(),
       description: state.mapDescription.trim(),
-      visibility: state.visibility,
+      learning_level: state.learningLevel, visibility: state.visibility,
       status: 'published',
       total_question_count: value.total,
       type_a_ratio: value.aRatio,

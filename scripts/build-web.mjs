@@ -24,6 +24,7 @@ const files = [
   'sound-manager.js',
   'native-bridge.js',
   'stages.js',
+  'elementary-stages.js',
   'stage6.js',
   'stage7.js',
   'remote-content.js',

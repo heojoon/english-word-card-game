@@ -3,3 +3,5 @@
 @media(max-height:720px){.entry-shell{padding-top:25px;padding-bottom:21px}.entry-title{font-size:36px}.entry-auth{padding:14px}.entry-fields{margin-top:10px}.entry-fields input{height:41px}.entry-submit{min-height:43px}.entry-secondary{margin-top:8px}.entry-status{margin-top:5px}}
 @media(prefers-reduced-motion:reduce){.entry-screen.is-leaving{transition:none}}
 #entry-confirm-wrap[hidden]{display:none}
+
+.entry-fields select{width:100%;min-height:44px;border:1px solid #d9d4ec;border-radius:13px;background:#fff;color:var(--ink);padding:0 10px;font:inherit;font-size:13px}.entry-fields [hidden]{display:none!important}.entry-screen{overflow-y:auto}
