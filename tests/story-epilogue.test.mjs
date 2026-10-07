@@ -9,7 +9,7 @@ function setup(stage='story-prologue',replay=false){
   const context=vm.createContext({
     run:{story:true,storyReplay:replay,elapsed:1000},selectedStage:stage,
     storyStages:[{key:'story-prologue',epilogue:true},{key:'story-lv1'}],
-    storyDialogueIndex:5,demo:false,dbOnline:false,timerId:null,nextTimer:null,
+    storyDialogueIndex:5,localMode:false,dbOnline:false,timerId:null,nextTimer:null,
     clearInterval(){},clearTimeout(){},removeBattleReward(){},cancelSpeech(){},
     stageCleared:()=>false,storyStageUnlocked:()=>true,
     go:page=>pages.push(page),emitAudio(){},playStageClearSound(){},
