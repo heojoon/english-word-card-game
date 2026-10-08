@@ -18,3 +18,10 @@ android/build/
 !.agents/skills/game-audio/**
 supabase/functions/.env
 assets/characters/warrior/review/
+
+# Local notes and verification artifacts
+character-skill-description.csv
+.~lock.*#
+debug.log
+playwright-dev-check.png
+playwright-guest-check.png

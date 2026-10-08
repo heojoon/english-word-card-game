@@ -634,7 +634,7 @@
     const skillStyle=`--slash-sweep:${slashSkill&&run.slashSkillUsed&&(slashActive||!slashReady)?Math.min(360,Math.max(0,(1-(run.slashExpiresAt-performance.now())/10000)*360)):0}deg;--skill-gem:${color(iconData.gem_color,'#d9f8f2')};--skill-ring:${color(iconData.glow_color,'#a5e5dc')};--skill-ink:${color(iconData.icon_color,'#2d958b')}`;
     const slots=equippedPotions().map((type,index)=>{
       const item=type?potionTypes[type]:null;
-      const usable=Boolean(item)&&!run.locked&&!run.paused&&!run.done&&!run.stunned&&(type==='red'?run.hp<run.hpMax:run.mp<run.mpMax);
+      const usable=Boolean(item)&&!run.fever&&!run.potionUsePending&&!run.locked&&!run.paused&&!run.done&&!run.stunned&&(type==='red'?run.hp<run.hpMax:run.mp<run.mpMax);
       const count=item?potionCount(type):0;
       const artIcon=item?`<span class="potion-icon ${item.className}" aria-hidden="true"></span>`:`<span class="story-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>`;
       const label=item?`아이템 슬롯 ${index+1}, ${item.name}, 남은 수량 ${count+1}개${usable?', 사용 가능':', 지금 사용할 수 없음'}`:`아이템 슬롯 ${index+1}, 장착된 아이템 없음`;
