@@ -34,13 +34,16 @@
     {number:6,key:'story-lv5',name:'안개 다리',desc:'안개 너머의 길을 찾아라'},
     {number:7,key:'story-lv6',name:'숲의 수정 관문',desc:'속삭이는 숲의 마지막 시험'}
   ];
-  function configureStoryContent(){
-    const level=learningLevel(),prefix=level==='elementary'?'e':'s';
-    const pools=[1,1,2,3,4,5,1].map(number=>stages[`${prefix}${number}`]?.words||[]);
+  function configureStoryContent(world=null){
+    const level=learningLevel();
+    const sources=level==='elementary'
+      ?storyStages.map((stage,index)=>world?.code==='7YA8'?stages[world.keys[index]]:null)
+      :[1,1,2,3,4,5,1].map(number=>stages[`s${number}`]);
     storyStages.forEach((stage,index)=>{
-      const words=stage.number===2?pools[index].slice(0,5):pools[index];
+      const source=sources[index],pool=source&&stageLevel(source)===level?source.words:[];
+      const words=stage.number===2?pool.slice(0,5):pool;
       const recordName=stage.number===2?'스토리 LV.1 · 속삭이는 숲':`스토리 ${stage.number} · 속삭이는 숲`;
-      stages[stage.key]={name:`속삭이는 숲 · ${stage.number}단계`,recordName:recordName+(level==='elementary'?' · 초등학생':''),desc:stage.desc,questionCount:stage.number===2?5:20,story:true,storyNumber:stage.number,learningLevel:level,words};
+      stages[stage.key]={name:`속삭이는 숲 · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:stage.number===2?5:20,story:true,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:level==='elementary'?'7YA8':null};
     });
   }
   const storyStageKey=storyStages[0].key;
@@ -256,7 +259,10 @@
     return {hp,mp,atk,def,luk,power:hp*4+mp*2+atk*12+def*10+luk*8,equipped,bonus};
   }
   function stageRecordName(key){const stage=stages[key];return stage?.recordName||(stage?.name+(stageLevel(stage)==='elementary'?' · 초등학생':''));}
-  function stageCleared(key){return records.some(r=>r.cleared&&r.stage===stageRecordName(key)&&(!accountMode||allCharacters.some(character=>character.id===r.character_id)));}
+  function stageCleared(key){
+    const name=stageRecordName(key),legacyName=stages[key]?.story?`${name} · 초등학생`:null;
+    return records.some(r=>r.cleared&&(r.stage===name||(legacyName&&r.stage===legacyName))&&(!accountMode||allCharacters.some(character=>character.id===r.character_id)));
+  }
   function storyStageUnlocked(index){return index<=1||stageCleared(storyStages[index-1].key);}
   function earnedCoins(count,clear=false){const interval=selectedCharacter?.class==='pugilist'?3:5;return count+Math.floor(count/interval)+(clear?10:0);}
 
@@ -276,7 +282,7 @@
     if(!accountMode)return;
     const [worldRows,mapRows,wordRows]=await Promise.all([
       apiGet('worlds?select=id,name,description,world_code&order=created_at.asc'),
-      apiGet(`maps?select=id,world_id,title,description,total_question_count,visibility,status,learning_level,created_at&status=eq.published&learning_level=eq.${learningLevel()}&order=created_at.asc`),
+      apiGet(`maps?select=id,world_id,title,description,total_question_count,visibility,status,learning_level,created_at&status=eq.published&learning_level=eq.${learningLevel()}&order=created_at.asc,id.asc`),
       apiGet('map_words?select=map_id,row_order,english,korean,review_status&review_status=eq.approved&order=map_id.asc,row_order.asc')
     ]);
     const rowsByMap=new Map();wordRows.forEach(row=>{const rows=rowsByMap.get(row.map_id)||[];rows.push(row);rowsByMap.set(row.map_id,rows);});
@@ -289,6 +295,7 @@
       const keys=keysByWorld.get(map.world_id)||[];keys.push(key);keysByWorld.set(map.world_id,keys);
     });
     worldRows.forEach(world=>{const keys=keysByWorld.get(world.id)||[];if(!keys.length)return;worlds.push({name:world.name,sub:world.description||`선생님이 만든 단어 모험 · ${keys.length}개 맵`,code:world.world_code,keys,creator:true,worldId:world.id});});
+    configureStoryContent(worlds.find(world=>world.creator&&world.code==='7YA8'));
   }
   function buildQuestionDeck(source){
     const total=Math.max(1,Math.min(500,Number(source.questionCount)||source.words.length)),deck=[];
