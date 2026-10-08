@@ -7,9 +7,8 @@
   const localHost = ['localhost', '127.0.0.1'].includes(location.hostname);
   const nativeApp = document.documentElement.classList.contains('native-app') || Boolean(window.Capacitor?.isNativePlatform?.());
   const bossTest=demo&&localHost&&!nativeApp&&['encounter','battle','victory'].includes(params.get('bossTest'))?params.get('bossTest'):null;
-  const useLocalDb = params.get('db') === 'local' && localHost && !nativeApp;
-  const DB_URL = useLocalDb ? 'http://127.0.0.1:54321' : 'https://uobagmggryhsqlpxhfob.supabase.co';
-  const DB_KEY = useLocalDb ? 'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH' : 'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
+  const DB_URL = 'https://uobagmggryhsqlpxhfob.supabase.co';
+  const DB_KEY = 'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
   await (window.WORDORIA_CONTENT_READY || Promise.resolve());
   if (!window.WORDORIA_SESSION && !window.WORDORIA_GUEST && document.body.classList.contains('entry-active')) {
     await new Promise(resolve => document.addEventListener('wordoria:entry', resolve, {once:true}));
@@ -96,7 +95,6 @@
   };
   const creatorHref = () => {
     const url = new URL('map-creator.html', location.href);
-    if (params.has('db')) url.searchParams.set('db', params.get('db'));
     return `${url.pathname.split('/').pop()}${url.search}`;
   };
   const itemArt = item => item?.art_path
@@ -386,7 +384,7 @@
       rpc('get_story_potion_inventory',{p_character_id:selectedCharacter.id})
     ]);inventory=owned;redemptions=[...pending,...completed];potionInventory=potions?.[0]||{red_potion_count:0,blue_potion_count:0,equipped_slot_1:null,equipped_slot_2:null};}catch(error){console.error(error);inventory=[];redemptions=[];potionInventory={red_potion_count:0,blue_potion_count:0,equipped_slot_1:null,equipped_slot_2:null};}
   }
-  function setConnection(){$('connection-status').textContent=guestMode?'손님 모드 · 이 탭에 저장됩니다':localMode?'체험 모드 · 이 브라우저에 저장됩니다':dbOnline?(useLocalDb?'● 로컬 Supabase 연결됨':'● Supabase 연결됨'):'데이터베이스 연결이 지연되거나 실패했어요';$('connection-status').classList.toggle('connection-error',!dbOnline);}
+  function setConnection(){$('connection-status').textContent=guestMode?'손님 모드 · 이 탭에 저장됩니다':localMode?'체험 모드 · 이 브라우저에 저장됩니다':dbOnline?'● 운영 Supabase 연결됨':'데이터베이스 연결이 지연되거나 실패했어요';$('connection-status').classList.toggle('connection-error',!dbOnline);}
   async function refresh(){await loadAll();render();}
 
   let storyDialogueIndex = 0;

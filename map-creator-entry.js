@@ -1,13 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const params = new URLSearchParams(location.search);
-const localHost = ['localhost', '127.0.0.1'].includes(location.hostname);
-const nativeApp = document.documentElement.classList.contains('native-app') || Boolean(window.Capacitor?.isNativePlatform?.());
-const useLocalDb = params.get('db') === 'local' && localHost && !nativeApp;
-const supabaseUrl = useLocalDb ? 'http://127.0.0.1:54321' : 'https://uobagmggryhsqlpxhfob.supabase.co';
-const supabaseKey = useLocalDb
-  ? 'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH'
-  : 'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
+const supabaseUrl = 'https://uobagmggryhsqlpxhfob.supabase.co';
+const supabaseKey = 'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
 const supabase = createClient(supabaseUrl, supabaseKey, {
   auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
 });
@@ -294,10 +288,6 @@ function render() {
 function returnToEntry() {
   const entryUrl = new URL('index.html', location.href);
   const creatorUrl = new URL('map-creator.html', location.href);
-  if (params.has('db')) {
-    entryUrl.searchParams.set('db', params.get('db'));
-    creatorUrl.searchParams.set('db', params.get('db'));
-  }
   entryUrl.searchParams.set('next', `${creatorUrl.pathname}${creatorUrl.search}`);
   location.replace(entryUrl.href);
 }

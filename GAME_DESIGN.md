@@ -1555,22 +1555,18 @@ admin_adjustment
 
 ### 23.2 환경과 스키마 원본
 
-- 로컬 개발 DB: Supabase CLI가 실행하는 PostgreSQL 17
-- 원격 운영 DB: 연결된 Supabase 프로젝트
+- DB: 연결된 운영 Supabase 프로젝트만 사용한다.
 - 스키마 원본: `supabase/migrations/*.sql`
-- 로컬 카탈로그 데이터: `supabase/seed.sql`
-- 운영 사용자 및 플레이 기록은 seed에 포함하지 않는다.
-- 브라우저 앱은 `localhost` 또는 `127.0.0.1`에서 로컬 API를 자동 사용하고, 배포 도메인에서는 원격 API를 사용한다.
-- Android 하이브리드 앱은 내부 `localhost`와 개발용 로컬 DB를 혼동하지 않도록 운영 Supabase HTTPS API를 사용한다.
-- 필요 시 `?db=local` 또는 `?db=remote`로 대상을 명시한다.
+- 로컬 프런트엔드, 배포 웹, Android 모두 운영 Supabase HTTPS API에 연결한다.
+- `?db=local`은 DB 연결을 바꾸지 않는다. 로컬 DB를 실행하거나 초기화하지 않는다.
+- 손님/데모 모드의 브라우저 저장 상태는 운영 DB와 별개다.
 
 ### 23.3 DB 변경 및 배포 절차
 
 ```text
 supabase migration new <change_name>
 → migration SQL 작성
-→ supabase db reset --local
-→ 로컬 REST/RPC 통합 테스트
+→ supabase migration list --linked로 운영 이력 확인
 → Supabase security/performance advisor 확인
 → supabase db push --linked --dry-run
 → 검토 후 supabase db push --linked
@@ -2184,12 +2180,11 @@ BOSS DEFEATED
 
 ### 34.1 로컬 우선 개발
 
-기능 개발은 정적 프런트엔드와 로컬 Supabase를 함께 실행해 검증한다. DB 변경은 migration 파일을 먼저 만들고 로컬에서 재현한 후 원격에 배포한다. Android 변경은 웹 번들 빌드와 Capacitor sync 이후 네이티브 빌드까지 확인한다.
+기능 개발은 로컬 정적 프런트엔드와 운영 Supabase를 사용해 검증한다. DB 변경은 migration 파일을 먼저 만들고 운영 이력과 dry-run을 검토한 후 운영 DB에 적용한다. Android 변경은 웹 번들 빌드와 Capacitor sync 이후 네이티브 빌드까지 확인한다.
 
 ```text
-로컬 Supabase 시작
-→ migration/seed 적용
-→ 로컬 정적 웹 서버 시작
+로컬 정적 웹 서버 시작
+→ 운영 Supabase 연결 확인
 → 기능 및 REST/RPC 흐름 테스트
 → DB advisor와 migration dry-run 확인
 → 원격 DB migration 배포
@@ -2200,11 +2195,10 @@ BOSS DEFEATED
 
 ### 34.2 릴리스 게이트
 
-- `supabase db reset --local`이 빈 DB에서 성공한다.
-- 핵심 테이블 6개와 RLS 정책, RPC 3개가 로컬에서 생성된다.
-- 기본 상점 아이템 7개가 seed로 준비된다.
+- 연결된 운영 DB의 migration 적용 이력을 확인한다.
+- 운영 DB의 핵심 테이블, RLS 정책, RPC와 상점 카탈로그를 확인한다.
 - 새 유저가 캐릭터를 만들고 게임 결과와 코인을 저장할 수 있다.
-- 로컬/원격 migration 이력이 일치한다.
+- 저장소 migration과 운영 DB의 적용 이력을 비교해 필요한 변경이 반영되었는지 확인한다.
 - 프런트엔드 문법 검사와 핵심 사용자 흐름 테스트가 통과한다.
 - Android debug APK 빌드가 GitHub Actions에서 성공한다.
 - Android APK를 공개 테스트 릴리즈로 배포할 때는 debug signing 용도와 SHA-256을 명시한다.
@@ -2245,3 +2239,20 @@ Phase 2 Auth 전환 시 다음을 한 번에 처리한다.
 보스전 중에는 7스테이지의 완료 기록과 결과/보상 참조를 보존한다. 보스전 결과에서 7스테이지 보상 화면으로 돌아간다. 보스 최초 처치 보상은 고정 200 크리스털이다. 로그인 계정에서는 소유 캐릭터와 7스테이지 클리어 기록을 서버에서 검증하고, 계정의 모든 캐릭터에 걸쳐 한 번만 원자적으로 지급한다. 보스 기록은 학습 레벨과 독립된 `보스 · 거대 로얄 슬라임`으로 저장하며 일반 문제/콤보/상자 보상은 추가하지 않는다. 로컬 테스트에서는 별도 테스트 지갑에 지급한다.
 
 보스전 승리 시 `storyBossVictory` 대화(동료들의 스킬 연계 → 소서러스의 네크로맨서 변신 → 데스 익스플로젼 → 크리스탈 사원으로 출발)를 먼저 표시한다. 마지막 대화 완료 또는 건너뛰기 이후에 보스 승리/보상 화면을 표시하고 200 크리스털 지급을 처리한다. 패배 시에는 승리 대화를 표시하지 않는다. 로컬 전용 `?demo=1&bossTest=victory`로 이 장면을 바로 확인할 수 있다.
+
+
+### 보스 장면 리소스와 로컬 미리보기
+
+| 용도 | 리소스 |
+| --- | --- |
+| 속삭이는 숲 7스테이지와 보스 이벤트 배경 | `assets/story/chapter-1-stage-7-crystal-gate.png` |
+| 거대 로얄 슬라임 스탠딩 CG | `assets/monsters/royal-slime/royal-slime-standing.png` |
+| 전투용 SD 보스 | `assets/monsters/royal-slime/royal-slime-sd.png` |
+
+`npm run dev` 후 localhost에서 아래 경로로 바로 확인한다. Android와 배포 도메인에서는 이 단축 진입을 허용하지 않는다.
+
+- 등장 이벤트: `?demo=1&bossTest=encounter`
+- 보스전: `?demo=1&bossTest=battle`
+- 승리 후 스토리: `?demo=1&bossTest=victory`
+
+이 미리보기는 별도의 브라우저 테스트 상태를 사용하며 운영 계정의 보상이나 기록을 변경하지 않는다. 일반 로컬 로그인 플레이는 운영 DB를 사용한다. 소서러스 변신 장면에는 네크로맨서 일러스트와 섬광을 표시하고, 모션 감소 설정에서는 짧은 전환을 사용한다.

@@ -1,11 +1,8 @@
 (function(){
 'use strict';
 
-var dbTarget=new URLSearchParams(window.location.search).get('db');
-var localHost=window.location.hostname==='localhost'||window.location.hostname==='127.0.0.1';
-var useLocalDb=dbTarget==='local'&&localHost;
-var SUPABASE_URL=useLocalDb?'http://127.0.0.1:54321':'https://uobagmggryhsqlpxhfob.supabase.co';
-var SUPABASE_KEY=useLocalDb?'sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH':'sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
+var SUPABASE_URL='https://uobagmggryhsqlpxhfob.supabase.co';
+var SUPABASE_KEY='sb_publishable_NnzXTAh_47i7g5ndSzkxEQ_gy7X-lAz';
 var stages=window.QUIZ_STAGES||{};
 var classInfo={warrior:{label:'전사',icon:'⚔️'},mage:{label:'마법사',icon:'🔮'},pugilist:{label:'권투사',icon:'🥊'},ranger:{label:'궁수',icon:'🏹'}};
 var variantInfo={male:{label:'남자'},female:{label:'여자'}};

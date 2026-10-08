@@ -597,14 +597,11 @@ OCR_DAILY_LIMIT=20
 로컬 실행:
 
 ```bash
-supabase start
-supabase db reset --local
-supabase functions serve process-map-ocr --env-file supabase/functions/.env
 npm run build:creator
 npm run dev
 ```
 
-로컬 OCR 함수와 로컬 DB를 함께 시험할 때는 브라우저 주소에 `?db=local`을 붙인다. 일반 로컬 플레이는 운영 DB에 연결한다.
+로컬 프런트엔드에서도 운영 DB와 운영 OCR Edge Function만 사용한다.
 
 처음 가입한 계정은 Student로 생성된다. 프로필 이메일 인증을 완료하면 Student 또는 Teacher를 직접 선택할 수 있고, `heojoon48@gmail.com` 인증 계정은 Admin으로 고정된다.
 
@@ -633,17 +630,15 @@ Gemini 키와 Supabase secret/service-role 키는 브라우저 번들, Android �
 
 ### 로컬 개발
 
-Supabase CLI와 Docker를 실행한 상태에서 다음 순서로 시작합니다.
+로컬 프런트엔드는 다음 명령으로 시작합니다.
 
 ```bash
-supabase start
-supabase db reset --local
 npm run dev
 ```
 
-브라우저에서 `http://127.0.0.1:3000`을 열면 운영 Supabase를 사용합니다. 로컬 Supabase를 테스트할 때만 `?db=local`을 붙이세요. 로컬 DB를 사용하려면 Supabase CLI와 Docker를 실행한 뒤 `supabase start` 및 `supabase db reset --local`을 먼저 실행해야 합니다.
+브라우저에서 `http://127.0.0.1:3000`을 열면 운영 Supabase를 사용합니다. 웹과 Android도 동일한 운영 DB만 사용하며 `?db=local`은 DB 연결을 바꾸지 않습니다.
 
-로컬 DB는 `supabase/migrations/`의 스키마와 `supabase/seed.sql`의 비민감 상점 데이터로 재구성됩니다. 운영 캐릭터와 플레이 기록은 로컬로 복사하지 않습니다.
+로컬 보스 데모와 손님 모드의 브라우저 저장 상태는 운영 DB와 별개이며, 로컬 DB를 실행하지 않습니다.
 
 ### DB 배포
 
@@ -653,7 +648,7 @@ supabase db push --linked --dry-run
 supabase db push --linked
 ```
 
-모든 DB 변경은 먼저 migration으로 만들고 `supabase db reset --local`로 검증한 뒤 배포합니다.
+모든 DB 변경은 migration으로 만들고 연결된 운영 DB의 이력과 dry-run을 검토한 뒤 적용합니다. 적용 후 `supabase migration list --linked`로 확인하며 로컬 DB를 실행하거나 초기화하지 않습니다.
 
 ### 프런트엔드 배포
 
