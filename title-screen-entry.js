@@ -227,6 +227,8 @@ supabase.auth.onAuthStateChange((_event, session) => {
 });
 
 async function initialize() {
+  if(localHost&&!nativeApp&&params.get('demo')==='1'&&['encounter','battle','victory'].includes(params.get('bossTest'))){enterGame('guest');return;}
+
   const { data, error } = await supabase.auth.getSession();
   if (!error && data.session) {
     enterGame('account', data.session);

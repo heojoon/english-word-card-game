@@ -1,0 +1,43 @@
+{
+  "name": "거대 로얄 슬라임",
+  "synopsis": "속삭이는 숲의 최종보스",
+  "image": "royal-slime-sd.png",
+  "frameWidth": 1254,
+  "frameHeight": 1254,
+  "frameCount": 1,
+  "layout": "single",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frameNames": [
+    "idle"
+  ],
+  "durationsMs": [
+    2200
+  ],
+  "facing": "left three-quarter",
+  "animation": "CSS idle squash and contact-triggered recoil; no sprite-strip animation",
+  "display": {
+    "minimumWidth": 170,
+    "maximumWidth": 230
+  },
+  "gameplay": {
+    "hp": 50,
+    "durationMs": 300000,
+    "damagePerCorrect": 1,
+    "timeAbsorption": {
+      "remainingQuestions": 25,
+      "penaltyMs": 30000,
+      "maxActivations": 1
+    },
+    "firstClearRewardCrystals": 200,
+    "rewardScope": "account"
+  },
+  "standingCG": "royal-slime-standing.png",
+  "reference": "source/royal-slime-reference.png",
+  "generation": {
+    "tool": "built-in image_gen",
+    "prompts": "source/generation-prompts.md"
+  }
+}

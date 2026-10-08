@@ -42,3 +42,11 @@ test('replay result continues to map after epilogue without rewards',()=>{
   context.resultNext();assert.deepEqual(pages,['story']);
   assert.equal(context.run.resultStep,undefined);
 });
+test('stage 7 clear opens final boss encounter while its failure opens results',async()=>{
+  for(const clear of [true,false]){
+    const {context,pages}=setup('story-lv6');
+    context.storyStages.push({key:'story-lv6',number:7});
+    await context.finishBattle(clear,clear?'fever-complete':'timeout');
+    assert.deepEqual(pages,[clear?'storyEpilogue':'result']);
+  }
+});
