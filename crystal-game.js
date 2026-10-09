@@ -326,6 +326,7 @@
         {id:11,code:'pugilist_crystal_rose_skin',name:'크리스털 로즈 권투사',category:'avatar',price:400,icon:'◆',description:'장미빛 결정 건틀릿과 금장 전투복으로 모습을 바꾸는 여성 권투사 전용 스킨입니다. 전용 펀치와 피격 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/pugilist-female-crystal-rose-profile-v3.webp'},
         {id:14,code:'pugilist_crystal_noir_skin',name:'크리스털 누아르 권투사',category:'avatar',price:400,icon:'◆',description:'검은 후드와 금빛 결정 건틀릿을 두른 남성 권투사 전용 스킨입니다. 전용 공격과 피격 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/pugilist-male-crystal-noir-profile-complete-hood.png'},
         {id:12,code:'mage_arcane_necromancer_skin',name:'비전 네크로맨서',category:'avatar',price:400,icon:'◆',description:'해골 지팡이와 보랏빛 영혼불을 두른 남성 마법사 전용 스킨입니다. 전용 주문 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp'},
+        {id:15,code:'mage_starlight_rose_skin',name:'별빛 로즈 마법사',category:'avatar',price:400,icon:'◆',description:'분홍 트윈테일과 별·초승달 장식을 두른 여성 마법사 전용 스킨입니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/mage-female-starlight-rose.webp'},
         {id:13,code:'warrior_golden_radiance_skin',name:'황금빛 광휘의 검사',category:'avatar',price:400,icon:'◆',description:'황금 결정과 성광 대검을 든 남성 전사 전용 스킨입니다. 전용 대검 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/warrior-male-golden-radiance.webp'},
         {id:5,code:'snack',name:'간식 1개',category:'gift',price:60,icon:'🍪',description:'보호자 승인 후 받을 수 있어요.',rarity:'special',stars:2}
       ];records=demoState.records;storySkillIcons=[
@@ -794,11 +795,12 @@
     if(item?.code==='pugilist_crystal_rose_skin')return c?.class==='pugilist'&&variantOf(c)==='female';
     if(item?.code==='pugilist_crystal_noir_skin')return c?.class==='pugilist'&&variantOf(c)==='male';
     if(item?.code==='mage_arcane_necromancer_skin')return c?.class==='mage'&&variantOf(c)==='male';
+    if(item?.code==='mage_starlight_rose_skin')return c?.class==='mage'&&variantOf(c)==='female';
     if(item?.code==='warrior_golden_radiance_skin')return c?.class==='warrior'&&variantOf(c)==='male';
     if(item?.code==='warrior_female_golden_radiance_skin')return c?.class==='warrior'&&variantOf(c)==='female';
     return !isSkin(item);
   }
-  function skinRequirement(item){if(item?.code==='pugilist_crystal_rose_skin')return '여성 권투사 전용';if(item?.code==='pugilist_crystal_noir_skin')return '남성 권투사 전용';if(item?.code==='mage_arcane_necromancer_skin')return '남성 마법사 전용';if(item?.code==='warrior_golden_radiance_skin')return '남성 전사 전용';if(item?.code==='warrior_female_golden_radiance_skin')return '여성 전사 전용';return '여성 궁수 전용';}
+  function skinRequirement(item){if(item?.code==='pugilist_crystal_rose_skin')return '여성 권투사 전용';if(item?.code==='pugilist_crystal_noir_skin')return '남성 권투사 전용';if(item?.code==='mage_arcane_necromancer_skin')return '남성 마법사 전용';if(item?.code==='mage_starlight_rose_skin')return '여성 마법사 전용';if(item?.code==='warrior_golden_radiance_skin')return '남성 전사 전용';if(item?.code==='warrior_female_golden_radiance_skin')return '여성 전사 전용';return '여성 궁수 전용';}
   function renderItemCard(item,ownedView=false){const owned=itemOwned(item),eq=Object.values(equippedMap()).some(id=>String(id)===String(item.id)),gear=item.category==='avatar',skin=isSkin(item),rarity=displayRarity(item);return `<button class="item" data-action="item" data-id="${item.id}" data-rarity="${rarity}"><span class="item-rarity">${rarityNames[rarity]}</span>${ownedView?`<span class="item-status">${eq?'장착 중':'보유'}</span>`:''}<span class="item-art">${itemArt(item)}</span><b>${esc(item.name)}</b>${gear?`<span class="item-stat">${skin?`${skinRequirement(item)} 스킨`:`${esc(String(item.stat_key||'').toUpperCase())} +${num(item.stat_value)}`}</span>`:''}<small class="${owned?'owned':''}">${owned?(eq?'✓ 장착 중':'✓ 보유 중'):`${num(item.price)} ◆`}</small></button>`;}
   const potionTypes={red:{name:'힐링포션',countKey:'red_potion_count',slotKey:'equipped_slot_1',className:'red',effect:'HP 회복'},blue:{name:'마나포션',countKey:'blue_potion_count',slotKey:'equipped_slot_2',className:'blue',effect:'MP 회복'}};
   const POTION_PRICE=20;
