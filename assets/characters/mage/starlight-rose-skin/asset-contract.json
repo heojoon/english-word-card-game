@@ -7,6 +7,8 @@
   "sourceReference": "source/approved-final-illustration.png",
   "identityMaster": "source/identity-master.png",
   "profileImage": "../../../avatars/skins/mage-female-starlight-rose.webp",
+  "profileSource": "source/approved-final-illustration.png",
+  "profileArtwork": "Approved non-SD illustration, original composition and background preserved; profile and shop only",
   "readyImage": "char_mage_female_starlight_rose_sd_ready.png",
   "runtime": {
     "frameWidth": 384,

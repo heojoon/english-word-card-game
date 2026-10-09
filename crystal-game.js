@@ -95,6 +95,7 @@
   const num = value => Number(value || 0).toLocaleString('ko-KR');
   const rarityNames = {normal:'일반',special:'스페셜',rare:'레어',unique:'유니크',legendary:'레전더리'};
   const deployedAssetUrl = path => {
+    if(path==='assets/avatars/skins/mage-female-starlight-rose.webp')path+='?v=20261009-illustration';
     if (!nativeApp || /^(?:https?:|data:|blob:)/i.test(path)) return path;
     const cleanPath = String(path).replace(/^\/+/, '');
     const version = encodeURIComponent(window.WORDORIA_CONTENT_VERSION || 'latest');
