@@ -1,0 +1,59 @@
+{
+  "id": "mage_female_starlight_rose",
+  "name": "별빛 로즈 마법사",
+  "class": "mage",
+  "variant": "female",
+  "status": "SD skin identity and profile exported; animation and game integration pending",
+  "sourceReference": "source/approved-final-illustration.png",
+  "identityMaster": "source/identity-master.png",
+  "profileImage": "../../../avatars/skins/mage-female-starlight-rose.webp",
+  "readyImage": "char_mage_female_starlight_rose_sd_ready.png",
+  "runtime": {
+    "frameWidth": 320,
+    "frameHeight": 320,
+    "anchor": { "x": 0.5, "y": 0.975 },
+    "facing": "right",
+    "safetyMarginPx": 12
+  },
+  "identity": {
+    "hair": "dimensional silky pink twin tails with black bows",
+    "eyes": "teal",
+    "costume": "purple and pink celestial witch robe, gold star and crescent trim",
+    "prop": "violet orb staff with spiked circular head and crescent charms; star spellbook",
+    "proportions": "youthful nonsexualized SD, large head and hands, compact full body"
+  },
+  "plannedAnimations": {
+    "sourceFrameGapPx": 50,
+    "idle": { "frameCount": 4, "beats": ["ready", "breathe-up", "ready", "breathe-down"] },
+    "attack": {
+      "frameCount": 6,
+      "frame01MatchesIdentity": true,
+      "beats": ["ready", "anticipation", "charge", "aim", "release", "attack-peak"],
+      "durationMs": [140, 110, 110, 130, 90, 180],
+      "releaseFrame": 5,
+      "filename": "char_mage_female_starlight_rose_sd_attack_strip.png"
+    },
+    "hit": {
+      "frameCount": 3,
+      "beats": ["guard-notice", "impact-recoil", "knockdown"],
+      "durationMs": [100, 170, 550],
+      "finalHold": true,
+      "propRemainsWithCharacter": true,
+      "filename": "char_mage_female_starlight_rose_sd_hit_strip.png"
+    },
+    "projectile": {
+      "frameCount": 6,
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "anchor": { "x": 0.5, "y": 0.5 },
+      "effectBounds": { "maxWidth": 220, "maxHeight": 220 },
+      "beats": ["charge", "launch", "near-travel", "far-travel", "contact", "star-burst-fade"],
+      "durationMs": [90, 100, 100, 100, 90, 180],
+      "releaseFrame": 2,
+      "hitFrame": 5,
+      "identity": "yellow star projectile, detached from casting hand; preserve its star silhouette and scale during flight, then disperse into golden starlight on contact",
+      "palette": { "core": "#FFCF67", "highlight": "#FFF4BC", "glow": "#FFE681" },
+      "filename": "char_mage_female_starlight_rose_sd_projectile_strip.png"
+    }
+  }
+}

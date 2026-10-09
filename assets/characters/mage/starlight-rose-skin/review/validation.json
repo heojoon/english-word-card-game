@@ -1,0 +1,27 @@
+{
+  "masterSize": [
+    1254,
+    1254
+  ],
+  "runtimeSize": [
+    320,
+    320
+  ],
+  "runtimeForegroundBounds": [
+    15,
+    17,
+    308,
+    312
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "mobileReviewPx": 148,
+  "profileSize": [
+    512,
+    512
+  ],
+  "animationCreated": false,
+  "gameIntegrated": false
+}
