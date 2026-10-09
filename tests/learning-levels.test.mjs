@@ -9,6 +9,7 @@ function content(level){
   const stages={};
   for(let n=1;n<=7;n++)stages[`s${n}`]={name:`Stage ${n}`,words:words('middle')};
   const context={window:{QUIZ_STAGES:stages},accountMode:true,accountProfile:{learning_level:level}};
+  vm.runInNewContext(readFileSync(new URL('../stage8.js',import.meta.url),'utf8'),context);
   vm.runInNewContext(setup+';globalThis.api={configureStoryContent,levelReady,storyStages,stages};',context);
   return context;
 }
@@ -21,7 +22,7 @@ test('existing story names, words and counts remain middle-school content',()=>{
 });
 test('elementary never falls back to middle-school vocabulary',()=>{
   const {api}=content('elementary');api.configureStoryContent();
-  for(const story of api.storyStages){assert.equal(api.stages[story.key].words.length,0);assert.equal(api.levelReady(api.stages[story.key]),false);}
+  for(const story of api.storyStages.filter(stage=>!stage.chapter)){assert.equal(api.stages[story.key].words.length,0);assert.equal(api.levelReady(api.stages[story.key]),false);}
   assert.equal(api.levelReady(api.stages.s1),false);
 });
 test('same scenario uses separate word pools and common clear-record names after switching',()=>{
@@ -30,7 +31,7 @@ test('same scenario uses separate word pools and common clear-record names after
   keys.forEach((key,index)=>{api.stages[key]={mapId:`map-${index+1}`,learningLevel:'elementary',words:Array.from({length:30},(_,i)=>[`easy${index+1}-${i}`,'단어','쉬운 뜻'])};});
   api.configureStoryContent({code:'7YA8',keys});
   assert.ok(api.levelReady(api.stages['story-lv1']));
-  api.storyStages.forEach((story,index)=>{
+  api.storyStages.filter(stage=>!stage.chapter).forEach((story,index)=>{
     const stage=api.stages[story.key];
     assert.equal(stage.words[0][0],`easy${index+1}-0`);
     assert.equal(stage.sourceMapId,`map-${index+1}`);
@@ -47,11 +48,11 @@ test('elementary story rejects another world and clears stale content on reload'
   const {api}=content('elementary');
   api.stages.e1={learningLevel:'elementary',words:Array.from({length:6},()=>['easy','단어','쉬운 뜻'])};
   api.configureStoryContent({code:'OTHER',keys:Array(7).fill('e1')});
-  assert.ok(api.storyStages.every(story=>!api.levelReady(api.stages[story.key])));
+  assert.ok(api.storyStages.filter(stage=>!stage.chapter).every(story=>!api.levelReady(api.stages[story.key])));
   api.configureStoryContent({code:'7YA8',keys:Array(7).fill('e1')});
   assert.ok(api.levelReady(api.stages['story-prologue']));
   api.configureStoryContent();
-  assert.ok(api.storyStages.every(story=>!api.levelReady(api.stages[story.key])));
+  assert.ok(api.storyStages.filter(stage=>!stage.chapter).every(story=>!api.levelReady(api.stages[story.key])));
 });
 test('story clears and unlocks survive level changes in both directions',()=>{
   const context=content('middle'),{api}=context;
@@ -78,14 +79,55 @@ test('creator loading connects the seven approved elementary maps to story',asyn
   vm.runInNewContext(source.slice(source.indexOf('  function playableWords('),source.indexOf('  function buildQuestionDeck('))+';globalThis.loadCreatorContent=loadCreatorContent;',context);
   await context.loadCreatorContent();
   assert.equal(context.worlds[0].keys.length,7);
-  api.storyStages.forEach((story,i)=>{
+  api.storyStages.filter(stage=>!stage.chapter).forEach((story,i)=>{
     assert.equal(api.stages[story.key].sourceMapId,maps[i].id);
     assert.equal(api.stages[story.key].words.length,i===1?5:30);
     assert.ok(api.levelReady(api.stages[story.key]));
   });
 });
-test('current catalog is entirely middle-school vocabulary',()=>{
+test('catalog retains seven original maps and adds seven temple maps per learning level',()=>{
   const catalog=JSON.parse(readFileSync(new URL('../content/catalog.json',import.meta.url)));
-  assert.equal(Object.keys(catalog.stages).length,7);
-  assert.ok(Object.values(catalog.stages).every(stage=>stage.learningLevel==='middle'));
+  const original=Object.values(catalog.stages).filter(stage=>!stage.storyChapter);
+  assert.equal(original.length,7);
+  assert.ok(original.every(stage=>stage.learningLevel==='middle'));
+  for(const level of ['elementary','middle']){
+    const maps=Object.values(catalog.stages).filter(stage=>stage.storyChapter===2&&stage.learningLevel===level);
+    assert.equal(maps.length,7);
+    assert.deepEqual(maps.map(stage=>stage.storyStage),[1,2,3,4,5,6,7]);
+    for(const map of maps){
+      assert.equal(map.questionCount,20);assert.equal(map.words.length,20);
+      assert.equal(new Set(map.words.map(row=>row[0].toLowerCase())).size,20);
+      assert.equal(new Set(map.words.map(row=>row[2])).size,20);
+    }
+  }
+});
+
+test('temple maps use distinct level vocabulary and common story record names',()=>{
+  const context=content('elementary'),{api}=context;api.configureStoryContent();
+  const maps=api.storyStages.filter(stage=>stage.chapter===2);
+  const elementary=maps.map(map=>({words:api.stages[map.key].words.map(row=>row[0]),record:api.stages[map.key].recordName}));
+  context.accountProfile.learning_level='middle';api.configureStoryContent();
+  maps.forEach((map,index)=>{
+    const stage=api.stages[map.key];
+    assert.equal(stage.recordName,elementary[index].record);
+    assert.notDeepEqual(Array.from(stage.words,row=>row[0]),elementary[index].words);
+    assert.equal(stage.storyChapter,2);assert.equal(stage.questionCount,20);assert.ok(api.levelReady(stage));
+    assert.equal(stage.worldCode,null);
+  });
+});
+
+test('world 2 unlocks after world 1 and its progression survives a level switch',()=>{
+  const context=content('middle'),{api}=context;api.configureStoryContent();
+  context.records=[];context.allCharacters=[{id:'mine'}];
+  vm.runInNewContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins('))+';globalThis.progress={stageCleared,storyStageUnlocked};',context);
+  assert.equal(context.progress.storyStageUnlocked(7),false);
+  context.records=[{stage:api.stages['story-lv6'].recordName,cleared:true,character_id:'mine'}];
+  assert.equal(context.progress.storyStageUnlocked(7),true);
+  assert.equal(context.progress.storyStageUnlocked(8),false);
+  context.records.push({stage:api.stages['story-ch2-1'].recordName,cleared:true,character_id:'mine'});
+  context.accountProfile.learning_level='elementary';api.configureStoryContent();
+  assert.equal(context.progress.stageCleared('story-ch2-1'),true);
+  assert.equal(context.progress.storyStageUnlocked(8),true);
+  assert.equal(context.progress.storyStageUnlocked(9),false);
+  assert.equal(context.progress.stageCleared('story-prologue'),false);
 });

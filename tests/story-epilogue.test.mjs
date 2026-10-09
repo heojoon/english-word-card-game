@@ -50,3 +50,10 @@ test('stage 7 clear opens final boss encounter while its failure opens results',
     assert.deepEqual(pages,[clear?'storyEpilogue':'result']);
   }
 });
+
+test('world 2 stage 7 ends at its results without replaying the forest boss',async()=>{
+  const {context,pages}=setup('story-ch2-7');
+  context.storyStages.push({key:'story-ch2-7',number:7,chapter:2});
+  await context.finishBattle(true,'fever-complete');
+  assert.deepEqual(pages,['result']);
+});

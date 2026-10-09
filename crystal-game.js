@@ -19,7 +19,7 @@
   const guestMode = !accountMode && !demo;
   const localMode = demo || guestMode;
   const stages = window.QUIZ_STAGES || {};
-  const builtinStageKeys = Object.keys(stages);
+  const builtinStageKeys = Object.keys(stages).filter(key=>!stages[key].storyChapter);
   const learningLabels={elementary:'초등학생',middle:'중학생'};
   function learningLevel(){return accountMode?(accountProfile?.learning_level||'middle'):'middle';}
   function stageLevel(stage){return stage?.learningLevel||'middle';}
@@ -32,22 +32,29 @@
     {number:4,key:'story-lv3',name:'달빛 연못',desc:'연못에 비친 숲의 수수께끼'},
     {number:5,key:'story-lv4',name:'고대 나무 터',desc:'오래된 나무가 지키는 비밀'},
     {number:6,key:'story-lv5',name:'안개 다리',desc:'안개 너머의 길을 찾아라'},
-    {number:7,key:'story-lv6',name:'숲의 수정 관문',desc:'속삭이는 숲의 마지막 시험'}
+    {number:7,key:'story-lv6',name:'숲의 수정 관문',desc:'속삭이는 숲의 마지막 시험',epilogue:true},
+    ...Array.from({length:7},(_,index)=>({number:index+1,chapter:2,key:`story-ch2-${index+1}`,name:['사원으로 가는 다리','빛나는 숲길','폭포 앞 크리스탈','굽이진 돌길','구름 다리의 수호석','사원 아래 오솔길','크리스탈 사원 입구'][index],desc:['첫 다리를 건너 사원으로 향해요','나무 사이에서 빛나는 크리스탈을 찾아요','폭포 소리를 들으며 단어를 연결해요','굽이진 길에서 다음 길목을 찾아요','다리 위 수호석에 담긴 단어를 깨워요','오래된 사원의 흔적을 살펴봐요','마지막 크리스탈을 깨워 사원 입구에 도착해요'][index]}))
+  ];
+  const storyWorlds=[
+    {number:1,name:'속삭이는 숲',region:'WHISPERING WOODS',art:'assets/story/chapter-1-library-map.webp',positions:[['34%','41%'],['42%','50%'],['60%','62%'],['69%','50%'],['88%','36%'],['78%','24%'],['83%','6%']]},
+    {number:2,name:'크리스탈 사원 입구',region:'CRYSTAL TEMPLE ENTRANCE',art:'assets/story/chapter-2-crystal-temple-map.webp',positions:[['13.8%','50.2%'],['34%','44.2%'],['53.8%','57%'],['75.5%','59.2%'],['93%','67.4%'],['36%','30.1%'],['53%','26.4%']]}
   ];
   function configureStoryContent(world=null){
     const level=learningLevel();
     const sources=level==='elementary'
-      ?storyStages.map((stage,index)=>world?.code==='7YA8'?stages[world.keys[index]]:null)
+      ?storyStages.slice(0,7).map((stage,index)=>world?.code==='7YA8'?stages[world.keys[index]]:null)
       :[1,1,2,3,4,5,1].map(number=>stages[`s${number}`]);
     storyStages.forEach((stage,index)=>{
-      const source=sources[index],pool=source&&stageLevel(source)===level?source.words:[];
-      const words=stage.number===2?pool.slice(0,5):pool;
-      const recordName=stage.number===2?'스토리 LV.1 · 속삭이는 숲':`스토리 ${stage.number} · 속삭이는 숲`;
-      stages[stage.key]={name:`속삭이는 숲 · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:stage.number===2?5:20,story:true,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:level==='elementary'?'7YA8':null};
+      const chapter=stage.chapter||1,title=storyWorlds[chapter-1].name;
+      const source=chapter===2?stages[`${level==='elementary'?'e':'s'}${stage.number+7}`]:sources[index],pool=source&&stageLevel(source)===level?source.words:[];
+      const shortIntro=chapter===1&&stage.number===2,words=shortIntro?pool.slice(0,5):pool;
+      const recordName=chapter===2?`스토리 2장 ${stage.number} · ${title}`:shortIntro?'스토리 LV.1 · 속삭이는 숲':`스토리 ${stage.number} · 속삭이는 숲`;
+      stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:shortIntro?5:20,story:true,storyChapter:chapter,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:chapter===1&&level==='elementary'?'7YA8':null};
     });
   }
   const storyStageKey=storyStages[0].key;
   let selectedStoryStage=storyStageKey;
+  let selectedStoryWorld=1;
   let stageKeys = builtinStageKeys.slice();
   const defaultPlayers = ['율이', '아빠', '손님'];
   const icons = {
@@ -264,7 +271,7 @@
     const name=stageRecordName(key),legacyName=stages[key]?.story?`${name} · 초등학생`:null;
     return records.some(r=>r.cleared&&(r.stage===name||(legacyName&&r.stage===legacyName))&&(!accountMode||allCharacters.some(character=>character.id===r.character_id)));
   }
-  function storyStageUnlocked(index){return index<=1||stageCleared(storyStages[index-1].key);}
+  function storyStageUnlocked(index){return index>=0&&(index<=1||stageCleared(storyStages[index-1].key));}
   function earnedCoins(count,clear=false){const interval=selectedCharacter?.class==='pugilist'?3:5;return count+Math.floor(count/interval)+(clear?10:0);}
 
   function resetCreatorContent(){
@@ -832,35 +839,36 @@
   function renderDungeon(){const storyCard=`<button class="mode-card mode-card-story" data-action="mode-select" data-mode="story"><img src="${esc(deployedAssetUrl('assets/ui/crystal-quest/modes/mode-story-card.webp'))}" alt="" loading="lazy"><span class="mode-card-shade"></span><span class="mode-card-copy"><span class="mode-kicker">STORY MODE</span><b>스토리 모드</b><small>이야기를 따라가며<br>잃어버린 단어 크리스털을 찾아요.</small><i>이야기 보기 <span>→</span></i></span></button>`;return `<div class="page-title mode-heading"><div class="eyebrow">WORDORIA ADVENTURE</div><h1>어떤 모험을 떠날까요?</h1><p>원하는 방식으로 단어 크리스털을 모아 보세요.</p></div><section class="mode-select" aria-label="게임 모드 선택"><button class="mode-card mode-card-survival" data-action="mode-select" data-mode="survival"><img src="${esc(deployedAssetUrl('assets/ui/crystal-quest/modes/mode-survival-card.webp'))}" alt="" fetchpriority="high"><span class="mode-card-shade"></span><span class="mode-card-copy"><span class="mode-kicker">SURVIVAL MODE</span><b>서바이벌 모드</b><small>제한시간 안에 정답을 맞히고<br>끝없이 이어지는 모험에 도전해요.</small><i>월드 선택 <span>→</span></i></span></button>${storyCard}</section>${creatorContentError?`<div class="notice db-warning">${esc(creatorContentError)}</div>`:''}<button class="secondary mode-records" data-action="records">모험 기록 보기</button>`;}
   function renderSurvival(){if(!worlds.length)return `<button class="text-btn" data-action="nav" data-page="dungeon">← 모드 선택</button><h1>${learningLabels[learningLevel()]} 서바이벌</h1>${contentEmpty()}`;return `<button class="text-btn mode-back" data-action="nav" data-page="dungeon">← 모드 선택</button><div class="page-title"><div class="eyebrow">SURVIVAL MODE · ${learningLabels[learningLevel()]}</div><h1>월드를 선택하세요</h1></div><label class="world-search"><span class="world-search-icon" aria-hidden="true">⌕</span><input id="world-search" type="search" autocomplete="off" maxlength="60" placeholder="월드 이름 또는 4자리 고유키 검색" aria-label="월드 이름 또는 고유키 검색"></label><div id="world-list">${worlds.map((w,i)=>{const count=w.keys.filter(stageCleared).length,search=`${w.name} ${w.code}`.toLocaleLowerCase();return `<button class="dungeon-card${w.creator?' creator-world':''}" data-action="world" data-index="${i}" data-world-search="${esc(search)}"><span class="island">${icon('island')}</span><span class="eyebrow world-code" style="color:var(--violet)">WORLD ${esc(w.code)}</span><h2>${esc(w.name)}</h2><p>${esc(w.sub)}</p><span class="row small"><span class="badge">${w.keys.length} MAPS · ${count} CLEAR</span><span>맵 보기 →</span></span></button>`;}).join('')}</div><div id="world-empty" class="panel empty-state" hidden>검색 조건과 일치하는 월드가 없어요.</div>${creatorContentError?`<div class="notice db-warning">${esc(creatorContentError)}</div>`:''}<button class="secondary" style="width:100%" data-action="records">모험 기록 보기</button>`;}
   function renderStory(){
-    if(!levelReady(stages[storyStages[0].key]))return `<button class="text-btn" data-action="nav" data-page="dungeon">← 모드 선택</button><h1>속삭이는 숲 · ${learningLabels[learningLevel()]}</h1><p>같은 이야기를 레벨에 맞는 문제로 모험해요.</p>${contentEmpty()}`;
-    let nextIndex=storyStages.findIndex((stage,index)=>!stageCleared(stage.key)&&storyStageUnlocked(index));
-    if(nextIndex<0)nextIndex=storyStages.length-1;
-    const selectedIndex=storyStages.findIndex(stage=>stage.key===selectedStoryStage);
-    if(selectedIndex<0||!storyStageUnlocked(selectedIndex))selectedStoryStage=storyStages[nextIndex].key;
-    const selected=storyStages.find(stage=>stage.key===selectedStoryStage)||storyStages[nextIndex];
-    const mapPositions=[['34%','41%'],['42%','50%'],['60%','62%'],['69%','50%'],['88%','36%'],['78%','24%'],['83%','6%']];
-    const selectedPosition=mapPositions[storyStages.indexOf(selected)];
-    const activeCharacter=`<span class="story-map-hero" style="--story-x:${selectedPosition[0]};--story-y:${selectedPosition[1]}" aria-hidden="true">${battleHeroMarkup()}${stageCleared(selected.key)?'<span class="story-map-hero-check">✓</span>':''}</span>`;
-    const nodes=storyStages.map((stage,index)=>{
-      const clear=stageCleared(stage.key),unlocked=storyStageUnlocked(index),active=selected.key===stage.key,position=mapPositions[index];
+    const world=storyWorlds[selectedStoryWorld-1]||storyWorlds[0],chapterStages=storyStages.filter(stage=>(stage.chapter||1)===world.number);
+    const available=stage=>storyStageUnlocked(storyStages.indexOf(stage))&&levelReady(stages[stage.key]);
+    let selected=chapterStages.find(stage=>stage.key===selectedStoryStage&&available(stage));
+    if(!selected)selected=chapterStages.find(stage=>available(stage)&&!stageCleared(stage.key))||chapterStages.find(available);
+    if(selected)selectedStoryStage=selected.key;
+    const selectedPosition=selected?world.positions[chapterStages.indexOf(selected)]:null;
+    const activeCharacter=selected?`<span class="story-map-hero" style="--story-x:${selectedPosition[0]};--story-y:${selectedPosition[1]}" aria-hidden="true">${battleHeroMarkup()}</span>`:'';
+    const nodes=chapterStages.map((stage,index)=>{
+      const clear=stageCleared(stage.key),unlocked=available(stage),active=selected?.key===stage.key,position=world.positions[index];
       const cls=`story-map-node story-map-node-${stage.number} ${clear?'cleared':unlocked?'active':'locked'}${active?' selected':''}`;
-      const number=`<span class="story-map-node-number">${stage.number}</span>`,check=clear?'<span class="story-map-node-check" aria-hidden="true">✓</span>':'';
+      const number=`<span class="story-map-node-number">${stage.number}${unlocked?'':'<span class="story-map-node-lock" aria-hidden="true">🔒</span>'}</span>`,check=clear?'<span class="story-map-node-check" aria-hidden="true">✓</span>':'';
       if(!unlocked||!levelReady(stages[stage.key]))return `<span class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" aria-label="스테이지 ${stage.number} 잠김">${number}${check}</span>`;
-      return `<button type="button" class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" data-action="story-stage-select" data-stage="${stage.key}" aria-label="스테이지 ${stage.number}${clear?' 클리어, 다시 도전 가능':' 도전 가능'}">${number}${check}</button>`;
+      return `<button type="button" class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" data-action="story-stage-select" data-stage="${stage.key}" aria-current="${active?'step':'false'}" aria-label="스테이지 ${stage.number}${clear?' 클리어, 다시 도전 가능':' 도전 가능'}">${number}${check}</button>`;
     }).join('');
-    return `<button class="text-btn mode-back" data-action="nav" data-page="dungeon">← 모드 선택</button><div class="page-title story-map-heading"><div class="eyebrow">STORY MODE · CHAPTER 1 · ${learningLabels[learningLevel()]}</div><h1>속삭이는 숲</h1></div><section class="story-world-map" aria-label="속삭이는 숲 스테이지 지도"><img class="story-world-map-art" src="${esc(deployedAssetUrl('assets/story/chapter-1-library-map.webp'))}" alt="별빛 도서관과 숲길을 잇는 크리스털 스테이지 지도"><span class="story-map-region">WHISPERING WOODS</span><span class="story-map-label story-map-label-library">별빛 도서관</span>${nodes}${activeCharacter}</section>`;
+    const tabs=`<div class="story-world-tabs" role="group" aria-label="스토리 월드맵 선택">${storyWorlds.map(item=>`<button type="button" data-action="story-world-select" data-world="${item.number}" class="story-world-tab ${item.number===world.number?'selected':''}" aria-pressed="${item.number===world.number}"><small>월드맵 ${item.number} · 7 MAPS</small><b>${esc(item.name)}</b></button>`).join('')}</div>`;
+    const notice=!chapterStages.some(stage=>levelReady(stages[stage.key]))?contentEmpty():world.number===2&&!storyStageUnlocked(7)?'<div class="notice">속삭이는 숲의 7스테이지를 클리어하면 크리스탈 사원 입구가 열려요.</div>':'';
+    return `<button class="text-btn mode-back" data-action="nav" data-page="dungeon">← 모드 선택</button>${tabs}<div class="page-title story-map-heading"><div class="eyebrow">STORY MODE · WORLD ${world.number} · ${learningLabels[learningLevel()]}</div><h1>${esc(world.name)}</h1><p>7개 스테이지 · ${world.number===2?'각 20문제':'2스테이지 5문제 · 나머지 20문제'}</p></div>${notice}<section class="story-world-map story-world-map-${world.number}" aria-label="${esc(world.name)} 스테이지 지도"><img class="story-world-map-art" src="${esc(deployedAssetUrl(world.art))}" alt="${esc(world.name)}의 일곱 크리스탈 스테이지 지도"><span class="story-map-region">${world.region}</span>${world.number===1?'<span class="story-map-label story-map-label-library">별빛 도서관</span>':''}${nodes}${activeCharacter}</section>`;
   }
+  function selectStoryWorld(number){if(!storyWorlds.some(world=>world.number===number))return;selectedStoryWorld=number;render();}
   function confirmStoryStage(stageKey){
     const index=storyStages.findIndex(stage=>stage.key===stageKey),stage=storyStages[index];
     if(!stage||!storyStageUnlocked(index)||!levelReady(stages[stage.key]))return;
     const alreadyCleared=stageCleared(stage.key);
-    selectedStoryStage=stage.key;render();
+    selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;render();
     modal(`<div class="eyebrow">STAGE ${String(stage.number).padStart(2,'0')}</div><h2>${esc(stage.name)}에 입장할까요?</h2><p>${esc(stage.desc)}</p>${alreadyCleared?'<p class="notice">이미 클리어한 스테이지예요. 다시 플레이해도 보상은 없어요. 입장하시겠어요?</p>':''}<div class="actions story-enter-actions"><button type="button" class="primary" data-action="story-enter-confirm" data-stage="${stage.key}">예</button><button type="button" class="secondary" data-action="story-enter-cancel">아니오</button></div>`);
   }
   function startStoryStage(stageKey){
     const index=storyStages.findIndex(stage=>stage.key===stageKey),stage=storyStages[index];
     if(!stage||!storyStageUnlocked(index)||!levelReady(stages[stage.key]))return;
-    selectedStoryStage=stage.key;selectedStage=stage.key;closeDialog();
+    selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;selectedStage=stage.key;closeDialog();
     if(stage.intro){storyDialogueIndex=0;go('storyIntro');return;}
     startBattle();
   }
@@ -1106,8 +1114,8 @@
     else if(dbOnline){try{const rows=await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stageRecordName(selectedStage),p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed),p_slash_bonus:run.storyReplay?0:run.slashBonus});run.result=rows?.[0]||null;if(run.result){if(accountMode)accountCrystals=Number(run.result.balance);else selectedCharacter.coins=run.result.balance;if(clear&&run.story&&Number(run.result.coins_earned)===0)run.storyReplay=true;}records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.error(error);run.saveError=true;}}
     if(clear&&run.story)storyDialogueIndex=0;
     const storyIndex=storyStages.findIndex(stage=>stage.key===selectedStage),storyStage=storyStages[storyIndex];
-    if(clear&&run.story){const next=storyStages.find((stage,index)=>!stageCleared(stage.key)&&storyStageUnlocked(index));if(next)selectedStoryStage=next.key;}
-    go(clear&&run.story&&(storyStage?.epilogue||storyStage?.number===7)?'storyEpilogue':'result');
+    if(clear&&run.story){const next=storyStages.find((stage,index)=>!stageCleared(stage.key)&&storyStageUnlocked(index));if(next){selectedStoryStage=next.key;selectedStoryWorld=next.chapter||1;}}
+    go(clear&&run.story&&(storyStage?.epilogue||((storyStage?.chapter||1)===1&&storyStage?.number===7))?'storyEpilogue':'result');
     emitAudio(clear?'GAME_VICTORY':'GAME_DEFEAT');
     if(clear){playStageClearSound();document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));}
   }
@@ -1309,7 +1317,7 @@
     else if(action==='item')showItem(id);else if(action==='potion-shop-item')showPotionShopItem(b.dataset.potion);else if(action==='buy-potion')await purchasePotion(b.dataset.potion,b);else if(action==='filter'){filter=b.dataset.filter;render();}else if(action==='buy')await purchase(itemById(id));else if(action==='equip')await equip(itemById(id));
     else if(action==='slot'){const eq=equippedMap()[b.dataset.slot],owned=shopItems.find(i=>slotFor(i)===b.dataset.slot&&itemOwned(i));if(eq)showItem(eq);else if(owned)showItem(owned.id);else{filter=b.dataset.slot==='skin'?'skin':'item';go('shop');toast('이 슬롯에 어울리는 아이템을 골라 보세요');}}
     else if(action==='potion-slot')showPotionSlot(Number(b.dataset.index));else if(action==='equip-potion')await setPotionLoadout(Number(b.dataset.slotIndex),b.dataset.potion);else if(action==='unequip-potion')await setPotionLoadout(Number(b.dataset.slotIndex),null);
-    else if(action==='boss-reward-retry'){await claimRoyalSlimeReward();}else if(action==='boss-retry'){startRoyalSlimeBattle();}else if(action==='boss-return'){run=pendingStoryRun;pendingStoryRun=null;go('result');}else if(action==='mode-select'){go(b.dataset.mode);}else if(action==='world'){worldIndex=Number(b.dataset.index);go('stages');}else if(action==='story-stage-select'){confirmStoryStage(b.dataset.stage);}else if(action==='story-enter-confirm'){startStoryStage(b.dataset.stage);}else if(action==='story-enter-cancel'){closeDialog();}else if(action==='story-start-stage'||action==='story-lv1'){confirmStoryStage(b.dataset.stage||storyStageKey);}else if(action==='story-dialogue-next'){const lines=storyDialogueLines();if(storyDialogueIndex<lines.length-1){storyDialogueIndex++;render();}else completeStoryDialogue();}else if(action==='story-dialogue-skip'){completeStoryDialogue();}else if(action==='stage'){selectedStage=b.dataset.stage;showMapStart();}else if(action==='start'||action==='retry')startBattle();
+    else if(action==='boss-reward-retry'){await claimRoyalSlimeReward();}else if(action==='boss-retry'){startRoyalSlimeBattle();}else if(action==='boss-return'){run=pendingStoryRun;pendingStoryRun=null;go('result');}else if(action==='mode-select'){go(b.dataset.mode);}else if(action==='world'){worldIndex=Number(b.dataset.index);go('stages');}else if(action==='story-world-select'){selectStoryWorld(Number(b.dataset.world));}else if(action==='story-stage-select'){confirmStoryStage(b.dataset.stage);}else if(action==='story-enter-confirm'){startStoryStage(b.dataset.stage);}else if(action==='story-enter-cancel'){closeDialog();}else if(action==='story-start-stage'||action==='story-lv1'){confirmStoryStage(b.dataset.stage||storyStageKey);}else if(action==='story-dialogue-next'){const lines=storyDialogueLines();if(storyDialogueIndex<lines.length-1){storyDialogueIndex++;render();}else completeStoryDialogue();}else if(action==='story-dialogue-skip'){completeStoryDialogue();}else if(action==='stage'){selectedStage=b.dataset.stage;showMapStart();}else if(action==='start'||action==='retry')startBattle();
     else if(action==='answer')answer(Number(b.dataset.index));else if(action==='activate-ice-time')activateMageIceTime();else if(action==='activate-slash')activateWarriorSlash();else if(action==='use-story-potion')await useStoryPotion(Number(b.dataset.slotIndex),b);else if(action==='story-pick')storyPick(b);else if(action==='fever-pick')collectFeverCrystal(id);else if(action==='dismiss-reward')continueAfterFeedback();else if(action==='pause'){pause();modal('<div class="eyebrow">PAUSED</div><h2>잠깐의 휴식</h2><div class="actions pause-actions"><button class="primary" data-action="resume">계속</button><button class="secondary" data-action="leave" data-page="home">홈으로</button></div>',{closable:false});}else if(action==='resume')resume();else if(action==='leave'){closeDialog();const leavingBoss=run?.boss;await finishBattle(false,'leave');if(!leavingBoss)go(b.dataset.page);}
     else if(action==='speak')speak(run.question.entry[0]);else if(action==='result-next')resultNext();else if(action==='chest-tap')await tapChest(b);else if(action==='receive-reward')receiveReward();else if(action==='records')showRecords();else if(action==='stats')showStats();else if(action==='requests')showRequests();else if(action==='request-history')showRequestHistory();else if(action==='fulfill-reward')await fulfillReward(id,b);else if(action==='rankings')showRankings();else if(action==='wallet')modal(`<div class="eyebrow">ACCOUNT CRYSTAL WALLET</div><h2>◆ ${num(walletBalance())}</h2><p>계정의 모든 캐릭터가 함께 사용하는 크리스털이에요.<br>어떤 캐릭터로 모아도 같은 지갑에 쌓입니다.</p>`);else if(action==='profile')await showProfile();else if(action==='send-profile-code')await sendProfileCode(b);else if(action==='resend-profile-code')await sendProfileCode(b,b.dataset.email);else if(action==='verify-profile-code')await verifyProfileCode(b);else if(action==='select-learning-level')await selectLearningLevel(b);else if(action==='select-profile-role')await selectProfileRole(b);else if(action==='ask-unlink-email')askUnlinkEmail();else if(action==='cancel-unlink-email')$('dialog-content').innerHTML=profileMarkup(accountProfile);else if(action==='confirm-unlink-email')await unlinkProfileEmail(b);else if(action==='signout')await signOut();
   });
