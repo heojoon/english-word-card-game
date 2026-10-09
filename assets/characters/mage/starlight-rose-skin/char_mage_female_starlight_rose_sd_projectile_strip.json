@@ -1,0 +1,59 @@
+{
+  "image": "char_mage_female_starlight_rose_sd_projectile_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "sourceFrameGapPx": 50,
+  "spacedReviewImage": "review/char_mage_female_starlight_rose_sd_projectile_spaced_master.png",
+  "frames": [
+    {
+      "index": 0,
+      "name": "charge",
+      "durationMs": 60
+    },
+    {
+      "index": 1,
+      "name": "launch",
+      "durationMs": 60,
+      "events": {
+        "release": true
+      }
+    },
+    {
+      "index": 2,
+      "name": "near-travel",
+      "durationMs": 60
+    },
+    {
+      "index": 3,
+      "name": "far-travel",
+      "durationMs": 60
+    },
+    {
+      "index": 4,
+      "name": "contact",
+      "durationMs": 60,
+      "events": {
+        "hit": true
+      }
+    },
+    {
+      "index": 5,
+      "name": "star-burst-fade",
+      "durationMs": 60,
+      "events": {
+        "fade": true
+      }
+    }
+  ],
+  "effectBounds": {
+    "maxWidth": 220,
+    "maxHeight": 220
+  }
+}

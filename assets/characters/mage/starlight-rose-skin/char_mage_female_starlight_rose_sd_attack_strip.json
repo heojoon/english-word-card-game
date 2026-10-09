@@ -1,0 +1,51 @@
+{
+  "image": "char_mage_female_starlight_rose_sd_attack_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "spacedReviewImage": "review/char_mage_female_starlight_rose_sd_attack_spaced_master.png",
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 90
+    },
+    {
+      "index": 1,
+      "name": "anticipation",
+      "durationMs": 90
+    },
+    {
+      "index": 2,
+      "name": "charge",
+      "durationMs": 90
+    },
+    {
+      "index": 3,
+      "name": "aim",
+      "durationMs": 90
+    },
+    {
+      "index": 4,
+      "name": "release",
+      "durationMs": 90,
+      "events": {
+        "release": true
+      }
+    },
+    {
+      "index": 5,
+      "name": "attack-peak",
+      "durationMs": 90
+    }
+  ],
+  "finalHold": true,
+  "note": "Release and attack peak deliberately hold the same fully extended active casting drawing."
+}

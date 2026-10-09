@@ -3,15 +3,18 @@
   "name": "별빛 로즈 마법사",
   "class": "mage",
   "variant": "female",
-  "status": "SD skin identity and profile exported; animation and game integration pending",
+  "status": "Dedicated battle animations integrated and verified in Survival and Story at mobile widths and reduced motion",
   "sourceReference": "source/approved-final-illustration.png",
   "identityMaster": "source/identity-master.png",
   "profileImage": "../../../avatars/skins/mage-female-starlight-rose.webp",
   "readyImage": "char_mage_female_starlight_rose_sd_ready.png",
   "runtime": {
-    "frameWidth": 320,
+    "frameWidth": 384,
     "frameHeight": 320,
-    "anchor": { "x": 0.5, "y": 0.975 },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.975
+    },
     "facing": "right",
     "safetyMarginPx": 12
   },
@@ -24,19 +27,49 @@
   },
   "plannedAnimations": {
     "sourceFrameGapPx": 50,
-    "idle": { "frameCount": 4, "beats": ["ready", "breathe-up", "ready", "breathe-down"] },
+    "idle": {
+      "frameCount": 4,
+      "beats": [
+        "ready",
+        "breathe-up",
+        "ready",
+        "breathe-down"
+      ]
+    },
     "attack": {
       "frameCount": 6,
       "frame01MatchesIdentity": true,
-      "beats": ["ready", "anticipation", "charge", "aim", "release", "attack-peak"],
-      "durationMs": [140, 110, 110, 130, 90, 180],
+      "beats": [
+        "ready",
+        "anticipation",
+        "charge",
+        "aim",
+        "release",
+        "attack-peak"
+      ],
+      "durationMs": [
+        140,
+        110,
+        110,
+        130,
+        90,
+        180
+      ],
       "releaseFrame": 5,
       "filename": "char_mage_female_starlight_rose_sd_attack_strip.png"
     },
     "hit": {
       "frameCount": 3,
-      "beats": ["guard-notice", "impact-recoil", "knockdown"],
-      "durationMs": [100, 170, 550],
+      "beats": [
+        "guard-notice",
+        "impact-recoil",
+        "knockdown"
+      ],
+      "durationMs": [
+        100,
+        170,
+        550
+      ],
       "finalHold": true,
       "propRemainsWithCharacter": true,
       "filename": "char_mage_female_starlight_rose_sd_hit_strip.png"
@@ -45,15 +78,88 @@
       "frameCount": 6,
       "frameWidth": 320,
       "frameHeight": 320,
-      "anchor": { "x": 0.5, "y": 0.5 },
-      "effectBounds": { "maxWidth": 220, "maxHeight": 220 },
-      "beats": ["charge", "launch", "near-travel", "far-travel", "contact", "star-burst-fade"],
-      "durationMs": [90, 100, 100, 100, 90, 180],
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "effectBounds": {
+        "maxWidth": 220,
+        "maxHeight": 220
+      },
+      "beats": [
+        "charge",
+        "launch",
+        "near-travel",
+        "far-travel",
+        "contact",
+        "star-burst-fade"
+      ],
+      "durationMs": [
+        90,
+        100,
+        100,
+        100,
+        90,
+        180
+      ],
       "releaseFrame": 2,
       "hitFrame": 5,
       "identity": "yellow star projectile, detached from casting hand; preserve its star silhouette and scale during flight, then disperse into golden starlight on contact",
-      "palette": { "core": "#FFCF67", "highlight": "#FFF4BC", "glow": "#FFE681" },
+      "palette": {
+        "core": "#FFCF67",
+        "highlight": "#FFF4BC",
+        "glow": "#FFE681"
+      },
       "filename": "char_mage_female_starlight_rose_sd_projectile_strip.png"
     }
+  },
+  "normalization": {
+    "sharedScale": 0.23,
+    "sourceCanvas": [
+      1254,
+      1254
+    ],
+    "bodyAnchors": {
+      "ready": 735,
+      "anticipation": 720,
+      "charge": 675,
+      "aim": 715,
+      "peak": 617,
+      "guard": 652,
+      "recoil": 815,
+      "down": 627
+    },
+    "runtimeGroundY": 312,
+    "note": "384px cells preserve wide hair, staff and lying silhouette. No per-frame fitting scale."
+  },
+  "timing": {
+    "attackDelayMs": 80,
+    "attackDurationMs": 450,
+    "projectileDelayMs": 380,
+    "projectileDurationMs": 300,
+    "releaseMs": 440,
+    "contactMs": 620,
+    "reducedContactMs": 170
+  },
+  "battleIdentity": "source/animation/ready.png",
+  "review": {
+    "sourceFrameGapPx": 50,
+    "mobileWidths": [
+      360,
+      390,
+      430
+    ],
+    "modes": [
+      "Survival",
+      "Story"
+    ],
+    "transparencyBackgrounds": [
+      "#F7F7FF",
+      "#5751D8"
+    ],
+    "releaseMs": 440,
+    "contactMs": 620,
+    "reducedContactMs": 170,
+    "knockdownFinalHold": true
   }
 }

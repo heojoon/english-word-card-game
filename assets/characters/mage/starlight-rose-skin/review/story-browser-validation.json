@@ -1,0 +1,32 @@
+[
+  {
+    "width": 390,
+    "reduced": false,
+    "timing": {
+      "actual": 621.5,
+      "expected": 620
+    },
+    "alignment": {
+      "deltaX": 0.011867675781275011,
+      "deltaY": 0.000004577636730118684
+    },
+    "finalKnockdownHeld": true,
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 390,
+    "reduced": true,
+    "timing": {
+      "actual": 170.80000007152557,
+      "expected": 170
+    },
+    "alignment": {
+      "deltaX": 0.011876220703129547,
+      "deltaY": 0.000011901855458518185
+    },
+    "finalKnockdownHeld": true,
+    "errors": [],
+    "failedAssets": []
+  }
+]

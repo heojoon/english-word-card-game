@@ -1,0 +1,47 @@
+[
+  {
+    "width": 360,
+    "reduced": false,
+    "timing": {
+      "actual": 621.7999999523163,
+      "expected": 620
+    },
+    "alignment": {
+      "deltaX": 0.011884765624984084,
+      "deltaY": 0.0000024414062522737368
+    },
+    "finalKnockdownHeld": true,
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 430,
+    "reduced": false,
+    "timing": {
+      "actual": 620.6999999284744,
+      "expected": 620
+    },
+    "alignment": {
+      "deltaX": 0.011884765624984084,
+      "deltaY": 0.0000024414062522737368
+    },
+    "finalKnockdownHeld": true,
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 390,
+    "reduced": true,
+    "timing": {
+      "actual": 172,
+      "expected": 170
+    },
+    "alignment": {
+      "deltaX": 0.011875305175749418,
+      "deltaY": 0.0000024414062522737368
+    },
+    "finalKnockdownHeld": true,
+    "errors": [],
+    "failedAssets": []
+  }
+]

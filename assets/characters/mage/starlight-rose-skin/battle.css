@@ -1,0 +1,19 @@
+/* Female Starlight Rose mage only: independent character and yellow star layers. */
+.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite{background-image:url('char_mage_female_starlight_rose_sd_idle_strip.png');background-size:400% 100%;width:177.6px;margin-left:-14.8px;transform:none;animation:starlight-frames 1.6s steps(3,end) infinite}
+.arena.hit .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite{background-image:url('char_mage_female_starlight_rose_sd_attack_strip.png');background-size:600% 100%;animation:starlight-frames .45s steps(5,end) .08s both}
+.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-projectile{left:calc(83% - 40px);bottom:30px;width:80px;height:80px;background-image:url('char_mage_female_starlight_rose_sd_projectile_strip.png');background-size:600% 100%;filter:drop-shadow(0 0 4px #ffcf67)}
+.arena.hit .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-projectile{display:block;animation:starlight-frames .30s steps(5,end) .38s both,starlight-flight .30s linear .38s both}
+.arena.hit:has(.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin) .enemy,.arena.hit:has(.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin) .enemy-label{animation-delay:.62s}
+.arena.hit:has(.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin) .crystal-shards i{animation-delay:.62s!important}
+.arena.wrong .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin,.arena.story-stunned .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin{animation:none!important;transform:none!important}
+.arena.wrong .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite,.arena.story-stunned .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite{background-image:url('char_mage_female_starlight_rose_sd_hit_strip.png');background-size:300% 100%;transform:none;animation:starlight-frames .32s steps(2,end) both!important}
+.arena.wrong .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-projectile{display:none}
+@keyframes starlight-frames{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes starlight-flight{0%{opacity:0;transform:translate(0,0)}20%{opacity:1;transform:translate(0,0)}80%{opacity:1;transform:translate(var(--hero-travel,100px),var(--star-travel-y,0px))}100%{opacity:0;transform:translate(var(--hero-travel,100px),var(--star-travel-y,0px))}}
+@media(prefers-reduced-motion:reduce){
+  .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite{animation:none}
+  .arena.hit .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite{animation:starlight-frames .12s steps(5,end) .01s both!important}
+  .arena.hit .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-projectile{animation:starlight-frames .10s steps(5,end) .09s both,starlight-flight .10s linear .09s both!important}
+  .arena.hit:has(.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin) .enemy,.arena.hit:has(.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin) .enemy-label,.arena.hit:has(.battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin) .crystal-shards i{animation-delay:.17s!important}
+  .arena.wrong .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite,.arena.story-stunned .battle-hero-mage.battle-hero-female.battle-skin-mage_starlight_rose_skin .battle-sprite{animation-duration:.12s!important}
+}
