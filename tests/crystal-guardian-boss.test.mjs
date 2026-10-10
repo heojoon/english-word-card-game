@@ -100,16 +100,16 @@ test('runtime pauses blindness, advances to the next hidden question on beam con
   questions=0;renders=0;Object.assign(s,state());s.elapsed=0;s.storyTimeLimit=180000;s.deck=Array(60);
   rules.answer(s,true,200);c.advanceGuardianBattle(200);assert.equal(renders,0);assert.equal(s.bossHp,59);
 });
-test('guardian gets 210 seconds on start and retry and times out at the new boundary',()=>{
+test('guardian gets 300 seconds on start and retry and times out at the new boundary',()=>{
   const s={...state(),elapsed:0,deck:Array(60)};
   let result;
   const c=vm.createContext({run:s,window:{WORDORIA_GUARDIAN:rules},updateWarriorSlash(){},render(){},finishBattle(clear,reason){result={clear,reason};},document:{querySelector:()=>null},$:()=>null,royalSlimeTime:()=>''});
   vm.runInContext(runtime.slice(runtime.indexOf('  function advanceGuardianBattle('),runtime.indexOf('  function renderRoyalSlimeBattle(')),c);
-  assert.equal(s.storyTimeLimit,210000);
+  assert.equal(s.storyTimeLimit,300000);
   c.advanceGuardianBattle(180000);assert.equal(result,undefined);
-  c.advanceGuardianBattle(29999);assert.equal(result,undefined);
+  c.advanceGuardianBattle(119999);assert.equal(result,undefined);
   c.advanceGuardianBattle(1);assert.deepEqual(result,{clear:false,reason:'timeout'});
-  assert.equal(state().storyTimeLimit,210000);
+  assert.equal(state().storyTimeLimit,300000);
 });
 test('guardian ice skill renders its field and freezes the clock until an answer releases it',()=>{
   const s={...state(),story:true,mp:2,mpMax:2,elapsed:0,storyTimeLimit:180000,deck:Array(60),question:{entry:['treasure','n','보물'],choices:['보물','보기2'],answer:'보물',prompt:'treasure',mode:'en-ko'}};
@@ -132,14 +132,14 @@ function resultContext(localMode=true){
   vm.runInContext(runtime.slice(runtime.indexOf('  function completeStoryDialogue('),runtime.indexOf('  function storyDialogueLines(')),c);
   return {c,pages};
 }
-test('guardian victory waits for ending before the fixed 400 reward and never pays twice',async()=>{
+test('guardian victory waits for ending before the fixed 500 reward and never pays twice',async()=>{
   const {c,pages}=resultContext();c.finishGuardianBattle(true,'boss-defeated');
   assert.deepEqual(pages,['storyChapterTwoBossEnd']);assert.equal(c.selectedCharacter.coins,10);assert.equal(c.demoState.records.length,0);
-  c.completeStoryDialogue();assert.equal(c.page,'bossResult');assert.equal(c.selectedCharacter.coins,410);assert.equal(c.run.bossReward,400);
-  assert.match(c.renderGuardianResult(),/\+400 크리스털/);
-  await c.claimGuardianReward();assert.equal(c.selectedCharacter.coins,410);
+  c.completeStoryDialogue();assert.equal(c.page,'bossResult');assert.equal(c.selectedCharacter.coins,510);assert.equal(c.run.bossReward,500);
+  assert.match(c.renderGuardianResult(),/\+500 크리스털/);
+  await c.claimGuardianReward();assert.equal(c.selectedCharacter.coins,510);
   c.run={...state(),guardian:true,correct:60,bossHp:0,elapsed:120000,clear:true};await c.claimGuardianReward();
-  assert.equal(c.run.bossReward,0);assert.equal(c.selectedCharacter.coins,410);
+  assert.equal(c.run.bossReward,0);assert.equal(c.selectedCharacter.coins,510);
 });
 test('guardian defeat shows the boss and retry/leave without clear records or rewards',()=>{
   for(const reason of ['hp-zero','timeout']){
@@ -150,9 +150,9 @@ test('guardian defeat shows the boss and retry/leave without clear records or re
 });
 test('guardian remote reward retries failed saves and keeps stage progression after success',async()=>{
   const {c}=resultContext(false);c.run.clear=true;c.page='bossResult';let calls=0;
-  c.rpc=async(name,params)=>{assert.equal(name,'claim_guardian_boss_reward');assert.equal(params.p_correct,60);if(++calls===1)throw new Error('network');return [{game_score_id:123,reward:400,balance:410}];};
+  c.rpc=async(name,params)=>{assert.equal(name,'claim_guardian_boss_reward');assert.equal(params.p_correct,60);if(++calls===1)throw new Error('network');return [{game_score_id:123,reward:500,balance:510}];};
   await c.claimGuardianReward();assert.equal(c.run.rewardError,true);assert.equal(c.records.length,0);
-  await c.claimGuardianReward();assert.equal(c.run.rewardError,false);assert.equal(c.accountCrystals,410);assert.equal(c.records[0].cleared,true);
+  await c.claimGuardianReward();assert.equal(c.run.rewardError,false);assert.equal(c.accountCrystals,510);assert.equal(c.records[0].cleared,true);
   await c.claimGuardianReward();assert.equal(calls,2);
   assert.match(runtime,/action==='guardian-retry'\)\{startBattle\(\);\}/);
   assert.match(runtime,/action==='guardian-leave'\)\{selectedStoryWorld=2;/);

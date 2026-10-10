@@ -1278,7 +1278,7 @@
       if(localMode){
         const stage=stageRecordName(selectedStage);
         const claimed=demoState.records.some(row=>row.player===player&&row.stage===stage&&row.guardianRewardClaimed);
-        const reward=claimed?0:400;
+        const reward=claimed?0:500;
         const row={id:`demo-guardian-${Date.now()}-${Math.random()}`,player,stage,correct:60,total:60,cleared:true,character_id:selectedCharacter.id,duration_ms:Math.round(battle.elapsed),coins_earned:reward,treasure_claimed:true,guardianRewardClaimed:true,created_at:new Date().toISOString()};
         selectedCharacter.coins+=reward;demoState.records.unshift(row);records=demoState.records;
         battle.result={game_score_id:row.id,coins_earned:reward,balance:selectedCharacter.coins};battle.bossReward=reward;saveDemo();
@@ -1293,7 +1293,7 @@
     finally{battle.rewardPending=false;if(run===battle&&page==='bossResult')render();}
   }
   function renderGuardianResult(){
-    return `<section class="result"><div class="eyebrow">CRYSTAL TEMPLE · FINAL BOSS</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl('assets/monsters/crystal-guardian-golem/idle/01.png'))}" alt="크리스탈 가디언 골렘"><h1>${run.clear?'크리스탈 가디언 골렘을 물리쳤어요!':run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??400)} 크리스털`}</p>`:''}<div class="actions">${run.rewardError?'<button class="primary" data-action="guardian-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':'<button class="primary" data-action="guardian-retry">다시 도전하기</button>'}<button class="${run.clear?'primary':'secondary'}" data-action="guardian-leave" ${run.rewardPending||run.clear&&run.rewardError?'disabled':''}>${run.clear?'월드맵으로':'떠나기'}</button></div></section>`;
+    return `<section class="result"><div class="eyebrow">CRYSTAL TEMPLE · FINAL BOSS</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl('assets/monsters/crystal-guardian-golem/idle/01.png'))}" alt="크리스탈 가디언 골렘"><h1>${run.clear?'크리스탈 가디언 골렘을 물리쳤어요!':run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??500)} 크리스털`}</p>`:''}<div class="actions">${run.rewardError?'<button class="primary" data-action="guardian-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':'<button class="primary" data-action="guardian-retry">다시 도전하기</button>'}<button class="${run.clear?'primary':'secondary'}" data-action="guardian-leave" ${run.rewardPending||run.clear&&run.rewardError?'disabled':''}>${run.clear?'월드맵으로':'떠나기'}</button></div></section>`;
   }
   async function finishBattle(clear,reason){
     if(run.done)return;if(run.guardian){finishGuardianBattle(clear,reason);return;}if(run.boss){finishRoyalSlimeBattle(clear,reason);return;}persistStoryBattleVitals();run.iceTimeActive=false;run.done=true;run.clear=clear;run.reason=reason;run.feedbackPending=false;clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();

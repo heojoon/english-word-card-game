@@ -18,7 +18,7 @@
     }
     return result;
   }
-  function reset(){return {guardian:true,storyTimeLimit:210000,bossHp:HP,guardianPhase:'idle',guardianRemaining:0,guardianBlindMs:0,guardianThresholds:[],guardianPendingBeam:false,guardianBeamHit:false,guardianVisual:'idle'};}
+  function reset(){return {guardian:true,storyTimeLimit:300000,bossHp:HP,guardianPhase:'idle',guardianRemaining:0,guardianBlindMs:0,guardianThresholds:[],guardianPendingBeam:false,guardianBeamHit:false,guardianVisual:'idle'};}
   function answer(state,correct,contactMs){
     if(state.locked||!['idle','beam-hold'].includes(state.guardianPhase))return false;
     state.locked=true;
