@@ -1060,7 +1060,7 @@
   }
   function renderGuardianBattle(){
     const blind=run.guardianBlindMs>0,energy=run.bossHp/60*100;
-    const buttons=run.question.choices.map((choice,index)=>`<button class="answer" data-action="answer" data-index="${index}" ${run.locked||run.paused?'disabled':''} ${blind?`aria-label="가려진 답 ${index+1}"`:''}><span>${index+1}</span>${blind?'<b aria-hidden="true">◆ ◆ ◆</b>':esc(choice)}</button>`).join('');
+    const buttons=run.question.choices.map((choice,index)=>`<button class="answer" data-action="answer" data-index="${index}" ${run.locked||run.paused?'disabled':''}><span>${index+1}</span>${esc(blind?window.WORDORIA_GUARDIAN.maskChoice(choice):choice)}</button>`).join('');
     const casting=run.guardianVisual==='attack';
     return `<div class="royal-boss-heading"><div><div class="eyebrow">CRYSTAL TEMPLE · FINAL BOSS</div><h1>크리스탈 가디언 골렘</h1></div><div class="royal-boss-clock" id="boss-clock"><small>TIME LEFT</small><strong id="boss-timer">${royalSlimeTime(Math.max(0,run.storyTimeLimit-run.elapsed))}</strong></div></div><div class="arena guardian-boss-arena ${run.iceTimeActive?'ice-time-active':''} ${run.attack?'hit':''} ${run.stunned?'wrong story-stunned':''} ${casting?'guardian-casting':''} ${run.guardianBeamHit?'guardian-beam-contact':''}" id="arena"><div class="arena-floor"></div>${battleHeroMarkup()}<div class="guardian-enemy"><div class="guardian-health" role="meter" aria-label="보스 에너지" aria-valuemin="0" aria-valuemax="60" aria-valuenow="${run.bossHp}"><i id="guardian-energy-fill" style="width:${energy}%"></i></div><span class="guardian-sprite guardian-${run.guardianVisual}" role="img" aria-label="왼쪽을 바라보는 크리스탈 가디언 골렘"></span></div>${storyVitalsMarkup()}${iceTimeEffectMarkup()}${casting?'<div class="guardian-beam" aria-hidden="true"></div>':''}<div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div></div>${storyBattleActions()}<div class="question-card guardian-question"><h1>${esc(run.question.prompt)}</h1></div><div class="answers guardian-answers ${blind?'guardian-blinded':''}">${buttons}</div>`;
   }
@@ -1069,7 +1069,7 @@
     return `<img class="ice-time-field" src="assets/effects/fx_ice_time_field.svg" alt="" aria-hidden="true">${run.iceTimePopUntil>performance.now()?'<div class="arena-combo ice-time-announcement" role="status" aria-live="polite"><b>아이스 타임</b></div>':''}`;
   }
   function guardianAnswer(index){
-    if(!run?.guardian||run.done||run.paused||run.locked||run.guardianBlindMs>0||index<0||index>=run.question.choices.length)return;
+    if(!run?.guardian||run.done||run.paused||run.locked||index<0||index>=run.question.choices.length)return;
     run.iceTimeActive=false;
     const correct=run.question.choices[index]===run.question.answer;
     if(!window.WORDORIA_GUARDIAN.answer(run,correct,battleContactDelay()))return;
@@ -1278,7 +1278,7 @@
       if(localMode){
         const stage=stageRecordName(selectedStage);
         const claimed=demoState.records.some(row=>row.player===player&&row.stage===stage&&row.guardianRewardClaimed);
-        const reward=claimed?0:200;
+        const reward=claimed?0:400;
         const row={id:`demo-guardian-${Date.now()}-${Math.random()}`,player,stage,correct:60,total:60,cleared:true,character_id:selectedCharacter.id,duration_ms:Math.round(battle.elapsed),coins_earned:reward,treasure_claimed:true,guardianRewardClaimed:true,created_at:new Date().toISOString()};
         selectedCharacter.coins+=reward;demoState.records.unshift(row);records=demoState.records;
         battle.result={game_score_id:row.id,coins_earned:reward,balance:selectedCharacter.coins};battle.bossReward=reward;saveDemo();
@@ -1293,7 +1293,7 @@
     finally{battle.rewardPending=false;if(run===battle&&page==='bossResult')render();}
   }
   function renderGuardianResult(){
-    return `<section class="result"><div class="eyebrow">CRYSTAL TEMPLE · FINAL BOSS</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl('assets/monsters/crystal-guardian-golem/idle/01.png'))}" alt="크리스탈 가디언 골렘"><h1>${run.clear?'크리스탈 가디언 골렘을 물리쳤어요!':run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??200)} 크리스털`}</p>`:''}<div class="actions">${run.rewardError?'<button class="primary" data-action="guardian-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':'<button class="primary" data-action="guardian-retry">다시 도전하기</button>'}<button class="${run.clear?'primary':'secondary'}" data-action="guardian-leave" ${run.rewardPending||run.clear&&run.rewardError?'disabled':''}>${run.clear?'월드맵으로':'떠나기'}</button></div></section>`;
+    return `<section class="result"><div class="eyebrow">CRYSTAL TEMPLE · FINAL BOSS</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl('assets/monsters/crystal-guardian-golem/idle/01.png'))}" alt="크리스탈 가디언 골렘"><h1>${run.clear?'크리스탈 가디언 골렘을 물리쳤어요!':run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??400)} 크리스털`}</p>`:''}<div class="actions">${run.rewardError?'<button class="primary" data-action="guardian-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':'<button class="primary" data-action="guardian-retry">다시 도전하기</button>'}<button class="${run.clear?'primary':'secondary'}" data-action="guardian-leave" ${run.rewardPending||run.clear&&run.rewardError?'disabled':''}>${run.clear?'월드맵으로':'떠나기'}</button></div></section>`;
   }
   async function finishBattle(clear,reason){
     if(run.done)return;if(run.guardian){finishGuardianBattle(clear,reason);return;}if(run.boss){finishRoyalSlimeBattle(clear,reason);return;}persistStoryBattleVitals();run.iceTimeActive=false;run.done=true;run.clear=clear;run.reason=reason;run.feedbackPending=false;clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();

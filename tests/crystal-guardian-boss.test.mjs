@@ -39,9 +39,9 @@ test('energy falls only on contact and beams trigger once at 80, 40, 20 and 10 p
       assert.equal(s.guardianBlindMs,0);
       rules.advance(s,599);assert.equal(s.guardianBlindMs,0);
       assert.ok(rules.advance(s,1).includes('beam-contact'));
-      assert.equal(s.guardianBlindMs,5000);
-      assert.equal(rules.answer(s,true,200),false);
-      rules.advance(s,4999);assert.equal(s.guardianBlindMs,1);
+      assert.equal(s.guardianBlindMs,3000);
+      assert.equal(s.locked,false);
+      rules.advance(s,2999);assert.equal(s.guardianBlindMs,1);
       rules.advance(s,1);assert.equal(s.guardianBlindMs,0);assert.equal(s.locked,false);
     }
     if(correct===60){assert.equal(s.guardianVisual,'defeat');assert.ok(rules.advance(s,700).includes('victory'));}
@@ -58,18 +58,33 @@ test('wrong answers lose player HP without changing boss energy or deck progress
   s.hp=1;rules.answer(s,false,200);assert.ok(rules.advance(s,500).includes('defeat-player'));
   const retry=state();assert.equal(retry.guardianBlindMs,0);assert.equal(retry.guardianThresholds.length,0);
 });
-test('reduced motion shortens casting but keeps five seconds of hidden answers',()=>{
+test('reduced motion shortens casting but keeps three seconds of masked answers',()=>{
   const s=state();s.correct=11;s.index=11;s.bossHp=49;s.guardianReducedMotion=true;
   rules.answer(s,true,100);rules.advance(s,250);assert.equal(s.guardianPhase,'beam-charge');
-  rules.advance(s,300);assert.equal(s.guardianBlindMs,5000);
-  rules.advance(s,5000);assert.equal(s.guardianPhase,'idle');
+  rules.advance(s,300);assert.equal(s.guardianBlindMs,3000);
+  rules.advance(s,3000);assert.equal(s.guardianPhase,'idle');
 });
-test('hidden choices are omitted from rendered HTML and keyboard/direct input cannot bypass the effect',()=>{
-  const s=state();s.question={choices:['숨겨야 하는 정답','보기2','보기3','보기4'],answer:'숨겨야 하는 정답',prompt:'treasure',mode:'en-ko'};s.deck=Array(60);s.guardianBlindMs=5000;s.locked=true;s.storyTimeLimit=180000;s.elapsed=0;
-  const c=vm.createContext({run:s,esc:String,deployedAssetUrl:String,royalSlimeTime:()=>'',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',storyBattleActions:()=>'',window:{WORDORIA_GUARDIAN:rules}});
+test('masked choices show only their ends and accept answers immediately on beam contact',()=>{
+  const s=state();s.question={entry:['treasure','n','숨겨야 하는 정답'],choices:['숨겨야 하는 정답','보기2','보기3','보기4'],answer:'숨겨야 하는 정답',prompt:'treasure',mode:'en-ko'};s.deck=Array(60);s.guardianBlindMs=3000;s.guardianPhase='beam-hold';s.guardianRemaining=300;s.storyTimeLimit=180000;s.elapsed=0;
+  const c=vm.createContext({run:s,esc:String,deployedAssetUrl:String,royalSlimeTime:()=>'',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',storyBattleActions:()=>'',render(){},battleContactDelay:()=>200,speak(){},performance:{now:()=>1000},window:{WORDORIA_GUARDIAN:rules}});
   vm.runInContext(runtime.slice(runtime.indexOf('  function renderGuardianBattle('),runtime.indexOf('  function advanceGuardianBattle(')),c);
-  assert.ok(!c.renderGuardianBattle().includes('숨겨야 하는 정답'));
-  c.guardianAnswer(0);assert.equal(s.correct,0);
+  const html=c.renderGuardianBattle();
+  assert.ok(!html.includes('숨겨야 하는 정답'));assert.ok(html.includes('숨◆◆ ◆◆ ◆답'));assert.ok(!html.includes('disabled'));
+  c.guardianAnswer(0);assert.equal(s.correct,1);assert.equal(s.guardianBlindMs,3000);
+  rules.advance(s,500);assert.equal(s.bossHp,59);assert.equal(s.locked,false);assert.equal(s.guardianBlindMs,2500);
+  rules.answer(s,false,200);rules.advance(s,500);assert.equal(s.hp,2);assert.equal(s.guardianBlindMs,2000);
+  rules.advance(s,1999);assert.equal(s.guardianBlindMs,1);
+  assert.ok(rules.advance(s,1).includes('blind-end'));assert.equal(s.guardianBlindMs,0);
+  assert.ok(c.renderGuardianBattle().includes('숨겨야 하는 정답'));
+  assert.equal(rules.maskChoice('treasure'),'t◆◆◆◆◆◆e');
+  assert.equal(rules.maskChoice('보물 상자'),'보◆ ◆자');
+  assert.equal(rules.maskChoice('[명] 보물 상자'),'보◆ ◆자');
+  assert.equal(rules.maskChoice('  [동]   살아남다  '),'살◆◆다');
+  assert.equal(rules.maskChoice('[형] 아름다운'),'아◆◆운');
+  assert.equal(rules.maskChoice('[명] [동] 기록하다'),'기◆◆다');
+  assert.equal(rules.maskChoice('  treasure  '),'t◆◆◆◆◆◆e');
+  assert.equal(rules.maskChoice('[명]   '),'');
+  assert.equal(rules.maskChoice('가'),'가');assert.equal(rules.maskChoice('ab'),'ab');
   assert.match(runtime,/if\(run\.guardian\)\{advanceGuardianBattle\(delta\);return;\}/);
   assert.match(runtime,/if\(run\?\.guardian\)\{guardianAnswer\(index\);return;\}/);
 });
@@ -79,11 +94,22 @@ test('runtime pauses blindness, advances to the next hidden question on beam con
   const c=vm.createContext({run:s,window:{WORDORIA_GUARDIAN:rules},updateWarriorSlash(){},prepareQuestion(){questions++;},render(){renders++;},finishBattle(){assert.fail('unexpected finish');},emitAudio(){},document:{querySelector(){return null;},dispatchEvent(){}},CustomEvent:class{},$:()=>null,royalSlimeTime:()=>''});
   vm.runInContext(runtime.slice(runtime.indexOf('  function advanceGuardianBattle('),runtime.indexOf('  function renderRoyalSlimeBattle(')),c);
   s.paused=true;c.advanceGuardianBattle(2000);assert.equal(s.guardianRemaining,600);assert.equal(s.elapsed,0);
-  s.paused=false;c.advanceGuardianBattle(600);assert.equal(questions,1);assert.equal(s.guardianBlindMs,5000);
-  s.paused=true;c.advanceGuardianBattle(5000);assert.equal(s.guardianBlindMs,5000);
-  s.paused=false;c.advanceGuardianBattle(5000);assert.equal(s.guardianBlindMs,0);assert.equal(s.locked,false);
+  s.paused=false;c.advanceGuardianBattle(600);assert.equal(questions,1);assert.equal(s.guardianBlindMs,3000);
+  s.paused=true;c.advanceGuardianBattle(3000);assert.equal(s.guardianBlindMs,3000);
+  s.paused=false;c.advanceGuardianBattle(3000);assert.equal(s.guardianBlindMs,0);assert.equal(s.locked,false);
   questions=0;renders=0;Object.assign(s,state());s.elapsed=0;s.storyTimeLimit=180000;s.deck=Array(60);
   rules.answer(s,true,200);c.advanceGuardianBattle(200);assert.equal(renders,0);assert.equal(s.bossHp,59);
+});
+test('guardian gets 210 seconds on start and retry and times out at the new boundary',()=>{
+  const s={...state(),elapsed:0,deck:Array(60)};
+  let result;
+  const c=vm.createContext({run:s,window:{WORDORIA_GUARDIAN:rules},updateWarriorSlash(){},render(){},finishBattle(clear,reason){result={clear,reason};},document:{querySelector:()=>null},$:()=>null,royalSlimeTime:()=>''});
+  vm.runInContext(runtime.slice(runtime.indexOf('  function advanceGuardianBattle('),runtime.indexOf('  function renderRoyalSlimeBattle(')),c);
+  assert.equal(s.storyTimeLimit,210000);
+  c.advanceGuardianBattle(180000);assert.equal(result,undefined);
+  c.advanceGuardianBattle(29999);assert.equal(result,undefined);
+  c.advanceGuardianBattle(1);assert.deepEqual(result,{clear:false,reason:'timeout'});
+  assert.equal(state().storyTimeLimit,210000);
 });
 test('guardian ice skill renders its field and freezes the clock until an answer releases it',()=>{
   const s={...state(),story:true,mp:2,mpMax:2,elapsed:0,storyTimeLimit:180000,deck:Array(60),question:{entry:['treasure','n','보물'],choices:['보물','보기2'],answer:'보물',prompt:'treasure',mode:'en-ko'}};
@@ -106,14 +132,14 @@ function resultContext(localMode=true){
   vm.runInContext(runtime.slice(runtime.indexOf('  function completeStoryDialogue('),runtime.indexOf('  function storyDialogueLines(')),c);
   return {c,pages};
 }
-test('guardian victory waits for ending before the fixed 200 reward and never pays twice',async()=>{
+test('guardian victory waits for ending before the fixed 400 reward and never pays twice',async()=>{
   const {c,pages}=resultContext();c.finishGuardianBattle(true,'boss-defeated');
   assert.deepEqual(pages,['storyChapterTwoBossEnd']);assert.equal(c.selectedCharacter.coins,10);assert.equal(c.demoState.records.length,0);
-  c.completeStoryDialogue();assert.equal(c.page,'bossResult');assert.equal(c.selectedCharacter.coins,210);assert.equal(c.run.bossReward,200);
-  assert.match(c.renderGuardianResult(),/\+200 크리스털/);
-  await c.claimGuardianReward();assert.equal(c.selectedCharacter.coins,210);
+  c.completeStoryDialogue();assert.equal(c.page,'bossResult');assert.equal(c.selectedCharacter.coins,410);assert.equal(c.run.bossReward,400);
+  assert.match(c.renderGuardianResult(),/\+400 크리스털/);
+  await c.claimGuardianReward();assert.equal(c.selectedCharacter.coins,410);
   c.run={...state(),guardian:true,correct:60,bossHp:0,elapsed:120000,clear:true};await c.claimGuardianReward();
-  assert.equal(c.run.bossReward,0);assert.equal(c.selectedCharacter.coins,210);
+  assert.equal(c.run.bossReward,0);assert.equal(c.selectedCharacter.coins,410);
 });
 test('guardian defeat shows the boss and retry/leave without clear records or rewards',()=>{
   for(const reason of ['hp-zero','timeout']){
@@ -124,9 +150,9 @@ test('guardian defeat shows the boss and retry/leave without clear records or re
 });
 test('guardian remote reward retries failed saves and keeps stage progression after success',async()=>{
   const {c}=resultContext(false);c.run.clear=true;c.page='bossResult';let calls=0;
-  c.rpc=async(name,params)=>{assert.equal(name,'claim_guardian_boss_reward');assert.equal(params.p_correct,60);if(++calls===1)throw new Error('network');return [{game_score_id:123,reward:200,balance:210}];};
+  c.rpc=async(name,params)=>{assert.equal(name,'claim_guardian_boss_reward');assert.equal(params.p_correct,60);if(++calls===1)throw new Error('network');return [{game_score_id:123,reward:400,balance:410}];};
   await c.claimGuardianReward();assert.equal(c.run.rewardError,true);assert.equal(c.records.length,0);
-  await c.claimGuardianReward();assert.equal(c.run.rewardError,false);assert.equal(c.accountCrystals,210);assert.equal(c.records[0].cleared,true);
+  await c.claimGuardianReward();assert.equal(c.run.rewardError,false);assert.equal(c.accountCrystals,410);assert.equal(c.records[0].cleared,true);
   await c.claimGuardianReward();assert.equal(calls,2);
   assert.match(runtime,/action==='guardian-retry'\)\{startBattle\(\);\}/);
   assert.match(runtime,/action==='guardian-leave'\)\{selectedStoryWorld=2;/);
