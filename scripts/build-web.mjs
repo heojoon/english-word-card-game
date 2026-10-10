@@ -21,6 +21,7 @@ const files = [
   'character-select-concepts.js',
   'crystal-game.css',
   'crystal-game.js',
+  'story-novel.js',
   'sound-manager.js',
   'native-bridge.js',
   'stages.js',

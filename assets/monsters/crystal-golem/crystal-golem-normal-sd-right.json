@@ -1,0 +1,17 @@
+{
+  "image": "crystal-golem-normal-sd-right.png",
+  "tool": "built-in image_gen",
+  "reference": "User attachment codex-clipboard-e55fc3c1-04ca-4353-a6ea-7cc87d562d07.png",
+  "facing": "right",
+  "action": "idle identity; existing CSS battle feedback",
+  "frameCount": 1,
+  "layout": "single full-body image",
+  "displayCell": {
+    "width": 102,
+    "height": 102
+  },
+  "prompt": "Use case: style-transfer. Edit target: attached crystal golem. Asset: Worldoria Crystal Quest world 2 battle enemy, single full-body transparent PNG.\nWORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on crystal light and magical glow, large readable silhouette, elegant rounded shapes contrasted with clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light.\nKeep this exact golem identity: blue-violet faceted crystal body, cyan/mint chest core, red glowing eyes, massive crystal fists and shoulder blocks, dark blue joints. Rework proportions into compact SD/chibi about 2.5 heads tall: noticeably larger head, short stout legs, compact torso, enormous readable fists. Rotate entire body and gaze to unmistakable RIGHT-facing three-quarter side battle stance; nose/face plane points to image right, front fist ready toward image right. Preserve recognizable crystal design and vivid colors. All feet, hands, shoulder crystals and head fully inside frame, with generous transparent margin. Crisp polished 2D game sprite readable at 128px. Isolated single subject, true transparent alpha background, no floor, no frame, no text. Avoid front-facing pose, left-facing pose, scenery, shadow floor, pixel art, 3D render, noisy tiny facets, horror.",
+  "reviewStatus": "Identity and alpha reviewed; build passed",
+  "runtimeFacing": "left",
+  "runtimeTransform": "scaleX(-1) on image only; preserve enemy approach and reaction transforms"
+}

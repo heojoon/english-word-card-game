@@ -1,0 +1,6 @@
+interface:
+  display_name: "Crystal Quest 월드맵"
+  short_description: "기준 그림체와 스테이지 경로를 유지하는 월드맵 이미지 생성 및 적용"
+  default_prompt: "Use $crystal-quest-world-map to generate a Wordoria world map using its canonical style reference and waypoint rules."
+policy:
+  allow_implicit_invocation: true

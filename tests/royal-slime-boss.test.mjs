@@ -20,6 +20,8 @@ function setup(wordCount=13){
     document:{dispatchEvent(){},querySelector:()=>node()},
   });
   vm.runInContext(source.slice(source.indexOf('  const ROYAL_SLIME_REWARD='),source.indexOf('  function renderBattle(){')),context);
+  vm.runInContext(source.slice(source.indexOf('  function refreshStorySelections('),source.indexOf('  function syncBGM(')),context);
+  vm.runInContext(source.slice(source.indexOf('  function storyPick('),source.indexOf('  async function finishBattle(')),context);
   context.startRoyalSlimeBattle();
   const flush=()=>{while(callbacks.length)callbacks.shift()();};
   const pick=(side,id)=>context.royalSlimePick({dataset:{side,id:String(id)}});
@@ -58,6 +60,8 @@ test('absorption clamps timer to zero, ends battle, and retry resets boss withou
   for(let index=0;index<24;index++){correct();flush();}
   context.run.elapsed=280000;correct();flush();
   assert.equal(context.royalSlimeRemaining(),0);assert.equal(context.run.reason,'timeout');assert.equal(context.run.clear,false);
+  vm.runInContext(source.slice(source.indexOf('  function refreshStorySelections('),source.indexOf('  function syncBGM(')),context);
+  vm.runInContext(source.slice(source.indexOf('  function storyPick('),source.indexOf('  async function finishBattle(')),context);
   context.startRoyalSlimeBattle();assert.equal(context.pendingStoryRun,original);assert.equal(context.run.correct,0);assert.equal(context.run.timePenalty,0);assert.equal(context.run.bossHp,50);
 });
 
@@ -65,12 +69,16 @@ test('first boss victory pays exactly 200 once and failures pay nothing',()=>{
   const {context,correct,flush}=setup();
   context.finishRoyalSlimeBattle(false,'timeout');
   assert.equal(context.selectedCharacter.coins,0);assert.equal(context.demoState.records.length,0);
+  vm.runInContext(source.slice(source.indexOf('  function refreshStorySelections('),source.indexOf('  function syncBGM(')),context);
+  vm.runInContext(source.slice(source.indexOf('  function storyPick('),source.indexOf('  async function finishBattle(')),context);
   context.startRoyalSlimeBattle();
   for(let index=0;index<50;index++){correct();flush();}
   assert.equal(context.selectedCharacter.coins,0);assert.equal(context.page,'storyBossVictory');
   context.completeRoyalSlimeVictoryStory();
   assert.equal(context.selectedCharacter.coins,200);assert.equal(context.run.bossReward,200);assert.equal(context.demoState.records.length,1);
   context.claimRoyalSlimeReward();assert.equal(context.selectedCharacter.coins,200);
+  vm.runInContext(source.slice(source.indexOf('  function refreshStorySelections('),source.indexOf('  function syncBGM(')),context);
+  vm.runInContext(source.slice(source.indexOf('  function storyPick('),source.indexOf('  async function finishBattle(')),context);
   context.startRoyalSlimeBattle();
   for(let index=0;index<50;index++){correct();flush();}
   context.completeRoyalSlimeVictoryStory();
@@ -95,4 +103,12 @@ test('victory dialogue completion opens reward once and does not reopen on dupli
   context.completeRoyalSlimeVictoryStory();context.completeRoyalSlimeVictoryStory();
   assert.deepEqual(pages,['battle','storyBossVictory','bossResult']);
   assert.equal(context.demoState.records.length,1);assert.equal(context.run.bossReward,200);
+});
+test('boss accepts the next pair while the current attack is playing',()=>{
+  const {context,pick,correct,flush}=setup();correct();
+  const pair=context.run.matchEn.find(item=>!context.run.matched.has(item.id));
+  pick('ko',pair.id);pick('en',pair.id);
+  assert.equal(context.run.queuedStoryPairs.length,1);
+  flush();assert.equal(context.run.correct,2);assert.equal(context.run.bossHp,48);
+  assert.equal(context.run.attack,false);
 });

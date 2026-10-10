@@ -1,0 +1,204 @@
+{
+  "reference": "necromancer",
+  "standingHeight": 99.4375,
+  "groundBottom": 7.625,
+  "alphaThreshold": 60,
+  "variants": [
+    {
+      "id": "warrior-male",
+      "image": "warrior/char_warrior_male_sd_attack_strip.png",
+      "frameWidth": 192,
+      "frameHeight": 192,
+      "readyAlphaBounds": [
+        23,
+        14,
+        169,
+        192
+      ],
+      "displayCellHeight": 107.258,
+      "displayBottom": 7.625
+    },
+    {
+      "id": "warrior-female",
+      "image": "warrior/char_warrior_female_babypink_sd_attack_strip.png",
+      "frameWidth": 192,
+      "frameHeight": 192,
+      "readyAlphaBounds": [
+        15,
+        14,
+        177,
+        192
+      ],
+      "displayCellHeight": 107.258,
+      "displayBottom": 7.625
+    },
+    {
+      "id": "gold-male",
+      "image": "warrior/golden-radiance-skin/char_warrior_male_golden_radiance_sd_attack_strip.png",
+      "frameWidth": 512,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        56,
+        39,
+        472,
+        306
+      ],
+      "displayCellHeight": 119.176,
+      "displayBottom": 2.411
+    },
+    {
+      "id": "gold-female",
+      "image": "warrior/female-golden-radiance-skin/attack/char_warrior_female_golden_radiance_sd_attack_strip.png",
+      "frameWidth": 512,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        109,
+        56,
+        408,
+        292
+      ],
+      "displayCellHeight": 134.831,
+      "displayBottom": -4.173
+    },
+    {
+      "id": "mage-male",
+      "image": "mage/char_mage_male_sd_cast_full_strip.png",
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "readyAlphaBounds": [
+        31,
+        78,
+        341,
+        352
+      ],
+      "displayCellHeight": 139.358,
+      "displayBottom": -3.988
+    },
+    {
+      "id": "mage-female",
+      "image": "mage/char_mage_female_sd_cast_full_strip.png",
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "readyAlphaBounds": [
+        25,
+        45,
+        358,
+        342
+      ],
+      "displayCellHeight": 128.566,
+      "displayBottom": -6.437
+    },
+    {
+      "id": "necromancer",
+      "image": "mage/arcane-necromancer-skin/char_mage_male_arcane_necromancer_sd_attack_strip.png",
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        72,
+        95,
+        248,
+        310
+      ],
+      "displayCellHeight": 148.0,
+      "displayBottom": 3.0
+    },
+    {
+      "id": "starlight",
+      "image": "mage/starlight-rose-skin/char_mage_female_starlight_rose_sd_idle_strip.png",
+      "frameWidth": 384,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        30,
+        37,
+        305,
+        312
+      ],
+      "displayCellHeight": 115.709,
+      "displayBottom": 4.732
+    },
+    {
+      "id": "fighter-male",
+      "image": "fighter/char_fighter_male_sd_attack_strip.png",
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        47,
+        16,
+        272,
+        312
+      ],
+      "displayCellHeight": 107.5,
+      "displayBottom": 4.938
+    },
+    {
+      "id": "fighter-female",
+      "image": "fighter/char_fighter_female_sd_attack_strip.png",
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        39,
+        35,
+        281,
+        305
+      ],
+      "displayCellHeight": 117.852,
+      "displayBottom": 2.101
+    },
+    {
+      "id": "noir",
+      "image": "fighter/crystal-noir-skin/char_fighter_male_crystal_noir_sd_attack_strip.png",
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        68,
+        15,
+        260,
+        312
+      ],
+      "displayCellHeight": 107.138,
+      "displayBottom": 4.947
+    },
+    {
+      "id": "rose",
+      "image": "fighter/crystal-rose-skin/char_fighter_female_crystal_rose_sd_attack_strip.png",
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        81,
+        74,
+        243,
+        294
+      ],
+      "displayCellHeight": 144.636,
+      "displayBottom": -4.127
+    },
+    {
+      "id": "ranger-male",
+      "image": "ranger/char_ranger_male_sd_attack_strip.png",
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        73,
+        58,
+        250,
+        302
+      ],
+      "displayCellHeight": 130.41,
+      "displayBottom": 0.289
+    },
+    {
+      "id": "ranger-female",
+      "image": "ranger/char_ranger_female_sd_attack_strip.png",
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "readyAlphaBounds": [
+        69,
+        54,
+        250,
+        291
+      ],
+      "displayCellHeight": 134.262,
+      "displayBottom": -4.542
+    }
+  ]
+}

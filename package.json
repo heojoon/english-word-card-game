@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/dev-server.mjs",
     "test": "node --test tests/*.test.mjs",
-    "build": "node --check crystal-game.js && npm run build:content && npm run build:native && npm run build:auth && npm run build:creator && node scripts/build-web.mjs",
+    "build": "npm run build:novel && node --check crystal-game.js && npm run build:content && npm run build:native && npm run build:auth && npm run build:creator && node scripts/build-web.mjs",
     "build:content": "node scripts/generate-content-catalog.mjs",
     "build:native": "esbuild mobile/native-entry.js --bundle --format=iife --minify --outfile=native-bridge.js",
     "build:auth": "esbuild title-screen-entry.js --bundle --format=iife --minify --outfile=title-screen.js",
@@ -14,7 +14,8 @@
     "android:sync": "npm run build && cap sync android",
     "android:open": "npm run android:sync && cap open android",
     "android:debug": "npm run android:sync && cd android && ./gradlew assembleDebug",
-    "android:bundle": "npm run android:sync && cd android && ./gradlew bundleRelease"
+    "android:bundle": "npm run android:sync && cd android && ./gradlew bundleRelease",
+    "build:novel": "node scripts/generate-story-novel.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.1",

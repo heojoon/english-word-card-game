@@ -377,6 +377,10 @@ Output: [가로세로비와 해상도], no characters, no monsters, no text, no 
 [고정 금지 블록]
 ```
 
+### 12.8 스토리 월드맵 전용 규격
+
+월드맵 이미지 생성·재생성·편집에는 [WORLD_MAP_IMAGE_GUIDE.md](WORLD_MAP_IMAGE_GUIDE.md)와 `.agents/skills/crystal-quest-world-map/SKILL.md`를 함께 사용한다. 매번 `assets/story/chapter-1-library-map.webp`를 그림체 원본으로 첨부하며, 따뜻한 햇빛·부드러운 회화적 채색·섬세한 식생과 석재·청록색 물·보라색 수정·구름의 깊이감을 유지한다. 캐릭터용 굵은 선화나 셀 셰이딩을 월드맵 환경에 강제하지 않는다. 전투 배경과 월드맵은 별도 구도 규격을 사용한다.
+
 ## 13. 생성 일관성 운영 규칙
 
 스타일 프롬프트만으로는 동일 캐릭터를 완전히 고정할 수 없다. 아래 제작 절차를 함께 지킨다.

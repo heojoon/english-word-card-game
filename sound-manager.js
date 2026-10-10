@@ -22,7 +22,7 @@
       this.lastVariant = new Map();
       this.missingWarnings = new Set();
       this.unlocked = false;
-      this.settings = { masterVolume: 0.8, bgmVolume: 0.5, sfxVolume: 0.75, muted: false };
+      this.settings = { masterVolume: 0.8, bgmVolume: 0.5, sfxVolume: 0.75, muted: false, bgmMuted: false };
       this.ready = this.loadManifest();
       this.installUnlockHandlers();
     }
@@ -70,7 +70,7 @@
       if (!this.context) return;
       const time = now(this.context);
       this.masterGain.gain.setValueAtTime(this.settings.muted ? 0 : clamp(this.settings.masterVolume), time);
-      this.bgmGain.gain.setValueAtTime(clamp(this.settings.bgmVolume), time);
+      this.bgmGain.gain.setValueAtTime(this.settings.bgmMuted ? 0 : clamp(this.settings.bgmVolume), time);
       this.sfxGain.gain.setValueAtTime(clamp(this.settings.sfxVolume), time);
     }
 
@@ -274,6 +274,7 @@
 
     setMasterVolume(value) { this.settings.masterVolume = clamp(value); this.saveSettings(); }
     setBGMVolume(value) { this.settings.bgmVolume = clamp(value); this.saveSettings(); }
+    setBGMMuted(value) { this.settings.bgmMuted = Boolean(value); this.saveSettings(); }
     setSFXVolume(value) { this.settings.sfxVolume = clamp(value); this.saveSettings(); }
     mute() { this.settings.muted = true; this.saveSettings(); }
     unmute() { this.settings.muted = false; this.saveSettings(); }

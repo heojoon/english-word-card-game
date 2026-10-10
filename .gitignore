@@ -16,6 +16,8 @@ android/build/
 .agents/skills/*
 !.agents/skills/game-audio/
 !.agents/skills/game-audio/**
+!.agents/skills/crystal-quest-world-map/
+!.agents/skills/crystal-quest-world-map/**
 supabase/functions/.env
 assets/characters/warrior/review/
 

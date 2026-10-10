@@ -1,0 +1,22 @@
+{
+  "tool": "image_gen.imagegen",
+  "assets": [
+    {
+      "key": "temple",
+      "prompt": "Use case: illustration-story. Wordoria Crystal Quest Illustration: bright high-end mobile RPG 2D anime fantasy, clean anime linework + polished soft cel painting, readable large silhouettes, deep navy-violet outlines, 3-step cel shading with soft gradients, faceted translucent blue/violet crystals, mint magical light, restrained gold. Friendly adventure for upper-elementary/middle-school learners, no horror, no photorealism, no pixel art, no text or watermark. Asset: portrait 1024x1536 visual novel background, no characters. Vast majestic crystal temple interior, huge blue crystal pillar in center distance, glowing crystals covering tall arched ceiling and walls, polished pale moon-white floor reflecting violet and mint light. Camera eye level, foreground floor open for character portraits, central composition remains readable cropped to mobile portrait. Soft upper-left daylight, luminous and wondrous.",
+      "transparent_background": false
+    },
+    {
+      "key": "spirit",
+      "prompt": "Use case: illustration-story. Wordoria Crystal Quest Illustration: bright high-end mobile RPG 2D anime fantasy, clean anime linework + polished soft cel painting, readable large silhouettes, deep navy-violet outlines, 3-step cel shading with soft gradients, faceted translucent blue/violet crystals, mint magical light, restrained gold. Friendly adventure for upper-elementary/middle-school learners, no horror, no photorealism, no pixel art, no text or watermark. Asset: transparent full-body standing CG, one small adorable winged crystal spirit. Round faceted aqua crystal body, two large expressive navy-violet eyes, tiny hands and feet, translucent mint-blue crystal wings spread, blue-violet crystal crest, startled innocent expression. Centered complete silhouette with ample clear margins, no environment, actual transparent alpha. No ground shadow.",
+      "transparent_background": true
+    },
+    {
+      "key": "golem",
+      "prompt": "Use case: illustration-story. Wordoria Crystal Quest Illustration: bright high-end mobile RPG 2D anime fantasy, clean anime linework + polished soft cel painting, readable large silhouettes, deep navy-violet outlines, 3-step cel shading with soft gradients, faceted translucent blue/violet crystals, mint magical light, restrained gold. Friendly adventure for upper-elementary/middle-school learners, no horror, no photorealism, no pixel art, no text or watermark. Asset: transparent full-body standing CG, one huge guardian crystal golem. Broad chunky humanoid body assembled from large faceted blue and violet crystals, huge fists, short powerful legs, ruby-red glowing eyes, a luminous mint crystal core, commanding protective pose, not frightening. Three-quarter front view, full silhouette feet and fists visible with clear margins. Actual transparent alpha, no scenery, no ground shadow.",
+      "transparent_background": true,
+      "role": "midboss",
+      "output": "assets/monsters/crystal-golem/crystal-golem-midboss.png"
+    }
+  ]
+}

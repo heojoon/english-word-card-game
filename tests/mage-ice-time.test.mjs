@@ -7,6 +7,7 @@ function setup(){
   const entries=Array.from({length:10},(_,i)=>({entry:[`word${i}`,'n',`뜻${i}`],mode:'en-ko'}));
   const c=vm.createContext({run:{story:true,mp:1,mpMax:1,index:0,correct:0,hp:2,deck:entries,matchBoard:entries.slice(0,5),matched:new Set(),matchEn:entries.slice(0,5).map((x,id)=>({...x,id})),selectedKo:null,selectedEn:null,slashExpiresAt:0,elapsed:0,storyTimeLimit:30000,mobs:[]},selectedCharacter:{class:'mage'},performance:{now:()=>1000},render(){},emitAudio(){},speak(){},equippedMap:()=>({}),itemById(){},battleContactDelay:()=>100,reducedMotion:()=>true,document:{dispatchEvent(){},querySelector(){return null;}},CustomEvent:class{},$:()=>null,setTimeout:(fn)=>{c.pending.push(fn);return 1;},clearTimeout(){},clearInterval(){},setInterval:(fn)=>{c.tickCallback=fn;return 1;},pending:[],STORY_QUESTIONS_PER_TURN:5});
   vm.runInContext(source.slice(source.indexOf('  function canActivateMageIceTime()'),source.indexOf('  function updateWarriorSlash(')),c);
+  vm.runInContext(source.slice(source.indexOf('  function refreshStorySelections('),source.indexOf('  function syncBGM(')),c);
   vm.runInContext(source.slice(source.indexOf('  function storyPick('),source.indexOf('  async function finishBattle(')),c);
   return c;
 }
@@ -36,6 +37,8 @@ test('a new wave resets ice while retaining consumed MP',()=>{
   c.activateMageIceTime();c.run.index=5;c.prepareQuestion();assert.equal(c.run.iceTimeActive,false);assert.equal(c.run.mp,0);
 });
 test('last wave releases ice before the fever transition',()=>{
-  const c=setup();c.run.index=9;c.run.matched=new Set([0,1,2,3]);c.beginFeverIntro=()=>{};
-  c.activateMageIceTime();pick(c,'ko',4);pick(c,'en',4);assert.equal(c.run.iceTimeActive,false);assert.equal(c.run.feverTransition,true);
+  const c=setup();c.run.index=9;c.run.matched=new Set([0,1,2,3]);c.enterFeverTime=()=>{};
+  const intro=source.indexOf('  function beginFeverIntro(');vm.runInContext(source.slice(intro,source.indexOf('\n',intro)),c);
+  c.activateMageIceTime();pick(c,'ko',4);pick(c,'en',4);assert.equal(c.run.iceTimeActive,true);assert.equal(Boolean(c.run.feverTransition),false);
+  c.pending.at(-1)();assert.equal(c.run.iceTimeActive,false);assert.equal(c.run.feverTransition,true);
 });

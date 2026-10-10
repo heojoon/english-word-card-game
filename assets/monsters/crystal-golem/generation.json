@@ -1,0 +1,17 @@
+{
+  "tool": "image_gen.imagegen",
+  "assets": [
+    {
+      "filename": "crystal-golem-midboss.png",
+      "role": "midboss",
+      "sourcePrompt": "../../story/chapter-2-prologue/generation-prompts.json"
+    },
+    {
+      "filename": "crystal-golem-normal.png",
+      "role": "normal-monster",
+      "transparent_background": true,
+      "reference": "crystal-golem-midboss.png",
+      "prompt": "Use case: stylized-concept. Asset: transparent full-body ordinary crystal golem monster illustration for Wordoria Crystal Quest. The reference is the ornate midboss; create its MUCH SIMPLER, smaller ordinary monster counterpart in the same polished 2D anime fantasy rendering. Body constructed ONLY from chunky unadorned blue and violet crystal rocks: compact broad torso, simple blocky shoulders, huge plain crystal fists, short sturdy legs, small blunt crystal head with two small glowing red eyes. Only a few large flat crystal facets and restrained highlights, an unframed small mint glow inside the torso. NO gold anywhere, NO armor, NO metallic trim, NO jewelry, NO runes, NO clothing, NO crown, NO decorative spikes or wing shapes, NO ornamentation. Friendly casual RPG creature with a readable simple silhouette, approximately three heads tall. Three-quarter front view, neutral grounded ready pose, complete head/hands/feet visible, generous 8% empty margin on every edge. Clean navy-violet anime outlines, clear soft cel shading, soft upper-left light, bright blue-violet-mint palette matching the reference. Actual transparent alpha background, no floor, no cast shadow, no scenery, no words, no watermark. This is a standalone ordinary monster asset, not an animation strip."
+    }
+  ]
+}

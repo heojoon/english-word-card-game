@@ -51,6 +51,15 @@ Treat Direction 01 as a locked product decision. Do not switch to the Arcade Gui
 
 Keep visual work mobile-first, readable for upper-elementary and middle-school learners, and consistent with the `Study = Battle` loop. Gameplay information must remain clearer than decorative art.
 
+## World map image generation
+
+Before generating, regenerating, editing, or integrating a Story world-map image, read `WORLD_MAP_IMAGE_GUIDE.md` and use the `crystal-quest-world-map` skill at `.agents/skills/crystal-quest-world-map/SKILL.md` together with the available `imagegen` skill. Follow this workflow regardless of which image-generation tool is requested.
+
+- Always inspect and attach `assets/story/chapter-1-library-map.webp` as the authoritative style reference; distinguish it from the target map's layout reference.
+- Use the guide's fixed style and negative prompt blocks. Preserve its painterly lighting, foliage, stone, crystal materials, and atmospheric depth. Do not substitute low-poly toy-like rendering or apply character cel-shading rules to map scenery.
+- Read the target world's actual stage count, order, aspect ratio, and runtime coordinates before generation. Validate generated waypoint positions and browser button alignment before declaring integration complete.
+- Keep generation originals and runtime files separate and record the complete prompt, references, dimensions, actual waypoint positions, and review status beside the image. Do not overwrite unrelated assets or claim user approval from technical review alone.
+
 ## SD character battle sprite animation
 
 All production battle scenes must use animated Crystal Quest SD/chibi character sprites. Treat static profile portraits in battle as temporary fallback content only; replace them with SD sprite animation as each class and gender variant becomes available. Do not convert the game to pixel art.

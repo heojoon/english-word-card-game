@@ -73,7 +73,14 @@ test('SFX overlap, BGM loop, volumes, mute, and persistence', async () => {
   assert.equal(manager.masterGain.gain.value, 0);
   manager.unmute();
   assert.equal(manager.masterGain.gain.value, 0.4);
-  assert.deepEqual(JSON.parse(storageData.get('test.audio')), { masterVolume: 0.4, bgmVolume: 0.3, sfxVolume: 0.2, muted: false });
+  manager.setBGMMuted(true);
+  assert.equal(manager.bgmGain.gain.value, 0);
+  assert.equal(manager.sfxGain.gain.value, 0.2);
+  assert.equal(manager.masterGain.gain.value, 0.4);
+  assert.equal(JSON.parse(storageData.get('test.audio')).bgmMuted, true);
+  manager.setBGMMuted(false);
+  assert.equal(manager.bgmGain.gain.value, 0.3);
+  assert.deepEqual(JSON.parse(storageData.get('test.audio')), { masterVolume: 0.4, bgmVolume: 0.3, sfxVolume: 0.2, muted: false, bgmMuted: false });
 });
 
 test('preload tolerates failures and release removes decoded buffers', async () => {
