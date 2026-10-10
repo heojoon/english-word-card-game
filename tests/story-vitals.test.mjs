@@ -78,3 +78,30 @@ test('recovery from inventory preserves two equipped mana potions',async()=>{
     await c.recoverStoryHp('one',{});assert.equal(c.storyVitals().hp,1);assert.equal(c.potionInventory.equipped_slot_1,'blue');assert.equal(c.potionInventory.equipped_slot_2,'blue');assert.equal(c.potionInventory.blue_potion_count,before);
   }
 });
+
+test('production JSON potion response recovers HP 0 through the real HTTP RPC wrapper',async()=>{
+  for(const equipped of [false,true]){
+    const storage=new Map(),c=setup(storage,false),requests=[];c.saveStoryVitals({hp:0,mp:0});
+    if(equipped)c.potionInventory.equipped_slot_1='red';
+    const before=c.storyHealingCount();
+    Object.assign(c,{DB_URL:'https://test.invalid',DB_KEY:'test-key',accountSession:{access_token:'test-token'},fetchWithTimeout:async(url,options)=>{
+      requests.push({url,body:JSON.parse(options.body)});
+      const inventory={red_potion_count:equipped?2:1,blue_potion_count:1,equipped_slot_1:'red',equipped_slot_2:'blue'};
+      const result=url.endsWith('/equip_story_potions')?[inventory]:{...inventory,type:'red',equipped_slot_1:null};
+      return {ok:true,text:async()=>JSON.stringify(result)};
+    }});
+    vm.runInContext(source.slice(source.indexOf('  function headers('),source.indexOf('  const characterDef =')),c);
+    await c.recoverStoryHp('two',{});
+    assert.equal(c.storyVitals().hp,1);assert.equal(c.storyVitals().mp,0);assert.equal(c.storyHealingCount(),before-1);
+    assert.equal(c.potionInventory.equipped_slot_1,null);assert.equal(c.potionInventory.equipped_slot_2,'blue');assert.match(c.modalHtml,/스테이지 입장/);
+    assert.equal(requests.filter(request=>request.url.endsWith('/use_story_potion')).length,1);
+    c.startStoryStage('two');assert.equal(c.page,'battle');assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
+    assert.equal(setup(storage,false).storyVitals().hp,1);
+  }
+});
+
+test('wrong potion response cannot recover HP',async()=>{
+  const c=setup(new Map(),false);c.saveStoryVitals({hp:0,mp:0});c.potionInventory.equipped_slot_1='red';
+  c.rpc=async()=>({type:'blue',red_potion_count:2,blue_potion_count:1,equipped_slot_1:null,equipped_slot_2:'blue'});
+  await c.recoverStoryHp('one',{});assert.equal(c.storyVitals().hp,0);assert.match(c.message,/사용하지 못했어요/);
+});

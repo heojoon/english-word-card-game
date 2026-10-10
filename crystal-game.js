@@ -841,8 +841,12 @@
       if(localMode){potionInventory={...potionInventory,[`equipped_slot_${index+1}`]:null};demoState.potionInventory={...(demoState.potionInventory||{}),[selectedCharacter.id]:potionInventory};saveDemo();}
       else{
         const used=await rpc('use_story_potion',{p_character_id:selectedCharacter.id,p_slot_index:index+1});
-        if(used!=='red')throw new Error('unexpected potion');
-        potionInventory={...potionInventory,[`equipped_slot_${index+1}`]:null};
+        // Production returns JSON inventory; older servers returned the potion type.
+        const usedType=typeof used==='string'?used:used?.type;
+        if(usedType!=='red')throw new Error('unexpected potion');
+        potionInventory=typeof used==='object'&&used!==null
+          ?{red_potion_count:used.red_potion_count,blue_potion_count:used.blue_potion_count,equipped_slot_1:used.equipped_slot_1,equipped_slot_2:used.equipped_slot_2}
+          :{...potionInventory,[`equipped_slot_${index+1}`]:null};
       }
       vitals.hp=Math.min(vitals.hpMax,vitals.hp+1);saveStoryVitals(vitals);
       if(restoreLoadout){
