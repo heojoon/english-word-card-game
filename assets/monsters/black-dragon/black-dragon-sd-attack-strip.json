@@ -1,0 +1,32 @@
+{
+  "image": "black-dragon-sd-attack-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "cellSizeReason": "Wide complete dragon wings; keep body scale and effects readable.",
+  "scale": 0.47,
+  "groundLinePx": 374,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 300
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 300
+    },
+    {
+      "name": "absorb-contact",
+      "durationMs": 700,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline alpha, bounds and frame review complete; browser unverified; user approval not inferred"
+}

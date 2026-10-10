@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-11",
+  "tool": "built-in image_gen",
+  "purpose": "World 3 stage 8 Black Dragon boss battle background",
+  "reference": "User-attached codex-clipboard-035a916d-3e77-4631-b95d-264b88fa9a60.jpg (ruined subterranean crystal arena; atmosphere and architecture reference)",
+  "promptFile": "output/imagegen/world-3-boss/08-black-dragon-crystal-arena-prompt.txt",
+  "sourceFile": "output/imagegen/world-3-boss/08-black-dragon-crystal-arena-source.png",
+  "runtimeFile": "assets/environments/world-3/08-black-dragon-crystal-arena.webp",
+  "width": 1774,
+  "height": 887,
+  "webpQuality": 88,
+  "runtimeSelector": "body[data-screen=\"battle\"] .arena.black-dragon-arena",
+  "runtimePosition": "center bottom / cover",
+  "review": "Source and runtime image visually inspected; open combat floor and luminous background retained. Browser review not requested.",
+  "approval": "User requested creation and integration; generated result has not received separate visual approval."
+}

@@ -1,0 +1,62 @@
+{
+  "identityReference": "source/design-reference.png",
+  "facing": "left",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "actions": {
+    "idle": {
+      "frames": 2,
+      "names": [
+        "ready",
+        "breathe"
+      ],
+      "durationsMs": [
+        600,
+        600
+      ]
+    },
+    "attack": {
+      "frames": 3,
+      "names": [
+        "ready",
+        "anticipation",
+        "absorb-contact"
+      ],
+      "durationsMs": [
+        300,
+        300,
+        700
+      ],
+      "hitFrame": 3
+    },
+    "hit": {
+      "frames": 3,
+      "names": [
+        "guard",
+        "impact",
+        "knockdown"
+      ],
+      "durationsMs": [
+        150,
+        150,
+        700
+      ],
+      "holdLast": true
+    }
+  },
+  "prompts": {
+    "idle": "Production sprite sheet for EXACT Black Dragon identity from references. Charcoal black chibi dragon, magenta chest/wing/horn crystals, magenta eyes, face LEFT. Clean 2D anime soft cel painting. ONE row, equal square cells with EXACT 50px transparent gaps. SAME scale and bottom-center ground line across frames. Complete wings/feet/crystals in each cell with generous transparent margin; no neighboring touching, no clipping. True RGBA alpha, no labels/text/floor/backdrop. EXACT TWO frames: resting ready, gently lifted wings breathing. Two full identical dragons.",
+    "attack": "Production sprite sheet for EXACT Black Dragon identity from references. Charcoal black chibi dragon, magenta chest/wing/horn crystals, magenta eyes, face LEFT. Clean 2D anime soft cel painting. ONE row, equal square cells with EXACT 50px transparent gaps. SAME scale and bottom-center ground line across frames. Complete wings/feet/crystals in each cell with generous transparent margin; no neighboring touching, no clipping. True RGBA alpha, no labels/text/floor/backdrop. EXACT THREE frames: ready hands, anticipation opening wings, final active hands sucking purple energy vortex into chest. Hold active attack final, never recovery.",
+    "hit": "Production sprite sheet for EXACT Black Dragon identity from references. Charcoal black chibi dragon, magenta chest/wing/horn crystals, magenta eyes, face LEFT. Clean 2D anime soft cel painting. ONE row, equal square cells with EXACT 50px transparent gaps. SAME scale and bottom-center ground line across frames. Complete wings/feet/crystals in each cell with generous transparent margin; no neighboring touching, no clipping. True RGBA alpha, no labels/text/floor/backdrop. EXACT THREE frames: guard/notice standing, strongest recoil leaning back wings folded while still on feet, FINAL fully knocked down lying flat unable to stand with wings folded. No recovery. No blood or injury."
+  },
+  "references": [
+    "User supplied World 3 boss design",
+    "Initial generated identity sheet"
+  ],
+  "reviewStatus": "Offline reviewed; browser not requested; user approval not inferred"
+}

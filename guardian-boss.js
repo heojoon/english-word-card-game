@@ -25,7 +25,7 @@
     state.guardianPhase=correct?'player-attack':'wrong';
     state.guardianRemaining=correct?contactMs:500;
     state.guardianVisual='idle';state.guardianBeamHit=false;
-    if(correct){state.correct++;state.index++;state.attack=true;}
+    if(correct){state.answeredCorrect=(state.answeredCorrect||0)+1;const damage=Math.min(HP-state.correct,Math.max(1,state.bossAttackSteps||1));state.correct+=damage;state.index+=damage;state.attack=true;}
     else{state.hp=Math.max(0,state.hp-1);state.stunned=true;}
     return true;
   }
@@ -43,24 +43,26 @@
       state.guardianRemaining-=step;advanceMask(step);budget-=step;
       if(state.guardianRemaining>0)break;
       switch(state.guardianPhase){
-        case 'player-attack':
-          state.bossHp=HP-state.correct;state.guardianVisual=state.bossHp?'hit':'defeat';events.push('hit');
-          if(THRESHOLDS.includes(state.bossHp)&&!state.guardianThresholds.includes(state.bossHp)){
-            state.guardianThresholds.push(state.bossHp);state.guardianPendingBeam=true;
+        case 'player-attack':{
+          const before=state.bossHp;state.bossHp=Math.max(0,HP-state.correct);state.guardianVisual=state.bossHp?'hit':'defeat';events.push('hit');
+          for(const threshold of THRESHOLDS)if(before>threshold&&state.bossHp<=threshold&&!state.guardianThresholds.includes(threshold)){
+            state.guardianThresholds.push(threshold);state.guardianPendingBeam=true;state.guardianPendingBeams=(state.guardianPendingBeams||0)+1;
           }
           state.guardianPhase=state.bossHp?'hit':'defeat';state.guardianRemaining=(state.bossHp?300:1000)*durationScale;
-          break;
+          break;}
         case 'hit':
           state.attack=false;
           if(state.guardianPendingBeam){
-            state.guardianPendingBeam=false;state.guardianPhase='beam-charge';state.guardianRemaining=600*durationScale;state.guardianVisual='attack';state.guardianBeamHit=false;events.push('beam-start');
+            state.guardianPendingBeams=Math.max(0,(state.guardianPendingBeams||1)-1);state.guardianPendingBeam=state.guardianPendingBeams>0;state.guardianPhase='beam-charge';state.guardianRemaining=600*durationScale;state.guardianVisual='attack';state.guardianBeamHit=false;events.push('beam-start');
           }else{state.guardianPhase='idle';state.guardianVisual='idle';state.locked=false;events.push('ready');}
           break;
         case 'beam-charge':
           state.guardianBlindMs=BLIND_MS;state.guardianBeamHit=true;state.locked=false;state.guardianPhase='beam-hold';state.guardianRemaining=300*durationScale;events.push('beam-contact');
           break;
         case 'beam-hold':
-          state.guardianVisual='idle';state.guardianPhase='idle';state.guardianBeamHit=false;events.push('beam-end');break;
+          state.guardianVisual='idle';state.guardianPhase='idle';state.guardianBeamHit=false;events.push('beam-end');
+          if(state.guardianPendingBeams>0){state.locked=true;state.guardianPhase='hit';state.guardianRemaining=1;}
+          break;
         case 'wrong':
           state.stunned=false;state.guardianPhase='idle';state.locked=false;events.push(state.hp?'ready':'defeat-player');break;
         case 'defeat':

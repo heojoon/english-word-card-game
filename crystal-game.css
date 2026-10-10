@@ -148,14 +148,23 @@ html.native-app body[data-screen=battle] .battle-reward-layer{top:calc(51px + en
 @media(prefers-reduced-motion:reduce){.arena.hit .battle-hero-mage.battle-skin-mage_arcane_necromancer_skin .battle-sprite{animation-duration:.12s;animation-delay:.01s}.arena.hit .battle-hero-mage.battle-skin-mage_arcane_necromancer_skin .battle-projectile{animation-duration:.12s;animation-delay:.074s}.arena.hit:has(.battle-skin-mage_arcane_necromancer_skin) .enemy,.arena.hit:has(.battle-skin-mage_arcane_necromancer_skin) .enemy-label,.arena.hit:has(.battle-skin-mage_arcane_necromancer_skin) .crystal-shards i{animation-delay:.17s!important}}
 @media(prefers-reduced-motion:reduce){.arena.hit .battle-hero-mage:not(.battle-skin-mage_arcane_necromancer_skin) .battle-sprite{animation:mage-cast-frames .225s steps(5,end) .01s both!important}.arena.hit .battle-hero-mage:not(.battle-skin-mage_arcane_necromancer_skin) .battle-projectile{animation:necromancer-orb-frames .1s steps(5,end) .17s both,necromancer-orb-flight .1s linear .17s both!important}.arena.hit .battle-hero-mage.battle-skin-mage_arcane_necromancer_skin .battle-sprite{animation:necromancer-attack-frames .12s steps(5,end) .01s both!important}.arena.hit .battle-hero-mage.battle-skin-mage_arcane_necromancer_skin .battle-projectile{animation:necromancer-orb-frames .1s steps(5,end) .09s both,necromancer-orb-flight .1s linear .09s both!important}.arena.hit:has(.battle-hero-mage) .enemy{animation:enemy-knockout .22s ease .17s both!important}.arena.hit:has(.battle-hero-mage) .enemy-label{animation:enemy-label-out .18s ease .17s both!important}.arena.hit:has(.battle-hero-mage) .crystal-shards i{animation:crystal-shard .22s ease-out .17s both!important}}
 
+/* World 3: sky terrace (1–5), temple (6–7), hidden cave (8). */
+.arena.world-three-battle{background-color:#e9ecfa;background-size:cover;background-position:center bottom;background-repeat:no-repeat}
+.arena.world-three-waterfall{background-image:url('assets/environments/world-3/proposals/01-sky-waterfall-terrace.png')}
+.arena.world-three-temple{background-image:url('assets/environments/world-3/proposals/02-crystal-temple-courtyard.png')}
+.arena.world-three-cave{background-image:url('assets/environments/world-3/proposals/03-hidden-mint-crystal-cave.png')}
+.arena.world-three-battle:before,.arena.world-three-battle:after{content:none}
+.arena.world-three-battle .arena-floor{display:none}
+
 /* Story encounters use moving slime silhouettes; collision timing lives in the battle loop. */
 .arena .story-mob{position:absolute;z-index:4;width:48px;height:40px;border-radius:58% 58% 46% 46%;background:linear-gradient(145deg,#baf8ed,#60cfc1 68%,#43a99f);box-shadow:inset -6px -6px 0 #288f9d22,0 6px 0 #4b958d18;will-change:transform;pointer-events:none}
 .arena .story-mob:before{content:"";position:absolute;left:14px;top:14px;width:5px;height:8px;border-radius:50%;background:#345f73;box-shadow:14px 0 #345f73}
 .arena .story-mob:after{content:"";position:absolute;left:20px;top:25px;width:9px;height:4px;border-bottom:2px solid #345f73;border-radius:0 0 9px 9px}
-.arena .story-mob.crystal-golem-mob{width:102px;height:102px;background:none;border-radius:0;box-shadow:none}
-.arena .story-mob.crystal-golem-mob:before{content:"";left:18%;top:auto;bottom:2%;width:64%;height:12%;border-radius:50%;background:radial-gradient(ellipse,#24214c26,transparent 72%);box-shadow:none}
-.arena .story-mob.crystal-golem-mob:after{content:none}
-.crystal-golem-mob img{position:relative;display:block;width:100%;height:100%;object-fit:contain;transform:scaleX(-1);filter:drop-shadow(0 3px 2px #24214c30)}
+.arena .story-mob.crystal-golem-mob,.arena .story-mob.crystal-eye-serpent-mob{width:102px;height:102px;background:none;border-radius:0;box-shadow:none}
+.arena .story-mob.crystal-golem-mob:before,.arena .story-mob.crystal-eye-serpent-mob:before{content:"";left:18%;top:auto;bottom:2%;width:64%;height:12%;border-radius:50%;background:radial-gradient(ellipse,#24214c26,transparent 72%);box-shadow:none}
+.arena .story-mob.crystal-golem-mob:after,.arena .story-mob.crystal-eye-serpent-mob:after{content:none}
+.crystal-golem-mob img,.crystal-eye-serpent-mob img{position:relative;display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 2px #24214c30)}
+.crystal-golem-mob img{transform:scaleX(-1)}
 .story-next-word{display:flex;justify-content:flex-end;align-items:center;gap:7px;min-height:20px;margin:0 2px 2px;text-align:right}.story-next-word small{color:var(--muted);font-size:8px;font-weight:900;letter-spacing:.1em}.story-next-word b{max-width:62%;overflow:hidden;padding:4px 8px;border:1px solid #d9d5f7;border-radius:999px;background:#eeedff;color:var(--violet);font-size:10px;line-height:1.2;text-overflow:ellipsis;white-space:nowrap}
 .reward-journey{position:relative;width:100%;display:block;margin-top:18px;padding-top:0}.journey-caption{display:block;margin-bottom:9px;color:#6b638d;font-size:10px}.journey-track{position:relative;height:9px;border-radius:99px;background:#ddd8ed;box-shadow:inset 0 1px 3px #5751d821}.journey-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--bright),var(--mint),var(--gold));transition:width .35s}.journey-track span{position:absolute;top:50%;width:20px;height:20px;border:4px solid var(--mint);border-radius:50%;background:var(--violet);box-shadow:0 0 0 4px #60d9cf24,0 5px 12px #5751d82e;transform:translate(-50%,-50%)}
 .topbar-action{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:44px}.world-create-link{position:relative;width:42px;height:42px;display:grid;place-items:center;border:1px solid #d8d3ef;border-radius:14px;background:linear-gradient(145deg,#fff,#ebe8ff);color:var(--violet);box-shadow:0 7px 18px #5751d81c;text-decoration:none}.world-create-link svg{width:25px;height:25px;stroke-width:1.8}.world-create-link:hover{background:linear-gradient(145deg,#f8f6ff,#dfdafb)}.world-create-link:active{transform:scale(.95)}
@@ -285,6 +294,8 @@ html.native-app body[data-screen=battle] .battle-reward-layer{top:calc(51px + en
 .story-world-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 16px}.story-world-tab{display:grid;gap:5px;padding:12px 10px;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--muted);text-align:left;font-family:inherit;min-height:64px}.story-world-tab small{font-size:9px;font-weight:800}.story-world-tab b{font-size:12px;line-height:1.35}.story-world-tab.selected{border-color:var(--violet);background:#eeecff;color:var(--violet);box-shadow:0 3px 12px #5751d818}.story-world-tab:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
 .story-map-heading{margin-bottom:10px}.story-map-heading p{margin:4px 0 0;color:var(--muted);font-size:12px;font-weight:700}
 .story-world-map{position:relative;isolation:isolate;width:100%;aspect-ratio:1090/1443;overflow:hidden;border:1px solid #cbdff0;border-radius:24px;background:#c9f0f5;box-shadow:inset 0 0 0 4px #ffffff8a,0 12px 28px #3932741c}
+.story-world-map-3{aspect-ratio:1084/1451}
+.story-world-map-3 .story-map-hero{width:60px;height:60px;left:calc(var(--story-x) - 28px);top:calc(var(--story-y) - 15px)}
 .story-world-map-art{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
 .story-world-map-1 .story-world-map-art{object-fit:cover;object-position:center top}
 .story-map-navigation{position:absolute;top:10px;left:10px;right:10px;z-index:7;display:flex;justify-content:space-between;gap:8px}.story-map-region{display:flex;align-items:center;gap:5px;min-height:44px;padding:6px 9px;border:1px solid #ffffff66;border-radius:999px;background:#ffffff66;color:#24214c;font-family:inherit;font-size:10px;font-weight:800;backdrop-filter:blur(2px);cursor:pointer}.story-map-region:disabled{opacity:.5;cursor:default}.story-map-region:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
@@ -383,6 +394,15 @@ body[data-screen="battle"] .arena.royal-boss-arena{height:clamp(205px,30dvh,280p
 .story-audio-toggle:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
 
 /* World 2 prologue: crystal temple, spirit and guardian standing CGs. */
+.story-vn-scene.crystal-village-scene{background:var(--ink) url('assets/novel/bgi/world3-1-bgi.jpg') center/cover no-repeat}
+.story-vn-scene.crystal-festival-scene{background:var(--ink) url('assets/novel/bgi/world3-2-bgi.jpg') center/cover no-repeat}
+.story-vn-scene.world-three-cave-scene{background:var(--ink) url('assets/novel/bgi/world3-5-bgi.png') center/cover no-repeat}
+.story-vn-scene.world-three-mine-scene{background:var(--ink) url('assets/novel/bgi/world3-6-bgi.jpg') center/cover no-repeat}
+.story-vn-scene.world-three-lich-dragon-scene{background:var(--ink) url('assets/novel/bgi/world3-7-bgi.jpg') center/cover no-repeat}
+.story-vn-scene:is(.world-three-cave-scene,.world-three-mine-scene,.world-three-lich-dragon-scene)::before,.story-vn-scene:is(.world-three-cave-scene,.world-three-mine-scene,.world-three-lich-dragon-scene)::after,.story-vn-scene:is(.world-three-cave-scene,.world-three-mine-scene,.world-three-lich-dragon-scene) .story-vn-orb{display:none}
+.story-vn-chapter-three .story-vn-scene::before,.story-vn-chapter-three .story-vn-scene::after,.story-vn-chapter-three .story-vn-orb{display:none}
+.story-vn-character.village-child{height:clamp(190px,39vh,325px);max-width:70%}
+.story-vn-speaker.village-child{background:var(--violet)}
 .story-vn-scene.temple-scene{background:var(--ink) url('assets/story/chapter-2-prologue/crystal-temple.png') center 48%/cover no-repeat}
 .story-vn-scene.temple-scene::before,.story-vn-scene.temple-scene::after,.story-vn-chapter-two .story-vn-orb{display:none}
 .story-vn-character.spirit{height:clamp(170px,32vh,270px);max-width:65%;align-self:center;filter:drop-shadow(0 0 22px #60d9cf80)}
@@ -486,3 +506,29 @@ body:has(dialog[open]) .guardian-sprite,body:has(dialog[open]) .guardian-beam{an
 /* Shared boss energy gauge stays above the head during idle and recoil. */
 .royal-slime-boss-wrap{position:absolute;right:2%;bottom:0;width:clamp(170px,48%,230px);height:90%;max-height:calc(100% - 22px);z-index:4;pointer-events:none}
 .arena.royal-boss-arena .royal-slime-boss-wrap .royal-slime-enemy{right:0;width:100%;height:100%}
+
+/* Equipment level and EXP share the identity row. */
+.gear-level-exp{display:flex;align-items:center;gap:8px;white-space:nowrap;min-height:27px;padding:0;border:0;background:none;text-align:left}
+.gear-level-exp .level{flex:none}
+.gear-inline-exp{display:inline-flex;align-items:baseline;gap:3px;color:#e2e0ff;font-size:10px;font-variant-numeric:tabular-nums}
+.gear-inline-exp>span:first-child{color:#8ff0e5;font-size:9px;font-weight:800;letter-spacing:.03em;margin-right:2px}
+.gear-inline-exp b{color:#fff;font-size:11px;font-weight:800}
+@media(max-width:360px){.gear-level-exp{gap:5px}.gear-level-exp .level{padding:6px 8px}.gear-inline-exp{gap:2px;font-size:9px}.gear-inline-exp b{font-size:10px}.gear-inline-exp>span:first-child{font-size:8px;margin-right:0}}
+
+/* World 3: Black Dragon keeps the shared energy gauge outside sprite motion. */
+body[data-screen="battle"] .arena.black-dragon-arena{background:#373051 url('assets/environments/world-3/08-black-dragon-crystal-arena.webp') center bottom/cover no-repeat}
+.black-dragon-arena .arena-floor{display:none}
+.black-dragon-arena .guardian-idle{background-image:url('assets/monsters/black-dragon/black-dragon-sd-idle-strip.png')}
+.black-dragon-arena .guardian-attack{background-image:url('assets/monsters/black-dragon/black-dragon-sd-attack-strip.png')}
+.black-dragon-arena .guardian-hit,.black-dragon-arena .guardian-defeat{background-image:url('assets/monsters/black-dragon/black-dragon-sd-hit-strip.png')}
+.black-dragon-arena.guardian-casting .guardian-sprite{filter:drop-shadow(0 0 9px #e765f1)}
+.black-dragon-drain{position:absolute;left:22%;right:20%;top:50%;height:28%;z-index:6;pointer-events:none;border-radius:50%;background:radial-gradient(ellipse at 88% 50%,#f7d1ffb0,#aa39ce44 35%,transparent 70%)}
+.black-dragon-drain i{position:absolute;left:0;top:35%;width:14px;height:14px;border:2px solid #f2b7ff;border-radius:50%;box-shadow:0 0 10px #e95af3;animation:black-dragon-absorb .6s ease-in infinite}
+.black-dragon-drain i:nth-child(2){top:5%;animation-delay:.15s}.black-dragon-drain i:nth-child(3){top:65%;animation-delay:.3s}
+@keyframes black-dragon-absorb{from{left:0;opacity:0;transform:scale(1.3)}25%{opacity:1}to{left:90%;opacity:0;transform:scale(.25)}}
+.black-dragon-scene{background:radial-gradient(ellipse at 70% 50%,#a842a9aa,transparent 60%),linear-gradient(135deg,#332943,#6d558c)}
+.story-vn-character.black-dragon{height:95%;width:80%;object-fit:contain;right:2%;bottom:0}
+body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.black-dragon-drain i{animation:none;left:75%;opacity:1}}
+
+.black-dragon-drain-contact .guardian-attack{animation:none;background-position:100% 0}

@@ -168,17 +168,19 @@ test('world 2 unlocks after world 1 and its progression survives a level switch'
   assert.equal(context.progress.stageCleared('story-prologue'),false);
 });
 
-test('local web access unlocks only world 2 stage 7 without changing clear records',()=>{
+test('local web access unlocks every story map without changing clear records',()=>{
   const context=content('middle'),{api}=context;api.configureStoryContent();
   context.records=[];context.allCharacters=[];
   vm.runInNewContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins('))+';globalThis.progress={stageCleared,storyStageUnlocked};',context);
-  const index=api.storyStages.findIndex(stage=>stage.key==='story-ch2-7');
-  assert.equal(context.progress.storyStageUnlocked(index),false);
+  for(let index=0;index<api.storyStages.length;index++)assert.equal(context.progress.storyStageUnlocked(index),index===0);
   context.localHost=true;
-  assert.equal(context.progress.storyStageUnlocked(index),true);
-  assert.equal(context.progress.storyStageUnlocked(index-1),false);
-  assert.equal(context.progress.stageCleared('story-ch2-7'),false);
+  for(let index=0;index<api.storyStages.length;index++){
+    assert.equal(context.progress.storyStageUnlocked(index),true);
+    assert.equal(context.progress.stageCleared(api.storyStages[index].key),false);
+  }
+  assert.deepEqual(context.records,[]);
   context.nativeApp=true;
-  assert.equal(context.progress.storyStageUnlocked(index),false);
+  for(let index=0;index<api.storyStages.length;index++)assert.equal(context.progress.storyStageUnlocked(index),index===0);
   assert.equal(context.progress.storyStageUnlocked(-1),false);
+  assert.equal(context.progress.storyStageUnlocked(api.storyStages.length),false);
 });

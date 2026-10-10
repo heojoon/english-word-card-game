@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
-function setup(wordCount=13){
+function setup(wordCount=13,attackSteps=1){
   const callbacks=[],pages=[],nodes=new Map();
   const node=()=>({remove(){},textContent:'',style:{},classList:{add(){},toggle(){}},setAttribute(){}});
   const original={story:true,clear:true,result:{game_score_id:'stage-seven'},treasure:42};
-  const context=vm.createContext({closeDialog(){},persistStoryBattleVitals(){},storyEntryAllowed:()=>true,storyVitals:()=>({}),
+  const context=vm.createContext({closeDialog(){},persistStoryBattleVitals(){},storyEntryAllowed:()=>true,storyVitals:()=>({}),bossAttackSteps:()=>attackSteps,
     storyDialogueIndex:5,page:'battle',localMode:true,player:'검증',demoState:{records:[]},records:[],saveDemo(){},num:String,
     run:original,pendingStoryRun:null,selectedStage:'story-lv6',selectedCharacter:{id:'test-warrior',class:'warrior',coins:0},
     stages:{'story-lv6':{words:Array.from({length:wordCount},(_,i)=>[`word${i}`,'noun',`뜻${i}`])}},
@@ -164,4 +164,18 @@ test('direct-entry boss saves stage clear only after victory and retries the bos
   c.run.correct=50;c.run.index=50;c.run.elapsed=120000;c.finishRoyalSlimeBattle(true,'boss-defeated');assert.equal(stageCalls,0);assert.equal(c.page,'storyBossVictory');
   c.page='bossResult';await c.claimRoyalSlimeReward();assert.equal(stageCalls,1);assert.equal(c.pendingStoryRun.clear,true);assert.equal(c.pendingStoryRun.result.game_score_id,777);assert.equal(c.run.rewardError,true);
   await c.claimRoyalSlimeReward();assert.equal(stageCalls,1);assert.equal(bossCalls,2);assert.equal(c.run.bossReward,200);assert.equal(c.accountCrystals,260);
+});
+
+test('high attack removes extra boss waves only after all five pairs, including skipped absorption and final clamp',()=>{
+  for(const steps of [2,3,4]){
+    const {context,correct,flush}=setup(13,steps);
+    for(let i=0;i<4;i++){correct();flush();}
+    assert.equal(context.run.bossHp,46);assert.equal(context.run.index,4);
+    correct();assert.equal(context.run.bossHp,46);flush();
+    assert.equal(context.run.index,steps*5);assert.equal(context.run.bossHp,50-steps*5);
+    while(!context.run.done){correct();flush();}
+    assert.equal(context.run.bossHp,0);assert.equal(context.run.correct,50);assert.equal(context.run.index,50);
+    assert.equal(context.run.answeredCorrect,Math.ceil(10/steps)*5);
+    assert.equal(context.run.timePenalty,30000);assert.equal(context.run.clear,true);
+  }
 });

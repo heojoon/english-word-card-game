@@ -1,0 +1,13 @@
+{
+  "image": "char_lich_dragon_standing.png",
+  "role": "World 3-8 Lich Dragon narrative standing CG",
+  "tool": "built-in image_gen",
+  "date": "2026-10-11",
+  "reference": "../../monsters/black-dragon/source/design-reference.png",
+  "generatedSource": "/Users/hjoon/.codex/generated_images/01a1263a-f3b2-7b02-bc2e-d3b7b540c372/exec-79f51ce4-e545-40f5-89e7-ad6c2a83070b.png",
+  "runtimeDimensions": [1254, 1254],
+  "hasAlpha": true,
+  "promptFile": "lich-dragon-standing.prompt.md",
+  "integration": "world3BossStart/world3BossEnd: 리치 드래곤 and 블랙 드래곤 dialogue",
+  "reviewStatus": "Visual identity and genuine alpha inspected; browser not checked; no explicit user approval claimed"
+}

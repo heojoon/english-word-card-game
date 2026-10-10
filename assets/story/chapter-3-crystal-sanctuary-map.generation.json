@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-10",
+  "tool": "built-in image_gen",
+  "model": "not exposed by tool",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: precise-object-edit / lighting-weather.\nAsset type: Wordoria Crystal Quest World 3 크리스탈 사원 world map, stage 8 cave island.\nReference roles: Image 1 = authoritative original style, Image 2 = EDIT TARGET current map.\nUser override: expand the dark purple-and-black cave treatment to ALL LAND physically connected to that cave, namely its single upper-left floating island. Preserve the rest of the world bright. The cave is already dark in Image 2, but bright green grass, pale rock, and golden-brown ground remain on its island; convert all that attached land to the SAME charcoal-black, obsidian, deep plum and violet palette as the cave.\nTarget island bounds: approximately x=0%–35%, y=8%–28%, with cave centered (17%,15%) and waypoint at (19.1%,18.61%). Edit the entirety of this island's contiguous top surface and visible vertical cliff faces, right to the water/cloud boundaries. Turn ALL yellow-green turf and golden bare ground there into dark purple soil, muted violet moss, charcoal stone, subtle plum crystal veins. Turn its visible cream and tan cliff rock into dark purple-black layered rock matching the cave. Darken the vegetation rooted on this island to deep violet-green foliage with sparse purple leaves, maintaining tree silhouette and readable painterly detail. The trail immediately around waypoint 8 must become dark plum stone instead of bright golden dirt. No bright lime-green patches or pale cream land remain on this cave island. Keep dimensional shading and subtle violet rim highlights so the dark island reads clearly against white clouds.\nPreserve the cave shape, its dark recessed mouth, luminous purple inner crystals, and the EIGHT upright route crystals/gold pedestals. Waypoint 8 must remain a bright blue-violet crystal on its original gold pedestal, unobscured at EXACTLY the same center (19.1%,18.61%). Preserve the island's turquoise-white waterfalls, all white clouds and blue sky. Do not darken separate neighboring floating islands behind it or below it. Do not enlarge the target island, change its contour, move objects, invent a bridge, or add more crystals on pedestals.\nHard invariants: preserve the complete map framing, portrait aspect 1084:1451 and dimensions if possible. Outside this single upper-left cave island, preserve all architecture, sunlight, foliage, terrain, cliff colors, route, water and stage crystals exactly. The main temple, giant levitating crystal and the remaining seven stage points must be unchanged. Exactly 8 violet-blue stage crystals on gold-rimmed round pedestals. Existing centers: (48.25%,83.8%),(82.84%,67.2%),(58.12%,55.48%),(29.15%,46.59%),(82.66%,47.83%),(57.01%,38.46%),(68.73%,25.98%),(19.1%,18.61%). No text or numbers.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": "output/story-map/archive/chapter-3-before-dark-island.webp",
+  "originalLayoutPath": "/Users/hjoon/Downloads/Gemini_Generated_Image_41d4641d4641d464.png",
+  "source": "output/story-map/chapter-3-crystal-sanctuary-dark-island-source.png",
+  "runtime": "assets/story/chapter-3-crystal-sanctuary-map.webp",
+  "targetDimensions": {
+    "width": 1084,
+    "height": 1451
+  },
+  "actualDimensions": {
+    "width": 1084,
+    "height": 1451
+  },
+  "runtimeWorld3": "World 3 크리스탈 사원; existing stages 1–7 plus stage 8 숨겨진 수정 동굴",
+  "targetCentersPercent": [
+    [
+      48.25,
+      83.8
+    ],
+    [
+      82.84,
+      67.2
+    ],
+    [
+      58.12,
+      55.48
+    ],
+    [
+      29.15,
+      46.59
+    ],
+    [
+      82.66,
+      47.83
+    ],
+    [
+      57.01,
+      38.46
+    ],
+    [
+      68.73,
+      25.98
+    ],
+    [
+      19.1,
+      18.61
+    ]
+  ],
+  "actualWaypointCenters": [
+    {
+      "stage": 1,
+      "x": 523,
+      "y": 1216,
+      "xPercent": 48.25,
+      "yPercent": 83.8,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 2,
+      "x": 898,
+      "y": 975,
+      "xPercent": 82.84,
+      "yPercent": 67.2,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 3,
+      "x": 630,
+      "y": 805,
+      "xPercent": 58.12,
+      "yPercent": 55.48,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 4,
+      "x": 316,
+      "y": 676,
+      "xPercent": 29.15,
+      "yPercent": 46.59,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 5,
+      "x": 896,
+      "y": 694,
+      "xPercent": 82.66,
+      "yPercent": 47.83,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 6,
+      "x": 618,
+      "y": 558,
+      "xPercent": 57.01,
+      "yPercent": 38.46,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 7,
+      "x": 745,
+      "y": 377,
+      "xPercent": 68.73,
+      "yPercent": 25.98,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 8,
+      "x": 207,
+      "y": 270,
+      "xPercent": 19.1,
+      "yPercent": 18.61,
+      "measurement": "manual visual center of upright crystal; approximate"
+    }
+  ],
+  "review": {
+    "status": "visual review passed; browser not run per user preference",
+    "waypointCount": 8,
+    "style": "All contiguous cave-island terrain, cliff faces and vegetation converted to charcoal/plum/violet matching the cave. Other islands remain sunlit and unchanged in theme.",
+    "existingWaypoints": "All eight upright crystals/pedestals visually preserved at existing centers, including stage 8 at x19.1%,y18.61%.",
+    "cropping": "All eight points retained in canvas; no text or markup.",
+    "mobilePreview": "output/story-map/review/chapter-3-dark-island-mobile.png",
+    "waypointOverlay": "output/story-map/review/chapter-3-dark-island-waypoints.png",
+    "browserChecks": "Not run; user requires explicit request for Playwright.",
+    "validation": "npm run build passed; image-only update; browser not run"
+  },
+  "approvalStatus": "dark contiguous cave-island edit requested; generated result awaiting user visual review"
+}

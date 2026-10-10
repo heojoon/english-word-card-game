@@ -56,14 +56,62 @@ export function parseWorldTwoBoss(markdown){
   if(!lines.some(line=>line.className==='golem'))throw new Error('World 2 boss story is incomplete');
   return lines;
 }
+export function parseWorldThreePrologue(markdown){
+  const lines=[];
+  let sceneNumber=0,location='',thoughtSpeaker='',mission=false,missionText='';
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    if(!block||block==='---')continue;
+    const heading=block.match(/^## SCENE (\d+)\. (.+)$/);
+    if(heading){sceneNumber=Number(heading[1]);location=heading[2];thoughtSpeaker='';continue;}
+    if(block.startsWith('#')){if(block.includes('PROLOGUE COMPLETE'))mission=true;continue;}
+    if(!sceneNumber)continue;
+    if(mission){const goal=block.match(/^\*\*다음 목표: (.+)\*\*$/);if(goal)missionText=goal[1];continue;}
+    if(/^\*\*(배경|등장인물):/.test(block)||/^\*\*\[(연출|BGM):/.test(block))continue;
+    const dialogue=block.match(/^\*\*(.+?)\*\*\s*\n["“'‘]([\s\S]*?)["”'’]$/);
+    const continuation=!dialogue&&thoughtSpeaker&&/^['‘][\s\S]*['’]$/.test(block);
+    const speaker=dialogue?.[1]||(continuation?thoughtSpeaker:'내레이션');
+    thoughtSpeaker=speaker.includes('(속마음)')?speaker:'';
+    const text=(dialogue?.[2]||(continuation?block.slice(1,-1):block)).replace(/\*\*/g,'').replace(/\s*\n\s*/g,' ');
+    const line={speaker,className:classes[speaker.replace(/\s*\(속마음\)$/,'')]||'scene',text,scene:sceneNumber===4?'festival':'village',sceneNumber,location};
+    if(speaker==='꼬마아이'){line.className='village-child';line.artPath='assets/novel/characters/char_mysterious_village_child_standing.webp';}
+    if(/번쩍/.test(text))line.flash=true;
+    lines.push(line);
+  }
+  if(!missionText||sceneNumber!==4||!lines.length)throw new Error('World 3 prologue is incomplete');
+  lines.push({speaker:'MISSION',className:'mission',text:missionText,scene:'festival',sceneNumber:4,location});
+  return lines;
+}
+export function parseWorldThreeBoss(markdown){
+  const lines=[];
+  let sceneNumber=0;
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    const heading=block.match(/^### SCENE (\d+)\. (.+)$/);
+    if(heading){sceneNumber=Number(heading[1]);continue;}
+    if(!block||block.startsWith('#'))continue;
+    const dialogue=block.match(/^\*\*(.+?)\*\*\s*\n["“]([\s\S]*?)["”]$/);
+    const speaker=dialogue?.[1]||'내레이션';
+    const line={speaker,className:classes[speaker]||(['블랙 드래곤','리치 드래곤'].includes(speaker)?'black-dragon':'scene'),text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:'cave'};
+    if(sceneNumber)line.sceneNumber=sceneNumber;
+    if(speaker==='꼬마아이'){line.className='village-child';line.artPath='assets/novel/characters/char_mysterious_village_child_standing.webp';}
+    if(['블랙 드래곤','리치 드래곤'].includes(speaker))line.artPath='assets/novel/characters/char_lich_dragon_standing.png';
+    lines.push(line);
+  }
+  if(!lines.some(line=>line.className==='black-dragon'))throw new Error('World 3 boss story is incomplete');
+  return lines;
+}
 export async function generateStoryNovel(){
   const novels={};
   for(const [key,filename,parse] of [
     ['world2Prologue','world-2-1-prologue.md',parseWorldTwoPrologue],
     ['world2BossStart','world-2-7-boss-start.md',parseWorldTwoBoss],
-    ['world2BossEnd','world-2-7-boss-end.md',parseWorldTwoBoss]
+    ['world2BossEnd','world-2-7-boss-end.md',parseWorldTwoBoss],
+    ['world3Prologue','world-3-1-prologue.md',parseWorldThreePrologue],
+    ['world3BossStart','world-3-8-boss-start.md',parseWorldThreeBoss],
+    ['world3BossEnd','world-3-8-boss-end.md',parseWorldThreeBoss]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
-  await writeFile(new URL('../story-novel.js',import.meta.url),`// Generated from assets/novel/world-2-*.md by scripts/generate-story-novel.mjs.\nwindow.WORDORIA_NOVELS = ${JSON.stringify(novels,null,2)};\n`);
-  console.log(`Prepared World 2 visual novels: ${Object.values(novels).map(lines=>lines.length).join(' / ')} scenes.`);
+  await writeFile(new URL('../story-novel.js',import.meta.url),`// Generated from assets/novel/*.md by scripts/generate-story-novel.mjs.\nwindow.WORDORIA_NOVELS = ${JSON.stringify(novels,null,2)};\n`);
+  console.log(`Prepared visual novels: ${Object.entries(novels).map(([key,lines])=>`${key}: ${lines.length}`).join(' / ')} beats.`);
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await generateStoryNovel();

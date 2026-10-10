@@ -1,0 +1,32 @@
+{
+  "image": "black-dragon-sd-hit-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "cellSizeReason": "Wide complete dragon wings; keep body scale and effects readable.",
+  "scale": 0.5,
+  "groundLinePx": 374,
+  "frames": [
+    {
+      "name": "guard",
+      "durationMs": 150
+    },
+    {
+      "name": "impact",
+      "durationMs": 150
+    },
+    {
+      "name": "knockdown",
+      "durationMs": 700,
+      "hold": true
+    }
+  ],
+  "reviewStatus": "Offline alpha, bounds and frame review complete; browser unverified; user approval not inferred"
+}

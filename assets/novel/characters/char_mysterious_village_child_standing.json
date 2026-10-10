@@ -1,0 +1,22 @@
+{
+  "image": "char_mysterious_village_child_standing.webp",
+  "role": "World 3 mysterious village child standing CG",
+  "source": "source/char_mysterious_village_child_clean.png",
+  "initialSource": "source/char_mysterious_village_child_initial.png",
+  "tool": "built-in image_gen",
+  "date": "2026-10-10",
+  "sourceDimensions": [
+    1024,
+    1536
+  ],
+  "runtimeDimensions": [
+    640,
+    960
+  ],
+  "hasAlpha": true,
+  "promptFile": "mysterious-village-child.prompt.md",
+  "review": "review/mysterious-village-child-alpha-review.jpg",
+  "reviewStatus": "Technical visual review passed on Moon White and Crystal Violet; no explicit user approval claimed",
+  "integration": "world3Prologue: every 꼬마아이 dialogue",
+  "sha256": "653be51c8c427e75c6481eedfa5768c31c1be85573e871353ba13c95cc0d12c9"
+}
