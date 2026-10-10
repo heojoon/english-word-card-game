@@ -50,7 +50,7 @@
       const source=chapter===2?stages[`${level==='elementary'?'e':'s'}${stage.number+7}`]:sources[index],pool=source&&stageLevel(source)===level?source.words:[];
       const shortIntro=chapter===1&&stage.number===2,words=shortIntro?pool.slice(0,5):pool;
       const recordName=chapter===2?`스토리 2장 ${stage.number} · ${title}`:shortIntro?'스토리 LV.1 · 속삭이는 숲':`스토리 ${stage.number} · 속삭이는 숲`;
-      stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:shortIntro?5:20,story:true,storyChapter:chapter,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:chapter===1&&level==='elementary'?'7YA8':null};
+      stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:chapter===2&&level==='middle'?30:shortIntro?5:20,story:true,storyChapter:chapter,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:chapter===1&&level==='elementary'?'7YA8':null};
     });
   }
   const storyStageKey=storyStages[0].key;

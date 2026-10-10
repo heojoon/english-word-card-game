@@ -95,9 +95,10 @@ test('catalog retains seven original maps and adds seven temple maps per learnin
     assert.equal(maps.length,7);
     assert.deepEqual(maps.map(stage=>stage.storyStage),[1,2,3,4,5,6,7]);
     for(const map of maps){
-      assert.equal(map.questionCount,20);assert.equal(map.words.length,20);
-      assert.equal(new Set(map.words.map(row=>row[0].toLowerCase())).size,20);
-      assert.equal(new Set(map.words.map(row=>row[2])).size,20);
+      const count=level==='middle'?30:20;
+      assert.equal(map.questionCount,count);assert.equal(map.words.length,count);
+      assert.equal(new Set(map.words.map(row=>row[0].toLowerCase())).size,count);
+      assert.equal(new Set(map.words.map(row=>row[2])).size,count);
     }
   }
 });
@@ -111,7 +112,7 @@ test('temple maps use distinct level vocabulary and common story record names',(
     const stage=api.stages[map.key];
     assert.equal(stage.recordName,elementary[index].record);
     assert.notDeepEqual(Array.from(stage.words,row=>row[0]),elementary[index].words);
-    assert.equal(stage.storyChapter,2);assert.equal(stage.questionCount,20);assert.ok(api.levelReady(stage));
+    assert.equal(stage.storyChapter,2);assert.equal(stage.questionCount,30);assert.ok(api.levelReady(stage));
     assert.equal(stage.worldCode,null);
   });
 });

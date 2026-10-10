@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "e1c04d4d8eb5",
+  "contentVersion": "5fac274e4019",
   "stages": {
     "s1": {
       "name": "Stage 1",
@@ -1817,7 +1817,7 @@
       "learningLevel": "middle",
       "storyChapter": 2,
       "storyStage": 1,
-      "questionCount": 20,
+      "questionCount": 30,
       "words": [
         [
           "entrance",
@@ -1918,6 +1918,56 @@
           "toward",
           "전",
           "~을 향하여"
+        ],
+        [
+          "travel",
+          "동",
+          "여행하다"
+        ],
+        [
+          "trip",
+          "명",
+          "여행"
+        ],
+        [
+          "vehicle",
+          "명",
+          "탈것"
+        ],
+        [
+          "traffic",
+          "명",
+          "교통"
+        ],
+        [
+          "sign",
+          "명",
+          "표지판"
+        ],
+        [
+          "pedestrian",
+          "명",
+          "보행자"
+        ],
+        [
+          "passenger",
+          "명",
+          "승객"
+        ],
+        [
+          "forward",
+          "부",
+          "앞쪽으로"
+        ],
+        [
+          "backward",
+          "부",
+          "뒤쪽으로"
+        ],
+        [
+          "distant",
+          "형",
+          "멀리 떨어진"
         ]
       ]
     },
@@ -2037,7 +2087,7 @@
       "learningLevel": "middle",
       "storyChapter": 2,
       "storyStage": 2,
-      "questionCount": 20,
+      "questionCount": 30,
       "words": [
         [
           "environment",
@@ -2138,6 +2188,56 @@
           "natural",
           "형",
           "자연의"
+        ],
+        [
+          "plant",
+          "명",
+          "식물"
+        ],
+        [
+          "bush",
+          "명",
+          "덤불"
+        ],
+        [
+          "bark",
+          "명",
+          "나무껍질"
+        ],
+        [
+          "wood",
+          "명",
+          "목재"
+        ],
+        [
+          "oxygen",
+          "명",
+          "산소"
+        ],
+        [
+          "creature",
+          "명",
+          "생물"
+        ],
+        [
+          "species",
+          "명",
+          "종"
+        ],
+        [
+          "survive",
+          "동",
+          "살아남다"
+        ],
+        [
+          "disappear",
+          "동",
+          "사라지다"
+        ],
+        [
+          "gentle",
+          "형",
+          "온화한"
         ]
       ]
     },
@@ -2257,7 +2357,7 @@
       "learningLevel": "middle",
       "storyChapter": 2,
       "storyStage": 3,
-      "questionCount": 20,
+      "questionCount": 30,
       "words": [
         [
           "waterfall",
@@ -2358,6 +2458,56 @@
           "powerful",
           "형",
           "강력한"
+        ],
+        [
+          "spray",
+          "명",
+          "물보라"
+        ],
+        [
+          "drop",
+          "명",
+          "물방울"
+        ],
+        [
+          "pond",
+          "명",
+          "연못"
+        ],
+        [
+          "shore",
+          "명",
+          "물가"
+        ],
+        [
+          "flood",
+          "명",
+          "홍수"
+        ],
+        [
+          "drought",
+          "명",
+          "가뭄"
+        ],
+        [
+          "liquid",
+          "명",
+          "액체"
+        ],
+        [
+          "splash",
+          "동",
+          "물을 튀기다"
+        ],
+        [
+          "pour",
+          "동",
+          "쏟다"
+        ],
+        [
+          "smooth",
+          "형",
+          "매끄러운"
         ]
       ]
     },
@@ -2477,7 +2627,7 @@
       "learningLevel": "middle",
       "storyChapter": 2,
       "storyStage": 4,
-      "questionCount": 20,
+      "questionCount": 30,
       "words": [
         [
           "path",
@@ -2578,6 +2728,56 @@
           "safely",
           "부",
           "안전하게"
+        ],
+        [
+          "trail",
+          "명",
+          "산길"
+        ],
+        [
+          "valley",
+          "명",
+          "계곡"
+        ],
+        [
+          "cliff",
+          "명",
+          "절벽"
+        ],
+        [
+          "cave",
+          "명",
+          "동굴"
+        ],
+        [
+          "directional",
+          "형",
+          "방향을 나타내는"
+        ],
+        [
+          "rough",
+          "형",
+          "거친"
+        ],
+        [
+          "slippery",
+          "형",
+          "미끄러운"
+        ],
+        [
+          "wander",
+          "동",
+          "돌아다니다"
+        ],
+        [
+          "slide",
+          "동",
+          "미끄러지다"
+        ],
+        [
+          "measure",
+          "동",
+          "측정하다"
         ]
       ]
     },
@@ -2697,7 +2897,7 @@
       "learningLevel": "middle",
       "storyChapter": 2,
       "storyStage": 5,
-      "questionCount": 20,
+      "questionCount": 30,
       "words": [
         [
           "guardian",
@@ -2798,6 +2998,56 @@
           "determined",
           "형",
           "단호한"
+        ],
+        [
+          "confidence",
+          "명",
+          "자신감"
+        ],
+        [
+          "decision",
+          "명",
+          "결정"
+        ],
+        [
+          "purpose",
+          "명",
+          "목적"
+        ],
+        [
+          "duty",
+          "명",
+          "의무"
+        ],
+        [
+          "safety",
+          "명",
+          "안전"
+        ],
+        [
+          "rescue",
+          "동",
+          "구조하다"
+        ],
+        [
+          "assist",
+          "동",
+          "도와주다"
+        ],
+        [
+          "depend",
+          "동",
+          "의지하다"
+        ],
+        [
+          "honest",
+          "형",
+          "정직한"
+        ],
+        [
+          "loyal",
+          "형",
+          "충실한"
         ]
       ]
     },
@@ -2917,7 +3167,7 @@
       "learningLevel": "middle",
       "storyChapter": 2,
       "storyStage": 6,
-      "questionCount": 20,
+      "questionCount": 30,
       "words": [
         [
           "temple",
@@ -3018,6 +3268,56 @@
           "unusual",
           "형",
           "특이한"
+        ],
+        [
+          "evidence",
+          "명",
+          "증거"
+        ],
+        [
+          "record",
+          "명",
+          "기록"
+        ],
+        [
+          "legend",
+          "명",
+          "전설"
+        ],
+        [
+          "custom",
+          "명",
+          "관습"
+        ],
+        [
+          "statue",
+          "명",
+          "조각상"
+        ],
+        [
+          "architecture",
+          "명",
+          "건축"
+        ],
+        [
+          "research",
+          "동",
+          "연구하다"
+        ],
+        [
+          "identify",
+          "동",
+          "식별하다"
+        ],
+        [
+          "describe",
+          "동",
+          "묘사하다"
+        ],
+        [
+          "historic",
+          "형",
+          "역사적으로 중요한"
         ]
       ]
     },
@@ -3137,7 +3437,7 @@
       "learningLevel": "middle",
       "storyChapter": 2,
       "storyStage": 7,
-      "questionCount": 20,
+      "questionCount": 30,
       "words": [
         [
           "treasure",
@@ -3238,6 +3538,56 @@
           "successful",
           "형",
           "성공한"
+        ],
+        [
+          "success",
+          "명",
+          "성공"
+        ],
+        [
+          "goal",
+          "명",
+          "목표"
+        ],
+        [
+          "power",
+          "명",
+          "힘"
+        ],
+        [
+          "strength",
+          "명",
+          "강점"
+        ],
+        [
+          "ability",
+          "명",
+          "능력"
+        ],
+        [
+          "opportunity",
+          "명",
+          "기회"
+        ],
+        [
+          "accomplish",
+          "동",
+          "달성하다"
+        ],
+        [
+          "improve",
+          "동",
+          "향상시키다"
+        ],
+        [
+          "glow",
+          "동",
+          "은은하게 빛나다"
+        ],
+        [
+          "proud",
+          "형",
+          "자랑스러운"
         ]
       ]
     }
