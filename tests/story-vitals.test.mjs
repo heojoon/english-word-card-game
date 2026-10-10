@@ -84,13 +84,13 @@ test('production JSON potion response recovers HP 0 through the real HTTP RPC wr
     const storage=new Map(),c=setup(storage,false),requests=[];c.saveStoryVitals({hp:0,mp:0});
     if(equipped)c.potionInventory.equipped_slot_1='red';
     const before=c.storyHealingCount();
-    Object.assign(c,{DB_URL:'https://test.invalid',DB_KEY:'test-key',accountSession:{access_token:'test-token'},fetchWithTimeout:async(url,options)=>{
+    Object.assign(c,{accountMode:true,DB_URL:'https://test.invalid',DB_KEY:'test-key',accountSession:{access_token:'test-token'},window:{WORDORIA_AUTH_CLIENT:{auth:{getSession:async()=>({data:{session:{user:{id:c.accountUserId},access_token:'test-token'}}})}}},fetchWithTimeout:async(url,options)=>{
       requests.push({url,body:JSON.parse(options.body)});
       const inventory={red_potion_count:equipped?2:1,blue_potion_count:1,equipped_slot_1:'red',equipped_slot_2:'blue'};
       const result=url.endsWith('/equip_story_potions')?[inventory]:{...inventory,type:'red',equipped_slot_1:null};
       return {ok:true,text:async()=>JSON.stringify(result)};
     }});
-    vm.runInContext(source.slice(source.indexOf('  function headers('),source.indexOf('  const characterDef =')),c);
+    vm.runInContext(source.slice(source.indexOf('  async function headers('),source.indexOf('  const characterDef =')),c);
     await c.recoverStoryHp('two',{});
     assert.equal(c.storyVitals().hp,1);assert.equal(c.storyVitals().mp,0);assert.equal(c.storyHealingCount(),before-1);
     assert.equal(c.potionInventory.equipped_slot_1,null);assert.equal(c.potionInventory.equipped_slot_2,'blue');assert.match(c.modalHtml,/스테이지 입장/);
