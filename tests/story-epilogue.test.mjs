@@ -6,7 +6,7 @@ import vm from 'node:vm';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 function setup(stage='story-prologue',replay=false){
   const pages=[];
-  const context=vm.createContext({
+  const context=vm.createContext({persistStoryBattleVitals(){},
     run:{story:true,storyReplay:replay,elapsed:1000},selectedStage:stage,
     storyStages:[{key:'story-prologue',epilogue:true},{key:'story-lv1'}],
     storyDialogueIndex:5,localMode:false,dbOnline:false,timerId:null,nextTimer:null,
@@ -51,9 +51,9 @@ test('stage 7 clear opens final boss encounter while its failure opens results',
   }
 });
 
-test('world 2 stage 7 ends at its results without replaying the forest boss',async()=>{
+test('world 2 stage 7 opens its own ending without replaying the forest boss',async()=>{
   const {context,pages}=setup('story-ch2-7');
   context.storyStages.push({key:'story-ch2-7',number:7,chapter:2});
   await context.finishBattle(true,'fever-complete');
-  assert.deepEqual(pages,['result']);
+  assert.deepEqual(pages,['storyChapterTwoBossEnd']);
 });

@@ -8,7 +8,7 @@ function content(level){
   const words=prefix=>Array.from({length:8},(_,i)=>[`${prefix}${i}`,'명',`${prefix} 뜻 ${i}`]);
   const stages={};
   for(let n=1;n<=7;n++)stages[`s${n}`]={name:`Stage ${n}`,words:words('middle')};
-  const context={window:{QUIZ_STAGES:stages},accountMode:true,accountProfile:{learning_level:level}};
+  const context={localHost:false,nativeApp:false,window:{QUIZ_STAGES:stages},accountMode:true,accountProfile:{learning_level:level}};
   vm.runInNewContext(readFileSync(new URL('../stage8.js',import.meta.url),'utf8'),context);
   vm.runInNewContext(setup+';globalThis.api={configureStoryContent,levelReady,storyStages,stages};',context);
   return context;
@@ -112,7 +112,7 @@ test('temple maps use distinct level vocabulary and common story record names',(
     const stage=api.stages[map.key];
     assert.equal(stage.recordName,elementary[index].record);
     assert.notDeepEqual(Array.from(stage.words,row=>row[0]),elementary[index].words);
-    assert.equal(stage.storyChapter,2);assert.equal(stage.questionCount,30);assert.ok(api.levelReady(stage));
+    assert.equal(stage.storyChapter,2);assert.equal(stage.questionCount,map.number===7?60:30);assert.equal(stage.guardian,map.number===7);assert.ok(api.levelReady(stage));
     assert.equal(stage.worldCode,null);
   });
 });
@@ -131,4 +131,19 @@ test('world 2 unlocks after world 1 and its progression survives a level switch'
   assert.equal(context.progress.storyStageUnlocked(8),true);
   assert.equal(context.progress.storyStageUnlocked(9),false);
   assert.equal(context.progress.stageCleared('story-prologue'),false);
+});
+
+test('local web access unlocks only world 2 stage 7 without changing clear records',()=>{
+  const context=content('middle'),{api}=context;api.configureStoryContent();
+  context.records=[];context.allCharacters=[];
+  vm.runInNewContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins('))+';globalThis.progress={stageCleared,storyStageUnlocked};',context);
+  const index=api.storyStages.findIndex(stage=>stage.key==='story-ch2-7');
+  assert.equal(context.progress.storyStageUnlocked(index),false);
+  context.localHost=true;
+  assert.equal(context.progress.storyStageUnlocked(index),true);
+  assert.equal(context.progress.storyStageUnlocked(index-1),false);
+  assert.equal(context.progress.stageCleared('story-ch2-7'),false);
+  context.nativeApp=true;
+  assert.equal(context.progress.storyStageUnlocked(index),false);
+  assert.equal(context.progress.storyStageUnlocked(-1),false);
 });

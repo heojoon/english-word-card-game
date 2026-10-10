@@ -5,9 +5,9 @@ import vm from 'node:vm';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 function setup(wordCount=13){
   const callbacks=[],pages=[],nodes=new Map();
-  const node=()=>({textContent:'',style:{},classList:{add(){},toggle(){}},setAttribute(){}});
+  const node=()=>({remove(){},textContent:'',style:{},classList:{add(){},toggle(){}},setAttribute(){}});
   const original={story:true,clear:true,result:{game_score_id:'stage-seven'},treasure:42};
-  const context=vm.createContext({
+  const context=vm.createContext({closeDialog(){},persistStoryBattleVitals(){},storyEntryAllowed:()=>true,storyVitals:()=>({}),
     storyDialogueIndex:5,page:'battle',localMode:true,player:'검증',demoState:{records:[]},records:[],saveDemo(){},num:String,
     run:original,pendingStoryRun:null,selectedStage:'story-lv6',selectedCharacter:{id:'test-warrior',class:'warrior',coins:0},
     stages:{'story-lv6':{words:Array.from({length:wordCount},(_,i)=>[`word${i}`,'noun',`뜻${i}`])}},
@@ -111,4 +111,57 @@ test('boss accepts the next pair while the current attack is playing',()=>{
   assert.equal(context.run.queuedStoryPairs.length,1);
   flush();assert.equal(context.run.correct,2);assert.equal(context.run.bossHp,48);
   assert.equal(context.run.attack,false);
+});
+function mageBoss(){
+  const boss=setup(),c=boss.context;c.selectedCharacter.class='mage';c.startRoyalSlimeBattle();
+  vm.runInContext(source.slice(source.indexOf('  function canActivateMageIceTime('),source.indexOf('  function updateWarriorSlash(')),c);
+  Object.assign(c,{esc:String,deployedAssetUrl:String,battleHeroMarkup:()=>'',storyBattleActions:()=>''});
+  return boss;
+}
+test('world 1 boss allows ice skill, shows shared feedback, and keeps ice until the five-pair group ends',()=>{
+  const {context:c,correct,flush}=mageBoss();
+  c.activateMageIceTime();assert.equal(c.run.mp,1);assert.equal(c.run.iceTimeActive,true);
+  const html=c.renderRoyalSlimeBattle();assert.match(html,/royal-boss-arena ice-time-active/);assert.match(html,/ice-time-field/);assert.match(html,/ice-time-announcement/);
+  correct();flush();assert.equal(c.run.iceTimeActive,true);assert.equal(c.run.bossHp,49);
+  for(let i=0;i<4;i++){correct();flush();}
+  assert.equal(c.run.iceTimeActive,false);assert.ok(!c.renderRoyalSlimeBattle().includes('ice-time-field'));
+  c.activateMageIceTime();assert.equal(c.run.mp,0);assert.equal(c.run.iceTimeActive,true);
+});
+test('world 1 ice pauses the boss countdown, releases on wrong answers and battle finish, and allows MP refill reuse',()=>{
+  const {context:c,pick,flush}=mageBoss();
+  Object.assign(c,{updateEnemyApproach(){},updateWarriorSlash(){},setInterval(fn){c.tickCallback=fn;return 1;}});
+  vm.runInContext(source.slice(source.indexOf('  function tick()'),source.indexOf('  function pause()')),c);
+  c.activateMageIceTime();c.tick();c.performance.now=()=>2000;c.tickCallback();assert.equal(c.run.elapsed,0);
+  pick('ko',0);pick('en',1);assert.equal(c.run.iceTimeActive,false);flush();
+  c.performance.now=()=>2500;c.tickCallback();assert.equal(c.run.elapsed,500);
+  c.run.mp=1;c.activateMageIceTime();assert.equal(c.run.iceTimeActive,true);assert.equal(c.run.mp,0);
+  c.finishRoyalSlimeBattle(false,'leave');assert.equal(c.run.iceTimeActive,false);
+  c.startRoyalSlimeBattle();assert.equal(c.run.iceTimeActive,false);
+});
+test('world 1 stage seven enters its encounter immediately for both levels and dialogue completion starts the boss',()=>{
+  for(const level of ['elementary','middle']){
+    const {context:c,pages}=setup();
+    Object.assign(c,{storyStages:[{key:'story-lv6',chapter:1,number:7}],storyStageUnlocked:()=>true,levelReady:()=>true,stageCleared:()=>false,closeDialog(){},startBattle(){assert.fail('ordinary waves must not start');}});
+    Object.assign(c.stages['story-lv6'],{storyChapter:1,storyNumber:7,learningLevel:level});
+    vm.runInContext(source.slice(source.indexOf('  function startStoryStage('),source.indexOf('  function renderStages(')),c);
+    vm.runInContext(source.slice(source.indexOf('  function bossEncounter('),source.indexOf('  function storyDialogueLines(')),c);
+    c.startStoryStage('story-lv6');assert.equal(c.page,'storyEpilogue');assert.equal(c.run.directBossStage,true);assert.equal(c.run.result,null);
+    assert.equal(c.pendingStoryRun,null);c.completeStoryDialogue();assert.equal(c.page,'battle');assert.equal(c.run.boss,true);assert.equal(c.run.directBossStage,true);assert.equal(c.run.correct,0);assert.equal(c.run.bossHp,50);
+    assert.deepEqual(pages.slice(-2),['storyEpilogue','battle']);
+  }
+});
+test('direct-entry boss saves stage clear only after victory and retries the boss reward without duplicating the stage result',async()=>{
+  const {context:c}=setup();
+  vm.runInContext(source.slice(source.indexOf('  async function saveBattleResult('),source.indexOf('  function clearSummaryMarkup(')),c);
+  Object.assign(c,{stageRecordName:()=> '스토리 7 · 속삭이는 숲',apiGet:async()=>[{stage:'스토리 7 · 속삭이는 숲',cleared:true}],accountMode:true,dbOnline:true,accountCrystals:0,earnedCoins:()=>60});
+  c.localMode=false;c.pendingStoryRun={story:true,directBossStage:true,storyReplay:false,result:null};c.startRoyalSlimeBattle();
+  let stageCalls=0,bossCalls=0;
+  c.rpc=async(name,args)=>{
+    if(name==='award_game_result'){stageCalls++;assert.equal(args.p_stage,'스토리 7 · 속삭이는 숲');assert.equal(args.p_cleared,true);assert.equal(args.p_correct,50);assert.equal(args.p_total,50);return [{game_score_id:777,coins_earned:60,balance:60}];}
+    assert.equal(name,'claim_royal_slime_reward');assert.equal(args.p_stage_score_id,777);bossCalls++;if(bossCalls===1)throw Error('offline');return [{reward:200,balance:260}];
+  };
+  await c.claimRoyalSlimeReward();assert.equal(stageCalls,0);assert.equal(bossCalls,0);assert.equal(c.pendingStoryRun.result,null);
+  c.run.correct=50;c.run.index=50;c.run.elapsed=120000;c.finishRoyalSlimeBattle(true,'boss-defeated');assert.equal(stageCalls,0);assert.equal(c.page,'storyBossVictory');
+  c.page='bossResult';await c.claimRoyalSlimeReward();assert.equal(stageCalls,1);assert.equal(c.pendingStoryRun.clear,true);assert.equal(c.pendingStoryRun.result.game_score_id,777);assert.equal(c.run.rewardError,true);
+  await c.claimRoyalSlimeReward();assert.equal(stageCalls,1);assert.equal(bossCalls,2);assert.equal(c.run.bossReward,200);assert.equal(c.accountCrystals,260);
 });

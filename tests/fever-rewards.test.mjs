@@ -6,7 +6,7 @@ import vm from 'node:vm';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 function setup({local=true,replay=false,fever=7,slash=6}={}){
   const calls=[];
-  const context=vm.createContext({
+  const context=vm.createContext({persistStoryBattleVitals(){},
     run:{story:true,storyReplay:replay,correct:20,deck:Array(20),elapsed:60000,slashBonus:slash,feverCollected:fever},
     selectedCharacter:{id:'hero',class:'warrior',coins:100},selectedStage:'forest',player:'guest',
     localMode:local,dbOnline:!local,accountMode:true,accountCrystals:100,

@@ -303,7 +303,6 @@
     const { id, type = 'sfx', options } = event.detail || {};
     if (!id) return;
     if (type === 'bgm') root.wordoriaSound.playBGM(id, options);
-    else root.wordoriaSound.playSFX(id, options);
   };
   (root.document || root).addEventListener?.('wordoria:audio', handleAudioEvent);
 })(typeof window !== 'undefined' ? window : globalThis);

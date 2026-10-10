@@ -149,3 +149,9 @@ Use the following process whenever the user asks to deploy this repository. Do n
 8. Report the outcome of each applicable deployment target separately: database migrations, Edge Functions and secrets, GitHub Pages, and Android build. Any failed or skipped required target means the overall deployment is not complete.
 
 Use the project-specific Supabase commands and function names documented in `README.md`. Discover current CLI flags with `supabase <group> <command> --help` rather than relying on remembered syntax.
+
+## Boss battle active-skill feedback
+
+- Apply active-skill state and visible feedback to every boss renderer, including World 1 and World 2. Use the shared `iceTimeEffectMarkup()` for Ice Time so boss screens show the same ice overlay and 1.2-second activation announcement as ordinary Story battles.
+- Ice Time consumes MP 1, pauses the actual countdown and boss idle motion, and keeps attack/contact/hit feedback readable. Clear it on a wrong answer, completion of the current question group, or battle exit/result. World 1 uses five-pair groups; World 2 uses one four-choice question per group. Preserve boss-specific damage and skill triggers.
+- Verify activation, timer freeze, visual state, release, and potion-enabled reuse with regression tests. Browser checks run only when the user requests them. Run `npm run build` before declaring completion.

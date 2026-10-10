@@ -7,7 +7,7 @@ const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 function setup(reduced=false){
   let now=1000;
   const calls=[];
-  const context=vm.createContext({
+  const context=vm.createContext({storyEntryAllowed:()=>true,
     storyStages:[{key:'first',chapter:1},{key:'second',chapter:1},{key:'locked',chapter:2}],
     storyWorlds:[{number:1},{number:2}],stages:{first:{},second:{},locked:{}},
     selectedStoryStage:'first',selectedStoryWorld:1,storyStageArmedKey:null,storyMapMoveUntil:0,

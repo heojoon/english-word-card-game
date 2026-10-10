@@ -1,0 +1,15 @@
+{
+  "name": "크리스탈 가디언 골렘",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "sourceFrameGapPx": 50,
+  "effectLayer": "CSS beam from chest to player; no beam embedded in character cells",
+  "actions": {
+    "idle": {"frameCount": 2, "names": ["ready", "breathe"], "durationsMs": [600, 600], "loop": true},
+    "attack": {"frameCount": 3, "names": ["charge", "aim", "beam-release"], "durationsMs": [300, 300, 300], "contactFrame": 2},
+    "hit": {"frameCount": 3, "names": ["notice", "impact", "knockdown"], "durationsMs": [100, 200, 700], "finalFrameHold": true, "normalHitFrames": [0, 1]}
+  },
+  "browserReview": "pending user request; browser QA must not run automatically"
+}

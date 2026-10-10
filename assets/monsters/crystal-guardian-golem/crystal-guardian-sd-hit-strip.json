@@ -1,0 +1,45 @@
+{
+  "frameCount": 3,
+  "names": [
+    "notice",
+    "impact",
+    "knockdown"
+  ],
+  "durationsMs": [
+    100,
+    200,
+    700
+  ],
+  "finalFrameHold": true,
+  "normalHitFrames": [
+    0,
+    1
+  ],
+  "image": "crystal-guardian-sd-hit-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "scale": 0.23563696919233973,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 100
+    },
+    {
+      "name": "impact",
+      "durationMs": 200
+    },
+    {
+      "name": "knockdown",
+      "durationMs": 700
+    }
+  ],
+  "reviewStatus": "alpha, frame bounds, ground line and offline sequence reviewed; browser review pending user request"
+}

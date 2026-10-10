@@ -1,0 +1,42 @@
+{
+  "frameCount": 3,
+  "names": [
+    "charge",
+    "aim",
+    "beam-release"
+  ],
+  "durationsMs": [
+    300,
+    300,
+    300
+  ],
+  "contactFrame": 2,
+  "image": "crystal-guardian-sd-attack-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "scale": 0.45425361155698235,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "name": "charge",
+      "durationMs": 300
+    },
+    {
+      "name": "aim",
+      "durationMs": 300
+    },
+    {
+      "name": "beam-release",
+      "durationMs": 300,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "alpha, frame bounds, ground line and offline sequence reviewed; browser review pending user request"
+}

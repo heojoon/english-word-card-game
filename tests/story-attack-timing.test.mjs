@@ -8,7 +8,7 @@ function setup({total=6,index=0,endTime=1200,reduced=false}={}){
   const run={story:true,index,correct:index,deck:Array.from({length:total},()=>({})),matchBoard:Array.from({length:Math.min(5,total)},()=>({})),matched:new Set(Array.from({length:index},(_,i)=>i)),selectedKo:index,selectedEn:null,matchEn:[{id:index,entry:['word','','뜻']}],matchKo:[],hp:3,hpMax:3,mp:1,mpMax:1,elapsed:0,storyTimeLimit:60000};
   const context={run,nextTimer:null,selectedCharacter:{class:'warrior'},selectedStage:0,stages:[{storyChapter:2,name:'World 2'}],STORY_QUESTIONS_PER_TURN:5,performance:{now:()=>0},reducedMotion:()=>reduced,battleContactDelay:()=>420,itemById:()=>null,equippedMap:()=>({}),speak:()=>{},emitAudio:event=>events.push(event),document:{dispatchEvent:()=>{}},CustomEvent:class{},$:()=>({querySelector:()=>({getAnimations:()=>[{effect:{getComputedTiming:()=>({endTime})}},{effect:{getComputedTiming:()=>({endTime:Infinity})}}]})}),setTimeout:(fn,delay)=>{timers.push({fn,delay});return timers.length;},esc:String,deployedAssetUrl:x=>x,battleHeroMarkup:()=>'',passiveBannerMarkup:()=>'',storyBattleActions:()=>'',storyVitalsMarkup:()=>'',prepareQuestion:()=>{context.prepared=true;context.run.locked=false;context.run.matched=new Set();},beginFeverIntro:()=>{context.feverStarted=true;},render:()=>frames.push(context.renderBattle())};
   vm.createContext(context);
-  for(const [start,end] of [['  function refreshStorySelections(', '  function syncBGM('],['  function renderBattle(', '\n',],['  function storyPick(', '  async function finishBattle(']]){
+  for(const [start,end] of [['  function iceTimeEffectMarkup(', '  function guardianAnswer('],['  function refreshStorySelections(', '  function syncBGM('],['  function renderBattle(', '\n',],['  function storyPick(', '  async function finishBattle(']]){
     const from=source.indexOf(start);vm.runInContext(source.slice(from,source.indexOf(end,from)),context);
   }
   context.storyPick({dataset:{side:'en',id:String(index)}});
@@ -22,7 +22,7 @@ test('correct answer keeps all mobs through attack, then removes exactly one',()
   assert.equal(timers.at(-1).delay,1200);
   timers.at(-1).fn();
   assert.equal(mobCount(frames.at(-1)),4);assert.equal(run.locked,false);
-  assert.equal(events.at(-1),'ENEMY_DEATH');
+  assert.deepEqual(events,[],'story actions do not emit sound effects');
 });
 test('last answer defers fever screen until attack finishes',()=>{
   const {context,timers,frames}=setup({total:1});

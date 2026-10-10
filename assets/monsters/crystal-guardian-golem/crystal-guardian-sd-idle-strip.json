@@ -1,0 +1,35 @@
+{
+  "frameCount": 2,
+  "names": [
+    "ready",
+    "breathe"
+  ],
+  "durationsMs": [
+    600,
+    600
+  ],
+  "loop": true,
+  "image": "crystal-guardian-sd-idle-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "scale": 0.3333333333333333,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 600
+    },
+    {
+      "name": "breathe",
+      "durationMs": 600
+    }
+  ],
+  "reviewStatus": "alpha, frame bounds, ground line and offline sequence reviewed; browser review pending user request"
+}
