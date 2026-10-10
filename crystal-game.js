@@ -48,9 +48,9 @@
     storyStages.forEach((stage,index)=>{
       const chapter=stage.chapter||1,title=storyWorlds[chapter-1].name;
       const source=chapter===2?stages[`${level==='elementary'?'e':'s'}${stage.number+7}`]:sources[index],pool=source&&stageLevel(source)===level?source.words:[];
-      const shortIntro=chapter===1&&stage.number===2,words=shortIntro?pool.slice(0,5):pool;
-      const recordName=chapter===2?`스토리 2장 ${stage.number} · ${title}`:shortIntro?'스토리 LV.1 · 속삭이는 숲':`스토리 ${stage.number} · 속삭이는 숲`;
-      stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:chapter===2&&stage.number===7?60:chapter===2&&level==='middle'?30:shortIntro?5:20,guardian:chapter===2&&stage.number===7,story:true,storyChapter:chapter,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:chapter===1&&level==='elementary'?'7YA8':null};
+      const secondForestStage=chapter===1&&stage.number===2,words=pool;
+      const recordName=chapter===2?`스토리 2장 ${stage.number} · ${title}`:secondForestStage?'스토리 LV.1 · 속삭이는 숲':`스토리 ${stage.number} · 속삭이는 숲`;
+      stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:chapter===2&&stage.number===7?60:(chapter===2||secondForestStage)&&level==='middle'?30:20,guardian:chapter===2&&stage.number===7,story:true,storyChapter:chapter,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:chapter===1&&level==='elementary'?'7YA8':null};
     });
   }
   const storyStageKey=storyStages[0].key;
@@ -237,7 +237,7 @@
     const name=stageRecordName(key),legacyName=stages[key]?.story?`${name} · 초등학생`:null;
     return records.some(r=>r.cleared&&(r.stage===name||(legacyName&&r.stage===legacyName))&&(!accountMode||allCharacters.some(character=>character.id===r.character_id)));
   }
-  function storyStageUnlocked(index){const stage=storyStages[index];if(!stage)return false;if(localHost&&!nativeApp&&stage.chapter===2&&stage.number===7)return true;return index<=1||stageCleared(storyStages[index-1].key);}
+  function storyStageUnlocked(index){const stage=storyStages[index];if(!stage)return false;if(localHost&&!nativeApp&&stage.chapter===2&&stage.number===7)return true;return index===0||stageCleared(storyStages[index-1].key);}
   function earnedCoins(count,clear=false){const interval=selectedCharacter?.class==='pugilist'?3:5;return count+Math.floor(count/interval)+(clear?10:0);}
 
   function resetCreatorContent(){
