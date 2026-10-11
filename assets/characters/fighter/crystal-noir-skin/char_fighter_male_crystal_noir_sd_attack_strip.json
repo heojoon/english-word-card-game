@@ -15,7 +15,7 @@
     {
       "index": 0,
       "name": "ready",
-      "durationMs": 140,
+      "durationMs": 90,
       "x": 0,
       "y": 0
     },
@@ -29,7 +29,7 @@
     {
       "index": 2,
       "name": "straight_punch_contact",
-      "durationMs": 80,
+      "durationMs": 90,
       "hit": true,
       "x": 640,
       "y": 0
@@ -44,11 +44,13 @@
     {
       "index": 4,
       "name": "heavy_contact",
-      "durationMs": 160,
+      "durationMs": 90,
       "x": 1280,
       "y": 0
     }
   ],
   "sourceImage": "source-frames/user-attack-sheet-original.png",
-  "animationTotalMs": 560
+  "animationTotalMs": 450,
+  "cssDurationMs": 360,
+  "finalFrameHold": true
 }

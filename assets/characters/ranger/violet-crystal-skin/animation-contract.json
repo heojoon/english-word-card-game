@@ -27,16 +27,16 @@
         "attack_peak"
       ],
       "durationsMs": [
-        122.5,
-        122.5,
-        122.5,
-        122.5,
-        122.5,
+        90,
+        90,
+        90,
+        90,
+        90,
         215
       ],
-      "cssDurationMs": 612.5,
+      "cssDurationMs": 450,
       "cssDelayMs": 80,
-      "releaseTimeMs": 570,
+      "releaseTimeMs": 440,
       "releaseFrame": 4,
       "firstFrameIsIdle": true
     },
@@ -81,8 +81,8 @@
         67.5
       ],
       "cssDurationMs": 337.5,
-      "cssDelayMs": 570,
-      "contactTimeMs": 840,
+      "cssDelayMs": 440,
+      "contactTimeMs": 710,
       "reducedMotionContactTimeMs": 310,
       "frameWidth": 320,
       "frameHeight": 320,

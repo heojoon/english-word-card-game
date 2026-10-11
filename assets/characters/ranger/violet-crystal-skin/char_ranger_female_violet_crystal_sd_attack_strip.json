@@ -15,27 +15,27 @@
     {
       "index": 0,
       "name": "ready",
-      "durationMs": 122.5
+      "durationMs": 90
     },
     {
       "index": 1,
       "name": "anticipation",
-      "durationMs": 122.5
+      "durationMs": 90
     },
     {
       "index": 2,
       "name": "draw",
-      "durationMs": 122.5
+      "durationMs": 90
     },
     {
       "index": 3,
       "name": "full_draw",
-      "durationMs": 122.5
+      "durationMs": 90
     },
     {
       "index": 4,
       "name": "release",
-      "durationMs": 122.5,
+      "durationMs": 90,
       "release": true
     },
     {

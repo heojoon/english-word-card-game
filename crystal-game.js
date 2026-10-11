@@ -138,13 +138,14 @@
   const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   function battleContactDelay(){
     const skinCode=itemById(equippedMap(selectedCharacter).skin)?.code;
-    if(skinCode==='ranger_violet_crystal_skin'&&variantOf(selectedCharacter)==='female'&&selectedCharacter?.class==='ranger')return reducedMotion()?310:840;
+    if(skinCode==='ranger_violet_crystal_skin'&&variantOf(selectedCharacter)==='female'&&selectedCharacter?.class==='ranger')return reducedMotion()?310:710;
     if(skinCode==='mage_starlight_rose_skin'&&variantOf(selectedCharacter)==='female'&&selectedCharacter?.class==='mage')return reducedMotion()?170:620;
     if(reducedMotion())return skinCode==='mage_arcane_necromancer_skin'?170:skinCode==='pugilist_crystal_noir_skin'?160:selectedCharacter?.class==='mage'?250:120;
-    if(skinCode==='mage_arcane_necromancer_skin')return 840;
-    if(skinCode==='pugilist_crystal_noir_skin')return 330;
+    if(skinCode==='mage_arcane_necromancer_skin')return 590;
+    if(skinCode==='pugilist_crystal_noir_skin')return 280;
     if(selectedCharacter?.class==='mage')return 590;
-    if(skinCode==='warrior_golden_radiance_skin')return 780;
+    if(skinCode==='warrior_female_golden_radiance_skin')return 480;
+    if(skinCode==='warrior_golden_radiance_skin')return 420;
     return {warrior:420,mage:560,pugilist:450,ranger:560}[selectedCharacter?.class]||420;
   }
   function refreshStorySelections(){
