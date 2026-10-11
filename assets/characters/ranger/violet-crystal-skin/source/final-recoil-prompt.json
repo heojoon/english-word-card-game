@@ -1,0 +1,10 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "source/attack-01-isolated.png",
+  "prompt": "Create ONE isolated game sprite on 100% TRANSPARENT ALPHA background. NO GLOW HALO, NO GRADIENT, NO BLACK BACKGROUND, NO PAINTED BACKGROUND. Exactly same silver-lavender-haired youthful chibi elf archer in attached reference, identical violet crystal armor crown boots quiver and full crystal longbow. Show STRONG IMPACT RECOIL: eyes shut, face surprised, torso sharply leaning BACKWARD to left, one foot lifting off balance, left hand gripping bow on right, right hand spread to brace. Complete character and entire bow visible. No effects, motion streaks, scenery, floor, text or extra objects. Polished crisp 2D anime art matching reference. Character centered with generous transparent border, occupies center 65% of square canvas. Actual RGBA transparency everywhere outside character silhouette, preserve white and violet costume.",
+  "rejectedSources": [
+    "hit-02-isolated.png",
+    "hit-02-alpha.png"
+  ],
+  "reason": "painted violet background halo; regenerated final pose with actual transparent alpha"
+}

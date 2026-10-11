@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>보랏빛 결정 궁수 · 전투 애니메이션</title>
+<style>
+body{font:16px system-ui,sans-serif;margin:24px;background:#f7f7ff;color:#24214c}main{max-width:880px;margin:auto}h1{font-size:24px}button{padding:12px 18px;border:0;border-radius:12px;background:#5751d8;color:white;cursor:pointer}article{margin:20px 0;padding:16px;border:1px solid #cbc7ee;border-radius:16px;background:white}img{max-width:100%;height:auto}.dark{background:#5751d8;color:white}.states{display:flex;gap:16px;flex-wrap:wrap}.states article{flex:1;min-width:200px}.states img{display:block;min-height:134px}p{line-height:1.6}
+</style>
+<main>
+<h1>보랏빛 결정 궁수 · 전투 애니메이션</h1>
+<p>여성 궁수 전용 스킨. 공격 6프레임, 피격·쓰러짐 3프레임, 결정 화살 6프레임.<br>게임에서는 화살 접촉에 피해 판정이 맞춰지고 쓰러진 마지막 프레임이 유지됩니다.</p>
+<button id="contrast">배경 전환</button>
+<div class="states">
+<article><h2>공격</h2><img src="attack-preview.webp" alt="활 준비, 조준, 발사, 공격 마무리"></article>
+<article><h2>피격·쓰러짐</h2><img src="hit-preview.webp" alt="경계, 강한 반동, 완전히 쓰러짐"></article>
+<article><h2>결정 화살</h2><img src="projectile-preview.webp" alt="충전, 발사, 비행, 접촉, 결정 폭발"></article>
+</div>
+<article><h2>게임 적용 화면</h2><img src="battle-contact-360.png" alt="모바일 전투에서 결정 화살이 몬스터에 접촉하는 장면"></article>
+<p>스프라이트: 실제 투명 RGBA PNG · 캐릭터 셀 480×320 · 화살 셀 320×320 · 기준점 0.5, 0.975 · 검수용 프레임 간격 50px.</p>
+</main>
+<script>document.querySelector('#contrast').onclick=()=>document.querySelectorAll('article').forEach(node=>node.classList.toggle('dark'));</script>
+</html>

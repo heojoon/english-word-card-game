@@ -1,0 +1,112 @@
+{
+  "runtimeScale": {
+    "attack": 0.27,
+    "hit": 0.27,
+    "projectile": 0.7
+  },
+  "actions": {
+    "attack": [
+      {
+        "file": "attack-01-isolated.png",
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "attack-02-isolated.png",
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "attack-03-isolated.png",
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "attack-04-isolated.png",
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "attack-05-isolated.png",
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "attack-06-isolated.png",
+        "sourceUnitScale": 1
+      }
+    ],
+    "hit": [
+      {
+        "file": "attack-01-isolated.png",
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "hit-02-final.png",
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "hit-03-isolated.png",
+        "sourceUnitScale": 1
+      }
+    ],
+    "projectile": [
+      {
+        "file": "projectile-generated.png",
+        "bounds": [
+          0,
+          0,
+          286,
+          724
+        ],
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "projectile-generated.png",
+        "bounds": [
+          286,
+          0,
+          721,
+          724
+        ],
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "projectile-generated.png",
+        "bounds": [
+          721,
+          0,
+          1080,
+          724
+        ],
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "projectile-generated.png",
+        "bounds": [
+          1080,
+          0,
+          1468,
+          724
+        ],
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "projectile-generated.png",
+        "bounds": [
+          1468,
+          0,
+          1864,
+          724
+        ],
+        "sourceUnitScale": 1
+      },
+      {
+        "file": "projectile-generated.png",
+        "bounds": [
+          1864,
+          0,
+          2172,
+          724
+        ],
+        "sourceUnitScale": 1
+      }
+    ]
+  },
+  "notes": "Generated crowded multi-character sheets are rejected and archived. Isolated character frames are the production sources. Generated projectile spacing is variable; reviewed extracted effects are repacked with exactly 50px transparent gaps. No color-key removal."
+}

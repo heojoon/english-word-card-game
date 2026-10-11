@@ -1,0 +1,49 @@
+{
+  "image": "char_ranger_female_violet_crystal_sd_hit_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "index": 0,
+      "name": "guard_notice",
+      "durationMs": 140
+    },
+    {
+      "index": 1,
+      "name": "impact_recoil",
+      "durationMs": 140,
+      "hit": true
+    },
+    {
+      "index": 2,
+      "name": "knockdown",
+      "durationMs": 420,
+      "finalHold": true
+    }
+  ],
+  "normalization": [
+    {
+      "file": "attack-01-isolated.png",
+      "sourceUnitScale": 1
+    },
+    {
+      "file": "hit-02-final.png",
+      "sourceUnitScale": 1
+    },
+    {
+      "file": "hit-03-isolated.png",
+      "sourceUnitScale": 1
+    }
+  ],
+  "reviewStatus": "Technical frame and mobile browser review passed; not user art approval",
+  "browserReview": "review/browser-validation.json"
+}

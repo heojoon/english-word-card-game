@@ -1,0 +1,96 @@
+{
+  "skinCode": "ranger_violet_crystal_skin",
+  "class": "ranger",
+  "variant": "female",
+  "facing": "right",
+  "portraitReference": "assets/avatars/skins/ranger-female-violet-crystal.webp",
+  "identityReference": "source/identity-master.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "safetyMarginPx": 8,
+  "actions": {
+    "attack": {
+      "image": "char_ranger_female_violet_crystal_sd_attack_strip.png",
+      "frameCount": 6,
+      "names": [
+        "ready",
+        "anticipation",
+        "draw",
+        "full_draw",
+        "release",
+        "attack_peak"
+      ],
+      "durationsMs": [
+        122.5,
+        122.5,
+        122.5,
+        122.5,
+        122.5,
+        215
+      ],
+      "cssDurationMs": 612.5,
+      "cssDelayMs": 80,
+      "releaseTimeMs": 570,
+      "releaseFrame": 4,
+      "firstFrameIsIdle": true
+    },
+    "hit": {
+      "image": "char_ranger_female_violet_crystal_sd_hit_strip.png",
+      "frameCount": 3,
+      "names": [
+        "guard_notice",
+        "impact_recoil",
+        "knockdown"
+      ],
+      "durationsMs": [
+        140,
+        140,
+        420
+      ],
+      "cssDurationMs": 280,
+      "hitFrame": 1,
+      "finalFrameHold": true
+    },
+    "projectile": {
+      "image": "char_ranger_female_violet_crystal_sd_projectile_strip.png",
+      "frameCount": 6,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "names": [
+        "charge",
+        "launch",
+        "near_travel",
+        "far_travel",
+        "contact",
+        "burst_fade"
+      ],
+      "durationsMs": [
+        67.5,
+        67.5,
+        67.5,
+        67.5,
+        67.5,
+        67.5
+      ],
+      "cssDurationMs": 337.5,
+      "cssDelayMs": 570,
+      "contactTimeMs": 840,
+      "reducedMotionContactTimeMs": 310,
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "hitFrame": 4,
+      "identity": "violet crystal arrow and pink-violet burst matching the crystal longbow"
+    }
+  },
+  "cellWidthReason": "480px keeps the same character scale while accommodating twin tails, longbow and complete prone silhouette",
+  "reviewStatus": "Technical frame and mobile browser review passed; not user art approval",
+  "browserReview": "review/browser-validation.json"
+}

@@ -1,0 +1,128 @@
+{
+  "localOnly": true,
+  "results": [
+    {
+      "width": 360,
+      "reduced": false,
+      "timing": {
+        "samples": [
+          {
+            "name": "ranger-attack-frames",
+            "duration": 612.5,
+            "delay": 80
+          },
+          {
+            "name": "violet-arrow-frames",
+            "duration": 337.5,
+            "delay": 570
+          },
+          {
+            "name": "violet-arrow-flight",
+            "duration": 337.5,
+            "delay": 570
+          }
+        ],
+        "contact": 840,
+        "enemyAnimation": "enemy-knockout",
+        "enemyDelay": 840,
+        "arena": "arena hit",
+        "projectileAnimation": "violet-arrow-frames, violet-arrow-flight",
+        "paused": false,
+        "locked": true,
+        "index": 1
+      },
+      "errors": [],
+      "failedAssets": [],
+      "checks": [
+        "skin portrait and shop",
+        "idle",
+        "attack/release/contact and enemy reaction",
+        "knockdown final hold",
+        "equip/unequip reset",
+        "male base isolation"
+      ]
+    },
+    {
+      "width": 390,
+      "reduced": true,
+      "timing": {
+        "samples": [
+          {
+            "name": "ranger-attack-frames",
+            "duration": 200,
+            "delay": 30
+          },
+          {
+            "name": "violet-arrow-frames",
+            "duration": 150,
+            "delay": 190
+          },
+          {
+            "name": "violet-arrow-flight",
+            "duration": 150,
+            "delay": 190
+          }
+        ],
+        "contact": 310,
+        "enemyAnimation": "enemy-knockout",
+        "enemyDelay": 310,
+        "arena": "arena hit",
+        "projectileAnimation": "violet-arrow-frames, violet-arrow-flight",
+        "paused": false,
+        "locked": true,
+        "index": 3
+      },
+      "errors": [],
+      "failedAssets": [],
+      "checks": [
+        "skin portrait and shop",
+        "idle",
+        "attack/release/contact and enemy reaction",
+        "knockdown final hold",
+        "equip/unequip reset",
+        "male base isolation"
+      ]
+    },
+    {
+      "width": 430,
+      "reduced": false,
+      "timing": {
+        "samples": [
+          {
+            "name": "ranger-attack-frames",
+            "duration": 612.5,
+            "delay": 80
+          },
+          {
+            "name": "violet-arrow-frames",
+            "duration": 337.5,
+            "delay": 570
+          },
+          {
+            "name": "violet-arrow-flight",
+            "duration": 337.5,
+            "delay": 570
+          }
+        ],
+        "contact": 840,
+        "enemyAnimation": "enemy-knockout",
+        "enemyDelay": 840,
+        "arena": "arena hit",
+        "projectileAnimation": "violet-arrow-frames, violet-arrow-flight",
+        "paused": false,
+        "locked": true,
+        "index": 0
+      },
+      "errors": [],
+      "failedAssets": [],
+      "checks": [
+        "skin portrait and shop",
+        "idle",
+        "attack/release/contact and enemy reaction",
+        "knockdown final hold",
+        "equip/unequip reset",
+        "male base isolation"
+      ]
+    }
+  ]
+}

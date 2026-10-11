@@ -1,0 +1,111 @@
+{
+  "image": "char_ranger_female_violet_crystal_sd_projectile_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": null,
+  "frames": [
+    {
+      "index": 0,
+      "name": "charge",
+      "durationMs": 67.5
+    },
+    {
+      "index": 1,
+      "name": "launch",
+      "durationMs": 67.5
+    },
+    {
+      "index": 2,
+      "name": "near_travel",
+      "durationMs": 67.5
+    },
+    {
+      "index": 3,
+      "name": "far_travel",
+      "durationMs": 67.5
+    },
+    {
+      "index": 4,
+      "name": "contact",
+      "durationMs": 67.5,
+      "hit": true
+    },
+    {
+      "index": 5,
+      "name": "burst_fade",
+      "durationMs": 67.5
+    }
+  ],
+  "normalization": [
+    {
+      "file": "projectile-generated.png",
+      "bounds": [
+        0,
+        0,
+        286,
+        724
+      ],
+      "sourceUnitScale": 1
+    },
+    {
+      "file": "projectile-generated.png",
+      "bounds": [
+        286,
+        0,
+        721,
+        724
+      ],
+      "sourceUnitScale": 1
+    },
+    {
+      "file": "projectile-generated.png",
+      "bounds": [
+        721,
+        0,
+        1080,
+        724
+      ],
+      "sourceUnitScale": 1
+    },
+    {
+      "file": "projectile-generated.png",
+      "bounds": [
+        1080,
+        0,
+        1468,
+        724
+      ],
+      "sourceUnitScale": 1
+    },
+    {
+      "file": "projectile-generated.png",
+      "bounds": [
+        1468,
+        0,
+        1864,
+        724
+      ],
+      "sourceUnitScale": 1
+    },
+    {
+      "file": "projectile-generated.png",
+      "bounds": [
+        1864,
+        0,
+        2172,
+        724
+      ],
+      "sourceUnitScale": 1
+    }
+  ],
+  "reviewStatus": "Technical frame and mobile browser review passed; not user art approval",
+  "browserReview": "review/browser-validation.json"
+}
