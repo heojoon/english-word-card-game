@@ -553,3 +553,9 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.black-dragon-drain i{animation:none;left:75%;opacity:1}}
 
 .black-dragon-drain-contact .guardian-attack{animation:none;background-position:100% 0}
+
+.gear-level-exp{flex-wrap:wrap;white-space:normal}
+.gear-current-vitals{display:inline-flex;gap:7px;color:#fff;font-size:11px;font-weight:800;white-space:nowrap}
+.gear-current-vitals i{font-style:normal;font-size:15px;margin-right:2px}
+.gear-current-vitals .hp-heart{color:#ff7182}
+.gear-current-vitals .mp-heart{color:#71b9ff}

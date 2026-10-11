@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import {parseWorldThreePrologue,parseWorldThreeBoss} from '../scripts/generate-story-novel.mjs';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
-const source=read('crystal-game.js');
+const source=read('crystal-game.js').replace(/\r\n/g,'\n');
 const markdown=read('assets/novel/world-3-1-prologue.md');
 const lines=parseWorldThreePrologue(markdown);
 const window={};

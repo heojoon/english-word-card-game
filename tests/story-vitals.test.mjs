@@ -129,3 +129,19 @@ test('equipment recovery offers both purchases and does not consume potions at f
   const before=JSON.stringify(c.potionInventory);await c.recoverStoryHp('',{},'blue');await c.recoverStoryHp('',{},'red');
   assert.equal(JSON.stringify(c.potionInventory),before);
 });
+
+test('collection potions show total counts and offer equip and use at HP zero',()=>{
+  const c=setup();
+  vm.runInContext(source.slice(source.indexOf('  function potionCollectionCard('),source.indexOf('  function renderGear(')),c);
+  c.saveStoryVitals({hp:0,mp:0});
+  assert.match(c.potionCollectionCard('red'),/x2/);
+  assert.match(c.potionCollectionCard('blue'),/x2/);
+  c.showPotionCollection('blue');
+  assert.match(c.modalHtml,/data-action="potion-collection-equip"/);
+  assert.match(c.modalHtml,/data-action="story-recover"[^>]*>사용하기/);
+  c.showPotionCollectionEquip('red');
+  assert.match(c.modalHtml,/data-slot-index="0"/);
+  assert.match(c.modalHtml,/data-slot-index="1"/);
+  c.saveStoryVitals({hp:2,mp:2});c.showPotionCollection('blue');
+  assert.match(c.modalHtml,/data-action="story-recover"[^>]*disabled/);
+});

@@ -3,7 +3,7 @@
     "width": 360,
     "reduced": false,
     "timing": {
-      "actual": 621.7999999523163,
+      "actual": 621,
       "expected": 620
     },
     "alignment": {
@@ -18,7 +18,7 @@
     "width": 430,
     "reduced": false,
     "timing": {
-      "actual": 620.6999999284744,
+      "actual": 621,
       "expected": 620
     },
     "alignment": {
@@ -33,12 +33,12 @@
     "width": 390,
     "reduced": true,
     "timing": {
-      "actual": 172,
+      "actual": 171.69999992847443,
       "expected": 170
     },
     "alignment": {
-      "deltaX": 0.011875305175749418,
-      "deltaY": 0.0000024414062522737368
+      "deltaX": 0.011862792968770464,
+      "deltaY": 0.000002136230477844947
     },
     "finalKnockdownHeld": true,
     "errors": [],

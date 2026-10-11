@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 
-const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
+const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8').replace(/\r\n/g,'\n');
 function setup({account=true,statuses=[200],recordFailure=false}={}){
   const calls=[];
   let session={user:{id:'owner'},access_token:'current-token'};
