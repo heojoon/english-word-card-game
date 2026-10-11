@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 const helpers=source.slice(source.indexOf('  const storyVitalsCache='),source.indexOf('  function potionShopCard('));
 function setup(storage=new Map(),local=true){
-  const c=vm.createContext({stats:()=>({level:1}),combatStats:()=>({hp:100,mp:100}),bossAttackSteps:()=>1,selectedCharacter:{id:'hero',class:'mage'},localMode:local,demoKey:'test',accountUserId:'user',localStateStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>storage.set(key,value)},potionInventory:{red_potion_count:2,blue_potion_count:1,equipped_slot_1:null,equipped_slot_2:'blue'},demoState:{},run:null,modal:html=>c.modalHtml=html,toast:message=>c.message=message,esc:String,saveDemo(){},console:{error(){}},render(){},closeDialog(){},go:page=>c.page=page,performance:{now:()=>1000},reducedMotion:()=>true,storyStageArmedKey:null,storyMapMoveUntil:0,selectedStoryStage:'one',selectedStoryWorld:1,selectedStage:'one',storyStages:[{key:'one',number:1},{key:'two',number:2},{key:'boss',chapter:1,number:7},{key:'guardian',chapter:2,number:7}],storyStageUnlocked:()=>true,levelReady:()=>true,stageCleared:()=>false,stages:{one:{story:true,words:[]},two:{story:true,words:[]},boss:{story:true,words:Array.from({length:5},(_,i)=>['word'+i,'n','뜻'+i])},guardian:{story:true,guardian:true,words:[]},survival:{words:[]}},clearInterval(){},clearTimeout(){},timerId:null,nextTimer:null,removeBattleReward(){},cancelSpeech(){},buildQuestionDeck:()=>[],prepareQuestion(){},tick(){},shuffle:items=>items.slice(),window:{WORDORIA_GUARDIAN:{reset:()=>({guardian:true,bossHp:60})}},pendingStoryRun:null});
+  const c=vm.createContext({stats:()=>({level:1}),combatStats:()=>({hp:100,mp:100}),bossAttackSteps:()=>1,selectedCharacter:{id:'hero',class:'mage'},localMode:local,demoKey:'test',accountUserId:'user',localStateStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>storage.set(key,value)},potionInventory:{red_potion_count:2,blue_potion_count:1,equipped_slot_1:null,equipped_slot_2:'blue'},demoState:{},run:null,walletBalance:()=>100,modal:html=>c.modalHtml=html,toast:message=>c.message=message,esc:String,saveDemo(){},console:{error(){}},render(){},closeDialog(){},go:page=>c.page=page,performance:{now:()=>1000},reducedMotion:()=>true,storyStageArmedKey:null,storyMapMoveUntil:0,selectedStoryStage:'one',selectedStoryWorld:1,selectedStage:'one',storyStages:[{key:'one',number:1},{key:'two',number:2},{key:'boss',chapter:1,number:7},{key:'guardian',chapter:2,number:7}],storyStageUnlocked:()=>true,levelReady:()=>true,stageCleared:()=>false,stages:{one:{story:true,words:[]},two:{story:true,words:[]},boss:{story:true,words:Array.from({length:5},(_,i)=>['word'+i,'n','뜻'+i])},guardian:{story:true,guardian:true,words:[]},survival:{words:[]}},clearInterval(){},clearTimeout(){},timerId:null,nextTimer:null,removeBattleReward(){},cancelSpeech(){},buildQuestionDeck:()=>[],prepareQuestion(){},tick(){},shuffle:items=>items.slice(),window:{WORDORIA_GUARDIAN:{reset:()=>({guardian:true,bossHp:60})}},pendingStoryRun:null});
   vm.runInContext(helpers,c);
   vm.runInContext(source.slice(source.indexOf('  function selectStoryStage('),source.indexOf('  function renderStages(')),c);
   vm.runInContext(source.slice(source.indexOf('  function startBattle('),source.indexOf('  function prepareQuestion(')),c);
@@ -104,4 +104,28 @@ test('wrong potion response cannot recover HP',async()=>{
   const c=setup(new Map(),false);c.saveStoryVitals({hp:0,mp:0});c.potionInventory.equipped_slot_1='red';
   c.rpc=async()=>({type:'blue',red_potion_count:2,blue_potion_count:1,equipped_slot_1:null,equipped_slot_2:'blue'});
   await c.recoverStoryHp('one',{});assert.equal(c.storyVitals().hp,0);assert.match(c.message,/사용하지 못했어요/);
+});
+
+
+test('mana recovery at HP zero consumes one blue potion and preserves HP and red loadout',async()=>{
+  for(const local of [true,false]){
+    const c=setup(new Map(),local);c.saveStoryVitals({hp:0,mp:0});
+    c.potionInventory={red_potion_count:2,blue_potion_count:1,equipped_slot_1:'red',equipped_slot_2:'red'};
+    c.rpc=async(name,args)=>{
+      if(name==='use_story_potion')return {...c.potionInventory,type:'blue',equipped_slot_1:null};
+      return [{...c.potionInventory,red_potion_count:args.p_slots[0]==='blue'?3:2,blue_potion_count:0,equipped_slot_1:args.p_slots[0],equipped_slot_2:args.p_slots[1]}];
+    };
+    await c.recoverStoryHp('one',{},'blue');
+    assert.equal(c.storyVitals().hp,0);assert.equal(c.storyVitals().mp,1);
+    assert.equal(c.storyPotionCount('blue'),0);assert.equal(c.storyPotionCount('red'),4);
+    assert.equal(c.potionInventory.equipped_slot_1,'red');assert.equal(c.potionInventory.equipped_slot_2,'red');
+    assert.match(c.modalHtml,/data-potion="blue"/);assert.doesNotMatch(c.modalHtml,/story-enter-confirm/);
+  }
+});
+
+test('equipment recovery offers both purchases and does not consume potions at full vitals',async()=>{
+  const c=setup();c.showStoryRecovery();assert.match(c.modalHtml,/힐링포션 구매/);assert.match(c.modalHtml,/마나포션 구매/);
+  assert.doesNotMatch(c.modalHtml,/story-enter-confirm/);
+  const before=JSON.stringify(c.potionInventory);await c.recoverStoryHp('',{},'blue');await c.recoverStoryHp('',{},'red');
+  assert.equal(JSON.stringify(c.potionInventory),before);
 });
