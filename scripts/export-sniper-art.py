@@ -11,10 +11,12 @@ source.mkdir(parents=True, exist_ok=True)
 parser = argparse.ArgumentParser()
 parser.add_argument('--standing-input', type=Path)
 parser.add_argument('--sd-input', type=Path)
+parser.add_argument('--profile-input', type=Path)
 args = parser.parse_args()
 inputs = {
     'standing-cg.png': args.standing_input,
     'sd-identity.png': args.sd_input,
+    'profile-upper-body.png': args.profile_input,
 }
 for name, path in inputs.items():
     destination = source / name
@@ -25,10 +27,12 @@ for name, path in inputs.items():
 
 standing = Image.open(source / 'standing-cg.png').convert('RGBA')
 standing.save(root / 'assets/characters/sniper/char_sniper_female_standing.webp', quality=92)
-standing.thumbnail((512, 512), Image.Resampling.LANCZOS)
+upper_body = Image.open(source / 'profile-upper-body.png').convert('RGBA')
+upper_body.save(root / 'assets/characters/sniper/char_sniper_female_upper_body.webp', quality=92)
+upper_body.thumbnail((512, 512), Image.Resampling.LANCZOS)
 portrait = Image.new('RGBA', (512, 512))
-portrait.alpha_composite(standing, ((512-standing.width)//2, 512-standing.height))
-portrait.save(root / 'assets/avatars/variants/sniper-female.webp', quality=90)
+portrait.alpha_composite(upper_body, ((512-upper_body.width)//2, 512-upper_body.height))
+portrait.save(root / 'assets/avatars/variants/sniper-female-upper-body.webp', quality=90)
 sd = Image.open(source / 'sd-identity.png').convert('RGBA')
 sd.thumbnail((320, 312), Image.Resampling.LANCZOS)
 cell = Image.new('RGBA', (320, 320))
@@ -43,7 +47,7 @@ manifest = {
 }
 (root / 'assets/characters/sniper/char_sniper_female_sd_idle.json').write_text(
     json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-for path in [root / 'assets/avatars/variants/sniper-female.webp', root / 'assets/characters/sniper/char_sniper_female_sd_idle.png']:
+for path in [root / 'assets/avatars/variants/sniper-female-upper-body.webp', root / 'assets/characters/sniper/char_sniper_female_sd_idle.png']:
     image = Image.open(path)
     print(path.relative_to(root), image.size, image.getchannel('A').getextrema())
 

@@ -6,7 +6,8 @@
   "reviewStatus": "Technical alpha and 128px review passed; no browser or user approval claimed. Animation strips pending.",
   "exports": {
     "standing": "../char_sniper_female_standing.webp",
-    "profile": "../../../avatars/variants/sniper-female.webp",
+    "profile": "../../../avatars/variants/sniper-female-upper-body.webp",
+    "upperBody": "../char_sniper_female_upper_body.webp",
     "battleFallback": "../char_sniper_female_sd_idle.png"
   },
   "sd": {

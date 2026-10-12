@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-12",
+  "generator": "built-in image_gen.imagegen",
+  "source": "profile-upper-body.png",
+  "references": [
+    "../char_sniper_female_standing.webp"
+  ],
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "runtimePortrait": "../../../avatars/variants/sniper-female-upper-body.webp",
+  "runtimeDimensions": [
+    512,
+    512
+  ],
+  "upperBody": "../char_sniper_female_upper_body.webp",
+  "prompt": "Edit target: the attached female sniper standing artwork. Create a cropped representative portrait showing only the head and upper body down to the very top of the thighs (cut across hip / upper-thigh level, before mid-thigh). Preserve the exact original face, silver-white hair, blue eyes, round glasses, pose, hands, black and sage tactical clothing, colors, linework and diagonal rifle; change only framing by cropping away the lower legs. No redesign, no new pose, no new rendering style. Frame as a centered square character portrait, head fully inside frame with small top margin, upper-thigh crop at bottom, character fills most of the canvas. Keep original true transparent alpha background, no text, no shadow, no background, no duplicates. Output one square transparent PNG.",
+  "reviewStatus": "Upper-thigh framing and real alpha reviewed over Moon White and Crystal Violet at mobile size; five existing sniper tests and npm run build passed. No browser or user approval claimed."
+}

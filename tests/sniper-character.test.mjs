@@ -33,9 +33,9 @@ test('sniper creation preview offers only available artwork and requested stat b
   const {c}=setup();Object.assign(c,{esc:String,newCharacterName:'화이트 스나이퍼',availableCharacterTickets:0});
   vm.runInContext(source.slice(source.indexOf('  function classStatsMarkup('),source.indexOf('  function characterSelectMarkup(')),c);
   vm.runInContext(source.slice(source.indexOf('  function characterCreatorMarkup('),source.indexOf('  function ',source.indexOf('  function characterCreatorMarkup(')+5)),c);
-  const html=c.characterCreatorMarkup();assert.ok(html.includes('sniper-female.webp'));assert.ok(!html.includes('data-value="male"'));
+  const html=c.characterCreatorMarkup();assert.ok(html.includes('sniper-female-upper-body.webp'));assert.ok(!html.includes('data-value="male"'));
   const stats=html.match(/<i>(.*?)<\/i>/g).map(x=>(x.match(/<b>/g)||[]).length);
-  assert.deepEqual(stats,[3,2,4,2]);assert.ok(existsSync(new URL('../assets/avatars/variants/sniper-female.webp',import.meta.url)));
+  assert.deepEqual(stats,[3,2,4,2]);assert.ok(existsSync(new URL('../assets/avatars/variants/sniper-female-upper-body.webp',import.meta.url)));
 });
 test('sniper battle uses its own SD fallback and never another class strip',()=>{
   const {c}=setup();c.selectedCharacter={class:'sniper',avatar_variant:'female'};
