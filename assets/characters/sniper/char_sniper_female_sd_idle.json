@@ -1,0 +1,20 @@
+{
+  "image": "char_sniper_female_sd_idle.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 1,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frames": [
+    {
+      "name": "idle",
+      "durationMs": 1000
+    }
+  ],
+  "source": "source/sd-identity.png",
+  "reviewStatus": "static-temporary-fallback",
+  "notes": "Female only. Dedicated idle/attack/three-frame knockdown strips are pending; CSS motion is temporary feedback."
+}

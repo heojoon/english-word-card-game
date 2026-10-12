@@ -559,3 +559,24 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 .gear-current-vitals i{font-style:normal;font-size:15px;margin-right:2px}
 .gear-current-vitals .hp-heart{color:#ff7182}
 .gear-current-vitals .mp-heart{color:#71b9ff}
+
+/* Fifth class; keep all class choices readable on narrow mobile screens. */
+.class-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.sniper-insight-notice{margin:8px 0;padding:8px 12px;border:1px solid #b5aff0;border-radius:12px;background:#f0edff;color:#393280;font-size:12px;text-align:center}
+.answer:has(.sniper-answer-hint){border:2px solid var(--violet);background:#f0edff;color:var(--ink)}
+.sniper-answer-hint{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--violet);color:#fff;font-size:11px;font-weight:800}
+.story-match-item[data-sniper-pair]{border:2px solid var(--sniper-pair-color);border-left-width:6px}
+.sniper-pair-label{display:inline-block;margin-left:5px;padding:2px 5px;border-radius:6px;background:var(--sniper-pair-color);color:#fff;font-size:10px;font-weight:800;white-space:nowrap}
+/* Temporary exact-female SD fallback until sniper animation strips are ready. */
+.battle-hero-sniper.battle-hero-female .battle-sprite{background-image:url('assets/characters/sniper/char_sniper_female_sd_idle.png');background-size:100% 100%;background-position:center;animation:sniper-idle 2s ease-in-out infinite}
+.arena.hit .battle-hero-sniper{animation:none}
+.arena.hit .battle-hero-sniper.battle-hero-female .battle-sprite{animation:sniper-recoil .7s ease-out both;background-size:100% 100%}
+.arena.wrong .battle-hero-sniper.battle-hero-female .battle-sprite{background-image:url('assets/characters/sniper/char_sniper_female_sd_idle.png');background-size:100% 100%;animation:player-hit .7s ease-out both}
+.arena.ice-time-active .battle-hero-sniper .battle-sprite{animation-play-state:paused}
+@keyframes sniper-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes sniper-recoil{0%,55%{transform:translateX(0)}60%{transform:translateX(-5px)}100%{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){
+  .battle-hero-sniper.battle-hero-female .battle-sprite{animation:none}
+  .arena.hit .battle-hero-sniper.battle-hero-female .battle-sprite{animation:sniper-recoil .28s ease-out both}
+  .arena.wrong .battle-hero-sniper.battle-hero-female .battle-sprite{animation:player-hit .28s ease-out both}
+}

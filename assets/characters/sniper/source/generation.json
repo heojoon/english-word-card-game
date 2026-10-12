@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-11",
+  "generator": "built-in image_gen.imagegen",
+  "modelVersion": "not exposed by tool",
+  "identityReference": "reference-sheet.png",
+  "reviewStatus": "Technical alpha and 128px review passed; no browser or user approval claimed. Animation strips pending.",
+  "exports": {
+    "standing": "../char_sniper_female_standing.webp",
+    "profile": "../../../avatars/variants/sniper-female.webp",
+    "battleFallback": "../char_sniper_female_sd_idle.png"
+  },
+  "sd": {
+    "original": "sd-identity.png",
+    "references": [
+      "reference-sheet.png"
+    ],
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "prompt": "Use case: stylized-concept. Create ONE polished isolated full-body SD chibi character based on the attached character reference sheet, a white-haired female sniper. The attached image is the identity reference; use the small SD characters as proportion references. Preserve silver-white fluffy bob hair with wispy bangs, large blue eyes, thin round glasses, fair skin, black and muted sage-green tactical jacket, charcoal tactical trousers, knee pads, chunky boots, black gloves, utility belt with small red accents, and a long scoped black-and-taupe sniper rifle. Youthful nonsexualized 2.5-head-tall chibi proportions, big readable head and hands, compact body, completely covered torso. A single confident calm idle pose, three-quarter view turned toward screen right, both hands holding the rifle diagonally across the body with muzzle pointing down-right. Face and glasses clearly visible; distinguish hands and weapon, entire rifle and boots visible with generous margin. This is a standalone character concept preview, not an animation sheet. Match reference identity faithfully while rendering with bright polished Crystal Quest quality: clean colored linework, dark violet outer contours, crisp soft cel shading, soft upper-left key light, subtle cool ambient shadows, selective smooth gradients in white hair, friendly adventurous expression. Retain the reference's tactical color blocking and rifle; avoid unrelated props or costume redesign. Output a square high-resolution image, one character only, true transparent alpha background, no floor, no cast ground shadow, no text, no logo, no panels, no sheet, no duplicates, no fake checkerboard, no cropped parts. No pixel art, photorealism, realistic 3D, gritty weathering, gore, sexualized body, revealing outfit, exaggerated chest, or adult glamour makeup."
+  },
+  "standing": {
+    "original": "standing-cg.png",
+    "references": [
+      "reference-sheet.png",
+      "sd-identity.png"
+    ],
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "prompt": "Create one full-body standing CG of the SAME original white-haired female sniper shown in the attached references. Reference 1 is the original character identity sheet and authority for the standing character and equipment. Reference 2 is the previously created SD version, for consistent face, hair, glasses and costume colors only; DO NOT use its chibi body proportions. This new deliverable is normal-proportioned anime standing character art, approximately 6 heads tall, NOT SD or chibi, not a sheet. Identity lock: soft fluffy silver-white bob with wispy layered bangs and a few longer cheek-framing strands, large clear blue eyes, thin round wire glasses, fair skin, calm intelligent confident expression. Preserve dark charcoal and muted sage-green tactical jacket, high black collar, straps and silver buckles, small red zipper accents, utility belt and compact pouches, charcoal tactical trousers, articulated knee protection, chunky black boots with pale sage and white accents, black gloves. Modest nonsexualized youthful heroic figure, natural slim build, fully covered torso with fitted high-neck black top reaching the waistband, no exaggerated bust, no cleavage or exposed abdomen. Long black-and-taupe precision rifle with scope, coherent mechanical details and recognizable reference silhouette. Standing in relaxed balanced three-quarter view, head tilted slightly toward viewer, right hand gently adjusting glasses, left hand safely supporting the rifle diagonally across her body with barrel angled down toward screen right. Fingers and hands anatomically coherent and separated from straps and weapon. Entire full body, hair, both boots, rifle buttstock and muzzle visible with at least 8 percent safe transparent margins on all sides. Portrait composition, centered isolated character, face clearly readable. Premium polished 2D anime game character CG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients on silver-white hair, soft upper-left key light, cool violet ambient shadow, subtle cool highlights on equipment, bright friendly adventurous presentation, clear readable silhouette. Retain tactical reference design without adding unrelated fantasy accessories or redesigning identity. TRUE TRANSPARENT ALPHA background, no scenery, no floor, no ground shadow, no text, no labels, no logo, no border, no extra characters, no weapon detail panel, no effect panels. Avoid pixel art, photorealism, 3D render, gritty weathering, gore, sexualization, adult glamour makeup, distorted glasses, extra fingers, fused hands, cropped feet, cropped weapon, fake checkerboard or painted background."
+  }
+}

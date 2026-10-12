@@ -11,8 +11,8 @@ function setup(cls='warrior',items=[],level=1){
   vm.runInContext(source.slice(source.indexOf('  const storyVitalsCache='),source.indexOf('  function saveStoryVitals(')),c);
   return c;
 }
-test('LV1 coefficients times 50 and HP/MP points match all four classes',()=>{
-  for(const [cls,expected] of Object.entries({warrior:[200,50,200,100],mage:[100,100,250,200],ranger:[150,50,150,200],pugilist:[200,50,150,150]})){
+test('LV1 coefficients times 50 and HP/MP points match all five classes',()=>{
+  for(const [cls,expected] of Object.entries({warrior:[200,50,200,100],mage:[100,100,250,200],ranger:[150,50,150,200],pugilist:[200,50,150,150],sniper:[150,100,200,100]})){
     const c=setup(cls),s=c.combatStats(1),v=c.storyVitals();
     assert.deepEqual([s.hp,s.mp,s.atk,s.luk],expected);
     assert.equal(v.hpMax,expected[0]/50);assert.equal(v.mpMax,expected[1]/50);
@@ -26,8 +26,8 @@ test('equipment crosses HP and MP point boundaries, including legacy defense bon
   }
 });
 test('each class gains its configured stats every level while equipment stays additive',()=>{
-  const bases={warrior:[200,50,200,100],mage:[100,100,250,200],ranger:[150,50,150,200],pugilist:[200,50,150,150]};
-  const gains={warrior:[4,2,4,1],mage:[2,4,5,3],ranger:[3,2,3,4],pugilist:[4,2,3,3]};
+  const bases={warrior:[200,50,200,100],mage:[100,100,250,200],ranger:[150,50,150,200],pugilist:[200,50,150,150],sniper:[150,100,200,100]};
+  const gains={warrior:[4,2,4,1],mage:[2,4,5,3],ranger:[3,2,3,4],pugilist:[4,2,3,3],sniper:[2,2,4,3]};
   for(const cls of Object.keys(bases))for(const level of [1,2,10,100]){
     const c=setup(cls,[{stat_key:'hp',stat_value:50},{stat_key:'atk',stat_value:7}],level),s=c.combatStats(level);
     assert.deepEqual([s.hp,s.mp,s.atk,s.luk],bases[cls].map((base,i)=>base+(level-1)*gains[cls][i]+[50,0,7,0][i]));
