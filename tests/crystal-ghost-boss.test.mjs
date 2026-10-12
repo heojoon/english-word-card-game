@@ -27,7 +27,7 @@ function setup(attackSteps=1){
 }
 test('spirit ownership gates entry and the deck draws 90 unique words from all three worlds',()=>{
   const {c}=setup();assert.equal(c.run.crystalGhost,true);assert.equal(c.run.deck.length,90);assert.equal(c.run.bossHp,90);
-  assert.equal(c.royalSlimeTime(c.royalSlimeRemaining()),'09:00');
+  assert.equal(c.run.storyTimeLimit,210000);assert.equal(c.royalSlimeTime(c.royalSlimeRemaining()),'03:30');
   assert.equal(new Set(c.run.deck.map(x=>x.entry[0])).size,90);
   assert.deepEqual([...new Set(c.run.deck.map(x=>x.entry[0][1]))].sort(),['1','2','3']);
   for(let i=0;i<90;i+=5)assert.equal(new Set(c.run.deck.slice(i,i+5).map(x=>x.entry[0])).size,5);
@@ -45,6 +45,27 @@ test('fall triggers once at 50%, 20%, 10%, damages only at contact and rounds re
     flush();assert.equal(c.run.hp,i<45?9:i<72?5:i<81?3:2);
   }
   assert.deepEqual(Array.from(c.run.ghostThresholds),[50,20,10]);assert.equal(c.run.clear,true);assert.equal(c.run.timePenalty,0);
+});
+test('hidden boss countdown expires at exactly three minutes thirty seconds',()=>{
+  const {c}=setup();c.run.elapsed=209999;c.updateRoyalSlimeClock();assert.equal(c.run.done,false);
+  assert.equal(c.royalSlimeTime(c.royalSlimeRemaining()),'00:01');
+  c.run.elapsed=210000;c.updateRoyalSlimeClock();assert.equal(c.royalSlimeRemaining(),0);
+  assert.equal(c.run.done,true);assert.equal(c.run.clear,false);assert.equal(c.run.reason,'timeout');assert.equal(c.page,'bossResult');
+});
+test('fall kills a character with one HP at contact and persists zero HP',()=>{
+  const {c,callbacks,flush}=setup();c.run.hp=1;c.run.ghostFallsPending=2;
+  const persisted=[];c.persistStoryBattleVitals=()=>persisted.push(c.run.hp);
+  c.crystalGhostFall(c.run);assert.equal(c.run.hp,1);assert.equal(c.run.done,false);
+  callbacks.shift()();assert.equal(c.run.hp,0);assert.equal(c.run.stunned,true);assert.deepEqual(persisted,[0]);
+  flush();assert.equal(c.run.done,true);assert.equal(c.run.clear,false);assert.equal(c.run.reason,'hp-zero');
+  assert.equal(c.page,'bossResult');assert.equal(c.run.ghostFalling,false);assert.equal(c.run.bossReward,undefined);
+});
+test('two HP survives one fall, then dies to the next fall even after a killing blow',()=>{
+  const {c,flush}=setup();c.run.hp=2;c.run.ghostFallsPending=1;
+  c.crystalGhostFall(c.run);flush();assert.equal(c.run.hp,1);assert.equal(c.run.done,false);
+  c.run.bossHp=0;c.run.correct=90;c.run.ghostFallsPending=1;
+  c.crystalGhostFall(c.run);flush();assert.equal(c.run.hp,0);assert.equal(c.run.clear,false);
+  assert.equal(c.run.reason,'hp-zero');assert.equal(c.run.bossReward,undefined);
 });
 test('wrong answers lose one HP without triggering a boss skill',()=>{
   const {c,pick,flush}=setup();pick('ko',0);pick('en',1);flush();

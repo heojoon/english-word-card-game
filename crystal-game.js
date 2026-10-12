@@ -1101,7 +1101,7 @@
 
   const ROYAL_SLIME_REWARD=200, ROYAL_SLIME_RECORD='보스 · 거대 로얄 슬라임';
   const ROYAL_SLIME_HP=50, ROYAL_SLIME_LIMIT=300000, ROYAL_SLIME_ABSORB=30000;
-  const CRYSTAL_GHOST_RECORD='보스 · 숨겨진 크리스탈 유령', CRYSTAL_GHOST_HP=90, CRYSTAL_GHOST_REWARD=2200;
+  const CRYSTAL_GHOST_RECORD='보스 · 숨겨진 크리스탈 유령', CRYSTAL_GHOST_HP=90, CRYSTAL_GHOST_REWARD=2200, CRYSTAL_GHOST_LIMIT=210000;
   const CRYSTAL_GHOST_ART='assets/monsters/crystal-ghost/crystal-ghost.png';
   function hasWordCrystalSpirit(){return shopItems.some(item=>item.code==='pet'&&itemOwned(item));}
   function showCrystalGhostEncounter(){
@@ -1130,7 +1130,7 @@
     const cls=selectedCharacter.class,hpMax=cls==='mage'||cls==='ranger'?2:3;
     run={boss:true,story:true,directBossStage:Boolean(pendingStoryRun?.directBossStage),deck,index:0,correct:0,bossHp:ROYAL_SLIME_HP,absorbed:false,timePenalty:0,elapsed:0,storyTimeLimit:ROYAL_SLIME_LIMIT,hp:hpMax,hpMax,mp:cls==='mage'?2:cls==='warrior'?1:0,mpMax:cls==='mage'?2:cls==='warrior'?1:0,locked:false,paused:false,done:false,stunned:false,fever:false,iceTimeActive:false,mobs:[],slashSkillUsed:false,slashBonus:0,slashCombo:0,slashExpiresAt:0,slashWindowStartedAt:0};
     Object.assign(run,storyVitals(),{storyCharacterId:selectedCharacter.id,bossAttackSteps:bossAttackSteps()});
-    if(crystalGhost)Object.assign(run,{crystalGhost:true,bossHp:total,bossMaxHp:total,storyTimeLimit:total*6000,directBossStage:false,ghostThresholds:[],ghostFallsPending:0});
+    if(crystalGhost)Object.assign(run,{crystalGhost:true,bossHp:total,bossMaxHp:total,storyTimeLimit:CRYSTAL_GHOST_LIMIT,directBossStage:false,ghostThresholds:[],ghostFallsPending:0});
     closeDialog();prepareRoyalSlimeBoard();go('battle');tick();
   }
   function prepareRoyalSlimeBoard(){
@@ -1250,11 +1250,12 @@
     nextTimer=setTimeout(()=>{
       if(run!==battle||run.done)return;
       if(run.paused){nextTimer=setTimeout(()=>crystalGhostFall(battle),100);return;}
-      run.hp=Math.ceil(run.hp/2);run.stunned=true;persistStoryBattleVitals();render();
+      run.hp=run.hp<=1?0:Math.ceil(run.hp/2);run.stunned=true;persistStoryBattleVitals();render();
       document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'error'}}));
       nextTimer=setTimeout(()=>{
         if(run!==battle||run.done)return;
         run.stunned=false;run.ghostFalling=false;run.ghostFallNotice='';run.ghostFallsPending--;
+        if(!run.hp){finishRoyalSlimeBattle(false,'hp-zero');return;}
         if(run.ghostFallsPending>0){crystalGhostFall(battle);return;}
         if(!run.bossHp){finishRoyalSlimeBattle(true,'boss-defeated');return;}
         run.locked=false;if(run.index%5===0)prepareRoyalSlimeBoard();render();
