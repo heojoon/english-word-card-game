@@ -535,7 +535,8 @@ body:has(dialog[open]) .guardian-sprite,body:has(dialog[open]) .guardian-beam{an
 .arena.royal-boss-arena.ice-time-active .royal-slime-enemy img{filter:drop-shadow(0 0 7px var(--ice-edge))}
 /* World 3-7 hidden crystal ghost: keep the matching board unobscured. */
 .ghost-encounter-spirit{display:block;width:100px;height:100px;object-fit:contain;margin:0 auto}
-.arena.crystal-ghost-arena{background:#24214c url('assets/environments/world-3/proposals/02-crystal-temple-courtyard.png') center/cover no-repeat}
+body[data-screen="battle"] .arena.crystal-ghost-arena{background:#e9ecfa url('assets/environments/world-3/proposals/02-crystal-temple-courtyard.png') center bottom/cover no-repeat}
+.arena.crystal-ghost-arena .arena-floor{display:none}
 .arena.crystal-ghost-arena .royal-slime-enemy{animation:crystal-ghost-float 2.4s ease-in-out infinite}
 .arena.crystal-ghost-arena.hit .royal-slime-enemy{animation:crystal-ghost-float 2.4s ease-in-out infinite!important}
 .arena.crystal-ghost-arena.ghost-time-stopped .royal-slime-enemy:not(.royal-slime-recoil){animation-play-state:paused!important}
@@ -587,6 +588,9 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 .class-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
 .answer:has(.sniper-answer-hint){border:2px solid var(--violet);background:#f0edff;color:var(--ink)}
 .sniper-answer-hint{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--violet);color:#fff;font-size:11px;font-weight:800}
+.story-sniper-skill .story-action-icon{background:var(--surface,#F7F7FF);border-color:var(--violet);overflow:hidden}
+.story-sniper-skill .story-action-icon img{width:100%;height:100%;object-fit:contain}
+.selected-hero-skill>img[src*="passive-sniper-insight"]{background:var(--surface,#F7F7FF)}
 .arena .sniper-insight-reticle{position:absolute;display:block;left:50%;top:48%;z-index:8;width:110%;max-width:112px;height:auto;aspect-ratio:1;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px #60d9cf99);pointer-events:none;animation:sniper-target-lock .22s ease-out both}
 .arena .story-mob .sniper-insight-reticle{max-width:82px}
 .arena .guardian-enemy .sniper-insight-reticle,.arena .royal-slime-boss-wrap>.sniper-insight-reticle{width:70%;max-width:136px;top:52%}
@@ -629,3 +633,7 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
   .arena.hit:has(.battle-hero-sniper) .crystal-shards::after{animation:sniper-impact-ring .15s ease-out var(--sniper-contact) both!important}
   .arena.hit:has(.battle-hero-sniper) .enemy.story-mob{animation-duration:.15s!important}
 }
+
+/* World 4 prologue: misty scenery behind the shared novel dialogue. */
+.story-vn-scene.illusion-scene{background:radial-gradient(ellipse at 30% 40%,#f7f7ffcc,transparent 65%),radial-gradient(ellipse at 80% 75%,#f7f7ffb3,transparent 60%),linear-gradient(180deg,#74718a,#c9c6e5 55%,#9dcac5)}
+.story-vn-chapter-four .story-vn-scene::before,.story-vn-chapter-four .story-vn-scene::after,.story-vn-chapter-four .story-vn-orb{display:none}

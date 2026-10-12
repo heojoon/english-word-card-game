@@ -81,7 +81,7 @@ test('insight targets enemies throughout its question group and disappears on in
     const {c,rolls}=setup();Object.assign(c.run,mode);c.prepareQuestion();
     const first=c.renderBattle();
     assert.equal((first.match(/class="sniper-insight-reticle"/g)||[]).length,mode.story&&!mode.boss&&!mode.guardian?5:1);
-    assert.ok(first.includes('src="assets/effects/fx_sniper_insight_reticle.svg"'));
+    assert.ok(first.includes('src="assets/ui/skills/passive-sniper-insight.png"'));
     if(mode.guardian)assert.ok(first.includes('<div class="guardian-enemy"><img class="sniper-insight-reticle"'));
     else if(mode.boss)assert.ok(first.includes('<div class="royal-slime-boss-wrap"><img class="sniper-insight-reticle"'));
     else if(!mode.story)assert.ok(first.includes('<div class="enemy "><img class="sniper-insight-reticle"'));

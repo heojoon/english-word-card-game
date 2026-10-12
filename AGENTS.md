@@ -17,6 +17,7 @@ This repository is a static-first browser game with a Capacitor Android wrapper 
 - `mobile/native-entry.js` builds `native-bridge.js` and connects Capacitor back/pause events, speech, and haptics. `scripts/build-web.mjs` stages the files and assets in `dist/`, which is the Capacitor `webDir`; GitHub Pages serves the repository root.
 - `supabase/migrations/` is the source of schema changes. Important areas include account profiles/characters/wallet, scores and rewards, equipment, Story skill catalogs, creator worlds/maps, private source images, access grants, and OCR jobs. Preserve server-side ownership checks, RLS, and atomic RPCs for purchases/rewards.
 - `assets/characters/` contains profile art and partially available SD animation strips. Coverage differs by class, gender, and skin. Never infer that an asset exists for another variant; check the exact file and its metadata before wiring it in.
+- Story narrative files always reside in `assets/novel/`. Look for and create story files in this directory.
 
 Useful local commands:
 

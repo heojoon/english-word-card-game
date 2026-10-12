@@ -1,0 +1,42 @@
+{
+  "asset": "passive-sniper-insight.png",
+  "skill": "심안의 저격",
+  "class": "sniper",
+  "tool": "image_gen built-in",
+  "prompt": "Use case: style-transfer. Edit the attached black circular sniper reticle into a production transparent skill icon for Wordoria Crystal Quest, a bright premium mobile 2D anime fantasy game. Preserve recognizable four separated circular arcs, central crosshair and a few aiming ticks, perfect front-view radial symmetry. Replace thin black utilitarian lines with polished faceted Crystal Violet #5751D8 and Arcane Violet #7868EF crystal arcs with pale lavender-white edge highlights, Night Violet #24214C contours, and luminous Crystal Mint #60D9CF crosshair. Bold simple geometry readable at 46px; central tiny mint diamond aim point, keep transparent open negative space inside circle so an enemy remains visible underneath. Four arcs and crosshair are the only main objects, no backing disk, no tile, no frame, no words, no watermark, no texture stamps, no guns, no characters, no background. Original screenshot is structural reference only: remove all original watermark pattern, paper and black coloring. Crisp colored linework, clean three-step soft cel shading, restrained glow close to shapes, no realistic military aesthetic, no 3D toy appearance, no pixel art. Square canvas, centered reticle occupying about 85% of canvas, all details fully inside generous transparent margins. Genuine transparent alpha background including entire interior and outer margins.",
+  "reference": {
+    "role": "User-provided reticle structure reference",
+    "filename": "스크린샷 2026-10-12 22.09.07.png"
+  },
+  "source": "/Users/hjoon/.codex/generated_images/01a1303b-03b0-76b3-b567-abbf1f58e44f/exec-2cd2da97-5a6b-44e7-8caf-8bbe3a6f3e89.png",
+  "sourceDimensions": [
+    1254,
+    1254
+  ],
+  "runtimeDimensions": [
+    256,
+    256
+  ],
+  "processing": "RGBA conversion and Lanczos downsampling only; generated alpha preserved",
+  "usedIn": [
+    "character selection passive skill",
+    "Story passive skill slot",
+    "Survival, Story and boss enemy reticle"
+  ],
+  "review": {
+    "alphaRange": [
+      0,
+      255
+    ],
+    "thumbnailSizes": [
+      38,
+      46
+    ],
+    "backgrounds": [
+      "#F7F7FF",
+      "#5751D8",
+      "#24214C"
+    ],
+    "status": "Technical visual review; not user approval"
+  }
+}

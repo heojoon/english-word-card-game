@@ -101,6 +101,23 @@ export function parseWorldThreeBoss(markdown){
   if(!lines.some(line=>line.className==='black-dragon'))throw new Error('World 3 boss story is incomplete');
   return lines;
 }
+export function parseWorldFourPrologue(markdown){
+  const lines=[];
+  let sceneNumber=0,location='환각의 땅 · 프롤로그';
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    if(!block)continue;
+    const heading=block.match(/^## Scene (\d+)\. (.+)$/);
+    if(heading){sceneNumber=Number(heading[1]);location=heading[2];continue;}
+    if(block.startsWith('#')||block==='(월드 4 프롤로그 종료)')continue;
+    const dialogue=block.match(/^(아서|소서러스|바이올렛|파이터):\s*([\s\S]+)$/);
+    const speaker=dialogue?.[1]||'내레이션';
+    const text=(dialogue?.[2]||block.replace(/^배경:\s*/, '')).replace(/\s*\n\s*/g,' ');
+    lines.push({speaker,className:classes[speaker]||'scene',text,scene:'illusion',sceneNumber,location});
+  }
+  if(sceneNumber!==3||!lines.some(line=>line.speaker==='파이터')||lines.at(-1)?.text!=='맛있겠다...')throw new Error('World 4 prologue is incomplete');
+  return lines;
+}
 export async function generateStoryNovel(){
   const novels={};
   for(const [key,filename,parse] of [
@@ -109,7 +126,8 @@ export async function generateStoryNovel(){
     ['world2BossEnd','world-2-7-boss-end.md',parseWorldTwoBoss],
     ['world3Prologue','world-3-1-prologue.md',parseWorldThreePrologue],
     ['world3BossStart','world-3-8-boss-start.md',parseWorldThreeBoss],
-    ['world3BossEnd','world-3-8-boss-end.md',parseWorldThreeBoss]
+    ['world3BossEnd','world-3-8-boss-end.md',parseWorldThreeBoss],
+    ['world4Prologue','world-4-1-prologue.md',parseWorldFourPrologue]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
   await writeFile(new URL('../story-novel.js',import.meta.url),`// Generated from assets/novel/*.md by scripts/generate-story-novel.mjs.\nwindow.WORDORIA_NOVELS = ${JSON.stringify(novels,null,2)};\n`);
   console.log(`Prepared visual novels: ${Object.entries(novels).map(([key,lines])=>`${key}: ${lines.length}`).join(' / ')} beats.`);

@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: style-transfer\nAsset type: Wordoria Crystal Quest pugilist active skill icon, Weaving Step.\nInput 1 is the user's tiny reference: preserve its central idea of a foot making a rapid evasive step surrounded by sweeping luminous motion trails. Replace ALL bare foot/toes with a fully enclosed youthful boxing shoe. Input 2 is the approved warrior skill icon: use ONLY its polished anime fantasy illustration quality and violet crystal frame language; do not use a sword or red attack motif.\nPrimary request: Redraw reference 1 as a finished square mobile RPG skill icon. One large closed-toe white-and-Crystal-Violet high-top boxing shoe, readable laces and substantial sole, pointing diagonally lower left in an agile dodge/side-step. Ankle covered by a violet cuff; no bare feet, toes, or exposed skin. A sweeping mint-white luminous trail curves beneath and around the shoe to show evasion, with one subtle translucent shoe afterimage behind it and just a few crystal sparkles.\nStyle: bright premium stylized 2D anime fantasy illustration with clean confident outlines, soft cel shading, faceted crystal accents, polished magical light; friendly upper-elementary and middle-school game. Large clear dominant shoe silhouette readable at 40-64px.\nPalette: Crystal Violet #5751D8, Arcane Violet #7868EF, Crystal Mint #60D9CF, Moon White #F7F7FF, Night Violet #24214C. Restrained gold thin trim only.\nComposition: square full-bleed icon, shoe fills center 65%, fully contained inside a rounded square faceted violet crystal border with restrained thin gold trim matching input 2. Deep indigo interior creates contrast for white shoe and mint trail. Balance frame decoration; do not overwhelm shoe. No letters, words, logo, watermark, numbers, presentation board, bare foot, sandal, pixel art, photorealism, plastic 3D, sword, fists, full character. Deliver one finished square icon.",
+  "image": "active-pugilist-weaving-step.png",
+  "references": [
+    "User-provided footstep screenshot",
+    "assets/ui/skills/active-warrior-consecutive-slash.png"
+  ],
+  "concept": "맨발을 흰색·보라색 권투화로 변경하고 민트빛 회피 궤적 및 크리스털 테두리 적용",
+  "review": "Generated image visually reviewed; creation, selection, and battle buttons integrated. Browser check not performed."
+}

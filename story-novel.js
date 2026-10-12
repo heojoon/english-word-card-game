@@ -3755,5 +3755,159 @@ window.WORDORIA_NOVELS = {
       "scene": "cave",
       "sceneNumber": 5
     }
+  ],
+  "world4Prologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "월드 3 크리스탈 사원에서 타락한 천사에게 추방당한 아서 일행은 정체불명의 안개가 가득한 땅에서 깨어난다.",
+      "scene": "illusion",
+      "sceneNumber": 0,
+      "location": "환각의 땅 · 프롤로그"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주변이 짙은 안개로 뒤덮여 있다. 환각의 땅 인트로)",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "여... 여기는... 시간의... 신전...? 내... 고향...?",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아... 아니야... 여기는 내... 고향... 검사의 땅이야...",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아니야...! 시간의... 시... 시간의...!",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "(머리가 깨질 듯 아파하며) 크아아악!!",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "(마찬가지로 머리를 감싸며) 크아악!!",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아니야!!! 여기는 엘프들의 숲이야!! (머리를 감싸며) 으아아악!!",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "나만 머리가 안 아픈데... 너희들 왜 그래...?",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 고향"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아! 여기는 환각의 땅이야! 향수병을 극대화시켜 사람을 미치게 만든 다음, 죽으면 땅의 양분으로 삼아...",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "환각의 정체"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아아아악!!!!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "환각의 정체"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "으아아악!!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "환각의 정체"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "얘들아! 빨리 정신력 회복 물약을 마셔...!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "환각의 정체"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 정신력 회복 물약을 마신다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "환각의 정체"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(잠시 후, 고통이 사라지고 환각이 걷히기 시작한다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "환각의 정체"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "여기가 그 환각의 땅이란 거지?",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "사탕 괴물"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응.",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "사탕 괴물"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "얘들아, 여기에는 사탕 괴물이 나오니까 조심해...",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "사탕 괴물"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "맛있겠다...",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "사탕 괴물"
+    }
   ]
 };
