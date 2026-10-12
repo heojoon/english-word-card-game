@@ -400,6 +400,12 @@ body[data-screen="battle"] .arena.royal-boss-arena{height:clamp(205px,30dvh,280p
 .story-vn-transformation-flash{position:absolute;inset:0;z-index:6;pointer-events:none;background:#f7f7ff;animation:story-necromancer-flash .55s ease-out both}
 @keyframes story-necromancer-flash{0%{opacity:0}25%{opacity:.85}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.story-vn-transformation-flash{animation:none;opacity:0}}
+.weaving-step-ready .battle-sprite{filter:drop-shadow(0 0 6px #60d9cf)}
+.weaving-step-dodging .battle-sprite{filter:drop-shadow(-8px 0 3px #60d9cf);opacity:.8}
+.weaving-step-status{position:absolute;left:14px;bottom:8px;z-index:12;padding:3px 8px;border:1px solid #60d9cf;border-radius:20px;background:#f7f7ff;color:#24214c;font-size:11px;font-weight:800;pointer-events:none}
+.arena-combo.weaving-step-announcement{top:50%;transform:translate(-50%,-50%);background:linear-gradient(120deg,#f7f7ff,#d9f8f2);border-color:#60d9cf;color:#24214c;max-width:90%;padding:10px 14px;pointer-events:none}
+.weaving-step-announcement b{font-size:clamp(15px,4vw,22px)}
+@media(prefers-reduced-motion:reduce){.weaving-step-dodging .battle-sprite{filter:drop-shadow(0 0 5px #60d9cf);opacity:1}}
 .ice-time-active{--ice-light:#e8fbff;--ice-edge:#99e5eb;--ice-shadow:#5751d833}
 .ice-time-field{position:absolute;z-index:6;right:6px;bottom:15px;width:min(210px,64%);height:100px;pointer-events:none;filter:drop-shadow(0 2px 5px var(--ice-shadow))}
 .arena-combo.ice-time-announcement{top:50%;transform:translate(-50%,-50%);background:linear-gradient(120deg,var(--ice-light),#d7f5ff);border-color:var(--ice-edge);color:var(--ink);padding:10px 20px}
