@@ -37,12 +37,15 @@
     ...Array.from({length:7},(_,index)=>({number:index+1,chapter:2,key:`story-ch2-${index+1}`,name:['사원으로 가는 다리','빛나는 숲길','폭포 앞 크리스탈','굽이진 돌길','구름 다리의 수호석','사원 아래 오솔길','크리스탈 사원 입구'][index],desc:['첫 다리를 건너 사원으로 향해요','나무 사이에서 빛나는 크리스탈을 찾아요','폭포 소리를 들으며 단어를 연결해요','굽이진 길에서 다음 길목을 찾아요','다리 위 수호석에 담긴 단어를 깨워요','오래된 사원의 흔적을 살펴봐요','마지막 크리스탈을 깨워 사원 입구에 도착해요'][index]})),
     // Reuse the matching World 2 vocabulary until World 3's dedicated catalogs are supplied.
     ...Array.from({length:7},(_,index)=>({number:index+1,chapter:3,key:`story-ch3-${index+1}`,sourceNumber:index+8,name:['구름 위 돌다리','하늘 정원의 길','폭포 사이 길목','고대 아치 유적','수정 폭포 테라스','사원으로 오르는 계단','크리스탈 사원'][index],desc:['구름 위 돌다리에서 새로운 모험을 시작해요','햇살 가득한 하늘 정원의 크리스탈을 깨워요','폭포 사이로 이어지는 길을 따라가요','나무다리를 건너 고대 유적의 단어를 찾아요','폭포 옆 테라스의 수정을 밝혀요','계단을 올라 사원의 관문으로 향해요','마지막 크리스탈을 깨워 크리스탈 사원에 도착해요'][index]})),
-    {number:8,chapter:3,key:'story-ch3-8',sourceNumber:14,name:'숨겨진 수정 동굴',desc:'구름 너머 동굴 입구의 크리스탈을 깨워요'}
+    {number:8,chapter:3,key:'story-ch3-8',sourceNumber:14,name:'숨겨진 수정 동굴',desc:'구름 너머 동굴 입구의 크리스탈을 깨워요'},
+    ...Array.from({length:20},(_,index)=>({number:index+1,chapter:4,key:`story-ch4-${index+1}`,sourceNumber:index+15,part:index<10?1:2,name:`${index<10?'환각의 숲':'안개의 숲과 버려진 성'} · ${index+1}단계`,desc:`WordMax Level 3 · Day ${index+11} · 30문제`}))
   ];
   const storyWorlds=[
     {number:1,name:'속삭이는 숲',region:'WHISPERING WOODS',art:'assets/story/chapter-1-library-map.webp',positions:[['31%','59.6%'],['38.8%','69.2%'],['56.2%','75%'],['69.4%','66.4%'],['86%','54.7%'],['78.7%','43.6%'],['72.1%','31.3%']]},
     {number:2,name:'크리스탈 사원 입구',region:'CRYSTAL TEMPLE ENTRANCE',art:'assets/story/chapter-2-crystal-temple-map.webp',positions:[['14.7%','46.4%'],['34.7%','40.5%'],['54.7%','53.2%'],['77.4%','55.6%'],['93.9%','64.4%'],['36.9%','25.8%'],['56.7%','21.5%']]},
     {number:3,name:'크리스탈 사원',recordTitle:'하늘 수정 성소',region:'CRYSTAL TEMPLE',art:'assets/story/chapter-3-crystal-sanctuary-map.webp',positions:[['48.25%','83.8%'],['82.84%','67.2%'],['58.12%','55.48%'],['29.15%','46.59%'],['82.66%','47.83%'],['57.01%','38.46%'],['68.73%','25.98%'],['19.1%','18.61%']]}
+,
+    {"number":4,"name":"환각의 숲","recordTitle":"환각의 숲과 버려진 성","region":"ILLUSION FOREST AND ABANDONED CASTLE","positions":[["13.909%","6.445%"],["27.818%","8.496%"],["40.264%","10.742%"],["56.369%","13.965%"],["69.693%","17.09%"],["83.455%","20.996%"],["76.135%","25.586%"],["63.543%","30.42%"],["25.037%","36.182%"],["80.527%","41.357%"],["74.085%","47.949%"],["73.792%","52.979%"],["51.977%","57.227%"],["24.744%","61.182%"],["41.581%","65.234%"],["56.076%","69.58%"],["30.307%","78.027%"],["48.609%","80.566%"],["76.867%","84.375%"],["78.184%","94.873%"]],"art":"assets/story/chapter-4-illusion-forest-combined-map.webp"}
   ];
   function configureStoryContent(world=null){
     const level=learningLevel();
@@ -54,7 +57,7 @@
       const source=chapter>1?stages[`${level==='elementary'?'e':'s'}${stage.sourceNumber||stage.number+7*(chapter-1)}`]:sources[index],pool=source&&stageLevel(source)===level?source.words:[];
       const secondForestStage=chapter===1&&stage.number===2,words=pool;
       const recordName=chapter>1?`스토리 ${chapter}장 ${stage.number} · ${storyWorlds[chapter-1].recordTitle||title}`:secondForestStage?'스토리 LV.1 · 속삭이는 숲':`스토리 ${stage.number} · 속삭이는 숲`;
-      stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName,desc:stage.desc,questionCount:chapter===3&&stage.number===8?60:chapter>=3?(level==='middle'?35:25):chapter===2&&stage.number===7?60:(chapter>1||secondForestStage)&&level==='middle'?30:20,guardian:chapter===2&&stage.number===7,blackDragon:chapter===3&&stage.number===8,story:true,storyChapter:chapter,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:chapter===1&&level==='elementary'?'7YA8':null};
+      stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName,desc:chapter===4&&source?source.desc:stage.desc,questionCount:chapter===4?30:chapter===3&&stage.number===8?60:chapter>=3?(level==='middle'?35:25):chapter===2&&stage.number===7?60:(chapter>1||secondForestStage)&&level==='middle'?30:20,guardian:chapter===2&&stage.number===7,blackDragon:chapter===3&&stage.number===8,story:true,storyChapter:chapter,storyNumber:stage.number,learningLevel:level,words,sourceMapId:source?.mapId,worldCode:chapter===1&&level==='elementary'?'7YA8':null};
     });
   }
   const storyStageKey=storyStages[0].key;
@@ -873,7 +876,8 @@
     const options=['red','blue'].map(type=>{const item=potionTypes[type],key=type==='red'?'hp':'mp',count=storyPotionCount(type);return `<div class="item-detail-stat"><span>${item.name} 보유 (장착 포함)</span><b>×${count}</b></div><div class="actions"><button class="primary" data-action="story-recover" data-potion="${type}" data-stage="${esc(stageKey)}" ${!count||vitals[key]>=vitals[`${key}Max`]||storyRecoveryBusy?'disabled':''}>${item.name} 사용 · ${key.toUpperCase()} +1</button><button class="secondary" data-action="buy-potion" data-potion="${type}" data-recovery="true" data-stage="${esc(stageKey)}" ${storyRecoveryBusy||walletBalance()<POTION_PRICE?'disabled':''}>${item.name} 구매 · ◆ ${POTION_PRICE}</button></div>`;}).join('');
     modal(`<div class="eyebrow">STORY MODE · RECOVERY</div><h2>${stageKey&&vitals.hp===0?'HP가 0이라 입장할 수 없어요':'물약으로 회복하기'}</h2><p>힐링포션은 HP 1, 마나포션은 MP 1을 회복해요.</p><div class="item-detail-stat"><span>현재 HP / MP</span><b>HP ${vitals.hp} / ${vitals.hpMax} · MP ${vitals.mp} / ${vitals.mpMax}</b></div>${options}${stageKey&&vitals.hp>0?`<button class="primary" data-action="story-enter-confirm" data-stage="${esc(stageKey)}" ${storyRecoveryBusy?'disabled':''}>스테이지 입장</button>`:''}`,{closable:!storyRecoveryBusy});
   }
-  function storyEntryAllowed(stageKey){if(storyRecoveryBusy)return false;if(storyVitals().hp>0)return true;showStoryRecovery(stageKey);return false;}
+  function storyStagePlayable(stageKey){return stages[stageKey]?.storyChapter!==4||isAdministrator();}
+  function storyEntryAllowed(stageKey){if(!storyStagePlayable(stageKey)){toast('월드 4는 관리자 테스트 중이에요.');return false;}if(storyRecoveryBusy)return false;if(storyVitals().hp>0)return true;showStoryRecovery(stageKey);return false;}
   async function recoverStoryHp(stageKey,button,type='red'){
     if(storyRecoveryBusy||!selectedCharacter)return;
     const item=potionTypes[type];if(!item)return;const key=type==='red'?'hp':'mp',other=type==='red'?'blue':'red',vitals=storyVitals();if(vitals[key]>=vitals[`${key}Max`]||storyPotionCount(type)<1)return;
@@ -950,22 +954,28 @@
   }
   function renderStory(){
     const world=storyWorlds[selectedStoryWorld-1]||storyWorlds[0],chapterStages=storyStages.filter(stage=>(stage.chapter||1)===world.number);
-    const available=stage=>storyStageUnlocked(storyStages.indexOf(stage))&&levelReady(stages[stage.key]);
+    const available=stage=>storyStagePlayable(stage.key)&&storyStageUnlocked(storyStages.indexOf(stage))&&levelReady(stages[stage.key]);
     let selected=chapterStages.find(stage=>stage.key===selectedStoryStage&&available(stage));
     if(!selected)selected=chapterStages.find(stage=>available(stage)&&!stageCleared(stage.key))||chapterStages.find(available);
     if(selected)selectedStoryStage=selected.key;
-    const selectedPosition=selected?world.positions[chapterStages.indexOf(selected)]:null;
-    const activeCharacter=selected?`<span class="story-map-hero" style="--story-x:${selectedPosition[0]};--story-y:${selectedPosition[1]}" aria-hidden="true">${battleHeroMarkup()}</span>`:'';
-    const nodes=chapterStages.map((stage,index)=>{
-      const clear=stageCleared(stage.key),unlocked=available(stage),active=selected?.key===stage.key,position=world.positions[index];
-      const cls=`story-map-node story-map-node-${stage.number} ${clear?'cleared':unlocked?'active':'locked'}${active?' selected':''}`;
-      const number=`<span class="story-map-node-number">${stage.number}${unlocked?'':'<span class="story-map-node-lock" aria-hidden="true">🔒</span>'}</span>`,check=clear?'<span class="story-map-node-check" aria-hidden="true">✓</span>':'';
-      if(!unlocked||!levelReady(stages[stage.key]))return `<span class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" aria-label="스테이지 ${stage.number} 잠김">${number}${check}</span>`;
-      return `<button type="button" class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" data-action="story-stage-select" data-stage="${stage.key}" aria-current="${active?'step':'false'}" aria-label="스테이지 ${stage.number}${clear?' 클리어, 다시 도전 가능':' 도전 가능'}">${number}${check}</button>`;
-    }).join('');
     const worldNavigation=`<div class="story-map-navigation" role="navigation" aria-label="스토리 월드 이동"><button type="button" class="story-map-region" data-action="story-world-select" data-world="${world.number-1}" ${world.number===1?'disabled':''}>이전 월드</button><button type="button" class="story-map-region" data-action="story-world-select" data-world="${world.number+1}" ${world.number===storyWorlds.length?'disabled':''}>다음 월드</button></div>`;
-    const notice=!chapterStages.some(stage=>levelReady(stages[stage.key]))?contentEmpty():world.number>1&&!chapterStages.some(stage=>storyStageUnlocked(storyStages.indexOf(stage)))?`<div class="notice">${esc(storyWorlds[world.number-2].name)}의 7스테이지를 클리어하면 ${esc(world.name)}가 열려요.</div>`:'';
-    return `<div class="story-mode-toolbar"><button class="text-btn" data-action="nav" data-page="dungeon">← 모드 선택</button>${storyAudioButton()}</div><div class="page-title story-map-heading"><div class="eyebrow">STORY MODE · WORLD ${world.number}</div><h1>${esc(world.name)}</h1></div>${notice}<section class="story-world-map story-world-map-${world.number}" aria-label="${esc(world.name)} 스테이지 지도"><img class="story-world-map-art" src="${esc(deployedAssetUrl(world.art))}" alt="${esc(world.name)}의 ${chapterStages.length}개 크리스탈 스테이지 지도">${worldNavigation}${world.number===1?'<span class="story-map-label story-map-label-library">별빛 도서관</span>':''}${nodes}${activeCharacter}</section>`;
+    const previousStages=storyStages.filter(stage=>(stage.chapter||1)===world.number-1),previousLast=previousStages.at(-1);
+    const notice=world.number===4&&!isAdministrator()?'<div class="notice">월드 4는 관리자 테스트 중이에요. 정식 공개 후 플레이할 수 있어요.</div>':!chapterStages.some(stage=>levelReady(stages[stage.key]))?contentEmpty():world.number>1&&!chapterStages.some(stage=>storyStageUnlocked(storyStages.indexOf(stage)))?`<div class="notice">${esc(storyWorlds[world.number-2].name)}의 ${previousLast.number}스테이지를 클리어하면 ${esc(world.name)}가 열려요.</div>`:'';
+    const maps=(world.parts||[world]).map((map,partIndex)=>{
+      const mapStages=world.parts?chapterStages.filter(stage=>stage.part===map.number):chapterStages;
+      const selectedPosition=selected&&mapStages.includes(selected)?map.positions[mapStages.indexOf(selected)]:null;
+      const activeCharacter=selectedPosition?`<span class="story-map-hero" style="--story-x:${selectedPosition[0]};--story-y:${selectedPosition[1]}" aria-hidden="true">${battleHeroMarkup()}</span>`:'';
+      const nodes=mapStages.map((stage,index)=>{
+        const clear=stageCleared(stage.key),unlocked=available(stage),active=selected?.key===stage.key,position=map.positions[index];
+        const cls=`story-map-node story-map-node-${stage.number} ${clear?'cleared':unlocked?'active':'locked'}${active?' selected':''}`;
+        const number=`<span class="story-map-node-number">${stage.number}${unlocked?'':'<span class="story-map-node-lock" aria-hidden="true">🔒</span>'}</span>`,check=clear?'<span class="story-map-node-check" aria-hidden="true">✓</span>':'';
+        if(!unlocked||!levelReady(stages[stage.key]))return `<span class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" aria-label="스테이지 ${stage.number} 잠김">${number}${check}</span>`;
+        return `<button type="button" class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" data-action="story-stage-select" data-stage="${stage.key}" aria-current="${active?'step':'false'}" aria-label="스테이지 ${stage.number}${clear?' 클리어, 다시 도전 가능':' 도전 가능'}">${number}${check}</button>`;
+      }).join('');
+      const mapTitle=world.parts&&world.number!==4?`<h2 class="story-map-part-title">${esc(map.name)} <span>${mapStages[0].number}–${mapStages.at(-1).number}단계</span></h2>`:'';
+      return `${mapTitle}<section class="story-world-map story-world-map-${world.number}" aria-label="${esc(map.name)} 스테이지 지도"><img class="story-world-map-art" src="${esc(deployedAssetUrl(map.art))}" alt="${esc(map.name)}의 ${mapStages.length}개 크리스탈 스테이지 지도">${partIndex===0?worldNavigation:''}${world.number===1?'<span class="story-map-label story-map-label-library">별빛 도서관</span>':''}${nodes}${activeCharacter}</section>`;
+    }).join('');
+    return `<div class="story-mode-toolbar"><button class="text-btn" data-action="nav" data-page="dungeon">← 모드 선택</button>${storyAudioButton()}</div><div class="page-title story-map-heading"><div class="eyebrow">STORY MODE · WORLD ${world.number}</div><h1>${esc(world.name)}</h1></div>${notice}${maps}`;
   }
   function selectStoryWorld(number){if(!storyWorlds.some(world=>world.number===number))return;storyStageArmedKey=null;storyMapMoveUntil=0;selectedStoryWorld=number;render();}
   function selectStoryStage(stageKey){
@@ -987,7 +997,7 @@
     if(!storyEntryAllowed(stage.key))return;
     const alreadyCleared=stageCleared(stage.key);
     selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;render();
-    modal(`<div class="eyebrow">STAGE ${String(stage.number).padStart(2,'0')}</div><h2>${esc(stage.name)}에 입장할까요?</h2><p>${esc(stage.desc)}</p>${alreadyCleared?'<p class="notice">이미 클리어한 스테이지예요. 다시 플레이해도 보상은 없어요. 입장하시겠어요?</p>':''}<div class="actions story-enter-actions"><button type="button" class="primary" data-action="story-enter-confirm" data-stage="${stage.key}">예</button><button type="button" class="secondary" data-action="story-enter-cancel">아니오</button></div>`);
+    modal(`<div class="eyebrow">STAGE ${String(stage.number).padStart(2,'0')}</div><h2>${esc(stage.name)}에 입장할까요?</h2><p>${esc(stage.chapter===4?stages[stage.key].desc:stage.desc)}</p>${alreadyCleared?'<p class="notice">이미 클리어한 스테이지예요. 다시 플레이해도 보상은 없어요. 입장하시겠어요?</p>':''}<div class="actions story-enter-actions"><button type="button" class="primary" data-action="story-enter-confirm" data-stage="${stage.key}">예</button><button type="button" class="secondary" data-action="story-enter-cancel">아니오</button></div>`);
   }
   function startStoryStage(stageKey){
     const index=storyStages.findIndex(stage=>stage.key===stageKey),stage=storyStages[index];

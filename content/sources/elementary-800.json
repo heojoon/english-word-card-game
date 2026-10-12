@@ -1,0 +1,4806 @@
+{
+  "pdf": "교육부지정 초등영단어 800.pdf",
+  "sha256": "5f6e000fa8ff51b73de3f70f79781bcfc8f9126187436af557182a8e26026859",
+  "rows": [
+    {
+      "number": 1,
+      "page": 1,
+      "english": "a. an",
+      "meaning": "(하나의)"
+    },
+    {
+      "number": 2,
+      "page": 1,
+      "english": "about",
+      "meaning": "(~에관하여)"
+    },
+    {
+      "number": 3,
+      "page": 1,
+      "english": "across",
+      "meaning": "(~을 가로질러)"
+    },
+    {
+      "number": 4,
+      "page": 1,
+      "english": "act",
+      "meaning": "(행동)"
+    },
+    {
+      "number": 5,
+      "page": 1,
+      "english": "address",
+      "meaning": "(주소)"
+    },
+    {
+      "number": 6,
+      "page": 1,
+      "english": "afraid",
+      "meaning": "(두려워하여)"
+    },
+    {
+      "number": 7,
+      "page": 1,
+      "english": "after",
+      "meaning": "(~후에)"
+    },
+    {
+      "number": 8,
+      "page": 1,
+      "english": "afternoon",
+      "meaning": "(오후)"
+    },
+    {
+      "number": 9,
+      "page": 1,
+      "english": "again",
+      "meaning": "(다시)"
+    },
+    {
+      "number": 10,
+      "page": 1,
+      "english": "age",
+      "meaning": "(나이)"
+    },
+    {
+      "number": 11,
+      "page": 1,
+      "english": "ago",
+      "meaning": "(~전에)"
+    },
+    {
+      "number": 12,
+      "page": 1,
+      "english": "air",
+      "meaning": "(공기)"
+    },
+    {
+      "number": 13,
+      "page": 1,
+      "english": "airport",
+      "meaning": "(공항)"
+    },
+    {
+      "number": 14,
+      "page": 1,
+      "english": "album",
+      "meaning": "(사진첩)"
+    },
+    {
+      "number": 15,
+      "page": 1,
+      "english": "all",
+      "meaning": "(모두)"
+    },
+    {
+      "number": 16,
+      "page": 1,
+      "english": "along",
+      "meaning": "(~을 따라서)"
+    },
+    {
+      "number": 17,
+      "page": 1,
+      "english": "always",
+      "meaning": "(항상)"
+    },
+    {
+      "number": 18,
+      "page": 1,
+      "english": "among",
+      "meaning": "(~사이에서)"
+    },
+    {
+      "number": 19,
+      "page": 1,
+      "english": "and",
+      "meaning": "(그리고)"
+    },
+    {
+      "number": 20,
+      "page": 1,
+      "english": "angry",
+      "meaning": "(성난)"
+    },
+    {
+      "number": 21,
+      "page": 1,
+      "english": "animal",
+      "meaning": "(동물)"
+    },
+    {
+      "number": 22,
+      "page": 1,
+      "english": "answer",
+      "meaning": "(대답)"
+    },
+    {
+      "number": 23,
+      "page": 1,
+      "english": "any",
+      "meaning": "(어떤)"
+    },
+    {
+      "number": 24,
+      "page": 1,
+      "english": "apartment",
+      "meaning": "(아파트)"
+    },
+    {
+      "number": 25,
+      "page": 1,
+      "english": "apple",
+      "meaning": "(사과)"
+    },
+    {
+      "number": 26,
+      "page": 1,
+      "english": "arm",
+      "meaning": "(팔)"
+    },
+    {
+      "number": 27,
+      "page": 1,
+      "english": "around",
+      "meaning": "(~주위에)"
+    },
+    {
+      "number": 28,
+      "page": 1,
+      "english": "arrive",
+      "meaning": "(도착하다)"
+    },
+    {
+      "number": 29,
+      "page": 1,
+      "english": "as",
+      "meaning": "(~같은/~로서)"
+    },
+    {
+      "number": 30,
+      "page": 1,
+      "english": "ask",
+      "meaning": "(묻다)"
+    },
+    {
+      "number": 31,
+      "page": 1,
+      "english": "at",
+      "meaning": "(~에)"
+    },
+    {
+      "number": 32,
+      "page": 1,
+      "english": "aunt",
+      "meaning": "(이모,고모)"
+    },
+    {
+      "number": 33,
+      "page": 1,
+      "english": "autumn",
+      "meaning": "(가을)"
+    },
+    {
+      "number": 34,
+      "page": 1,
+      "english": "away",
+      "meaning": "(떨어져)"
+    },
+    {
+      "number": 35,
+      "page": 1,
+      "english": "baby",
+      "meaning": "(아기)"
+    },
+    {
+      "number": 36,
+      "page": 1,
+      "english": "back",
+      "meaning": "(뒤에)"
+    },
+    {
+      "number": 37,
+      "page": 1,
+      "english": "bad",
+      "meaning": "(나쁜)"
+    },
+    {
+      "number": 38,
+      "page": 1,
+      "english": "bag",
+      "meaning": "(가방)"
+    },
+    {
+      "number": 39,
+      "page": 1,
+      "english": "ball",
+      "meaning": "(공)"
+    },
+    {
+      "number": 40,
+      "page": 1,
+      "english": "balloon",
+      "meaning": "(풍선)"
+    },
+    {
+      "number": 41,
+      "page": 1,
+      "english": "banana",
+      "meaning": "(바나나)"
+    },
+    {
+      "number": 42,
+      "page": 1,
+      "english": "band",
+      "meaning": "(끈/악단)"
+    },
+    {
+      "number": 43,
+      "page": 1,
+      "english": "bank",
+      "meaning": "(은행)"
+    },
+    {
+      "number": 44,
+      "page": 1,
+      "english": "base",
+      "meaning": "(기초)"
+    },
+    {
+      "number": 45,
+      "page": 1,
+      "english": "basket",
+      "meaning": "(바구니)"
+    },
+    {
+      "number": 46,
+      "page": 1,
+      "english": "bath",
+      "meaning": "(목욕)"
+    },
+    {
+      "number": 47,
+      "page": 1,
+      "english": "be",
+      "meaning": "(~이다)"
+    },
+    {
+      "number": 48,
+      "page": 1,
+      "english": "beach",
+      "meaning": "(해변)"
+    },
+    {
+      "number": 49,
+      "page": 1,
+      "english": "bear",
+      "meaning": "(곰)"
+    },
+    {
+      "number": 50,
+      "page": 1,
+      "english": "beautiful",
+      "meaning": "(아름다움)"
+    },
+    {
+      "number": 51,
+      "page": 2,
+      "english": "because",
+      "meaning": "(~때문에)"
+    },
+    {
+      "number": 52,
+      "page": 2,
+      "english": "become",
+      "meaning": "(~이되다)"
+    },
+    {
+      "number": 53,
+      "page": 2,
+      "english": "bed",
+      "meaning": "(침대)"
+    },
+    {
+      "number": 54,
+      "page": 2,
+      "english": "before",
+      "meaning": "(~전에)"
+    },
+    {
+      "number": 55,
+      "page": 2,
+      "english": "begin",
+      "meaning": "(시작하다)"
+    },
+    {
+      "number": 56,
+      "page": 2,
+      "english": "behind",
+      "meaning": "(~뒤에)"
+    },
+    {
+      "number": 57,
+      "page": 2,
+      "english": "bell",
+      "meaning": "(종)"
+    },
+    {
+      "number": 58,
+      "page": 2,
+      "english": "below",
+      "meaning": "(~아래)"
+    },
+    {
+      "number": 59,
+      "page": 2,
+      "english": "bench",
+      "meaning": "(긴의자)"
+    },
+    {
+      "number": 60,
+      "page": 2,
+      "english": "beside",
+      "meaning": "(~곁에)"
+    },
+    {
+      "number": 61,
+      "page": 2,
+      "english": "between",
+      "meaning": "(~사이에)"
+    },
+    {
+      "number": 62,
+      "page": 2,
+      "english": "bicycle",
+      "meaning": "(자전거)"
+    },
+    {
+      "number": 63,
+      "page": 2,
+      "english": "big",
+      "meaning": "(큰)"
+    },
+    {
+      "number": 64,
+      "page": 2,
+      "english": "bird",
+      "meaning": "(새)"
+    },
+    {
+      "number": 65,
+      "page": 2,
+      "english": "birthday",
+      "meaning": "(생일)"
+    },
+    {
+      "number": 66,
+      "page": 2,
+      "english": "black",
+      "meaning": "(검정색)"
+    },
+    {
+      "number": 67,
+      "page": 2,
+      "english": "blow",
+      "meaning": "(불다)"
+    },
+    {
+      "number": 68,
+      "page": 2,
+      "english": "blue",
+      "meaning": "(푸른)"
+    },
+    {
+      "number": 69,
+      "page": 2,
+      "english": "board",
+      "meaning": "(판자)"
+    },
+    {
+      "number": 70,
+      "page": 2,
+      "english": "boat",
+      "meaning": "(배)"
+    },
+    {
+      "number": 71,
+      "page": 2,
+      "english": "body",
+      "meaning": "(몸)"
+    },
+    {
+      "number": 72,
+      "page": 2,
+      "english": "book",
+      "meaning": "(책)"
+    },
+    {
+      "number": 73,
+      "page": 2,
+      "english": "bottle",
+      "meaning": "(병)"
+    },
+    {
+      "number": 74,
+      "page": 2,
+      "english": "bowl",
+      "meaning": "(사발)"
+    },
+    {
+      "number": 75,
+      "page": 2,
+      "english": "box",
+      "meaning": "(상자)"
+    },
+    {
+      "number": 76,
+      "page": 2,
+      "english": "boy",
+      "meaning": "(소년)"
+    },
+    {
+      "number": 77,
+      "page": 2,
+      "english": "bread",
+      "meaning": "(빵)"
+    },
+    {
+      "number": 78,
+      "page": 2,
+      "english": "break",
+      "meaning": "(깨뜨리다)"
+    },
+    {
+      "number": 79,
+      "page": 2,
+      "english": "breakfast (아침)",
+      "meaning": "breakfast (아침)"
+    },
+    {
+      "number": 80,
+      "page": 2,
+      "english": "bridge",
+      "meaning": "(다리)"
+    },
+    {
+      "number": 81,
+      "page": 2,
+      "english": "bright",
+      "meaning": "(밝은)"
+    },
+    {
+      "number": 82,
+      "page": 2,
+      "english": "bring",
+      "meaning": "(가져오다)"
+    },
+    {
+      "number": 83,
+      "page": 2,
+      "english": "brother",
+      "meaning": "(형제)"
+    },
+    {
+      "number": 84,
+      "page": 2,
+      "english": "brown",
+      "meaning": "(갈색)"
+    },
+    {
+      "number": 85,
+      "page": 2,
+      "english": "brush",
+      "meaning": "(솔)"
+    },
+    {
+      "number": 86,
+      "page": 2,
+      "english": "build",
+      "meaning": "(건설하다)"
+    },
+    {
+      "number": 87,
+      "page": 2,
+      "english": "burn",
+      "meaning": "(불타다)"
+    },
+    {
+      "number": 88,
+      "page": 2,
+      "english": "bus",
+      "meaning": "(버스)"
+    },
+    {
+      "number": 89,
+      "page": 2,
+      "english": "busy",
+      "meaning": "(바쁜)"
+    },
+    {
+      "number": 90,
+      "page": 2,
+      "english": "but",
+      "meaning": "(그러나)"
+    },
+    {
+      "number": 91,
+      "page": 2,
+      "english": "butter",
+      "meaning": "(버터)"
+    },
+    {
+      "number": 92,
+      "page": 2,
+      "english": "button",
+      "meaning": "(단추)"
+    },
+    {
+      "number": 93,
+      "page": 2,
+      "english": "buy",
+      "meaning": "(사다)"
+    },
+    {
+      "number": 94,
+      "page": 2,
+      "english": "by",
+      "meaning": "(~옆에)"
+    },
+    {
+      "number": 95,
+      "page": 2,
+      "english": "bye",
+      "meaning": "(안녕)"
+    },
+    {
+      "number": 96,
+      "page": 2,
+      "english": "calendar",
+      "meaning": "(달력)"
+    },
+    {
+      "number": 97,
+      "page": 2,
+      "english": "cake",
+      "meaning": "(케이크)"
+    },
+    {
+      "number": 98,
+      "page": 2,
+      "english": "call",
+      "meaning": "(부르다)"
+    },
+    {
+      "number": 99,
+      "page": 2,
+      "english": "camera",
+      "meaning": "(사진기)"
+    },
+    {
+      "number": 100,
+      "page": 2,
+      "english": "camp",
+      "meaning": "(야영지)"
+    },
+    {
+      "number": 101,
+      "page": 3,
+      "english": "can",
+      "meaning": "(할수있다)"
+    },
+    {
+      "number": 102,
+      "page": 3,
+      "english": "candle",
+      "meaning": "(양초)"
+    },
+    {
+      "number": 103,
+      "page": 3,
+      "english": "candy",
+      "meaning": "(사탕)"
+    },
+    {
+      "number": 104,
+      "page": 3,
+      "english": "cap",
+      "meaning": "(모자)"
+    },
+    {
+      "number": 105,
+      "page": 3,
+      "english": "capital",
+      "meaning": "(수도/대문자)"
+    },
+    {
+      "number": 106,
+      "page": 3,
+      "english": "captain",
+      "meaning": "(우두머리)"
+    },
+    {
+      "number": 107,
+      "page": 3,
+      "english": "car",
+      "meaning": "(자동차)"
+    },
+    {
+      "number": 108,
+      "page": 3,
+      "english": "card",
+      "meaning": "(카드)"
+    },
+    {
+      "number": 109,
+      "page": 3,
+      "english": "care",
+      "meaning": "(걱정/돌보다)"
+    },
+    {
+      "number": 110,
+      "page": 3,
+      "english": "carry",
+      "meaning": "(나르다)"
+    },
+    {
+      "number": 111,
+      "page": 3,
+      "english": "case",
+      "meaning": "(경우)"
+    },
+    {
+      "number": 112,
+      "page": 3,
+      "english": "cassette",
+      "meaning": "(카셋트)"
+    },
+    {
+      "number": 113,
+      "page": 3,
+      "english": "cat",
+      "meaning": "(고양이)"
+    },
+    {
+      "number": 114,
+      "page": 3,
+      "english": "catch",
+      "meaning": "(붙잡다)"
+    },
+    {
+      "number": 115,
+      "page": 3,
+      "english": "ceiling",
+      "meaning": "(천장)"
+    },
+    {
+      "number": 116,
+      "page": 3,
+      "english": "center",
+      "meaning": "(중앙)"
+    },
+    {
+      "number": 117,
+      "page": 3,
+      "english": "chair",
+      "meaning": "(의자)"
+    },
+    {
+      "number": 118,
+      "page": 3,
+      "english": "chalk",
+      "meaning": "(분필)"
+    },
+    {
+      "number": 119,
+      "page": 3,
+      "english": "chance",
+      "meaning": "(기회)"
+    },
+    {
+      "number": 120,
+      "page": 3,
+      "english": "change",
+      "meaning": "(바꾸다)"
+    },
+    {
+      "number": 121,
+      "page": 3,
+      "english": "cheap",
+      "meaning": "(값싼)"
+    },
+    {
+      "number": 122,
+      "page": 3,
+      "english": "cheese",
+      "meaning": "(치즈)"
+    },
+    {
+      "number": 123,
+      "page": 3,
+      "english": "chicken",
+      "meaning": "(닭)"
+    },
+    {
+      "number": 124,
+      "page": 3,
+      "english": "child",
+      "meaning": "(어린이)"
+    },
+    {
+      "number": 125,
+      "page": 3,
+      "english": "chopstick",
+      "meaning": "(젓가락)"
+    },
+    {
+      "number": 126,
+      "page": 3,
+      "english": "church",
+      "meaning": "(교회)"
+    },
+    {
+      "number": 127,
+      "page": 3,
+      "english": "circle",
+      "meaning": "(원)"
+    },
+    {
+      "number": 128,
+      "page": 3,
+      "english": "city",
+      "meaning": "(도시)"
+    },
+    {
+      "number": 129,
+      "page": 3,
+      "english": "class",
+      "meaning": "(학급)"
+    },
+    {
+      "number": 130,
+      "page": 3,
+      "english": "classmate",
+      "meaning": "(동급생)"
+    },
+    {
+      "number": 131,
+      "page": 3,
+      "english": "clean",
+      "meaning": "(깨끗한)"
+    },
+    {
+      "number": 132,
+      "page": 3,
+      "english": "climb",
+      "meaning": "(오르다)"
+    },
+    {
+      "number": 133,
+      "page": 3,
+      "english": "clock",
+      "meaning": "(시계)"
+    },
+    {
+      "number": 134,
+      "page": 3,
+      "english": "close",
+      "meaning": "(닫다)"
+    },
+    {
+      "number": 135,
+      "page": 3,
+      "english": "clothes",
+      "meaning": "(옷)"
+    },
+    {
+      "number": 136,
+      "page": 3,
+      "english": "cloud",
+      "meaning": "(구름)"
+    },
+    {
+      "number": 137,
+      "page": 3,
+      "english": "club",
+      "meaning": "(클럽)"
+    },
+    {
+      "number": 138,
+      "page": 3,
+      "english": "coat",
+      "meaning": "(코트)"
+    },
+    {
+      "number": 139,
+      "page": 3,
+      "english": "coffee",
+      "meaning": "(커피)"
+    },
+    {
+      "number": 140,
+      "page": 3,
+      "english": "coin",
+      "meaning": "(동전)"
+    },
+    {
+      "number": 141,
+      "page": 3,
+      "english": "cold",
+      "meaning": "(추운)"
+    },
+    {
+      "number": 142,
+      "page": 3,
+      "english": "color",
+      "meaning": "(색깔)"
+    },
+    {
+      "number": 143,
+      "page": 3,
+      "english": "come",
+      "meaning": "(오다)"
+    },
+    {
+      "number": 144,
+      "page": 3,
+      "english": "computer",
+      "meaning": "(컴퓨터)"
+    },
+    {
+      "number": 145,
+      "page": 3,
+      "english": "cook",
+      "meaning": "(요리하다)"
+    },
+    {
+      "number": 146,
+      "page": 3,
+      "english": "cool",
+      "meaning": "(시원한)"
+    },
+    {
+      "number": 147,
+      "page": 3,
+      "english": "copy",
+      "meaning": "(사본/베끼다)"
+    },
+    {
+      "number": 148,
+      "page": 3,
+      "english": "corner",
+      "meaning": "(모퉁이)"
+    },
+    {
+      "number": 149,
+      "page": 3,
+      "english": "count",
+      "meaning": "(세다)"
+    },
+    {
+      "number": 150,
+      "page": 3,
+      "english": "country",
+      "meaning": "(지역)"
+    },
+    {
+      "number": 151,
+      "page": 4,
+      "english": "course",
+      "meaning": "(과정)"
+    },
+    {
+      "number": 152,
+      "page": 4,
+      "english": "cousin",
+      "meaning": "(사촌)"
+    },
+    {
+      "number": 153,
+      "page": 4,
+      "english": "cover",
+      "meaning": "(덮다)"
+    },
+    {
+      "number": 154,
+      "page": 4,
+      "english": "cow",
+      "meaning": "(암소)"
+    },
+    {
+      "number": 155,
+      "page": 4,
+      "english": "crayon",
+      "meaning": "(크레옹)"
+    },
+    {
+      "number": 156,
+      "page": 4,
+      "english": "cream",
+      "meaning": "(크림)"
+    },
+    {
+      "number": 157,
+      "page": 4,
+      "english": "cross",
+      "meaning": "(가로지르다)"
+    },
+    {
+      "number": 158,
+      "page": 4,
+      "english": "cry",
+      "meaning": "(울다)"
+    },
+    {
+      "number": 159,
+      "page": 4,
+      "english": "cup",
+      "meaning": "(컵)"
+    },
+    {
+      "number": 160,
+      "page": 4,
+      "english": "curtain",
+      "meaning": "(커튼)"
+    },
+    {
+      "number": 161,
+      "page": 4,
+      "english": "cut",
+      "meaning": "(자르다)"
+    },
+    {
+      "number": 162,
+      "page": 4,
+      "english": "dad(dy)",
+      "meaning": "(아빠/아버지)"
+    },
+    {
+      "number": 163,
+      "page": 4,
+      "english": "dance",
+      "meaning": "(춤추다)"
+    },
+    {
+      "number": 164,
+      "page": 4,
+      "english": "danger",
+      "meaning": "(위험한)"
+    },
+    {
+      "number": 165,
+      "page": 4,
+      "english": "dark",
+      "meaning": "(어두운)"
+    },
+    {
+      "number": 166,
+      "page": 4,
+      "english": "date",
+      "meaning": "(날짜)"
+    },
+    {
+      "number": 167,
+      "page": 4,
+      "english": "daughter",
+      "meaning": "(딸)"
+    },
+    {
+      "number": 168,
+      "page": 4,
+      "english": "day",
+      "meaning": "(낮/하루)"
+    },
+    {
+      "number": 169,
+      "page": 4,
+      "english": "dead",
+      "meaning": "(죽은)"
+    },
+    {
+      "number": 170,
+      "page": 4,
+      "english": "deep",
+      "meaning": "(깊은)"
+    },
+    {
+      "number": 171,
+      "page": 4,
+      "english": "dear",
+      "meaning": "(존경하는)"
+    },
+    {
+      "number": 172,
+      "page": 4,
+      "english": "desk",
+      "meaning": "(책상)"
+    },
+    {
+      "number": 173,
+      "page": 4,
+      "english": "dial",
+      "meaning": "(다이얼)"
+    },
+    {
+      "number": 174,
+      "page": 4,
+      "english": "diary",
+      "meaning": "(일기)"
+    },
+    {
+      "number": 175,
+      "page": 4,
+      "english": "dictionary",
+      "meaning": "(사전)"
+    },
+    {
+      "number": 176,
+      "page": 4,
+      "english": "die",
+      "meaning": "(죽다)"
+    },
+    {
+      "number": 177,
+      "page": 4,
+      "english": "dinner",
+      "meaning": "(저녁)"
+    },
+    {
+      "number": 178,
+      "page": 4,
+      "english": "dirty",
+      "meaning": "(더러운)"
+    },
+    {
+      "number": 179,
+      "page": 4,
+      "english": "dish",
+      "meaning": "(큰접시)"
+    },
+    {
+      "number": 180,
+      "page": 4,
+      "english": "do",
+      "meaning": "(하다)"
+    },
+    {
+      "number": 181,
+      "page": 4,
+      "english": "doctor",
+      "meaning": "(의사)"
+    },
+    {
+      "number": 182,
+      "page": 4,
+      "english": "dog",
+      "meaning": "(개)"
+    },
+    {
+      "number": 183,
+      "page": 4,
+      "english": "doll",
+      "meaning": "(인형)"
+    },
+    {
+      "number": 184,
+      "page": 4,
+      "english": "dollar",
+      "meaning": "(달러)"
+    },
+    {
+      "number": 185,
+      "page": 4,
+      "english": "dolphin",
+      "meaning": "(돌고래)"
+    },
+    {
+      "number": 186,
+      "page": 4,
+      "english": "door",
+      "meaning": "(문)"
+    },
+    {
+      "number": 187,
+      "page": 4,
+      "english": "down",
+      "meaning": "(아래에)"
+    },
+    {
+      "number": 188,
+      "page": 4,
+      "english": "draw",
+      "meaning": "(그리다)"
+    },
+    {
+      "number": 189,
+      "page": 4,
+      "english": "dream",
+      "meaning": "(꿈)"
+    },
+    {
+      "number": 190,
+      "page": 4,
+      "english": "dress",
+      "meaning": "(드레스)"
+    },
+    {
+      "number": 191,
+      "page": 4,
+      "english": "drink",
+      "meaning": "(마시다)"
+    },
+    {
+      "number": 192,
+      "page": 4,
+      "english": "drive",
+      "meaning": "(운전하다)"
+    },
+    {
+      "number": 193,
+      "page": 4,
+      "english": "drop",
+      "meaning": "(떨어지다/방울)"
+    },
+    {
+      "number": 194,
+      "page": 4,
+      "english": "drum",
+      "meaning": "(북)"
+    },
+    {
+      "number": 195,
+      "page": 4,
+      "english": "dry",
+      "meaning": "(마른)"
+    },
+    {
+      "number": 196,
+      "page": 4,
+      "english": "duck",
+      "meaning": "(오리)"
+    },
+    {
+      "number": 197,
+      "page": 4,
+      "english": "ear",
+      "meaning": "(귀)"
+    },
+    {
+      "number": 198,
+      "page": 4,
+      "english": "early",
+      "meaning": "(일찍)"
+    },
+    {
+      "number": 199,
+      "page": 4,
+      "english": "earth",
+      "meaning": "(지구)"
+    },
+    {
+      "number": 200,
+      "page": 4,
+      "english": "east",
+      "meaning": "(동쪽)"
+    },
+    {
+      "number": 201,
+      "page": 5,
+      "english": "easy",
+      "meaning": "(쉬운)"
+    },
+    {
+      "number": 202,
+      "page": 5,
+      "english": "eat",
+      "meaning": "(먹다)"
+    },
+    {
+      "number": 203,
+      "page": 5,
+      "english": "egg",
+      "meaning": "(계란)"
+    },
+    {
+      "number": 204,
+      "page": 5,
+      "english": "empty",
+      "meaning": "(텅빈)"
+    },
+    {
+      "number": 205,
+      "page": 5,
+      "english": "end",
+      "meaning": "(끝)"
+    },
+    {
+      "number": 206,
+      "page": 5,
+      "english": "engine",
+      "meaning": "(엔진)"
+    },
+    {
+      "number": 207,
+      "page": 5,
+      "english": "enjoy",
+      "meaning": "(즐기다)"
+    },
+    {
+      "number": 208,
+      "page": 5,
+      "english": "enough",
+      "meaning": "(충분한)"
+    },
+    {
+      "number": 209,
+      "page": 5,
+      "english": "eraser",
+      "meaning": "(지우개)"
+    },
+    {
+      "number": 210,
+      "page": 5,
+      "english": "evening",
+      "meaning": "(저녁)"
+    },
+    {
+      "number": 211,
+      "page": 5,
+      "english": "every",
+      "meaning": "(모든/모두의)"
+    },
+    {
+      "number": 212,
+      "page": 5,
+      "english": "example",
+      "meaning": "(예/보기)"
+    },
+    {
+      "number": 213,
+      "page": 5,
+      "english": "exellent",
+      "meaning": "(뛰어난)"
+    },
+    {
+      "number": 214,
+      "page": 5,
+      "english": "excite",
+      "meaning": "(흥분시키다)"
+    },
+    {
+      "number": 215,
+      "page": 5,
+      "english": "excuse",
+      "meaning": "(용서하다)"
+    },
+    {
+      "number": 216,
+      "page": 5,
+      "english": "exercise",
+      "meaning": "(연습)"
+    },
+    {
+      "number": 217,
+      "page": 5,
+      "english": "eye",
+      "meaning": "(눈)"
+    },
+    {
+      "number": 218,
+      "page": 5,
+      "english": "face",
+      "meaning": "(얼굴)"
+    },
+    {
+      "number": 219,
+      "page": 5,
+      "english": "fact",
+      "meaning": "(사실)"
+    },
+    {
+      "number": 220,
+      "page": 5,
+      "english": "fair",
+      "meaning": "(공정한)"
+    },
+    {
+      "number": 221,
+      "page": 5,
+      "english": "fall",
+      "meaning": "(가을/떨어지다)"
+    },
+    {
+      "number": 222,
+      "page": 5,
+      "english": "family",
+      "meaning": "(가족)"
+    },
+    {
+      "number": 223,
+      "page": 5,
+      "english": "far",
+      "meaning": "(멀리떨어진)"
+    },
+    {
+      "number": 224,
+      "page": 5,
+      "english": "farm",
+      "meaning": "(농장)"
+    },
+    {
+      "number": 225,
+      "page": 5,
+      "english": "fast",
+      "meaning": "(빠른)"
+    },
+    {
+      "number": 226,
+      "page": 5,
+      "english": "fat",
+      "meaning": "(쌀찐)"
+    },
+    {
+      "number": 227,
+      "page": 5,
+      "english": "famous",
+      "meaning": "(유명한)"
+    },
+    {
+      "number": 228,
+      "page": 5,
+      "english": "father",
+      "meaning": "(아버지)"
+    },
+    {
+      "number": 229,
+      "page": 5,
+      "english": "feel",
+      "meaning": "(느끼다)"
+    },
+    {
+      "number": 230,
+      "page": 5,
+      "english": "few",
+      "meaning": "(다소양이적은)"
+    },
+    {
+      "number": 231,
+      "page": 5,
+      "english": "field",
+      "meaning": "(들판/경기장)"
+    },
+    {
+      "number": 232,
+      "page": 5,
+      "english": "fight",
+      "meaning": "(싸움)"
+    },
+    {
+      "number": 233,
+      "page": 5,
+      "english": "fill",
+      "meaning": "(채우다)"
+    },
+    {
+      "number": 234,
+      "page": 5,
+      "english": "film",
+      "meaning": "(필름)"
+    },
+    {
+      "number": 235,
+      "page": 5,
+      "english": "find",
+      "meaning": "(찾다)"
+    },
+    {
+      "number": 236,
+      "page": 5,
+      "english": "fine",
+      "meaning": "(좋은/맑은)"
+    },
+    {
+      "number": 237,
+      "page": 5,
+      "english": "finger",
+      "meaning": "(손가락)"
+    },
+    {
+      "number": 238,
+      "page": 5,
+      "english": "finish",
+      "meaning": "(끝내다)"
+    },
+    {
+      "number": 239,
+      "page": 5,
+      "english": "fire",
+      "meaning": "(불)"
+    },
+    {
+      "number": 240,
+      "page": 5,
+      "english": "fish",
+      "meaning": "(고기/낚시하다)"
+    },
+    {
+      "number": 241,
+      "page": 5,
+      "english": "fix",
+      "meaning": "고정시키다"
+    },
+    {
+      "number": 242,
+      "page": 5,
+      "english": "flag",
+      "meaning": "(깃발)"
+    },
+    {
+      "number": 243,
+      "page": 5,
+      "english": "floor",
+      "meaning": "(마루)"
+    },
+    {
+      "number": 244,
+      "page": 5,
+      "english": "flower",
+      "meaning": "(꽃)"
+    },
+    {
+      "number": 245,
+      "page": 5,
+      "english": "fly",
+      "meaning": "(날다)"
+    },
+    {
+      "number": 246,
+      "page": 5,
+      "english": "follow",
+      "meaning": "(뒤를따르다)"
+    },
+    {
+      "number": 247,
+      "page": 5,
+      "english": "food",
+      "meaning": "(음식)"
+    },
+    {
+      "number": 248,
+      "page": 5,
+      "english": "fool",
+      "meaning": "(바보)"
+    },
+    {
+      "number": 249,
+      "page": 5,
+      "english": "foot",
+      "meaning": "(발)"
+    },
+    {
+      "number": 250,
+      "page": 5,
+      "english": "for",
+      "meaning": "(~을 위하여/~동안)"
+    },
+    {
+      "number": 251,
+      "page": 6,
+      "english": "forget",
+      "meaning": "(잊다)"
+    },
+    {
+      "number": 252,
+      "page": 6,
+      "english": "fork",
+      "meaning": "(포크)"
+    },
+    {
+      "number": 253,
+      "page": 6,
+      "english": "free",
+      "meaning": "(자유로운)"
+    },
+    {
+      "number": 254,
+      "page": 6,
+      "english": "fresh",
+      "meaning": "(시선한)"
+    },
+    {
+      "number": 255,
+      "page": 6,
+      "english": "friend",
+      "meaning": "(친구)"
+    },
+    {
+      "number": 256,
+      "page": 6,
+      "english": "from",
+      "meaning": "(~로부터)"
+    },
+    {
+      "number": 257,
+      "page": 6,
+      "english": "front",
+      "meaning": "(앞/정면)"
+    },
+    {
+      "number": 258,
+      "page": 6,
+      "english": "fruit",
+      "meaning": "(과일)"
+    },
+    {
+      "number": 259,
+      "page": 6,
+      "english": "full",
+      "meaning": "(가득찬)"
+    },
+    {
+      "number": 260,
+      "page": 6,
+      "english": "fun",
+      "meaning": "(즐거움)"
+    },
+    {
+      "number": 261,
+      "page": 6,
+      "english": "game",
+      "meaning": "(놀이)"
+    },
+    {
+      "number": 262,
+      "page": 6,
+      "english": "garden",
+      "meaning": "(정원)"
+    },
+    {
+      "number": 263,
+      "page": 6,
+      "english": "gas",
+      "meaning": "(가스/휘발유)"
+    },
+    {
+      "number": 264,
+      "page": 6,
+      "english": "gate",
+      "meaning": "(문)"
+    },
+    {
+      "number": 265,
+      "page": 6,
+      "english": "gentle",
+      "meaning": "(온화한)"
+    },
+    {
+      "number": 266,
+      "page": 6,
+      "english": "get",
+      "meaning": "(얻다)"
+    },
+    {
+      "number": 267,
+      "page": 6,
+      "english": "girl",
+      "meaning": "(소녀)"
+    },
+    {
+      "number": 268,
+      "page": 6,
+      "english": "give",
+      "meaning": "(주다)"
+    },
+    {
+      "number": 269,
+      "page": 6,
+      "english": "glad",
+      "meaning": "(기쁜)"
+    },
+    {
+      "number": 270,
+      "page": 6,
+      "english": "glass",
+      "meaning": "(유리/컵)"
+    },
+    {
+      "number": 271,
+      "page": 6,
+      "english": "glove",
+      "meaning": "(장갑)"
+    },
+    {
+      "number": 272,
+      "page": 6,
+      "english": "go",
+      "meaning": "(가다)"
+    },
+    {
+      "number": 273,
+      "page": 6,
+      "english": "god(GOD)",
+      "meaning": "(신/하나님)"
+    },
+    {
+      "number": 274,
+      "page": 6,
+      "english": "gold",
+      "meaning": "(금)"
+    },
+    {
+      "number": 275,
+      "page": 6,
+      "english": "good",
+      "meaning": "(좋은)"
+    },
+    {
+      "number": 276,
+      "page": 6,
+      "english": "grandmother",
+      "meaning": "(할머니)"
+    },
+    {
+      "number": 277,
+      "page": 6,
+      "english": "grape",
+      "meaning": "포도)"
+    },
+    {
+      "number": 278,
+      "page": 6,
+      "english": "grass",
+      "meaning": "(풀/잔디)"
+    },
+    {
+      "number": 279,
+      "page": 6,
+      "english": "gray",
+      "meaning": "(회색)"
+    },
+    {
+      "number": 280,
+      "page": 6,
+      "english": "great",
+      "meaning": "(큰)"
+    },
+    {
+      "number": 281,
+      "page": 6,
+      "english": "green",
+      "meaning": "(녹색)"
+    },
+    {
+      "number": 282,
+      "page": 6,
+      "english": "ground",
+      "meaning": "(땅/기초)"
+    },
+    {
+      "number": 283,
+      "page": 6,
+      "english": "group",
+      "meaning": "(단체)"
+    },
+    {
+      "number": 284,
+      "page": 6,
+      "english": "grow",
+      "meaning": "(성장하다)"
+    },
+    {
+      "number": 285,
+      "page": 6,
+      "english": "guitar",
+      "meaning": "(기타(악기))"
+    },
+    {
+      "number": 286,
+      "page": 6,
+      "english": "hair",
+      "meaning": "(머리카락)"
+    },
+    {
+      "number": 287,
+      "page": 6,
+      "english": "half",
+      "meaning": "(절반)"
+    },
+    {
+      "number": 288,
+      "page": 6,
+      "english": "hall",
+      "meaning": "(회관/넓은방)"
+    },
+    {
+      "number": 289,
+      "page": 6,
+      "english": "hamburger",
+      "meaning": "(햄버거)"
+    },
+    {
+      "number": 290,
+      "page": 6,
+      "english": "hand",
+      "meaning": "(손)"
+    },
+    {
+      "number": 291,
+      "page": 6,
+      "english": "handle",
+      "meaning": "(손잡이)"
+    },
+    {
+      "number": 292,
+      "page": 6,
+      "english": "happen",
+      "meaning": "(발생하다)"
+    },
+    {
+      "number": 293,
+      "page": 6,
+      "english": "happy",
+      "meaning": "(행복한)"
+    },
+    {
+      "number": 294,
+      "page": 6,
+      "english": "hard",
+      "meaning": "(단단한/열심히)"
+    },
+    {
+      "number": 295,
+      "page": 6,
+      "english": "hat",
+      "meaning": "(모자)"
+    },
+    {
+      "number": 296,
+      "page": 6,
+      "english": "hate",
+      "meaning": "(미워하다)"
+    },
+    {
+      "number": 297,
+      "page": 6,
+      "english": "have",
+      "meaning": "(가지고있다)"
+    },
+    {
+      "number": 298,
+      "page": 6,
+      "english": "he",
+      "meaning": "(그/남자)"
+    },
+    {
+      "number": 299,
+      "page": 6,
+      "english": "head",
+      "meaning": "(머리)"
+    },
+    {
+      "number": 300,
+      "page": 6,
+      "english": "hear",
+      "meaning": "(듣다)"
+    },
+    {
+      "number": 301,
+      "page": 7,
+      "english": "heart",
+      "meaning": "(마음/상징)"
+    },
+    {
+      "number": 302,
+      "page": 7,
+      "english": "heavy",
+      "meaning": "(무거운)"
+    },
+    {
+      "number": 303,
+      "page": 7,
+      "english": "hello",
+      "meaning": "(여보세요)"
+    },
+    {
+      "number": 304,
+      "page": 7,
+      "english": "help",
+      "meaning": "(돕다)"
+    },
+    {
+      "number": 305,
+      "page": 7,
+      "english": "hen",
+      "meaning": "(암닭)"
+    },
+    {
+      "number": 306,
+      "page": 7,
+      "english": "here",
+      "meaning": "(여기에서)"
+    },
+    {
+      "number": 307,
+      "page": 7,
+      "english": "hi",
+      "meaning": "(안녕하세요!)"
+    },
+    {
+      "number": 308,
+      "page": 7,
+      "english": "hide",
+      "meaning": "(숨기다)"
+    },
+    {
+      "number": 309,
+      "page": 7,
+      "english": "high",
+      "meaning": "(높은)"
+    },
+    {
+      "number": 310,
+      "page": 7,
+      "english": "hiking",
+      "meaning": "(하이킹/도보여행)"
+    },
+    {
+      "number": 311,
+      "page": 7,
+      "english": "hill",
+      "meaning": "(언덕)"
+    },
+    {
+      "number": 312,
+      "page": 7,
+      "english": "hit",
+      "meaning": "(때리다)"
+    },
+    {
+      "number": 313,
+      "page": 7,
+      "english": "hold",
+      "meaning": "(잡다)"
+    },
+    {
+      "number": 314,
+      "page": 7,
+      "english": "hole",
+      "meaning": "(구멍)"
+    },
+    {
+      "number": 315,
+      "page": 7,
+      "english": "holiday",
+      "meaning": "(휴일)"
+    },
+    {
+      "number": 316,
+      "page": 7,
+      "english": "home",
+      "meaning": "(집)"
+    },
+    {
+      "number": 317,
+      "page": 7,
+      "english": "hope",
+      "meaning": "(희망)"
+    },
+    {
+      "number": 318,
+      "page": 7,
+      "english": "hose",
+      "meaning": "(호스)"
+    },
+    {
+      "number": 319,
+      "page": 7,
+      "english": "horse",
+      "meaning": "(말)"
+    },
+    {
+      "number": 320,
+      "page": 7,
+      "english": "hospital",
+      "meaning": "(병원)"
+    },
+    {
+      "number": 321,
+      "page": 7,
+      "english": "hot",
+      "meaning": "(뜨거운)"
+    },
+    {
+      "number": 322,
+      "page": 7,
+      "english": "hotel",
+      "meaning": "(호텔)"
+    },
+    {
+      "number": 323,
+      "page": 7,
+      "english": "hour",
+      "meaning": "(시간)"
+    },
+    {
+      "number": 324,
+      "page": 7,
+      "english": "house",
+      "meaning": "(집)"
+    },
+    {
+      "number": 325,
+      "page": 7,
+      "english": "how",
+      "meaning": "(어떻게)"
+    },
+    {
+      "number": 326,
+      "page": 7,
+      "english": "hundred",
+      "meaning": "(백(100))"
+    },
+    {
+      "number": 327,
+      "page": 7,
+      "english": "hungry",
+      "meaning": "(배고픈)"
+    },
+    {
+      "number": 328,
+      "page": 7,
+      "english": "hurry",
+      "meaning": "(서두르다)"
+    },
+    {
+      "number": 329,
+      "page": 7,
+      "english": "hurt",
+      "meaning": "(다치게하다)"
+    },
+    {
+      "number": 330,
+      "page": 7,
+      "english": "I",
+      "meaning": "(나)"
+    },
+    {
+      "number": 331,
+      "page": 7,
+      "english": "ice",
+      "meaning": "(얼음)"
+    },
+    {
+      "number": 332,
+      "page": 7,
+      "english": "idea",
+      "meaning": "(생각)"
+    },
+    {
+      "number": 333,
+      "page": 7,
+      "english": "if",
+      "meaning": "(만약)"
+    },
+    {
+      "number": 334,
+      "page": 7,
+      "english": "ill",
+      "meaning": "(병든)"
+    },
+    {
+      "number": 335,
+      "page": 7,
+      "english": "in",
+      "meaning": "(~속)"
+    },
+    {
+      "number": 336,
+      "page": 7,
+      "english": "ink",
+      "meaning": "(잉크)"
+    },
+    {
+      "number": 337,
+      "page": 7,
+      "english": "interest",
+      "meaning": "(흥미)"
+    },
+    {
+      "number": 338,
+      "page": 7,
+      "english": "into",
+      "meaning": "(~속으로)"
+    },
+    {
+      "number": 339,
+      "page": 7,
+      "english": "introduce",
+      "meaning": "(소개하다)"
+    },
+    {
+      "number": 340,
+      "page": 7,
+      "english": "island",
+      "meaning": "(섬)"
+    },
+    {
+      "number": 341,
+      "page": 7,
+      "english": "it",
+      "meaning": "(그것)"
+    },
+    {
+      "number": 342,
+      "page": 7,
+      "english": "job",
+      "meaning": "(직업)"
+    },
+    {
+      "number": 343,
+      "page": 7,
+      "english": "join",
+      "meaning": "(가입하다)"
+    },
+    {
+      "number": 344,
+      "page": 7,
+      "english": "juice",
+      "meaning": "(주스)"
+    },
+    {
+      "number": 345,
+      "page": 7,
+      "english": "jump",
+      "meaning": "(뛰어오르다)"
+    },
+    {
+      "number": 346,
+      "page": 7,
+      "english": "jungle",
+      "meaning": "(밀림지대)"
+    },
+    {
+      "number": 347,
+      "page": 7,
+      "english": "just",
+      "meaning": "(오직/겨우)"
+    },
+    {
+      "number": 348,
+      "page": 7,
+      "english": "keep",
+      "meaning": "(지키다/유지하다)"
+    },
+    {
+      "number": 349,
+      "page": 7,
+      "english": "key",
+      "meaning": "(열쇠)"
+    },
+    {
+      "number": 350,
+      "page": 7,
+      "english": "kick",
+      "meaning": "(차다)"
+    },
+    {
+      "number": 351,
+      "page": 8,
+      "english": "kid",
+      "meaning": "(아이)"
+    },
+    {
+      "number": 352,
+      "page": 8,
+      "english": "kill",
+      "meaning": "(죽이다)"
+    },
+    {
+      "number": 353,
+      "page": 8,
+      "english": "kind",
+      "meaning": "(친절한/종류)"
+    },
+    {
+      "number": 354,
+      "page": 8,
+      "english": "king",
+      "meaning": "(왕)"
+    },
+    {
+      "number": 355,
+      "page": 8,
+      "english": "kitchen",
+      "meaning": "(부엌)"
+    },
+    {
+      "number": 356,
+      "page": 8,
+      "english": "knee",
+      "meaning": "(무릎)"
+    },
+    {
+      "number": 357,
+      "page": 8,
+      "english": "knife",
+      "meaning": "(칼)"
+    },
+    {
+      "number": 358,
+      "page": 8,
+      "english": "knock",
+      "meaning": "(두드리다)"
+    },
+    {
+      "number": 359,
+      "page": 8,
+      "english": "know",
+      "meaning": "(알다)"
+    },
+    {
+      "number": 360,
+      "page": 8,
+      "english": "lady",
+      "meaning": "(숙녀)"
+    },
+    {
+      "number": 361,
+      "page": 8,
+      "english": "lake",
+      "meaning": "(호수)"
+    },
+    {
+      "number": 362,
+      "page": 8,
+      "english": "lamp",
+      "meaning": "(등불)"
+    },
+    {
+      "number": 363,
+      "page": 8,
+      "english": "land",
+      "meaning": "(땅)"
+    },
+    {
+      "number": 364,
+      "page": 8,
+      "english": "large",
+      "meaning": "(큰/넓은)"
+    },
+    {
+      "number": 365,
+      "page": 8,
+      "english": "last",
+      "meaning": "(마지막/최근)"
+    },
+    {
+      "number": 366,
+      "page": 8,
+      "english": "late",
+      "meaning": "(늦은)"
+    },
+    {
+      "number": 367,
+      "page": 8,
+      "english": "laugh",
+      "meaning": "(웃다)"
+    },
+    {
+      "number": 368,
+      "page": 8,
+      "english": "lead",
+      "meaning": "(인도하다)"
+    },
+    {
+      "number": 369,
+      "page": 8,
+      "english": "leaf",
+      "meaning": "(잎)"
+    },
+    {
+      "number": 370,
+      "page": 8,
+      "english": "learn",
+      "meaning": "(배우다)"
+    },
+    {
+      "number": 371,
+      "page": 8,
+      "english": "leave",
+      "meaning": "(떠나다)"
+    },
+    {
+      "number": 372,
+      "page": 8,
+      "english": "left",
+      "meaning": "(왼쪽)"
+    },
+    {
+      "number": 373,
+      "page": 8,
+      "english": "leg",
+      "meaning": "(다리)"
+    },
+    {
+      "number": 374,
+      "page": 8,
+      "english": "lesson",
+      "meaning": "(학과)"
+    },
+    {
+      "number": 375,
+      "page": 8,
+      "english": "let",
+      "meaning": "(허락하다)"
+    },
+    {
+      "number": 376,
+      "page": 8,
+      "english": "letter",
+      "meaning": "(편지)"
+    },
+    {
+      "number": 377,
+      "page": 8,
+      "english": "library",
+      "meaning": "(도서관)"
+    },
+    {
+      "number": 378,
+      "page": 8,
+      "english": "lie",
+      "meaning": "(눕다/거짓말하다)"
+    },
+    {
+      "number": 379,
+      "page": 8,
+      "english": "light",
+      "meaning": "(빛)"
+    },
+    {
+      "number": 380,
+      "page": 8,
+      "english": "like",
+      "meaning": "(좋아하다)"
+    },
+    {
+      "number": 381,
+      "page": 8,
+      "english": "line",
+      "meaning": "(선/줄)"
+    },
+    {
+      "number": 382,
+      "page": 8,
+      "english": "lion",
+      "meaning": "(사자)"
+    },
+    {
+      "number": 383,
+      "page": 8,
+      "english": "lip",
+      "meaning": "(입술)"
+    },
+    {
+      "number": 384,
+      "page": 8,
+      "english": "list",
+      "meaning": "(목록)"
+    },
+    {
+      "number": 385,
+      "page": 8,
+      "english": "listen",
+      "meaning": "(듣다)"
+    },
+    {
+      "number": 386,
+      "page": 8,
+      "english": "little",
+      "meaning": "(작은)"
+    },
+    {
+      "number": 387,
+      "page": 8,
+      "english": "live",
+      "meaning": "(살다/생생한)"
+    },
+    {
+      "number": 388,
+      "page": 8,
+      "english": "long",
+      "meaning": "(긴)"
+    },
+    {
+      "number": 389,
+      "page": 8,
+      "english": "look",
+      "meaning": "(바라보다)"
+    },
+    {
+      "number": 390,
+      "page": 8,
+      "english": "lose",
+      "meaning": "(잃다)"
+    },
+    {
+      "number": 391,
+      "page": 8,
+      "english": "lot",
+      "meaning": "(많음)"
+    },
+    {
+      "number": 392,
+      "page": 8,
+      "english": "loud",
+      "meaning": "(소리가 큰)"
+    },
+    {
+      "number": 393,
+      "page": 8,
+      "english": "love",
+      "meaning": "(사랑하다)"
+    },
+    {
+      "number": 394,
+      "page": 8,
+      "english": "low",
+      "meaning": "(낮은)"
+    },
+    {
+      "number": 395,
+      "page": 8,
+      "english": "luck",
+      "meaning": "(행운)"
+    },
+    {
+      "number": 396,
+      "page": 8,
+      "english": "lunch",
+      "meaning": "(점심식사)"
+    },
+    {
+      "number": 397,
+      "page": 8,
+      "english": "ma'am",
+      "meaning": "(아주머니)"
+    },
+    {
+      "number": 398,
+      "page": 8,
+      "english": "mad",
+      "meaning": "(미친)"
+    },
+    {
+      "number": 399,
+      "page": 8,
+      "english": "mail",
+      "meaning": "(우편)"
+    },
+    {
+      "number": 400,
+      "page": 8,
+      "english": "make",
+      "meaning": "(만들다)"
+    },
+    {
+      "number": 401,
+      "page": 9,
+      "english": "man",
+      "meaning": "(사람/남자)"
+    },
+    {
+      "number": 402,
+      "page": 9,
+      "english": "many",
+      "meaning": "(많은)"
+    },
+    {
+      "number": 403,
+      "page": 9,
+      "english": "map",
+      "meaning": "(지도)"
+    },
+    {
+      "number": 404,
+      "page": 9,
+      "english": "march",
+      "meaning": "(행진/3월)"
+    },
+    {
+      "number": 405,
+      "page": 9,
+      "english": "market",
+      "meaning": "(상점)"
+    },
+    {
+      "number": 406,
+      "page": 9,
+      "english": "marry",
+      "meaning": "(결혼하다)"
+    },
+    {
+      "number": 407,
+      "page": 9,
+      "english": "matter",
+      "meaning": "(문제)"
+    },
+    {
+      "number": 408,
+      "page": 9,
+      "english": "may",
+      "meaning": "(~해도좋다/5월)"
+    },
+    {
+      "number": 409,
+      "page": 9,
+      "english": "meat",
+      "meaning": "(고기)"
+    },
+    {
+      "number": 410,
+      "page": 9,
+      "english": "medal",
+      "meaning": "(메달)"
+    },
+    {
+      "number": 411,
+      "page": 9,
+      "english": "meet",
+      "meaning": "(만나다)"
+    },
+    {
+      "number": 412,
+      "page": 9,
+      "english": "melon",
+      "meaning": "(멜론)"
+    },
+    {
+      "number": 413,
+      "page": 9,
+      "english": "meter",
+      "meaning": "(미터)"
+    },
+    {
+      "number": 414,
+      "page": 9,
+      "english": "middle",
+      "meaning": "(한가운데)"
+    },
+    {
+      "number": 415,
+      "page": 9,
+      "english": "milk",
+      "meaning": "(우유)"
+    },
+    {
+      "number": 416,
+      "page": 9,
+      "english": "million",
+      "meaning": "(100만)"
+    },
+    {
+      "number": 417,
+      "page": 9,
+      "english": "minute",
+      "meaning": "(분/순간)"
+    },
+    {
+      "number": 418,
+      "page": 9,
+      "english": "mirror",
+      "meaning": "(거울)"
+    },
+    {
+      "number": 419,
+      "page": 9,
+      "english": "Miss",
+      "meaning": "(~양/호칭)"
+    },
+    {
+      "number": 420,
+      "page": 9,
+      "english": "model",
+      "meaning": "(모형)"
+    },
+    {
+      "number": 421,
+      "page": 9,
+      "english": "mom(my)",
+      "meaning": "(엄마)"
+    },
+    {
+      "number": 422,
+      "page": 9,
+      "english": "money",
+      "meaning": "(돈)"
+    },
+    {
+      "number": 423,
+      "page": 9,
+      "english": "monkey",
+      "meaning": "(원숭이)"
+    },
+    {
+      "number": 424,
+      "page": 9,
+      "english": "month",
+      "meaning": "(달/개월)"
+    },
+    {
+      "number": 425,
+      "page": 9,
+      "english": "moon",
+      "meaning": "(달)"
+    },
+    {
+      "number": 426,
+      "page": 9,
+      "english": "morning",
+      "meaning": "(아침)"
+    },
+    {
+      "number": 427,
+      "page": 9,
+      "english": "mother",
+      "meaning": "(어머니)"
+    },
+    {
+      "number": 428,
+      "page": 9,
+      "english": "mountain",
+      "meaning": "(산)"
+    },
+    {
+      "number": 429,
+      "page": 9,
+      "english": "mouth",
+      "meaning": "(입)"
+    },
+    {
+      "number": 430,
+      "page": 9,
+      "english": "move",
+      "meaning": "(움직이다)"
+    },
+    {
+      "number": 431,
+      "page": 9,
+      "english": "movie",
+      "meaning": "(영화)"
+    },
+    {
+      "number": 432,
+      "page": 9,
+      "english": "Mr.",
+      "meaning": "(~씨)"
+    },
+    {
+      "number": 433,
+      "page": 9,
+      "english": "Mrs.",
+      "meaning": "(~여사)"
+    },
+    {
+      "number": 434,
+      "page": 9,
+      "english": "much",
+      "meaning": "(많은)"
+    },
+    {
+      "number": 435,
+      "page": 9,
+      "english": "music",
+      "meaning": "(음악)"
+    },
+    {
+      "number": 436,
+      "page": 9,
+      "english": "must",
+      "meaning": "(~해야한다)"
+    },
+    {
+      "number": 437,
+      "page": 9,
+      "english": "name",
+      "meaning": "(이름)"
+    },
+    {
+      "number": 438,
+      "page": 9,
+      "english": "narrow",
+      "meaning": "(좁은)"
+    },
+    {
+      "number": 439,
+      "page": 9,
+      "english": "near",
+      "meaning": "(가까운)"
+    },
+    {
+      "number": 440,
+      "page": 9,
+      "english": "neck",
+      "meaning": "(목)"
+    },
+    {
+      "number": 441,
+      "page": 9,
+      "english": "need",
+      "meaning": "(필요하다)"
+    },
+    {
+      "number": 442,
+      "page": 9,
+      "english": "never",
+      "meaning": "(결코~않다)"
+    },
+    {
+      "number": 443,
+      "page": 9,
+      "english": "new",
+      "meaning": "(새로운)"
+    },
+    {
+      "number": 444,
+      "page": 9,
+      "english": "news",
+      "meaning": "(뉴스)"
+    },
+    {
+      "number": 445,
+      "page": 9,
+      "english": "next",
+      "meaning": "(다음의)"
+    },
+    {
+      "number": 446,
+      "page": 9,
+      "english": "nice",
+      "meaning": "(좋은)"
+    },
+    {
+      "number": 447,
+      "page": 9,
+      "english": "night",
+      "meaning": "(밤)"
+    },
+    {
+      "number": 448,
+      "page": 9,
+      "english": "no",
+      "meaning": "(아니다/없다)"
+    },
+    {
+      "number": 449,
+      "page": 9,
+      "english": "noise",
+      "meaning": "(소음)"
+    },
+    {
+      "number": 450,
+      "page": 9,
+      "english": "north",
+      "meaning": "(북쪽)"
+    },
+    {
+      "number": 451,
+      "page": 10,
+      "english": "nose",
+      "meaning": "(코)"
+    },
+    {
+      "number": 452,
+      "page": 10,
+      "english": "not",
+      "meaning": "(아니다)"
+    },
+    {
+      "number": 453,
+      "page": 10,
+      "english": "note",
+      "meaning": "(공책)"
+    },
+    {
+      "number": 454,
+      "page": 10,
+      "english": "now",
+      "meaning": "(지금)"
+    },
+    {
+      "number": 455,
+      "page": 10,
+      "english": "number",
+      "meaning": "(숫자)"
+    },
+    {
+      "number": 456,
+      "page": 10,
+      "english": "nurse",
+      "meaning": "(간호원)"
+    },
+    {
+      "number": 457,
+      "page": 10,
+      "english": "o'clock",
+      "meaning": "(~시 정각)"
+    },
+    {
+      "number": 458,
+      "page": 10,
+      "english": "of",
+      "meaning": "(~의)"
+    },
+    {
+      "number": 459,
+      "page": 10,
+      "english": "off",
+      "meaning": "(떨어진/끄다)"
+    },
+    {
+      "number": 460,
+      "page": 10,
+      "english": "office",
+      "meaning": "(사무실)"
+    },
+    {
+      "number": 461,
+      "page": 10,
+      "english": "often",
+      "meaning": "(흔히/종종)"
+    },
+    {
+      "number": 462,
+      "page": 10,
+      "english": "oh",
+      "meaning": "(오!)"
+    },
+    {
+      "number": 463,
+      "page": 10,
+      "english": "oil",
+      "meaning": "(기름)"
+    },
+    {
+      "number": 464,
+      "page": 10,
+      "english": "okay(ok)",
+      "meaning": "(좋아)"
+    },
+    {
+      "number": 465,
+      "page": 10,
+      "english": "old",
+      "meaning": "(늙은)"
+    },
+    {
+      "number": 466,
+      "page": 10,
+      "english": "on",
+      "meaning": "(~위에)"
+    },
+    {
+      "number": 467,
+      "page": 10,
+      "english": "once",
+      "meaning": "(한번)"
+    },
+    {
+      "number": 468,
+      "page": 10,
+      "english": "only",
+      "meaning": "(오직)"
+    },
+    {
+      "number": 469,
+      "page": 10,
+      "english": "open",
+      "meaning": "(열린)"
+    },
+    {
+      "number": 470,
+      "page": 10,
+      "english": "or",
+      "meaning": "(또는)"
+    },
+    {
+      "number": 471,
+      "page": 10,
+      "english": "orange",
+      "meaning": "(오렌지)"
+    },
+    {
+      "number": 472,
+      "page": 10,
+      "english": "other",
+      "meaning": "(그밖의)"
+    },
+    {
+      "number": 473,
+      "page": 10,
+      "english": "out",
+      "meaning": "(밖에)"
+    },
+    {
+      "number": 474,
+      "page": 10,
+      "english": "over",
+      "meaning": "(~위쪽에)"
+    },
+    {
+      "number": 475,
+      "page": 10,
+      "english": "page",
+      "meaning": "(쪽)"
+    },
+    {
+      "number": 476,
+      "page": 10,
+      "english": "paint",
+      "meaning": "(칠하다)"
+    },
+    {
+      "number": 477,
+      "page": 10,
+      "english": "pair",
+      "meaning": "(짝)"
+    },
+    {
+      "number": 478,
+      "page": 10,
+      "english": "pants",
+      "meaning": "(바지)"
+    },
+    {
+      "number": 479,
+      "page": 10,
+      "english": "paper",
+      "meaning": "(종이)"
+    },
+    {
+      "number": 480,
+      "page": 10,
+      "english": "pardon",
+      "meaning": "(용서하다)"
+    },
+    {
+      "number": 481,
+      "page": 10,
+      "english": "parent",
+      "meaning": "(부모)"
+    },
+    {
+      "number": 482,
+      "page": 10,
+      "english": "park",
+      "meaning": "(공원)"
+    },
+    {
+      "number": 483,
+      "page": 10,
+      "english": "party",
+      "meaning": "(파티)"
+    },
+    {
+      "number": 484,
+      "page": 10,
+      "english": "pass",
+      "meaning": "(통과하다)"
+    },
+    {
+      "number": 485,
+      "page": 10,
+      "english": "pay",
+      "meaning": "(지불하다)"
+    },
+    {
+      "number": 486,
+      "page": 10,
+      "english": "peace",
+      "meaning": "(평화)"
+    },
+    {
+      "number": 487,
+      "page": 10,
+      "english": "pear",
+      "meaning": "(배)"
+    },
+    {
+      "number": 488,
+      "page": 10,
+      "english": "pen",
+      "meaning": "(펜/만년필)"
+    },
+    {
+      "number": 489,
+      "page": 10,
+      "english": "pencil",
+      "meaning": "(연필)"
+    },
+    {
+      "number": 490,
+      "page": 10,
+      "english": "people",
+      "meaning": "(사람)"
+    },
+    {
+      "number": 491,
+      "page": 10,
+      "english": "piano",
+      "meaning": "(피아노)"
+    },
+    {
+      "number": 492,
+      "page": 10,
+      "english": "pick",
+      "meaning": "(따다/골라내다)"
+    },
+    {
+      "number": 493,
+      "page": 10,
+      "english": "picnic",
+      "meaning": "(소풍)"
+    },
+    {
+      "number": 494,
+      "page": 10,
+      "english": "picture",
+      "meaning": "(그림)"
+    },
+    {
+      "number": 495,
+      "page": 10,
+      "english": "piece",
+      "meaning": "(조각)"
+    },
+    {
+      "number": 496,
+      "page": 10,
+      "english": "pig",
+      "meaning": "(돼지)"
+    },
+    {
+      "number": 497,
+      "page": 10,
+      "english": "pilot",
+      "meaning": "(조종사)"
+    },
+    {
+      "number": 498,
+      "page": 10,
+      "english": "pin",
+      "meaning": "(핀)"
+    },
+    {
+      "number": 499,
+      "page": 10,
+      "english": "pine",
+      "meaning": "(소나무)"
+    },
+    {
+      "number": 500,
+      "page": 10,
+      "english": "pink",
+      "meaning": "(분홍)"
+    },
+    {
+      "number": 501,
+      "page": 11,
+      "english": "pipe",
+      "meaning": "(파이프/판)"
+    },
+    {
+      "number": 502,
+      "page": 11,
+      "english": "place",
+      "meaning": "(장소)"
+    },
+    {
+      "number": 503,
+      "page": 11,
+      "english": "plan",
+      "meaning": "(계획)"
+    },
+    {
+      "number": 504,
+      "page": 11,
+      "english": "plane",
+      "meaning": "(비행기)"
+    },
+    {
+      "number": 505,
+      "page": 11,
+      "english": "plant",
+      "meaning": "(식물)"
+    },
+    {
+      "number": 506,
+      "page": 11,
+      "english": "play",
+      "meaning": "(놀다)"
+    },
+    {
+      "number": 507,
+      "page": 11,
+      "english": "please",
+      "meaning": "(기쁘게하다/제발)"
+    },
+    {
+      "number": 508,
+      "page": 11,
+      "english": "pocket",
+      "meaning": "(주머니)"
+    },
+    {
+      "number": 509,
+      "page": 11,
+      "english": "point",
+      "meaning": "(점수/요점)"
+    },
+    {
+      "number": 510,
+      "page": 11,
+      "english": "police",
+      "meaning": "(경찰)"
+    },
+    {
+      "number": 511,
+      "page": 11,
+      "english": "pool",
+      "meaning": "(웅덩이)"
+    },
+    {
+      "number": 512,
+      "page": 11,
+      "english": "poor",
+      "meaning": "(가난한)"
+    },
+    {
+      "number": 513,
+      "page": 11,
+      "english": "post",
+      "meaning": "(기둥/우편)"
+    },
+    {
+      "number": 514,
+      "page": 11,
+      "english": "poster",
+      "meaning": "(포스터)"
+    },
+    {
+      "number": 515,
+      "page": 11,
+      "english": "postato",
+      "meaning": "(감자)"
+    },
+    {
+      "number": 516,
+      "page": 11,
+      "english": "practice",
+      "meaning": "(연습/습관)"
+    },
+    {
+      "number": 517,
+      "page": 11,
+      "english": "present",
+      "meaning": "(현재/선물)"
+    },
+    {
+      "number": 518,
+      "page": 11,
+      "english": "pretty",
+      "meaning": "(예쁜)"
+    },
+    {
+      "number": 519,
+      "page": 11,
+      "english": "print",
+      "meaning": "(인쇄하다)"
+    },
+    {
+      "number": 520,
+      "page": 11,
+      "english": "problem",
+      "meaning": "(문제)"
+    },
+    {
+      "number": 521,
+      "page": 11,
+      "english": "pull",
+      "meaning": "(끌다)"
+    },
+    {
+      "number": 522,
+      "page": 11,
+      "english": "push",
+      "meaning": "(밀다)"
+    },
+    {
+      "number": 523,
+      "page": 11,
+      "english": "put",
+      "meaning": "(놓다)"
+    },
+    {
+      "number": 524,
+      "page": 11,
+      "english": "queen",
+      "meaning": "(여왕)"
+    },
+    {
+      "number": 525,
+      "page": 11,
+      "english": "question",
+      "meaning": "(질문)"
+    },
+    {
+      "number": 526,
+      "page": 11,
+      "english": "quick",
+      "meaning": "(빠른)"
+    },
+    {
+      "number": 527,
+      "page": 11,
+      "english": "quiet",
+      "meaning": "(조용한)"
+    },
+    {
+      "number": 528,
+      "page": 11,
+      "english": "radio",
+      "meaning": "(라디오)"
+    },
+    {
+      "number": 529,
+      "page": 11,
+      "english": "rain",
+      "meaning": "(비)"
+    },
+    {
+      "number": 530,
+      "page": 11,
+      "english": "rainbow",
+      "meaning": "(무지개)"
+    },
+    {
+      "number": 531,
+      "page": 11,
+      "english": "read",
+      "meaning": "(읽다)"
+    },
+    {
+      "number": 532,
+      "page": 11,
+      "english": "ready",
+      "meaning": "(준비가 된)"
+    },
+    {
+      "number": 533,
+      "page": 11,
+      "english": "real",
+      "meaning": "(실제하는)"
+    },
+    {
+      "number": 534,
+      "page": 11,
+      "english": "record",
+      "meaning": "(기록하다)"
+    },
+    {
+      "number": 535,
+      "page": 11,
+      "english": "red",
+      "meaning": "(빨강)"
+    },
+    {
+      "number": 536,
+      "page": 11,
+      "english": "remember",
+      "meaning": "(기억하다)"
+    },
+    {
+      "number": 537,
+      "page": 11,
+      "english": "repeat",
+      "meaning": "(반복하다)"
+    },
+    {
+      "number": 538,
+      "page": 11,
+      "english": "rest",
+      "meaning": "(휴식)"
+    },
+    {
+      "number": 539,
+      "page": 11,
+      "english": "restaurant",
+      "meaning": "(식당)"
+    },
+    {
+      "number": 540,
+      "page": 11,
+      "english": "return",
+      "meaning": "(되돌아가다)"
+    },
+    {
+      "number": 541,
+      "page": 11,
+      "english": "ribbon",
+      "meaning": "(리본)"
+    },
+    {
+      "number": 542,
+      "page": 11,
+      "english": "rice",
+      "meaning": "(쌀)"
+    },
+    {
+      "number": 543,
+      "page": 11,
+      "english": "rich",
+      "meaning": "(부유한)"
+    },
+    {
+      "number": 544,
+      "page": 11,
+      "english": "ride",
+      "meaning": "(타다)"
+    },
+    {
+      "number": 545,
+      "page": 11,
+      "english": "right",
+      "meaning": "(오른쪽/옳은)"
+    },
+    {
+      "number": 546,
+      "page": 11,
+      "english": "ring",
+      "meaning": "(반지/고리)"
+    },
+    {
+      "number": 547,
+      "page": 11,
+      "english": "river",
+      "meaning": "(강)"
+    },
+    {
+      "number": 548,
+      "page": 11,
+      "english": "road",
+      "meaning": "(길)"
+    },
+    {
+      "number": 549,
+      "page": 11,
+      "english": "robot",
+      "meaning": "(로보트)"
+    },
+    {
+      "number": 550,
+      "page": 11,
+      "english": "rock",
+      "meaning": "(바위)"
+    },
+    {
+      "number": 551,
+      "page": 12,
+      "english": "rocket",
+      "meaning": "(로켓)"
+    },
+    {
+      "number": 552,
+      "page": 12,
+      "english": "roll",
+      "meaning": "(구르다)"
+    },
+    {
+      "number": 553,
+      "page": 12,
+      "english": "roof",
+      "meaning": "(지붕)"
+    },
+    {
+      "number": 554,
+      "page": 12,
+      "english": "room",
+      "meaning": "(방)"
+    },
+    {
+      "number": 555,
+      "page": 12,
+      "english": "rose",
+      "meaning": "(장미)"
+    },
+    {
+      "number": 556,
+      "page": 12,
+      "english": "round",
+      "meaning": "(둥근)"
+    },
+    {
+      "number": 557,
+      "page": 12,
+      "english": "ruler",
+      "meaning": "(자)"
+    },
+    {
+      "number": 558,
+      "page": 12,
+      "english": "run",
+      "meaning": "(달리다)"
+    },
+    {
+      "number": 559,
+      "page": 12,
+      "english": "sad",
+      "meaning": "(슬픈)"
+    },
+    {
+      "number": 560,
+      "page": 12,
+      "english": "safe",
+      "meaning": "(안전한)"
+    },
+    {
+      "number": 561,
+      "page": 12,
+      "english": "salt",
+      "meaning": "(소금)"
+    },
+    {
+      "number": 562,
+      "page": 12,
+      "english": "salad",
+      "meaning": "(샐러드)"
+    },
+    {
+      "number": 563,
+      "page": 12,
+      "english": "same",
+      "meaning": "(같은)"
+    },
+    {
+      "number": 564,
+      "page": 12,
+      "english": "sand",
+      "meaning": "(모래)"
+    },
+    {
+      "number": 565,
+      "page": 12,
+      "english": "say",
+      "meaning": "(말하다)"
+    },
+    {
+      "number": 566,
+      "page": 12,
+      "english": "school",
+      "meaning": "(학교)"
+    },
+    {
+      "number": 567,
+      "page": 12,
+      "english": "score",
+      "meaning": "(점수)"
+    },
+    {
+      "number": 568,
+      "page": 12,
+      "english": "sea",
+      "meaning": "(바다)"
+    },
+    {
+      "number": 569,
+      "page": 12,
+      "english": "season",
+      "meaning": "(계절)"
+    },
+    {
+      "number": 570,
+      "page": 12,
+      "english": "seat",
+      "meaning": "(의자/좌석)"
+    },
+    {
+      "number": 571,
+      "page": 12,
+      "english": "see",
+      "meaning": "(보다)"
+    },
+    {
+      "number": 572,
+      "page": 12,
+      "english": "sell",
+      "meaning": "(팔다)"
+    },
+    {
+      "number": 573,
+      "page": 12,
+      "english": "send",
+      "meaning": "(보내다)"
+    },
+    {
+      "number": 574,
+      "page": 12,
+      "english": "service",
+      "meaning": "(봉사하다)"
+    },
+    {
+      "number": 575,
+      "page": 12,
+      "english": "set",
+      "meaning": "(놓다)"
+    },
+    {
+      "number": 576,
+      "page": 12,
+      "english": "shall",
+      "meaning": "(~일것이다)"
+    },
+    {
+      "number": 577,
+      "page": 12,
+      "english": "shape",
+      "meaning": "(모양)"
+    },
+    {
+      "number": 578,
+      "page": 12,
+      "english": "she",
+      "meaning": "(그녀)"
+    },
+    {
+      "number": 579,
+      "page": 12,
+      "english": "sheep",
+      "meaning": "(양)"
+    },
+    {
+      "number": 580,
+      "page": 12,
+      "english": "sheet",
+      "meaning": "(시트/한장)"
+    },
+    {
+      "number": 581,
+      "page": 12,
+      "english": "ship",
+      "meaning": "(배)"
+    },
+    {
+      "number": 582,
+      "page": 12,
+      "english": "shirt",
+      "meaning": "(셔츠)"
+    },
+    {
+      "number": 583,
+      "page": 12,
+      "english": "shoe",
+      "meaning": "(구두)"
+    },
+    {
+      "number": 584,
+      "page": 12,
+      "english": "shoot",
+      "meaning": "(쏘다)"
+    },
+    {
+      "number": 585,
+      "page": 12,
+      "english": "shop",
+      "meaning": "(가게)"
+    },
+    {
+      "number": 586,
+      "page": 12,
+      "english": "short",
+      "meaning": "(짧은)"
+    },
+    {
+      "number": 587,
+      "page": 12,
+      "english": "shoulder",
+      "meaning": "(어깨)"
+    },
+    {
+      "number": 588,
+      "page": 12,
+      "english": "shout",
+      "meaning": "(외치다)"
+    },
+    {
+      "number": 589,
+      "page": 12,
+      "english": "show",
+      "meaning": "(보이다)"
+    },
+    {
+      "number": 590,
+      "page": 12,
+      "english": "shower",
+      "meaning": "(소나기/샤워)"
+    },
+    {
+      "number": 591,
+      "page": 12,
+      "english": "shut",
+      "meaning": "(닫다)"
+    },
+    {
+      "number": 592,
+      "page": 12,
+      "english": "sick",
+      "meaning": "(아픈)"
+    },
+    {
+      "number": 593,
+      "page": 12,
+      "english": "side",
+      "meaning": "(옆/측면)"
+    },
+    {
+      "number": 594,
+      "page": 12,
+      "english": "sign",
+      "meaning": "(기호/신호)"
+    },
+    {
+      "number": 595,
+      "page": 12,
+      "english": "silver",
+      "meaning": "(은)"
+    },
+    {
+      "number": 596,
+      "page": 12,
+      "english": "sing",
+      "meaning": "(노래하다)"
+    },
+    {
+      "number": 597,
+      "page": 12,
+      "english": "sir",
+      "meaning": "(~님/~씨)"
+    },
+    {
+      "number": 598,
+      "page": 12,
+      "english": "sister",
+      "meaning": "(자매)"
+    },
+    {
+      "number": 599,
+      "page": 12,
+      "english": "sit",
+      "meaning": "(앉다)"
+    },
+    {
+      "number": 600,
+      "page": 12,
+      "english": "size",
+      "meaning": "(크기)"
+    },
+    {
+      "number": 601,
+      "page": 13,
+      "english": "skate",
+      "meaning": "(스케이트)"
+    },
+    {
+      "number": 602,
+      "page": 13,
+      "english": "skirt",
+      "meaning": "(치마)"
+    },
+    {
+      "number": 603,
+      "page": 13,
+      "english": "sky",
+      "meaning": "(하늘)"
+    },
+    {
+      "number": 604,
+      "page": 13,
+      "english": "sleep",
+      "meaning": "(잠자다)"
+    },
+    {
+      "number": 605,
+      "page": 13,
+      "english": "slide",
+      "meaning": "(미끄러지다)"
+    },
+    {
+      "number": 606,
+      "page": 13,
+      "english": "slow",
+      "meaning": "(느린)"
+    },
+    {
+      "number": 607,
+      "page": 13,
+      "english": "small",
+      "meaning": "(작은)"
+    },
+    {
+      "number": 608,
+      "page": 13,
+      "english": "smell",
+      "meaning": "(냄새나다)"
+    },
+    {
+      "number": 609,
+      "page": 13,
+      "english": "smile",
+      "meaning": "(웃다)"
+    },
+    {
+      "number": 610,
+      "page": 13,
+      "english": "smoke",
+      "meaning": "(연기)"
+    },
+    {
+      "number": 611,
+      "page": 13,
+      "english": "snow",
+      "meaning": "(눈)"
+    },
+    {
+      "number": 612,
+      "page": 13,
+      "english": "so",
+      "meaning": "(그와같은)"
+    },
+    {
+      "number": 613,
+      "page": 13,
+      "english": "soap",
+      "meaning": "(비누)"
+    },
+    {
+      "number": 614,
+      "page": 13,
+      "english": "soccer",
+      "meaning": "(축구)"
+    },
+    {
+      "number": 615,
+      "page": 13,
+      "english": "sock",
+      "meaning": "(양말)"
+    },
+    {
+      "number": 616,
+      "page": 13,
+      "english": "soft",
+      "meaning": "(부드러운)"
+    },
+    {
+      "number": 617,
+      "page": 13,
+      "english": "some",
+      "meaning": "(약간의)"
+    },
+    {
+      "number": 618,
+      "page": 13,
+      "english": "son",
+      "meaning": "(아들)"
+    },
+    {
+      "number": 619,
+      "page": 13,
+      "english": "song",
+      "meaning": "(노래)"
+    },
+    {
+      "number": 620,
+      "page": 13,
+      "english": "soon",
+      "meaning": "(곧)"
+    },
+    {
+      "number": 621,
+      "page": 13,
+      "english": "sorry",
+      "meaning": "(슬픈/유감의)"
+    },
+    {
+      "number": 622,
+      "page": 13,
+      "english": "sound",
+      "meaning": "(소리)"
+    },
+    {
+      "number": 623,
+      "page": 13,
+      "english": "soup",
+      "meaning": "(스프)"
+    },
+    {
+      "number": 624,
+      "page": 13,
+      "english": "south",
+      "meaning": "(남쪽)"
+    },
+    {
+      "number": 625,
+      "page": 13,
+      "english": "space",
+      "meaning": "(공간/우주)"
+    },
+    {
+      "number": 626,
+      "page": 13,
+      "english": "speak",
+      "meaning": "(이야기하다)"
+    },
+    {
+      "number": 627,
+      "page": 13,
+      "english": "speed",
+      "meaning": "(속력)"
+    },
+    {
+      "number": 628,
+      "page": 13,
+      "english": "spell",
+      "meaning": "(철자)"
+    },
+    {
+      "number": 629,
+      "page": 13,
+      "english": "spend",
+      "meaning": "(낭비하다)"
+    },
+    {
+      "number": 630,
+      "page": 13,
+      "english": "spoon",
+      "meaning": "(숟가락)"
+    },
+    {
+      "number": 631,
+      "page": 13,
+      "english": "sport",
+      "meaning": "(운동경기)"
+    },
+    {
+      "number": 632,
+      "page": 13,
+      "english": "spring",
+      "meaning": "(봄/용수철)"
+    },
+    {
+      "number": 633,
+      "page": 13,
+      "english": "square",
+      "meaning": "(정사각형)"
+    },
+    {
+      "number": 634,
+      "page": 13,
+      "english": "stairs",
+      "meaning": "(계단/사닥다리)"
+    },
+    {
+      "number": 635,
+      "page": 13,
+      "english": "stamp",
+      "meaning": "(우편)"
+    },
+    {
+      "number": 636,
+      "page": 13,
+      "english": "stand",
+      "meaning": "(서다)"
+    },
+    {
+      "number": 637,
+      "page": 13,
+      "english": "star",
+      "meaning": "(별)"
+    },
+    {
+      "number": 638,
+      "page": 13,
+      "english": "start",
+      "meaning": "(출발하다)"
+    },
+    {
+      "number": 639,
+      "page": 13,
+      "english": "station",
+      "meaning": "(정거장)"
+    },
+    {
+      "number": 640,
+      "page": 13,
+      "english": "stay",
+      "meaning": "(머물다)"
+    },
+    {
+      "number": 641,
+      "page": 13,
+      "english": "steam",
+      "meaning": "(증기)"
+    },
+    {
+      "number": 642,
+      "page": 13,
+      "english": "step",
+      "meaning": "(한걸음)"
+    },
+    {
+      "number": 643,
+      "page": 13,
+      "english": "stick",
+      "meaning": "(막대기)"
+    },
+    {
+      "number": 644,
+      "page": 13,
+      "english": "stone",
+      "meaning": "(돌멩이)"
+    },
+    {
+      "number": 645,
+      "page": 13,
+      "english": "stop",
+      "meaning": "(멈추다)"
+    },
+    {
+      "number": 646,
+      "page": 13,
+      "english": "store",
+      "meaning": "(가게)"
+    },
+    {
+      "number": 647,
+      "page": 13,
+      "english": "storm",
+      "meaning": "(폭풍우)"
+    },
+    {
+      "number": 648,
+      "page": 13,
+      "english": "story",
+      "meaning": "(이야기)"
+    },
+    {
+      "number": 649,
+      "page": 13,
+      "english": "stove",
+      "meaning": "(스토브/난로)"
+    },
+    {
+      "number": 650,
+      "page": 13,
+      "english": "straight",
+      "meaning": "(곧은)"
+    },
+    {
+      "number": 651,
+      "page": 14,
+      "english": "strange",
+      "meaning": "(이상한/낯선)"
+    },
+    {
+      "number": 652,
+      "page": 14,
+      "english": "strawberry",
+      "meaning": "(딸기)"
+    },
+    {
+      "number": 653,
+      "page": 14,
+      "english": "street",
+      "meaning": "(거리)"
+    },
+    {
+      "number": 654,
+      "page": 14,
+      "english": "strike",
+      "meaning": "(치다)"
+    },
+    {
+      "number": 655,
+      "page": 14,
+      "english": "strong",
+      "meaning": "(강한)"
+    },
+    {
+      "number": 656,
+      "page": 14,
+      "english": "student",
+      "meaning": "(학생)"
+    },
+    {
+      "number": 657,
+      "page": 14,
+      "english": "study",
+      "meaning": "(공부하다)"
+    },
+    {
+      "number": 658,
+      "page": 14,
+      "english": "stupid",
+      "meaning": "(어리석은)"
+    },
+    {
+      "number": 659,
+      "page": 14,
+      "english": "subway",
+      "meaning": "(지하철)"
+    },
+    {
+      "number": 660,
+      "page": 14,
+      "english": "sugar",
+      "meaning": "(설탕)"
+    },
+    {
+      "number": 661,
+      "page": 14,
+      "english": "summer",
+      "meaning": "(여름)"
+    },
+    {
+      "number": 662,
+      "page": 14,
+      "english": "sun",
+      "meaning": "(태양)"
+    },
+    {
+      "number": 663,
+      "page": 14,
+      "english": "supermarket",
+      "meaning": "(슈퍼마켓)"
+    },
+    {
+      "number": 664,
+      "page": 14,
+      "english": "supper",
+      "meaning": "(저녁식사)"
+    },
+    {
+      "number": 665,
+      "page": 14,
+      "english": "sure",
+      "meaning": "(확실한)"
+    },
+    {
+      "number": 666,
+      "page": 14,
+      "english": "surprise",
+      "meaning": "(놀라운)"
+    },
+    {
+      "number": 667,
+      "page": 14,
+      "english": "sweater",
+      "meaning": "(스웨터)"
+    },
+    {
+      "number": 668,
+      "page": 14,
+      "english": "sweet",
+      "meaning": "(달콤한)"
+    },
+    {
+      "number": 669,
+      "page": 14,
+      "english": "swim",
+      "meaning": "(수영)"
+    },
+    {
+      "number": 670,
+      "page": 14,
+      "english": "swing",
+      "meaning": "(흔들리다)"
+    },
+    {
+      "number": 671,
+      "page": 14,
+      "english": "switch",
+      "meaning": "(스위치)"
+    },
+    {
+      "number": 672,
+      "page": 14,
+      "english": "table",
+      "meaning": "(식탁/탁자)"
+    },
+    {
+      "number": 673,
+      "page": 14,
+      "english": "take",
+      "meaning": "(잡다/가져가다)"
+    },
+    {
+      "number": 674,
+      "page": 14,
+      "english": "talk",
+      "meaning": "(말하다)"
+    },
+    {
+      "number": 675,
+      "page": 14,
+      "english": "tall",
+      "meaning": "(키가 큰)"
+    },
+    {
+      "number": 676,
+      "page": 14,
+      "english": "tape",
+      "meaning": "(테이프)"
+    },
+    {
+      "number": 677,
+      "page": 14,
+      "english": "taste",
+      "meaning": "(맛보다)"
+    },
+    {
+      "number": 678,
+      "page": 14,
+      "english": "taxi",
+      "meaning": "(택시)"
+    },
+    {
+      "number": 679,
+      "page": 14,
+      "english": "tea",
+      "meaning": "(차)"
+    },
+    {
+      "number": 680,
+      "page": 14,
+      "english": "teach",
+      "meaning": "(가르치다)"
+    },
+    {
+      "number": 681,
+      "page": 14,
+      "english": "team",
+      "meaning": "(팀)"
+    },
+    {
+      "number": 682,
+      "page": 14,
+      "english": "telephone",
+      "meaning": "(전화기)"
+    },
+    {
+      "number": 683,
+      "page": 14,
+      "english": "television",
+      "meaning": "(텔레비전)"
+    },
+    {
+      "number": 684,
+      "page": 14,
+      "english": "tell",
+      "meaning": "(이야기하다)"
+    },
+    {
+      "number": 685,
+      "page": 14,
+      "english": "temple",
+      "meaning": "(절)"
+    },
+    {
+      "number": 686,
+      "page": 14,
+      "english": "tennis",
+      "meaning": "(테니스)"
+    },
+    {
+      "number": 687,
+      "page": 14,
+      "english": "test",
+      "meaning": "(시험)"
+    },
+    {
+      "number": 688,
+      "page": 14,
+      "english": "than",
+      "meaning": "(~보다(도))"
+    },
+    {
+      "number": 689,
+      "page": 14,
+      "english": "thank",
+      "meaning": "(감사하다)"
+    },
+    {
+      "number": 690,
+      "page": 14,
+      "english": "that",
+      "meaning": "(그것)"
+    },
+    {
+      "number": 691,
+      "page": 14,
+      "english": "the",
+      "meaning": "(그(정관사))"
+    },
+    {
+      "number": 692,
+      "page": 14,
+      "english": "then",
+      "meaning": "(그때)"
+    },
+    {
+      "number": 693,
+      "page": 14,
+      "english": "there",
+      "meaning": "(그곳에)"
+    },
+    {
+      "number": 694,
+      "page": 14,
+      "english": "they",
+      "meaning": "(그들)"
+    },
+    {
+      "number": 695,
+      "page": 14,
+      "english": "thick",
+      "meaning": "(두꺼운)"
+    },
+    {
+      "number": 696,
+      "page": 14,
+      "english": "thin",
+      "meaning": "(얇은)"
+    },
+    {
+      "number": 697,
+      "page": 14,
+      "english": "thing",
+      "meaning": "(사물)"
+    },
+    {
+      "number": 698,
+      "page": 14,
+      "english": "think",
+      "meaning": "(생각하다)"
+    },
+    {
+      "number": 699,
+      "page": 14,
+      "english": "thirsty",
+      "meaning": "(목마른/갈망)"
+    },
+    {
+      "number": 700,
+      "page": 14,
+      "english": "this",
+      "meaning": "(이것)"
+    },
+    {
+      "number": 701,
+      "page": 15,
+      "english": "thousand",
+      "meaning": "(천(1000))"
+    },
+    {
+      "number": 702,
+      "page": 15,
+      "english": "through",
+      "meaning": "(통해서)"
+    },
+    {
+      "number": 703,
+      "page": 15,
+      "english": "throw",
+      "meaning": "(던지다)"
+    },
+    {
+      "number": 704,
+      "page": 15,
+      "english": "ticket",
+      "meaning": "(표)"
+    },
+    {
+      "number": 705,
+      "page": 15,
+      "english": "tie",
+      "meaning": "(매다)"
+    },
+    {
+      "number": 706,
+      "page": 15,
+      "english": "tiger",
+      "meaning": "(호랑이)"
+    },
+    {
+      "number": 707,
+      "page": 15,
+      "english": "till",
+      "meaning": "(~까지)"
+    },
+    {
+      "number": 708,
+      "page": 15,
+      "english": "time",
+      "meaning": "(시간)"
+    },
+    {
+      "number": 709,
+      "page": 15,
+      "english": "tired",
+      "meaning": "(피곤한)"
+    },
+    {
+      "number": 710,
+      "page": 15,
+      "english": "to",
+      "meaning": "(~으로/~까지)"
+    },
+    {
+      "number": 711,
+      "page": 15,
+      "english": "today",
+      "meaning": "(오늘/현재)"
+    },
+    {
+      "number": 712,
+      "page": 15,
+      "english": "together",
+      "meaning": "(함께)"
+    },
+    {
+      "number": 713,
+      "page": 15,
+      "english": "tomato",
+      "meaning": "(토마토)"
+    },
+    {
+      "number": 714,
+      "page": 15,
+      "english": "tomorrow",
+      "meaning": "(내일)"
+    },
+    {
+      "number": 715,
+      "page": 15,
+      "english": "tonight",
+      "meaning": "(오늘밤)"
+    },
+    {
+      "number": 716,
+      "page": 15,
+      "english": "too",
+      "meaning": "(또한/많은)"
+    },
+    {
+      "number": 717,
+      "page": 15,
+      "english": "tooth",
+      "meaning": "(이)"
+    },
+    {
+      "number": 718,
+      "page": 15,
+      "english": "top",
+      "meaning": "(꼭대기)"
+    },
+    {
+      "number": 719,
+      "page": 15,
+      "english": "touch",
+      "meaning": "(만지다)"
+    },
+    {
+      "number": 720,
+      "page": 15,
+      "english": "town",
+      "meaning": "(도시)"
+    },
+    {
+      "number": 721,
+      "page": 15,
+      "english": "toy",
+      "meaning": "(인형)"
+    },
+    {
+      "number": 722,
+      "page": 15,
+      "english": "train",
+      "meaning": "(훈련)"
+    },
+    {
+      "number": 723,
+      "page": 15,
+      "english": "travel",
+      "meaning": "(여행하다)"
+    },
+    {
+      "number": 724,
+      "page": 15,
+      "english": "tree",
+      "meaning": "(나무)"
+    },
+    {
+      "number": 725,
+      "page": 15,
+      "english": "trip",
+      "meaning": "(여행)"
+    },
+    {
+      "number": 726,
+      "page": 15,
+      "english": "truck",
+      "meaning": "(화물차)"
+    },
+    {
+      "number": 727,
+      "page": 15,
+      "english": "true",
+      "meaning": "(참된/진짜의)"
+    },
+    {
+      "number": 728,
+      "page": 15,
+      "english": "try",
+      "meaning": "(노력/시도하다)"
+    },
+    {
+      "number": 729,
+      "page": 15,
+      "english": "tulip",
+      "meaning": "(튤립)"
+    },
+    {
+      "number": 730,
+      "page": 15,
+      "english": "turn",
+      "meaning": "(돌다)"
+    },
+    {
+      "number": 731,
+      "page": 15,
+      "english": "twice",
+      "meaning": "(두번)"
+    },
+    {
+      "number": 732,
+      "page": 15,
+      "english": "umbrella",
+      "meaning": "(우산)"
+    },
+    {
+      "number": 733,
+      "page": 15,
+      "english": "uncle",
+      "meaning": "(삼촌)"
+    },
+    {
+      "number": 734,
+      "page": 15,
+      "english": "under",
+      "meaning": "(~아래에서)"
+    },
+    {
+      "number": 735,
+      "page": 15,
+      "english": "understand (이\n해하다)",
+      "meaning": ""
+    },
+    {
+      "number": 736,
+      "page": 15,
+      "english": "until",
+      "meaning": "(~까지)"
+    },
+    {
+      "number": 737,
+      "page": 15,
+      "english": "up",
+      "meaning": "(위에)"
+    },
+    {
+      "number": 738,
+      "page": 15,
+      "english": "use",
+      "meaning": "(사용하다)"
+    },
+    {
+      "number": 739,
+      "page": 15,
+      "english": "usual",
+      "meaning": "(보통의)"
+    },
+    {
+      "number": 740,
+      "page": 15,
+      "english": "vacation",
+      "meaning": "(휴가)"
+    },
+    {
+      "number": 741,
+      "page": 15,
+      "english": "vegetable",
+      "meaning": "(야채)"
+    },
+    {
+      "number": 742,
+      "page": 15,
+      "english": "very",
+      "meaning": "(대단히/몹시)"
+    },
+    {
+      "number": 743,
+      "page": 15,
+      "english": "video",
+      "meaning": "(비디오)"
+    },
+    {
+      "number": 744,
+      "page": 15,
+      "english": "village",
+      "meaning": "(마을)"
+    },
+    {
+      "number": 745,
+      "page": 15,
+      "english": "visit",
+      "meaning": "(방문하다)"
+    },
+    {
+      "number": 746,
+      "page": 15,
+      "english": "violin",
+      "meaning": "(바이올린)"
+    },
+    {
+      "number": 747,
+      "page": 15,
+      "english": "wait",
+      "meaning": "(기다리다)"
+    },
+    {
+      "number": 748,
+      "page": 15,
+      "english": "wake",
+      "meaning": "(잠이깨다)"
+    },
+    {
+      "number": 749,
+      "page": 15,
+      "english": "walk",
+      "meaning": "(걷다)"
+    },
+    {
+      "number": 750,
+      "page": 15,
+      "english": "wall",
+      "meaning": "(벽)"
+    },
+    {
+      "number": 751,
+      "page": 16,
+      "english": "want",
+      "meaning": "(원하다)"
+    },
+    {
+      "number": 752,
+      "page": 16,
+      "english": "war",
+      "meaning": "(전쟁)"
+    },
+    {
+      "number": 753,
+      "page": 16,
+      "english": "warm",
+      "meaning": "(따뜻한)"
+    },
+    {
+      "number": 754,
+      "page": 16,
+      "english": "wash",
+      "meaning": "(씻다)"
+    },
+    {
+      "number": 755,
+      "page": 16,
+      "english": "waste",
+      "meaning": "(낭비하다)"
+    },
+    {
+      "number": 756,
+      "page": 16,
+      "english": "watch",
+      "meaning": "(보다)"
+    },
+    {
+      "number": 757,
+      "page": 16,
+      "english": "water",
+      "meaning": "(물)"
+    },
+    {
+      "number": 758,
+      "page": 16,
+      "english": "way",
+      "meaning": "(길)"
+    },
+    {
+      "number": 759,
+      "page": 16,
+      "english": "we",
+      "meaning": "(우리)"
+    },
+    {
+      "number": 760,
+      "page": 16,
+      "english": "weak",
+      "meaning": "(약한)"
+    },
+    {
+      "number": 761,
+      "page": 16,
+      "english": "wear",
+      "meaning": "(옷을입다)"
+    },
+    {
+      "number": 762,
+      "page": 16,
+      "english": "weather",
+      "meaning": "(계절)"
+    },
+    {
+      "number": 763,
+      "page": 16,
+      "english": "week",
+      "meaning": "(한 주)"
+    },
+    {
+      "number": 764,
+      "page": 16,
+      "english": "welcome",
+      "meaning": "(환영하다)"
+    },
+    {
+      "number": 765,
+      "page": 16,
+      "english": "well",
+      "meaning": "(상당히)"
+    },
+    {
+      "number": 766,
+      "page": 16,
+      "english": "west",
+      "meaning": "(서쪽)"
+    },
+    {
+      "number": 767,
+      "page": 16,
+      "english": "wet",
+      "meaning": "(젖은)"
+    },
+    {
+      "number": 768,
+      "page": 16,
+      "english": "what",
+      "meaning": "(무엇(의문사))"
+    },
+    {
+      "number": 769,
+      "page": 16,
+      "english": "when",
+      "meaning": "(언제)"
+    },
+    {
+      "number": 770,
+      "page": 16,
+      "english": "where",
+      "meaning": "(어디(의문사))"
+    },
+    {
+      "number": 771,
+      "page": 16,
+      "english": "which",
+      "meaning": "(어느쪽(의문사))"
+    },
+    {
+      "number": 772,
+      "page": 16,
+      "english": "white",
+      "meaning": "(하얀색)"
+    },
+    {
+      "number": 773,
+      "page": 16,
+      "english": "who",
+      "meaning": "(누구(의문사))"
+    },
+    {
+      "number": 774,
+      "page": 16,
+      "english": "why",
+      "meaning": "(왜(의문사))"
+    },
+    {
+      "number": 775,
+      "page": 16,
+      "english": "wide",
+      "meaning": "(넓은)"
+    },
+    {
+      "number": 776,
+      "page": 16,
+      "english": "will",
+      "meaning": "(~할것이다)"
+    },
+    {
+      "number": 777,
+      "page": 16,
+      "english": "win",
+      "meaning": "(이기다)"
+    },
+    {
+      "number": 778,
+      "page": 16,
+      "english": "wind",
+      "meaning": "(바람)"
+    },
+    {
+      "number": 779,
+      "page": 16,
+      "english": "window",
+      "meaning": "(창문)"
+    },
+    {
+      "number": 780,
+      "page": 16,
+      "english": "wing",
+      "meaning": "(날개)"
+    },
+    {
+      "number": 781,
+      "page": 16,
+      "english": "winter",
+      "meaning": "(겨울)"
+    },
+    {
+      "number": 782,
+      "page": 16,
+      "english": "with",
+      "meaning": "(~와함께)"
+    },
+    {
+      "number": 783,
+      "page": 16,
+      "english": "woman",
+      "meaning": "(여자)"
+    },
+    {
+      "number": 784,
+      "page": 16,
+      "english": "wonder",
+      "meaning": "(놀라다)"
+    },
+    {
+      "number": 785,
+      "page": 16,
+      "english": "wood",
+      "meaning": "(나무)"
+    },
+    {
+      "number": 786,
+      "page": 16,
+      "english": "word",
+      "meaning": "(낱말/말)"
+    },
+    {
+      "number": 787,
+      "page": 16,
+      "english": "work",
+      "meaning": "(일)"
+    },
+    {
+      "number": 788,
+      "page": 16,
+      "english": "world",
+      "meaning": "(세상)"
+    },
+    {
+      "number": 789,
+      "page": 16,
+      "english": "write",
+      "meaning": "(쓰다)"
+    },
+    {
+      "number": 790,
+      "page": 16,
+      "english": "wrong",
+      "meaning": "(나쁜)"
+    },
+    {
+      "number": 791,
+      "page": 16,
+      "english": "yeah",
+      "meaning": "(예(찬성/긍정))"
+    },
+    {
+      "number": 792,
+      "page": 16,
+      "english": "year",
+      "meaning": "(해/1년)"
+    },
+    {
+      "number": 793,
+      "page": 16,
+      "english": "yellow",
+      "meaning": "(노랑색)"
+    },
+    {
+      "number": 794,
+      "page": 16,
+      "english": "yes",
+      "meaning": "(네(대답))"
+    },
+    {
+      "number": 795,
+      "page": 16,
+      "english": "yesterday",
+      "meaning": "(어제)"
+    },
+    {
+      "number": 796,
+      "page": 16,
+      "english": "yet",
+      "meaning": "(아직)"
+    },
+    {
+      "number": 797,
+      "page": 16,
+      "english": "you",
+      "meaning": "(당신)"
+    },
+    {
+      "number": 798,
+      "page": 16,
+      "english": "young",
+      "meaning": "(젊은)"
+    },
+    {
+      "number": 799,
+      "page": 16,
+      "english": "zero",
+      "meaning": "(영(0))"
+    },
+    {
+      "number": 800,
+      "page": 16,
+      "english": "zoo",
+      "meaning": "(동물원)"
+    }
+  ]
+}

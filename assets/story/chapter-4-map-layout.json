@@ -1,0 +1,134 @@
+{
+  "world": 4,
+  "stageCount": 20,
+  "integrationStatus": "integrated",
+  "contentMapping": {
+    "learningLevel": "middle",
+    "sourceKeys": "s15–s34",
+    "sourceDays": "Day 11–30",
+    "questionCountPerStage": 30,
+    "unlockAfter": "story-ch3-8",
+    "recordName": "스토리 4장 <단계> · 환각의 숲과 버려진 성",
+    "elementary": "pending dedicated vocabulary; no middle-level fallback"
+  },
+  "title": "환각의 숲",
+  "showPartTitles": false,
+  "showStageRanges": false,
+  "art": "assets/story/chapter-4-illusion-forest-combined-map.webp",
+  "width": 724,
+  "height": 2172,
+  "stages": [
+    {
+      "stage": 1,
+      "x": 13.909,
+      "y": 6.445
+    },
+    {
+      "stage": 2,
+      "x": 27.818,
+      "y": 8.496
+    },
+    {
+      "stage": 3,
+      "x": 40.264,
+      "y": 10.742
+    },
+    {
+      "stage": 4,
+      "x": 56.369,
+      "y": 13.965
+    },
+    {
+      "stage": 5,
+      "x": 69.693,
+      "y": 17.09
+    },
+    {
+      "stage": 6,
+      "x": 83.455,
+      "y": 20.996
+    },
+    {
+      "stage": 7,
+      "x": 76.135,
+      "y": 25.586
+    },
+    {
+      "stage": 8,
+      "x": 63.543,
+      "y": 30.42
+    },
+    {
+      "stage": 9,
+      "x": 25.037,
+      "y": 36.182
+    },
+    {
+      "stage": 10,
+      "x": 80.527,
+      "y": 41.357
+    },
+    {
+      "stage": 11,
+      "x": 74.085,
+      "y": 47.949
+    },
+    {
+      "stage": 12,
+      "x": 73.792,
+      "y": 52.979
+    },
+    {
+      "stage": 13,
+      "x": 51.977,
+      "y": 57.227
+    },
+    {
+      "stage": 14,
+      "x": 24.744,
+      "y": 61.182
+    },
+    {
+      "stage": 15,
+      "x": 41.581,
+      "y": 65.234
+    },
+    {
+      "stage": 16,
+      "x": 56.076,
+      "y": 69.58
+    },
+    {
+      "stage": 17,
+      "x": 30.307,
+      "y": 78.027
+    },
+    {
+      "stage": 18,
+      "x": 48.609,
+      "y": 80.566
+    },
+    {
+      "stage": 19,
+      "x": 76.867,
+      "y": 84.375
+    },
+    {
+      "stage": 20,
+      "x": 78.184,
+      "y": 94.873
+    }
+  ],
+  "integrationReview": {
+    "date": "2026-10-13",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "mapLoading": "passed: one 724×2172 image",
+    "waypointAlignment": "passed: twenty measured positions",
+    "stageOrder": "1–20 descending; 11 below10;20 at bottom castle",
+    "tests": "11/11 passed",
+    "build": "passed"
+  }
+}

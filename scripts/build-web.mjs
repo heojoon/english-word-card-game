@@ -29,6 +29,7 @@ const files = [
   'stage6.js',
   'stage7.js',
   'stage8.js',
+  'stage15.js',
   'remote-content.js',
   'avatar-art.js'
 ];

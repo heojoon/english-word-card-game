@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-13",
+  "tool": "built-in image_gen",
+  "model": "not disclosed",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: compositing.\nAsset type: Wordoria Crystal Quest World 4 seamless vertical scrolling map, title Illusion Forest (do not paint text).\nImage 1 authoritative style. Image 2 existing upper forest edit target. Image 3 existing lower misty forest/castle edit target.\nCombine these into ONE extra tall 1024 x 3072 image, aspect ratio 1:3, without divider, frame, text, numbers or UI. Upper half is image 2 with its TEN crystal pedestals and geography faithfully preserved. Lower half recompose image 3: route runs TOP TO BOTTOM, start stage 11 at upper edge of lower half continuing directly from stage 10, then ten waypoints descend monotonically until stage 20 at bottom. MOVE the abandoned pale stone violet-roof castle from top to the BOTTOM right, beside the final lowest waypoint. Keep architecture upright; do NOT rotate or flip the whole image. Misty blue-violet forest, ruined stone arches, waterfalls, bridges, winding golden path. Blend green forest into misty violet forest at middle seamlessly. Clear continuous single path, no loops/branches.\nGameplay contract EXACTLY TWENTY gold circular pedestals, one violet-blue crystal each. No decorative gold pedestals. Upper half ten (stages1–10): normalized centers approximately (14,6.4),(28,8.4),(40,10.6),(57,13.8),(70,17.1),(84,21),(76,25.6),(64,30.4),(25,36.1),(84,42.9). Lower half ten (11–20): (78,51),(47,55),(20,59),(45,64),(78,68),(60,73),(25,78),(43,82),(74,87),(80,94). Design new descending lower route around these centers. All twenty separate fully visible crystals on road; castle at bottom beside20, not near11. No waypoint after20. Do not compress tall composition into standard portrait; requested 1:3 full canvas.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nCRITICAL correction: Previous output copied the STYLE reference library and its upper castle; that is WRONG geography. Image 1 only brushwork/colors, NEVER its library, NEVER its top castle, NEVER its seven-waypoint geography. Copy the actual TREE HOUSES and forest geography from Image 2 into the upper half, including its ten waypoint pedestals. No library anywhere, NO castle in upper half. Use ONE castle ONLY at very bottom. Twenty crystals total, ten upper and ten lower. Strictly descending pathway order with no branches. Twenty waypoint centers from top to bottom, Upper ten in y6,9,13,17,21,25,29,34,39,45; Lower ten in y51,55,59,63,68,73,78,83,88,94. Use a generous serpentine route zigzagging left to right as it descends. Only these20 pedestal crystals, NOT any other roadside/balustrade gold-based crystals.",
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "layouts": [
+      "assets/story/chapter-4-illusion-forest-map.webp",
+      "assets/story/chapter-4-misty-castle-map.webp"
+    ]
+  },
+  "source": "output/story-map/chapter-4-combined-source.png",
+  "runtime": "assets/story/chapter-4-illusion-forest-combined-map.webp",
+  "targetDimensions": [
+    1024,
+    3072
+  ],
+  "actualDimensions": [
+    724,
+    2172
+  ],
+  "waypoints": [
+    {
+      "stage": 1,
+      "x": 13.909,
+      "y": 6.445
+    },
+    {
+      "stage": 2,
+      "x": 27.818,
+      "y": 8.496
+    },
+    {
+      "stage": 3,
+      "x": 40.264,
+      "y": 10.742
+    },
+    {
+      "stage": 4,
+      "x": 56.369,
+      "y": 13.965
+    },
+    {
+      "stage": 5,
+      "x": 69.693,
+      "y": 17.09
+    },
+    {
+      "stage": 6,
+      "x": 83.455,
+      "y": 20.996
+    },
+    {
+      "stage": 7,
+      "x": 76.135,
+      "y": 25.586
+    },
+    {
+      "stage": 8,
+      "x": 63.543,
+      "y": 30.42
+    },
+    {
+      "stage": 9,
+      "x": 25.037,
+      "y": 36.182
+    },
+    {
+      "stage": 10,
+      "x": 80.527,
+      "y": 41.357
+    },
+    {
+      "stage": 11,
+      "x": 74.085,
+      "y": 47.949
+    },
+    {
+      "stage": 12,
+      "x": 73.792,
+      "y": 52.979
+    },
+    {
+      "stage": 13,
+      "x": 51.977,
+      "y": 57.227
+    },
+    {
+      "stage": 14,
+      "x": 24.744,
+      "y": 61.182
+    },
+    {
+      "stage": 15,
+      "x": 41.581,
+      "y": 65.234
+    },
+    {
+      "stage": 16,
+      "x": 56.076,
+      "y": 69.58
+    },
+    {
+      "stage": 17,
+      "x": 30.307,
+      "y": 78.027
+    },
+    {
+      "stage": 18,
+      "x": 48.609,
+      "y": 80.566
+    },
+    {
+      "stage": 19,
+      "x": 76.867,
+      "y": 84.375
+    },
+    {
+      "stage": 20,
+      "x": 78.184,
+      "y": 94.873
+    }
+  ],
+  "review": {
+    "waypointCount": 20,
+    "route": "descending 1–20; castle beside final stage at bottom",
+    "technical": "passed: twenty crystals, ascending stage numbers with descending y coordinates, single image loaded and aligned in 390×844 browser",
+    "userApproval": "pending",
+    "browserScreenshots": [
+      "output/playwright/chapter-4-combined-mobile.png",
+      "output/playwright/chapter-4-combined-game-mobile.png",
+      "output/playwright/chapter-4-combined-game-bottom-mobile.png"
+    ],
+    "tests": "11/11 World 4 content and rendering regression tests passed",
+    "build": "npm run build passed"
+  }
+}

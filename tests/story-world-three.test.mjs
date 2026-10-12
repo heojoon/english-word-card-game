@@ -75,7 +75,7 @@ test('world 3 builds level questions for ordinary stages and 60 for the cave bos
   vm.runInContext(source.slice(source.indexOf('  function buildQuestionDeck('),source.indexOf('  async function loadAll(')),c);
   for(const level of ['middle','elementary']){
     switchLevel(level);
-    for(const stage of c.storyStages.filter(stage=>stage.chapter>=3)){
+    for(const stage of c.storyStages.filter(stage=>stage.chapter===3)){
       const content=c.stages[stage.key],expected=content.blackDragon?60:level==='middle'?35:25;
       assert.equal(content.questionCount,expected);
       const deck=c.buildQuestionDeck(content);
