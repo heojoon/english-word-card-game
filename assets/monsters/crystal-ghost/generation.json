@@ -1,0 +1,15 @@
+{
+  "tool": "image_gen.imagegen (built-in)",
+  "prompt": "Use case: identity-preserve / transparent game enemy cutout. Input image is the authoritative identity design of the hidden crystal ghost boss for Wordoria World 3-7. Create ONE isolated full-body front three-quarter view facing slightly LEFT, matching the small front-view design on upper right of the reference exactly: youthful small friendly-eerie round lavender ghost face with two dark oval eyes and tiny mouth, large white-lavender round hood, pointed amethyst crown crystal, large purple faceted chest crystal, ragged flowing white/lavender layered robe, short dark hands, floating amethyst shard ring. Polished painterly casual fantasy Crystal Quest game art. Keep silhouette compact, all robe tips and floating shards fully inside image with generous transparent padding. No text, no design sheet, no panels, no scenery, no floor, no magic circle, no other characters. Actual transparent RGBA background. Preserve opaque white robe and eyes/highlights. Single centered game-ready enemy asset.",
+  "reference": "design-reference.png",
+  "output": "crystal-ghost.png",
+  "width": 1312,
+  "height": 1199,
+  "format": "RGBA PNG",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "runtimeMotion": "CSS idle float, contact recoil, crystal-fall cast",
+  "review": "Identity and alpha inspected; browser review not requested; no user visual approval claimed"
+}

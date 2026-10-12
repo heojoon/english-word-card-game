@@ -87,7 +87,7 @@ test('world 3 builds level questions for ordinary stages and 60 for the cave bos
 });
 
 test('world 3 stage 7 entry and retry start ordinary battles at both learning levels',()=>{
-  const {c,switchLevel}=setup();loadBattleEntry(c);c.storyStageUnlocked=()=>true;
+  const {c,switchLevel}=setup();loadBattleEntry(c);c.storyStageUnlocked=()=>true;c.hasWordCrystalSpirit=()=>false;
   for(const level of ['middle','elementary']){
     switchLevel(level);
     c.startStoryStage('story-ch3-7');
@@ -107,4 +107,12 @@ test('battle entry keeps the slime restricted to world 1 and preserves other wor
   assert.equal(c.slimeStarted,false);assert.equal(c.run.guardian,true);assert.equal(c.run.blackDragon,undefined);
   c.selectedStage='story-ch3-8';c.startBattle();
   assert.equal(c.slimeStarted,false);assert.equal(c.run.blackDragon,true);
+});
+test('world 3-7 offers the spirit encounter for both levels without starting the normal fight',()=>{
+  const {c,switchLevel}=setup();loadBattleEntry(c);c.storyStageUnlocked=()=>true;c.hasWordCrystalSpirit=()=>true;
+  c.showCrystalGhostEncounter=()=>{c.encounter=true;};
+  for(const level of ['middle','elementary']){
+    switchLevel(level);c.run=null;c.encounter=false;c.startStoryStage('story-ch3-7');
+    assert.equal(c.encounter,true);assert.equal(c.run,null);assert.equal(c.selectedStage,'story-ch3-7');
+  }
 });
