@@ -106,6 +106,25 @@ test('story clears and unlocks survive level changes in both directions',()=>{
   context.records[0].character_id='someone-else';
   assert.equal(context.progress.stageCleared('story-lv1'),false);
 });
+test('creator vocabulary uses saved abbreviated parts of speech without duplicate labels',()=>{
+  const context={shuffle:items=>items,formScore:()=>0};
+  vm.runInNewContext(source.slice(source.indexOf('  function playableWords('),source.indexOf('  async function loadCreatorContent('))+';globalThis.playableWords=playableWords;',context);
+  vm.runInNewContext(source.slice(source.indexOf('  function makeQuestion('),source.indexOf('\n',source.indexOf('  function makeQuestion(')))+';globalThis.makeQuestion=makeQuestion;',context);
+  const rows=context.playableWords([
+    {english:'book',korean:'[동] 예약하다',row_order:1},
+    {english:'rescue',korean:'[명] 구조, [동] 구하다, 구조하다',row_order:2},
+    {english:'diverse',korean:'[형] 다양한',row_order:3},
+    {english:'unlike',korean:'[전] ~와 다른',row_order:4},
+    {english:'legacy',korean:'기존 뜻',row_order:5}
+  ]);
+  assert.deepEqual(Array.from(rows[0]),['book','동','예약하다']);
+  assert.deepEqual(Array.from(rows[4]),['legacy','단어','기존 뜻']);
+  assert.equal(context.makeQuestion(rows[0],rows,'en-ko').answer,'[동] 예약하다');
+  assert.equal(context.makeQuestion(rows[1],rows,'ko-en').prompt,'[명] 구조, [동] 구하다, 구조하다');
+  assert.equal(context.makeQuestion(rows[2],rows,'ko-en').prompt,'[형] 다양한');
+  assert.equal(context.makeQuestion(rows[3],rows,'en-ko').answer,'[전] ~와 다른');
+});
+
 test('creator loading connects the seven approved elementary maps to story',async()=>{
   const context=content('elementary'),{api}=context;
   const maps=Array.from({length:7},(_,i)=>({id:`map-${i+1}`,world_id:'forest',title:`day.${i+1}`,total_question_count:30,learning_level:'elementary'}));

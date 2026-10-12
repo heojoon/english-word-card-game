@@ -291,7 +291,10 @@
   function playableWords(rows){
     const seen=new Set();return rows.map(row=>({english:String(row.english||'').trim(),korean:String(row.korean||'').trim(),rowOrder:Number(row.row_order||0)})).filter(row=>{
       const key=row.english.toLocaleLowerCase('en-US');if(!key||!row.korean||seen.has(key))return false;seen.add(key);return true;
-    }).sort((a,b)=>a.rowOrder-b.rowOrder).map(row=>[row.english,'단어',row.korean]);
+    }).sort((a,b)=>a.rowOrder-b.rowOrder).map(row=>{
+      const labeled=row.korean.match(/^\[(명|동|형|부|전|접|대|감|관|조)\]\s*(.+)$/u);
+      return labeled?[row.english,labeled[1],labeled[2]]:[row.english,'단어',row.korean];
+    });
   }
   async function loadCreatorContent(){
     if(!accountMode)return;
