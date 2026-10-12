@@ -89,11 +89,11 @@
     bag:'<path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2M9 13v1m6-1v1"/>'
   };
   const classDefs = {
-    warrior:{label:'전사',title:'CRYSTAL GUARDIAN',trait:'강인함 · 제한시간 +5초',skill:'수호의 방패',skillDesc:'40% 확률로 제한시간이 5초 늘어나요. 스토리에서는 5문제가 한 턴이에요.',stats:{hp:4,mp:1,atk:4,luk:2},growth:{hp:4,mp:2,atk:4,luk:1},paths:{male:'warrior.webp',female:'variants/warrior-female.webp'}},
-    mage:{label:'마법사',title:'ARCANE SCHOLAR',trait:'타임 스톱 · 가끔 시간 정지',skill:'타임 스톱',skillDesc:'문제마다 30% 확률로 답을 선택할 때까지 시간이 멈춰요.',stats:{hp:2,mp:2,atk:5,luk:4},growth:{hp:2,mp:4,atk:5,luk:3},paths:{male:'mage.webp',female:'variants/mage-female.webp'}},
-    pugilist:{label:'권투사',title:'COMBO MASTER',trait:'콤보 마스터 · 3콤보 보너스',skill:'크리스털 가방',skillDesc:'3 콤보당 보너스 +1 크리스털 지급',stats:{hp:4,mp:1,atk:3,luk:3},growth:{hp:4,mp:2,atk:3,luk:3},paths:{male:'variants/pugilist-male.webp',female:'pugilist.webp?v=20260921-alpha'}},
-    ranger:{label:'궁수',title:'TREASURE HUNTER',trait:'보물 사냥꾼 · 상자 최소 20개',skill:'행운의 화살',skillDesc:'보물상자에서 최소 20 크리스털을 찾아요.',stats:{hp:3,mp:1,atk:3,luk:4},growth:{hp:3,mp:2,atk:3,luk:4},paths:{male:'variants/ranger-male.webp',female:'ranger.webp'}},
-    sniper:{label:'스나이퍼',title:'WHITE SNIPER',trait:'심안의 저격 · 15% 확률로 정답 안내',skill:'심안의 저격',skillDesc:'마음의 눈으로 적을 겨냥한다. 15% 확률로 객관식 정답을 표시하고, 매칭형 정답 2쌍을 같은 색으로 알려줘요.',stats:{hp:3,mp:2,atk:4,luk:2},growth:{hp:2,mp:2,atk:4,luk:3},paths:{female:'variants/sniper-female-upper-body.webp'}}
+    warrior:{label:'전사',title:'CRYSTAL GUARDIAN',trait:'강인함 · 제한시간 +5초',skill:'수호의 방패',skillDesc:'40% 확률로 제한시간이 5초 늘어나요. 스토리에서는 5문제가 한 턴이에요.',stats:{hp:4,mp:1,atk:4,luk:2},growth:{hp:3.6,mp:2.2,atk:4.8,luk:3},paths:{male:'warrior.webp',female:'variants/warrior-female.webp'}},
+    mage:{label:'마법사',title:'ARCANE SCHOLAR',trait:'타임 스톱 · 가끔 시간 정지',skill:'타임 스톱',skillDesc:'문제마다 30% 확률로 답을 선택할 때까지 시간이 멈춰요.',stats:{hp:2,mp:2,atk:5,luk:4},growth:{hp:2.6,mp:3.8,atk:5.8,luk:1.5},paths:{male:'mage.webp',female:'variants/mage-female.webp'}},
+    pugilist:{label:'권투사',title:'COMBO MASTER',trait:'콤보 마스터 · 3콤보 보너스',skill:'크리스털 가방',skillDesc:'3 콤보당 보너스 +1 크리스털 지급',stats:{hp:4,mp:1,atk:3,luk:3},growth:{hp:4.1,mp:2.1,atk:4,luk:3.3},paths:{male:'variants/pugilist-male.webp',female:'pugilist.webp?v=20260921-alpha'}},
+    ranger:{label:'궁수',title:'TREASURE HUNTER',trait:'보물 사냥꾼 · 상자 최소 20개',skill:'행운의 화살',skillDesc:'보물상자에서 최소 20 크리스털을 찾아요.',stats:{hp:3,mp:1,atk:3,luk:4},growth:{hp:3.1,mp:3.1,atk:3.8,luk:4},paths:{male:'variants/ranger-male.webp',female:'ranger.webp'}},
+    sniper:{label:'스나이퍼',title:'WHITE SNIPER',trait:'심안의 저격 · 15% 확률로 정답 안내',skill:'심안의 저격',skillDesc:'마음의 눈으로 적을 겨냥한다. 15% 확률로 객관식 정답을 표시하고, 매칭형 정답 2쌍을 같은 색으로 알려줘요.',stats:{hp:3,mp:2,atk:4,luk:2},growth:{hp:2.9,mp:3.5,atk:5.8,luk:1.6},paths:{female:'variants/sniper-female-upper-body.webp'}}
   };
   const builtinWorlds = [
     {name:'속삭이는 숲',sub:'기초부터 도전까지 · 모든 단어가 이어지는 숲길',code:'F1A2',keys:builtinStageKeys.slice()}
