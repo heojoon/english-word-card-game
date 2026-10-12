@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <defs>
+    <linearGradient id="crystal" x1="24" y1="20" x2="138" y2="144" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60D9CF"/><stop offset=".5" stop-color="#F7F7FF"/><stop offset="1" stop-color="#7868EF"/>
+    </linearGradient>
+  </defs>
+  <!-- Transparent center preserves the enemy silhouette. -->
+  <circle cx="80" cy="80" r="59" stroke="#24214C" stroke-opacity=".65" stroke-width="9"/>
+  <circle cx="80" cy="80" r="59" stroke="#5751D8" stroke-width="6"/>
+  <circle cx="80" cy="80" r="55" stroke="url(#crystal)" stroke-width="2"/>
+  <g stroke="#24214C" stroke-opacity=".65" stroke-width="5" stroke-linecap="round">
+    <path d="M80 20V67M80 93V140M20 80H67M93 80H140"/>
+    <path d="M72 41H88M74 56H86M72 119H88M74 104H86M41 72V88M56 74V86M119 72V88M104 74V86"/>
+  </g>
+  <g stroke="url(#crystal)" stroke-width="2.5" stroke-linecap="round">
+    <path d="M80 20V67M80 93V140M20 80H67M93 80H140"/>
+    <path d="M72 41H88M74 56H86M72 119H88M74 104H86M41 72V88M56 74V86M119 72V88M104 74V86"/>
+  </g>
+  <path d="M80 74L86 80L80 86L74 80Z" fill="#60D9CF" stroke="#F7F7FF" stroke-width="1.5"/>
+  <g fill="url(#crystal)" stroke="#5751D8" stroke-width="1.5">
+    <path d="M80 10L85 17L80 24L75 17Z"/><path d="M150 80L143 85L136 80L143 75Z"/>
+    <path d="M80 150L75 143L80 136L85 143Z"/><path d="M10 80L17 75L24 80L17 85Z"/>
+  </g>
+</svg>

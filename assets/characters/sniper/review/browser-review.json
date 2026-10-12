@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-12",
+  "checks": [
+    {
+      "viewport": "390x844",
+      "reducedMotion": "no-preference",
+      "idle": true,
+      "attack": true,
+      "contactMs": 480,
+      "impact": true,
+      "knockdownHold": true,
+      "reset": true,
+      "noProjectile": true
+    },
+    {
+      "viewport": "390x844",
+      "reducedMotion": "reduce",
+      "idle": true,
+      "attack": true,
+      "contactMs": 160,
+      "impact": true,
+      "knockdownHold": true,
+      "reset": true,
+      "noProjectile": true
+    },
+    {
+      "actualLocalDemoSurvival": true,
+      "correctAnswerAttack": true
+    }
+  ],
+  "errors": [],
+  "scope": "Production styles in review arena plus actual local demo Survival battle; no account/backend mutations"
+}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>여성 기본 스나이퍼 전투 애니메이션</title>
+<link rel="stylesheet" href="../../../../playable-preview.css">
+<link rel="stylesheet" href="../../../../crystal-game.css">
+<style>body{padding:20px 12px}main{max-width:430px;margin:auto}h1{font-size:20px;margin-bottom:12px}.controls{display:flex;gap:8px;margin:12px 0}.controls button{padding:10px 16px;background:#5751d8;color:white;border-radius:12px}.arena{height:190px}.note{font-size:13px;margin:12px 0;color:#24214c}img.strip{width:100%;display:block;margin:12px 0;background:#f7f7ff}#state{font-weight:700}</style>
+<main><h1>여성 기본 스나이퍼</h1><p class="note">대기 · 조준 후 사격 · 피격과 쓰러짐</p>
+<div class="arena" id="arena"><div class="arena-floor"></div><div class="battle-hero battle-hero-sniper battle-hero-female"><span class="battle-sprite"></span></div><div class="enemy story-mob" style="right:55px;bottom:16px"><i class="eyes"></i></div><div class="crystal-strike"></div><div class="crystal-shards"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="controls"><button data-state="">대기</button><button data-state="hit">사격</button><button data-state="wrong story-stunned">피격</button></div><p id="state">대기</p>
+<p class="note">사격 480ms 시점에 몬스터에서 명중 섬광과 링이 나타납니다. 총알·궤적은 표시하지 않습니다. 피격 3번째 프레임은 다음 상태를 선택할 때까지 유지합니다.</p>
+<img class="strip" src="attack-mobile-light-violet.png" alt="공격 6프레임 검수">
+<img class="strip" src="hit-mobile-light-violet.png" alt="피격 3프레임 검수">
+</main><script>
+const arena=document.querySelector('#arena');
+function positionImpact(){const a=arena.getBoundingClientRect(),e=arena.querySelector('.enemy').getBoundingClientRect();arena.style.setProperty('--sniper-impact-x',(e.left+e.width/2-a.left)+'px');arena.style.setProperty('--sniper-impact-y',(e.top+e.height/2-a.top)+'px')}
+document.querySelectorAll('[data-state]').forEach(b=>b.onclick=()=>{arena.className='arena';void arena.offsetWidth;arena.className='arena '+b.dataset.state;document.querySelector('#state').textContent=b.textContent;positionImpact()});
+positionImpact();window.addEventListener('resize',positionImpact);
+</script></html>

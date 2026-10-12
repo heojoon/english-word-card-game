@@ -1,0 +1,83 @@
+{
+  "class": "sniper",
+  "variant": "female",
+  "skin": "default",
+  "facing": "right",
+  "identity": "source/sd-identity.png",
+  "profileArt": "source/standing-cg.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": 312,
+  "standingHeightPx": 264,
+  "geometryReason": "Wide rifle and full prone body need wider cells; keep character height unchanged.",
+  "projectile": false,
+  "impact": {
+    "type": "target-local crystal flash and expanding ring",
+    "contactMs": 480,
+    "reducedContactMs": 160,
+    "travel": false
+  },
+  "actions": {
+    "idle": {
+      "frameCount": 2,
+      "names": [
+        "ready",
+        "breath"
+      ],
+      "durationsMs": [
+        800,
+        800
+      ],
+      "loop": "alternate"
+    },
+    "attack": {
+      "frameCount": 6,
+      "names": [
+        "ready",
+        "anticipation",
+        "aim",
+        "precision-aim",
+        "release",
+        "active-recoil"
+      ],
+      "durationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120
+      ],
+      "releaseFrame": 4,
+      "hitFrame": 4,
+      "finalActive": true,
+      "frame01MatchesIdle": true,
+      "cssDurationMs": 600,
+      "reducedCssDurationMs": 200,
+      "finalFrameHoldMs": 120
+    },
+    "hit": {
+      "frameCount": 3,
+      "names": [
+        "guard-notice",
+        "impact-recoil",
+        "knockdown"
+      ],
+      "durationsMs": [
+        100,
+        100,
+        800
+      ],
+      "hitFrame": 1,
+      "finalHold": true,
+      "cssDurationMs": 200,
+      "reducedCssDurationMs": 120
+    }
+  },
+  "reviewStatus": "technical review passed; see review/browser-review.json; user approval not inferred"
+}

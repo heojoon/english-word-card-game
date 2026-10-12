@@ -1,0 +1,130 @@
+{
+  "image": "char_sniper_female_sd_attack_strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "index": 1,
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "index": 2,
+      "name": "aim",
+      "durationMs": 120
+    },
+    {
+      "index": 3,
+      "name": "precision-aim",
+      "durationMs": 120
+    },
+    {
+      "index": 4,
+      "name": "release",
+      "durationMs": 120,
+      "release": true,
+      "hit": true
+    },
+    {
+      "index": 5,
+      "name": "active-recoil",
+      "durationMs": 120
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/battle-generation/attack-01.png",
+      "bounds": [
+        250,
+        81,
+        1158,
+        1195
+      ],
+      "footCenterPx": 610,
+      "sourceUnitScale": 0.933572710951526,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/attack-02.png",
+      "bounds": [
+        183,
+        144,
+        1223,
+        1184
+      ],
+      "footCenterPx": 567,
+      "sourceUnitScale": 1.0,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/attack-03.png",
+      "bounds": [
+        142,
+        128,
+        1234,
+        1156
+      ],
+      "footCenterPx": 517,
+      "sourceUnitScale": 1.0116731517509727,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/attack-04.png",
+      "bounds": [
+        156,
+        137,
+        1221,
+        1184
+      ],
+      "footCenterPx": 540,
+      "sourceUnitScale": 0.9933142311365807,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/attack-05-v2.png",
+      "bounds": [
+        289,
+        259,
+        1090,
+        1052
+      ],
+      "footCenterPx": 627,
+      "sourceUnitScale": 1.3114754098360655,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/attack-06-v2.png",
+      "bounds": [
+        293,
+        274,
+        1094,
+        1095
+      ],
+      "footCenterPx": 610,
+      "sourceUnitScale": 1.266747868453106,
+      "runtimeScale": 0.25384615384615383
+    }
+  ],
+  "reviewStatus": "technical review passed: RGBA, bounds, light/violet composites, mobile CSS playback and reduced motion; user approval not inferred",
+  "contactMs": 480,
+  "reducedContactMs": 160,
+  "finalActive": true,
+  "frame01MatchesIdle": true,
+  "effectBounds": "Target-local CSS impact, no traveling layer",
+  "browserReview": "review/browser-review.json"
+}

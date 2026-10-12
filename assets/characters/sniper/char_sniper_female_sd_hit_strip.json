@@ -1,0 +1,74 @@
+{
+  "image": "char_sniper_female_sd_hit_strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "index": 0,
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "impact-recoil",
+      "durationMs": 100,
+      "hit": true
+    },
+    {
+      "index": 2,
+      "name": "knockdown",
+      "durationMs": 800,
+      "finalHold": true
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/battle-generation/hit-01.png",
+      "bounds": [
+        266,
+        67,
+        1169,
+        1218
+      ],
+      "footCenterPx": 648,
+      "sourceUnitScale": 0.9035621198957429,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/hit-02-v2.png",
+      "bounds": [
+        48,
+        147,
+        1245,
+        1172
+      ],
+      "footCenterPx": 663,
+      "sourceUnitScale": 1.0146341463414634,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/hit-03.png",
+      "bounds": [
+        26,
+        461,
+        1226,
+        933
+      ],
+      "footCenterPx": 626,
+      "sourceUnitScale": 1.22,
+      "runtimeScale": 0.25384615384615383
+    }
+  ],
+  "reviewStatus": "technical review passed: RGBA, bounds, light/violet composites, mobile CSS playback and reduced motion; user approval not inferred",
+  "browserReview": "review/browser-review.json"
+}

@@ -1,0 +1,56 @@
+{
+  "image": "char_sniper_female_sd_idle_strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 800
+    },
+    {
+      "index": 1,
+      "name": "breath",
+      "durationMs": 800
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/battle-generation/attack-01.png",
+      "bounds": [
+        250,
+        81,
+        1158,
+        1195
+      ],
+      "footCenterPx": 610,
+      "sourceUnitScale": 0.933572710951526,
+      "runtimeScale": 0.25384615384615383
+    },
+    {
+      "source": "source/battle-generation/idle-02.png",
+      "bounds": [
+        240,
+        112,
+        1158,
+        1193
+      ],
+      "footCenterPx": 617,
+      "sourceUnitScale": 0.9620721554116559,
+      "runtimeScale": 0.25384615384615383
+    }
+  ],
+  "reviewStatus": "technical review passed: RGBA, bounds, light/violet composites, mobile CSS playback and reduced motion; user approval not inferred",
+  "loop": "alternate",
+  "browserReview": "review/browser-review.json"
+}

@@ -37,17 +37,17 @@ test('sniper creation preview offers only available artwork and requested stat b
   const stats=html.match(/<i>(.*?)<\/i>/g).map(x=>(x.match(/<b>/g)||[]).length);
   assert.deepEqual(stats,[3,2,4,2]);assert.ok(existsSync(new URL('../assets/avatars/variants/sniper-female-upper-body.webp',import.meta.url)));
 });
-test('sniper battle uses its own SD fallback and never another class strip',()=>{
+test('sniper battle uses its own female SD animation and never another class strip',()=>{
   const {c}=setup();c.selectedCharacter={class:'sniper',avatar_variant:'female'};
   vm.runInContext(source.slice(source.indexOf('  function battleHeroMarkup('),source.indexOf('  function storyBattleActions(')),c);
   assert.ok(c.battleHeroMarkup().includes('battle-hero-sniper'));assert.ok(!c.battleHeroMarkup().includes('portrait'));
-  const manifest=JSON.parse(readFileSync(new URL('../assets/characters/sniper/char_sniper_female_sd_idle.json',import.meta.url),'utf8'));
-  assert.equal(manifest.reviewStatus,'static-temporary-fallback');assert.equal(manifest.frameWidth,320);
+  const manifest=JSON.parse(readFileSync(new URL('../assets/characters/sniper/char_sniper_female_sd_idle_strip.json',import.meta.url),'utf8'));
+  assert.equal(manifest.frameCount,2);assert.equal(manifest.frameWidth,512);
 });
 test('sniper passive slot stays disabled and describes automatic activation',()=>{
   const {c}=setup();Object.assign(c,{selectedCharacter:{class:'sniper'},storySkillDefinitions:[],storySkillIcons:[],
     run:{mp:2,mpMax:2},equippedPotions:()=>[null,null],esc:String,icon:()=>'<svg></svg>'});
   vm.runInContext(source.slice(source.indexOf('  function storyBattleActions('),source.indexOf('  async function useStoryPotion(')),c);
   const html=c.storyBattleActions();assert.ok(html.includes('심안의 저격'));
-  assert.ok(!html.includes('연속 베기'));assert.ok(html.includes('20% 확률 · 자동 발동'));assert.ok(!html.includes('data-action="activate-slash"'));
+  assert.ok(!html.includes('연속 베기'));assert.ok(html.includes('15% 확률 · 자동 발동'));assert.ok(!html.includes('data-action="activate-slash"'));
 });

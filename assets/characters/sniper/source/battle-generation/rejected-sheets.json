@@ -1,0 +1,25 @@
+{
+  "sourceFrameGapPx": 50,
+  "records": [
+    {
+      "key": "attack-first-sheet",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Three equal wide slots in ONE horizontal row, each 640x640, with exactly 50px fully transparent gaps between slots (total 2020x640). All artwork remains at least 35px inside each slot; whole head, boots and entire long rifle visible. Transparent RGBA background, no text, labels, grid, floor, shadows on floor, scenery, extra people, bullets, tracers, beam, projectiles, blood or wounds. One character per slot. Stable head size and costume across poses. ATTACK first half, exactly THREE poses left to right: 1 ready (same lowered rifle pose as canonical SD identity); 2 anticipation (rifle raised halfway, elbows lift, butt approaches shoulder); 3 steady aim (rifle butt firm against shoulder, cheek near scope, long rifle level pointing RIGHT, standing planted feet). No muzzle flash yet. Rifle shape and length constant, no shortening weapon. Keep body and head height identical. This is frames 1-3 of a 6-frame firing animation.",
+      "review": "Rejected: crowded slots; missing exact 50px gaps. Superseded by isolated generation.",
+      "file": "attack-first-sheet-rejected.png",
+      "references": [
+        "source/sd-identity.png",
+        "source/standing-cg.png"
+      ]
+    },
+    {
+      "key": "hit-first-sheet",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Three equal wide slots in ONE horizontal row, each 640x640, with exactly 50px fully transparent gaps between slots (total 2020x640). All artwork remains at least 35px inside each slot; whole head, boots and entire long rifle visible. Transparent RGBA background, no text, labels, grid, floor, shadows on floor, scenery, extra people, bullets, tracers, beam, projectiles, blood or wounds. One character per slot. Stable head size and costume across poses. Exactly THREE HIT / KNOCKDOWN poses left to right: 1 guard/notice upright, startled eyes, rifle close to chest; 2 impact with strongest recoil leaning backward to LEFT, boots planted, face surprised squeezed eyes, rifle retained with both hands; 3 COMPLETE KNOCKDOWN lying fully prone/on her side on ground, head to left and boots to right, whole body down unable to stand, eyes closed, rifle held beside body fully visible. Third is NOT kneeling, sitting, crouching, or recovering. No enemy/attacker, no injuries or gore. Same anatomical size even in prone frame; do not shrink prone body.",
+      "review": "Rejected: crowded slots; missing exact 50px gaps. Superseded by isolated generation.",
+      "file": "hit-first-sheet-rejected.png",
+      "references": [
+        "source/sd-identity.png",
+        "source/standing-cg.png"
+      ]
+    }
+  ]
+}

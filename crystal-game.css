@@ -562,21 +562,47 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 
 /* Fifth class; keep all class choices readable on narrow mobile screens. */
 .class-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
-.sniper-insight-notice{margin:8px 0;padding:8px 12px;border:1px solid #b5aff0;border-radius:12px;background:#f0edff;color:#393280;font-size:12px;text-align:center}
 .answer:has(.sniper-answer-hint){border:2px solid var(--violet);background:#f0edff;color:var(--ink)}
 .sniper-answer-hint{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--violet);color:#fff;font-size:11px;font-weight:800}
+.arena .sniper-insight-reticle{position:absolute;display:block;left:50%;top:48%;z-index:8;width:110%;max-width:112px;height:auto;aspect-ratio:1;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px #60d9cf99);pointer-events:none;animation:sniper-target-lock .22s ease-out both}
+.arena .story-mob .sniper-insight-reticle{max-width:82px}
+.arena .guardian-enemy .sniper-insight-reticle,.arena .royal-slime-boss-wrap>.sniper-insight-reticle{width:70%;max-width:136px;top:52%}
+@keyframes sniper-target-lock{from{opacity:0;scale:1.18}to{opacity:1;scale:1}}
+@media(prefers-reduced-motion:reduce){.arena .sniper-insight-reticle{animation:none}}
 .story-match-item[data-sniper-pair]{border:2px solid var(--sniper-pair-color);border-left-width:6px}
 .sniper-pair-label{display:inline-block;margin-left:5px;padding:2px 5px;border-radius:6px;background:var(--sniper-pair-color);color:#fff;font-size:10px;font-weight:800;white-space:nowrap}
-/* Temporary exact-female SD fallback until sniper animation strips are ready. */
-.battle-hero-sniper.battle-hero-female .battle-sprite{background-image:url('assets/characters/sniper/char_sniper_female_sd_idle.png');background-size:100% 100%;background-position:center;animation:sniper-idle 2s ease-in-out infinite}
-.arena.hit .battle-hero-sniper{animation:none}
-.arena.hit .battle-hero-sniper.battle-hero-female .battle-sprite{animation:sniper-recoil .7s ease-out both;background-size:100% 100%}
-.arena.wrong .battle-hero-sniper.battle-hero-female .battle-sprite{background-image:url('assets/characters/sniper/char_sniper_female_sd_idle.png');background-size:100% 100%;animation:player-hit .7s ease-out both}
-.arena.ice-time-active .battle-hero-sniper .battle-sprite{animation-play-state:paused}
-@keyframes sniper-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
-@keyframes sniper-recoil{0%,55%{transform:translateX(0)}60%{transform:translateX(-5px)}100%{transform:translateX(0)}}
+/* Female default sniper: wide rifle cells, planted firing, target-local impact.
+   Contact is release frame 5 at 480ms (160ms under reduced motion). */
+.arena .battle-hero-sniper.battle-hero-female{--battle-cell-height:120.5px;--battle-ground-bottom:13px;--battle-cell-aspect:1.6}
+.battle-hero-sniper.battle-hero-female .battle-sprite{background-image:url('assets/characters/sniper/char_sniper_female_sd_idle_strip.png?v=20261012');background-size:200% 100%;background-position:0 0;animation:sniper-frames .8s steps(1,end) infinite alternate}
+.arena.hit .battle-hero-sniper,.arena.wrong .battle-hero-sniper,.arena.story-stunned .battle-hero-sniper.battle-hero-female{animation:none!important;transform:none!important}
+.arena.hit .battle-hero-sniper.battle-hero-female .battle-sprite{background-image:url('assets/characters/sniper/char_sniper_female_sd_attack_strip.png?v=20261012');background-size:600% 100%;animation:sniper-frames .6s steps(5,end) both}
+.arena.wrong .battle-hero-sniper.battle-hero-female .battle-sprite,.arena.story-stunned .battle-hero-sniper.battle-hero-female .battle-sprite{background-image:url('assets/characters/sniper/char_sniper_female_sd_hit_strip.png?v=20261012');background-size:300% 100%;animation:sniper-frames .2s steps(2,end) both!important}
+.arena.ice-time-active:not(.hit):not(.wrong):not(.story-stunned) .battle-hero-sniper .battle-sprite{animation-play-state:paused}
+.arena:has(.battle-hero-sniper){--sniper-contact:.48s}
+.arena:has(.battle-hero-sniper) .crystal-strike{display:none}
+.arena:has(.battle-hero-sniper) .crystal-shards{left:calc(var(--sniper-impact-x,75%) - 18px);top:calc(var(--sniper-impact-y,50%) - 18px);right:auto;bottom:auto}
+.arena.hit:has(.battle-hero-sniper) .crystal-shards i{animation-delay:var(--sniper-contact)!important}
+.arena:has(.battle-hero-sniper) .crystal-shards::before,.arena:has(.battle-hero-sniper) .crystal-shards::after{content:"";position:absolute;pointer-events:none;opacity:0}
+.arena:has(.battle-hero-sniper) .crystal-shards::before{inset:-8px;background:radial-gradient(circle,#fff 0 15%,#c2fff6 25%,#60d9cfb0 45%,#7868ef00 70%);clip-path:polygon(50% 0,60% 35%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 35%)}
+.arena:has(.battle-hero-sniper) .crystal-shards::after{inset:-8px;border:3px solid #bafff4;border-radius:50%;box-shadow:0 0 10px #60d9cf,inset 0 0 8px #7868ef}
+.arena.hit:has(.battle-hero-sniper) .crystal-shards::before{animation:sniper-impact-flash .22s ease-out var(--sniper-contact) both}
+.arena.hit:has(.battle-hero-sniper) .crystal-shards::after{animation:sniper-impact-ring .3s ease-out var(--sniper-contact) both}
+.arena.hit:has(.battle-hero-sniper) .enemy,.arena.hit:has(.battle-hero-sniper) .enemy-label{animation-delay:var(--sniper-contact)}
+.arena.hit:has(.battle-hero-sniper) .enemy.story-mob{animation:sniper-mob-recoil .28s ease-out var(--sniper-contact) both!important;animation-play-state:running!important}
+@keyframes sniper-frames{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes sniper-impact-flash{0%{opacity:0;transform:scale(.4)}20%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:scale(.85)}}
+@keyframes sniper-impact-ring{0%{opacity:0;transform:scale(.3)}15%{opacity:1}100%{opacity:0;transform:scale(1.45)}}
+@keyframes sniper-mob-recoil{0%{transform:translateX(var(--enemy-approach,0px));filter:brightness(1)}30%{transform:translateX(calc(var(--enemy-approach,0px) + 7px)) rotate(7deg);filter:brightness(1.7)}100%{transform:translateX(var(--enemy-approach,0px));filter:brightness(1)}}
 @media(prefers-reduced-motion:reduce){
   .battle-hero-sniper.battle-hero-female .battle-sprite{animation:none}
-  .arena.hit .battle-hero-sniper.battle-hero-female .battle-sprite{animation:sniper-recoil .28s ease-out both}
-  .arena.wrong .battle-hero-sniper.battle-hero-female .battle-sprite{animation:player-hit .28s ease-out both}
+  .arena:has(.battle-hero-sniper){--sniper-contact:.16s}
+  .arena.hit .battle-hero-sniper.battle-hero-female .battle-sprite{animation:sniper-frames .2s steps(5,end) both!important}
+  .arena.wrong .battle-hero-sniper.battle-hero-female .battle-sprite,.arena.story-stunned .battle-hero-sniper.battle-hero-female .battle-sprite{animation:sniper-frames .12s steps(2,end) both!important}
+  .arena.hit:has(.battle-hero-sniper) .enemy:not(.story-mob):not(.royal-slime-enemy){animation:enemy-knockout .28s ease var(--sniper-contact) both!important}
+  .arena.hit:has(.battle-hero-sniper) .enemy-label{animation:enemy-label-out .18s ease var(--sniper-contact) both!important}
+  .arena.hit:has(.battle-hero-sniper) .crystal-shards i{animation:crystal-shard .18s ease-out var(--sniper-contact) both!important}
+  .arena.hit:has(.battle-hero-sniper) .crystal-shards::before{animation:sniper-impact-flash .12s ease-out var(--sniper-contact) both!important}
+  .arena.hit:has(.battle-hero-sniper) .crystal-shards::after{animation:sniper-impact-ring .15s ease-out var(--sniper-contact) both!important}
+  .arena.hit:has(.battle-hero-sniper) .enemy.story-mob{animation-duration:.15s!important}
 }

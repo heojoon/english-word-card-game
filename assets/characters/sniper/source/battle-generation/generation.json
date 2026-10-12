@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-12",
+  "identity": "source/sd-identity.png",
+  "profile": "source/standing-cg.png",
+  "sourceFrameGapPx": 50,
+  "generationMode": "isolated frames after crowded three-frame sheets failed",
+  "records": [
+    {
+      "key": "attack-01",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. READY: relaxed planted feet, rifle held diagonally downward RIGHT across chest exactly like reference. Eyes calm focused blue, both hands holding weapon.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/attack-01.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "attack-02",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. ANTICIPATION: same planted feet and height, rifle rising to shoulder halfway, muzzle pointing diagonally 20 degrees down RIGHT, elbows lift, head leans just slightly forward.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/attack-02.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "attack-03",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. AIM: standing planted feet, rifle butt at shoulder, eye to scope, rifle perfectly HORIZONTAL pointing RIGHT, two hands grip correctly, focused face. FULL long scoped rifle uncut.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/attack-03.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "attack-04",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. PRECISION AIM: rifle level RIGHT firmly shouldered, focused eye at scope, weight slightly forward, left supporting hand firm, full standing body. Trigger poised, NO flash yet.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/attack-04.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "attack-05",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. FIRE RELEASE: rifle level RIGHT firmly shouldered. One very small pale warm muzzle flash ATTACHED just to barrel tip (maximum 50px), shoulder slight backward recoil, determined eyes. No flying bullet, no tracer, no beam, no detached projectile. Complete long rifle and small flash within margins.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/attack-05.png",
+      "review": "rejected-cropped-flash"
+    },
+    {
+      "key": "attack-06",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. ACTIVE FIRING PEAK: still firmly aiming level RIGHT with strong readable shoulder recoil, slightly closed concentrating eyes, rifle butt at shoulder, full body planted. Tiny attached muzzle flash with soft smoke at tip. DO NOT lower rifle, return to idle, or recover. Final pose is active attack.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/attack-06.png",
+      "review": "rejected-cropped-flash"
+    },
+    {
+      "key": "hit-01",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. GUARD NOTICE: upright full body, startled wide eyes and small open mouth, rifle tight across chest down RIGHT, shoulders tense, both boots planted. Same body size as reference.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/hit-01.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "hit-02",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. STRONGEST IMPACT RECOIL: full body recoils strongly backward LEFT, hips and shoulders lean backward, eyes squeezed shut startled open mouth, feet stay at same ground. Rifle retained in BOTH hands across body. No attacker, no injuries, no blood.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/hit-02.png",
+      "review": "rejected-floating-casing"
+    },
+    {
+      "key": "hit-03",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. COMPLETE KNOCKDOWN: lying entirely on her SIDE horizontally on ground, head at LEFT and boots at RIGHT, eyes closed. Whole torso and hips and legs are flat/down unable to stand. Both hands retain same full long rifle alongside body pointing RIGHT. Full prone body at same anatomical scale as standing reference. NOT seated, not kneeling, not crouching. Extra 120px alpha margin around entire prone body and rifle.",
+      "inputReferences": [
+        "source/sd-identity.png"
+      ],
+      "file": "source/battle-generation/hit-03.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "idle-02",
+      "prompt": "Use case: identity-preserve. Production mobile 2D Crystal Quest SD chibi animation source. Reference 1 is the canonical full-body SD identity; preserve EXACT silver-white bob haircut, round thin glasses, blue eyes, youthful nonsexualized large head compact body, teal-gray oversized tactical jacket with red zipper tabs, black tactical trousers with knee pads and chunky teal/white boots, fingerless gloves, and the same long tan-and-black scoped sniper rifle. Ref 2 is original identity illustration for design only; do not use its adult proportions. Full complete character and rifle in each slot, facing RIGHT, same scale and ground line, clean polished anime-inspired 2D shading, no pixel art. Output ONE isolated full-body pose centered on a 1024x1024 transparent canvas. CRITICAL: large clear empty alpha border at least 110px on ALL four sides; complete hair boots AND long rifle inside bounds. Character anatomy height 740px, head width about 310px. Weapon can extend to right but must keep 110px empty border. No other poses. IDLE BREATH: almost EXACT same lowered rifle ready pose as reference, eyelids softly half lowered for gentle breathing, shoulders relax slightly, hair tips subtly sway. Both feet planted no position change, same body height and rifle diagonal RIGHT. Calm alive alert.",
+      "inputReferences": [
+        "source/battle-generation/attack-01.png"
+      ],
+      "file": "source/battle-generation/idle-02.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "attack-05-v2",
+      "prompt": "Use case precise-object-edit. This is a production SD sniper firing pose. Preserve EXACT supplied character face hair glasses outfit rifle pose anatomy and palette. Remove ONLY all orange muzzle flash/smoke so full long rifle barrel tip is clearly visible with no flash, bullet, beam or projectile. Zoom out the WHOLE character uniformly on canvas so there is at least 160px genuine transparent margin on each side including right side and top. Never clip any hair, boots, or rifle. Center entire silhouette, full-body and gun visible. Keep active firing pose, don't return to idle. True transparent RGBA. No new drawing designs or extra characters.",
+      "inputReferences": [
+        "source/battle-generation/attack-05.png"
+      ],
+      "file": "source/battle-generation/attack-05-v2.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "attack-06-v2",
+      "prompt": "Use case precise-object-edit. This is a production SD sniper firing pose. Preserve EXACT supplied character face hair glasses outfit rifle pose anatomy and palette. Remove ONLY all orange muzzle flash/smoke so full long rifle barrel tip is clearly visible with no flash, bullet, beam or projectile. Zoom out the WHOLE character uniformly on canvas so there is at least 160px genuine transparent margin on each side including right side and top. Never clip any hair, boots, or rifle. Center entire silhouette, full-body and gun visible. Keep active firing pose, don't return to idle. True transparent RGBA. No new drawing designs or extra characters.",
+      "inputReferences": [
+        "source/battle-generation/attack-06.png"
+      ],
+      "file": "source/battle-generation/attack-06-v2.png",
+      "review": "selected-for-normalization"
+    },
+    {
+      "key": "hit-02-v2",
+      "prompt": "Precise-object-edit for production chibi game sprite. Preserve this exact complete female sniper impact recoil pose, body size, face hair glasses outfit boots and whole rifle pixel design. Remove ONLY the single floating gold cartridge casing to the right of her face above the scope. Leave transparent space there. No firing and no bullet or projectile. Keep the little yellow comic impact accents if needed. Genuine transparent RGBA, no backdrop, no pose or costume redesign, no cropping.",
+      "inputReferences": [
+        "source/battle-generation/hit-02.png"
+      ],
+      "file": "source/battle-generation/hit-02-v2.png",
+      "review": "selected-for-normalization"
+    }
+  ]
+}
