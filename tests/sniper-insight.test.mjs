@@ -35,15 +35,23 @@ test('Type 1 highlights only the actual answer; repeated renders never reroll or
   assert.equal(c.renderBattle(),first.replace(c.announcement,''));assert.equal(rolls(),1);assert.equal(c.run.mp,2);assert.equal(c.run.correct,0);
   c.Math.random=()=>.8;c.run.index=1;c.prepareQuestion();assert.ok(!c.renderBattle().includes('sniper-answer-hint'));assert.equal(c.run.sniperInsight,false);
 });
-test('ordinary Story and royal boss show five stable color/number pairs across shuffled columns',()=>{
+test('ordinary Story and royal boss show only two stable color/number pairs across shuffled columns',()=>{
   for(const boss of [false,true]){
     const {c,rolls}=setup();c.run.story=true;c.run.boss=boss;c.prepareQuestion();const html=c.renderBattle();
-    for(let pair=1;pair<=5;pair++)assert.equal((html.match(new RegExp(`data-sniper-pair="${pair}"`,'g'))||[]).length,2);
+    for(let pair=1;pair<=5;pair++)assert.equal((html.match(new RegExp(`data-sniper-pair="${pair}"`,'g'))||[]).length,pair<=2?2:0);
+    assert.equal((html.match(/class="sniper-pair-label"/g)||[]).length,4);
+    const hintedIds=c.run.matchEn.map(x=>x.id).sort((a,b)=>a-b).slice(0,2);
     for(const id of c.run.matchEn.map(x=>x.id)){
-      const attrs=c.sniperPairHintAttributes(id);assert.ok(attrs.includes('aria-description'));assert.ok(attrs.includes('--sniper-pair-color:'));
+      const attrs=c.sniperPairHintAttributes(id),label=c.sniperPairHintMarkup(id);
+      if(hintedIds.includes(id)){assert.ok(attrs.includes('aria-description'));assert.ok(attrs.includes('--sniper-pair-color:'));assert.ok(label);}
+      else {assert.equal(attrs,'');assert.equal(label,'');}
     }
     assert.equal(rolls(),1);c.run.selectedKo=1;c.run.paused=true;c.renderBattle();assert.equal(rolls(),1);
+    c.run.matched.add(hintedIds[0]);c.run.matchEn.reverse();c.renderBattle();assert.equal(rolls(),1);
+    for(const id of c.run.matchEn.map(x=>x.id))assert.equal(Boolean(c.sniperPairHintMarkup(id)),hintedIds.includes(id));
     c.run.index=5;c.prepareQuestion();assert.equal(rolls(),2);assert.ok(c.renderBattle().includes('쌍 1'));
+    assert.equal(c.sniperPairHintMarkup(hintedIds[0]),'');
+    c.Math.random=()=>.9;c.prepareQuestion();assert.ok(!c.renderBattle().includes('data-sniper-pair='));
   }
 });
 test('both four-choice bosses reveal the correct answer even while guardian text is masked',()=>{

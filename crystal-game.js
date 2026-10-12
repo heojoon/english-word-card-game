@@ -90,7 +90,7 @@
     mage:{label:'마법사',title:'ARCANE SCHOLAR',trait:'타임 스톱 · 가끔 시간 정지',skill:'타임 스톱',skillDesc:'문제마다 30% 확률로 답을 선택할 때까지 시간이 멈춰요.',stats:{hp:2,mp:2,atk:5,luk:4},growth:{hp:2,mp:4,atk:5,luk:3},paths:{male:'mage.webp',female:'variants/mage-female.webp'}},
     pugilist:{label:'권투사',title:'COMBO MASTER',trait:'콤보 마스터 · 3콤보 보너스',skill:'크리스털 가방',skillDesc:'3 콤보당 보너스 +1 크리스털 지급',stats:{hp:4,mp:1,atk:3,luk:3},growth:{hp:4,mp:2,atk:3,luk:3},paths:{male:'variants/pugilist-male.webp',female:'pugilist.webp?v=20260921-alpha'}},
     ranger:{label:'궁수',title:'TREASURE HUNTER',trait:'보물 사냥꾼 · 상자 최소 20개',skill:'행운의 화살',skillDesc:'보물상자에서 최소 20 크리스털을 찾아요.',stats:{hp:3,mp:1,atk:3,luk:4},growth:{hp:3,mp:2,atk:3,luk:4},paths:{male:'variants/ranger-male.webp',female:'ranger.webp'}},
-    sniper:{label:'스나이퍼',title:'WHITE SNIPER',trait:'심안의 저격 · 15% 확률로 정답 안내',skill:'심안의 저격',skillDesc:'마음의 눈으로 적을 겨냥한다. 15% 확률로 객관식 정답을 표시하고, 매칭형 정답 쌍을 같은 색으로 알려줘요.',stats:{hp:3,mp:2,atk:4,luk:2},growth:{hp:2,mp:2,atk:4,luk:3},paths:{female:'variants/sniper-female-upper-body.webp'}}
+    sniper:{label:'스나이퍼',title:'WHITE SNIPER',trait:'심안의 저격 · 15% 확률로 정답 안내',skill:'심안의 저격',skillDesc:'마음의 눈으로 적을 겨냥한다. 15% 확률로 객관식 정답을 표시하고, 매칭형 정답 2쌍을 같은 색으로 알려줘요.',stats:{hp:3,mp:2,atk:4,luk:2},growth:{hp:2,mp:2,atk:4,luk:3},paths:{female:'variants/sniper-female-upper-body.webp'}}
   };
   const builtinWorlds = [
     {name:'속삭이는 숲',sub:'기초부터 도전까지 · 모든 단어가 이어지는 숲길',code:'F1A2',keys:builtinStageKeys.slice()}
@@ -1015,14 +1015,14 @@
   }
   function sniperPairHintAttributes(id){
     if(!run.sniperInsight)return '';
-    const pair=run.matchEn.map(item=>item.id).sort((a,b)=>a-b).indexOf(id);
+    const pair=run.matchEn.map(item=>item.id).sort((a,b)=>a-b).slice(0,2).indexOf(id);
     if(pair<0)return '';
     const colors=['#5751D8','#147D76','#A44B17','#A73568','#3564A3'];
     return ` data-sniper-pair="${pair+1}" style="--sniper-pair-color:${colors[pair%colors.length]}" aria-description="심안의 저격 · 정답 쌍 ${pair+1}"`;
   }
   function sniperPairHintMarkup(id){
     if(!run.sniperInsight)return '';
-    const pair=run.matchEn.map(item=>item.id).sort((a,b)=>a-b).indexOf(id);
+    const pair=run.matchEn.map(item=>item.id).sort((a,b)=>a-b).slice(0,2).indexOf(id);
     return pair<0?'':`<small class="sniper-pair-label">쌍 ${pair+1}</small>`;
   }
   function makeQuestion(entry,pool,mode){const choices=pool.filter(x=>x[0]!==entry[0]).sort((a,b)=>formScore(entry,b)-formScore(entry,a)).slice(0,8);const enKo=mode==='en-ko',answer=enKo?`[${entry[1]}] ${entry[2]}`:entry[0];return {entry,mode,prompt:enKo?entry[0]:`[${entry[1]}] ${entry[2]}`,answer,choices:shuffle([answer,...shuffle(choices).slice(0,3).map(x=>enKo?`[${x[1]}] ${x[2]}`:x[0])])};}
