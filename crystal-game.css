@@ -646,7 +646,8 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 }
 
 /* World 4 prologue: misty scenery behind the shared novel dialogue. */
-.story-vn-scene.illusion-scene{background:radial-gradient(ellipse at 30% 40%,#f7f7ffcc,transparent 65%),radial-gradient(ellipse at 80% 75%,#f7f7ffb3,transparent 60%),linear-gradient(180deg,#74718a,#c9c6e5 55%,#9dcac5)}
+.story-vn-scene.illusion-scene{background:#74718a url('assets/novel/bgi/world4-prologue-illusion.webp') center/cover no-repeat}
+.story-vn-scene.illusion-cleared-scene{background-image:url('assets/novel/bgi/world4-prologue-cleared.webp')}
 .story-vn-chapter-four .story-vn-scene::before,.story-vn-chapter-four .story-vn-scene::after,.story-vn-chapter-four .story-vn-orb{display:none}
 .portrait .portrait-pet{position:absolute!important;width:28%!important;height:28%!important;inset:auto 1% 0 auto!important;object-fit:contain;z-index:3;filter:none!important;mask-image:none!important}
 .item-pet-skill{display:block;font-size:11px;line-height:1.45;color:var(--muted);font-weight:500;word-break:keep-all}
