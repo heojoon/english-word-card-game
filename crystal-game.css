@@ -405,6 +405,17 @@ body[data-screen="battle"] .arena.royal-boss-arena{height:clamp(205px,30dvh,280p
 @keyframes story-necromancer-flash{0%{opacity:0}25%{opacity:.85}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.story-vn-transformation-flash{animation:none;opacity:0}}
 .weaving-step-ready .battle-sprite{filter:drop-shadow(0 0 6px #60d9cf)}
+.story-weaving-skill{--weaving-light:var(--surface,#f7f7ff);--weaving-glow:var(--mint,#60d9cf);--weaving-disabled:#45454d}
+.story-weaving-skill .story-action-icon{position:relative;background:var(--ink,#24214c)}
+.story-weaving-skill .story-action-icon img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.story-weaving-skill.used:not(.activated) .story-action-icon{border-color:var(--weaving-disabled);background:var(--weaving-disabled);box-shadow:none}
+.story-weaving-skill.used:not(.activated) .story-action-icon img{filter:grayscale(1) brightness(.4)}
+.story-weaving-skill.used:not(.activated) b,.story-weaving-skill.used:not(.activated) small{color:var(--muted,#74718a)}
+.story-weaving-skill.activated .story-action-icon{border-color:var(--weaving-glow);box-shadow:0 0 8px color-mix(in srgb,var(--weaving-glow) 45%,transparent)}
+.story-weaving-skill.activated .story-action-icon::after{content:"";position:absolute;inset:-5px;border:2px solid color-mix(in srgb,var(--weaving-glow) 35%,transparent);border-top-color:var(--weaving-light);border-right-color:var(--weaving-glow);border-radius:50%;background:radial-gradient(circle at 50% 0%,var(--weaving-light) 0 2px,transparent 3px),radial-gradient(circle at 100% 50%,var(--weaving-light) 0 2px,transparent 3px),radial-gradient(circle at 15% 85%,var(--weaving-glow) 0 1px,transparent 3px);filter:drop-shadow(0 0 3px var(--weaving-glow));pointer-events:none;animation:weaving-skill-orbit 4.8s linear infinite,weaving-skill-sparkle 1.6s ease-in-out infinite}
+@keyframes weaving-skill-orbit{to{transform:rotate(360deg)}}
+@keyframes weaving-skill-sparkle{0%,100%{opacity:.7}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.story-weaving-skill.activated .story-action-icon::after{animation:none;opacity:1}}
 .weaving-step-dodging .battle-sprite{filter:drop-shadow(-8px 0 3px #60d9cf);opacity:.8}
 .weaving-step-status{position:absolute;left:14px;bottom:8px;z-index:12;padding:3px 8px;border:1px solid #60d9cf;border-radius:20px;background:#f7f7ff;color:#24214c;font-size:11px;font-weight:800;pointer-events:none}
 .arena-combo.weaving-step-announcement{top:50%;transform:translate(-50%,-50%);background:linear-gradient(120deg,#f7f7ff,#d9f8f2);border-color:#60d9cf;color:#24214c;max-width:90%;padding:10px 14px;pointer-events:none}
