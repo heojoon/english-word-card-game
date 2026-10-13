@@ -26,7 +26,7 @@
     state.guardianRemaining=correct?contactMs:500;
     state.guardianVisual='idle';state.guardianBeamHit=false;
     if(correct){state.answeredCorrect=(state.answeredCorrect||0)+1;const damage=Math.min(HP-state.correct,Math.max(1,state.bossAttackSteps||1));state.correct+=damage;state.index+=damage;state.attack=true;}
-    else{state.hp=Math.max(0,state.hp-1);state.stunned=true;}
+    else{if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
     return true;
   }
   function advance(state,delta){

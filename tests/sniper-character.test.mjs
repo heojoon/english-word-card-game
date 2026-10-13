@@ -5,7 +5,7 @@ import {readFileSync,existsSync} from 'node:fs';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 function setup(accountMode=false){
   const calls=[],state={characters:[],characterTickets:0};
-  const c=vm.createContext({accountMode,guestMode:false,localMode:!accountMode,
+  const c=vm.createContext({run:null,accountMode,guestMode:false,localMode:!accountMode,
     newClass:'sniper',newVariant:'female',player:'tester',characters:[],demoState:state,
     $:()=>({value:'화이트 스나이퍼'}),toast:()=>{},saveDemo:()=>{},closeDialog:()=>{},refresh:async()=>{},go:()=>{},
     localStorage:{setItem:()=>{},getItem:()=>null},characterCreating:true,

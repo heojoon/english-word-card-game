@@ -5,7 +5,7 @@ import vm from 'node:vm';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 function setup(attackSteps=1){
   const callbacks=[],pages=[],node=()=>({remove(){},style:{},textContent:'',classList:{add(){},toggle(){}},setAttribute(){}});
-  const c=vm.createContext({run:null,pendingStoryRun:null,selectedStage:'story-ch3-7',selectedCharacter:{id:'hero',class:'warrior',coins:0},
+  const c=vm.createContext({initializeBattlePet(){},run:null,pendingStoryRun:null,selectedStage:'story-ch3-7',selectedCharacter:{id:'hero',class:'warrior',coins:0},
     storyStages:[1,2,3].map(chapter=>({key:`world${chapter}`,chapter})),stages:Object.fromEntries([1,2,3].map(chapter=>[`world${chapter}`,{words:Array.from({length:40},(_,i)=>[`w${chapter}-${i}`,'명',`뜻${chapter}-${i}`])}])),
     shopItems:[{id:9,code:'pet'}],inventory:[{item_id:9}],itemOwned:item=>c.inventory.some(i=>i.item_id===item.id),storyStageUnlocked:()=>true,levelReady:()=>true,
     localMode:true,player:'테스트',demoState:{records:[],potionInventory:{}},records:[],potionInventory:{blue_potion_count:2},
@@ -25,6 +25,19 @@ function setup(attackSteps=1){
   const correct=()=>{const pair=c.run.matchEn.find(item=>!c.run.matched.has(item.id));pick('ko',pair.id);pick('en',pair.id);};
   return {c,callbacks,pages,flush,pick,correct};
 }
+
+test('equipped pet shield and dragon heart resolve lethal crystal falls before the defeat check',()=>{
+  for(const index of [6,9]){
+    const {c,flush}=setup();c.window={};
+    vm.runInContext(readFileSync(new URL('../pet-system.js',import.meta.url),'utf8'),c);
+    c.run.hp=1;c.run.ghostFallsPending=1;
+    c.run.petEffects=c.window.WORDORIA_PETS.attach(c.run,c.window.WORDORIA_PETS.catalog[index],{random:()=>0});
+    if(index===6)c.run.petEffects.onCorrect();
+    c.crystalGhostFall(c.run);flush();
+    assert.equal(c.run.hp,1);assert.equal(c.run.done,false);assert.equal(c.run.ghostFallsPending,0);
+    assert.equal(c.run.petShield,false);assert.equal(c.run.petRevived,index===9);
+  }
+});
 test('spirit ownership gates entry and the deck draws 90 unique words from all three worlds',()=>{
   const {c}=setup();assert.equal(c.run.crystalGhost,true);assert.equal(c.run.deck.length,90);assert.equal(c.run.bossHp,90);
   assert.equal(c.run.storyTimeLimit,210000);assert.equal(c.royalSlimeTime(c.royalSlimeRemaining()),'03:30');

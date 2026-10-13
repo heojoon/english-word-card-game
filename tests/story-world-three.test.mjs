@@ -17,7 +17,7 @@ function loadBattleEntry(c){
 }
 function setup(){
   let level='middle';
-  const c=vm.createContext({stages:structuredClone(catalog.stages),learningLevel:()=>level,stageLevel:stage=>stage.learningLevel||'middle',records:[],accountMode:false,localHost:false,nativeApp:false});
+  const c=vm.createContext({initializeBattlePet(){},stages:structuredClone(catalog.stages),learningLevel:()=>level,stageLevel:stage=>stage.learningLevel||'middle',records:[],accountMode:false,localHost:false,nativeApp:false});
   vm.runInContext(source.slice(source.indexOf('  const storyStages = ['),source.indexOf('  const storyStageKey='))+ '\nthis.storyStages=storyStages;this.storyWorlds=storyWorlds;',c);
   vm.runInContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins(')),c);
   c.configureStoryContent();

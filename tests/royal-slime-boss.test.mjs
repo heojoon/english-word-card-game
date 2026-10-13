@@ -7,7 +7,7 @@ function setup(wordCount=13,attackSteps=1){
   const callbacks=[],pages=[],nodes=new Map();
   const node=()=>({remove(){},textContent:'',style:{},classList:{add(){},toggle(){}},setAttribute(){}});
   const original={story:true,clear:true,result:{game_score_id:'stage-seven'},treasure:42};
-  const context=vm.createContext({closeDialog(){},persistStoryBattleVitals(){},storyEntryAllowed:()=>true,storyVitals:()=>({}),bossAttackSteps:()=>attackSteps,
+  const context=vm.createContext({initializeBattlePet(){},closeDialog(){},persistStoryBattleVitals(){},storyEntryAllowed:()=>true,storyVitals:()=>({}),bossAttackSteps:()=>attackSteps,
     storyDialogueIndex:5,page:'battle',localMode:true,player:'검증',demoState:{records:[]},records:[],saveDemo(){},num:String,
     run:original,pendingStoryRun:null,selectedStage:'story-lv6',selectedCharacter:{id:'test-warrior',class:'warrior',coins:0},
     stages:{'story-lv6':{words:Array.from({length:wordCount},(_,i)=>[`word${i}`,'noun',`뜻${i}`])}},

@@ -8,7 +8,7 @@ const root=new URL('../assets/characters/ranger/violet-crystal-skin/',import.met
 const contract=JSON.parse(readFileSync(new URL('animation-contract.json',root)));
 
 function runtime({variant='female',equipped=true,reduced=false,heroClass='ranger'}={}){
-  const context=vm.createContext({selectedCharacter:{class:heroClass,avatar_variant:variant,equipped_items:equipped?{skin:10}:{}},
+  const context=vm.createContext({run:null,selectedCharacter:{class:heroClass,avatar_variant:variant,equipped_items:equipped?{skin:10}:{}},
     itemById:id=>id===10?{code:'ranger_violet_crystal_skin',name:'보랏빛 결정 궁수'}:null,
     equippedMap:()=>context.selectedCharacter.equipped_items,variantOf:c=>c.avatar_variant,
     reducedMotion:()=>reduced,esc:String,portrait:()=>'<portrait>'});

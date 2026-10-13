@@ -648,3 +648,11 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 /* World 4 prologue: misty scenery behind the shared novel dialogue. */
 .story-vn-scene.illusion-scene{background:radial-gradient(ellipse at 30% 40%,#f7f7ffcc,transparent 65%),radial-gradient(ellipse at 80% 75%,#f7f7ffb3,transparent 60%),linear-gradient(180deg,#74718a,#c9c6e5 55%,#9dcac5)}
 .story-vn-chapter-four .story-vn-scene::before,.story-vn-chapter-four .story-vn-scene::after,.story-vn-chapter-four .story-vn-orb{display:none}
+.portrait .portrait-pet{position:absolute!important;width:28%!important;height:28%!important;inset:auto 1% 0 auto!important;object-fit:contain;z-index:3;filter:none!important;mask-image:none!important}
+.item-pet-skill{display:block;font-size:11px;line-height:1.45;color:var(--muted);font-weight:500;word-break:keep-all}
+.battle-pet{position:absolute;left:25%;bottom:16%;width:clamp(40px,12vw,58px);height:58px;z-index:7;pointer-events:none}
+.battle-pet img{width:100%;height:100%;object-fit:contain}
+.pet-shield-status,.pet-time-status{position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);white-space:nowrap;padding:3px 6px;border-radius:12px;background:#f7f7ff;color:#5751d8;border:1px solid #60d9cf;font-size:10px;font-weight:800}
+.pet-skill-notice{position:absolute;left:50%;top:8%;transform:translateX(-50%);max-width:90%;padding:6px 10px;border-radius:14px;background:#f7f7fff0;color:#24214c;border:1px solid #60d9cf;font-size:12px;font-weight:800;text-align:center;z-index:14;pointer-events:none}
+.arena:has(.pet-time-status:not([hidden])) .story-mob:not(.dead),.arena:has(.pet-time-status:not([hidden])) .guardian-idle,.arena:has(.pet-time-status:not([hidden])) .royal-slime-enemy:not(.royal-slime-recoil){animation-play-state:paused!important}
+.arena.hit:has(.pet-time-status:not([hidden])) .story-mob{animation-play-state:running!important}

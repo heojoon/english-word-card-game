@@ -1,7 +1,7 @@
 /* Black Dragon: contact-based energy drain, independent of the guardian beam. */
 (() => {
   'use strict';
-  const HP=60,THRESHOLDS=[48,30,12,6],SUCCESS_RATE=.1;
+  const HP=60,THRESHOLDS=[48,30,12,6],SUCCESS_RATE=.35;
   function deck(words,shuffle){
     const pool=Array.from(new Map(words.map(entry=>[entry[0].toLowerCase(),entry])).values());
     if(pool.length<4)throw new Error('블랙 드래곤은 네 개 이상의 고유 단어가 필요해요');
@@ -20,7 +20,7 @@
     state.guardianPhase=correct?'player-attack':'wrong';state.guardianRemaining=correct?contactMs:500;
     state.guardianVisual='idle';
     if(correct){state.answeredCorrect=(state.answeredCorrect||0)+1;const damage=Math.min(HP-state.correct,Math.max(1,state.bossAttackSteps||1));state.correct+=damage;state.index+=damage;state.attack=true;}
-    else{state.hp=Math.max(0,state.hp-1);state.stunned=true;}
+    else{if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
     return true;
   }
   function advance(state,delta,random=Math.random){
@@ -46,7 +46,7 @@
           else ready();break;
         case 'drain-charge':
           state.drainSuccess=random()<SUCCESS_RATE;
-          if(state.drainSuccess){state.hp=Math.max(0,state.hp-1);state.stunned=true;}
+          if(state.drainSuccess){const before=state.hp;if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.drainSuccess=state.hp<before;state.stunned=state.drainSuccess;}
           state.drainNotice=state.drainSuccess?'에너지 흡수 · HP −1':'에너지 흡수를 막았어요!';
           state.guardianPhase='drain-hold';state.guardianRemaining=700;events.push(state.drainSuccess?'drain-hit':'drain-miss');break;
         case 'drain-hold':

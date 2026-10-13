@@ -85,7 +85,7 @@ test('masked choices show only their ends and accept answers immediately on beam
   assert.equal(rules.maskChoice('  treasure  '),'t◆◆◆◆◆◆e');
   assert.equal(rules.maskChoice('[명]   '),'');
   assert.equal(rules.maskChoice('가'),'가');assert.equal(rules.maskChoice('ab'),'ab');
-  assert.match(runtime,/if\(run\.guardian\)\{advanceGuardianBattle\(delta\);return;\}/);
+  assert.match(runtime,/if\(run\.guardian\)\{advanceGuardianBattle\(delta,petDelta\);return;\}/);
   assert.match(runtime,/if\(run\?\.guardian\)\{guardianAnswer\(index\);return;\}/);
 });
 test('runtime pauses blindness, advances to the next hidden question on beam contact, and preserves the attack DOM on hit',()=>{

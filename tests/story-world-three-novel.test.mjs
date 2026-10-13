@@ -74,7 +74,7 @@ test('world 3 stage 1 opens the novel, respects locks and starts its battle on c
 });
 
 
-test('world 3 boss start changes background at scenes 5, 6 and 7 without changing the ending',()=>{
+test('world 3 boss start changes background at scenes 5, 6 and 7 and victory uses the crystal cave',()=>{
   const bossLines=parseWorldThreeBoss(read('assets/novel/world-3-8-boss-start.md'));
   assert.equal(JSON.stringify(window.WORDORIA_NOVELS.world3BossStart),JSON.stringify(bossLines));
   assert.deepEqual([...new Set(bossLines.map(line=>line.sceneNumber))],[5,6,7]);
@@ -106,7 +106,10 @@ test('world 3 boss start changes background at scenes 5, 6 and 7 without changin
   context.page='storyChapterThreeBossEnd';
   context.storyDialogueIndex=0;
   context.lines=parseWorldThreeBoss(read('assets/novel/world-3-8-boss-end.md'));
-  assert.match(vm.runInContext("renderStoryScene(lines,'승리','보상 확인 →')",context),/story-vn-scene black-dragon-scene/);
+  for(let i=0;i<context.lines.length;i++){
+    context.storyDialogueIndex=i;
+    assert.match(vm.runInContext("renderStoryScene(lines,'승리','보상 확인 →')",context),/story-vn-scene world-three-cave-scene/);
+  }
 });
 
 
