@@ -28,19 +28,16 @@ begin
     perform public.equip_avatar_slot(v_character,v_item.id,'pet');
     select equipped_items->>'pet' into v_equipped from public.game_characters where id=v_character;
     if v_equipped is distinct from v_item.id::text then raise exception 'pet equip mismatch'; end if;
-    v_rejected := false;
-    begin
-      perform public.purchase_shop_item(v_character,v_item.id);
-    exception when raise_exception then
-      if sqlerrm<>'already owned' then raise; end if;
-      v_rejected := true;
-    end;
-    if not v_rejected then raise exception 'duplicate pet purchase allowed'; end if;
+    perform public.purchase_shop_item(v_character,v_item.id);
+    v_balance := v_balance-v_item.price;
+    if (select count(*) from public.character_inventory where character_id=v_character and item_id=v_item.id)<>2 then
+      raise exception 'duplicate pet quantity mismatch';
+    end if;
   end loop;
   select count(*) into v_inventory from public.character_inventory where character_id=v_character;
-  if v_inventory<>10 then raise exception 'ten pet purchases required'; end if;
+  if v_inventory<>20 then raise exception 'twenty pet copies required'; end if;
   select crystal_balance into v_actual from public.profiles where user_id=v_owner;
-  if v_actual<>v_balance then raise exception 'duplicate purchase changed wallet'; end if;
+  if v_actual<>v_balance then raise exception 'duplicate purchase wallet mismatch'; end if;
   perform public.equip_avatar_slot(v_character,null,'pet');
   select equipped_items->>'pet' into v_equipped from public.game_characters where id=v_character;
   if v_equipped is not null then raise exception 'pet unequip failed'; end if;
@@ -68,5 +65,5 @@ begin
   if exists(select 1 from public.character_inventory where character_id=v_poor) then raise exception 'unfunded purchase granted pet'; end if;
 end;
 $test$;
-select 'ten purchases, wallet debits, duplicate and unfunded purchase rejection, equip/unequip and ownership checks passed' as result;
+select 'twenty purchases, wallet debits, duplicate copies and unfunded purchase rejection, equip/unequip and ownership checks passed' as result;
 rollback;

@@ -101,7 +101,9 @@ test('world 4 bundled vocabulary matches the remote catalog and is excluded from
 function setupStory(){
   let level='middle';
   const c=vm.createContext({stages:JSON.parse(read('content/catalog.json')).stages,learningLevel:()=>level,
-    isAdministrator:()=>true,stageLevel:stage=>stage?.learningLevel||'middle',records:[],accountMode:false,localHost:false,nativeApp:false});
+    window:{},isAdministrator:()=>true,stageLevel:stage=>stage?.learningLevel||'middle',records:[],accountMode:false,localHost:false,nativeApp:false});
+  vm.runInContext(read('shadow-sorceress-boss.js'),c);
+  vm.runInContext(read('red-reaper-boss.js'),c);
   const source=read('crystal-game.js');
   vm.runInContext(source.slice(source.indexOf('  const storyStages = ['),source.indexOf('  const storyStageKey='))+'\nthis.storyStages=storyStages;this.storyWorlds=storyWorlds;',c);
   vm.runInContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins(')),c);
@@ -112,19 +114,22 @@ function setupStory(){
   return {c,switchLevel(value){level=value;c.configureStoryContent();}};
 }
 
-test('world 4 story stages use their exact Day 11–30 pools and six matching waves',()=>{
+test('world 4 uses 60 middle-school questions with unchanged stage 10 and 20 bosses',()=>{
   const {c}=setupStory(),stages=c.storyStages.filter(stage=>stage.chapter===4);
   assert.equal(stages.length,20);
   stages.forEach((stage,index)=>{
     assert.equal(stage.key,`story-ch4-${index+1}`);
     const content=c.stages[stage.key];
     assert.equal(JSON.stringify(content.words),JSON.stringify(c.stages[`s${index+15}`].words));
-    assert.equal(content.questionCount,30);
+    assert.equal(content.questionCount,stage.number===20?120:stage.number===10?100:60);
     assert.equal(content.story,true);
     assert.equal(content.guardian,false);
     assert.equal(content.blackDragon,false);
     const deck=c.buildQuestionDeck(content);
-    assert.equal(deck.length/5,6);
+    assert.equal(deck.length,stage.number===20?120:stage.number===10?100:60);
+    assert.equal(content.shadowSorceress,stage.number===10);
+    assert.equal(content.redReaper,stage.number===20);
+    if(stage.number!==10&&stage.number!==20)assert.match(content.desc,/60문제$/);
     assert.equal(new Set(deck.map(question=>question.entry[0])).size,30);
   });
 });
@@ -155,6 +160,10 @@ test('world 4 retains shared records across learning levels and uses each level 
     assert.equal(content.words.length,30);
     assert.equal(JSON.stringify(content.words),JSON.stringify(source.words));
     assert.match(content.desc,/교육부지정 초등영단어 800/);
+    const expectedCount=stage.number===20?120:stage.number===10?100:40;
+    assert.equal(content.questionCount,expectedCount);
+    assert.equal(c.buildQuestionDeck(content).length,expectedCount);
+    if(stage.number!==10&&stage.number!==20)assert.match(content.desc,/40문제$/);
     assert.equal(new Set(c.buildQuestionDeck(content).map(question=>question.entry[0])).size,30);
   }
   switchLevel('middle');
@@ -165,7 +174,7 @@ test('world 4 retains shared records across learning levels and uses each level 
 test('world 4 entry confirmation describes the selected learning-level source',()=>{
   const {c,switchLevel}=setupStory();
   Object.assign(c,{storyStageUnlocked:()=>true,levelReady:()=>true,storyEntryAllowed:()=>true,
-    render:()=>{},esc:String,modal:html=>{c.modalHtml=html;}});
+    bossIntroductionMarkup:()=>'',render:()=>{},esc:String,modal:html=>{c.modalHtml=html;}});
   const source=read('crystal-game.js');
   vm.runInContext(source.slice(source.indexOf('  function confirmStoryStage('),source.indexOf('  function startStoryStage(')),c);
   c.confirmStoryStage('story-ch4-1');
@@ -199,17 +208,26 @@ test('world 4 renders twenty descending stage buttons on one continuous map',()=
   assert.match(read('crystal-game.css'),/\.story-world-map-4\{aspect-ratio:1\/3\}/);
 });
 
-test('World 4 rejects student, teacher and guest direct entry before recovery or battle',()=>{
+test('World 4 allows every role and guest while preserving recovery checks',()=>{
   const {c}=setupStory();
   const source=read('crystal-game.js');
-  Object.assign(c,{storyRecoveryBusy:false,toast:()=>{},storyVitals:()=>({hp:2}),showStoryRecovery:()=>{throw new Error('must not open recovery');}});
+  let recoveryStage=null;
+  Object.assign(c,{storyRecoveryBusy:false,storyVitals:()=>({hp:2}),showStoryRecovery:stage=>{recoveryStage=stage;}});
   vm.runInContext(source.slice(source.indexOf('  function storyEntryAllowed('),source.indexOf('\n',source.indexOf('  function storyEntryAllowed('))),c);
-  for(const role of ['student','teacher',null]){
-    c.isAdministrator=()=>false;
-    assert.equal(c.storyEntryAllowed('story-ch4-1'),false);
-    assert.equal(c.storyEntryAllowed('story-ch4-20'),false);
+  for(const role of ['student','teacher','admin',null]){
+    c.accountMode=role!==null;
+    c.accountProfile=role?{role}:null;
+    c.isAdministrator=()=>role==='admin';
+    for(let number=1;number<=20;number++)assert.equal(c.storyEntryAllowed(`story-ch4-${number}`),true);
     assert.equal(c.storyEntryAllowed('story-ch3-1'),true);
   }
-  c.isAdministrator=()=>true;
-  assert.equal(c.storyEntryAllowed('story-ch4-1'),true);
+  assert.equal(c.storyEntryAllowed('missing-stage'),false);
+  c.storyRecoveryBusy=true;
+  assert.equal(c.storyEntryAllowed('story-ch4-1'),false);
+  assert.equal(recoveryStage,null);
+  c.storyRecoveryBusy=false;
+  c.storyVitals=()=>({hp:0});
+  assert.equal(c.storyEntryAllowed('story-ch4-20'),false);
+  assert.equal(recoveryStage,'story-ch4-20');
+  assert.doesNotMatch(source,/월드 4는 관리자 테스트 중/);
 });

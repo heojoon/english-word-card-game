@@ -1,0 +1,52 @@
+{
+  "image": "red-reaper-sd-idle-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "frameNames": [
+    "ready",
+    "breath"
+  ],
+  "frames": [
+    {
+      "name": "ready",
+      "duration": 600
+    },
+    {
+      "name": "breath",
+      "duration": 600
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/idle-01.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.24555903866248693,
+      "groundLine": 1147,
+      "pivotX": 780,
+      "bodyTop": 190,
+      "normalizedGroundY": 312
+    },
+    {
+      "source": "source/idle-02.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.25405405405405407,
+      "groundLine": 1180,
+      "pivotX": 690,
+      "bodyTop": 255,
+      "normalizedGroundY": 312
+    }
+  ],
+  "review": {
+    "technical": "passed: exact slots, real alpha, whole scythe, stable body height, notice-impact-knockdown and final hold reviewed over light/violet backgrounds",
+    "browser": "not requested",
+    "userApproval": "standing concept 03; SD poses not separately user-approved"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "image": "red-reaper-sd-attack-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "frameNames": [
+    "anticipation",
+    "illusion-cast",
+    "hold"
+  ],
+  "frames": [
+    {
+      "name": "anticipation",
+      "duration": 200
+    },
+    {
+      "name": "illusion-cast",
+      "duration": 200,
+      "skillContact": true
+    },
+    {
+      "name": "hold",
+      "duration": 300
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/attack-01.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.2422680412371134,
+      "groundLine": 1195,
+      "pivotX": 700,
+      "bodyTop": 225,
+      "normalizedGroundY": 312
+    },
+    {
+      "source": "source/attack-02.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.25323275862068967,
+      "groundLine": 1169,
+      "pivotX": 740,
+      "bodyTop": 241,
+      "normalizedGroundY": 312
+    },
+    {
+      "source": "source/attack-03.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.24102564102564103,
+      "groundLine": 1170,
+      "pivotX": 735,
+      "bodyTop": 195,
+      "normalizedGroundY": 312
+    }
+  ],
+  "review": {
+    "technical": "passed: exact slots, real alpha, whole scythe, stable body height, notice-impact-knockdown and final hold reviewed over light/violet backgrounds",
+    "browser": "not requested",
+    "userApproval": "standing concept 03; SD poses not separately user-approved"
+  }
+}

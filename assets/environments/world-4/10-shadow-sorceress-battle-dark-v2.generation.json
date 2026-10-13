@@ -1,0 +1,22 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-14",
+  "stage": 10,
+  "boss": "쉐도우 소서러스",
+  "prompt": "Use case: precise-object-edit / lighting-weather. Edit the attached Worldoria Crystal Quest stage 4-10 Shadow Sorceress battle background. User explicitly requests VERY DARK lighting and a jumbled disordered illusion-world feeling. Preserve the premium detailed 2D anime fantasy environment rendering, forest identity, wide 16:9 framing and clear horizontal lower-third combat floor. Major change: replace all bright daytime light with VERY DARK midnight indigo, near-black violet woodland, no sunlight, no golden rays, no bright sky or distant white clearing. Only dim violet and faint cyan crystal glimmers faintly reveal contours. Make the BACKGROUND forest deeply disorienting and scrambled: asymmetric bent tree trunks crossing diagonally, upside-down spectral tree copies suspended behind real branches, impossible looping tangled roots, offset translucent mirrored forest fragments facing different directions, warped depth and crooked tilted crystal clusters along the rear edges. This is a magical hallucination, like multiple mismatched pieces of forest overlapping; intentional large readable shapes rather than tiny random noise. Much darker than original, oppressive magical shadow, restrained low glow, no bright neon. Entire lower 32 percent MUST remain a level empty fighting floor extending edge-to-edge: dark desaturated plum/slate with just enough soft cool reflection for feet to read, no roots, objects, holes or illusion shards in combat lane. Hero on left and boss on right will be separate sprites; do not draw them. Keep image polished and sharp. No characters, faces, creatures, text, symbols, runes, UI, watermark, gore, pixel art, 3D render or photorealism. The specific very-dark and jumbled-forest request overrides the earlier bright forest lighting.",
+  "references": [
+    "assets/environments/world-4/10-shadow-sorceress-battle.webp"
+  ],
+  "source": "assets/environments/world-4/source/10-shadow-sorceress-battle-dark-v2.png",
+  "runtime": "assets/environments/world-4/10-shadow-sorceress-battle-dark-v2.webp",
+  "review": {
+    "visual": "Reviewed: very dark violet night forest, overlapping impossible tree planes and looping roots; open level combat foreground.",
+    "browser": "not run",
+    "userApproval": "not claimed"
+  },
+  "dimensions": [
+    1672,
+    941
+  ],
+  "bytes": 396938
+}

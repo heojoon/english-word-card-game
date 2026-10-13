@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-10",
+  "tool": "built-in image_gen",
+  "model": "not exposed by tool",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: style-transfer / precise-object-edit.\nAsset type: Wordoria Crystal Quest World 3 크리스탈 사원 production map.\nReference roles: Image 1 = chapter-1-library-map.webp, authoritative STYLE only. Image 2 = current World 3 map, EDIT TARGET; preserve this exact painting outside the small target area.\nPrimary request: Replace the SMALL stone arch ruin on the upper-left floating island with a real welcoming natural cave entrance, and add ONE violet-blue stage crystal on its own gold-rimmed circular pedestal in front of the cave. The user marked the rectangular area spanning x=2% through 27%, y=9% through 24% in the original map. The existing little arch is near x=18%,y=14%. Make a mossy cream-gray rocky mound there, with a clearly visible recessed cave mouth, cool violet-teal interior light, natural layered stone, a few tiny blue crystals inside, ivy and flowers outside. Preserve the trees and island waterfall. Place the NEW full-size stage crystal in the clearing in front of the cave at about x=16%, y=18% (center of upright crystal), not on the island cliff. A short golden path connects the cave and pedestal to the island's existing trail. Cave and stage must remain readable at 390px mobile width. Keep it bright, friendly and adventurous.\nComposition: Preserve target map portrait ratio 1084:1451, dimensions if possible. Exactly the same framing, temple, floating giant crystal, clouds, islands, bridges, stairs, waterfalls, winding paths and all existing SEVEN stage crystals. Make only the localized upper-left cave-and-waypoint edit. A single full-canvas map.\nGameplay contract: exactly EIGHT violet-blue stage crystals on gold-rimmed circular pedestals in the complete map after the edit. Existing stages 1–7 have centers at (48.25%,83.8%),(82.84%,67.2%),(58.12%,55.48%),(29.15%,46.59%),(82.66%,47.83%),(57.01%,38.46%),(68.73%,25.98%). Preserve those seven pedestals and crystals in EXACTLY their existing positions and shape. Add stage 8 only at (16%,18%) in front of the new upper-left cave. Do not add any other gold pedestal. Do not paint the user's red markup or its numeral; those are editing instructions only, not content. Do not move or change the main castle/temple or any of the original seven stages.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": "output/story-map/archive/chapter-3-before-cave.webp",
+  "originalLayoutPath": "/Users/hjoon/Downloads/Gemini_Generated_Image_41d4641d4641d464.png",
+  "source": "output/story-map/chapter-3-crystal-sanctuary-cave-source.png",
+  "runtime": "assets/story/chapter-3-crystal-sanctuary-map.webp",
+  "targetDimensions": {
+    "width": 1084,
+    "height": 1451
+  },
+  "actualDimensions": {
+    "width": 1084,
+    "height": 1451
+  },
+  "runtimeWorld3": "World 3 크리스탈 사원; existing stages 1–7 plus stage 8 숨겨진 수정 동굴",
+  "targetCentersPercent": [
+    [
+      48.25,
+      83.8
+    ],
+    [
+      82.84,
+      67.2
+    ],
+    [
+      58.12,
+      55.48
+    ],
+    [
+      29.15,
+      46.59
+    ],
+    [
+      82.66,
+      47.83
+    ],
+    [
+      57.01,
+      38.46
+    ],
+    [
+      68.73,
+      25.98
+    ],
+    [
+      16,
+      18
+    ]
+  ],
+  "actualWaypointCenters": [
+    {
+      "stage": 1,
+      "x": 523,
+      "y": 1216,
+      "xPercent": 48.25,
+      "yPercent": 83.8,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 2,
+      "x": 898,
+      "y": 975,
+      "xPercent": 82.84,
+      "yPercent": 67.2,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 3,
+      "x": 630,
+      "y": 805,
+      "xPercent": 58.12,
+      "yPercent": 55.48,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 4,
+      "x": 316,
+      "y": 676,
+      "xPercent": 29.15,
+      "yPercent": 46.59,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 5,
+      "x": 896,
+      "y": 694,
+      "xPercent": 82.66,
+      "yPercent": 47.83,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 6,
+      "x": 618,
+      "y": 558,
+      "xPercent": 57.01,
+      "yPercent": 38.46,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 7,
+      "x": 745,
+      "y": 377,
+      "xPercent": 68.73,
+      "yPercent": 25.98,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 8,
+      "x": 207,
+      "y": 270,
+      "xPercent": 19.1,
+      "yPercent": 18.61,
+      "measurement": "manual visual center of upright crystal; approximate"
+    }
+  ],
+  "review": {
+    "status": "image review passed; runtime connected; browser review not performed per user instruction",
+    "waypointCount": 8,
+    "style": "Original painterly rendering retained; cream-gray natural cave, ivy, turquoise waterfall, violet crystal on gold pedestal.",
+    "existingWaypoints": "Seven original crystals and pedestals visually preserved at original centers.",
+    "cropping": "Cave, all eight pedestals, temple and giant crystal fully within canvas.",
+    "route": "New cave stage is on the upper-left separate floating island with a local golden entrance path; no new physical bridge to the main island was requested or added.",
+    "mobilePreview": "output/story-map/review/chapter-3-cave-mobile.png",
+    "waypointOverlay": "output/story-map/review/chapter-3-cave-waypoints.png",
+    "browserChecks": "Not run. User requested Playwright only when explicitly asked.",
+    "validation": "Build passed. Focused map/progression/learning-level tests: 15 passed. Full suite: 100 passed, 1 failed because separate in-progress prologue child CG assets/novel/characters/char_mysterious_village_child_standing.webp is missing. No browser checks."
+  },
+  "approvalStatus": "cave edit requested; newly generated result awaiting user visual review"
+}

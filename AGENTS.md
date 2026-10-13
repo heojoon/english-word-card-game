@@ -52,6 +52,10 @@ Treat Direction 01 as a locked product decision. Do not switch to the Arcade Gui
 
 Keep visual work mobile-first, readable for upper-elementary and middle-school learners, and consistent with the `Study = Battle` loop. Gameplay information must remain clearer than decorative art.
 
+## Item image generation
+
+Before generating or editing Crystal Quest equipment, shop, or inventory item images, use `.agents/skills/crystal-quest-item-art/SKILL.md` together with the available `imagegen` skill. Inspect and attach both `assets/items/equipment/item_gale_boots_normal.webp` and `assets/items/equipment/item_starlight_crown_legendary.webp` as style references on every generation call. Preserve the current Gale set's soft silver highlights, pale lavender shadows, and violet-blue/cyan crystal materials; adjust ornament and glow to the requested rarity.
+
 ## World map image generation
 
 Before generating, regenerating, editing, or integrating a Story world-map image, read `WORLD_MAP_IMAGE_GUIDE.md` and use the `crystal-quest-world-map` skill at `.agents/skills/crystal-quest-world-map/SKILL.md` together with the available `imagegen` skill. Follow this workflow regardless of which image-generation tool is requested.

@@ -1,0 +1,110 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "assets/novel/bgi/world4-prologue-cleared.webp",
+  "assets": [
+    {
+      "name": "world4-prologue-scene-01",
+      "title": "안개 속의 고향",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: Dense luminous lavender fog. Through fog, subtle overlapping nostalgic mirages: left time temple with pale columns and clock motif, middle swordsman's stone gate, right graceful elven tree arches. Mirages are uncertain and translucent, not a split screen.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-a4fe9b16-b566-40ab-9822-9af4e7fe3dde.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-prologue-scene-01.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-prologue-scene-01.png",
+      "review": "image inspected; browser not requested"
+    },
+    {
+      "name": "world4-prologue-scene-02",
+      "title": "환각의 정체",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: The same enchanted forest path, ghostly homeland mirages beginning to dissolve into curling lavender fog. A thin band of clear mint daylight breaks through the mist. Show the transition from oppressive illusion to relief, faint crystal plants at margins. No potions or people.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-3a7f0f36-c6a1-47e2-a914-9ff6e8bc94d5.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-prologue-scene-02.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-prologue-scene-02.png",
+      "review": "image inspected; browser not requested"
+    },
+    {
+      "name": "world4-prologue-scene-03",
+      "title": "사탕 괴물",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: Illusion fully lifted, warm filtered daylight and thin ground mist reveal whimsical natural candy flora: modest curled pink-and-cream striped stems, translucent mint jelly-like crystal shoots and sugar berry shrubs at the edges. No actual candy monsters. Natural forest, no candy theme park.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-7af33118-70c6-47a4-a7f1-a47b3a5f8ee1.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-prologue-scene-03.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-prologue-scene-03.png",
+      "review": "image inspected; browser not requested"
+    },
+    {
+      "name": "world4-midboss-scene-01",
+      "title": "움직이는 그림자",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: Deeper secluded forest clearing, thin lilac fog, candy vegetation only at far edges. A supernatural pool of ink-black shadow spreads across midground stones and roots, elongated branching shadows move contrary to the soft upper-right light. No figure within the shadow. Quiet ominous mirror-world shimmer in air.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-fcaa1d66-c6a9-4a10-91da-f5e3118b3f96.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-midboss-scene-01.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-midboss-scene-01.png",
+      "review": "image inspected; browser not requested"
+    },
+    {
+      "name": "world4-midboss-scene-02",
+      "title": "영웅들의 변신",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: Same secluded forest clearing with shadow-stained ground. Three complementary gentle magical light currents illuminate background foliage: violet soul-magic wisps on left, warm golden motes at center, purple crystal sparkles on right. Not a triptych; one continuous landscape. No bodies, gear or humanoid shapes. Transformation energy remains airy, uncluttered and readable behind overlaid characters.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-0cf7862f-f1d8-4ce1-ba59-0a8c04582636.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-midboss-scene-02.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-midboss-scene-02.png",
+      "review": "image inspected; browser not requested"
+    },
+    {
+      "name": "world4-midboss-scene-03",
+      "title": "재생하는 그림자",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: Same forest arena under a magical energy shockwave: circular violet ripple distorts mist in middle distance, inky shadow ribbons separate and rejoin across stones. Floating leaf fragments, bending branches, contrasting shadow and crystal energy. No explosion covering the foreground, no humanoid or creature form, no destruction or gore.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-0c4779da-1311-44e4-8f0c-d47652c8ba67.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-midboss-scene-03.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-midboss-scene-03.png",
+      "review": "image inspected; browser not requested"
+    },
+    {
+      "name": "world4-midboss-scene-04",
+      "title": "그림자의 약점",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: Same forest clearing: a narrow luminous mint-white crystal light streak passes through an ink-black shadow patch in the midground, leaving a clean glowing opening that the shadow cannot close. Golden dawn rays start cutting through lavender mist overhead. Depict environmental light and shadow only, no arrows, bows, humans or monsters; lower foreground calm.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-489fdab3-76f1-4a74-8a8a-7bfe7a788711.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-midboss-scene-04.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-midboss-scene-04.png",
+      "review": "image inspected; browser not requested"
+    },
+    {
+      "name": "world4-midboss-scene-05",
+      "title": "정의의 빛",
+      "prompt": "Use case: illustration-story. Asset: Wordoria Crystal Quest visual-novel environment background, one full-bleed 16:9 landscape 1536x864 or larger. Match the supplied image ONLY as painterly style and forest material reference. Polished hand-painted 2D fantasy, delicate natural foliage, textured mossy stones, translucent crystals, layered atmospheric depth, soft lavender and teal palette, warm gold when specified. Eye-level camera looking along a broad forest clearing, ancient curved trees frame both sides. Keep the central and lower foreground spacious and calm for separate standing character and dialogue overlays; scene-specific phenomena in the midground or upper half. No characters, humanoids, boss figures, monsters, silhouettes shaped like people, UI, letters, numbers, text, borders, watermark, panels, pixel art, photorealism, low-poly or plastic 3D. Suitable for upper-elementary learners, quietly uncanny adventure, no horror or gore. Scene: Victory in the same enchanted forest clearing. Brilliant but detailed warm gold and pearl-white radiance pours through the treetops and reaches the midground. Last thin black wisps dissolve into harmless luminous crystal dust. Gentle mint and lilac forest returns after darkness, sense of release and heroic triumph. Keep detail intact, not a white blank overexposure. No heroes, weapons, bosses or reward objects.",
+      "source": "/Users/hjoon/.codex/generated_images/01a13596-2c4e-7e32-bdae-87d93b3d3cb6/exec-1715934f-2236-4a32-a470-3e0569d66c10.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "runtime": "assets/novel/bgi/world4-midboss-scene-05.webp",
+      "original": "assets/novel/bgi/source/world4-scene-backgrounds/world4-midboss-scene-05.png",
+      "review": "image inspected; browser not requested"
+    }
+  ]
+}

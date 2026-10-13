@@ -113,11 +113,78 @@ export function parseWorldFourPrologue(markdown){
     const dialogue=block.match(/^(아서|소서러스|바이올렛|파이터):\s*([\s\S]+)$/);
     const speaker=dialogue?.[1]||'내레이션';
     const text=(dialogue?.[2]||block.replace(/^배경:\s*/, '')).replace(/\s*\n\s*/g,' ');
-    lines.push({speaker,className:classes[speaker]||'scene',text,scene:'illusion',sceneNumber,location});
+    lines.push({speaker,className:classes[speaker]||'scene',text,scene:'illusion',sceneNumber,location,backgroundPath:`assets/novel/bgi/world4-prologue-scene-${String(Math.max(1,sceneNumber)).padStart(2,'0')}.webp`});
   }
   if(sceneNumber!==3||!lines.some(line=>line.speaker==='파이터')||lines.at(-1)?.text!=='맛있겠다...')throw new Error('World 4 prologue is incomplete');
   return lines;
 }
+export function parseWorldFourMidboss(markdown){
+  const lines=[];
+  const speakers={...classes,'그림자 소서러스':'shadow-mage','쉐도우 소서러스':'shadow-mage','네크로맨서 소서러스':'mage','골드 아서':'warrior','자주빛 바이올렛':'ranger'};
+  const art={'그림자 소서러스':'assets/monsters/shadow-sorceress/shadow-sorceress-standing.png','쉐도우 소서러스':'assets/monsters/shadow-sorceress/shadow-sorceress-standing.png','네크로맨서 소서러스':'assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp','골드 아서':'assets/avatars/skins/warrior-male-golden-radiance.webp','자주빛 바이올렛':'assets/avatars/skins/ranger-female-violet-crystal.webp'};
+  let sceneNumber=0,location='환각의 땅 · 중간보스전 · 쉐도우 소서러스';
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    const heading=block.match(/^## Scene (\d+)\. (.+)$/);
+    if(heading){sceneNumber=Number(heading[1]);location=heading[2];continue;}
+    if(!sceneNumber||!block||block.startsWith('#')||block==='중간보스 전투 시작'||block.startsWith('WORLD 4 ·'))continue;
+    const dialogue=block.match(/^([^:\n]+):\s*([\s\S]+)$/);
+    const speaker=dialogue?.[1]||'내레이션';
+    const text=(dialogue?.[2]||block).replace(/\s*\n\s*/g,' ');
+    const line={speaker,className:speakers[speaker]||'scene',text,scene:'illusion',sceneNumber,location,backgroundPath:`assets/novel/bgi/world4-midboss-scene-${String(sceneNumber).padStart(2,'0')}.webp`};
+    if(art[speaker])line.artPath=art[speaker];
+    if(/강렬한 빛이|황금빛 갑옷|어둠의 마력이|자주빛 크리스탈의 힘/.test(text))line.flash=true;
+    if(/충격파가 사방으로/.test(text))line.shake=true;
+    lines.push(line);
+  }
+  if(sceneNumber!==4||!lines.some(line=>line.className==='shadow-mage')||lines.at(-1)?.text!=='덤벼라!!')throw new Error('World 4 midboss story is incomplete');
+  return lines;
+}
+export function parseWorldFourMidbossEnd(markdown){
+  const lines=[];
+  let sceneNumber=0,location='환각의 땅 · 쉐도우 소서러스 · 클리어 이벤트';
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    const heading=block.match(/^## Scene (\d+)\. (.+)$/);
+    if(heading){sceneNumber=Number(heading[1]);location=heading[2];continue;}
+    // Reward headings remain in the source contract until a dedicated reward RPC exists.
+    if(!sceneNumber||!block||block.startsWith('#')||block==='중간보스 격파 보상'||block==='(월드 4 중간보스 클리어 시나리오 종료)')continue;
+    const dialogue=block.match(/^([^:\n]+):\s*([\s\S]+)$/);
+    const speaker=dialogue?.[1]||'내레이션';
+    const text=(dialogue?.[2]||block).replace(/\s*\n\s*/g,' ');
+    const line={speaker,className:classes[speaker]||(speaker==='쉐도우 소서러스'?'shadow-mage':'scene'),text,scene:'illusion',sceneNumber,location,backgroundPath:`assets/novel/bgi/world4-midboss-scene-${String(sceneNumber).padStart(2,'0')}.webp`};
+    if(speaker==='쉐도우 소서러스')line.artPath='assets/monsters/shadow-sorceress/shadow-sorceress-standing.png';
+    if(/눈부신 빛|강렬한 빛/.test(text))line.flash=true;
+    lines.push(line);
+  }
+  if(sceneNumber!==5||lines.at(-1)?.text!=='쉐도우 소서러스 격파!'||!lines.some(line=>line.text.includes('샤이닝 소드')))throw new Error('World 4 midboss ending is incomplete');
+  return lines;
+}
+function parseWorldFourFinalBoss(markdown,ending=false){
+  const lines=[];
+  let sceneNumber=0,location='환각의 땅 · 버려진 성 · 붉은 사신',titleCard=false;
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    const heading=block.match(/^## Scene (\d+)\. (.+)$/);
+    if(heading){sceneNumber=Number(heading[1]);location=heading[2];continue;}
+    if(!sceneNumber||!block||block.startsWith('(월드 4 최종보스')||block.startsWith('스토리 연결:'))continue;
+    if(block==='WORLD 4 · FINAL BOSS'){titleCard=true;continue;}
+    if(block.startsWith('#')&&!(titleCard&&block===(ending?'# 붉은 사신 격파':'# 붉은 사신')))continue;
+    const dialogue=block.match(/^([^:\n]+):\s*([\s\S]+)$/);
+    const speaker=titleCard?'WORLD 4 · FINAL BOSS':dialogue?.[1]||'내레이션';
+    const text=(dialogue?.[2]||block.replace(/^#\s*/, '')).replace(/\s*\n\s*/g,' ');
+    const line={speaker,className:titleCard?'mission':classes[speaker]||(speaker==='네크로맨서 소서러스'?'mage':speaker.startsWith('???')?'mystery':speaker==='붉은 사신'?'red-reaper':'scene'),text,scene:'illusion',sceneNumber,location,backgroundPath:`assets/novel/bgi/world4-boss-scene-${String(sceneNumber).padStart(2,'0')}.webp`};
+    if(speaker==='붉은 사신'||(titleCard&&!ending)||text==='(어둠 속에서 붉은 사신이 모습을 드러낸다.)')line.artPath='assets/monsters/red-reaper/red-reaper-standing.png';
+    if(speaker==='네크로맨서 소서러스')line.artPath='assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp';
+    if(text==='(순간 계단을 감싸던 환각 마법이 깨진다.)'||text==='(소서러스가 네크로맨서로 변신한다.)'||text==='(순간 붉은 사신의 몸에 강력한 마법이 발동한다.)')line.flash=true;
+    if(/^\(콰/.test(text)){line.flash=true;line.shake=true;}
+    lines.push(line);
+  }
+  if(sceneNumber!==(ending?8:4)||!lines.some(line=>line.speaker==='붉은 사신')||lines.at(-1)?.text!==(ending?'붉은 사신 격파':'타락한 천사의 오른팔'))throw new Error('World 4 final boss story is incomplete');
+  return lines;
+}
+export const parseWorldFourBossStart=markdown=>parseWorldFourFinalBoss(markdown);
+export const parseWorldFourBossEnd=markdown=>parseWorldFourFinalBoss(markdown,true);
 export async function generateStoryNovel(){
   const novels={};
   for(const [key,filename,parse] of [
@@ -127,7 +194,11 @@ export async function generateStoryNovel(){
     ['world3Prologue','world-3-1-prologue.md',parseWorldThreePrologue],
     ['world3BossStart','world-3-8-boss-start.md',parseWorldThreeBoss],
     ['world3BossEnd','world-3-8-boss-end.md',parseWorldThreeBoss],
-    ['world4Prologue','world-4-1-prologue.md',parseWorldFourPrologue]
+    ['world4Prologue','world-4-1-prologue.md',parseWorldFourPrologue],
+    ['world4MidbossStart','world-4-10-midboss-start.md',parseWorldFourMidboss],
+    ['world4MidbossEnd','world-4-10-midboss-end.md',parseWorldFourMidbossEnd],
+    ['world4BossStart','world-4-20-boss-start.md',parseWorldFourBossStart],
+    ['world4BossEnd','world-4-20-boss-end.md',parseWorldFourBossEnd]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
   await writeFile(new URL('../story-novel.js',import.meta.url),`// Generated from assets/novel/*.md by scripts/generate-story-novel.mjs.\nwindow.WORDORIA_NOVELS = ${JSON.stringify(novels,null,2)};\n`);
   console.log(`Prepared visual novels: ${Object.entries(novels).map(([key,lines])=>`${key}: ${lines.length}`).join(' / ')} beats.`);

@@ -1,0 +1,18 @@
+{
+  "image": "shadow-sorceress-standing.png",
+  "role": "story-standing-cg",
+  "status": "user-selected-concept-01",
+  "approved_date": "2026-10-13",
+  "reference": "assets/avatars/mage.webp",
+  "generation_original": "/Users/hjoon/.codex/generated_images/01a130e8-a3e9-7f20-92d1-a8ddce688c82/exec-e8b4c473-9413-444e-a4dc-767ceaff27f3.png",
+  "tool": "image_gen.imagegen",
+  "model": "tool default (not reported)",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha": "RGBA, extrema 0–255 verified",
+  "direction": "horizontal mirror of base mage; casting hand on viewer right, staff hand on viewer left",
+  "design": "Concept 01: midnight-violet shadow body, luminous lavender eyes and violet magic; preserve original hair, costume, staff and cropped portrait pose.",
+  "limitations": "Selected rough concept; not an SD battle sprite or animation strip. Browser review not performed."
+}

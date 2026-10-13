@@ -3763,7 +3763,8 @@ window.WORDORIA_NOVELS = {
       "text": "월드 3 크리스탈 사원에서 타락한 천사에게 추방당한 아서 일행은 정체불명의 안개가 가득한 땅에서 깨어난다.",
       "scene": "illusion",
       "sceneNumber": 0,
-      "location": "환각의 땅 · 프롤로그"
+      "location": "환각의 땅 · 프롤로그",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -3771,7 +3772,8 @@ window.WORDORIA_NOVELS = {
       "text": "(주변이 짙은 안개로 뒤덮여 있다. 환각의 땅 인트로)",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -3779,7 +3781,8 @@ window.WORDORIA_NOVELS = {
       "text": "여... 여기는... 시간의... 신전...? 내... 고향...?",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "아서",
@@ -3787,7 +3790,8 @@ window.WORDORIA_NOVELS = {
       "text": "아... 아니야... 여기는 내... 고향... 검사의 땅이야...",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -3795,7 +3799,8 @@ window.WORDORIA_NOVELS = {
       "text": "아니야...! 시간의... 시... 시간의...!",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "아서",
@@ -3803,7 +3808,8 @@ window.WORDORIA_NOVELS = {
       "text": "(머리가 깨질 듯 아파하며) 크아아악!!",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -3811,7 +3817,8 @@ window.WORDORIA_NOVELS = {
       "text": "(마찬가지로 머리를 감싸며) 크아악!!",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "바이올렛",
@@ -3819,7 +3826,8 @@ window.WORDORIA_NOVELS = {
       "text": "아니야!!! 여기는 엘프들의 숲이야!! (머리를 감싸며) 으아아악!!",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "파이터",
@@ -3827,7 +3835,8 @@ window.WORDORIA_NOVELS = {
       "text": "나만 머리가 안 아픈데... 너희들 왜 그래...?",
       "scene": "illusion",
       "sceneNumber": 1,
-      "location": "안개 속의 고향"
+      "location": "안개 속의 고향",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -3835,7 +3844,8 @@ window.WORDORIA_NOVELS = {
       "text": "아! 여기는 환각의 땅이야! 향수병을 극대화시켜 사람을 미치게 만든 다음, 죽으면 땅의 양분으로 삼아...",
       "scene": "illusion",
       "sceneNumber": 2,
-      "location": "환각의 정체"
+      "location": "환각의 정체",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-02.webp"
     },
     {
       "speaker": "아서",
@@ -3843,7 +3853,8 @@ window.WORDORIA_NOVELS = {
       "text": "아아아악!!!!",
       "scene": "illusion",
       "sceneNumber": 2,
-      "location": "환각의 정체"
+      "location": "환각의 정체",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-02.webp"
     },
     {
       "speaker": "바이올렛",
@@ -3851,7 +3862,8 @@ window.WORDORIA_NOVELS = {
       "text": "으아아악!!",
       "scene": "illusion",
       "sceneNumber": 2,
-      "location": "환각의 정체"
+      "location": "환각의 정체",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -3859,7 +3871,8 @@ window.WORDORIA_NOVELS = {
       "text": "얘들아! 빨리 정신력 회복 물약을 마셔...!",
       "scene": "illusion",
       "sceneNumber": 2,
-      "location": "환각의 정체"
+      "location": "환각의 정체",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -3867,7 +3880,8 @@ window.WORDORIA_NOVELS = {
       "text": "(일행이 정신력 회복 물약을 마신다.)",
       "scene": "illusion",
       "sceneNumber": 2,
-      "location": "환각의 정체"
+      "location": "환각의 정체",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -3875,7 +3889,8 @@ window.WORDORIA_NOVELS = {
       "text": "(잠시 후, 고통이 사라지고 환각이 걷히기 시작한다.)",
       "scene": "illusion",
       "sceneNumber": 2,
-      "location": "환각의 정체"
+      "location": "환각의 정체",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-02.webp"
     },
     {
       "speaker": "아서",
@@ -3883,7 +3898,8 @@ window.WORDORIA_NOVELS = {
       "text": "여기가 그 환각의 땅이란 거지?",
       "scene": "illusion",
       "sceneNumber": 3,
-      "location": "사탕 괴물"
+      "location": "사탕 괴물",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -3891,7 +3907,8 @@ window.WORDORIA_NOVELS = {
       "text": "응.",
       "scene": "illusion",
       "sceneNumber": 3,
-      "location": "사탕 괴물"
+      "location": "사탕 괴물",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
     },
     {
       "speaker": "바이올렛",
@@ -3899,7 +3916,8 @@ window.WORDORIA_NOVELS = {
       "text": "얘들아, 여기에는 사탕 괴물이 나오니까 조심해...",
       "scene": "illusion",
       "sceneNumber": 3,
-      "location": "사탕 괴물"
+      "location": "사탕 괴물",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
     },
     {
       "speaker": "아서",
@@ -3907,7 +3925,1195 @@ window.WORDORIA_NOVELS = {
       "text": "맛있겠다...",
       "scene": "illusion",
       "sceneNumber": 3,
-      "location": "사탕 괴물"
+      "location": "사탕 괴물",
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    }
+  ],
+  "world4MidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(환각의 땅 깊숙한 곳. 사탕 괴물들을 물리친 일행이 앞으로 나아간다.)",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "자... 이제 캔디 괴물 말고 다른 괴물이 나올 때가 됐는데...",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갑자기 소서러스의 그림자가 스스로 움직이기 시작한다.)",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "뭐지?",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "뭐야? 왜 쟤 그림자만...?",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "(본능적으로 뒤로 물러난다.)",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그림자가 꿈틀거리며 솟아오르더니 어두운 소서러스의 형태로 변한다.)",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "그림자 소서러스",
+      "className": "shadow-mage",
+      "text": "크크크크... 어리석구나.",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp",
+      "artPath": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "...?",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp"
+    },
+    {
+      "speaker": "그림자 소서러스",
+      "className": "shadow-mage",
+      "text": "나는 거울세계에서 태어난... 그리고 너보다 강한 존재!",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp",
+      "artPath": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스",
+      "className": "shadow-mage",
+      "text": "쉐도우 소서러스다!",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "움직이는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-01.webp",
+      "artPath": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네크로맨서 변신!!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(어둠의 마력이 소서러스를 감싸며 네크로맨서로 변신한다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp",
+      "flash": true
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "하지만 이 형태는 못 이겨!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "금빛의 기사로 변신!!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(황금빛 갑옷이 아서를 감싼다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp",
+      "flash": true
+    },
+    {
+      "speaker": "골드 아서",
+      "className": "warrior",
+      "text": "이 형태로도 어려울걸?",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp",
+      "artPath": "assets/avatars/skins/warrior-male-golden-radiance.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "자주빛 궁수로 변신!!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(자주빛 크리스탈의 힘이 바이올렛에게 모인다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp",
+      "flash": true
+    },
+    {
+      "speaker": "자주빛 바이올렛",
+      "className": "ranger",
+      "text": "크크크크!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "영웅들의 변신",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-02.webp",
+      "artPath": "assets/avatars/skins/ranger-female-violet-crystal.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스",
+      "className": "shadow-mage",
+      "text": "에너지 스플릿!!!",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp",
+      "artPath": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(강력한 에너지 충격파가 사방으로 퍼지며 일행 모두가 튕겨 나간다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp",
+      "shake": true
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "크윽... 충격파인가? 하지만... 데스 빔!!",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(강력한 빔이 쉐도우 소서러스를 관통한다. 빔에 맞은 부분이 소멸한다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스",
+      "className": "shadow-mage",
+      "text": "크크크크크크!! 하지만 나는 그림자여서 회복할 수 있지...",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp",
+      "artPath": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소멸했던 부분이 다시 재생된다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp"
+    },
+    {
+      "speaker": "골드 아서",
+      "className": "warrior",
+      "text": "골드 스매쉬!!",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp",
+      "artPath": "assets/avatars/skins/warrior-male-golden-radiance.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(황금빛 검격에 쉐도우 소서러스의 몸이 반으로 갈라진다. 하지만 곧바로 다시 붙는다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp"
+    },
+    {
+      "speaker": "골드 아서",
+      "className": "warrior",
+      "text": "피 한 방울 안 흘리다니...",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "재생하는 그림자",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-03.webp",
+      "artPath": "assets/avatars/skins/warrior-male-golden-radiance.webp"
+    },
+    {
+      "speaker": "자주빛 바이올렛",
+      "className": "ranger",
+      "text": "크리티컬 크리스탈 애로우!!!",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp",
+      "artPath": "assets/avatars/skins/ranger-female-violet-crystal.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(빛나는 크리스탈 화살이 쉐도우 소서러스의 몸을 관통한다.)",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그런데 이번에는 뚫린 부분이 재생되지 않는다.)",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp"
+    },
+    {
+      "speaker": "골드 아서",
+      "className": "warrior",
+      "text": "설마...",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp",
+      "artPath": "assets/avatars/skins/warrior-male-golden-radiance.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "빛이 약점이다! 그렇다면... 변신 해제할 때 나는 빛으로...!",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "변신 해제!!!",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네크로맨서의 모습이 사라지며 강렬한 빛이 사방으로 뿜어져 나온다.)",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp",
+      "flash": true
+    },
+    {
+      "speaker": "쉐도우 소서러스",
+      "className": "shadow-mage",
+      "text": "크윽!!!!",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp",
+      "artPath": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(변신이 풀린 소서러스가 쉐도우 소서러스를 정면으로 바라본다.)",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "덤벼라!!",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "그림자의 약점",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-04.webp"
+    }
+  ],
+  "world4MidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쉐도우 소서러스와의 마지막 전투. 일행은 그림자의 약점이 빛이라는 사실을 알아냈다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모두 한꺼번에 공격해!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "광휘 마법!! 찬란하게 빛나라, 정의의 빛이여!!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(눈부신 빛이 쉐도우 소서러스를 덮친다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp",
+      "flash": true
+    },
+    {
+      "speaker": "쉐도우 소서러스",
+      "className": "shadow-mage",
+      "text": "크아아아악!!!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp",
+      "artPath": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쉐도우 소서러스의 몸이 거의 사라진다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "끝이다!! 샤이닝 소드!!!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서의 검에서 강렬한 빛이 뿜어져 나오며 쉐도우 소서러스를 베어낸다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp",
+      "flash": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쉐도우 소서러스가 완전히 소멸한다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "쉐도우 소서러스 격파!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "정의의 빛",
+      "backgroundPath": "assets/novel/bgi/world4-midboss-scene-05.webp"
+    }
+  ],
+  "world4BossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쉐도우 소서러스를 격파한 일행. 짙은 안개 너머로 거대한 버려진 성이 모습을 드러낸다.)",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 버려진 성",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-01.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이 모든 장막의 끝... 이 안개의 원인, 그리고 사람의 향수병을 극대화시켜 미치도록 만드는 이 땅을 만든 주도자... 저 성 안에 있어.",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 버려진 성",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-01.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "근데 저 버려진 성... 유령 같은 거 나올 것 같은데, 이 세계관에 맞긴 해...?",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 버려진 성",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-01.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "어쩔. 그냥 해.",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 버려진 성",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-01.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "유령... 같은 것도 판타지에 어울리지 않을까...?",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 버려진 성",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-01.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "일단 가자.",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "location": "안개 속의 버려진 성",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-01.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 버려진 성 안으로 들어간다. 성 내부는 조용하고 어둡다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "일단 가자.",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "??? (메아리)",
+      "className": "mystery",
+      "text": "일단 가자...",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "메아리야...?",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "소... 소서러스... 네 뒤에...!!!",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "(급하게 뒤를 돌아본다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(하지만 아무것도 없다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "야, 이런... 씨...",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이후 일행은 평화롭게 대화로 문제를 해결하고 성의 탑을 올라가기 시작한다.)",
+      "scene": "illusion",
+      "sceneNumber": 2,
+      "location": "성 안의 메아리",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-02.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행은 끝없이 이어지는 나선형 계단을 오르고 있다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "드디어 탑의 끝이야!",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "근데 이 계단... 왜 3시간을 올라가도 끝이 안 나와?",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "나 알겠어! 이건 무한한 계단이야! 너희들 가만히 있어 봐...",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 계단을 따라 올라가 시야에서 사라진다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(잠시 후, 바이올렛이 갑자기 아래쪽 계단에서 다시 올라온다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그렇구나! 마법 강제 해제!!",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(순간 계단을 감싸던 환각 마법이 깨진다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp",
+      "flash": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(끝없이 이어지던 계단이 끊기고, 그 너머에 거대한 방이 나타난다.)",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "location": "무한한 계단",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-03.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(어두운 방 안에서 정체불명의 목소리가 들려온다.)",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp"
+    },
+    {
+      "speaker": "???",
+      "className": "mystery",
+      "text": "알아채지 못했으면 했지만...",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "누구냐?",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(어둠 속에서 붉은 사신이 모습을 드러낸다.)",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "죽음과 환상의 지배자이자...",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "타락한 천사님의 오른팔이다...!!!!",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "WORLD 4 · FINAL BOSS",
+      "className": "mission",
+      "text": "붉은 사신",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "WORLD 4 · FINAL BOSS",
+      "className": "mission",
+      "text": "죽음과 환상의 지배자",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "WORLD 4 · FINAL BOSS",
+      "className": "mission",
+      "text": "타락한 천사의 오른팔",
+      "scene": "illusion",
+      "sceneNumber": 4,
+      "location": "붉은 사신의 등장",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-04.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    }
+  ],
+  "world4BossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(붉은 사신과의 전투가 계속된다. 양측 모두 지쳐가고 있다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "크윽...",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "으으...",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "크으윽...",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행은 붉은 사신의 강력한 방어 능력에 고전하고 있다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "블랙홀!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "무효화!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(블랙홀이 순식간에 사라진다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "연속 커터!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "방어!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서의 연속 공격이 방어막에 막힌다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "기가톤 펀치!!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(콰아앙!!!)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp",
+      "flash": true,
+      "shake": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터의 강력한 주먹에 방어막이 금이 간다.)",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "...!",
+      "scene": "illusion",
+      "sceneNumber": 5,
+      "location": "치열한 전투",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-05.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "...! 내가 왜 그 생각을 못 했지?!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네크로맨서 변신!!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 네크로맨서로 변신한다.)",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp",
+      "flash": true
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "...! 설마... 어림없다!!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "해골들은 다 내가 조종할 수 있어!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "강제 조종!!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(붉은 사신의 해골이 소서러스의 마법에 반응한다. 사신의 움직임이 강제로 제한된다.)",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "크... 으으으윽!! 하지만 이 정도로는...!!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "이건 시간을 벌기 위해서야!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "바이올렛! 지금이야!!",
+      "scene": "illusion",
+      "sceneNumber": 6,
+      "location": "네크로맨서의 힘",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-06.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "힘을 계속 모아 뒀지!!",
+      "scene": "illusion",
+      "sceneNumber": 7,
+      "location": "폭발의 화살",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-07.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "익스플로전 애로우!!!",
+      "scene": "illusion",
+      "sceneNumber": 7,
+      "location": "폭발의 화살",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-07.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 모아 둔 힘을 화살에 집중시켜 발사한다.)",
+      "scene": "illusion",
+      "sceneNumber": 7,
+      "location": "폭발의 화살",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-07.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(콰아아아아앙!!!!)",
+      "scene": "illusion",
+      "sceneNumber": 7,
+      "location": "폭발의 화살",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-07.webp",
+      "flash": true,
+      "shake": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거대한 폭발이 일어나며 주변이 불길과 충격파에 휩싸인다.)",
+      "scene": "illusion",
+      "sceneNumber": 7,
+      "location": "폭발의 화살",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-07.webp"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "크아아악!!!!!",
+      "scene": "illusion",
+      "sceneNumber": 7,
+      "location": "폭발의 화살",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-07.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(폭발 속에서도 붉은 사신은 버티고 있다.)",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "마지막이다!!",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "포이즌 크리티컬...!!",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "그렇게는 안 되지!!!!",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(붉은 사신이 소서러스의 영창을 방해하며 공격을 막는다.)",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "내 영창을...!",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(잠시 정적이 흐른다.)",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp"
+    },
+    {
+      "speaker": "네크로맨서 소서러스",
+      "className": "mage",
+      "text": "하지만 무영창으로도 쓸 수 있다!!",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp",
+      "artPath": "assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(순간 붉은 사신의 몸에 강력한 마법이 발동한다.)",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp",
+      "flash": true
+    },
+    {
+      "speaker": "붉은 사신",
+      "className": "red-reaper",
+      "text": "...!!!",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp",
+      "artPath": "assets/monsters/red-reaper/red-reaper-standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(붉은 사신의 몸이 산산조각 나며 사방으로 흩어진다.)",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp"
+    },
+    {
+      "speaker": "WORLD 4 · FINAL BOSS",
+      "className": "mission",
+      "text": "붉은 사신 격파",
+      "scene": "illusion",
+      "sceneNumber": 8,
+      "location": "무영창의 일격",
+      "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp"
     }
   ]
 };

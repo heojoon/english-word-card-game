@@ -1,0 +1,44 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-14",
+  "assetType": "static environment plates behind animated boss sprites",
+  "assets": [
+    {
+      "name": "10-shadow-sorceress-battle",
+      "stage": 10,
+      "boss": "쉐도우 소서러스",
+      "references": [
+        "assets/novel/bgi/world4-midboss-scene-01.webp"
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a premium 2D anime fantasy environment for a polished mobile RPG. Clean readable shapes, layered atmospheric depth, luminous violet and blue crystal glass, restrained mint magical light, moon-white resting areas, vivid but controlled color, friendly adventurous mood even in a boss setting, consistent production-game quality. Match the attached approved narrative environment's rendering, materials and palette.\nUse case: stylized-concept. Create ONE full-bleed 16:9 landscape background plate for animated SD boss combat, ideally 1920x1080. NO characters or creatures. Low side-view arena camera, NOT a map, not an overhead view. Entire lower 34 percent is a continuous wide flat unobstructed fighting floor, edge-to-edge. Hero stands on left, boss stands on right: keep both sides equally clear, all foliage, rocks, crystals, columns and debris BEHIND the fighting floor. Subtle floor texture and restrained contrast, no deep foreground shadows hiding feet. Quiet midground behind character heads. Keep the central mobile crop functional. No text, letters, runes, UI, watermark, border, pixel art, photorealism, toy 3D, horror, gore, skulls, graves, gritty near-black darkness, excessive bloom, visual noise, characters, monsters or effects that look like an attack already happening.\nWorld 4 stage 10 SHADOW SORCERESS boss arena, deep ILLUSION FOREST clearing. Attached image is forest setting and style authority, change its winding path into broad horizontal battle clearing. Twisting violet woodland trunks at side edges, muted plum and teal foliage, distant lavender mist and cool moon-white shafts of light. Shadow magic appears as subtle glossy dark-violet tendrils intertwined with rear roots and mirrored spectral tree silhouettes ONLY in the middle distance. No black pool covering combat floor. Small blue-violet crystals with mint rims at rear edges. One soft pale opening in the distant forest, elegant mysterious atmosphere, slightly more dramatic and cooler than ordinary forest but not frightening. The broad bottom fighting zone is pale gray-lilac earth with slight violet reflections, low contrast, no rocks or tall plants in it.",
+      "source": "assets/environments/world-4/source/10-shadow-sorceress-battle.png",
+      "runtime": "assets/environments/world-4/10-shadow-sorceress-battle.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 540548
+    },
+    {
+      "name": "20-red-reaper-battle",
+      "stage": 20,
+      "boss": "붉은 사신",
+      "references": [
+        "assets/novel/bgi/world4-boss-scene-04.webp"
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a premium 2D anime fantasy environment for a polished mobile RPG. Clean readable shapes, layered atmospheric depth, luminous violet and blue crystal glass, restrained mint magical light, moon-white resting areas, vivid but controlled color, friendly adventurous mood even in a boss setting, consistent production-game quality. Match the attached approved narrative environment's rendering, materials and palette.\nUse case: stylized-concept. Create ONE full-bleed 16:9 landscape background plate for animated SD boss combat, ideally 1920x1080. NO characters or creatures. Low side-view arena camera, NOT a map, not an overhead view. Entire lower 34 percent is a continuous wide flat unobstructed fighting floor, edge-to-edge. Hero stands on left, boss stands on right: keep both sides equally clear, all foliage, rocks, crystals, columns and debris BEHIND the fighting floor. Subtle floor texture and restrained contrast, no deep foreground shadows hiding feet. Quiet midground behind character heads. Keep the central mobile crop functional. No text, letters, runes, UI, watermark, border, pixel art, photorealism, toy 3D, horror, gore, skulls, graves, gritty near-black darkness, excessive bloom, visual noise, characters, monsters or effects that look like an attack already happening.\nWorld 4 stage 20 RED REAPER final boss arena, a great chamber INSIDE the upper tower of an ABANDONED CASTLE. Attached image is architecture, material, moonlight and palette authority. Tall graceful pointed arched windows, slender stone columns, muted violet stone, subtle weathering with ivy only on rear pillars. Moon-white lunar light beyond the rear center arch, blue-lavender mist outside windows. Small polished violet crystals at the rear walls. Restrained deep rose-red magical haze and fine dark-crimson tendrils behind a low ruined rear dais, concentrated in upper-middle right, enough to imply the ruler of illusions without hiding the boss. Keep rear dais and steps entirely behind the battle floor; no steps in the fighting lane. Broad smooth flat pale lavender stone floor occupies entire lower 34 percent, simple large slabs with sparse seams and muted moonlight reflections, no giant magic circle or floor sigils. Majestic, mysterious, readable mobile fantasy, no throne or characters.",
+      "source": "assets/environments/world-4/source/20-red-reaper-battle.png",
+      "runtime": "assets/environments/world-4/20-red-reaper-battle.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 526840
+    }
+  ],
+  "review": {
+    "visual": "Generated images inspected: unobstructed horizontal floor, forest/castle narrative identity, no characters or text.",
+    "browser": "not run",
+    "userApproval": "not claimed"
+  }
+}

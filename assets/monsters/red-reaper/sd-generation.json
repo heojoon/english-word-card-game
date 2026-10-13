@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-14",
+  "tool": "image_gen.imagegen",
+  "model": "built-in model, version not exposed",
+  "reference": "red-reaper-standing.png",
+  "referenceRole": "user-selected concept 03 identity master",
+  "transparentBackground": true,
+  "frames": [
+    {
+      "source": "source/idle-01.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. Upright ready, scythe held vertical at left, free hand relaxed forward."
+    },
+    {
+      "source": "source/idle-02.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. Same upright ready, gently breathe with slightly raised shoulders and subtle cloak motion."
+    },
+    {
+      "source": "source/attack-01.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. Anticipation, free hand pulled back ready to cast, upright scythe in other hand."
+    },
+    {
+      "source": "source/attack-02.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. Cast contact, free hand extended, small violet-red crystal magic over palm, whole body visible."
+    },
+    {
+      "source": "source/attack-03.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. Active cast hold, extended hand and growing palm magic still entirely inside frame. No recovery to idle."
+    },
+    {
+      "source": "source/hit-01.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. Guard/notice, brace against incoming hit, upright, same character scale."
+    },
+    {
+      "source": "source/hit-02.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. Strongest impact recoil, body leaning backwards right with arms recoiling, eyes squint, no injury, same scale."
+    },
+    {
+      "source": "source/hit-03.png",
+      "prompt": "Create ONE isolated complete left-facing SD/chibi Red Reaper battle character, exactly 2.5 heads tall, large hooded head 40% of body height, compact body and big hands. Attached image is identity only: preserve red hood and red lightly torn robe, black shadow face with fiery red eyes, heavy chain necklace with violet crystal, large curved violet crystal scythe with small gold trim. CLEAN premium 2D anime colored violet linework and cel shading, no realism or pixel art, no blood or exposed bone. SINGLE pose only, no sheet, no clones, no text. TRUE transparent alpha. Essential framing: ENTIRE character, cloak tips, SCYTHE BLADE and pole visible within central 70% of canvas; 15% fully empty transparent margin on all FOUR sides. Whole tall weapon fits fully, never touches top/left/right/bottom boundary. Make weapon wide but not needlessly tall relative to compact chibi. Camera zoomed out enough for whole weapon, no floor. COMPLETE KNOCKDOWN on ground: lie horizontally on right side with hood at left, body and robe stretched right, scythe dropped in front alongside body. Unable to stand, no crouch, no recovery; entire prone body and scythe fully visible in central70%."
+    }
+  ],
+  "review": {
+    "technical": "passed over Moon White and Crystal Violet; original knockdown has genuine alpha (background RGB is transparent)",
+    "browser": "not requested",
+    "userApproval": "standing concept 03 only"
+  }
+}

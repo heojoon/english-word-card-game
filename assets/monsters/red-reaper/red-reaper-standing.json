@@ -1,0 +1,18 @@
+{
+  "image": "red-reaper-standing.png",
+  "role": "story-standing-cg",
+  "identityMaster": true,
+  "source": "concepts/red-reaper-03.png",
+  "selectedConcept": 3,
+  "approval": {
+    "status": "user-selected",
+    "date": "2026-10-14"
+  },
+  "dimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "format": "RGBA PNG",
+  "description": "붉은 로브와 찢어진 옷자락, 붉게 불타는 눈, 굵은 사슬 목걸이, 보라색 수정 장식의 거대한 낫",
+  "battleSprite": false
+}

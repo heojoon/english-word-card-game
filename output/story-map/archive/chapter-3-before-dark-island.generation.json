@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-10",
+  "tool": "built-in image_gen",
+  "model": "not exposed by tool",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: lighting-weather / precise-object-edit.\nAsset type: Wordoria Crystal Quest World 3 크리스탈 사원 map, localized edit of stage 8 cave.\nReference roles: Image 1 = authoritative STYLE reference chapter-1-library-map.webp. Image 2 = EDIT TARGET current World 3 eight-stage map. Preserve Image 2 completely except the upper-left cave.\nUSER OVERRIDE: The user explicitly wants this specific cave to be gloomy, eerie and made of mixed PURPLE and BLACK. Apply that mood only to the cave and its immediately surrounding rocks, overriding the usual bright local cave treatment. Retain the rest of this map's bright sunlit scenery exactly.\nChange only the cave at upper-left, centered around x=17%,y=15%, within roughly x=4%–28%,y=9%–20%. Repaint its pale cream rock mound as dark obsidian charcoal-black and deep plum violet stone, with faceted black-purple surfaces, cool muted violet edge lighting, a deep almost-black cave mouth, dim eerie purple crystals inside and a small veil of dark-violet mist confined to the cave mouth. Make it unmistakably more ominous and somber. Replace the bright flowers directly on the cave rocks with subdued violet vegetation; preserve surrounding green pine trees and island boundaries. No horror monsters, skulls or gore. Use legible painterly dark stone, not a flat black blob; retain enough edge detail for mobile clarity. Keep the nearby waterfall turquoise and clouds white.\nHard invariants: EXACT same full-canvas framing and aspect ratio 1084:1451. Preserve the temple, giant floating crystal, all bridges, paths, waterfalls, islands and every one of the EIGHT gold waypoint pedestals and upright crystals at their exact current positions. The stage 8 waypoint in front of the cave at (19.1%,18.61%) must stay clearly luminous violet-blue on its existing gold pedestal, unobscured and unchanged in size, shape, and center. Do not turn the whole island or the whole map into night. Do not move any object or redraw the seven main-island waypoints. No new pedestal or extra stage.\nGameplay contract: exactly 8 violet-blue crystal waypoints on gold-rimmed circular pedestals; stage 1 (48.25%,83.8%), stage 2 (82.84%,67.2%), stage 3 (58.12%,55.48%), stage 4 (29.15%,46.59%), stage 5 (82.66%,47.83%), stage 6 (57.01%,38.46%), stage 7 (68.73%,25.98%), stage 8 (19.1%,18.61%).\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": "output/story-map/archive/chapter-3-before-dark-cave.webp",
+  "originalLayoutPath": "/Users/hjoon/Downloads/Gemini_Generated_Image_41d4641d4641d464.png",
+  "source": "output/story-map/chapter-3-crystal-sanctuary-dark-cave-source.png",
+  "runtime": "assets/story/chapter-3-crystal-sanctuary-map.webp",
+  "targetDimensions": {
+    "width": 1084,
+    "height": 1451
+  },
+  "actualDimensions": {
+    "width": 1084,
+    "height": 1451
+  },
+  "runtimeWorld3": "World 3 크리스탈 사원; existing stages 1–7 plus stage 8 숨겨진 수정 동굴",
+  "targetCentersPercent": [
+    [
+      48.25,
+      83.8
+    ],
+    [
+      82.84,
+      67.2
+    ],
+    [
+      58.12,
+      55.48
+    ],
+    [
+      29.15,
+      46.59
+    ],
+    [
+      82.66,
+      47.83
+    ],
+    [
+      57.01,
+      38.46
+    ],
+    [
+      68.73,
+      25.98
+    ],
+    [
+      19.1,
+      18.61
+    ]
+  ],
+  "actualWaypointCenters": [
+    {
+      "stage": 1,
+      "x": 523,
+      "y": 1216,
+      "xPercent": 48.25,
+      "yPercent": 83.8,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 2,
+      "x": 898,
+      "y": 975,
+      "xPercent": 82.84,
+      "yPercent": 67.2,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 3,
+      "x": 630,
+      "y": 805,
+      "xPercent": 58.12,
+      "yPercent": 55.48,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 4,
+      "x": 316,
+      "y": 676,
+      "xPercent": 29.15,
+      "yPercent": 46.59,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 5,
+      "x": 896,
+      "y": 694,
+      "xPercent": 82.66,
+      "yPercent": 47.83,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 6,
+      "x": 618,
+      "y": 558,
+      "xPercent": 57.01,
+      "yPercent": 38.46,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 7,
+      "x": 745,
+      "y": 377,
+      "xPercent": 68.73,
+      "yPercent": 25.98,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 8,
+      "x": 207,
+      "y": 270,
+      "xPercent": 19.1,
+      "yPercent": 18.61,
+      "measurement": "manual visual center of upright crystal; approximate"
+    }
+  ],
+  "review": {
+    "status": "localized cave visual review passed; browser not run per user preference",
+    "waypointCount": 8,
+    "style": "User-requested ominous purple-black cave: charcoal/plum rock, deep black mouth, violet crystalline rim light; surrounding world retains bright painterly style.",
+    "existingWaypoints": "All eight upright crystals/pedestals visually preserved at existing centers, including stage 8 near x19.1%, y18.61%.",
+    "cropping": "All eight points and cave retained within canvas; no markup or text.",
+    "mobilePreview": "output/story-map/review/chapter-3-dark-cave-mobile.png",
+    "waypointOverlay": "output/story-map/review/chapter-3-dark-cave-waypoints.png",
+    "browserChecks": "Not run; user requires explicit request for Playwright.",
+    "validation": "npm run build passed; image-only update, no new tests or browser checks"
+  },
+  "approvalStatus": "purple-black gloomy cave edit requested; new generated result awaiting user visual review"
+}

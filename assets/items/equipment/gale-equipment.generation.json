@@ -1,0 +1,42 @@
+{
+  "references": [
+    "assets/items/equipment/item_gale_boots_normal.webp",
+    "assets/items/equipment/item_starlight_crown_legendary.webp"
+  ],
+  "runtime": {
+    "size": [
+      512,
+      512
+    ],
+    "format": "WebP",
+    "transparent": true
+  },
+  "review": "Visual comparison and alpha checks; no browser review or user approval recorded.",
+  "items": {
+    "sword": {
+      "prompt": "Match the TWO attached inventory artworks closely: reference 1 is Gale Boots, the primary authority for silver metal, pale lavender leather, muted cloth, elegant beveled seams, realistic yet stylized smoothly blended soft highlights and shadows. Reference 2 is Starlight Crown, the authority for faceted violet-blue/cyan crystal refraction and polished collectible fantasy finish. Do NOT copy the crown's legendary gold excess: these are NORMAL beginner Gale items. Same polished hand-painted mobile fantasy inventory illustration technique, gentle 3/4 view, subtle violet contour edges, softly rounded dimensional metal, very fine restrained highlights, rich but soft volumetric shading, no hard flat comic cel shading, no thick black ink, no sketch outlines, no pixel art, no low-poly. Cohesive moon-white silver, desaturated lavender, small cyan/violet crystal. A single isolated equipment object in center with generous padding, square canvas, true transparent alpha, no floor, no cast shadow, no pedestal, no text, no border, no person. Gale Sword: one complete silver longsword with elegantly tapering blade, pale lavender wrapped grip, small wing-shaped silver crossguard and one modest diamond crystal. Entire sword visible diagonally.",
+      "art_path": "assets/items/equipment/item_gale_sword_normal.webp",
+      "source": "output/imagegen/gale-equipment-reference/gale-sword-source.png"
+    },
+    "cape": {
+      "prompt": "Match the TWO attached inventory artworks closely: reference 1 is Gale Boots, the primary authority for silver metal, pale lavender leather, muted cloth, elegant beveled seams, realistic yet stylized smoothly blended soft highlights and shadows. Reference 2 is Starlight Crown, the authority for faceted violet-blue/cyan crystal refraction and polished collectible fantasy finish. Do NOT copy the crown's legendary gold excess: these are NORMAL beginner Gale items. Same polished hand-painted mobile fantasy inventory illustration technique, gentle 3/4 view, subtle violet contour edges, softly rounded dimensional metal, very fine restrained highlights, rich but soft volumetric shading, no hard flat comic cel shading, no thick black ink, no sketch outlines, no pixel art, no low-poly. Cohesive moon-white silver, desaturated lavender, small cyan/violet crystal. A single isolated equipment object in center with generous padding, square canvas, true transparent alpha, no floor, no cast shadow, no pedestal, no text, no border, no person. Gale Cape: one short flowing pale lavender-gray cape with soft cloth folds, moon-white inner lining, fine silver edge piping, silver wing-shaped clasp with one blue-violet diamond crystal. No wearer or mannequin.",
+      "art_path": "assets/items/equipment/item_gale_cape_normal.webp",
+      "source": "output/imagegen/gale-equipment-reference/gale-cape-source.png"
+    },
+    "ring": {
+      "prompt": "Match the TWO attached inventory artworks closely: reference 1 is Gale Boots, the primary authority for silver metal, pale lavender leather, muted cloth, elegant beveled seams, realistic yet stylized smoothly blended soft highlights and shadows. Reference 2 is Starlight Crown, the authority for faceted violet-blue/cyan crystal refraction and polished collectible fantasy finish. Do NOT copy the crown's legendary gold excess: these are NORMAL beginner Gale items. Same polished hand-painted mobile fantasy inventory illustration technique, gentle 3/4 view, subtle violet contour edges, softly rounded dimensional metal, very fine restrained highlights, rich but soft volumetric shading, no hard flat comic cel shading, no thick black ink, no sketch outlines, no pixel art, no low-poly. Cohesive moon-white silver, desaturated lavender, small cyan/violet crystal. A single isolated equipment object in center with generous padding, square canvas, true transparent alpha, no floor, no cast shadow, no pedestal, no text, no border, no person. Gale Ring: one silver finger ring with rounded band, one modest diamond-cut violet-blue crystal, refined little wing accents at the crystal mounting, empty ring interior visible at gentle 3/4 angle.",
+      "art_path": "assets/items/equipment/item_gale_ring_normal.webp",
+      "source": "output/imagegen/gale-equipment-reference/gale-ring-source.png"
+    },
+    "armor": {
+      "prompt": "Match the TWO attached inventory artworks closely: reference 1 is Gale Boots, the primary authority for silver metal, pale lavender leather, muted cloth, elegant beveled seams, realistic yet stylized smoothly blended soft highlights and shadows. Reference 2 is Starlight Crown, the authority for faceted violet-blue/cyan crystal refraction and polished collectible fantasy finish. Do NOT copy the crown's legendary gold excess: these are NORMAL beginner Gale items. Same polished hand-painted mobile fantasy inventory illustration technique, gentle 3/4 view, subtle violet contour edges, softly rounded dimensional metal, very fine restrained highlights, rich but soft volumetric shading, no hard flat comic cel shading, no thick black ink, no sketch outlines, no pixel art, no low-poly. Cohesive moon-white silver, desaturated lavender, small cyan/violet crystal. A single isolated equipment object in center with generous padding, square canvas, true transparent alpha, no floor, no cast shadow, no pedestal, no text, no border, no person. Gale Armor: one lightweight silver-white breastplate with compact rounded shoulder guards, pale lavender side trim, softly modeled metal plates and one small blue-violet diamond crystal at center chest. No wearer or mannequin.",
+      "art_path": "assets/items/equipment/item_gale_armor_normal.webp",
+      "source": "output/imagegen/gale-equipment-reference/gale-armor-source.png"
+    },
+    "helmet": {
+      "prompt": "Match the TWO attached inventory artworks closely: reference 1 is Gale Boots, the primary authority for silver metal, pale lavender leather, muted cloth, elegant beveled seams, realistic yet stylized smoothly blended soft highlights and shadows. Reference 2 is Starlight Crown, the authority for faceted violet-blue/cyan crystal refraction and polished collectible fantasy finish. Do NOT copy the crown's legendary gold excess: these are NORMAL beginner Gale items. Same polished hand-painted mobile fantasy inventory illustration technique, gentle 3/4 view, subtle violet contour edges, softly rounded dimensional metal, very fine restrained highlights, rich but soft volumetric shading, no hard flat comic cel shading, no thick black ink, no sketch outlines, no pixel art, no low-poly. Cohesive moon-white silver, desaturated lavender, small cyan/violet crystal. A single isolated equipment object in center with generous padding, square canvas, true transparent alpha, no floor, no cast shadow, no pedestal, no text, no border, no person. Gale Helmet: one lightweight open-faced silver-white helmet with pale lavender lining, modest wing-shaped silver side accents, one small blue-violet diamond crystal on forehead. No head, face, feathers or wearer.",
+      "art_path": "assets/items/equipment/item_gale_helmet_normal.webp",
+      "source": "output/imagegen/gale-equipment-reference/gale-helmet-source.png"
+    }
+  }
+}

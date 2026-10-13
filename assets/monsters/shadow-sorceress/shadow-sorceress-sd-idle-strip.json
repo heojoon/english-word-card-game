@@ -1,0 +1,56 @@
+{
+  "image": "shadow-sorceress-sd-idle-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "frameNames": [
+    "ready",
+    "breath"
+  ],
+  "frames": [
+    {
+      "name": "ready",
+      "duration": 600
+    },
+    {
+      "name": "breath",
+      "duration": 600
+    }
+  ],
+  "extraction": [
+    {
+      "source": "source/idle-generated.png",
+      "crop": [
+        0,
+        0,
+        918,
+        856
+      ],
+      "bodyScale": 0.5635838150289018,
+      "groundLine": 821
+    },
+    {
+      "source": "source/idle-generated.png",
+      "crop": [
+        918,
+        0,
+        1837,
+        856
+      ],
+      "bodyScale": 0.5635838150289018,
+      "groundLine": 821
+    }
+  ],
+  "review": {
+    "technical": "passed: frame count, real alpha, full-size character with wide cells, safe bounds, ground line, light/violet and mobile review",
+    "browser": "not requested",
+    "userApproval": "concept 01 only"
+  }
+}

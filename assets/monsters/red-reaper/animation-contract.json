@@ -1,0 +1,55 @@
+{
+  "identityMaster": "red-reaper-standing.png",
+  "facing": "left",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "bounds": "Entire scythe, robe and effects remain inside each cell; wider cell preserves body scale.",
+  "idle": {
+    "frames": [
+      "ready",
+      "breath"
+    ],
+    "durations": [
+      600,
+      600
+    ]
+  },
+  "attack": {
+    "frames": [
+      "anticipation",
+      "illusion-cast",
+      "hold"
+    ],
+    "durations": [
+      200,
+      200,
+      300
+    ],
+    "skillContactFrame": 2
+  },
+  "hit": {
+    "frames": [
+      "notice",
+      "impact",
+      "knockdown"
+    ],
+    "durations": [
+      140,
+      160,
+      700
+    ],
+    "finalFrameHold": true
+  },
+  "skill": "Three overlapping SD copies at cast contact; 10-second card rotation on 28% success every 20 seconds",
+  "review": {
+    "browser": "not requested",
+    "technical": "passed"
+  },
+  "skillContactMs": 200,
+  "effectDurationMs": 10000
+}

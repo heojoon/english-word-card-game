@@ -1,0 +1,62 @@
+begin;
+do $test$
+declare
+  v_owner uuid:=gen_random_uuid(); v_other uuid:=gen_random_uuid(); v_hero uuid; v_guest uuid;
+  v_item bigint; v_gift bigint; v_result record; v_rejected boolean; v_balance integer;
+begin
+  insert into auth.users(id) values(v_owner),(v_other);
+  insert into public.profiles(user_id,display_name,crystal_balance) values(v_owner,'sale-test',1000)
+    on conflict(user_id) do update set crystal_balance=1000;
+  insert into public.game_characters(player,name,class,owner_user_id) values('sale-test','sale-test','warrior',v_owner) returning id into v_hero;
+  insert into public.shop_items(code,name,category,price,icon,slot,active) values('sale-test-'||v_owner,'sale fixture','avatar',103,'◆','feet',false) returning id into v_item;
+  insert into public.character_inventory(character_id,item_id) values(v_hero,v_item),(v_hero,v_item);
+  update public.game_characters set equipped_items=jsonb_build_object('feet',v_item),equipped_item_id=v_item where id=v_hero;
+  perform set_config('request.jwt.claim.sub',v_owner::text,true);
+  select * into v_result from public.sell_owned_item(v_hero,v_item);
+  if v_result.sale_price<>20 or v_result.new_balance<>1020 or v_result.remaining_count<>1 then raise exception 'first sale mismatch'; end if;
+  if (select equipped_items->>'feet' from public.game_characters where id=v_hero)<>v_item::text then raise exception 'duplicate sale removed equipment'; end if;
+  select * into v_result from public.sell_owned_item(v_hero,v_item);
+  if v_result.new_balance<>1040 or v_result.remaining_count<>0 then raise exception 'last sale mismatch'; end if;
+  if (select equipped_items ? 'feet' or equipped_item_id is not null from public.game_characters where id=v_hero) then raise exception 'last copy remained equipped'; end if;
+  v_rejected:=false;
+  begin perform public.sell_owned_item(v_hero,v_item);
+  exception when raise_exception then if sqlerrm<>'item not owned' then raise; end if; v_rejected:=true; end;
+  if not v_rejected then raise exception 'sold nonexistent copy'; end if;
+  if (select crystal_balance from public.profiles where user_id=v_owner)<>1040 then raise exception 'failed sale credited wallet'; end if;
+  insert into public.story_potion_inventory(character_id,red_potion_count,blue_potion_count,equipped_slot_1,equipped_slot_2,potion_count_model)
+    values(v_hero,1,0,'red','blue','remaining');
+  select * into v_result from public.sell_owned_item(v_hero,null,'red');
+  if v_result.sale_price<>4 or v_result.remaining_count<>1 then raise exception 'bag potion sale mismatch'; end if;
+  if (select equipped_slot_1 from public.story_potion_inventory where character_id=v_hero)<>'red' then raise exception 'bag sale unequipped potion'; end if;
+  select * into v_result from public.sell_owned_item(v_hero,null,'red');
+  if v_result.remaining_count<>0 or (select equipped_slot_1 is not null from public.story_potion_inventory where character_id=v_hero) then raise exception 'equipped potion sale mismatch'; end if;
+  update public.story_potion_inventory set blue_potion_count=2,potion_count_model='total' where character_id=v_hero;
+  select * into v_result from public.sell_owned_item(v_hero,null,'blue');
+  if v_result.remaining_count<>1 then raise exception 'legacy total potion mismatch'; end if;
+  select * into v_result from public.sell_owned_item(v_hero,null,'blue');
+  if v_result.remaining_count<>0 then raise exception 'last blue potion mismatch'; end if;
+  perform set_config('request.jwt.claim.sub',v_other::text,true);
+  v_rejected:=false;
+  begin perform public.sell_owned_item(v_hero,v_item);
+  exception when raise_exception then if sqlerrm<>'character not found' then raise; end if; v_rejected:=true; end;
+  if not v_rejected then raise exception 'sale ownership bypass'; end if;
+  perform set_config('request.jwt.claim.sub',v_owner::text,true);
+  v_rejected:=false;
+  begin perform public.sell_owned_item(v_hero,null,'invalid');
+  exception when raise_exception then if sqlerrm<>'invalid sale item' then raise; end if; v_rejected:=true; end;
+  if not v_rejected then raise exception 'invalid potion accepted'; end if;
+  select id into v_gift from public.shop_items where category='gift' limit 1;
+  v_rejected:=false;
+  begin perform public.sell_owned_item(v_hero,v_gift);
+  exception when raise_exception then if sqlerrm<>'invalid sale item' then raise; end if; v_rejected:=true; end;
+  if not v_rejected then raise exception 'gift sale accepted'; end if;
+  if (select sum(amount) from public.coin_ledger where character_id=v_hero)<>56 then raise exception 'sale ledger mismatch'; end if;
+  insert into public.game_characters(player,name,class,coins) values('sale-test','sale-guest','warrior',100) returning id into v_guest;
+  insert into public.character_inventory(character_id,item_id) values(v_guest,v_item);
+  perform set_config('request.jwt.claim.sub','',true);
+  select * into v_result from public.sell_owned_item(v_guest,v_item);
+  if v_result.new_balance<>120 then raise exception 'guest sale wallet mismatch'; end if;
+end;
+$test$;
+select 'sale prices, copies, final unequip, potions, ledger, ownership and guest sale passed' as result;
+rollback;

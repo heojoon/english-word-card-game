@@ -1,0 +1,73 @@
+{
+  "image": "shadow-sorceress-sd-hit-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "frameNames": [
+    "notice",
+    "impact",
+    "knockdown"
+  ],
+  "frames": [
+    {
+      "name": "notice",
+      "duration": 140
+    },
+    {
+      "name": "impact",
+      "duration": 160
+    },
+    {
+      "name": "knockdown",
+      "duration": 700
+    }
+  ],
+  "extraction": [
+    {
+      "source": "source/hit-generated.png",
+      "crop": [
+        0,
+        0,
+        720,
+        759
+      ],
+      "bodyScale": 0.8297872340425532,
+      "groundLine": 655
+    },
+    {
+      "source": "source/hit-generated.png",
+      "crop": [
+        720,
+        0,
+        1335,
+        759
+      ],
+      "bodyScale": 0.8297872340425532,
+      "groundLine": 655
+    },
+    {
+      "source": "source/hit-generated.png",
+      "crop": [
+        1335,
+        0,
+        2072,
+        759
+      ],
+      "bodyScale": 0.8297872340425532,
+      "groundLine": 665
+    }
+  ],
+  "review": {
+    "technical": "passed: frame count, real alpha, full-size character with wide cells, safe bounds, ground line, light/violet and mobile review",
+    "browser": "not requested",
+    "userApproval": "concept 01 only"
+  },
+  "finalFrameHold": true
+}

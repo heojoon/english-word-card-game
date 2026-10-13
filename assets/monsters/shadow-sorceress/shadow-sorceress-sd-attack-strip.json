@@ -1,0 +1,73 @@
+{
+  "image": "shadow-sorceress-sd-attack-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "frameNames": [
+    "anticipation",
+    "cast",
+    "hold"
+  ],
+  "frames": [
+    {
+      "name": "anticipation",
+      "duration": 200
+    },
+    {
+      "name": "cast",
+      "duration": 200,
+      "hit": true
+    },
+    {
+      "name": "hold",
+      "duration": 300
+    }
+  ],
+  "extraction": [
+    {
+      "source": "source/anticipation-generated.png",
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bodyScale": 0.42951541850220265,
+      "groundLine": 1148
+    },
+    {
+      "source": "source/cast-generated.png",
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bodyScale": 0.40625,
+      "groundLine": 1155
+    },
+    {
+      "source": "source/cast-generated.png",
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bodyScale": 0.40625,
+      "groundLine": 1155
+    }
+  ],
+  "review": {
+    "technical": "passed: frame count, real alpha, full-size character with wide cells, safe bounds, ground line, light/violet and mobile review",
+    "browser": "not requested",
+    "userApproval": "concept 01 only"
+  }
+}

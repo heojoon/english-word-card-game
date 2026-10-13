@@ -1,0 +1,52 @@
+{
+  "identity": "shadow-sorceress-standing.png",
+  "facing": "left",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "states": {
+    "idle": {
+      "frames": [
+        "ready",
+        "breath"
+      ],
+      "durations": [
+        600,
+        600
+      ]
+    },
+    "attack": {
+      "frames": [
+        "anticipation",
+        "cast",
+        "hold"
+      ],
+      "durations": [
+        200,
+        200,
+        300
+      ],
+      "contactFrame": 1
+    },
+    "hit": {
+      "frames": [
+        "notice",
+        "impact",
+        "knockdown"
+      ],
+      "durations": [
+        140,
+        160,
+        700
+      ],
+      "finalFrameHold": true,
+      "frameWidth": 448
+    }
+  },
+  "bounds": "Wider cells preserve full character scale without cropping staff, cloak or the horizontal knockdown; height remains 320px.",
+  "approval": "concept 01 selected by user; frame technical review passed; browser not requested"
+}

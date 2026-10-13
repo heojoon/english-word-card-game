@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-12",
+  "tool": "built-in image_gen",
+  "model": "not disclosed",
+  "fullPrompts": [
+    "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story World 4 map part 1.\nReference roles: Image 1 = authoritative chapter-1 painterly style; Image 2 = user topology reference, use ONLY its UPPER half for regional landmarks, never copy text or UI or rendering. Image 3 = World 3 crystal waypoint shape reference only.\nScene: Illusion Forest: lush layered emerald and teal forest, natural enchanted tree homes, modest mushroom cottages (no candy or cake houses), golden winding path, wooden bridges, tiered turquoise waterfalls, floating cliffs. Route descends from upper left to a mysterious violet crystal clearing near lower right.\nComposition: portrait 2:3, target 1024x1536. Expand the referenced half into a complete portrait standalone map, filling the frame naturally.\nGameplay contract: exactly TEN distinct individual violet-blue upright faceted crystals on gold-rimmed circular pedestals, large and clearly visible at mobile size. Continuous readable path visits each pedestal in the specified order. Normalized crystal centers: 1: (14%, 15%), 2: (29%, 20%), 3: (39%, 30%), 4: (56%, 35%), 5: (68%, 43%), 6: (80%, 51%), 7: (88%, 62%), 8: (69%, 71%), 9: (48%, 76%), 10: (82%, 87%). Build landings around these centers. Match World 3 waypoint design. No additional waypoint pedestals. Decorative crystals must be irregular clusters without circular bases. Stage 10/20 is also a crystal, no monster or boss icon. Remove all titles, plaques, labels, numbering, borders, instructions and arrows from the reference.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nFINAL COUNT REQUIREMENT supersedes earlier composition: TEN waypoints, not nine. Make TEN distinct landings in this arrangement: three on upper route (14%,12%),(28%,18%),(39%,25%); three on middle-right descending route (54%,32%),(70%,40%),(85%,49%); one on lower-right turn (75%,58%); one on middle-left lower turn (45%,65%); one on bottom-left-mid (35%,74%); final one bottom-right (80%,84%). Exactly 3+3+1+1+1+1 = TEN gold bases each holding one violet crystal. Follow an unbranched path in that order. Show the additional ninth crystal at lower-left turn distinctly. Do not omit any. No text.\n",
+    "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\n\nUse case: precise-object-edit. Image 1 style authority. Image 2 is edit target. Preserve Image 2 exactly, with ONE local change: REMOVE the upright waypoint crystal AND its gold circular pedestal at x=40%, y=67% (the crystal on a small landing just ABOVE and RIGHT of the lower-left waypoint at x=25%,y=73%). Replace only this removed object with continuous golden path and grass. Do NOT remove the lower-left crystal at 25%,73%. Do NOT add or move any other crystal or building. The target contains ELEVEN waypoint bases; after removing the specified middle-lower one, TEN remain. All other pixels, composition, route and style should stay the same. No text.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n"
+  ],
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "layout": "output/story-map/chapter-4-layout-reference.png",
+    "waypoint": "assets/story/chapter-3-crystal-sanctuary-map.webp",
+    "finalEditTarget": "output/story-map/chapter-4-illusion-forest-before-count-fix.png"
+  },
+  "source": "output/story-map/chapter-4-illusion-forest-source.png",
+  "runtime": "assets/story/chapter-4-illusion-forest-map.webp",
+  "targetDimensions": [
+    1024,
+    1536
+  ],
+  "actualDimensions": [
+    1024,
+    1536
+  ],
+  "stagePositions": [
+    {
+      "stage": 1,
+      "x": 13.867,
+      "y": 12.76
+    },
+    {
+      "stage": 2,
+      "x": 27.734,
+      "y": 16.732
+    },
+    {
+      "stage": 3,
+      "x": 40.43,
+      "y": 21.224
+    },
+    {
+      "stage": 4,
+      "x": 56.641,
+      "y": 27.604
+    },
+    {
+      "stage": 5,
+      "x": 69.922,
+      "y": 34.245
+    },
+    {
+      "stage": 6,
+      "x": 83.594,
+      "y": 41.992
+    },
+    {
+      "stage": 7,
+      "x": 76.367,
+      "y": 51.107
+    },
+    {
+      "stage": 8,
+      "x": 63.77,
+      "y": 60.742
+    },
+    {
+      "stage": 9,
+      "x": 25.195,
+      "y": 72.135
+    },
+    {
+      "stage": 10,
+      "x": 84.277,
+      "y": 85.807
+    }
+  ],
+  "review": {
+    "style": "visually reviewed against chapter 1 and 3",
+    "waypointCount": 10,
+    "route": "visually reviewed, continuous ordered route",
+    "clipping": "no waypoint clipped",
+    "mobile": "390x844 browser preview inspected; image loading, all 20 numbered overlays and unclipped crystals checked",
+    "gameIntegration": "awaiting vocabulary/boss decision",
+    "userApproval": "pending",
+    "build": "npm run build passed"
+  },
+  "coordinateMeasurement": "manual visual crystal centers in the 1024x1536 source; checked with browser overlays"
+}

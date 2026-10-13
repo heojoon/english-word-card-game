@@ -1,0 +1,64 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-14",
+  "assetType": "static background plate for animated battles",
+  "references": [
+    "assets/novel/bgi/world4-prologue-cleared.webp",
+    "assets/environments/world-3/proposals/01-sky-waterfall-terrace.png"
+  ],
+  "assets": [
+    {
+      "name": "01-illusion-forest-battle",
+      "stages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients on crystal light and magical glow, large readable silhouettes, elegant rounded shapes contrasted with clean crystal facets, luminous violet and blue crystal glass, restrained mint magical light, moon-white resting areas, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nUse case: stylized-concept. Asset type: environment plate behind animated SD characters in a mobile side-view battle arena. Generate one full-bleed wide 16:9 landscape, preferably 1920x1080 or larger. No characters. Camera at low side-view battle height, NOT top-down map. An open level clearing spans the ENTIRE lower 32 percent edge-to-edge, supporting a hero on the left and five small enemies on the right. No trees, bushes, rocks, crystals, pools or tall grass in this foreground fighting zone. Ground gently textured with low contrast, readable feet. Forest scenery starts BEHIND the fighting zone. Rich atmospheric layered background in upper two thirds, quiet center. Keep center crop functional at mobile aspect ratios. Use attached images as style/composition references ONLY: image 1 forest identity and foliage colors, image 2 open horizontal battle floor composition, do not copy the sky islands. Soft upper-left light. No text, letters, numbers, UI, markers, logos, borders, watermark, characters, creatures, pixel art, photorealism, 3D toy rendering, horror, gore, gritty darkness, excessive bloom or visual noise.\nScene: World 4 ILLUSION FOREST, ordinary stages 1 through 9. Enchanting lilac and violet forest clearing, great graceful twisting trunks at far sides, arching plum-purple foliage overhead, layered lavender woodland depth. Subtle translucent duplicated tree silhouettes in the distant background suggest a harmless magical mirage. Small polished mint and violet crystals among mossy roots only BEHIND the fighting zone, a few dreamy glow motes in upper background. Soft pearly lavender haze, glints of warm dappled light. Broad unobstructed pale mauve earth floor, almost horizontal, no winding path occupying the battle floor. Mysterious, luminous and inviting, clearly a forest, not candyland.",
+      "source": "assets/environments/world-4/source/01-illusion-forest-battle.png",
+      "runtime": "assets/environments/world-4/01-illusion-forest-battle.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 496430
+    },
+    {
+      "name": "02-misty-forest-battle",
+      "stages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients on crystal light and magical glow, large readable silhouettes, elegant rounded shapes contrasted with clean crystal facets, luminous violet and blue crystal glass, restrained mint magical light, moon-white resting areas, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nUse case: stylized-concept. Asset type: environment plate behind animated SD characters in a mobile side-view battle arena. Generate one full-bleed wide 16:9 landscape, preferably 1920x1080 or larger. No characters. Camera at low side-view battle height, NOT top-down map. An open level clearing spans the ENTIRE lower 32 percent edge-to-edge, supporting a hero on the left and five small enemies on the right. No trees, bushes, rocks, crystals, pools or tall grass in this foreground fighting zone. Ground gently textured with low contrast, readable feet. Forest scenery starts BEHIND the fighting zone. Rich atmospheric layered background in upper two thirds, quiet center. Keep center crop functional at mobile aspect ratios. Use attached images as style/composition references ONLY: image 1 forest identity, image 2 level clearing composition. Both references depict terrestrial forest. Soft upper-left light. No text, letters, numbers, UI, markers, logos, borders, watermark, characters, creatures, pixel art, photorealism, 3D toy rendering, horror, gore, gritty darkness, excessive bloom or visual noise.\nScene: World 4 MISTY FOREST, ordinary stages 11 through 19. Pale cyan and mint fog between elegant teal, muted blue and deep violet woodland trunks, silhouetted foliage with cool moon-white backlight. Fog remains behind the foreground floor and never hides combatants' feet. In distant upper-center-right background a SMALL faint abandoned fantasy castle silhouette partly concealed by mist, no giant building in foreground. A few quiet mint crystal glints at distant roots behind the floor. Broad unobstructed cool pale slate-lilac earth clearing along full bottom width. Strong atmospheric depth, low background contrast, brighter than horror. Distinct from the purple illusion grove while belonging to same premium fantasy world.\nCRITICAL geography: continuous terrestrial woodland on solid earth. DENSE PEARLY CYAN MIST fills the entire upper-center woodland. NO visible blue sky. NO floating islands, levitating land, cliffs, mountains, waterfalls, sky terrace, bridges or sky kingdom. Castle is an indistinct tiny ruined grounded medieval tower silhouette through dense fog, only 8 percent of image width, far away among trees. Desaturated cool teal foliage, more obscured forest layers and much thicker soft fog than either reference. No sun beams. Bottom floor remains visible and dry.",
+      "references": [
+        "assets/novel/bgi/world4-prologue-cleared.webp",
+        "assets/environments/world-4/source/01-illusion-forest-battle.png"
+      ],
+      "source": "assets/environments/world-4/source/02-misty-forest-battle.png",
+      "runtime": "assets/environments/world-4/02-misty-forest-battle.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 516236
+    }
+  ],
+  "review": {
+    "visual": "reviewed generated images; open level foreground and distinct forest moods",
+    "browser": "not run",
+    "userApproval": "not claimed"
+  }
+}

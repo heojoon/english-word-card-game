@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-12",
+  "tool": "built-in image_gen",
+  "model": "not disclosed",
+  "fullPrompts": [
+    "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\n\nUse case: stylized-concept. Asset type: World 4 part 2 stages 11 through 20. Image 1 authoritative style; Image 2 is target region layout, use LOWER half only. Portrait 1024x1536. Misty blue-violet enchanted forest of floating cliffs, elegant ancient trees and ivy-covered broken arches, bridges across turquoise waterfalls, abandoned pale stone castle with restrained violet light at upper right. No horror or red demon imagery. Exactly TEN upright violet-blue crystal waypoints each on its own gold-rim circular pedestal. One continuous UNBRANCHED serpentine path, no loops or shortcuts: start bottom-left, wind right to lower-right, turn left to middle-left, then right to middle-right, then left toward upper-left, finally curve right to castle. Ten crystal center targets and sequence: 11 (15%,86%),12 (42%,78%),13 (80%,68%),14 (53%,58%),15 (23%,51%),16 (48%,42%),17 (80%,37%),18 (58%,29%),19 (36%,21%),20 (79%,14%). Each 11..20 represented only by crystals, no printed numbers. Castle endpoint is at final crystal20. Upper three crystals 18,19,20 should be clearly distinct. Route visits every one of TEN crystals in this order, must not fork, loop, double back or skip crystals. Spread the complete path across entire portrait. All titles, plaques, labels, bosses and arrows removed. Exactly ten pedestals.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n",
+    "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\n\nUse case: precise-object-edit. Image 1 authoritative style. Image 2 is edit target. ONE local change only: REMOVE the waypoint upright violet crystal AND its gold circular pedestal at x=23%,y=15% (upper LEFT near the ivy stone arch). Replace with ordinary golden path, grass and small flowers. Leave the crystal at x=45%,y=20% untouched. Leave the castle entrance crystal at x=81%,y=13% untouched. Do not remove ANY other crystals. Target currently has ELEVEN gold waypoint bases; removing this specific UPPER LEFT one leaves TEN. Preserve all architecture, route, other ten crystals, colors and framing exactly. No text.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n"
+  ],
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "layout": "output/story-map/chapter-4-layout-reference.png",
+    "finalEditTarget": "output/story-map/chapter-4-misty-castle-before-count-fix.png"
+  },
+  "source": "output/story-map/chapter-4-misty-castle-source.png",
+  "runtime": "assets/story/chapter-4-misty-castle-map.webp",
+  "targetDimensions": [
+    1024,
+    1536
+  ],
+  "actualDimensions": [
+    1024,
+    1536
+  ],
+  "stagePositions": [
+    {
+      "stage": 11,
+      "x": 14.551,
+      "y": 84.961
+    },
+    {
+      "stage": 12,
+      "x": 47.363,
+      "y": 79.622
+    },
+    {
+      "stage": 13,
+      "x": 80.176,
+      "y": 72.591
+    },
+    {
+      "stage": 14,
+      "x": 87.305,
+      "y": 63.086
+    },
+    {
+      "stage": 15,
+      "x": 53.906,
+      "y": 55.534
+    },
+    {
+      "stage": 16,
+      "x": 19.336,
+      "y": 46.419
+    },
+    {
+      "stage": 17,
+      "x": 50.488,
+      "y": 40.755
+    },
+    {
+      "stage": 18,
+      "x": 72.07,
+      "y": 30.99
+    },
+    {
+      "stage": 19,
+      "x": 44.922,
+      "y": 20.182
+    },
+    {
+      "stage": 20,
+      "x": 81.25,
+      "y": 13.216
+    }
+  ],
+  "review": {
+    "style": "visually reviewed against chapter 1 and 3",
+    "waypointCount": 10,
+    "route": "visually reviewed, continuous ordered route",
+    "clipping": "no waypoint clipped",
+    "mobile": "390x844 browser preview inspected; image loading, all 20 numbered overlays and unclipped crystals checked",
+    "gameIntegration": "awaiting vocabulary/boss decision",
+    "userApproval": "pending",
+    "build": "npm run build passed"
+  },
+  "coordinateMeasurement": "manual visual crystal centers in the 1024x1536 source; checked with browser overlays"
+}

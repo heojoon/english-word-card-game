@@ -1,0 +1,67 @@
+{
+  "image": "red-reaper-sd-hit-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "frameNames": [
+    "notice",
+    "impact",
+    "knockdown"
+  ],
+  "frames": [
+    {
+      "name": "notice",
+      "duration": 140
+    },
+    {
+      "name": "impact",
+      "duration": 160
+    },
+    {
+      "name": "knockdown",
+      "duration": 700
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/hit-01.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.27262180974477956,
+      "groundLine": 1150,
+      "pivotX": 720,
+      "bodyTop": 288,
+      "normalizedGroundY": 312
+    },
+    {
+      "source": "source/hit-02.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.25323275862068967,
+      "groundLine": 1192,
+      "pivotX": 735,
+      "bodyTop": 264,
+      "normalizedGroundY": 312
+    },
+    {
+      "source": "source/hit-03.png",
+      "framingAlphaThreshold": 16,
+      "scale": 0.26,
+      "groundLine": 895,
+      "pivotX": 782.5,
+      "bodyTop": null,
+      "normalizedGroundY": 312
+    }
+  ],
+  "review": {
+    "technical": "passed: exact slots, real alpha, whole scythe, stable body height, notice-impact-knockdown and final hold reviewed over light/violet backgrounds",
+    "browser": "not requested",
+    "userApproval": "standing concept 03; SD poses not separately user-approved"
+  },
+  "finalFrameHold": true
+}

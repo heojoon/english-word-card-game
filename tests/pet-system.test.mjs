@@ -108,15 +108,15 @@ test('runtime attaches only an owned equipped pet and resets effects on a fresh 
   runtime.initializeBattlePet();assert.equal(runtime.run.petEffects,undefined);runtime.itemOwned=()=>true;runtime.initializeBattlePet();assert.equal(runtime.run.petEffects.pet.code,catalog[0].code);runtime.run.petShield=true;runtime.initializeBattlePet();assert.equal(runtime.run.petShield,false);
 });
 
-test('guest pet purchases use the declared price and retain inventory without duplicate charges',async()=>{
+test('guest pet purchases charge each copy and reject purchases above the remaining balance',async()=>{
   const source=readFileSync(new URL('crystal-game.js',root),'utf8'),inventory=[];
   const state={localMode:true,selectedCharacter:{id:'guest-hero',coins:1000},demoState:{inventory},walletBalance:()=>state.selectedCharacter.coins,isSkin:()=>false,itemOwned:item=>inventory.some(row=>row.item_id===item.id),saveDemo(){},loadCharacterExtras:async()=>{},closeDialog(){},render(){},toast(){},console};
   const runtime=vm.createContext(state);
   vm.runInContext(source.slice(source.indexOf('  async function purchase('),source.indexOf('  async function equip(')),runtime);
   const pet={...catalog[0],id:'local-pet_pebble_slime'};
   await runtime.purchase(pet);assert.equal(state.selectedCharacter.coins,780);assert.equal(inventory.length,1);assert.equal(inventory[0].character_id,'guest-hero');
-  await runtime.purchase(pet);assert.equal(state.selectedCharacter.coins,780);assert.equal(inventory.length,1);
-  await runtime.purchase({...catalog[9],id:'local-pet_prism_guardian_dragon'});assert.equal(state.selectedCharacter.coins,780);assert.equal(inventory.length,1);
+  await runtime.purchase(pet);assert.equal(state.selectedCharacter.coins,560);assert.equal(inventory.length,2);
+  await runtime.purchase({...catalog[9],id:'local-pet_prism_guardian_dragon'});assert.equal(state.selectedCharacter.coins,560);assert.equal(inventory.length,2);
 });
 
 test('equipped pets add their declared LUK points to character stats',()=>{

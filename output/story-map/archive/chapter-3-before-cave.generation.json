@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-10",
+  "tool": "built-in image_gen",
+  "model": "not exposed by tool",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map.\nScene: World 3, a crystal sanctuary above the clouds. Redraw the user's floating-island map as one complete portrait world map containing SEVEN playable stage waypoints. Preserve the cream-stone sanctuary with violet tiled towers and huge levitating violet crystal in the upper-right area, luminous violet portal, long stairs descending into lush terraces, stone arch ruins, wooden crossing, lower entry stone bridge, cascading turquoise waterfalls and distant forested floating islands.\nReference roles: Image 1 = authoritative style chapter-1-library-map.webp; Image 2 = user's World 3 layout and subject. Follow Image 2 for topology only, not for rendering style. Match Image 1's finer foliage, stone painting, warm sunlight and clear atmospheric depth. Do not copy its library building.\nComposition: portrait aspect ratio 1792:2400, full bleed, no borders. Keep the entire main sanctuary and large floating crystal inside the canvas with margin, unlike the clipped reference. Main route climbs from bottom-center entry bridge through the middle islands to the upper-right sanctuary. Adjust terraces to accommodate all seven stages. A SINGLE painting, not seven panels.\nGameplay contract: exactly 7 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals. Stage order and normalized centers (center of upright crystal): stage 1 entry stone bridge (50%,90%); stage 2 lower-right garden trail (84%,76%); stage 3 middle trail before wooden crossing (64%,66%); stage 4 left landing after wooden crossing (48%,59%); stage 5 right waterfall terrace (74%,55%); stage 6 lower sanctuary stair landing (54%,48%); stage 7 upper sanctuary portal landing (59%,37%). Build the paths and landings around those centers, with one continuous unambiguous golden path linking 1 through 7 in order. From stage 4, a small cream stone bridge crosses water to stage 5, then a winding uphill path leads back left to stage 6 and up the main stairs to stage 7. Keep every waypoint separate and unobscured. Do not add extra waypoint pedestals. All seven must fit comfortably inside the canvas with generous separation, and remain readable at 390px mobile width.\nEnvironmental crystals around the sanctuary may be cyan/turquoise clusters without round gold pedestals; the large levitating violet architectural crystal is clearly separate from the seven small upright route markers. Keep glow controlled. No stage numbers or any text. Preserve the user's world identity while correcting the count from four original stage markers to seven.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": "output/story-map/chapter-3-crystal-sanctuary-layout-reference.png",
+  "originalLayoutPath": "/Users/hjoon/Downloads/Gemini_Generated_Image_41d4641d4641d464.png",
+  "source": "output/story-map/chapter-3-crystal-sanctuary-map-source.png",
+  "runtime": "assets/story/chapter-3-crystal-sanctuary-map.webp",
+  "targetDimensions": {
+    "width": 1792,
+    "height": 2400
+  },
+  "actualDimensions": {
+    "width": 1084,
+    "height": 1451
+  },
+  "runtimeWorld3": "Registered as World 3 크리스탈 사원 in crystal-game.js with seven stages",
+  "targetCentersPercent": [
+    [
+      50,
+      90
+    ],
+    [
+      84,
+      76
+    ],
+    [
+      64,
+      66
+    ],
+    [
+      48,
+      59
+    ],
+    [
+      74,
+      55
+    ],
+    [
+      54,
+      48
+    ],
+    [
+      59,
+      37
+    ]
+  ],
+  "actualWaypointCenters": [
+    {
+      "stage": 1,
+      "x": 523,
+      "y": 1216,
+      "xPercent": 48.25,
+      "yPercent": 83.8,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 2,
+      "x": 898,
+      "y": 975,
+      "xPercent": 82.84,
+      "yPercent": 67.2,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 3,
+      "x": 630,
+      "y": 805,
+      "xPercent": 58.12,
+      "yPercent": 55.48,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 4,
+      "x": 316,
+      "y": 676,
+      "xPercent": 29.15,
+      "yPercent": 46.59,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 5,
+      "x": 896,
+      "y": 694,
+      "xPercent": 82.66,
+      "yPercent": 47.83,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 6,
+      "x": 618,
+      "y": 558,
+      "xPercent": 57.01,
+      "yPercent": 38.46,
+      "measurement": "manual visual center of upright crystal; approximate"
+    },
+    {
+      "stage": 7,
+      "x": 745,
+      "y": 377,
+      "xPercent": 68.73,
+      "yPercent": 25.98,
+      "measurement": "manual visual center of upright crystal; approximate"
+    }
+  ],
+  "review": {
+    "status": "Integrated; mobile image loading, seven-node alignment, locked/unlocked states and stage 1 battle entry verified",
+    "style": "Compared against chapter-1 authoritative style reference; painterly foliage, cream stone, turquoise waterfalls, restrained gold pedestals, soft clouds.",
+    "waypointCount": 7,
+    "cropping": "All seven waypoints, sanctuary and floating crystal inside canvas",
+    "route": "All seven connected via visible paths and bridges. Left arch waypoint is a short branch from the wooden bridge; linear target topology not reproduced exactly.",
+    "coordinateAdherence": "Generated centers differ from prompt; actual coordinates recorded for later integration.",
+    "mobilePreview": "output/story-map/review/chapter-3-crystal-sanctuary-map-mobile.png",
+    "waypointOverlay": "output/story-map/review/chapter-3-crystal-sanctuary-map-waypoints.png",
+    "browserChecks": "Playwright localhost demo: 390x844 mobile and 1280x900 desktop; World 2 stage 7 clear unlocks only World 3 stage 1; matching battle opens; seven nodes align with actual crystal centers; hero offset preserves stage number. No runtime errors; pre-existing favicon.ico 404 only.",
+    "runtimeScreenshot": "output/playwright/world3-mobile-unlocked.png",
+    "desktopScreenshot": "output/playwright/world3-desktop.png"
+  },
+  "approvalStatus": "user requested game integration on 2026-10-10"
+}
