@@ -16,22 +16,36 @@
   const effectText = {shield:'다음 피격 피해 1회 방어',time:'제한시간 3초 정지',mp:'MP 1 회복',hp:'HP 1 회복',revive:'HP 0일 때 HP 1로 부활 · 전투당 부활 1회'};
   const catalog = definitions.map(([code,name,price,luck,skill,effect,chance]) => ({
     code,name,price,skill,effect,chance,category:'avatar',slot:'pet',stat_key:'luk',stat_value:luck,
-    // The approved concept art uses the same normal card for all ten identities.
-    rarity:'normal',stars:1,icon:'◆',repeatable:false,active:true,
+    rarity:['pet_mist_horn_deer','pet_prism_guardian_dragon'].includes(code)?'legendary':'unique',
+    stars:['pet_mist_horn_deer','pet_prism_guardian_dragon'].includes(code)?5:4,icon:'◆',repeatable:false,active:true,
     art_path:`assets/items/concepts/${code}.png`,
     description:`${skill} · ${Math.round(chance*100)}% 확률 · ${effectText[effect]}`
   }));
+  catalog.push({code:'pet',name:'워드 크리스털 정령',price:1500,skill:'정령의 속삭임',effect:'hint',chance:.08,
+    category:'avatar',slot:'pet',stat_key:'luk',stat_value:12,rarity:'legendary',stars:5,
+    icon:'◆',repeatable:false,active:true,art_path:'assets/items/equipment/item_word_crystal_sprite_legendary.webp',
+    description:'정령의 속삭임 · 8% 확률 · 정답 하나 알려주기'});
   function attach(state,item,{random=Math.random,notify=()=>{}}={}) {
     const pet=catalog.find(row=>row.code===item?.code);
     if(!pet||!state.story)return null;
     state.petShield=false;state.petTimeMs=0;state.petRevived=false;
-    state.petNotice='';state.petNoticeMs=0;
+    state.petNotice='';state.petNoticeMs=0;state.petHint=null;
     const allowed=()=>!state.done&&!state.fever&&!state.feverTransition;
     const announce=message=>{state.petNotice=`${pet.skill} · ${message}`;state.petNoticeMs=1600;notify(state.petNotice);};
     return {
       pet,
+      onQuestion() {
+        state.petHint=null;
+        if(!allowed()||state.hp<=0||pet.effect!=='hint')return false;
+        const pair=state.guardian?null:state.matchEn?.find(row=>!state.matched?.has(row.id));
+        const question=state.guardian?state.question:null;
+        if(!pair&&!question||random()>=pet.chance)return false;
+        state.petHint=pair?{pairId:pair.id}:{question};
+        announce('정답 하나 공개!');
+        return true;
+      },
       onCorrect() {
-        if(!allowed()||state.paused||state.hp<=0||pet.effect==='revive')return false;
+        if(!allowed()||state.paused||state.hp<=0||['revive','hint'].includes(pet.effect))return false;
         if(pet.effect==='shield'&&state.petShield||pet.effect==='time'&&state.petTimeMs>0)return false;
         if(['hp','mp'].includes(pet.effect)&&state[pet.effect]>=state[`${pet.effect}Max`])return false;
         if(random()>=pet.chance)return false;
@@ -58,7 +72,7 @@
         if(!allowed())this.clear();
         return step-frozen;
       },
-      clear(){state.petShield=false;state.petTimeMs=0;state.petNotice='';state.petNoticeMs=0;}
+      clear(){state.petShield=false;state.petTimeMs=0;state.petNotice='';state.petNoticeMs=0;state.petHint=null;}
     };
   }
   window.WORDORIA_PETS={catalog,attach};

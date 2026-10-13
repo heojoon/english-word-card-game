@@ -599,6 +599,8 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 .class-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
 .answer:has(.sniper-answer-hint){border:2px solid var(--violet);background:#f0edff;color:var(--ink)}
 .sniper-answer-hint{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--violet);color:#fff;font-size:11px;font-weight:800}
+.pet-answer-hint,.pet-pair-hint{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:6px;background:#147D76;color:#fff;font-size:10px;font-weight:800;white-space:nowrap}
+.answer:has(.pet-answer-hint),.story-match-item:has(.pet-pair-hint){border:2px solid #147D76;background:#e8faf6}
 .story-sniper-skill .story-action-icon{background:var(--surface,#F7F7FF);border-color:var(--violet);overflow:hidden}
 .story-sniper-skill .story-action-icon img{width:100%;height:100%;object-fit:contain}
 .selected-hero-skill>img[src*="passive-sniper-insight"]{background:var(--surface,#F7F7FF)}

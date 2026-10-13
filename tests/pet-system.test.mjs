@@ -12,11 +12,13 @@ function battle(index,roll=0){
   return {state,effect:state.petEffects,rolls:()=>rolls};
 }
 
-test('the ten pets have unique codes, approved prices and LUK, and available RGBA artwork',()=>{
-  assert.equal(new Set(catalog.map(p=>p.code)).size,10);
-  assert.deepEqual(Array.from(catalog,p=>p.price),[220,660,770,880,990,1500,2000,2500,3000,4000]);
-  assert.deepEqual(Array.from(catalog,p=>p.stat_value),[5,7,8,10,12,14,16,18,21,25]);
-  for(const pet of catalog){assert.equal(pet.slot,'pet');assert.equal(pet.stat_key,'luk');assert.ok(existsSync(new URL(pet.art_path,root)));assert.equal(readFileSync(new URL(pet.art_path,root))[25],6);}
+test('the eleven pets preserve unique codes, approved prices, LUK and available artwork',()=>{
+  assert.equal(new Set(catalog.map(p=>p.code)).size,11);
+  assert.deepEqual(Array.from(catalog,p=>p.price),[220,660,770,880,990,1500,2000,2500,3000,4000,1500]);
+  assert.deepEqual(Array.from(catalog,p=>p.stat_value),[5,7,8,10,12,14,16,18,21,25,12]);
+  for(const pet of catalog){assert.equal(pet.slot,'pet');assert.equal(pet.stat_key,'luk');assert.ok(existsSync(new URL(pet.art_path,root)));if(pet.code!=='pet')assert.equal(readFileSync(new URL(pet.art_path,root))[25],6);}
+  assert.deepEqual(Array.from(catalog,p=>p.rarity),[...Array(8).fill('unique'),'legendary','legendary','legendary']);
+  assert.deepEqual(Array.from(catalog,p=>p.stars),[...Array(8).fill(4),5,5,5]);
 });
 
 test('6% and 10% boundaries fail at the exact limit; healing clamps and skips full resources',()=>{
@@ -24,6 +26,50 @@ test('6% and 10% boundaries fail at the exact limit; healing clamps and skips fu
     const {state,effect,rolls}=battle(i,catalog[i].chance);assert.equal(effect.onCorrect(),false);assert.equal(rolls(),1);
     const hit=battle(i,catalog[i].chance-.00001);assert.equal(hit.effect.onCorrect(),true);assert.equal(hit.state[key],state[key]+1);
     hit.state[key]=hit.state[key+'Max'];const before=hit.rolls();assert.equal(hit.effect.onCorrect(),false);assert.equal(hit.rolls(),before);
+  }
+});
+
+test('spirit reveals one unmatched pair at 8%, does not answer automatically and clears on transition',()=>{
+  for(const roll of [.07999,.08]){
+    const {state,effect,rolls}=battle(10,roll);
+    Object.assign(state,{index:0,correct:0,matchEn:[{id:2},{id:0},{id:1}],matched:new Set([2])});
+    assert.equal(effect.onQuestion(),roll<.08);
+    assert.equal(state.petHint?.pairId,roll<.08?0:undefined);
+    assert.equal(state.correct,0);assert.equal(state.matched.size,1);
+    assert.equal(effect.onCorrect(),false);assert.equal(rolls(),1);
+    state.matchEn=[];assert.equal(effect.onQuestion(),false);assert.equal(state.petHint,null);
+    effect.clear();assert.equal(state.petHint,null);
+  }
+});
+
+test('spirit marks only the current correct choice and both sides of one pair',()=>{
+  const {state,effect}=battle(10);
+  state.guardian=true;state.question={answer:'apple'};
+  assert.equal(effect.onQuestion(),true);
+  const source=readFileSync(new URL('crystal-game.js',root),'utf8'),runtime=vm.createContext({run:state});
+  vm.runInContext(source.slice(source.indexOf('  function petAnswerHintMarkup('),source.indexOf('  function petBattleMarkup(')),runtime);
+  assert.match(runtime.petAnswerHintMarkup('apple'),/정령의 정답/);
+  assert.equal(runtime.petAnswerHintMarkup('pear'),'');
+  state.question={answer:'pear'};assert.equal(runtime.petAnswerHintMarkup('pear'),'');
+  effect.onQuestion();assert.match(runtime.petAnswerHintMarkup('pear'),/정령의 정답/);
+  state.guardian=false;state.matchEn=[{id:7},{id:8}];state.matched=new Set();effect.onQuestion();
+  assert.match(runtime.petPairHintMarkup(7),/정령의 정답/);assert.equal(runtime.petPairHintMarkup(8),'');
+  state.matched.add(7);assert.equal(runtime.petPairHintMarkup(7),'');
+  state.fever=true;assert.equal(effect.onQuestion(),false);assert.equal(state.petHint,null);
+});
+
+test('ordinary Story and every boss prepare the spirit hint before displaying a new question board',()=>{
+  const source=readFileSync(new URL('crystal-game.js',root),'utf8');
+  for(const mode of ['story','boss','crystalGhost','guardian','blackDragon']){
+    const {state,effect}=battle(10);
+    Object.assign(state,{index:0,deck:Array.from({length:5},(_,i)=>({entry:[`word${i}`,'명',`뜻${i}`],mode:'en-ko'})),guardian:['guardian','blackDragon'].includes(mode),boss:['boss','crystalGhost'].includes(mode),crystalGhost:mode==='crystalGhost',blackDragon:mode==='blackDragon'});
+    const runtime=vm.createContext({run:state,selectedCharacter:{class:'warrior'},selectedStage:'stage',stages:{stage:{words:[]}},STORY_QUESTIONS_PER_TURN:5,performance:{now:()=>0},shuffle:rows=>rows,activatePassive(){},makeQuestion:entry=>({entry,answer:entry[0],choices:[entry[0],'other']})});
+    vm.runInContext(source.slice(source.indexOf('  function prepareQuestion('),source.indexOf('  function initializeBattlePet(')),runtime);
+    vm.runInContext(source.slice(source.indexOf('  function prepareRoyalSlimeBoard('),source.indexOf('  function royalSlimeRemaining(')),runtime);
+    runtime.prepareQuestion();
+    assert.ok(state.petHint,mode);
+    if(state.guardian)assert.equal(state.petHint.question,state.question);else assert.equal(state.petHint.pairId,0);
+    effect.clear();assert.equal(state.petHint,null);
   }
 });
 
@@ -41,7 +87,7 @@ test('dragon heart checks only lethal damage and permits one successful revival 
 });
 
 test('Survival, fever, completed battles and unrelated or legacy pets do not receive skills',()=>{
-  assert.equal(attach({story:false},catalog[0]),null);assert.equal(attach({story:true},{code:'pet'}),null);
+  assert.equal(attach({story:false},catalog[0]),null);assert.equal(attach({story:true},{code:'unknown_pet'}),null);
   for(const key of ['done','fever','feverTransition']){const {state,effect,rolls}=battle(0);effect.onCorrect();state[key]=true;assert.equal(effect.onCorrect(),false);effect.clear();assert.equal(state.petShield,false);assert.equal(state.petTimeMs,0);assert.equal(rolls(),1);}
 });
 
