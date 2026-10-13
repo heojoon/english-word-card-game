@@ -1,0 +1,63 @@
+{
+  "source": "monster_crystal_candy_five_left_concept.png",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sprites": [
+    {
+      "image": "monster_crystal_candy_angry-01_left.png",
+      "expression": "angry-01",
+      "sourceBounds": [
+        9,
+        20,
+        550,
+        517
+      ]
+    },
+    {
+      "image": "monster_crystal_candy_crying-01_left.png",
+      "expression": "crying-01",
+      "sourceBounds": [
+        534,
+        24,
+        1040,
+        514
+      ]
+    },
+    {
+      "image": "monster_crystal_candy_tongue-01_left.png",
+      "expression": "tongue-01",
+      "sourceBounds": [
+        1042,
+        39,
+        1531,
+        515
+      ]
+    },
+    {
+      "image": "monster_crystal_candy_angry-02_left.png",
+      "expression": "angry-02",
+      "sourceBounds": [
+        235,
+        497,
+        800,
+        997
+      ]
+    },
+    {
+      "image": "monster_crystal_candy_tongue-02_left.png",
+      "expression": "tongue-02",
+      "sourceBounds": [
+        803,
+        506,
+        1335,
+        1003
+      ]
+    }
+  ],
+  "notes": "Five individual static monster poses; existing battle bob and contact feedback apply."
+}
