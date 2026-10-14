@@ -769,3 +769,9 @@ body[data-screen="battle"] .arena.red-reaper-arena{background:#8c82ad url('asset
 body[data-screen="battle"] .arena.world-five-battle{background-image:url('assets/story/chapter-5-violet-crystal-cave-map-v2.webp');background-size:cover}
 body[data-screen="battle"] .arena.world-five-cavern{background-position:center 18%}
 body[data-screen="battle"] .arena.world-five-lake{background-position:center 72%}
+
+/* Eagle Eye shares Ice Time's activation lettering and stays above the enemy. */
+.eagle-eye-field{position:absolute;z-index:10;right:5%;top:8%;width:min(170px,44%);height:80px;object-fit:contain;pointer-events:none;filter:drop-shadow(0 0 7px #7868ef88);animation:eagle-eye-reveal .2s ease-out both}
+.arena-combo.eagle-eye-announcement{--ice-light:#e8fbff;--ice-edge:#99e5eb;animation-duration:1s}
+@keyframes eagle-eye-reveal{from{opacity:0;scale:.8}to{opacity:1;scale:1}}
+@media(prefers-reduced-motion:reduce){.eagle-eye-field{animation:none}.arena-combo.eagle-eye-announcement{animation:none}}

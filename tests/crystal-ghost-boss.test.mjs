@@ -14,7 +14,7 @@ function setup(attackSteps=1){
     clearInterval(){},clearTimeout(){},cancelSpeech(){},toast(){},render(){},tick(){},speak(){},emitAudio(){},saveDemo(){},persistStoryBattleVitals(){},
     reducedMotion:()=>false,battleContactDelay:()=>420,setTimeout:fn=>{callbacks.push(fn);return callbacks.length;},
     closeDialog(){},go:page=>{c.page=page;pages.push(page);},CustomEvent:class{},$:()=>node(),document:{dispatchEvent(){},querySelector:()=>node()},
-    esc:String,num:String,deployedAssetUrl:String,battleHeroMarkup:()=>'',passiveBannerMarkup:()=>'',storyBattleActions:()=>'',iceTimeEffectMarkup:()=>'',stageRecordName:()=> '스토리 3장 7 · 하늘 수정 성소'
+    esc:String,num:String,deployedAssetUrl:String,battleHeroMarkup:()=>'',passiveBannerMarkup:()=>'',storyBattleActions:()=>'',eagleEyeEffectMarkup:()=>'',iceTimeEffectMarkup:()=>'',stageRecordName:()=> '스토리 3장 7 · 하늘 수정 성소'
   });c.stages['story-ch3-7']=c.stages.world3;
   vm.runInContext(source.slice(source.indexOf('  const ROYAL_SLIME_REWARD='),source.indexOf('  function renderBattle(){')),c);
   vm.runInContext(source.slice(source.indexOf('  function refreshStorySelections('),source.indexOf('  function syncBGM(')),c);

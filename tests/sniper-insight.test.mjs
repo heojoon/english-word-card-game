@@ -10,7 +10,7 @@ function setup(random=.1){
     Math:Object.assign(Object.create(Math),{random:()=>{rolls++;return random;}}),performance:{now:()=>1000},
     selectedStage:'test',stages:{test:{name:'test',words:entries.map(x=>x.entry)}},STORY_QUESTIONS_PER_TURN:5,shuffle:a=>a.slice().reverse(),
     makeQuestion:item=>({prompt:item[0],answer:item[2],choices:['wrong1',item[2],'wrong2','wrong3']}),activatePassive(){},
-    esc:String,deployedAssetUrl:String,battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',iceTimeEffectMarkup:()=>'',passiveBannerMarkup:()=>'',
+    esc:String,deployedAssetUrl:String,battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',eagleEyeEffectMarkup:()=>'',iceTimeEffectMarkup:()=>'',passiveBannerMarkup:()=>'',
     storyBattleActions:()=>'',storyBattleBackgroundClass:()=>'',earnedCoins:()=>0,
     royalSlimeTime:()=>'',royalSlimeRemaining:()=>30000,window:{WORDORIA_GUARDIAN:{maskChoice:()=> 'masked'}}});
   const load=(first,last)=>vm.runInContext(source.slice(source.indexOf(first),source.indexOf(last)),c);

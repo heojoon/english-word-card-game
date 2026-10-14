@@ -65,7 +65,7 @@ test('last hit holds complete knockdown before victory and reset removes all old
 });
 test('renderer provides matching cards, isolated energy gauge, three images and ice feedback',()=>{
   const run=state();run.reaperCastMs=700;run.hallucinationMs=10000;run.iceTimeActive=true;
-  const c=vm.createContext({run,esc:String,royalSlimeTime:()=> '05:40',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',iceTimeEffectMarkup:()=>'<i>ice field</i>',storyBattleActions:()=>'',passiveBannerMarkup:()=>''});
+  const c=vm.createContext({run,esc:String,royalSlimeTime:()=> '05:40',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',eagleEyeEffectMarkup:()=>'',iceTimeEffectMarkup:()=>'<i>ice field</i>',storyBattleActions:()=>'',passiveBannerMarkup:()=>''});
   vm.runInContext(source.slice(source.indexOf('  function renderRedReaperBattle('),source.indexOf('  function redReaperPick(')),c);
   const html=c.renderRedReaperBattle();assert.equal((html.match(/data-action="story-pick"/g)||[]).length,10);assert.match(html,/aria-valuenow="120"/);assert.match(html,/reaper-echo-left/);assert.match(html,/reaper-echo-right/);assert.match(html,/ice field/);assert.match(html,/hallucinating/);assert.ok(!html.includes('28%'));
 });
@@ -176,7 +176,7 @@ test('local first reward and result display are 500, replay grants zero',async()
 test('successful hallucination holds casting clones after cast ends and releases at effect end',()=>{
   const run=state(),classes=new Map();
   const arena={style:{setProperty(){}},classList:{toggle:(name,on)=>classes.set(name,on)}};
-  const c=vm.createContext({run,window,Math,esc:String,royalSlimeTime:()=>'',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',iceTimeEffectMarkup:()=>'',storyBattleActions:()=>'',passiveBannerMarkup:()=>'',updateWarriorSlash(){},syncReaperCards(){},document:{querySelector:()=>null,querySelectorAll:()=>[]},$:id=>id==='arena'?arena:null});
+  const c=vm.createContext({run,window,Math,esc:String,royalSlimeTime:()=>'',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',eagleEyeEffectMarkup:()=>'',iceTimeEffectMarkup:()=>'',storyBattleActions:()=>'',passiveBannerMarkup:()=>'',updateWarriorSlash(){},syncReaperCards(){},document:{querySelector:()=>null,querySelectorAll:()=>[]},$:id=>id==='arena'?arena:null});
   vm.runInContext(source.slice(source.indexOf('  function renderRedReaperBattle('),source.indexOf('  function redReaperPick(')),c);
   vm.runInContext(source.slice(source.indexOf('  function advanceRedReaperBattle('),source.indexOf('  function darkIceTimeMarkup(')),c);
   events(run,20000,()=>0);events(run,200);c.advanceRedReaperBattle(500);

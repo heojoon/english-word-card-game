@@ -106,3 +106,42 @@ test('next wave, fever, exit and every result path clear the hint',async()=>{
     await c.finishBattle(false,'leave');assert.equal(c.run.eagleEyeActive,false);assert.equal(c.run.eagleEyeRemoved.length,0);
   }
 });
+
+for(const mode of ['story','royal','ghost','reaper'])test(`${mode}: Korean-first selection cannot consume the skill before its hint is visible`,()=>{
+  const c=setup(mode);
+  c.pick('ko',1);c.activateRangerEagleEye();
+  assert.equal(c.run.selectedKo,null);
+  c.pick('ko',1);c.pick('en',0);
+  assert.equal(c.run.eagleEyeActive,true);assert.equal(c.run.selectedKo,null);
+  assert.equal(c.run.hp,3);assert.equal(c.run.correct,0);
+  assert.match(c.renderBattle(),/뜻 첫 글자: 사…/);
+  c.pick('ko',0);assert.equal(c.run.eagleEyeActive,false);
+});
+
+test('pair hint skips part-of-speech labels and whitespace',()=>{
+  const c=setup();c.run.matchEn[0].entry[2]='  [명] [동]  사과';
+  c.activateRangerEagleEye();c.pick('en',0);
+  assert.match(c.eaglePairHintMarkup(0,'en'),/뜻 첫 글자: 사…/);
+});
+
+for(const mode of ['story','royal','ghost','guardian','dragon','shadow','reaper'])test(`${mode}: eye appears over enemies and activation lettering expires at one second`,()=>{
+  const c=setup(mode);let now=1000;c.performance.now=()=>now;
+  assert.ok(!c.renderBattle().includes('eagle-eye-field'));
+  c.activateRangerEagleEye();
+  assert.match(c.renderBattle(),/eagle-eye-field/);
+  assert.match(c.renderBattle(),/arena-combo ice-time-announcement eagle-eye-announcement/);
+  assert.match(c.renderBattle(),/<b>매의 눈<\/b>/);
+  const expiry=c.pending.find(timer=>timer.delay===1000);assert.ok(expiry);
+  now=1999;assert.match(c.renderBattle(),/eagle-eye-announcement/);
+  now=2000;expiry.fn();
+  assert.ok(!c.renderBattle().includes('eagle-eye-announcement'));
+  assert.match(c.renderBattle(),/eagle-eye-field/);
+  if(c.run.guardian&&!c.run.redReaper)c.guardianAnswer(1);
+  else {c.pick('en',0);c.pick('ko',0);}
+  assert.ok(!c.renderBattle().includes('eagle-eye-field'));
+});
+
+test('an old activation expiry cannot remove a new battle announcement',()=>{
+  const c=setup();c.activateRangerEagleEye();const expiry=c.pending.find(timer=>timer.delay===1000);
+  c.run={eagleEyePopUntil:2000};expiry.fn();assert.equal(c.run.eagleEyePopUntil,2000);
+});
