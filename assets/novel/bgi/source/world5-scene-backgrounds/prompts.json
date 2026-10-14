@@ -1,0 +1,103 @@
+{
+  "tool": "built-in image_gen",
+  "scenes": [
+    {
+      "id": "world5-prologue-scene-01",
+      "title": "붕괴하는 성",
+      "novel": "world-5-1-prologue.md",
+      "scene": 1,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: Inside the lavender-gray gothic castle's central vaulted hall immediately after battle. A gigantic violet crystal in the central midground develops bright fine cracks. Broken stone arch ribs, falling small masonry and suspended dust indicate imminent collapse. White-violet magical light swells from the crystal, architecture remains legible. Clear flagstone foreground, dramatic but not horrific."
+    },
+    {
+      "id": "world5-prologue-scene-02",
+      "title": "끝없는 동굴",
+      "novel": "world-5-1-prologue.md",
+      "scene": 2,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: First discovery of a vast seemingly endless violet crystal cave. Immense stone arches and layered cavern chambers fade into cool luminous mist, large violet crystal clusters grow from rock at the sides, a natural stone path leads into depth, slender waterfalls and distant mint water reflection. Wonder and uncertainty, expansive scale, clear ground foreground."
+    },
+    {
+      "id": "world5-prologue-scene-03",
+      "title": "크리스탈 거미",
+      "novel": "world-5-1-prologue.md",
+      "scene": 3,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: Deeper passage within the same endless violet crystal cave. Delicate silvery spiderweb threads stretch between violet crystal clusters along side walls and in dark recesses, implying an approaching encounter WITHOUT depicting any spiders or creatures. Central rocky passage clear, cool light and deeper side shadows, gentle suspense, no horror."
+    },
+    {
+      "id": "world5-midboss-start-scene-01",
+      "title": "가물가물한 모험의 시작",
+      "novel": "world-5-midboss-start.md",
+      "scene": 1,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: A wide round natural rocky clearing deep inside the violet crystal cave, exhausted travelers' resting place without showing travelers or objects. Violet crystal clusters frame both walls, arch-shaped tunnel recedes in back, little cyan stream on one side. Muted lavender diffuse light, still air, very spacious clear flat foreground."
+    },
+    {
+      "id": "world5-midboss-start-scene-02",
+      "title": "서로를 향한 원망",
+      "novel": "world-5-midboss-start.md",
+      "scene": 2,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: The round rocky clearing inside the violet crystal cave becomes uneasy. Violet crystals along the sides give subtly conflicting magenta and cold blue reflections; a few thin dark-violet wisps drift between them, suggesting magical emotional interference. Rear arched tunnel and small side stream remain. Empty clear central rock floor, mounting tension, no symbols or figures."
+    },
+    {
+      "id": "world5-midboss-start-scene-03",
+      "title": "갈등의 화신",
+      "novel": "world-5-midboss-start.md",
+      "scene": 3,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: The round crystal cavern clearing during a supernatural intrusion. At rear center beyond a broad empty foreground, a small swirling violet smoky magical rift hangs above the stone floor, entirely abstract with NO humanoid shape or face. Side violet crystals refract uneven light; fine dark wisps and tiny scattered crystal particles. Youth-friendly fantasy threat, no gore."
+    },
+    {
+      "id": "world5-midboss-start-scene-04",
+      "title": "동료를 향한 공격",
+      "novel": "world-5-midboss-start.md",
+      "scene": 4,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: The same round cavern now a battle arena. Flat central rock floor with a few fresh shallow impact fissures; broken luminous golden magical chain fragments dissipate into sparks near floor edges, never forming figures. Side violet crystals and rear tunnel remain recognizable, turbulent violet light suggests escaped binding magic. Keep clear open space for character overlays."
+    },
+    {
+      "id": "world5-midboss-end-scene-01",
+      "title": "마지막 저항",
+      "novel": "world-5-midboss-end.md",
+      "scene": 1,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: The round violet crystal cavern at the final burst of combat. A narrow blue-white magical lightning strike illuminates the rear half of the clearing, violet crystal walls glow briefly, dusty stone floor bears impact cracks and scattered small stones at edges. Foreground remains clearly visible and empty, no bodies, armor, weapons or characters. Dynamic but restrained magical energy."
+    },
+    {
+      "id": "world5-midboss-end-scene-02",
+      "title": "머릿속의 다크 소서러스",
+      "novel": "world-5-midboss-end.md",
+      "scene": 2,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: An abstract inner mind realm, unlike the physical cave. An empty smooth dark-violet glasslike plane floating within indigo space, suspended translucent crystal shards containing only abstract luminous patterns, layers of violet mist, a restrained pale blue central light and curved flowing shadows. Mental confrontation atmosphere, no brains, anatomy, faces, characters, text or symbols. Spacious foreground for two character overlays."
+    },
+    {
+      "id": "world5-midboss-end-scene-03",
+      "title": "돌아온 소서러스",
+      "novel": "world-5-midboss-end.md",
+      "scene": 3,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: Return to the round violet crystal cavern after combat. The rear tunnel and side crystal clusters remain, shallow impact cracks in flat floor. Lightning and dark wisps have vanished, soft mint and pearl light settles, a few golden motes fade in calm air. A narrow passage toward a cyan underground lake is now inviting. Clear broad foreground, relief and regained control."
+    },
+    {
+      "id": "world5-boss-start-scene-01",
+      "title": "지도에 나타난 보스",
+      "novel": "world-5-20-boss-start.md",
+      "scene": 1,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: Approach to an unexpected final boss lair beyond the underground turquoise lake. A broad natural stone walkway above still cyan water leads toward a tall irregular rock arch crowned by violet crystal clusters, an immense inner chamber glows violet beyond. Lilac rock, distant waterfalls, atmospheric mist, uncertainty. Open foreground; no actual map, lettering, figures or creatures."
+    },
+    {
+      "id": "world5-boss-start-scene-02",
+      "title": "돌아온 리치 드래곤",
+      "novel": "world-5-20-boss-start.md",
+      "scene": 2,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: Inside the final boss lair, a colossal natural crystal grotto above the turquoise underground lake. Broad empty stone arena, huge jagged violet crystal formation in rear center, fractured crystals embedded in surrounding walls, dark side recesses. A violet summoning pulse circles the rear ground without runes or symbols, implying a summoned dragon but do NOT depict it. Powerful uneasy glow, readable open foreground."
+    },
+    {
+      "id": "world5-boss-start-scene-03",
+      "title": "강제 해제",
+      "novel": "world-5-20-boss-start.md",
+      "scene": 3,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: Same colossal crystal grotto arena with jagged rear violet crystal and turquoise water at sides. An expanding translucent violet magical shockwave sweeps the midground. Gold and violet magical motes unravel and scatter, several small broken glass potion-vial fragments near lower SIDE edges, no labels or spills of blood. Clear central floor for overlays, oppressive power with youth-friendly treatment."
+    },
+    {
+      "id": "world5-boss-start-scene-04",
+      "title": "어둠의 소서러스",
+      "novel": "world-5-20-boss-start.md",
+      "scene": 4,
+      "prompt": "Use case: illustration-story. Create ONE full-bleed 16:9 landscape visual novel background for Wordoria Crystal Quest. Polished hand-painted 2D fantasy environment, delicate painterly natural stone, translucent violet-blue crystals, atmospheric depth, soft lavender shadows, mint reflected light, gentle pearl highlights. Youth-friendly magical adventure, never horror. Eye-level cinematic environment view, NOT a world map. Important scene features in central 60% for portrait mobile crops, broad uncluttered lower foreground for separate character and dialogue overlays. Rich readable environmental detail but restrained glow. NO people, humanoid silhouettes, monsters, dragons, spiders, skeletons, faces, blood, text, letters, UI, borders, watermark, pixel art, low-poly or plastic 3D. Scene: Same final crystal grotto with rear jagged violet crystal and turquoise lake edges. Powerful black-indigo magical currents with violet luminous rims coil upward from the midground stone floor, entirely abstract and NOT shaped like a person. A narrow pearl-violet shaft of light pierces the currents, crystal walls reflect dramatic violet light. Decisive magical transformation atmosphere, no caster, creature, runes or text. Clear broad lower foreground."
+    }
+  ]
+}

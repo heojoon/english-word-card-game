@@ -5115,5 +5115,1101 @@ window.WORDORIA_NOVELS = {
       "location": "무영창의 일격",
       "backgroundPath": "assets/novel/bgi/world4-boss-scene-08.webp"
     }
+  ],
+  "world5Prologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(월드 4 최종보스 붉은 사신을 격파한 직후.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갑자기 성 전체가 거세게 흔들리기 시작한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "shake": true
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "성이 붕괴한다...!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터 & 아서",
+      "className": "party",
+      "text": "보랏빛 수정이...!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(성의 중심부에 있던 거대한 보랏빛 수정이 불안정하게 진동한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "저게 부서지면 이 지역 전체가 날아갈 거야!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "안정화!!!!!!!!!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 수정에 안정화 마법을 사용한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "나도 도울게...! 증강!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 소서러스의 마법을 증강시킨다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(하지만 보랏빛 수정의 표면에 금이 가기 시작한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "효과음",
+      "className": "scene",
+      "text": "삐이이이이이이이이——!!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(순간 눈앞이 새하얗게 변한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "붕괴하는 성",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "flash": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(하얀 빛이 서서히 사라진다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행의 눈앞에 끝없이 펼쳐진 거대한 동굴이 나타난다. 동굴 곳곳에는 보랏빛 수정들이 빛나고 있다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "여... 여긴...?",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "...!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "여긴... 어디...?",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "책에도 안 나와 있어...",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "여긴 보랏빛 수정이 만들어지는 곳이야.",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "어떻게 만들어져?",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "나도 몰라. 하지만 그것만 찾으면 나갈 수 있어...",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "끝없는 동굴",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 동굴 안쪽으로 이동하려는 순간, 어둠 속에서 무언가 움직인다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "으윽... 크리스탈 거미들이야!!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(보랏빛 수정으로 뒤덮인 거미들이 동굴 곳곳에서 나타난다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "난이도가 있네.....",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(크리스탈 거미들이 일행을 향해 다가온다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "NEW WORLD UNLOCKED",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "보랏빛 수정동굴",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "첫 번째 적 · 크리스탈 거미",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "월드 5의 핵심 목표",
+      "className": "mission",
+      "text": "끝없는 수정 동굴에서 보랏빛 수정이 만들어지는 비밀을 찾아내고, 동굴을 탈출하는 것.",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "크리스탈 거미",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    }
+  ],
+  "world5MidbossStart": [
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "....",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "전에도 겪어 본 거지만...",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "언제...",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "까지...",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "해야 돼!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "근데 이 모험을 왜 떠났더라.....",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그러게.... 기억이 가물가물하네.",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "....",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "가물가물한 모험의 시작",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이터, 네가 책을 쏟지만 않았으면 고대 문서를 발견 안 했잖아!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "서로를 향한 원망",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "발견한 건 소서러스잖아! 그리고 쟤가 펼쳤고!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "서로를 향한 원망",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "근데 이 모험은 너네가 슬라임 잡으러 가서 네가 억지로 따라간 거잖아! 그리고 아서가 합류해서 더 억지로 가야 됐고!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "서로를 향한 원망",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 뭘!!?!?!? 그래서 200크리스탈까지 줬잖아!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "서로를 향한 원망",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "갈등의 화신",
+      "className": "mystery",
+      "text": "ㅋㅋㅋㅋ",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "누구야?",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "갈등의 화신",
+      "className": "mystery",
+      "text": "나는 갈등의 화신!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "닥쳐!! 지금 꽤 빡쳤거든!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "갈등의 화신",
+      "className": "mystery",
+      "text": "뭐가..!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 갈등의 화신을 죽일 기세로 공격한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갈등의 화신의 몸이 반으로 갈라진다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "크하하하!!! 죽었다!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "갈등의 화신",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "...소서러스를 미치게 한 거야, 갈등의 화신이...?",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "동료를 향한 공격",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "진정해!!",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "동료를 향한 공격",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "사슬 봉인!",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "동료를 향한 공격",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 사슬을 가볍게 푼다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "동료를 향한 공격",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "덤벼!",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "동료를 향한 공격",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "크윽... 싸울 수밖에 없는 건가...",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "동료를 향한 공격",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    }
+  ],
+  "world5MidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스를 격파한 직후.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "크아악!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네가 아무리 강하다지만 우리 세 명을 이길 순 없어.",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "으아아!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 번개를 내리치게 한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "홀리 쉴드!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "울트라 스매쉬!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 튕겨 나가면서 갑옷이 부서진다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "크으윽... 상대할 수 없어. 나한테 무슨 짓을 해 놓은 거냐! 갈등의 화신!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스는 스스로 몸을 조절하지 못한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "마지막 저항",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스의 머릿속.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스의 머릿속에서 다크 소서러스가 나타난다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "장관이네 ㅋㅋㅋㅋ",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "너를 죽였을 텐데...?",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그 에너지와 기억이 너의 뇌로 스며들어 가서 이제 싫어도 여기 붙어 살 수밖에 없어.",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이런 씨.... 어쨌든 내 몸이 조절이 안 돼. 그냥 시각만 자유고 다른 감각들을 조절할 수 없어..!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그건 내 알 바가 아니지!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이런 씨.... 하지만 여긴 내 머릿속. 모든 게 내 마음대로야.",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "크아악!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "미안하지만 네 힘 좀 빌려야겠다!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "머릿속의 다크 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다시 보랏빛 수정동굴.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "돌아온 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 정신을 차린다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "돌아온 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "눈빛이 바뀌었어. 돌아온 거야?",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "돌아온 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럴걸?",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "돌아온 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "갈등의 화신, 무슨 짓을 해 놓은 거냐....",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "돌아온 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "어쨌든 돌아왔다면 다행이야. 보스를 깨러 가자.",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "돌아온 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "(혼잣말로) 다크 소서러스... 넌 대체 누구길래 갈등의 화신의 세뇌에서 벗어날 정도의 힘을 갖고 있는 거냐...",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "돌아온 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    }
+  ],
+  "world5BossStart": [
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "드디어 보스가 나오는 곳이야. 근데.... 애초에 내가 듣기론 보랏빛 수정동굴은 보스가 없어..",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "....! 하지만 분명...!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "맞아..... 지도에는 있다고 나오지..",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "새로 생긴 보스 같은 거 아닐까?",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": ".....!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 머릿속의 다크 소서러스에게 말을 건다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "야, 보스가 있어?",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "리치 드래곤이야.",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "말이 안 돼!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "죽은 자의 영혼이 어쩌다 한 번 크게 터졌었는데, 그 사건으로 리치 드래곤이 영혼이 깨어진 세계... 즉 여기로 온 거야.",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "...",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "소서러스, 뭐 해! 빨리 와!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "알겠어..!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "지도에 나타난 보스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(보스의 주거지.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "리치 드래곤! 모습을 드러내라!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "무슨 말이야? 그 드래곤은 우리가 크리스탈 사원에서 죽였잖아!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "(무시하며) 강제 소환!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(리치 드래곤이 모습을 드러낸다. 몸 구석구석에는 깨어진 크리스탈이 박혀 있고, 가슴 정가운데에는 보랏빛 수정이 박혀 있다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "너희구나..... 죽어!!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+    },
+    {
+      "speaker": "모두",
+      "className": "party",
+      "text": "크아악!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(강력한 에너지에 일행이 저마다 벽에 부딪힌다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "shake": true
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "크하하! 확실히 죽여서 다시 한번 타락한 천사님께 영광을...",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "돌아온 리치 드래곤",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네크로맨서로!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "금빛의 기사로!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "나는 그런 건 없지만 강력한 기가톤 펀치 준비...!!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "보랏빛 궁수로!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "강제 해제!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모두의 변신이 풀린다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "모두",
+      "className": "party",
+      "text": "크아악!!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "마력 증폭제를... 뭐야? 다 깨져 있잖아..! 제길!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "끝이다!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "강제 해제",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다크 소서러스!!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "어둠의 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "결국 네놈이 나한테 힘을 구하는구나.",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "어둠의 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다크 소서러스로 변신!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "어둠의 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 기운이 소서러스의 몸을 휘감는다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "어둠의 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "flash": true
+    },
+    {
+      "speaker": "어둠의 소서러스",
+      "className": "mage",
+      "text": "이제부터 네놈을 찢어 죽이겠다.",
+      "scene": "violet-cave",
+      "sceneNumber": 4,
+      "location": "어둠의 소서러스",
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    }
   ]
 };

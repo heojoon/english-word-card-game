@@ -185,6 +185,27 @@ function parseWorldFourFinalBoss(markdown,ending=false){
 }
 export const parseWorldFourBossStart=markdown=>parseWorldFourFinalBoss(markdown);
 export const parseWorldFourBossEnd=markdown=>parseWorldFourFinalBoss(markdown,true);
+export function parseWorldFiveNarrative(markdown){
+  const lines=[];
+  let sceneNumber=0,location='보랏빛 수정동굴';
+  const speakers={...classes,'파이터 & 아서':'party','다크 소서러스':'mage','어둠의 소서러스':'mage','갈등의 화신':'mystery','리치 드래곤':'black-dragon','모두':'party','효과음':'scene'};
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    const heading=block.match(/^## Scene (\d+)\. (.+)$/);
+    if(heading){sceneNumber=Number(heading[1]);location=heading[2];continue;}
+    if(!sceneNumber||!block||block.startsWith('#')||block.startsWith('(월드 5')||block==='중간보스 전투 시작'||block==='보스 전투 시작')continue;
+    const dialogue=block.match(/^([^:\n]+):\s*([\s\S]+)$/);
+    const speaker=dialogue?.[1]||'내레이션';
+    const line={speaker,className:speakers[speaker]||'scene',text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:'violet-cave',sceneNumber,location,backgroundPath:'assets/story/chapter-5-violet-crystal-cave-map-v2.webp'};
+    if(speaker==='월드 5의 핵심 목표')line.className='mission';
+    if(speaker==='리치 드래곤')line.artPath='assets/novel/characters/char_lich_dragon_standing.png';
+    if(/새하얗게|휘감는다/.test(line.text))line.flash=true;
+    if(/거세게 흔들|벽에 부딪/.test(line.text))line.shake=true;
+    lines.push(line);
+  }
+  if(!lines.length||sceneNumber<3)throw new Error('World 5 narrative is incomplete');
+  return lines;
+}
 export async function generateStoryNovel(){
   const novels={};
   for(const [key,filename,parse] of [
@@ -198,7 +219,11 @@ export async function generateStoryNovel(){
     ['world4MidbossStart','world-4-10-midboss-start.md',parseWorldFourMidboss],
     ['world4MidbossEnd','world-4-10-midboss-end.md',parseWorldFourMidbossEnd],
     ['world4BossStart','world-4-20-boss-start.md',parseWorldFourBossStart],
-    ['world4BossEnd','world-4-20-boss-end.md',parseWorldFourBossEnd]
+    ['world4BossEnd','world-4-20-boss-end.md',parseWorldFourBossEnd],
+    ['world5Prologue','world-5-1-prologue.md',parseWorldFiveNarrative],
+    ['world5MidbossStart','world-5-midboss-start.md',parseWorldFiveNarrative],
+    ['world5MidbossEnd','world-5-midboss-end.md',parseWorldFiveNarrative],
+    ['world5BossStart','world-5-20-boss-start.md',parseWorldFiveNarrative]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
   await writeFile(new URL('../story-novel.js',import.meta.url),`// Generated from assets/novel/*.md by scripts/generate-story-novel.mjs.\nwindow.WORDORIA_NOVELS = ${JSON.stringify(novels,null,2)};\n`);
   console.log(`Prepared visual novels: ${Object.entries(novels).map(([key,lines])=>`${key}: ${lines.length}`).join(' / ')} beats.`);

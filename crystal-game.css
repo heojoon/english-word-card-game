@@ -604,6 +604,9 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 .class-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
 .answer:has(.sniper-answer-hint){border:2px solid var(--violet);background:#f0edff;color:var(--ink)}
 .sniper-answer-hint{display:inline-block;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--violet);color:#fff;font-size:11px;font-weight:800}
+.eagle-pair-hint{display:block;margin-top:4px;color:var(--violet);font-size:12px;font-weight:800;line-height:1.4}
+.answer[data-eagle-excluded]{background:#F7F7FF;color:#74718A;border-style:dashed;opacity:1}
+.eagle-excluded{font-size:12px;font-weight:700}
 .pet-answer-hint,.pet-pair-hint{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:6px;background:#147D76;color:#fff;font-size:10px;font-weight:800;white-space:nowrap}
 .answer:has(.pet-answer-hint),.story-match-item:has(.pet-pair-hint){border:2px solid #147D76;background:#e8faf6}
 .story-sniper-skill .story-action-icon{background:var(--surface,#F7F7FF);border-color:var(--violet);overflow:hidden}
@@ -755,3 +758,14 @@ body[data-screen="battle"] .arena.red-reaper-arena{background:#8c82ad url('asset
 .arena:is(.shadow-sorceress-arena,.red-reaper-arena){--battle-vitals-top:12px;--battle-vitals-height:32px}
 .arena:is(.shadow-sorceress-arena,.red-reaper-arena)>.story-vitals{top:var(--battle-vitals-top);height:var(--battle-vitals-height);box-sizing:border-box}
 .arena:is(.shadow-sorceress-arena,.red-reaper-arena)>.guardian-health{left:auto;right:12px;top:calc(var(--battle-vitals-top) + var(--battle-vitals-height)/2);bottom:auto;width:28%;max-width:160px;margin-bottom:0;transform:translateY(-50%);z-index:9}
+
+/* World 5: one continuous twenty-stage cave map. */
+.story-map-navigation-inline{position:static;margin:0 0 10px}
+.story-world-map-5{aspect-ratio:1/3}
+.story-world-map-5 .story-map-node{height:2.667%}
+.story-world-map-5 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
+.story-vn-chapter-five .story-vn-scene{background-size:cover;background-position:center 22%}
+.story-vn-chapter-five .story-vn-scene::before,.story-vn-chapter-five .story-vn-scene::after,.story-vn-chapter-five .story-vn-orb{display:none}
+body[data-screen="battle"] .arena.world-five-battle{background-image:url('assets/story/chapter-5-violet-crystal-cave-map-v2.webp');background-size:cover}
+body[data-screen="battle"] .arena.world-five-cavern{background-position:center 18%}
+body[data-screen="battle"] .arena.world-five-lake{background-position:center 72%}

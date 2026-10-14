@@ -1,0 +1,251 @@
+{
+  "date": "2026-10-14",
+  "world": 5,
+  "name": "보랏빛 수정동굴",
+  "tool": "built-in image_gen",
+  "model": "not disclosed",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest World 5 seamless vertical scrolling story world map, named 보랏빛 수정동굴. Do not paint the name.\nReference roles: Image 1 authoritative STYLE only. Image 2 World 4 map, reference for ONE CONTINUOUS EXTRA TALL canvas and top-to-bottom serpentine progression only, not the forest or castles. New World 5 has no existing runtime coordinates; the 20 centers below are proposed design coordinates.\nComposition: ONE image, 1024 x 3072 target, portrait aspect ratio 1:3, edge-to-edge artwork. NOT two separate panels, no divider or seam. Stage 1 at the TOP, stage 20 at the BOTTOM. Broad gently glowing cream-golden paths, natural rock bridges and steps form one unbranched connected descending route through all 20 crystals.\nUpper half stages 1–10: ENDLESS CRYSTAL CAVERN. Spacious lavender and cream limestone cavern chambers, giant violet crystalline outcrops embedded in walls, soaring stalactites, layered rock shelves, distant atmospheric passageways. Warm light filters through cracks near the entrance, readable luminous violet and cyan reflected light deeper inside. Sparse moss and tiny cave plants, no forests or houses. Stage 10 on a generous circular stone shelf for the midboss encounter, but no enemy artwork.\nLower half stages 11–20: CRYSTAL BIRTH UNDERGROUND LAKE. The upper rock route flows naturally down into a vast luminous turquoise subterranean lake. Rock islets, natural stone bridges, shallow waterfalls and mineral terraces connect the winding descending route. Violet mineral light glimmers under the clear water. Near the bottom final stage, an enormous translucent violet crystal cluster grows from the water beside the final rock landing, without a pedestal, distinct from the playable crystals. This remains entirely underground, no sky, outdoor floating islands, library, castle or temple.\nThe environment is mysterious and beautiful rather than frightening or nearly black. Retain reference painterly rendering and nuanced material highlights. Cool water and lavender rocks contrasted with restrained warm path lighting. Preserve cavern depth and clear mobile navigation.\nGameplay contract: EXACTLY TWENTY separate violet-blue single crystal waypoints, each on a gold-rimmed round pedestal, ten upper and ten lower. Stage order and normalized centers (x% from left, y% from top): 1:(18%,5%); 2:(35%,9%); 3:(58%,13%); 4:(80%,17%); 5:(67%,22%); 6:(43%,27%); 7:(22%,32%); 8:(38%,37%); 9:(62%,42%); 10:(80%,47%); 11:(70%,53%); 12:(47%,57%); 13:(24%,61%); 14:(35%,66%); 15:(59%,71%); 16:(80%,76%); 17:(63%,81%); 18:(39%,86%); 19:(22%,91%); 20:(49%,96%). Build landings and route around these centers. The route continuously progresses downward. No extra gold pedestal crystals anywhere. Decorative crystals must be natural clusters in rock/water WITHOUT gold bases. Each playable crystal must be separate, prominent and unobscured. Do not include spiders, people or any letters/numbers. Every landmark and crystal stays fully inside canvas.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "scrollLayout": "assets/story/chapter-4-illusion-forest-combined-map.webp"
+  },
+  "source": "output/story-map/chapter-5-violet-crystal-cave-source.png",
+  "runtime": "assets/story/chapter-5-violet-crystal-cave-map.webp",
+  "targetDimensions": [
+    1024,
+    3072
+  ],
+  "actualDimensions": [
+    724,
+    2172
+  ],
+  "stageCount": 20,
+  "progression": "top-to-bottom",
+  "regions": [
+    {
+      "stages": [
+        1,
+        10
+      ],
+      "theme": "끝없는 수정 동굴"
+    },
+    {
+      "stages": [
+        11,
+        20
+      ],
+      "theme": "수정 탄생의 지하 호수"
+    }
+  ],
+  "targetWaypoints": [
+    {
+      "stage": 1,
+      "x": 18,
+      "y": 5
+    },
+    {
+      "stage": 2,
+      "x": 35,
+      "y": 9
+    },
+    {
+      "stage": 3,
+      "x": 58,
+      "y": 13
+    },
+    {
+      "stage": 4,
+      "x": 80,
+      "y": 17
+    },
+    {
+      "stage": 5,
+      "x": 67,
+      "y": 22
+    },
+    {
+      "stage": 6,
+      "x": 43,
+      "y": 27
+    },
+    {
+      "stage": 7,
+      "x": 22,
+      "y": 32
+    },
+    {
+      "stage": 8,
+      "x": 38,
+      "y": 37
+    },
+    {
+      "stage": 9,
+      "x": 62,
+      "y": 42
+    },
+    {
+      "stage": 10,
+      "x": 80,
+      "y": 47
+    },
+    {
+      "stage": 11,
+      "x": 70,
+      "y": 53
+    },
+    {
+      "stage": 12,
+      "x": 47,
+      "y": 57
+    },
+    {
+      "stage": 13,
+      "x": 24,
+      "y": 61
+    },
+    {
+      "stage": 14,
+      "x": 35,
+      "y": 66
+    },
+    {
+      "stage": 15,
+      "x": 59,
+      "y": 71
+    },
+    {
+      "stage": 16,
+      "x": 80,
+      "y": 76
+    },
+    {
+      "stage": 17,
+      "x": 63,
+      "y": 81
+    },
+    {
+      "stage": 18,
+      "x": 39,
+      "y": 86
+    },
+    {
+      "stage": 19,
+      "x": 22,
+      "y": 91
+    },
+    {
+      "stage": 20,
+      "x": 49,
+      "y": 96
+    }
+  ],
+  "waypoints": [
+    {
+      "stage": 1,
+      "x": 18.009,
+      "y": 5.029
+    },
+    {
+      "stage": 2,
+      "x": 35.286,
+      "y": 8.301
+    },
+    {
+      "stage": 3,
+      "x": 59.297,
+      "y": 10.449
+    },
+    {
+      "stage": 4,
+      "x": 82.284,
+      "y": 12.354
+    },
+    {
+      "stage": 5,
+      "x": 66.179,
+      "y": 16.309
+    },
+    {
+      "stage": 6,
+      "x": 41.581,
+      "y": 19.189
+    },
+    {
+      "stage": 7,
+      "x": 21.523,
+      "y": 23.438
+    },
+    {
+      "stage": 8,
+      "x": 38.214,
+      "y": 27.588
+    },
+    {
+      "stage": 9,
+      "x": 62.958,
+      "y": 30.859
+    },
+    {
+      "stage": 10,
+      "x": 83.455,
+      "y": 34.863
+    },
+    {
+      "stage": 11,
+      "x": 67.496,
+      "y": 41.943
+    },
+    {
+      "stage": 12,
+      "x": 47.438,
+      "y": 46.484
+    },
+    {
+      "stage": 13,
+      "x": 24.451,
+      "y": 50.781
+    },
+    {
+      "stage": 14,
+      "x": 37.628,
+      "y": 56.201
+    },
+    {
+      "stage": 15,
+      "x": 62.811,
+      "y": 59.863
+    },
+    {
+      "stage": 16,
+      "x": 85.944,
+      "y": 65.186
+    },
+    {
+      "stage": 17,
+      "x": 64.714,
+      "y": 70.166
+    },
+    {
+      "stage": 18,
+      "x": 35.871,
+      "y": 75.732
+    },
+    {
+      "stage": 19,
+      "x": 18.887,
+      "y": 81.934
+    },
+    {
+      "stage": 20,
+      "x": 52.123,
+      "y": 86.816
+    }
+  ],
+  "coordinateMeasurement": "Approximate crystal centers measured visually from 683x2048 displayed preview; refine against original and browser overlay before integration.",
+  "review": {
+    "visual": "20 separate gold-based crystals counted. One connected descending route, upper cavern and lower lake, no text or monsters; no panel seam. Style reference and generated preview visually reviewed.",
+    "runtimeAlignment": "not tested; World 5 not integrated",
+    "mobileBrowser": "not tested",
+    "userApproval": "pending"
+  }
+}
