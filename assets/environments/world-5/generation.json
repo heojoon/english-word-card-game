@@ -1,0 +1,39 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-16",
+  "assets": [
+    {
+      "file": "01-crystal-spider-cavern-battle.webp",
+      "original": "source/01-crystal-spider-cavern-battle.png",
+      "reference": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "prompt": "Use case: illustration-story. Create a NEW wide landscape 16:9 environment-only background for Wordoria Crystal Quest World 5 NORMAL crystal-spider battle. Attached image is a style and location reference only. Match its polished hand-painted fantasy scenery, violet/cyan luminous crystals, cool layered rock and atmospheric depth. Recompose specifically as a SIDE VIEW battle stage: a wide level continuous stone ground across the bottom 25%, clear uncluttered open middle for character sprites at left and right, eye-level camera, no central path receding into distance. Cavern tunnel, amethyst clusters and delicate silvery spiderwebs at upper corners and rear walls, pale cyan distant passage, subtle violet reflected light. Floor contact line around 85% image height. Mobile readability, soft diffuse light, quiet center, detailed edges, friendly fantasy suitable for school children. No characters, monsters, spiders, text, numbers, UI, map paths, markers, watermark, pixel art, low-poly or toy-like render.",
+      "review": "Visually inspected: distinct environment, clear combat foreground, no characters or UI. Browser checks not requested; not user-approved.",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "02-sorcerus-midboss-battle.webp",
+      "original": "source/02-sorcerus-midboss-battle.png",
+      "reference": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "prompt": "Use case: illustration-story. Create a NEW wide landscape 16:9 environment-only background for Wordoria Crystal Quest World 5 MIDBOSS possessed Sorcerus battle. Attached image is a material/style reference only. Match polished hand-painted fantasy cavern scenery, violet/cyan translucent crystals, cool stone, soft light and atmospheric depth. Distinct location: enclosed broad crystal grotto chamber with tall split violet crystal pillars framing the scene, wisps of dark lavender magic behind a faint broken circular magical seal etched into stone. More tense violet lighting and lavender mist, still readable and friendly fantasy for children. SIDE VIEW battle stage, eye-level camera: a wide level stone floor across bottom 25%, continuous horizontal ground line at 85% image height, clear open middle for sprites at left and right, center free of foreground objects. Do not draw a receding central path. No characters, monsters, humans, text, readable glyphs, UI, markers, watermark, pixel art, low-poly or toy render.",
+      "review": "Visually inspected: distinct environment, clear combat foreground, no characters or UI. Browser checks not requested; not user-approved.",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "03-lich-dragon-final-battle.webp",
+      "original": "source/03-lich-dragon-final-battle.png",
+      "reference": "assets/novel/bgi/world5-boss-start-scene-02.webp",
+      "prompt": "Use case: illustration-story. Create a NEW wide landscape 16:9 environment-only background for Wordoria Crystal Quest World 5 FINAL BOSS Lich Dragon battle. Attached image is a location/style reference only. Preserve polished hand-painted fantasy style, enormous translucent violet crystals and luminous turquoise subterranean lake, distant waterfalls and cavern depth. Recompose as an imposing SIDE VIEW battle arena, eye-level camera: broad unbroken horizontal ancient stone platform across entire bottom 25%, ground contact line about 85% image height. Clear middle and left/right character positions, giant amethyst monolith in BACKGROUND behind platform, quiet wide floor, distant lake and falls. Majestic violet magic reflected from distant crystal; no large bright effects in playable foreground. Distinct from narrow spider cave and enclosed midboss chamber, grand spacious final arena. No characters, monsters, dragons, skulls, text, UI, map markers, watermark, pixel art, low-poly, toy render.",
+      "review": "Visually inspected: distinct environment, clear combat foreground, no characters or UI. Browser checks not requested; not user-approved.",
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ]
+}

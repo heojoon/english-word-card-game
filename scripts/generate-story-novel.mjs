@@ -189,6 +189,9 @@ export function parseWorldFiveNarrative(markdown){
   const lines=[];
   const midbossStart=markdown.startsWith('# 월드 5 — 중간보스 도입');
   const midbossEnd=markdown.startsWith('# 월드 5 — 중간보스 격파');
+  const prologue=markdown.startsWith('# 월드 5 — 프롤로그');
+  const backgroundSet=prologue?'prologue':midbossStart?'midboss-start':midbossEnd?'midboss-end':'boss-start';
+  let spiderVisible=false;
   let sceneNumber=0,location='보랏빛 수정동굴';
   const speakers={...classes,'파이터 & 아서':'party','다크 소서러스':'mage','어둠의 소서러스':'mage','갈등의 화신':'mystery','리치 드래곤':'black-dragon','모두':'party','효과음':'scene'};
   for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
@@ -198,7 +201,9 @@ export function parseWorldFiveNarrative(markdown){
     if(!sceneNumber||!block||block.startsWith('#')||block.startsWith('(월드 5')||block==='중간보스 전투 시작'||block==='보스 전투 시작')continue;
     const dialogue=block.match(/^([^:\n]+):\s*([\s\S]+)$/);
     const speaker=dialogue?.[1]||'내레이션';
-    const line={speaker,className:speakers[speaker]||'scene',text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:'violet-cave',sceneNumber,location,backgroundPath:'assets/story/chapter-5-violet-crystal-cave-map-v2.webp'};
+    const line={speaker,className:speakers[speaker]||'scene',text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:'violet-cave',sceneNumber,location,backgroundPath:`assets/novel/bgi/world5-${backgroundSet}-scene-${String(sceneNumber).padStart(2,'0')}.webp`};
+    if(prologue&&sceneNumber===3&&line.text.includes('크리스탈 거미들이야'))spiderVisible=true;
+    if(spiderVisible){line.sceneArt='assets/monsters/crystal-spider/design-reference.png';line.sceneArtName='크리스탈 거미';line.sceneArtClass='crystal-spider';}
     if(speaker==='월드 5의 핵심 목표')line.className='mission';
     if(speaker==='리치 드래곤')line.artPath='assets/novel/characters/char_lich_dragon_world5_standing.webp';
     if(speaker==='소서러스'&&((midbossStart&&sceneNumber>=4)||(midbossEnd&&sceneNumber===1)))line.artPath='assets/novel/characters/char_sorcerus_world5_midboss_standing.webp';

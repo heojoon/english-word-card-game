@@ -5124,7 +5124,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5133,7 +5133,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp",
       "shake": true
     },
     {
@@ -5143,7 +5143,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "파이터 & 아서",
@@ -5152,7 +5152,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5161,7 +5161,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "바이올렛",
@@ -5170,7 +5170,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5179,7 +5179,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5188,7 +5188,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "아서",
@@ -5197,7 +5197,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5206,7 +5206,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5215,7 +5215,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "효과음",
@@ -5224,7 +5224,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5233,7 +5233,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "붕괴하는 성",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-01.webp",
       "flash": true
     },
     {
@@ -5243,7 +5243,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -5252,7 +5252,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "파이터",
@@ -5261,7 +5261,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5270,7 +5270,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5279,7 +5279,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "바이올렛",
@@ -5288,7 +5288,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "아서",
@@ -5297,7 +5297,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5306,7 +5306,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "아서",
@@ -5315,7 +5315,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "끝없는 동굴",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -5324,7 +5324,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -5333,7 +5333,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     },
     {
       "speaker": "내레이션",
@@ -5342,7 +5345,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     },
     {
       "speaker": "아서",
@@ -5351,7 +5357,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     },
     {
       "speaker": "내레이션",
@@ -5360,7 +5369,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     },
     {
       "speaker": "내레이션",
@@ -5369,7 +5381,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     },
     {
       "speaker": "내레이션",
@@ -5378,7 +5393,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     },
     {
       "speaker": "내레이션",
@@ -5387,7 +5405,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     },
     {
       "speaker": "월드 5의 핵심 목표",
@@ -5396,7 +5417,10 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "크리스탈 거미",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-prologue-scene-03.webp",
+      "sceneArt": "assets/monsters/crystal-spider/design-reference.png",
+      "sceneArtName": "크리스탈 거미",
+      "sceneArtClass": "crystal-spider"
     }
   ],
   "world5MidbossStart": [
@@ -5407,7 +5431,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5416,7 +5440,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "바이올렛",
@@ -5425,7 +5449,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "파이터",
@@ -5434,7 +5458,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5443,7 +5467,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5452,7 +5476,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "아서",
@@ -5461,7 +5485,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "파이터",
@@ -5470,7 +5494,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "가물가물한 모험의 시작",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-01.webp"
     },
     {
       "speaker": "바이올렛",
@@ -5479,7 +5503,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "서로를 향한 원망",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-02.webp"
     },
     {
       "speaker": "파이터",
@@ -5488,7 +5512,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "서로를 향한 원망",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5497,7 +5521,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "서로를 향한 원망",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-02.webp"
     },
     {
       "speaker": "아서",
@@ -5506,7 +5530,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "서로를 향한 원망",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-02.webp"
     },
     {
       "speaker": "갈등의 화신",
@@ -5515,7 +5539,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -5524,7 +5548,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "갈등의 화신",
@@ -5533,7 +5557,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -5542,7 +5566,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "갈등의 화신",
@@ -5551,7 +5575,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "내레이션",
@@ -5560,7 +5584,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "내레이션",
@@ -5569,7 +5593,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -5578,7 +5602,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "갈등의 화신",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-03.webp"
     },
     {
       "speaker": "파이터",
@@ -5587,7 +5611,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "동료를 향한 공격",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-04.webp"
     },
     {
       "speaker": "바이올렛",
@@ -5596,7 +5620,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "동료를 향한 공격",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-04.webp"
     },
     {
       "speaker": "아서",
@@ -5605,7 +5629,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "동료를 향한 공격",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-04.webp"
     },
     {
       "speaker": "내레이션",
@@ -5614,7 +5638,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "동료를 향한 공격",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-04.webp"
     },
     {
       "speaker": "소서러스",
@@ -5623,7 +5647,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "동료를 향한 공격",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-04.webp",
       "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
@@ -5633,7 +5657,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "동료를 향한 공격",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-start-scene-04.webp"
     }
   ],
   "world5MidbossEnd": [
@@ -5644,7 +5668,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5653,7 +5677,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp",
       "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
@@ -5663,7 +5687,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5672,7 +5696,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp",
       "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
@@ -5682,7 +5706,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp"
     },
     {
       "speaker": "파이터",
@@ -5691,7 +5715,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp"
     },
     {
       "speaker": "파이터",
@@ -5700,7 +5724,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5709,7 +5733,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5718,7 +5742,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp",
       "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
@@ -5728,7 +5752,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5737,7 +5761,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -5746,7 +5770,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -5755,7 +5779,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5764,7 +5788,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -5773,7 +5797,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5782,7 +5806,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -5791,7 +5815,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5800,7 +5824,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -5809,7 +5833,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -5818,7 +5842,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -5827,7 +5851,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "돌아온 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-03.webp"
     },
     {
       "speaker": "내레이션",
@@ -5836,7 +5860,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "돌아온 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-03.webp"
     },
     {
       "speaker": "아서",
@@ -5845,7 +5869,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "돌아온 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-03.webp"
     },
     {
       "speaker": "파이터",
@@ -5854,7 +5878,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "돌아온 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -5863,7 +5887,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "돌아온 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-03.webp"
     },
     {
       "speaker": "아서",
@@ -5872,7 +5896,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "돌아온 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -5881,7 +5905,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "돌아온 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-03.webp"
     }
   ],
   "world5BossStart": [
@@ -5892,7 +5916,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5901,7 +5925,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "바이올렛",
@@ -5910,7 +5934,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "파이터",
@@ -5919,7 +5943,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5928,7 +5952,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -5937,7 +5961,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5946,7 +5970,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -5955,7 +5979,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5964,7 +5988,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -5973,7 +5997,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -5982,7 +6006,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "아서",
@@ -5991,7 +6015,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "소서러스",
@@ -6000,7 +6024,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
     },
     {
       "speaker": "내레이션",
@@ -6009,7 +6033,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -6018,7 +6042,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp"
     },
     {
       "speaker": "바이올렛",
@@ -6027,7 +6051,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp"
     },
     {
       "speaker": "소서러스",
@@ -6036,7 +6060,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -6045,7 +6069,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp"
     },
     {
       "speaker": "리치 드래곤",
@@ -6054,7 +6078,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp",
       "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
@@ -6064,7 +6088,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp"
     },
     {
       "speaker": "내레이션",
@@ -6073,7 +6097,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp",
       "shake": true
     },
     {
@@ -6083,7 +6107,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-02.webp",
       "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
@@ -6093,7 +6117,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp"
     },
     {
       "speaker": "아서",
@@ -6102,7 +6126,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp"
     },
     {
       "speaker": "파이터",
@@ -6111,7 +6135,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp"
     },
     {
       "speaker": "바이올렛",
@@ -6120,7 +6144,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp"
     },
     {
       "speaker": "리치 드래곤",
@@ -6129,7 +6153,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp",
       "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
@@ -6139,7 +6163,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp"
     },
     {
       "speaker": "모두",
@@ -6148,7 +6172,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp"
     },
     {
       "speaker": "소서러스",
@@ -6157,7 +6181,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp"
     },
     {
       "speaker": "리치 드래곤",
@@ -6166,7 +6190,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 3,
       "location": "강제 해제",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-03.webp",
       "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
@@ -6176,7 +6200,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -6185,7 +6209,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
     },
     {
       "speaker": "소서러스",
@@ -6194,7 +6218,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
     },
     {
       "speaker": "내레이션",
@@ -6203,7 +6227,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
       "flash": true
     },
     {
@@ -6213,7 +6237,7 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
     }
   ],
   "world4Potion4": [

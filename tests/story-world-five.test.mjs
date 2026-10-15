@@ -110,6 +110,45 @@ test('World 5 boss CGs follow possession and recovery without replacing other ap
   for(const path of [mage,dragon])assert.ok(readFileSync(new URL('../'+path,import.meta.url)).length>0);
 });
 
+test('World 5 narratives load all fourteen scene backgrounds and reveal the spider at its announcement',()=>{
+  const paths=new Set();
+  for(const [file,set] of [['world-5-1-prologue.md','prologue'],['world-5-midboss-start.md','midboss-start'],['world-5-midboss-end.md','midboss-end'],['world-5-20-boss-start.md','boss-start']]){
+    const lines=parseWorldFiveNarrative(read('assets/novel/'+file));
+    for(const line of lines){
+      assert.equal(line.backgroundPath,`assets/novel/bgi/world5-${set}-scene-${String(line.sceneNumber).padStart(2,'0')}.webp`);
+      paths.add(line.backgroundPath);
+      assert.ok(readFileSync(new URL('../'+line.backgroundPath,import.meta.url)).length);
+    }
+  }
+  assert.equal(paths.size,14);
+  const lines=parseWorldFiveNarrative(read('assets/novel/world-5-1-prologue.md'));
+  const reveal=lines.findIndex(line=>line.text.includes('크리스탈 거미들이야'));
+  assert.ok(reveal>0);
+  assert.ok(lines.slice(0,reveal).every(line=>!line.sceneArt));
+  assert.ok(lines.slice(reveal).every(line=>line.sceneArt==='assets/monsters/crystal-spider/design-reference.png'&&line.sceneArtName==='크리스탈 거미'));
+  const c=vm.createContext({page:'storyChapterFiveIntro',storyDialogueIndex:reveal,esc:String,deployedAssetUrl:path=>'/game/'+path,classDefs:{}});
+  vm.runInContext(source.slice(source.indexOf('  function renderStoryScene('),source.indexOf('  const renderStoryIntro=')),c);
+  const html=c.renderStoryScene(lines,'','전투 시작');
+  assert.match(html,/src="\/game\/assets\/monsters\/crystal-spider\/design-reference.png" alt="크리스탈 거미"/);
+  assert.match(html,/background-image:url\('\/game\/assets\/novel\/bgi\/world5-prologue-scene-03.webp'\)/);
+});
+
+test('World 5 battles select distinct normal, midboss and final boss backgrounds',()=>{
+  const c=vm.createContext({run:{story:true},stages:{},selectedStage:'current'});
+  vm.runInContext(source.slice(source.indexOf('  function storyBattleBackgroundClass('),source.indexOf('  function crystalSpiderMobsMarkup(')),c);
+  const css=read('crystal-game.css');
+  for(let number=1;number<=20;number++){
+    c.stages.current={storyChapter:5,storyNumber:number};
+    const suffix=number===10?'midboss':number===20?'final-boss':'cavern';
+    assert.equal(c.storyBattleBackgroundClass(),`world-five-battle world-five-${suffix}`);
+    const rule=css.match(new RegExp(`\\.arena\\.world-five-${suffix}\\{background-image:url\\('([^']+)'\\)`));
+    assert.ok(rule);
+    assert.ok(readFileSync(new URL('../'+rule[1],import.meta.url)).length);
+  }
+  c.run.story=false;
+  assert.equal(c.storyBattleBackgroundClass(),'');
+});
+
 test('World 5 midboss ending only completes a saved win and never restarts the battle',()=>{
   for(const [done,clear] of [[true,true],[true,false],[false,true]]){
     const pages=[],c=vm.createContext({page:'storyChapterFiveMidbossEnd',run:{done,clear},go:p=>pages.push(p),startBattle(){throw new Error('must not restart');}});

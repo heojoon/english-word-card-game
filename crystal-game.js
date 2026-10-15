@@ -794,7 +794,7 @@
     let speakerArt='';
     if(line.speaker==='거대 로얄 슬라임')speakerArt=image('assets/monsters/royal-slime/royal-slime-standing.png',line.speaker,'story-vn-boss-cg');
     else if(line.className==='duo')speakerArt=`<div class="story-vn-duo">${image('assets/avatars/warrior.webp','아서')}${image('assets/avatars/mage.webp','소서러스')}</div>`;
-    else if(line.artPath||line.sceneArt)speakerArt=image(line.artPath||line.sceneArt,line.sceneArt?'크리스탈 골렘':line.speaker,`story-vn-character ${line.className} ${line.sceneArt?'golem':''}`);
+    else if(line.artPath||line.sceneArt)speakerArt=image(line.artPath||line.sceneArt,line.sceneArt?(line.sceneArtName||'크리스탈 골렘'):line.speaker,`story-vn-character ${line.className} ${line.sceneArt?(line.sceneArtClass||'golem'):''}`);
     else if(classDefs[classKey])speakerArt=image(`assets/avatars/${classDefs[classKey].paths[variant]}?v=20260917-skins`,line.speaker,`story-vn-character ${line.className}`);
     const chapterTwo=['storyChapterTwoIntro','storyChapterTwoBossStart','storyChapterTwoBossEnd'].includes(page);
     const chapterThree=page==='storyChapterThreeIntro';
@@ -1644,7 +1644,7 @@
   function storyBattleBackgroundClass(){
     const stage=stages[selectedStage];
     if(!run.story)return '';
-    if(stage?.storyChapter===5)return `world-five-battle ${stage.storyNumber<=10?'world-five-cavern':'world-five-lake'}`;
+    if(stage?.storyChapter===5)return `world-five-battle ${stage.storyNumber===10?'world-five-midboss':stage.storyNumber===20?'world-five-final-boss':'world-five-cavern'}`;
     if(stage?.storyChapter===4){
       if(stage.storyNumber>=1&&stage.storyNumber<=9)return 'world-four-battle world-four-illusion-forest';
       if(stage.storyNumber>=11&&stage.storyNumber<=19)return 'world-four-battle world-four-misty-forest';
