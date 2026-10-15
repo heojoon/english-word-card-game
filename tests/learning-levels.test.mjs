@@ -187,6 +187,31 @@ test('world 2 unlocks after world 1 and its progression survives a level switch'
   assert.equal(context.progress.stageCleared('story-prologue'),false);
 });
 
+test('administrators can enter every story stage on web and native without changing progression',()=>{
+  const context=content('middle'),{api}=context;
+  context.records=[];context.allCharacters=[];
+  vm.runInNewContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins('))+';globalThis.progress={stageCleared,storyStageUnlocked};',context);
+  for(const level of ['middle','elementary']){
+    context.accountProfile.learning_level=level;api.configureStoryContent();
+    for(const native of [false,true]){
+      context.nativeApp=native;
+      for(const role of ['admin','teacher','student']){
+        context.accountProfile.role=role;
+        for(let index=0;index<api.storyStages.length;index++){
+          assert.equal(context.progress.storyStageUnlocked(index),role==='admin'||index===0);
+          assert.equal(context.progress.stageCleared(api.storyStages[index].key),false);
+        }
+      }
+    }
+  }
+  context.accountProfile.role='admin';
+  assert.equal(context.progress.storyStageUnlocked(-1),false);
+  assert.equal(context.progress.storyStageUnlocked(api.storyStages.length),false);
+  context.accountMode=false;
+  assert.equal(context.progress.storyStageUnlocked(1),false);
+  assert.deepEqual(context.records,[]);
+});
+
 test('local web access unlocks every story map without changing clear records',()=>{
   const context=content('middle'),{api}=context;api.configureStoryContent();
   context.records=[];context.allCharacters=[];

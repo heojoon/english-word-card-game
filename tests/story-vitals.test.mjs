@@ -36,6 +36,29 @@ test('both bosses start with saved vitals; surviving retry does not refill',()=>
     assert.equal(Boolean(c.run.boss||c.run.guardian),true);c.run.done=true;c.startBattle();assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
   }
 });
+test('cleared World 4 boss retries require recovery and preserve HP/MP after potion use',async()=>{
+  for(const local of [true,false])for(const kind of ['shadowSorceress','redReaper']){
+    const c=setup(new Map(),local),key=kind==='shadowSorceress'?'story-ch4-10':'story-ch4-20';
+    c.selectedStage=key;c.storyStages.push({key,chapter:4,number:kind==='shadowSorceress'?10:20});
+    c.stages[key]={story:true,[kind]:true,words:[]};c.stageCleared=stage=>stage===key;
+    c.window[kind==='shadowSorceress'?'WORDORIA_SHADOW_SORCERESS':'WORDORIA_RED_REAPER']={reset:()=>({guardian:true,[kind]:true,bossHp:100})};
+    c.saveStoryVitals({hp:1,mp:0});c.startBattle();
+    assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.storyReplay,true);
+    c.run.hp=0;c.run.done=true;c.run.clear=false;c.persistStoryBattleVitals();const failed=c.run;
+    c.startBattle(true);
+    assert.equal(c.run,failed);assert.equal(c.storyVitals().hp,0);assert.equal(c.storyVitals().mp,0);
+    assert.match(c.modalHtml,/HP가 0/);
+    c.rpc=async name=>name==='equip_story_potions'?[{...c.potionInventory,red_potion_count:1,equipped_slot_1:'red'}]:'red';
+    await c.recoverStoryHp(key,{});
+    c.startBattle(true);
+    assert.notEqual(c.run,failed);assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
+    assert.equal(c.run.elapsed,0);assert.equal(c.run.done,false);assert.equal(c.run.storyReplay,true);
+    // A timeout retry with remaining HP must also retain spent MP.
+    c.run.done=true;c.run.clear=false;c.persistStoryBattleVitals();c.startBattle(true);
+    assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
+  }
+});
+
 test('survival stays independent and stale runs cannot save to another character',()=>{
   const c=setup();c.saveStoryVitals({hp:0,mp:0});c.selectedStage='survival';c.startBattle();assert.equal(c.run.hp,2);assert.equal(c.run.mp,2);assert.equal(c.storyVitals().hp,0);
   c.run={story:true,storyCharacterId:'other',hp:2,mp:2};c.persistStoryBattleVitals();assert.equal(c.storyVitals().hp,0);
