@@ -769,6 +769,8 @@ body[data-screen="battle"] .arena.red-reaper-arena{background:#8c82ad url('asset
 .story-vn-chapter-five .story-vn-scene{background-color:var(--ink);background-size:cover;background-position:center;background-repeat:no-repeat}
 .story-vn-chapter-five .story-vn-character.crystal-spider{height:clamp(210px,43vh,360px);max-width:86%}
 .story-vn-chapter-five .story-vn-scene::before,.story-vn-chapter-five .story-vn-scene::after,.story-vn-chapter-five .story-vn-orb{display:none}
+/* The square dragon master has wide transparent sides; fill the scene with its visible silhouette. */
+.story-vn-chapter-five .story-vn-character.black-dragon{width:140%;max-width:none;height:clamp(320px,64vh,580px);flex-shrink:0;object-fit:contain;object-position:center bottom}
 body[data-screen="battle"] .arena.world-five-battle{background-color:var(--ink);background-size:cover;background-position:center bottom;background-repeat:no-repeat}
 body[data-screen="battle"] .arena.world-five-cavern{background-image:url('assets/environments/world-5/01-crystal-spider-cavern-battle.webp')}
 body[data-screen="battle"] .arena.world-five-midboss{background-image:url('assets/environments/world-5/02-sorcerus-midboss-battle.webp')}

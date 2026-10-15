@@ -5779,7 +5779,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -5797,7 +5798,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -5815,7 +5817,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -5833,7 +5836,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 2,
       "location": "머릿속의 다크 소서러스",
-      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp"
+      "backgroundPath": "assets/novel/bgi/world5-midboss-end-scene-02.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -5979,7 +5983,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -5997,7 +6002,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "지도에 나타난 보스",
-      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-01.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -6209,7 +6215,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
-      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -6237,7 +6244,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
-      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     }
   ],
   "world4Potion4": [

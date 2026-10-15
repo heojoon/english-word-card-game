@@ -1,0 +1,49 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: CRYSTAL QUEST
+    - generic [ref=e4]: STUDY = BATTLE
+  - generic [ref=e5]:
+    - banner [ref=e32]:
+      - button "Wordoria 홈" [ref=e33] [cursor=pointer]: WORDORIA
+      - generic [ref=e34]:
+        - button "계정 크리스털 지갑" [ref=e35] [cursor=pointer]: ◆ 1,250
+        - button "내 프로필과 계정 설정" [ref=e36] [cursor=pointer]
+        - button "배경음 끄기" [pressed] [ref=e41] [cursor=pointer]
+    - main [active] [ref=e45]:
+      - generic [ref=e46]:
+        - button "율이" [ref=e47] [cursor=pointer]
+        - button "아빠" [ref=e48] [cursor=pointer]
+        - button "손님" [ref=e49] [cursor=pointer]
+        - button "＋ 유저" [ref=e50] [cursor=pointer]
+      - button "캐릭터 변경" [ref=e51] [cursor=pointer]:
+        - generic [ref=e52]: LV.1
+        - generic [ref=e53]: 율이의 모험가
+        - generic [ref=e54]: 캐릭터 변경 ›
+        - generic:
+          - generic: ARCANE SCHOLAR
+          - heading "블리자드" [level=1]
+          - paragraph: 마법사 · 타임 스톱
+        - generic:
+          - img "마법사 여성 캐릭터"
+      - button "다음 레벨까지 0 / 1,000 EXP" [ref=e55] [cursor=pointer]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: 다음 레벨까지
+          - generic [ref=e58]: 0 / 1,000 EXP
+      - generic [ref=e60]:
+        - button "최고 콤보 0" [ref=e61] [cursor=pointer]:
+          - generic [ref=e62]: 최고 콤보
+          - text: "0"
+        - button "정답률 0%" [ref=e63] [cursor=pointer]:
+          - generic [ref=e64]: 정답률
+          - text: 0%
+        - button "클리어 0" [ref=e65] [cursor=pointer]:
+          - generic [ref=e66]: 클리어
+          - text: "0"
+      - button "모험 떠나기 →" [ref=e67] [cursor=pointer]
+    - navigation "주 메뉴" [ref=e68]:
+      - button "홈" [ref=e69] [cursor=pointer]
+      - button "모험" [ref=e73] [cursor=pointer]
+      - button "장비" [ref=e77] [cursor=pointer]
+      - button "상점" [ref=e81] [cursor=pointer]
+  - contentinfo [ref=e31]: 체험 모드 · 이 브라우저에 저장됩니다
+  - status

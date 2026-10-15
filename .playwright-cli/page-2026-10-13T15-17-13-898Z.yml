@@ -1,0 +1,77 @@
+- generic [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - banner [ref=f1e28]:
+      - button "Wordoria 홈" [ref=f1e29] [cursor=pointer]: WORDORIA
+      - generic [ref=f1e30]:
+        - button "계정 크리스털 지갑" [ref=f1e81] [cursor=pointer]: ◆ 1,250
+        - button "내 프로필과 계정 설정" [ref=f1e82] [cursor=pointer]
+        - button "배경음 끄기" [pressed] [ref=f1e87] [cursor=pointer]
+    - main [active] [ref=f1e41]:
+      - generic [ref=f1e91]:
+        - generic [ref=f1e92]:
+          - generic [ref=f1e93]: MY ADVENTURER
+          - heading "장비" [level=1] [ref=f1e94]
+        - button "캐릭터 변경 ›" [ref=f1e95] [cursor=pointer]
+      - generic [ref=f1e96]:
+        - generic [ref=f1e97]:
+          - button "레벨 1, 경험치 0 / 1,000, 캐릭터 정보 보기" [ref=f1e98] [cursor=pointer]:
+            - generic [ref=f1e99]: LV.1
+            - generic [ref=f1e100]:
+              - generic [ref=f1e101]: EXP
+              - generic [ref=f1e102]: "0"
+              - generic [ref=f1e103]: / 1,000
+            - generic [ref=f1e104]:
+              - generic "현재 HP 2" [ref=f1e105]: ♥×2
+              - generic "현재 MP 2" [ref=f1e106]: ♥×2
+          - paragraph [ref=f1e107]: ARCANE SCHOLAR
+          - heading "블리자드" [level=2] [ref=f1e108]
+          - text: 마법사 · 타임 스톱
+        - generic [ref=f1e109]:
+          - generic [ref=f1e110]:
+            - generic [ref=f1e111]: 체력
+            - strong [ref=f1e112]: "100"
+          - generic [ref=f1e113]:
+            - generic [ref=f1e114]: 정신
+            - strong [ref=f1e115]: "100"
+          - generic [ref=f1e116]:
+            - generic [ref=f1e117]: 공격
+            - strong [ref=f1e118]: "300"
+          - generic [ref=f1e119]:
+            - generic [ref=f1e120]: 행운
+            - strong [ref=f1e121]: "150"
+        - generic [ref=f1e122]:
+          - img "마법사 여성 캐릭터" [ref=f1e124]
+          - generic [ref=f1e125]: 전투력 5,400
+        - generic [ref=f1e126]:
+          - button "머리 비어 있음" [ref=f1e127] [cursor=pointer]
+          - button "몸 비어 있음" [ref=f1e131] [cursor=pointer]
+          - button "무기 비어 있음" [ref=f1e135] [cursor=pointer]
+          - button "신발 비어 있음" [ref=f1e139] [cursor=pointer]
+          - button "등 비어 있음" [ref=f1e144] [cursor=pointer]
+          - button "오라 비어 있음" [ref=f1e149] [cursor=pointer]
+          - button "스킨 비어 있음" [ref=f1e153] [cursor=pointer]
+          - button "펫 비어 있음" [ref=f1e158] [cursor=pointer]
+          - button "소모품 슬롯 1, 비어 있음" [ref=f1e163] [cursor=pointer]:
+            - generic [ref=f1e168]: 도구 1
+            - generic [ref=f1e169]: 소모품
+          - button "소모품 슬롯 2, 비어 있음" [ref=f1e170] [cursor=pointer]:
+            - generic [ref=f1e175]: 도구 2
+            - generic [ref=f1e176]: 소모품
+        - text: ✦
+      - button "힐링포션 / 마나포션 구매 · 사용" [ref=f1e177] [cursor=pointer]
+      - generic [ref=f1e178]:
+        - generic [ref=f1e179]: COLLECTION
+        - button "상점 가기 ›" [ref=f1e180] [cursor=pointer]
+      - generic [ref=f1e181]:
+        - button "보유 수량 0개 힐링포션" [ref=f1e182] [cursor=pointer]:
+          - generic "보유 수량 0개" [ref=f1e185]: x0
+          - generic [ref=f1e186]: 힐링포션
+        - button "보유 수량 0개 마나포션" [ref=f1e187] [cursor=pointer]:
+          - generic "보유 수량 0개" [ref=f1e190]: x0
+          - generic [ref=f1e191]: 마나포션
+    - navigation "주 메뉴" [ref=f1e64]:
+      - button "홈" [ref=f1e192] [cursor=pointer]
+      - button "모험" [ref=f1e196] [cursor=pointer]
+      - button "장비" [ref=f1e200] [cursor=pointer]
+      - button "상점" [ref=f1e204] [cursor=pointer]
+  - status

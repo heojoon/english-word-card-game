@@ -1,0 +1,40 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Single Water Spellbook equipment inventory illustration for Wordoria Crystal Quest. Match TWO attached artworks closely: Reference 1 Gale Boots is primary authority for silver metal, pale lavender leather, elegant beveled seams, smoothly blended soft highlights/shadows. Reference 2 Starlight Crown is authority for faceted violet-blue/cyan crystal refraction and polished collectible finish. Match rendering technique, not shapes. Polished hand-painted mobile fantasy inventory illustration, gentle three-quarter view, subtle thin violet contours, softly rounded dimensional metal, fine restrained highlights, rich soft volumetric shading. Item: one closed water magic grimoire, blue-lavender leather cover, modest silver corner protectors and clasp, central small aqua teardrop crystal in silver setting, simple flowing wave motif, visible pale page edges. Normal/common rarity: restrained ornament and glow, no gold excess. Single centered complete object on square canvas, ten percent clear padding. True transparent alpha background, no floor, cast shadow, pedestal, text, letters, price, border, person or mannequin. No hard flat comic cel shading, thick black ink, sketch, pixel art, low-poly or photorealism.",
+  "references": [
+    {
+      "path": "assets/items/equipment/item_gale_boots_normal.webp",
+      "role": "silver metal and soft shading"
+    },
+    {
+      "path": "assets/items/equipment/item_starlight_crown_legendary.webp",
+      "role": "crystal material and finish"
+    }
+  ],
+  "original": "output/imagegen/water-equipment/water_spellbook_original.png",
+  "runtime": "assets/items/equipment/item_water_spellbook_normal.webp",
+  "dimensions": [
+    512,
+    512
+  ],
+  "alpha": true,
+  "review": {
+    "status": "technical review passed",
+    "user_approved": false,
+    "backgrounds": [
+      "#F7F7FF",
+      "#5751D8"
+    ],
+    "thumbnail_sizes": [
+      64,
+      128
+    ],
+    "findings": "Soft silver/lavender materials match references; complete silhouettes readable at thumbnail sizes; real alpha with no visible background residue or clipping.",
+    "composite": "output/imagegen/water-equipment/review.png"
+  },
+  "original_dimensions": [
+    1254,
+    1254
+  ],
+  "normalization": "Fit original into 430 x 430 with centered transparent padding on 512 x 512 canvas; preserve source alpha."
+}

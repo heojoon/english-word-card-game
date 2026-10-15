@@ -79,8 +79,8 @@ test('World 5 exposes one continuous map with twenty nodes in descending order',
 
 test('World 5 novels preserve spoken lines and stage entries enforce the usual checks',()=>{
   const {c}=setup();
-  for(const [key,file] of [['world5Prologue','world-5-1-prologue.md'],['world5MidbossStart','world-5-midboss-start.md'],['world5MidbossEnd','world-5-midboss-end.md'],['world5BossStart','world-5-20-boss-start.md']]){
-    const markdown=read('assets/novel/'+file),lines=parseWorldFiveNarrative(markdown);
+  for(const [key,file,group] of [['world5Prologue','world-5-1-prologue.md','prologue'],['world5MidbossStart','world-5-midboss-start.md','midboss-start'],['world5MidbossEnd','world-5-midboss-end.md','midboss-end'],['world5BossStart','world-5-20-boss-start.md','boss-start']]){
+    const markdown=read('assets/novel/'+file),lines=parseWorldFiveNarrative(markdown,group);
     assert.equal(JSON.stringify(lines),JSON.stringify(c.window.WORDORIA_NOVELS[key]));
     const spoken=[...markdown.matchAll(/^([^:\n]+): (.+)$/gm)].filter(([,speaker])=>!speaker.startsWith('#')&&speaker!=='월드 5의 핵심 목표').map(([,speaker,text])=>({speaker,text}));
     assert.equal(JSON.stringify(lines.filter(line=>line.speaker!=='내레이션'&&line.speaker!=='월드 5의 핵심 목표').map(({speaker,text})=>({speaker,text}))),JSON.stringify(spoken));
@@ -101,6 +101,7 @@ test('World 5 boss CGs follow possession and recovery without replacing other ap
   const parse=file=>parseWorldFiveNarrative(read('assets/novel/'+file));
   const mage='assets/novel/characters/char_sorcerus_world5_midboss_standing.webp';
   const dragon='assets/novel/characters/char_lich_dragon_world5_standing.webp';
+  const darkMage='assets/novel/characters/char_dark_sorcerus_world5_standing.webp';
   const start=parse('world-5-midboss-start.md').filter(line=>line.speaker==='소서러스');
   assert.ok(start.some(line=>line.sceneNumber===4&&line.artPath===mage));
   assert.ok(start.filter(line=>line.sceneNumber<4).every(line=>!line.artPath));
@@ -110,8 +111,38 @@ test('World 5 boss CGs follow possession and recovery without replacing other ap
   const boss=parse('world-5-20-boss-start.md');
   assert.ok(boss.some(line=>line.speaker==='리치 드래곤'));
   assert.ok(boss.filter(line=>line.speaker==='리치 드래곤').every(line=>line.artPath===dragon));
-  assert.ok(boss.filter(line=>line.speaker!=='리치 드래곤').every(line=>!line.artPath));
-  for(const path of [mage,dragon])assert.ok(readFileSync(new URL('../'+path,import.meta.url)).length>0);
+  const darkLines=boss.filter(line=>['다크 소서러스','어둠의 소서러스'].includes(line.speaker));
+  assert.equal(darkLines.length,4);
+  assert.ok(darkLines.every(line=>line.artPath===darkMage));
+  assert.ok(boss.filter(line=>!['리치 드래곤','다크 소서러스','어둠의 소서러스'].includes(line.speaker)).every(line=>!line.artPath));
+  for(const path of [mage,dragon,darkMage])assert.ok(readFileSync(new URL('../'+path,import.meta.url)).length>0);
+});
+
+test('World 5 renders all fourteen scene backgrounds through deployed asset URLs',()=>{
+  const {c}=setup(),paths=new Set();
+  const groups=[
+    ['world5Prologue','prologue','storyChapterFiveIntro',3],
+    ['world5MidbossStart','midboss-start','storyChapterFiveMidbossStart',4],
+    ['world5MidbossEnd','midboss-end','storyChapterFiveMidbossEnd',3],
+    ['world5BossStart','boss-start','storyChapterFiveBossStart',4]
+  ];
+  for(const [key,group,page,count] of groups){
+    const lines=c.window.WORDORIA_NOVELS[key];
+    assert.deepEqual(Array.from(new Set(lines.map(line=>line.sceneNumber))),Array.from({length:count},(_,i)=>i+1));
+    const renderer=vm.createContext({page,storyDialogueIndex:0,classDefs:{},esc:String,deployedAssetUrl:path=>`/english-word-card-game/${path}`,lines});
+    vm.runInContext(source.slice(source.indexOf('  function renderStoryScene('),source.indexOf('  const renderStoryIntro=')),renderer);
+    for(let index=0;index<lines.length;index++){
+      const line=lines[index],path=`assets/novel/bgi/world5-${group}-scene-${String(line.sceneNumber).padStart(2,'0')}.webp`;
+      assert.equal(line.backgroundPath,path);
+      assert.ok(readFileSync(new URL('../'+path,import.meta.url)).length>0);
+      paths.add(path);
+      renderer.storyDialogueIndex=index;
+      const html=vm.runInContext("renderStoryScene(lines,'보랏빛 수정동굴','계속 →')",renderer);
+      assert.ok(html.includes(`background-image:url('/english-word-card-game/${path}')`));
+      assert.match(html,/story-vn-chapter-five/);
+    }
+  }
+  assert.equal(paths.size,14);
 });
 
 test('World 5 narratives load all fourteen scene backgrounds and reveal the spider at its announcement',()=>{

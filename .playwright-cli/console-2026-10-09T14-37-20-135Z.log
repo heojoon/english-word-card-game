@@ -1,0 +1,73 @@
+[   31795ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/favicon.ico:0
+[   65260ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   65261ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/ui/click/sfx_ui_click_02.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   65787ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   65787ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/ui/click/sfx_ui_click_01.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   65792ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_03.wav:0
+[   65793ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/attack/sfx_combat_attack_light_03.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   66328ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_03.wav:0
+[   66328ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_03.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   68986ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   70943ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   70952ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_01.wav:0
+[   70952ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/attack/sfx_combat_attack_light_01.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   71385ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   71503ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_01.wav:0
+[   71503ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_01.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   71752ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   72306ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   72754ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   72769ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_02.wav:0
+[   72770ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/attack/sfx_combat_attack_light_02.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   73323ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_02.wav:0
+[   73323ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_02.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   73385ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   74021ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   75483ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   75487ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_03.wav:0
+[   75932ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   76036ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_01.wav:0
+[   76770ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   77454ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   77459ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_01.wav:0
+[   78022ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_03.wav:0
+[   80918ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   84999ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   85007ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_03.wav:0
+[   85462ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_02.wav:0
+[   86475ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   87189ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   87195ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_01.wav:0
+[   88129ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_03.wav:0
+[   88258ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   89016ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   90234ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   90804ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_02.wav:0
+[   90819ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   91342ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_02.wav:0
+[   91548ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   92221ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   92670ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   92675ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_03.wav:0
+[   93203ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_03.wav:0
+[   93408ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   94117ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   94500ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   94501ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/attack/sfx_combat_attack_light_02.wav:0
+[   94934ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_enemy_01.wav:0
+[   96333ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   97901ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[   97918ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_player_01.wav:0
+[   97920ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/hit/sfx_combat_hit_player_01.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[   98767ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[   99913ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[  101304ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
+[  101322ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/combat/hit/sfx_combat_hit_player_03.wav:0
+[  101353ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/combat/hit/sfx_combat_hit_player_03.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[  101641ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/system/defeat/sfx_system_defeat_01.wav:0
+[  101649ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/system/defeat/sfx_system_defeat_01.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[  106337ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
+[  106386ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg:0
+[  106387ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
+[  106404ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3:0
+[  106405ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3 (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295

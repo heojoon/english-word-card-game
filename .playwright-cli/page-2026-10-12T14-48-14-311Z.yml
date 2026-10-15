@@ -1,0 +1,38 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - banner [ref=e32]:
+      - button "Wordoria 홈" [ref=e33] [cursor=pointer]: WORDORIA
+      - button "내 프로필과 계정 설정" [ref=e124] [cursor=pointer]
+    - main [active] [ref=e41]:
+      - generic [ref=e129]:
+        - button "← 모드 선택" [ref=e130] [cursor=pointer]
+        - button "배경음 끄기" [pressed] [ref=e131] [cursor=pointer]
+      - generic [ref=e135]:
+        - generic [ref=e136]: STORY MODE · WORLD 1
+        - heading "속삭이는 숲" [level=1] [ref=e137]
+      - region "속삭이는 숲 스테이지 지도" [ref=e138]:
+        - img "속삭이는 숲의 7개 크리스탈 스테이지 지도" [ref=e139]
+        - navigation "스토리 월드 이동" [ref=e140]:
+          - button "이전 월드" [disabled] [ref=e141]
+          - button "다음 월드" [ref=e142] [cursor=pointer]
+        - generic [ref=e143]: 별빛 도서관
+        - button "스테이지 1 도전 가능" [ref=e144] [cursor=pointer]:
+          - generic [ref=e145]: "1"
+        - button "스테이지 2 도전 가능" [ref=e146] [cursor=pointer]:
+          - generic [ref=e147]: "2"
+        - button "스테이지 3 도전 가능" [ref=e148] [cursor=pointer]:
+          - generic [ref=e149]: "3"
+        - button "스테이지 4 도전 가능" [ref=e150] [cursor=pointer]:
+          - generic [ref=e151]: "4"
+        - button "스테이지 5 도전 가능" [ref=e152] [cursor=pointer]:
+          - generic [ref=e153]: "5"
+        - button "스테이지 6 도전 가능" [ref=e154] [cursor=pointer]:
+          - generic [ref=e155]: "6"
+        - button "스테이지 7 도전 가능" [ref=e156] [cursor=pointer]:
+          - generic [ref=e157]: "7"
+    - navigation "주 메뉴" [ref=e64]:
+      - button "홈" [ref=e158] [cursor=pointer]
+      - button "모험" [ref=e162] [cursor=pointer]
+      - button "장비" [ref=e166] [cursor=pointer]
+      - button "상점" [ref=e170] [cursor=pointer]
+  - status

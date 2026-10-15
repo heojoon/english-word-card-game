@@ -1,0 +1,18 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - banner [ref=e32]:
+      - button "Wordoria 홈" [ref=e33] [cursor=pointer]: WORDORIA
+      - generic [ref=e34]:
+        - button "계정 크리스털 지갑" [ref=e35] [cursor=pointer]: ◆ 1,250
+        - button "내 프로필과 계정 설정" [ref=e36] [cursor=pointer]
+    - main [active] [ref=e41]:
+      - region "스토리 대화, 눌러서 계속" [ref=e42] [cursor=pointer]:
+        - generic [ref=e43]: 크리스탈 사원으로 가는 길
+        - generic [ref=e45]:
+          - generic [ref=e46]: 내레이션
+          - paragraph [ref=e47]: 거대 슬라임을 쓰러뜨린 아서 일행.
+          - generic [ref=e48]:
+            - text: 1 / 81
+            - generic [ref=e49]: 계속 →
+        - button "대화 건너뛰기" [ref=e50]
+  - status

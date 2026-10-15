@@ -185,12 +185,12 @@ function parseWorldFourFinalBoss(markdown,ending=false){
 }
 export const parseWorldFourBossStart=markdown=>parseWorldFourFinalBoss(markdown);
 export const parseWorldFourBossEnd=markdown=>parseWorldFourFinalBoss(markdown,true);
-export function parseWorldFiveNarrative(markdown){
+export function parseWorldFiveNarrative(markdown,backgroundGroup){
   const lines=[];
   const midbossStart=markdown.startsWith('# 월드 5 — 중간보스 도입');
   const midbossEnd=markdown.startsWith('# 월드 5 — 중간보스 격파');
   const prologue=markdown.startsWith('# 월드 5 — 프롤로그');
-  const backgroundSet=prologue?'prologue':midbossStart?'midboss-start':midbossEnd?'midboss-end':'boss-start';
+  const backgroundSet=backgroundGroup||(prologue?'prologue':midbossStart?'midboss-start':midbossEnd?'midboss-end':'boss-start');
   let spiderVisible=false;
   let sceneNumber=0,location='보랏빛 수정동굴';
   const speakers={...classes,'파이터 & 아서':'party','다크 소서러스':'mage','어둠의 소서러스':'mage','갈등의 화신':'mystery','리치 드래곤':'black-dragon','모두':'party','효과음':'scene'};
@@ -206,6 +206,7 @@ export function parseWorldFiveNarrative(markdown){
     if(spiderVisible){line.sceneArt='assets/monsters/crystal-spider/design-reference.png';line.sceneArtName='크리스탈 거미';line.sceneArtClass='crystal-spider';}
     if(speaker==='월드 5의 핵심 목표')line.className='mission';
     if(speaker==='리치 드래곤')line.artPath='assets/novel/characters/char_lich_dragon_world5_standing.webp';
+    if(['다크 소서러스','어둠의 소서러스'].includes(speaker))line.artPath='assets/novel/characters/char_dark_sorcerus_world5_standing.webp';
     if(speaker==='소서러스'&&((midbossStart&&sceneNumber>=4)||(midbossEnd&&sceneNumber===1)))line.artPath='assets/novel/characters/char_sorcerus_world5_midboss_standing.webp';
     if(/새하얗게|휘감는다/.test(line.text))line.flash=true;
     if(/거세게 흔들|벽에 부딪/.test(line.text))line.shake=true;
@@ -228,10 +229,10 @@ export async function generateStoryNovel(){
     ['world4MidbossEnd','world-4-10-midboss-end.md',parseWorldFourMidbossEnd],
     ['world4BossStart','world-4-20-boss-start.md',parseWorldFourBossStart],
     ['world4BossEnd','world-4-20-boss-end.md',parseWorldFourBossEnd],
-    ['world5Prologue','world-5-1-prologue.md',parseWorldFiveNarrative],
-    ['world5MidbossStart','world-5-midboss-start.md',parseWorldFiveNarrative],
-    ['world5MidbossEnd','world-5-midboss-end.md',parseWorldFiveNarrative],
-    ['world5BossStart','world-5-20-boss-start.md',parseWorldFiveNarrative]
+    ['world5Prologue','world-5-1-prologue.md',markdown=>parseWorldFiveNarrative(markdown,'prologue')],
+    ['world5MidbossStart','world-5-midboss-start.md',markdown=>parseWorldFiveNarrative(markdown,'midboss-start')],
+    ['world5MidbossEnd','world-5-midboss-end.md',markdown=>parseWorldFiveNarrative(markdown,'midboss-end')],
+    ['world5BossStart','world-5-20-boss-start.md',markdown=>parseWorldFiveNarrative(markdown,'boss-start')]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');

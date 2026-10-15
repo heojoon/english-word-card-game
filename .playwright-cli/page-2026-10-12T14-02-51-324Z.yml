@@ -1,0 +1,28 @@
+- main [ref=f2e2]:
+  - heading "월드 4" [level=1] [ref=f2e3]
+  - heading "환각의 숲 · 1–10" [level=2] [ref=f2e4]
+  - generic [ref=f2e5]:
+    - img "환각의 숲" [ref=f2e6]
+    - generic "스테이지 1" [ref=f2e7]: "1"
+    - generic "스테이지 2" [ref=f2e9]: "2"
+    - generic "스테이지 3" [ref=f2e11]: "3"
+    - generic "스테이지 4" [ref=f2e13]: "4"
+    - generic "스테이지 5" [ref=f2e15]: "5"
+    - generic "스테이지 6" [ref=f2e17]: "6"
+    - generic "스테이지 7" [ref=f2e19]: "7"
+    - generic "스테이지 8" [ref=f2e21]: "8"
+    - generic "스테이지 9" [ref=f2e23]: "9"
+    - generic "스테이지 10" [ref=f2e25]: "10"
+  - heading "안개의 숲과 버려진 성 · 11–20" [level=2] [ref=f2e27]
+  - generic [ref=f2e28]:
+    - img "안개의 숲과 버려진 성" [ref=f2e29]
+    - generic "스테이지 11" [ref=f2e30]: "11"
+    - generic "스테이지 12" [ref=f2e32]: "12"
+    - generic "스테이지 13" [ref=f2e34]: "13"
+    - generic "스테이지 14" [ref=f2e36]: "14"
+    - generic "스테이지 15" [ref=f2e38]: "15"
+    - generic "스테이지 16" [ref=f2e40]: "16"
+    - generic "스테이지 17" [ref=f2e42]: "17"
+    - generic "스테이지 18" [ref=f2e44]: "18"
+    - generic "스테이지 19" [ref=f2e46]: "19"
+    - generic "스테이지 20" [ref=f2e48]: "20"

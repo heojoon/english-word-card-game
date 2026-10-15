@@ -1,0 +1,40 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Create a single Water Staff inventory equipment illustration for Wordoria Crystal Quest. Match TWO attached inventory artworks closely. Reference 1 Gale Boots is authority for silver metal, pale lavender leather, beveled seams, smoothly blended soft highlights/shadows. Reference 2 Starlight Crown is authority for faceted violet-blue/cyan crystal refraction and polished fantasy finish. Match rendering, not object shapes. Polished hand-painted mobile fantasy inventory illustration, gentle three-quarter view, subtle thin violet contours, softly rounded dimensional metal, restrained highlights, rich soft volumetric shading. Item: one complete slender water magic staff, pale silver shaft with muted blue-lavender grip, modest curved silver cradle holding one aqua teardrop crystal at the head, tiny wave engraving. Normal/common rarity: simple modest decoration, very restrained glow, no gold excess. Diagonal placement to show entire staff. Square canvas, centered complete single object with ten percent padding. True transparent alpha background. No person, floor, cast shadow, pedestal, text, price, frame, badge. No flat hard comic shading, thick black ink, sketch, pixel art, low-poly, photorealism.",
+  "references": [
+    {
+      "path": "assets/items/equipment/item_gale_boots_normal.webp",
+      "role": "silver metal and soft shading"
+    },
+    {
+      "path": "assets/items/equipment/item_starlight_crown_legendary.webp",
+      "role": "crystal material and finish"
+    }
+  ],
+  "original": "output/imagegen/water-equipment/water_staff_original.png",
+  "runtime": "assets/items/equipment/item_water_staff_normal.webp",
+  "dimensions": [
+    512,
+    512
+  ],
+  "alpha": true,
+  "review": {
+    "status": "technical review passed",
+    "user_approved": false,
+    "backgrounds": [
+      "#F7F7FF",
+      "#5751D8"
+    ],
+    "thumbnail_sizes": [
+      64,
+      128
+    ],
+    "findings": "Soft silver/lavender materials match references; complete silhouettes readable at thumbnail sizes; real alpha with no visible background residue or clipping.",
+    "composite": "output/imagegen/water-equipment/review.png"
+  },
+  "original_dimensions": [
+    1254,
+    1254
+  ],
+  "normalization": "Fit original into 430 x 430 with centered transparent padding on 512 x 512 canvas; preserve source alpha."
+}

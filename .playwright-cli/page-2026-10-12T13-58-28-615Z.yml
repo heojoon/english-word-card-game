@@ -1,0 +1,28 @@
+- main [ref=e2]:
+  - heading "월드 4" [level=1] [ref=e3]
+  - heading "환각의 숲 · 1–10" [level=2] [ref=e4]
+  - generic [ref=e5]:
+    - img "환각의 숲" [ref=e6]
+    - generic "스테이지 1" [ref=e7]: "1"
+    - generic "스테이지 2" [ref=e9]: "2"
+    - generic "스테이지 3" [ref=e11]: "3"
+    - generic "스테이지 4" [ref=e13]: "4"
+    - generic "스테이지 5" [ref=e15]: "5"
+    - generic "스테이지 6" [ref=e17]: "6"
+    - generic "스테이지 7" [ref=e19]: "7"
+    - generic "스테이지 8" [ref=e21]: "8"
+    - generic "스테이지 9" [ref=e23]: "9"
+    - generic "스테이지 10" [ref=e25]: "10"
+  - heading "안개의 숲과 버려진 성 · 11–20" [level=2] [ref=e27]
+  - generic [ref=e28]:
+    - img "안개의 숲과 버려진 성" [ref=e29]
+    - generic "스테이지 11" [ref=e30]: "11"
+    - generic "스테이지 12" [ref=e32]: "12"
+    - generic "스테이지 13" [ref=e34]: "13"
+    - generic "스테이지 14" [ref=e36]: "14"
+    - generic "스테이지 15" [ref=e38]: "15"
+    - generic "스테이지 16" [ref=e40]: "16"
+    - generic "스테이지 17" [ref=e42]: "17"
+    - generic "스테이지 18" [ref=e44]: "18"
+    - generic "스테이지 19" [ref=e46]: "19"
+    - generic "스테이지 20" [ref=e48]: "20"

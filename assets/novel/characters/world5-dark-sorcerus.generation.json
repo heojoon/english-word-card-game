@@ -1,0 +1,26 @@
+{
+  "tool": "built-in image_gen",
+  "image": "char_dark_sorcerus_world5_standing.webp",
+  "source": "concepts/world-5/dark-sorcerus-final.png",
+  "initial_source": "concepts/world-5/dark-sorcerus-initial.png",
+  "references": [
+    "assets/avatars/mage.webp",
+    "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
+  ],
+  "prompt": "Use case: illustration-story. Asset type: Worldoria Crystal Quest World 5 stage 20 visual-novel standing character CG. Input image 1 is the authoritative identity reference for Sorcerus: preserve recognizable youthful male face, tousled chestnut brown hair, face shape and large eyes, and recognizable staff silhouette; image 2 is supporting full-body costume and rendering reference, NOT a pose to copy. Create DARK SORCERUS, his powerful voluntarily controlled dark transformation, distinct from the restrained possessed midboss. Full-body confident three-quarter standing stance, both feet visible, one hand confidently gripping his staff, other hand open with a compact dark violet magic orb; self-assured restrained smirk, violet luminous irises. Transform blue robe panels to deep midnight indigo and black-violet, retain moon-white inner cloth, refined pale silver and restrained gold edging, luminous amethyst crystal clasps. Staff has a bright amethyst-purple crystal core, no skulls. Long elegant cloak curves around his legs; two or three narrow black-violet magical ribbons frame silhouette without covering face or hands. Youthful 5.5–6 head body proportions, nonsexualized, no horror, no gore. WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality. Lighting: soft key light from upper left, cool violet ambient shadow, subtle cyan-mint rim. Isolated single subject, true transparent alpha background, no floor, no background haze, no large halo, no frame, no text, no watermark. Portrait canvas, high resolution, entire staff tip, hair, fingers, cloak and boots inside canvas with clear small margins. Preserve opaque white cloth. Avoid chibi, pixel art, 3D, realistic textures, watercolor, gritty darkness, extra people, chains or wrist restraint, extra limbs.",
+  "usage": "World 5 stage 20 Dark Sorcerus internal dialogue and transformed Sorcerus dialogue; no replacement of ordinary Sorcerus or midboss CG.",
+  "review_status": "Full-body identity, complete staff tip and clear margins inspected. Alpha validated on Moon White and Crystal Violet; opaque white cloth retained.",
+  "browser_review": "Not requested",
+  "width": 1024,
+  "height": 1536,
+  "export": "WebP quality 92 method 6, original dimensions and alpha retained",
+  "alpha": {
+    "extrema": [
+      0,
+      254
+    ],
+    "fully_transparent_fraction": 0.4402
+  },
+  "review_composite": "concepts/world-5/dark-sorcerus-review.png",
+  "intermediate_source": "concepts/world-5/dark-sorcerus-transparent.png"
+}
