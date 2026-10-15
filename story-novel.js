@@ -5623,7 +5623,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 4,
       "location": "동료를 향한 공격",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
       "speaker": "아서",
@@ -5652,7 +5653,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
       "speaker": "아서",
@@ -5670,7 +5672,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -5715,7 +5718,8 @@ window.WORDORIA_NOVELS = {
       "scene": "violet-cave",
       "sceneNumber": 1,
       "location": "마지막 저항",
-      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+      "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
+      "artPath": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -6051,7 +6055,7 @@ window.WORDORIA_NOVELS = {
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
       "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
-      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
       "speaker": "모두",
@@ -6080,7 +6084,7 @@ window.WORDORIA_NOVELS = {
       "sceneNumber": 2,
       "location": "돌아온 리치 드래곤",
       "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
-      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -6126,7 +6130,7 @@ window.WORDORIA_NOVELS = {
       "sceneNumber": 3,
       "location": "강제 해제",
       "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
-      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -6163,7 +6167,7 @@ window.WORDORIA_NOVELS = {
       "sceneNumber": 3,
       "location": "강제 해제",
       "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp",
-      "artPath": "assets/novel/characters/char_lich_dragon_standing.png"
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
     },
     {
       "speaker": "소서러스",

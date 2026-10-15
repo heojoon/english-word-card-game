@@ -1,0 +1,28 @@
+{
+  "tool": "built-in image_gen",
+  "direction": "User selected concept B for both World 5 bosses",
+  "status": "Integrated into World 5 narrative; technical review complete",
+  "initial_prompts": "concepts/world-5/generation.json",
+  "assets": [
+    {
+      "image": "char_sorcerus_world5_midboss_standing.webp",
+      "source": "concepts/world-5/sorcerus-b-twisted-magic-clean.png",
+      "width": 1024,
+      "height": 1536,
+      "reference": "assets/avatars/mage.webp",
+      "refinement_prompt": "Edit this exact character CG into a clean transparent game standing cutout. Preserve the brown-haired blue-eyed young mage, entire blue white gold robe, staff, boots, wrist-gripping pose and narrow violet magic ribbons. REMOVE ALL broad gradient atmospheric background and colored haze outside the silhouette. Empty space must be alpha 0, no backdrop or big halo, preserve white costume opaque. Full body no cropping. Do not redesign. True transparent RGBA output.",
+      "review": "Full body, identity and wrist restraint preserved. Exterior alpha verified; opaque white costume retained. Used only during the possessed midboss confrontation, not recovery or Dark Sorcerus transformation."
+    },
+    {
+      "image": "char_lich_dragon_world5_standing.webp",
+      "source": "concepts/world-5/lich-dragon-b-amethyst-sovereign-refined.png",
+      "width": 1254,
+      "height": 1254,
+      "reference": "assets/novel/characters/char_lich_dragon_standing.png",
+      "refinement_prompt": "Edit the attached exact Lich Dragon standing CG, preserving charcoal scales, smooth rounded face, magenta oval eyes, branching horns, standing legs, one claw extended with broken spell rings and other lowered. Specifically FOLD BOTH WINGS closer behind the body, half-folded like tall closed fans, no widely extended bat wings. Tight upright portrait silhouette with tail tucked around feet. Change CENTRAL CHEST CRYSTAL to deep blue AMETHYST PURPLE #7868EF with bright violet rim, not pink. Keep other magenta accents sparse. Add several clean broken mineral crystal stumps on shoulders and forearms. Same polished 2D anime cel style, transparent background alpha 0 outside subject, full body, generous clear margins no clipping, no floor, no text.",
+      "review": "Narrower folded wings, purple chest core and cancellation gesture verified. Exterior alpha retained. World 3 retains its existing CG."
+    }
+  ],
+  "export": "WebP quality 92 method 6, original dimensions and alpha retained",
+  "browser_review": "Not requested"
+}

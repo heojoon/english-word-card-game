@@ -187,6 +187,8 @@ export const parseWorldFourBossStart=markdown=>parseWorldFourFinalBoss(markdown)
 export const parseWorldFourBossEnd=markdown=>parseWorldFourFinalBoss(markdown,true);
 export function parseWorldFiveNarrative(markdown){
   const lines=[];
+  const midbossStart=markdown.startsWith('# 월드 5 — 중간보스 도입');
+  const midbossEnd=markdown.startsWith('# 월드 5 — 중간보스 격파');
   let sceneNumber=0,location='보랏빛 수정동굴';
   const speakers={...classes,'파이터 & 아서':'party','다크 소서러스':'mage','어둠의 소서러스':'mage','갈등의 화신':'mystery','리치 드래곤':'black-dragon','모두':'party','효과음':'scene'};
   for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
@@ -198,7 +200,8 @@ export function parseWorldFiveNarrative(markdown){
     const speaker=dialogue?.[1]||'내레이션';
     const line={speaker,className:speakers[speaker]||'scene',text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:'violet-cave',sceneNumber,location,backgroundPath:'assets/story/chapter-5-violet-crystal-cave-map-v2.webp'};
     if(speaker==='월드 5의 핵심 목표')line.className='mission';
-    if(speaker==='리치 드래곤')line.artPath='assets/novel/characters/char_lich_dragon_standing.png';
+    if(speaker==='리치 드래곤')line.artPath='assets/novel/characters/char_lich_dragon_world5_standing.webp';
+    if(speaker==='소서러스'&&((midbossStart&&sceneNumber>=4)||(midbossEnd&&sceneNumber===1)))line.artPath='assets/novel/characters/char_sorcerus_world5_midboss_standing.webp';
     if(/새하얗게|휘감는다/.test(line.text))line.flash=true;
     if(/거세게 흔들|벽에 부딪/.test(line.text))line.shake=true;
     lines.push(line);

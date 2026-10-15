@@ -93,6 +93,23 @@ test('World 5 novels preserve spoken lines and stage entries enforce the usual c
   }
 });
 
+test('World 5 boss CGs follow possession and recovery without replacing other appearances',()=>{
+  const parse=file=>parseWorldFiveNarrative(read('assets/novel/'+file));
+  const mage='assets/novel/characters/char_sorcerus_world5_midboss_standing.webp';
+  const dragon='assets/novel/characters/char_lich_dragon_world5_standing.webp';
+  const start=parse('world-5-midboss-start.md').filter(line=>line.speaker==='소서러스');
+  assert.ok(start.some(line=>line.sceneNumber===4&&line.artPath===mage));
+  assert.ok(start.filter(line=>line.sceneNumber<4).every(line=>!line.artPath));
+  const end=parse('world-5-midboss-end.md').filter(line=>line.speaker==='소서러스');
+  assert.ok(end.some(line=>line.sceneNumber===1&&line.artPath===mage));
+  assert.ok(end.filter(line=>line.sceneNumber>1).every(line=>!line.artPath));
+  const boss=parse('world-5-20-boss-start.md');
+  assert.ok(boss.some(line=>line.speaker==='리치 드래곤'));
+  assert.ok(boss.filter(line=>line.speaker==='리치 드래곤').every(line=>line.artPath===dragon));
+  assert.ok(boss.filter(line=>line.speaker!=='리치 드래곤').every(line=>!line.artPath));
+  for(const path of [mage,dragon])assert.ok(readFileSync(new URL('../'+path,import.meta.url)).length>0);
+});
+
 test('World 5 midboss ending only completes a saved win and never restarts the battle',()=>{
   for(const [done,clear] of [[true,true],[true,false],[false,true]]){
     const pages=[],c=vm.createContext({page:'storyChapterFiveMidbossEnd',run:{done,clear},go:p=>pages.push(p),startBattle(){throw new Error('must not restart');}});
