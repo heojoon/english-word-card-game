@@ -51,27 +51,34 @@ test('activation spends one MP, preserves clock/progress/HP, and rejects unavail
   const cast=setup('dragon');cast.run.guardianPhase='drain-hold';cast.activateRangerEagleEye();assert.equal(cast.run.mp,1);
 });
 
-for(const mode of ['story','royal','ghost','reaper'])test(`${mode}: one stable pair hint; correct/wrong consumes it without automatic answer credit`,()=>{
+for(const mode of ['story','royal','ghost','reaper'])test(`${mode}: the Korean answer badge follows English selection and an answer consumes it`,()=>{
   for(const correct of [true,false]){
     const c=setup(mode);c.activateRangerEagleEye();c.pick('en',0);
-    assert.match(c.renderBattle(),/뜻 첫 글자: 사…/);
+    assert.match(c.renderBattle(),/data-side="ko" data-id="0"[^>]*>[^<]*<small class="eagle-answer-hint" role="status">정답<\/small>/);
+    assert.equal((c.renderBattle().match(/class="eagle-answer-hint"/g)||[]).length,1);
     assert.equal(c.run.correct,0);assert.equal(c.run.index,0);
-    c.pick('en',1);assert.equal(c.run.eagleEyePairId,0);
+    c.pick('en',1);assert.equal(c.run.eagleEyePairId,1);
     assert.equal(c.eaglePairHintMarkup(1,'en'),'');assert.equal(c.eaglePairHintMarkup(0,'ko'),'');
+    assert.match(c.renderBattle(),/data-side="ko" data-id="1"[^>]*>[^<]*<small class="eagle-answer-hint" role="status">정답<\/small>/);
     c.pick('en',0);c.pick('ko',correct?0:1);
-    assert.equal(c.run.eagleEyeActive,false);assert.ok(!c.renderBattle().includes('뜻 첫 글자:'));
+    assert.equal(c.run.eagleEyeActive,false);assert.ok(!c.renderBattle().includes('eagle-answer-hint'));
     if(!correct){assert.equal(c.run.hp,2);assert.equal(c.run.correct,0);}
     else assert.equal(c.run.hp,3);
   }
 });
 
-for(const mode of ['guardian','dragon','shadow'])test(`${mode}: exactly two wrong options are excluded; render is stable and excluded clicks do nothing`,()=>{
+for(const mode of ['guardian','dragon','shadow'])test(`${mode}: only the correct option is marked and all options remain available`,()=>{
   const c=setup(mode);c.activateRangerEagleEye();
-  assert.equal(c.run.eagleEyeRemoved.length,2);assert.ok(!c.run.eagleEyeRemoved.includes(1));
-  const html=c.renderBattle();assert.equal((html.match(/data-eagle-excluded="true"/g)||[]).length,2);
+  assert.equal(c.run.eagleEyeRemoved.length,0);
+  const html=c.renderBattle();assert.equal((html.match(/class="eagle-answer-hint"/g)||[]).length,1);
+  assert.match(html,/data-index="1"[^>]*><span>2<\/span>사과0<small class="eagle-answer-hint" role="status">정답<\/small>/);
+  assert.ok(!html.includes('data-eagle-excluded'));
+  const options=html.match(/<button class="answer"[^>]*>/g);assert.equal(options.length,4);
+  assert.ok(options.every(option=>!option.includes('disabled')));
   assert.equal(c.renderBattle(),html);assert.equal(c.run.mp,0);
-  c.guardianAnswer(c.run.eagleEyeRemoved[0]);assert.equal(c.run.eagleEyeActive,true);assert.equal(c.run.hp,3);assert.equal(c.run.correct,0);
+  assert.equal(c.run.correct,0);assert.equal(c.run.hp,3);
   c.guardianAnswer(1);assert.equal(c.run.eagleEyeActive,false);assert.equal(c.run.correct,1);assert.equal(c.run.hp,3);
+  assert.ok(!c.renderBattle().includes('eagle-answer-hint'));
   const wrong=setup(mode);wrong.activateRangerEagleEye();
   wrong.guardianAnswer(wrong.run.question.choices.findIndex((choice,index)=>choice!==wrong.run.question.answer&&!wrong.run.eagleEyeRemoved.includes(index)));
   assert.equal(wrong.run.eagleEyeActive,false);assert.equal(wrong.run.correct,0);assert.equal(wrong.run.hp,2);
@@ -79,7 +86,7 @@ for(const mode of ['guardian','dragon','shadow'])test(`${mode}: exactly two wron
 
 test('activation with an English selection targets it; reordered cards retain the hint identity',()=>{
   const c=setup('reaper');c.pick('en',0);c.activateRangerEagleEye();
-  c.run.matchEn.reverse();c.run.matchKo.reverse();assert.match(c.renderBattle(),/뜻 첫 글자: 사…/);
+  c.run.matchEn.reverse();c.run.matchKo.reverse();assert.match(c.eaglePairHintMarkup(0,'ko'),/>정답</);
   assert.equal(c.eaglePairHintMarkup(1,'en'),'');
 });
 
@@ -90,7 +97,7 @@ test('mana potion enables reuse after answering and every class/gender shows the
   assert.equal(c.run.mp,1);c.activateRangerEagleEye();assert.equal(c.run.mp,0);assert.equal(c.run.eagleEyeActive,true);
   assert.match(c.storyBattleActions(),/매의 눈 활성/);assert.match(c.storyBattleActions(),/activate-eagle-eye/);
   c.load('  function characterActiveSkillMarkup(','  function characterSelectMarkup(');
-  for(const variant of ['male','female']){c.selectedCharacter.avatar_variant=variant;assert.match(c.characterActiveSkillMarkup('ranger'),/매의 눈/);assert.match(c.characterActiveSkillMarkup('ranger','create'),/오답 2개/);}
+  for(const variant of ['male','female']){c.selectedCharacter.avatar_variant=variant;assert.match(c.characterActiveSkillMarkup('ranger'),/매의 눈/);assert.match(c.characterActiveSkillMarkup('ranger','create'),/정답 표시/);}
 });
 
 test('next wave, fever, exit and every result path clear the hint',async()=>{
@@ -114,14 +121,16 @@ for(const mode of ['story','royal','ghost','reaper'])test(`${mode}: Korean-first
   c.pick('ko',1);c.pick('en',0);
   assert.equal(c.run.eagleEyeActive,true);assert.equal(c.run.selectedKo,null);
   assert.equal(c.run.hp,3);assert.equal(c.run.correct,0);
-  assert.match(c.renderBattle(),/뜻 첫 글자: 사…/);
+  assert.match(c.eaglePairHintMarkup(0,'ko'),/>정답</);
   c.pick('ko',0);assert.equal(c.run.eagleEyeActive,false);
 });
 
-test('pair hint skips part-of-speech labels and whitespace',()=>{
+test('answer badge appears only on the selected English word’s unmatched Korean card',()=>{
   const c=setup();c.run.matchEn[0].entry[2]='  [명] [동]  사과';
-  c.activateRangerEagleEye();c.pick('en',0);
-  assert.match(c.eaglePairHintMarkup(0,'en'),/뜻 첫 글자: 사…/);
+  c.activateRangerEagleEye();assert.equal(c.eaglePairHintMarkup(0,'ko'),'');c.pick('en',0);
+  assert.match(c.eaglePairHintMarkup(0,'ko'),/>정답</);
+  assert.equal(c.eaglePairHintMarkup(0,'en'),'');assert.equal(c.eaglePairHintMarkup(1,'ko'),'');
+  c.run.matched.add(0);assert.equal(c.eaglePairHintMarkup(0,'ko'),'');
 });
 
 for(const mode of ['story','royal','ghost','guardian','dragon','shadow','reaper'])test(`${mode}: eye appears over enemies and activation lettering expires at one second`,()=>{
