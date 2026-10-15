@@ -1,4 +1,4 @@
-// Generated from assets/novel/*.md by scripts/generate-story-novel.mjs.
+// Generated from assets/novel/ by scripts/generate-story-novel.mjs.
 window.WORDORIA_NOVELS = {
   "world2Prologue": [
     {
@@ -6210,6 +6210,230 @@ window.WORDORIA_NOVELS = {
       "sceneNumber": 4,
       "location": "어둠의 소서러스",
       "backgroundPath": "assets/story/chapter-5-violet-crystal-cave-map-v2.webp"
+    }
+  ],
+  "world4Potion4": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "네 번째 길목의 단어 크리스털이 빛나자, 나무뿌리를 감싼 환각이 걷혔다. 뿌리 사이에 작은 약초 상자가 숨어 있었다.",
+      "location": "환각의 숲 · 나무뿌리 아래",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "잠깐! 상자에 잎사귀 문양이 있어. 숲을 지나던 누군가의 비상약인가 봐.",
+      "location": "환각의 숲 · 나무뿌리 아래",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "빨갛고 반짝반짝해… 딸기 주스야?",
+      "location": "환각의 숲 · 나무뿌리 아래",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "힐링포션이야! 위험할 때 쓰는 거니까 지금은 가방에 넣어 두자.",
+      "location": "환각의 숲 · 나무뿌리 아래",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "좋아. 길을 밝혀 준 단어들 덕분에 든든한 준비가 생겼네. 다음 길목으로 가자!",
+      "location": "환각의 숲 · 나무뿌리 아래",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "발견!",
+      "className": "mission",
+      "text": "힐링포션 3개를 발견했다! 물약을 받아 가방에 보관하자.",
+      "location": "월드 4 · 4단계 탐험 보급",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    }
+  ],
+  "world4Potion8": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "여덟 번째 길목을 지나자 달빛을 비추는 작은 샘이 나타났다. 물가의 돌 위에는 잎으로 감싼 꾸러미가 놓여 있었다.",
+      "location": "환각의 숲 · 달빛 샘터",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이쪽이야. 길을 잃은 여행자를 위해 남겨 둔 것 같아.",
+      "location": "환각의 숲 · 달빛 샘터",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "쪽지도 있어. ‘안개 속에서도 배운 단어를 믿고 걸어가세요.’라고 적혀 있네.",
+      "location": "환각의 숲 · 달빛 샘터",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "꾸러미 안에는 힐링포션이 세 병이야. 앞으로 만날 그림자에 대비할 수 있겠어.",
+      "location": "환각의 숲 · 달빛 샘터",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "고마워, 이름 모를 여행자! 우리도 끝까지 포기하지 않을게!",
+      "location": "환각의 숲 · 달빛 샘터",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    },
+    {
+      "speaker": "발견!",
+      "className": "mission",
+      "text": "힐링포션 3개를 발견했다! 물약을 받아 다음 모험을 준비하자.",
+      "location": "월드 4 · 8단계 탐험 보급",
+      "scene": "illusion",
+      "sceneNumber": 1,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-01.webp"
+    }
+  ],
+  "world4Potion12": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "열두 번째 길목의 안개가 갈라지며 오래된 야영지가 드러났다. 꺼진 모닥불 곁에 단단히 묶인 가죽 가방 하나가 남아 있었다.",
+      "location": "안개의 숲 · 버려진 야영지",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "여기서 잠깐 쉬자! 어? 가방에서 병끼리 부딪치는 소리가 나.",
+      "location": "안개의 숲 · 버려진 야영지",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "함정은 없어. 안개에 가려져 있던 여행용 구급 가방이야.",
+      "location": "안개의 숲 · 버려진 야영지",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "밀봉된 힐링포션 세 병! 환각이 사라지니 진짜 도움이 되는 것들이 보이네.",
+      "location": "안개의 숲 · 버려진 야영지",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "배운 단어도, 이 물약도 우리의 힘이야. 숨을 고르고 성으로 향하자.",
+      "location": "안개의 숲 · 버려진 야영지",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "발견!",
+      "className": "mission",
+      "text": "힐링포션 3개를 발견했다! 물약을 받아 가방에 보관하자.",
+      "location": "월드 4 · 12단계 탐험 보급",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    }
+  ],
+  "world4Potion16": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "열여섯 번째 길목 너머로 버려진 성의 외벽이 보였다. 담쟁이덩굴 아래, 낡은 경비 초소의 문이 조금 열려 있었다.",
+      "location": "버려진 성 · 외벽의 경비 초소",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "문 옆에 구급함 표시가 있어. 성을 지키던 사람들이 쓰던 곳인가 봐.",
+      "location": "버려진 성 · 외벽의 경비 초소",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "안쪽 선반을 찾았어! 먼지 아래에 힐링포션 세 병이 남아 있어.",
+      "location": "버려진 성 · 외벽의 경비 초소",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이제 성 안으로 들어가도 든든하겠다! 이번엔 주스라고 안 할게.",
+      "location": "버려진 성 · 외벽의 경비 초소",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잘 챙겨 둬. 마지막 길에서도 서두르지 말고, 우리가 익힌 단어를 하나씩 떠올리는 거야.",
+      "location": "버려진 성 · 외벽의 경비 초소",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
+    },
+    {
+      "speaker": "발견!",
+      "className": "mission",
+      "text": "힐링포션 3개를 발견했다! 물약을 받아 성 안의 모험을 준비하자.",
+      "location": "월드 4 · 16단계 탐험 보급",
+      "scene": "illusion",
+      "sceneNumber": 3,
+      "backgroundPath": "assets/novel/bgi/world4-prologue-scene-03.webp"
     }
   ]
 };

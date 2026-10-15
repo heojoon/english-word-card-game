@@ -225,7 +225,14 @@ export async function generateStoryNovel(){
     ['world5MidbossEnd','world-5-midboss-end.md',parseWorldFiveNarrative],
     ['world5BossStart','world-5-20-boss-start.md',parseWorldFiveNarrative]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
-  await writeFile(new URL('../story-novel.js',import.meta.url),`// Generated from assets/novel/*.md by scripts/generate-story-novel.mjs.\nwindow.WORDORIA_NOVELS = ${JSON.stringify(novels,null,2)};\n`);
+  const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
+  if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');
+  for(const milestone of [4,8,12,16]){
+    const lines=potionEvents[milestone];
+    if(!Array.isArray(lines)||lines.length<2||lines.some(line=>!line.text||!line.speaker||!line.location))throw new Error('World 4 potion event is incomplete');
+    novels[`world4Potion${milestone}`]=lines.map(line=>({...line,scene:'illusion',sceneNumber:milestone>=12?3:1,backgroundPath:`assets/novel/bgi/world4-prologue-scene-${milestone>=12?'03':'01'}.webp`}));
+  }
+  await writeFile(new URL('../story-novel.js',import.meta.url),`// Generated from assets/novel/ by scripts/generate-story-novel.mjs.\nwindow.WORDORIA_NOVELS = ${JSON.stringify(novels,null,2)};\n`);
   console.log(`Prepared visual novels: ${Object.entries(novels).map(([key,lines])=>`${key}: ${lines.length}`).join(' / ')} beats.`);
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await generateStoryNovel();
