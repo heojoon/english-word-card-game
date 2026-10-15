@@ -1,0 +1,33 @@
+{
+  "image": "crystal-spider-sd-attack-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.39,
+  "loop": false,
+  "holdFinal": true,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline alpha/bounds/frame review; browser not requested; animation approval not inferred."
+}

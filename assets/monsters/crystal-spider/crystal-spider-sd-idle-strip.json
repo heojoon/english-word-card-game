@@ -1,0 +1,28 @@
+{
+  "image": "crystal-spider-sd-idle-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.325,
+  "loop": true,
+  "holdFinal": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 600
+    },
+    {
+      "name": "breathe",
+      "durationMs": 600
+    }
+  ],
+  "reviewStatus": "Offline alpha/bounds/frame review; browser not requested; animation approval not inferred."
+}

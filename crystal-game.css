@@ -774,3 +774,22 @@ body[data-screen="battle"] .arena.world-five-lake{background-position:center 72%
 .arena-combo.eagle-eye-announcement{--ice-light:#e8fbff;--ice-edge:#99e5eb;animation-duration:1s}
 @keyframes eagle-eye-reveal{from{opacity:0;scale:.8}to{opacity:1;scale:1}}
 @media(prefers-reduced-motion:reduce){.eagle-eye-field{animation:none}.arena-combo.eagle-eye-announcement{animation:none}}
+
+/* World 5: approved crystal-armored spider. Keep one target visible through contact/knockdown. */
+.arena .enemy.story-mob.crystal-spider-mob{width:102px;height:102px;border:0;border-radius:0;background:none;box-shadow:none;animation:none!important;translate:none;transform:none;opacity:1}
+.arena.hit:has(.battle-hero-sniper) .enemy.story-mob.crystal-spider-mob{animation:none!important}
+.arena .story-mob.crystal-spider-mob:before{content:"";left:18%;top:auto;bottom:2%;width:64%;height:12%;border:0;border-radius:50%;background:radial-gradient(ellipse,#24214c26,transparent 72%);box-shadow:none}
+.arena .story-mob.crystal-spider-mob:after{content:none}
+.crystal-spider-sprite{position:absolute;inset:0;display:block;visibility:hidden;background-repeat:no-repeat;background-position:0 0;background-size:300% 100%;filter:drop-shadow(0 3px 2px #24214c30)}
+.spider-idle-strip{visibility:visible;background-image:url('assets/monsters/crystal-spider/crystal-spider-sd-idle-strip.png');background-size:200% 100%;animation:crystal-spider-strip .6s steps(1,end) infinite alternate}
+.spider-attack-strip{background-image:url('assets/monsters/crystal-spider/crystal-spider-sd-attack-strip.png')}
+.spider-hit-strip{background-image:url('assets/monsters/crystal-spider/crystal-spider-sd-hit-strip.png')}
+.spider-is-hit .spider-idle-strip,.spider-is-attacking .spider-idle-strip{visibility:hidden;animation:none}
+.spider-is-hit .spider-hit-strip{visibility:visible;animation:crystal-spider-strip var(--spider-hit-duration,200ms) steps(2,end) calc(var(--spider-hit-delay,320ms) - var(--spider-phase-elapsed,0ms)) forwards}
+.spider-is-attacking .spider-attack-strip{visibility:visible;animation:crystal-spider-strip 240ms steps(2,end) calc(0ms - var(--spider-phase-elapsed,0ms)) forwards}
+.arena.ice-time-active .crystal-spider-mob .spider-idle-strip,.arena.paused .crystal-spider-sprite{animation-play-state:paused}
+@keyframes crystal-spider-strip{from{background-position:0 0}to{background-position:100% 0}}
+@media(prefers-reduced-motion:reduce){
+  .crystal-spider-mob .spider-idle-strip{animation:none}
+  .spider-is-attacking .spider-attack-strip{animation-duration:90ms}
+}

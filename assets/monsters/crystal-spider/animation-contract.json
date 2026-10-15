@@ -1,0 +1,71 @@
+{
+  "identity": "design-reference.png",
+  "identityApproval": "User selected proposal A",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "effectBounds": "All legs and crystals within cells, minimum 8px horizontal/top safety band; ground at y=312.",
+  "actions": {
+    "idle": {
+      "count": 2,
+      "names": [
+        "ready",
+        "breathe"
+      ],
+      "durationsMs": [
+        600,
+        600
+      ],
+      "loop": true
+    },
+    "attack": {
+      "count": 3,
+      "names": [
+        "ready",
+        "anticipation",
+        "contact"
+      ],
+      "durationsMs": [
+        120,
+        120,
+        260
+      ],
+      "hitFrame": 2,
+      "loop": false
+    },
+    "hit": {
+      "count": 3,
+      "names": [
+        "guard",
+        "impact",
+        "knockdown"
+      ],
+      "durationsMs": [
+        100,
+        100,
+        160
+      ],
+      "holdFinal": true,
+      "loop": false
+    }
+  },
+  "destination": "crystal-spider-sd-<action>-strip.png",
+  "prompts": {
+    "idle": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients on crystals, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, vivid controlled color, friendly adventurous mood, large readable silhouette.\nUsing the attached APPROVED crystal armored spider identity, make production battle animation source frames of the EXACT SAME monster. Preserve squat heavy rounded silhouette, three oversized violet-cyan abdomen crystal plates, small dorsal crystal cluster, indigo armored eight legs with ivory joints and gold tiny diamond inlays, mint main eyes and subsidiary eyes, lavender fangs. EXACTLY EIGHT legs, four per side, keep every leg visible. Three-quarter battle side view facing LEFT, abdomen to RIGHT. Do not redesign into a thin spider or change colors.\nONE horizontal row with equal square cells. Every slot contains ONE complete spider. EXACTLY 50 px fully transparent gap between adjacent cells. Same camera, same creature size and body proportions, stable ground line, no perspective scaling. Keep ALL limbs, crystal tips and effects completely inside individual cells with a generous safety margin of 10 percent on all sides. High resolution source sheet. REAL transparent alpha, no floor, no shadow, no text, no labels, no border, no background. Clean 2D anime illustration, NOT 3D, not pixel art, no realism or horror. No cropping, no touching neighbors.\nEXACT TWO frames in ONE row: Frame 1 alert ready standing on eight bent legs; frame 2 gentle breath with abdomen raised just a little, same feet contact positions, subtle eye change. Both complete standing idle poses. Keep details identical. Sheet ratio about 2:1.",
+    "attack": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients on crystals, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, vivid controlled color, friendly adventurous mood, large readable silhouette.\nUsing the attached APPROVED crystal armored spider identity, make production battle animation source frames of the EXACT SAME monster. Preserve squat heavy rounded silhouette, three oversized violet-cyan abdomen crystal plates, small dorsal crystal cluster, indigo armored eight legs with ivory joints and gold tiny diamond inlays, mint main eyes and subsidiary eyes, lavender fangs. EXACTLY EIGHT legs, four per side, keep every leg visible. Three-quarter battle side view facing LEFT, abdomen to RIGHT. Do not redesign into a thin spider or change colors.\nONE horizontal row with equal square cells. Every slot contains ONE complete spider. EXACTLY 50 px fully transparent gap between adjacent cells. Same camera, same creature size and body proportions, stable ground line, no perspective scaling. Keep ALL limbs, crystal tips and effects completely inside individual cells with a generous safety margin of 10 percent on all sides. High resolution source sheet. REAL transparent alpha, no floor, no shadow, no text, no labels, no border, no background. Clean 2D anime illustration, NOT 3D, not pixel art, no realism or horror. No cropping, no touching neighbors.\nEXACT THREE frames in ONE row. Frame 1 ready, front pair of legs slightly lifted. Frame 2 anticipation, body crouches on rear six legs, front pair pulled back. Frame 3 STRIKE/CONTACT peak: front pair of crystal-tipped legs thrust LEFT, body leans forward, aggressive determined eyes. No detached projectile, no webs or giant effects. This is a short melee strike. Last frame is an active strike, NOT recovery. Keep body scale stable. Sheet ratio about 3:1.",
+    "hit": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients on crystals, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, vivid controlled color, friendly adventurous mood, large readable silhouette.\nUsing the attached APPROVED crystal armored spider identity, make production battle animation source frames of the EXACT SAME monster. Preserve squat heavy rounded silhouette, three oversized violet-cyan abdomen crystal plates, small dorsal crystal cluster, indigo armored eight legs with ivory joints and gold tiny diamond inlays, mint main eyes and subsidiary eyes, lavender fangs. EXACTLY EIGHT legs, four per side, keep every leg visible. Three-quarter battle side view facing LEFT, abdomen to RIGHT. Do not redesign into a thin spider or change colors.\nONE horizontal row with equal square cells. Every slot contains ONE complete spider. EXACTLY 50 px fully transparent gap between adjacent cells. Same camera, same creature size and body proportions, stable ground line, no perspective scaling. Keep ALL limbs, crystal tips and effects completely inside individual cells with a generous safety margin of 10 percent on all sides. High resolution source sheet. REAL transparent alpha, no floor, no shadow, no text, no labels, no border, no background. Clean 2D anime illustration, NOT 3D, not pixel art, no realism or horror. No cropping, no touching neighbors.\nEXACT THREE frames in ONE row. Frame 1 guard/notice: standing braced, surprised mint eyes. Frame 2 impact: strongest recoil leaning RIGHT away from hero, front legs lift but body remains intact. Frame 3 COMPLETE KNOCKDOWN: whole spider down on its SIDE on the ground, abdomen tilted, legs folded limp, eyes dazed shut. Must read fully defeated and unable to stand, NOT crouching, NOT recovering, NOT a standing spider. Preserve complete eight legs folded around body and all crystal armor. Same body scale; down pose naturally lower height. No attacker, no blood, no injury, no stars orbiting. Last frame held. Sheet ratio about 3:1."
+  },
+  "tool": "built-in image_gen",
+  "runtimeIntegration": "World 5 ordinary Story encounters; no boss-pattern changes",
+  "productionNotes": [
+    "Generated sheet gutters differed from requested 50px. Extracted complete poses and rebuilt source/<action>-master-50px.png and review/<action>-source-50px.png with exact 50px transparent gutters.",
+    "The original hit impact frame lacked isolation space; replaced it with a separately generated isolated pose. Prompt recorded in source/hit-impact-generation.json.",
+    "Different source resolutions calibrated to the same creature size; fixed per-action scale and shared bottom-center anchor. Alpha-only dust/component cleanup; no color-key removal."
+  ],
+  "reviewStatus": "Offline per-frame light/violet/mobile review and alpha/bounds validation complete. Browser not requested. Only the identity design has user approval; animation approval not inferred."
+}
