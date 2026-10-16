@@ -1,0 +1,106 @@
+{
+  "image": "char_sorcerus_sd_idle_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "frameNames": [
+    "ready",
+    "breath"
+  ],
+  "frames": [
+    {
+      "name": "ready",
+      "duration": 600
+    },
+    {
+      "name": "breath",
+      "duration": 600
+    }
+  ],
+  "sourceFrameGapPx": 50,
+  "source": "source/idle-generated.png",
+  "sourceGeometry": "Generated geometry preserved; explicit reviewed extraction coordinates below. Review master has exact 50px transparent gaps. Runtime slots are contiguous.",
+  "extraction": [
+    {
+      "source": "source/idle-generated.png",
+      "box": [
+        0,
+        0,
+        904,
+        870
+      ],
+      "visibleBounds": [
+        47,
+        23,
+        878,
+        822
+      ],
+      "crop": [
+        43,
+        19,
+        882,
+        826
+      ],
+      "scale": 0.3425414365,
+      "ground": 822,
+      "anchorX": 452,
+      "runtimeOffset": [
+        20,
+        37
+      ],
+      "runtimeBounds": [
+        20,
+        37,
+        307,
+        313
+      ]
+    },
+    {
+      "source": "source/idle-generated.png",
+      "box": [
+        904,
+        0,
+        1808,
+        870
+      ],
+      "visibleBounds": [
+        52,
+        23,
+        882,
+        822
+      ],
+      "crop": [
+        48,
+        19,
+        886,
+        826
+      ],
+      "scale": 0.3425414365,
+      "ground": 822,
+      "anchorX": 452,
+      "runtimeOffset": [
+        22,
+        37
+      ],
+      "runtimeBounds": [
+        22,
+        37,
+        309,
+        313
+      ]
+    }
+  ],
+  "review": {
+    "technical": "Passed: complete frames, consistent left-facing identity, alpha and costume preservation, light/violet composites, source-safe extraction, exact 50px review gaps, contact timing and final frame behavior.",
+    "browser": "Passed; see review/runtime-review.json (instrumented local guest battle).",
+    "userApproval": "identity accepted; motion not yet approved"
+  },
+  "loop": true,
+  "playback": "ping-pong"
+}

@@ -1,0 +1,146 @@
+{
+  "image": "char_sorcerus_sd_healing_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "frameNames": [
+    "focus",
+    "radiance",
+    "hold"
+  ],
+  "frames": [
+    {
+      "name": "focus",
+      "duration": 200
+    },
+    {
+      "name": "radiance",
+      "duration": 400,
+      "contact": true
+    },
+    {
+      "name": "hold",
+      "duration": 600
+    }
+  ],
+  "sourceFrameGapPx": 50,
+  "source": "source/heal-focus-generated.png",
+  "sourceGeometry": "Generated geometry preserved; explicit reviewed extraction coordinates below. Review master has exact 50px transparent gaps. Runtime slots are contiguous.",
+  "extraction": [
+    {
+      "source": "source/heal-focus-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        92,
+        75,
+        1211,
+        1171
+      ],
+      "crop": [
+        88,
+        71,
+        1215,
+        1175
+      ],
+      "scale": 0.25,
+      "ground": 1171,
+      "anchorX": 627,
+      "runtimeOffset": [
+        25,
+        37
+      ],
+      "runtimeBounds": [
+        25,
+        37,
+        307,
+        313
+      ]
+    },
+    {
+      "source": "source/heal-radiance-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        88,
+        57,
+        1225,
+        1181
+      ],
+      "crop": [
+        84,
+        53,
+        1229,
+        1185
+      ],
+      "scale": 0.25,
+      "ground": 1175,
+      "anchorX": 627,
+      "runtimeOffset": [
+        24,
+        32
+      ],
+      "runtimeBounds": [
+        24,
+        32,
+        310,
+        315
+      ]
+    },
+    {
+      "source": "source/heal-radiance-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        88,
+        57,
+        1225,
+        1181
+      ],
+      "crop": [
+        84,
+        53,
+        1229,
+        1185
+      ],
+      "scale": 0.25,
+      "ground": 1175,
+      "anchorX": 627,
+      "runtimeOffset": [
+        24,
+        32
+      ],
+      "runtimeBounds": [
+        24,
+        32,
+        310,
+        315
+      ]
+    }
+  ],
+  "review": {
+    "technical": "Passed: complete frames, consistent left-facing identity, alpha and costume preservation, light/violet composites, source-safe extraction, exact 50px review gaps, contact timing and final frame behavior.",
+    "browser": "Passed; see review/runtime-review.json (instrumented local guest battle).",
+    "userApproval": "identity accepted; motion not yet approved"
+  },
+  "loop": false,
+  "artistNotes": "Hold deliberately retains the whole-body radiance pose for 600ms; no recovery drawing. A common 0.25 scale preserves source anatomy across focus/radiance."
+}

@@ -1,0 +1,185 @@
+{
+  "image": "char_sorcerus_sd_ice_time_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 4,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "frameNames": [
+    "ready",
+    "anticipation",
+    "cast",
+    "hold"
+  ],
+  "frames": [
+    {
+      "name": "ready",
+      "duration": 140
+    },
+    {
+      "name": "anticipation",
+      "duration": 180
+    },
+    {
+      "name": "cast",
+      "duration": 180,
+      "contact": true
+    },
+    {
+      "name": "hold",
+      "duration": 200
+    }
+  ],
+  "sourceFrameGapPx": 50,
+  "source": "source/ice-cast-generated.png",
+  "sourceGeometry": "Generated geometry preserved; explicit reviewed extraction coordinates below. Review master has exact 50px transparent gaps. Runtime slots are contiguous.",
+  "extraction": [
+    {
+      "source": "source/idle-generated.png",
+      "box": [
+        0,
+        0,
+        904,
+        870
+      ],
+      "visibleBounds": [
+        47,
+        23,
+        878,
+        822
+      ],
+      "crop": [
+        43,
+        19,
+        882,
+        826
+      ],
+      "scale": 0.3425414365,
+      "ground": 822,
+      "anchorX": 452,
+      "runtimeOffset": [
+        52,
+        37
+      ],
+      "runtimeBounds": [
+        52,
+        37,
+        339,
+        313
+      ]
+    },
+    {
+      "source": "source/ice-anticipation-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        108,
+        81,
+        1192,
+        1188
+      ],
+      "crop": [
+        104,
+        77,
+        1196,
+        1192
+      ],
+      "scale": 0.2512664640324215,
+      "ground": 1188,
+      "anchorX": 627,
+      "runtimeOffset": [
+        61,
+        33
+      ],
+      "runtimeBounds": [
+        61,
+        33,
+        335,
+        313
+      ]
+    },
+    {
+      "source": "source/ice-cast-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        43,
+        110,
+        1205,
+        1167
+      ],
+      "crop": [
+        39,
+        106,
+        1209,
+        1171
+      ],
+      "scale": 0.259958071278826,
+      "ground": 1167,
+      "anchorX": 650,
+      "runtimeOffset": [
+        33,
+        36
+      ],
+      "runtimeBounds": [
+        33,
+        36,
+        337,
+        313
+      ]
+    },
+    {
+      "source": "source/ice-cast-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        43,
+        110,
+        1205,
+        1167
+      ],
+      "crop": [
+        39,
+        106,
+        1209,
+        1171
+      ],
+      "scale": 0.259958071278826,
+      "ground": 1167,
+      "anchorX": 650,
+      "runtimeOffset": [
+        33,
+        36
+      ],
+      "runtimeBounds": [
+        33,
+        36,
+        337,
+        313
+      ]
+    }
+  ],
+  "review": {
+    "technical": "Passed: complete frames, consistent left-facing identity, alpha and costume preservation, light/violet composites, source-safe extraction, exact 50px review gaps, contact timing and final frame behavior.",
+    "browser": "Passed; see review/runtime-review.json (instrumented local guest battle).",
+    "userApproval": "identity accepted; motion not yet approved"
+  },
+  "loop": false,
+  "artistNotes": "Final hold deliberately reuses the contact pose, without a recovery drawing."
+}

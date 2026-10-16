@@ -1,0 +1,64 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    "source/sorcerus-sd-identity-master.png",
+    "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp"
+  ],
+  "review": {
+    "technical": "Passed frame-by-frame on Moon White and Crystal Violet; anatomy scale, ground placement, true alpha, exact review gaps and contiguous runtime geometry validated.",
+    "userApproval": "SD identity approved by continuation; generated motion not yet reviewed",
+    "browser": "Passed; see review/runtime-review.json (instrumented local guest battle)."
+  },
+  "promptRecord": "animation-prompts.json",
+  "extractionRecord": "source/extraction.json",
+  "outputs": [
+    {
+      "action": "idle",
+      "image": "char_sorcerus_sd_idle_strip.png",
+      "frameCount": 2,
+      "frameWidth": 320,
+      "frameHeight": 320
+    },
+    {
+      "action": "ice-time",
+      "image": "char_sorcerus_sd_ice_time_strip.png",
+      "frameCount": 4,
+      "frameWidth": 384,
+      "frameHeight": 320
+    },
+    {
+      "action": "healing",
+      "image": "char_sorcerus_sd_healing_strip.png",
+      "frameCount": 3,
+      "frameWidth": 320,
+      "frameHeight": 320
+    },
+    {
+      "action": "hit",
+      "image": "char_sorcerus_sd_hit_strip.png",
+      "frameCount": 3,
+      "frameWidth": 448,
+      "frameHeight": 320
+    }
+  ],
+  "rejectedSources": [
+    {
+      "source": "source/ice-time-generated.png",
+      "reason": "Crowded strip with clipped edge art; replaced by isolated poses."
+    },
+    {
+      "source": "source/healing-generated.png",
+      "reason": "Staff hand continuity and edge glow; replaced by isolated poses."
+    },
+    {
+      "source": "source/hit-generated.png",
+      "reason": "Outer edges and prone staff risk clipping; replaced by isolated poses."
+    },
+    {
+      "source": "source/hit-knockdown-generated.png",
+      "reason": "Body too elongated for approved SD proportions; replaced by compact v2 edit."
+    }
+  ],
+  "deliberateHolds": "Ice-time hold repeats cast; healing hold repeats radiance. These are explicit held poses, not separately generated motion drawings. WebP encoders may merge identical consecutive frames while preserving their duration.",
+  "integration": "World 5 stage 10 renderer uses all four sheets; frame selection is driven by the shared battle clock and declared per-frame durations."
+}

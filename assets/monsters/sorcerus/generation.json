@@ -1,0 +1,33 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: style-transfer / stylized game character. Create ONE full-body SD/chibi battle identity sprite for the Worldoria Crystal Quest World 5 midboss 'Sorcerus who lost his reason'. Reference image 1 is the CANONICAL identity: preserve its young male mage, tousled copper-brown hair, blue eyes, cobalt blue and opaque white layered robes and long coat tails, gold filigree edging, amethyst/cyan diamond jewels, blue-white-gold boots, ornate golden staff with a round glowing blue crystal head. Reference image 2 supplies ONLY the polished SD body proportions and readable side-view battle silhouette, NOT its black skin, gender, outfit or purple-only palette. Render the character from image 1 as a youthful nonsexualized 2.5-head-tall SD/chibi boy, large readable head/hands, compact torso and legs, clean expressive anime-inspired game rendering with soft silver highlights and pale lavender shadows. ONE CHARACTER ONLY. Enemy-side orientation is mandatory: three-quarter side view FACING LEFT, eyes and nose looking left, feet pointing left; not front-facing or right-facing. Standing ready for battle, slightly tense possessed expression, brows drawn, visible blue eyes with subtle violet edge light, not a blank black face. Hold the complete iconic staff in the rear hand to the right of the body with its crystal visible, other hand in front near chest in a readable magical gesture; slim violet magical ribbons loosely curl near wrists to evoke possession, do not hide the silhouette or look like a cage. Robe folds simplified for animation, no enormous flaring cloak, no sprawling effects. Pose must be easy to animate idle, ice-time casting, healing and knockdown from. Square 1024x1024 canvas, centered full body and complete staff, boots on a consistent ground line about y=930, plenty of transparent padding at all sides, nothing cropped. Character including staff approximately 850px high. Genuine transparent alpha outside character. White fabric, eye whites and highlights stay opaque. No floor, cast shadow ellipse, background gradient, scenery, lettering, caption, UI, border, guide, watermark, checkerboard or pixel art. Make a crisp production-ready SD character identity master, not a concept sheet or multiple poses.",
+  "references": [
+    {
+      "path": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp",
+      "role": "canonical character identity and costume"
+    },
+    {
+      "path": "assets/monsters/shadow-sorceress/idle/01.png",
+      "role": "SD proportion and battle silhouette only"
+    }
+  ],
+  "sourceOriginal": "C:/Users/Administrator/.codex/generated_images/01a141a9-ad6c-7753-aef0-79ea8bdbfb8b/exec-3bafb995-2cd8-4365-a2e6-ae22ca018883.png",
+  "savedMaster": "source/sorcerus-sd-identity-master.png",
+  "scope": "SD battle character identity; state animation strips planned separately",
+  "review": {
+    "technical": "Passed: left-facing full-body identity, complete staff and boots, opaque white costume, real exterior alpha, light/violet composites and 128px readability",
+    "userApproval": "not requested",
+    "browser": "not run; no integration",
+    "normalization": "Source untouched; alpha >= 8 used for silhouette bounds only, with 12px safety padding. Feet aligned to runtime ground line y=312."
+  },
+  "dimensions": {
+    "master": [
+      1254,
+      1254
+    ],
+    "runtime": [
+      320,
+      320
+    ]
+  }
+}

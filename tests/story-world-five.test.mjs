@@ -13,6 +13,7 @@ function setup(){
   vm.runInContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins(')),c);
   vm.runInContext(source.slice(source.indexOf('  function buildQuestionDeck('),source.indexOf('  async function loadAll(')),c);
   vm.runInContext(read('story-novel.js'),c);
+  vm.runInContext(read('sorcerus-boss.js'),c);
   c.configureStoryContent();
   return {c,switchLevel(value){level=value;c.configureStoryContent();}};
 }
@@ -46,12 +47,13 @@ test('World 5 reuses corresponding World 4 pools for both levels without another
     for(let number=1;number<=20;number++){
       const stage=c.stages[`story-ch5-${number}`];
       assert.equal(JSON.stringify(stage.words),JSON.stringify(c.stages[`story-ch4-${number}`].words));
-      assert.equal(stage.questionCount,level==='middle'?60:40);
+      assert.equal(stage.questionCount,number===10?120:level==='middle'?60:40);
+      assert.equal(stage.sorcerus,number===10);
       assert.equal(c.buildQuestionDeck(stage).length,stage.questionCount);
       assert.equal(stage.redReaper,false);
       assert.equal(stage.shadowSorceress,false);
       assert.equal(stage.blackDragon,false);
-      assert.match(stage.desc,/월드 4 단어 임시 재사용/);
+      assert.match(stage.desc,number===10?/이성을 잃은 소서러스/:/월드 4 단어 임시 재사용/);
     }
   }
 });

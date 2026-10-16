@@ -1,0 +1,79 @@
+{
+  "character": "이성을 잃은 소서러스",
+  "world": 5,
+  "stage": 10,
+  "identityReference": "assets/novel/characters/char_sorcerus_world5_midboss_standing.webp",
+  "identityMaster": "source/sorcerus-sd-identity-master.png",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "effectBounds": "Keep the complete staff, boots, robe, hair and restrained violet ribbons inside each cell. Widen cast or knockdown cells rather than reducing body scale.",
+  "sourceFrameGapPx": 50,
+  "states": {
+    "idle": {
+      "frames": [
+        "ready",
+        "breath"
+      ],
+      "durations": [
+        600,
+        600
+      ],
+      "loop": true,
+      "file": "char_sorcerus_sd_idle_strip.png"
+    },
+    "ice-time": {
+      "frames": [
+        "ready",
+        "anticipation",
+        "cast",
+        "hold"
+      ],
+      "durations": [
+        140,
+        180,
+        180,
+        200
+      ],
+      "contactFrame": 2,
+      "file": "char_sorcerus_sd_ice_time_strip.png",
+      "frameWidth": 384
+    },
+    "healing": {
+      "frames": [
+        "focus",
+        "radiance",
+        "hold"
+      ],
+      "durations": [
+        200,
+        400,
+        600
+      ],
+      "contactFrame": 1,
+      "file": "char_sorcerus_sd_healing_strip.png"
+    },
+    "hit": {
+      "frames": [
+        "guard-notice",
+        "impact-recoil",
+        "knockdown"
+      ],
+      "durations": [
+        140,
+        160,
+        700
+      ],
+      "hitFrame": 1,
+      "finalFrameHold": true,
+      "file": "char_sorcerus_sd_hit_strip.png",
+      "frameWidth": 448
+    }
+  },
+  "scope": "Four completed animation strips: idle, ice-time, healing, hit/knockdown. Source artwork, extracted frames, runtime frames, JSON timing/events, exact 50px-gapped review masters and animated previews are separate.",
+  "reviewStatus": "Integrated into World 5 stage 10. Full suite and browser checks pass: contact effects, pause, player Ice Time, three-second freeze, final frame hold, 320/390/1280px and reduced motion. See review/runtime-review.json."
+}

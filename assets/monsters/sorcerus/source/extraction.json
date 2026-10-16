@@ -1,0 +1,209 @@
+{
+  "idle": {
+    "source": "idle-generated.png",
+    "frameWidth": 320,
+    "scale": 0.3425414365,
+    "names": [
+      "ready",
+      "breath"
+    ],
+    "durations": [
+      600,
+      600
+    ],
+    "poses": [
+      {
+        "box": [
+          0,
+          0,
+          904,
+          870
+        ],
+        "ground": 822,
+        "anchorX": 452
+      },
+      {
+        "box": [
+          904,
+          0,
+          1808,
+          870
+        ],
+        "ground": 822,
+        "anchorX": 452
+      }
+    ]
+  },
+  "ice-time": {
+    "source": "ice-cast-generated.png",
+    "frameWidth": 384,
+    "scale": 0.259958071278826,
+    "names": [
+      "ready",
+      "anticipation",
+      "cast",
+      "hold"
+    ],
+    "durations": [
+      140,
+      180,
+      180,
+      200
+    ],
+    "contactFrame": 2,
+    "poses": [
+      {
+        "box": [
+          0,
+          0,
+          904,
+          870
+        ],
+        "ground": 822,
+        "anchorX": 452,
+        "source": "idle-generated.png",
+        "scale": 0.3425414365
+      },
+      {
+        "source": "ice-anticipation-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1188,
+        "anchorX": 627,
+        "scale": 0.2512664640324215
+      },
+      {
+        "source": "ice-cast-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1167,
+        "anchorX": 650,
+        "scale": 0.259958071278826
+      },
+      {
+        "source": "ice-cast-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1167,
+        "anchorX": 650,
+        "scale": 0.259958071278826
+      }
+    ],
+    "note": "Final hold deliberately reuses the contact pose, without a recovery drawing."
+  },
+  "healing": {
+    "source": "heal-focus-generated.png",
+    "frameWidth": 320,
+    "scale": 0.25,
+    "names": [
+      "focus",
+      "radiance",
+      "hold"
+    ],
+    "durations": [
+      200,
+      400,
+      600
+    ],
+    "contactFrame": 1,
+    "poses": [
+      {
+        "source": "heal-focus-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1171,
+        "anchorX": 627
+      },
+      {
+        "source": "heal-radiance-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1175,
+        "anchorX": 627
+      },
+      {
+        "source": "heal-radiance-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1175,
+        "anchorX": 627
+      }
+    ],
+    "note": "Hold deliberately retains the whole-body radiance pose for 600ms; no recovery drawing. A common 0.25 scale preserves source anatomy across focus/radiance."
+  },
+  "hit": {
+    "source": "hit-guard-generated.png",
+    "frameWidth": 448,
+    "scale": 0.2485,
+    "names": [
+      "guard-notice",
+      "impact-recoil",
+      "knockdown"
+    ],
+    "durations": [
+      140,
+      160,
+      700
+    ],
+    "poses": [
+      {
+        "source": "hit-guard-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1191,
+        "anchorX": 627
+      },
+      {
+        "source": "hit-recoil-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "ground": 1184,
+        "anchorX": 627
+      },
+      {
+        "source": "hit-knockdown-v2-generated.png",
+        "box": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "ground": 850,
+        "anchorX": 845
+      }
+    ],
+    "note": "One shared 0.2485 scale across all hit poses preserves head/body scale. Wide 448px cells preserve the prone body and whole staff. Final frame holds until state change. Original elongated knockdown source rejected; v2 restores compact SD proportions."
+  }
+}

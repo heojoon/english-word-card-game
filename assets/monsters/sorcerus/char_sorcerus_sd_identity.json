@@ -1,0 +1,46 @@
+{
+  "image": "char_sorcerus_sd_identity.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 1,
+  "layout": "single",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "frameNames": [
+    "battle-ready"
+  ],
+  "frames": [
+    {
+      "name": "battle-ready",
+      "duration": 600
+    }
+  ],
+  "source": "source/sorcerus-sd-identity-master.png",
+  "sourceBounds": [
+    86,
+    85,
+    1217,
+    1217
+  ],
+  "visibleSourceBounds": [
+    98,
+    97,
+    1205,
+    1205
+  ],
+  "sourceGroundLine": 1205,
+  "sharedScale": 0.2475685234305924,
+  "runtimeOffset": [
+    20,
+    35
+  ],
+  "review": {
+    "technical": "Passed: alpha, framing, full body, staff, ground line, Moon White/Crystal Violet and 128px readability",
+    "userApproval": "not requested",
+    "animation": "identity only; strips planned separately",
+    "browser": "not run; no runtime integration"
+  }
+}

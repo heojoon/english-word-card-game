@@ -1,0 +1,146 @@
+{
+  "image": "char_sorcerus_sd_hit_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "frameNames": [
+    "guard-notice",
+    "impact-recoil",
+    "knockdown"
+  ],
+  "frames": [
+    {
+      "name": "guard-notice",
+      "duration": 140
+    },
+    {
+      "name": "impact-recoil",
+      "duration": 160,
+      "hit": true
+    },
+    {
+      "name": "knockdown",
+      "duration": 700
+    }
+  ],
+  "sourceFrameGapPx": 50,
+  "source": "source/hit-guard-generated.png",
+  "sourceGeometry": "Generated geometry preserved; explicit reviewed extraction coordinates below. Review master has exact 50px transparent gaps. Runtime slots are contiguous.",
+  "extraction": [
+    {
+      "source": "source/hit-guard-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        109,
+        103,
+        1188,
+        1191
+      ],
+      "crop": [
+        105,
+        99,
+        1192,
+        1195
+      ],
+      "scale": 0.2485,
+      "ground": 1191,
+      "anchorX": 627,
+      "runtimeOffset": [
+        94,
+        41
+      ],
+      "runtimeBounds": [
+        94,
+        41,
+        364,
+        313
+      ]
+    },
+    {
+      "source": "source/hit-recoil-generated.png",
+      "box": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        145,
+        87,
+        1228,
+        1184
+      ],
+      "crop": [
+        141,
+        83,
+        1232,
+        1188
+      ],
+      "scale": 0.2485,
+      "ground": 1184,
+      "anchorX": 627,
+      "runtimeOffset": [
+        103,
+        38
+      ],
+      "runtimeBounds": [
+        103,
+        38,
+        374,
+        313
+      ]
+    },
+    {
+      "source": "source/hit-knockdown-v2-generated.png",
+      "box": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "visibleBounds": [
+        157,
+        260,
+        1533,
+        865
+      ],
+      "crop": [
+        153,
+        256,
+        1536,
+        869
+      ],
+      "scale": 0.2485,
+      "ground": 850,
+      "anchorX": 845,
+      "runtimeOffset": [
+        52,
+        164
+      ],
+      "runtimeBounds": [
+        52,
+        164,
+        396,
+        316
+      ]
+    }
+  ],
+  "review": {
+    "technical": "Passed: complete frames, consistent left-facing identity, alpha and costume preservation, light/violet composites, source-safe extraction, exact 50px review gaps, contact timing and final frame behavior.",
+    "browser": "Passed; see review/runtime-review.json (instrumented local guest battle).",
+    "userApproval": "identity accepted; motion not yet approved"
+  },
+  "finalFrameHold": true,
+  "artistNotes": "One shared 0.2485 scale across all hit poses preserves head/body scale. Wide 448px cells preserve the prone body and whole staff. Final frame holds until state change. Original elongated knockdown source rejected; v2 restores compact SD proportions."
+}

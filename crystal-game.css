@@ -797,3 +797,26 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
   .crystal-spider-mob .spider-idle-strip{animation:none}
   .spider-is-attacking .spider-attack-strip{animation-duration:90ms}
 }
+
+.sorcerus-arena .guardian-enemy{right:4%;width:160px;height:160px;max-width:none;bottom:12px;aspect-ratio:1}
+.sorcerus-arena .sorcerus-sprite{height:100%;aspect-ratio:auto;left:50%;bottom:0;transform:translateX(-50%);background-repeat:no-repeat;animation:none}
+.sorcerus-arena>.guardian-health{position:absolute;top:27px;right:12px;left:auto;width:28%;z-index:9}
+.sorcerus-ice-field{position:absolute;left:0;bottom:5px;width:48%;height:110px;transform:scaleX(-1);pointer-events:none;z-index:6}
+.sorcerus-freezing:not(.hit):not(.wrong) .battle-sprite{animation-play-state:paused;filter:drop-shadow(0 0 8px #99e5eb)}
+.sorcerus-ice-notice{color:#e8fbff;text-shadow:0 1px 5px #24214c}
+.sorcerus-heal-notice{bottom:37px;color:#fff;text-shadow:0 1px 5px #5751d8}
+.sorcerus-heal-light{position:absolute;inset:0;z-index:5;pointer-events:none;border-radius:45%;background:radial-gradient(ellipse,#fff9,transparent 70%);filter:drop-shadow(0 0 10px #fff);animation:sorcerus-radiance .6s ease-in-out infinite alternate}
+.sorcerus-heal-light i{position:absolute;color:#fff;font-size:26px;left:18%;top:13%;text-shadow:0 0 9px #fff;animation:sorcerus-radiance .4s ease-in-out infinite alternate}
+.sorcerus-heal-light i:nth-child(2){left:70%;top:30%;animation-delay:-.2s}.sorcerus-heal-light i:nth-child(3){left:35%;top:50%;animation-delay:-.3s}.sorcerus-heal-light i:nth-child(4){left:65%;top:75%}.sorcerus-heal-light i:nth-child(5){left:10%;top:83%;animation-delay:-.1s}
+.sorcerus-arena.paused *{animation-play-state:paused!important}
+@keyframes sorcerus-idle{50%{transform:translateY(-3px)}}
+@keyframes sorcerus-hit{50%{transform:translateX(9px);filter:brightness(1.7)}}
+@keyframes sorcerus-defeat{to{transform:translateY(16px) rotate(12deg);opacity:.3}}
+@keyframes sorcerus-radiance{from{opacity:.45}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.sorcerus-arena .guardian-idle,.sorcerus-heal-light,.sorcerus-heal-light i{animation:none}.sorcerus-arena .guardian-hit,.sorcerus-arena .guardian-defeat{animation-duration:.15s}}
+
+
+/* Keep skill announcements below the vitals and above both character faces. */
+.sorcerus-arena .royal-boss-skill-notice{top:47px;bottom:auto;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 16px);padding:5px 10px;font-size:clamp(9px,2.4vw,11px);line-height:1.25;white-space:normal}
+.royal-boss-heading:has(+.sorcerus-arena)>div:first-child{min-width:0}
+.royal-boss-heading:has(+.sorcerus-arena) h1{font-size:clamp(15px,4.5vw,20px);line-height:1.25;word-break:keep-all}

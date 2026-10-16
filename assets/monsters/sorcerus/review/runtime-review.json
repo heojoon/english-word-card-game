@@ -1,0 +1,415 @@
+{
+  "passed": true,
+  "contacts": "ice 320ms; healing 200ms after cast starts",
+  "playerIce": "MP and clock/idle pause passed",
+  "pause": "frame, timers and contact remain unchanged",
+  "defeat": "recoil, final knockdown hold and victory dialogue passed",
+  "viewports": [
+    320,
+    390,
+    1280
+  ],
+  "reducedMotion": "timing and pause passed",
+  "assetResponses": "all four sheets loaded",
+  "errors": [],
+  "missing": [],
+  "bounds": [
+    {
+      "viewport": 320,
+      "action": "idle",
+      "frame": 0,
+      "visible": {
+        "left": 141.5625,
+        "right": 285.0625,
+        "top": 167.296875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "idle",
+      "frame": 1,
+      "visible": {
+        "left": 142.5625,
+        "right": 286.0625,
+        "top": 167.296875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "ice-cast",
+      "frame": 0,
+      "visible": {
+        "left": 141.5625,
+        "right": 285.0625,
+        "top": 167.296875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "ice-cast",
+      "frame": 1,
+      "visible": {
+        "left": 146.0625,
+        "right": 283.0625,
+        "top": 165.296875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "ice-cast",
+      "frame": 2,
+      "visible": {
+        "left": 132.0625,
+        "right": 284.0625,
+        "top": 166.796875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "ice-cast",
+      "frame": 3,
+      "visible": {
+        "left": 132.0625,
+        "right": 284.0625,
+        "top": 166.796875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "healing",
+      "frame": 0,
+      "visible": {
+        "left": 144.0625,
+        "right": 285.0625,
+        "top": 167.296875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "healing",
+      "frame": 1,
+      "visible": {
+        "left": 143.5625,
+        "right": 286.5625,
+        "top": 164.796875,
+        "bottom": 306.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "healing",
+      "frame": 2,
+      "visible": {
+        "left": 143.5625,
+        "right": 286.5625,
+        "top": 164.796875,
+        "bottom": 306.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "hit",
+      "frame": 0,
+      "visible": {
+        "left": 146.5625,
+        "right": 281.5625,
+        "top": 169.296875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "hit",
+      "frame": 1,
+      "visible": {
+        "left": 151.0625,
+        "right": 286.5625,
+        "top": 167.796875,
+        "bottom": 305.296875
+      }
+    },
+    {
+      "viewport": 320,
+      "action": "hit",
+      "frame": 2,
+      "visible": {
+        "left": 125.5625,
+        "right": 297.5625,
+        "top": 230.796875,
+        "bottom": 306.796875
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "idle",
+      "frame": 0,
+      "visible": {
+        "left": 202.328125,
+        "right": 345.828125,
+        "top": 195.375,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "idle",
+      "frame": 1,
+      "visible": {
+        "left": 203.328125,
+        "right": 346.828125,
+        "top": 195.375,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "ice-cast",
+      "frame": 0,
+      "visible": {
+        "left": 202.328125,
+        "right": 345.828125,
+        "top": 195.375,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "ice-cast",
+      "frame": 1,
+      "visible": {
+        "left": 206.828125,
+        "right": 343.828125,
+        "top": 193.375,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "ice-cast",
+      "frame": 2,
+      "visible": {
+        "left": 192.828125,
+        "right": 344.828125,
+        "top": 194.875,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "ice-cast",
+      "frame": 3,
+      "visible": {
+        "left": 192.828125,
+        "right": 344.828125,
+        "top": 194.875,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "healing",
+      "frame": 0,
+      "visible": {
+        "left": 204.828125,
+        "right": 345.828125,
+        "top": 195.375,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "healing",
+      "frame": 1,
+      "visible": {
+        "left": 204.328125,
+        "right": 347.328125,
+        "top": 192.875,
+        "bottom": 334.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "healing",
+      "frame": 2,
+      "visible": {
+        "left": 204.328125,
+        "right": 347.328125,
+        "top": 192.875,
+        "bottom": 334.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "hit",
+      "frame": 0,
+      "visible": {
+        "left": 207.328125,
+        "right": 342.328125,
+        "top": 197.375,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "hit",
+      "frame": 1,
+      "visible": {
+        "left": 211.828125,
+        "right": 347.328125,
+        "top": 195.875,
+        "bottom": 333.375
+      }
+    },
+    {
+      "viewport": 390,
+      "action": "hit",
+      "frame": 2,
+      "visible": {
+        "left": 186.328125,
+        "right": 358.328125,
+        "top": 258.875,
+        "bottom": 334.875
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "idle",
+      "frame": 0,
+      "visible": {
+        "left": 685.046875,
+        "right": 828.546875,
+        "top": 280.5,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "idle",
+      "frame": 1,
+      "visible": {
+        "left": 686.046875,
+        "right": 829.546875,
+        "top": 280.5,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "ice-cast",
+      "frame": 0,
+      "visible": {
+        "left": 685.046875,
+        "right": 828.546875,
+        "top": 280.5,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "ice-cast",
+      "frame": 1,
+      "visible": {
+        "left": 689.546875,
+        "right": 826.546875,
+        "top": 278.5,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "ice-cast",
+      "frame": 2,
+      "visible": {
+        "left": 675.546875,
+        "right": 827.546875,
+        "top": 280,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "ice-cast",
+      "frame": 3,
+      "visible": {
+        "left": 675.546875,
+        "right": 827.546875,
+        "top": 280,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "healing",
+      "frame": 0,
+      "visible": {
+        "left": 687.546875,
+        "right": 828.546875,
+        "top": 280.5,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "healing",
+      "frame": 1,
+      "visible": {
+        "left": 687.046875,
+        "right": 830.046875,
+        "top": 278,
+        "bottom": 419.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "healing",
+      "frame": 2,
+      "visible": {
+        "left": 687.046875,
+        "right": 830.046875,
+        "top": 278,
+        "bottom": 419.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "hit",
+      "frame": 0,
+      "visible": {
+        "left": 690.046875,
+        "right": 825.046875,
+        "top": 282.5,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "hit",
+      "frame": 1,
+      "visible": {
+        "left": 694.546875,
+        "right": 830.046875,
+        "top": 281,
+        "bottom": 418.5
+      }
+    },
+    {
+      "viewport": 1280,
+      "action": "hit",
+      "frame": 2,
+      "visible": {
+        "left": 669.046875,
+        "right": 841.046875,
+        "top": 344,
+        "bottom": 420
+      }
+    }
+  ],
+  "method": "Instrumented production entry in local guest mode. Battle clock advanced deterministically; normal answer/skill/render functions exercised. No production debug controls added."
+}

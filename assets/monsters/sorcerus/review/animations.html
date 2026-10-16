@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>소서러스 · 동작 미리보기</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:24px;background:#f7f7ff;color:#24214c;font:15px system-ui,sans-serif}main{max-width:980px;margin:auto}h1{font-size:24px}p{line-height:1.6;color:#74718a}button,select,input{font:inherit}button,select{padding:10px 14px;border:1px solid #d9d6ed;border-radius:12px;background:#fff;color:#24214c}button[aria-pressed=true]{background:#5751d8;color:white}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.panels{display:grid;grid-template-columns:1fr 1fr;gap:12px}.panel{min-width:0;border:1px solid #d9d6ed;border-radius:18px;padding:12px;background:#fff}.panel.violet{background:#5751d8;color:white}.frame{width:100%;height:auto;display:block}.mobile{width:144px;height:144px;object-fit:contain;display:block;margin:auto}.timeline{display:flex;align-items:center;gap:12px}input{flex:1;min-width:0}#status{min-height:48px}a{color:inherit}@media(max-width:580px){body{padding:12px}.panels{gap:6px}.panel{padding:4px}.mobile{width:108px;height:108px}h1{font-size:20px}}
+</style>
+<main>
+<h1>이성을 잃은 소서러스 · 전투 애니메이션</h1>
+<p>같은 프레임을 밝은 배경과 크리스털 바이올렛 배경에서 비교합니다. 피격의 마지막 쓰러짐 자세는 다음 동작을 선택할 때까지 유지됩니다.</p>
+<div class="controls" id="actions"></div>
+<div class="controls"><button id="play">일시정지</button><button id="restart">처음부터</button><label>속도 <select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label></div>
+<div class="panels"><div class="panel"><canvas class="frame" width="448" height="320"></canvas><canvas class="mobile" width="144" height="144"></canvas></div><div class="panel violet"><canvas class="frame" width="448" height="320"></canvas><canvas class="mobile" width="144" height="144"></canvas></div></div>
+<p id="status" role="status"></p>
+<div class="timeline"><label for="scrub">프레임</label><input id="scrub" type="range" min="0" value="0" step="1"><b id="number"></b></div>
+<p id="download"></p>
+</main>
+<script>
+const actions={idle:{label:'대기',file:'idle',names:['준비','호흡'],durations:[600,600],width:320,loop:true},'ice-time':{label:'아이스 타임',file:'ice_time',names:['준비','예비 동작','시전','시전 유지'],durations:[140,180,180,200],width:384,loop:true},healing:{label:'힐링',file:'healing',names:['집중','광휘','유지'],durations:[200,400,600],width:320,loop:true},hit:{label:'피격·쓰러짐',file:'hit',names:['방어·인지','충격·반동','완전히 쓰러짐'],durations:[140,160,700],width:448,loop:false}};
+let action='idle',frame=0,playing=true,elapsed=0,last=0;
+const images={};for(const [key,value] of Object.entries(actions)){const img=new Image();img.src=`../char_sorcerus_sd_${value.file}_strip.png`;img.onload=draw;images[key]=img;const b=document.createElement('button');b.textContent=value.label;b.dataset.action=key;b.onclick=()=>{action=key;frame=0;elapsed=0;playing=true;update()};document.querySelector('#actions').append(b)}
+function draw(){const a=actions[action],img=images[action];for(const canvas of document.querySelectorAll('canvas')){const c=canvas.getContext('2d');c.clearRect(0,0,canvas.width,canvas.height);if(!img?.complete||!img.naturalWidth)continue;const scale=Math.min(canvas.width/a.width,canvas.height/320),w=a.width*scale,h=320*scale;c.drawImage(img,frame*a.width,0,a.width,320,(canvas.width-w)/2,canvas.height-h,w,h)}}
+function update(){const a=actions[action];document.querySelector('#scrub').max=a.names.length-1;document.querySelector('#scrub').value=frame;document.querySelector('#number').textContent=`${frame+1}/${a.names.length}`;document.querySelector('#status').textContent=`${a.label} · ${a.names[frame]} · ${a.durations[frame]}ms${action==='hit'&&frame===2?' · 마지막 자세 유지':''}`;document.querySelector('#play').textContent=playing?'일시정지':'재생';for(const b of document.querySelectorAll('[data-action]'))b.setAttribute('aria-pressed',String(b.dataset.action===action));document.querySelector('#download').innerHTML=`<a href="../char_sorcerus_sd_${a.file}_strip.png" download>PNG 스트립</a> · <a href="../char_sorcerus_sd_${a.file}_strip.json">프레임·타이밍 기록</a>`;draw()}
+document.querySelector('#play').onclick=()=>{playing=!playing;update()};document.querySelector('#restart').onclick=()=>{frame=0;elapsed=0;playing=true;update()};document.querySelector('#scrub').oninput=e=>{frame=Number(e.target.value);elapsed=0;playing=false;update()};
+function tick(now){const delta=last?Math.min(100,now-last):0;last=now;if(playing){elapsed+=delta*Number(document.querySelector('#speed').value);const a=actions[action];while(elapsed>=a.durations[frame]){elapsed-=a.durations[frame];if(frame<a.names.length-1)frame++;else if(a.loop)frame=0;else{playing=false;elapsed=0;update();break}update()}draw()}requestAnimationFrame(tick)}update();requestAnimationFrame(tick);
+</script>
+</html>
