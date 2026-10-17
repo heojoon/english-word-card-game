@@ -18,24 +18,35 @@ test('120 HP takes damage only at contact, freezes at each 12 damage, and releas
   rules.advance(s,500);hit(s,11);assert.equal(s.bossHp,96);assert.ok(s.shadowFreezeMs>0);
 });
 
-test('healing repeats every ten consecutive answers, restores 24 capped at 120, and wrong answers reset the streak',()=>{
-  const s=fresh();
-  for(let i=0;i<9;i++)hit(s);
-  assert.equal(s.bossHp,111);assert.equal(s.sorcerusHealMs,0);
-  assert.ok(hit(s).includes('heal-start'));assert.equal(s.bossHp,120);assert.equal(s.sorcerusHealAmount,10);assert.equal(s.sorcerusStreak,0);
-  for(let i=0;i<9;i++){if(s.shadowFreezeMs)rules.advance(s,s.shadowFreezeMs);hit(s);}
-  if(s.shadowFreezeMs)rules.advance(s,s.shadowFreezeMs);
-  assert.ok(hit(s).includes('heal-start'));assert.equal(s.sorcerusStreak,0);
-  const reset=fresh();reset.sorcerusStreak=9;rules.answer(reset,false,200);rules.advance(reset,500);hit(reset);
-  assert.equal(reset.sorcerusStreak,1);assert.equal(reset.sorcerusHealMs,0);
-  const full=fresh();full.bossHp=60;full.sorcerusStreak=9;hit(full);assert.equal(full.bossHp,83);assert.equal(full.sorcerusHealAmount,24);
+test('healing repeats every 15 seconds without answers, restores 5 and caps at 120',()=>{
+  const s=fresh();s.bossHp=100;
+  rules.advance(s,14999);assert.equal(s.bossHp,100);assert.equal(s.guardianPhase,'idle');
+  rules.advance(s,1);assert.equal(s.guardianPhase,'healing');
+  assert.ok(rules.advance(s,200).includes('heal-start'));assert.equal(s.bossHp,105);
+  rules.advance(s,14800);assert.equal(s.guardianPhase,'healing');
+  rules.advance(s,200);assert.equal(s.bossHp,110);
+  const capped=fresh();capped.bossHp=118;rules.advance(capped,15200);
+  assert.equal(capped.bossHp,120);assert.equal(capped.sorcerusHealAmount,2);
+  const full=fresh();rules.advance(full,15200);assert.equal(full.bossHp,120);assert.equal(full.sorcerusHealAmount,0);
+});
+
+test('answers do not trigger or reset healing; pause and frozen battle time stop its clock',()=>{
+  const s=fresh();for(let i=0;i<10;i++)hit(s);
+  assert.equal(s.bossHp,110);assert.equal(s.sorcerusHealElapsed,5000);
+  rules.answer(s,false,200);rules.advance(s,500);assert.equal(s.sorcerusHealElapsed,5500);
+  s.paused=true;rules.advance(s,20000);assert.equal(s.sorcerusHealElapsed,5500);
+  s.paused=false;s.iceTimeActive=true;rules.advance(s,20000);assert.equal(s.sorcerusHealElapsed,5500);
+  s.iceTimeActive=false;rules.advance(s,1000,Math.random,0);assert.equal(s.sorcerusHealElapsed,5500);
+  rules.advance(s,9700);assert.equal(s.bossHp,115);
+  const big=fresh();big.bossHp=90;const events=rules.advance(big,45200);
+  assert.equal(events.filter(e=>e==='heal-start').length,3);assert.equal(big.bossHp,105);
 });
 
 test('healing and freezing can trigger together; lethal hits suppress both skills and hold defeat',()=>{
-  const s=fresh();s.sorcerusStreak=9;s.sorcerusDamage=11;s.bossHp=50;
-  const events=hit(s);assert.ok(events.includes('heal-start'));assert.ok(events.includes('freeze-start'));assert.equal(s.bossHp,73);
+  const s=fresh();s.sorcerusHealElapsed=14500;s.sorcerusDamage=11;s.bossHp=50;
+  const events=hit(s);assert.ok(events.includes('heal-start'));assert.ok(events.includes('freeze-start'));assert.equal(s.bossHp,54);
   assert.equal(s.sorcerusNextFreeze,24);
-  const final=fresh();final.bossHp=1;final.sorcerusDamage=119;final.sorcerusNextFreeze=120;final.sorcerusStreak=9;
+  const final=fresh();final.bossHp=1;final.sorcerusDamage=119;final.sorcerusNextFreeze=120;final.sorcerusHealElapsed=14800;
   rules.answer(final,true,200);assert.deepEqual(Array.from(rules.advance(final,200)),['hit']);assert.equal(final.bossHp,0);assert.equal(final.guardianVisual,'defeat');
   assert.ok(!rules.advance(final,999).includes('victory'));assert.ok(rules.advance(final,1).includes('victory'));assert.equal(final.shadowFreezeMs,0);
 });
@@ -49,12 +60,12 @@ test('pause, reduced motion and large deltas retain skill durations and end feed
 });
 
 test('freeze markup retains readable answers, disables all choices, and uses shared mage ice artwork',()=>{
-  const s=fresh();s.shadowFreezeMs=3000;s.sorcerusHealMs=1200;s.sorcerusHealAmount=24;s.question={prompt:'word',choices:['정답','오답1','오답2','오답3'],answer:'정답'};
+  const s=fresh();s.shadowFreezeMs=3000;s.sorcerusHealMs=1200;s.sorcerusHealAmount=5;s.question={prompt:'word',choices:['정답','오답1','오답2','오답3'],answer:'정답'};
   const c=vm.createContext({window,run:s,esc:String,royalSlimeTime:()=>'',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',iceTimeEffectMarkup:()=>'',eagleEyeEffectMarkup:()=>'',storyBattleActions:()=>''});
   vm.runInContext(code('  function renderSorcerusBattle(', '  function renderGuardianBattle('),c);
   const html=c.renderSorcerusBattle();for(const choice of s.question.choices)assert.ok(html.includes(choice));
   assert.equal((html.match(/data-action="answer"[^>]*disabled/g)||[]).length,4);
-  assert.match(html,/fx_ice_time_field.svg/);assert.match(html,/sorcerus-heal-light/);assert.match(html,/힐링 · HP \+24/);assert.match(html,/aria-valuemax="120"/);
+  assert.match(html,/fx_ice_time_field.svg/);assert.match(html,/sorcerus-heal-light/);assert.match(html,/힐링 · HP \+5/);assert.match(html,/aria-valuemax="120"/);
 });
 
 test('healing extends the question deck and runtime keeps mage ice and timeout behavior',()=>{
@@ -74,7 +85,7 @@ test('World 5 intro describes both skills and entry/build include the boss rules
   const c=vm.createContext({window,esc:String,deployedAssetUrl:x=>x});
   vm.runInContext(code('  function bossIntroductionMarkup(', '  function confirmStoryStage('),c);
   const html=c.bossIntroductionMarkup({chapter:5,number:10});
-  for(const text of ['이성을 잃은 소서러스','HP 120','아이스 타임','3초','힐링','10연속','20%'])assert.ok(html.includes(text));
+  for(const text of ['이성을 잃은 소서러스','HP 120','아이스 타임','3초','힐링','15초','HP 5'])assert.ok(html.includes(text));
   assert.match(read('index.html'),/src="sorcerus-boss.js/);assert.match(read('scripts/build-web.mjs'),/'sorcerus-boss.js'/);
   assert.match(code('  async function finishBattle(', '  async function saveBattleResult('),/run.guardian&&!run.sorcerus/);
 });
@@ -91,12 +102,12 @@ test('win saves through the normal Story path, opens World 5 ending, and clears 
 });
 
 test('midboss retry requires recovery and preserves vitals while resetting combat state',()=>{
-  const key='story-ch5-10',old={...fresh(),done:true,clear:false,hp:0,mp:0,shadowFreezeMs:2500,sorcerusDamage:100,sorcerusStreak:9};
+  const key='story-ch5-10',old={...fresh(),done:true,clear:false,hp:0,mp:0,shadowFreezeMs:2500,sorcerusDamage:100,sorcerusHealElapsed:14000};
   const c=vm.createContext({window,run:old,selectedStage:key,selectedCharacter:{id:'c',class:'mage'},stages:{[key]:{story:true,sorcerus:true}},storyStages:[{key,chapter:5,number:10}],storyStagePlayable:()=>true,storyStageUnlocked:()=>true,storyRecoveryBusy:false,storyEntryAllowed:()=>false,storyVitals:()=>({hp:0,hpMax:2,mp:0,mpMax:2}),clearInterval(){},clearTimeout(){},removeBattleReward(){},timerId:0,nextTimer:0,levelReady:()=>true,buildQuestionDeck:()=>Array(120),reducedMotion:()=>false,bossAttackSteps:()=>1,initializeBattlePet(){},stageCleared:()=>false,prepareQuestion(){},closeDialog(){},go(){},tick(){}});
   vm.runInContext(code('  function startBattle(', '  function prepareQuestion('),c);
   c.startBattle(true);assert.equal(c.run,old);
   c.storyEntryAllowed=()=>true;c.storyVitals=()=>({hp:1,hpMax:2,mp:0,mpMax:2});
-  c.startBattle(true);assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.bossHp,120);assert.equal(c.run.shadowFreezeMs,0);assert.equal(c.run.sorcerusDamage,0);assert.equal(c.run.sorcerusStreak,0);
+  c.startBattle(true);assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.bossHp,120);assert.equal(c.run.shadowFreezeMs,0);assert.equal(c.run.sorcerusDamage,0);assert.equal(c.run.sorcerusHealElapsed,0);
   c.run=old;c.storyStageUnlocked=()=>false;c.startBattle(true);assert.equal(c.run,old);
 });
 
@@ -106,10 +117,10 @@ test('animation manifests match runtime frame sizes, timing and exact contact bo
     assert.equal(file.frameWidth,spec.width);assert.equal(file.frameCount,spec.durations.length);
     assert.deepEqual(file.frames.map(frame=>frame.duration),Array.from(spec.durations));
   }
-  const s=fresh();s.sorcerusStreak=9;s.bossHp=60;
+  const s=fresh();s.sorcerusHealElapsed=14500;s.bossHp=60;
   rules.answer(s,true,200);rules.advance(s,500);assert.equal(s.guardianPhase,'healing');assert.equal(s.bossHp,59);
   assert.equal(rules.visual(s).frame,0);rules.advance(s,199);assert.equal(s.bossHp,59);
-  assert.ok(rules.advance(s,1).includes('heal-start'));assert.equal(s.bossHp,83);assert.equal(rules.visual(s).frame,1);
+  assert.ok(rules.advance(s,1).includes('heal-start'));assert.equal(s.bossHp,64);assert.equal(rules.visual(s).frame,1);
   s.paused=true;rules.advance(s,10000);assert.equal(rules.visual(s).frame,1);
   s.paused=false;rules.advance(s,1000);assert.equal(s.guardianPhase,'idle');assert.equal(s.locked,false);
 });

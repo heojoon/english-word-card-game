@@ -1529,7 +1529,6 @@
     if(!run?.guardian||run.done||run.paused||run.locked||run.weavingStepDodging||run.shadowFreezeMs>0||index<0||index>=run.question.choices.length)return;
     run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;
     const correct=run.question.choices[index]===run.question.answer;
-    if(run.sorcerus&&!correct)run.sorcerusStreak=0;
     if(!correct&&run.weavingStepActive&&consumePugilistWeavingStep())return;
     if(!(run.sorcerus?window.WORDORIA_SORCERUS:run.shadowSorceress?window.WORDORIA_SHADOW_SORCERESS:run.blackDragon?window.WORDORIA_BLACK_DRAGON:window.WORDORIA_GUARDIAN).answer(run,correct,battleContactDelay()))return;
     if(correct){
@@ -1890,7 +1889,7 @@
   function finishGuardianBattle(clear,reason){
     if(!run?.guardian||run.done)return;
     persistStoryBattleVitals();
-    run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;if(run.redReaper)window.WORDORIA_RED_REAPER.clear(run);run.shadowFreezeMs=0;run.shadowCastMs=0;run.sorcerusHealMs=0;run.sorcerusStreak=0;run.sorcerusQueue=[];run.sorcerusContact=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;
+    run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;if(run.redReaper)window.WORDORIA_RED_REAPER.clear(run);run.shadowFreezeMs=0;run.shadowCastMs=0;run.sorcerusHealMs=0;run.sorcerusHealElapsed=0;run.sorcerusQueue=[];run.sorcerusContact=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;
     clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();
     if(run.lichDragon){if(clear&&Number.isFinite(run.lichClearElapsed))run.elapsed=run.lichClearElapsed;window.WORDORIA_LICH_DRAGON.clear(run);go('bossResult');if(clear)claimGuardianReward();return;}
     if(clear){storyDialogueIndex=0;if(run.redReaper)go('storyChapterFourBossEnd');else if(run.shadowSorceress)go('storyChapterFourMidbossEnd');else go(run.blackDragon?'storyChapterThreeBossEnd':'storyChapterTwoBossEnd');}
@@ -1924,7 +1923,7 @@
   }
   async function finishBattle(clear,reason){
     if(run.done)return;if(run.guardian&&!run.sorcerus){finishGuardianBattle(clear,reason);return;}if(run.boss){finishRoyalSlimeBattle(clear,reason);return;}persistStoryBattleVitals();run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;run.feedbackPending=false;clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();
-    if(run.sorcerus){run.shadowFreezeMs=0;run.sorcerusHealMs=0;run.sorcerusStreak=0;run.sorcerusQueue=[];run.sorcerusContact=false;}
+    if(run.sorcerus){run.shadowFreezeMs=0;run.sorcerusHealMs=0;run.sorcerusHealElapsed=0;run.sorcerusQueue=[];run.sorcerusContact=false;}
     await saveBattleResult(run,clear);
     if(clear&&run.story)storyDialogueIndex=0;
     const storyIndex=storyStages.findIndex(stage=>stage.key===selectedStage),storyStage=storyStages[storyIndex];
