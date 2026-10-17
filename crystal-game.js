@@ -1188,9 +1188,8 @@
     if(!selectedCharacter){closeDialog();go('home');toast('먼저 캐릭터를 만들어 주세요');return;}
     clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();const source=stages[selectedStage];
     if(!levelReady(source)){closeDialog();toast('이 레벨의 맵은 아직 준비 중이에요');return;}
-    const shadowRetry=Boolean(bossRetry&&((source.lichDragon&&run?.lichDragon)||(source.sorcerus&&run?.sorcerus)||(source.shadowSorceress&&run?.shadowSorceress)||(source.redReaper&&run?.redReaper))&&run.done&&!run.clear&&!stageCleared(selectedStage));
-    if(shadowRetry){if(!storyStagePlayable(selectedStage)||storyRecoveryBusy||!storyStageUnlocked(storyStages.findIndex(stage=>stage.key===selectedStage)))return;}
-    else if(source.story&&!storyEntryAllowed(selectedStage))return;
+    if(bossRetry&&source.story&&!storyStageUnlocked(storyStages.findIndex(stage=>stage.key===selectedStage)))return;
+    if(source.story&&!storyEntryAllowed(selectedStage))return;
     const deck=buildQuestionDeck(source);const cls=selectedCharacter?.class||'warrior',hpMax=cls==='mage'||cls==='ranger'?2:3;run={deck,index:0,correct:0,elapsed:0,locked:false,paused:false,done:false,clear:false,result:null,chest:false,treasure:0,resultStep:'summary',chestClicks:0,story:Boolean(source.story),crystalSpider:Boolean(source.story&&source.storyChapter===5),hp:hpMax,hpMax,mobs:[],mobInitialized:false,storyTimeLimit:deck.length*3000,timeStopped:false,iceTimeActive:false,weavingStepActive:false,weavingStepDodging:false,fever:false,feverWords:[],feverNextSpawnAt:0,feverWordSequence:0,slashSkillUsed:false,mp:cls==='mage'?2:cls==='warrior'?1:0,mpMax:cls==='mage'?2:cls==='warrior'?1:0,slashCombo:0,slashBonus:0,slashWindowStartedAt:0,slashExpiresAt:0};
     if(source.story)Object.assign(run,storyVitals(),{storyCharacterId:selectedCharacter.id});
     if(source.lichDragon)Object.assign(run,window.WORDORIA_LICH_DRAGON.reset(),{guardianReducedMotion:reducedMotion(),bossAttackSteps:bossAttackSteps()});
@@ -1199,7 +1198,6 @@
     if(source.shadowSorceress)Object.assign(run,window.WORDORIA_SHADOW_SORCERESS.reset(),{guardianReducedMotion:reducedMotion(),bossAttackSteps:bossAttackSteps()});
     if(source.blackDragon)Object.assign(run,window.WORDORIA_BLACK_DRAGON.reset(),{guardianReducedMotion:reducedMotion(),bossAttackSteps:bossAttackSteps()});
     if(source.guardian)Object.assign(run,window.WORDORIA_GUARDIAN.reset(),{guardianReducedMotion:reducedMotion(),bossAttackSteps:bossAttackSteps()});
-    if(shadowRetry)Object.assign(run,{hp:run.hpMax,mp:run.mpMax});
     initializeBattlePet();
     run.storyReplay=Boolean(source.story&&stageCleared(selectedStage));
     prepareQuestion();closeDialog();go('battle');tick();

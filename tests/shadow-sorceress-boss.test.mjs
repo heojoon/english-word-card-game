@@ -95,12 +95,14 @@ test('demo reward pays 200 only once and supports save retry',async()=>{
   c.rpc=async()=>[{reward:0,balance:200,game_score_id:1}];await c.claimGuardianReward();assert.equal(c.run.rewardError,false);assert.equal(c.run.bossReward,0);
 });
 
-test('shadow retry restores HP/MP and clears combat state while respecting map access',()=>{
+test('shadow retry requires recovery and preserves vitals while resetting combat state',()=>{
   const selectedStage='story-ch4-10',old={...fresh(),done:true,clear:false,hp:0,mp:0,shadowFreezeMs:4400,shadowSkillElapsed:120000};
   const c=vm.createContext({window,run:old,selectedStage,selectedCharacter:{id:'c',class:'mage'},stages:{[selectedStage]:{story:true,shadowSorceress:true,words:[]}},storyStages:[{key:selectedStage,chapter:4,number:10}],storyStagePlayable:()=>true,storyStageUnlocked:()=>true,storyRecoveryBusy:false,storyEntryAllowed:()=>false,storyVitals:()=>({hp:0,hpMax:2,mp:0,mpMax:2}),clearInterval(){},clearTimeout(){},removeBattleReward(){},timerId:0,nextTimer:0,levelReady:()=>true,buildQuestionDeck:()=>Array(100),reducedMotion:()=>false,bossAttackSteps:()=>1,initializeBattlePet(){},stageCleared:()=>false,prepareQuestion(){},closeDialog(){},go(){},tick(){}});
   vm.runInContext(code('  function startBattle(', '  function prepareQuestion('),c);
-  c.startBattle(true);assert.equal(c.run.hp,2);assert.equal(c.run.mp,2);assert.equal(c.run.bossHp,100);assert.equal(c.run.shadowFreezeMs,0);assert.equal(c.run.shadowSkillElapsed,0);assert.equal(c.run.elapsed,0);
-  c.run=old;c.storyStagePlayable=()=>false;c.startBattle(true);assert.equal(c.run,old);
+  c.startBattle(true);assert.equal(c.run,old);
+  c.storyEntryAllowed=()=>true;c.storyVitals=()=>({hp:1,hpMax:2,mp:0,mpMax:2});
+  c.startBattle(true);assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.bossHp,100);assert.equal(c.run.shadowFreezeMs,0);assert.equal(c.run.shadowSkillElapsed,0);assert.equal(c.run.elapsed,0);
+  c.run=old;c.storyStageUnlocked=()=>false;c.startBattle(true);assert.equal(c.run,old);
 });
 
 test('runtime timeout is 330 seconds and player ice consumes MP, freezes clock, releases on answer',()=>{

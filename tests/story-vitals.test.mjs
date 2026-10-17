@@ -36,14 +36,15 @@ test('both bosses start with saved vitals; surviving retry does not refill',()=>
     assert.equal(Boolean(c.run.boss||c.run.guardian),true);c.run.done=true;c.startBattle();assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
   }
 });
-test('cleared World 4 boss retries require recovery and preserve HP/MP after potion use',async()=>{
-  for(const local of [true,false])for(const kind of ['shadowSorceress','redReaper']){
-    const c=setup(new Map(),local),key=kind==='shadowSorceress'?'story-ch4-10':'story-ch4-20';
-    c.selectedStage=key;c.storyStages.push({key,chapter:4,number:kind==='shadowSorceress'?10:20});
-    c.stages[key]={story:true,[kind]:true,words:[]};c.stageCleared=stage=>stage===key;
-    c.window[kind==='shadowSorceress'?'WORDORIA_SHADOW_SORCERESS':'WORDORIA_RED_REAPER']={reset:()=>({guardian:true,[kind]:true,bossHp:100})};
+test('all boss retries require recovery and preserve HP/MP after potion use, before and after first clear',async()=>{
+  for(const local of [true,false])for(const cleared of [false,true])for(const kind of ['guardian','blackDragon','shadowSorceress','redReaper','sorcerus','lichDragon']){
+    const [chapter,number]={guardian:[2,7],blackDragon:[3,8],shadowSorceress:[4,10],redReaper:[4,20],sorcerus:[5,10],lichDragon:[5,20]}[kind];
+    const c=setup(new Map(),local),key=`story-ch${chapter}-${number}`;
+    c.selectedStage=key;c.storyStages.push({key,chapter,number});
+    c.stages[key]={story:true,[kind]:true,words:[]};c.stageCleared=stage=>cleared&&stage===key;
+    c.window[{guardian:'WORDORIA_GUARDIAN',blackDragon:'WORDORIA_BLACK_DRAGON',shadowSorceress:'WORDORIA_SHADOW_SORCERESS',redReaper:'WORDORIA_RED_REAPER',sorcerus:'WORDORIA_SORCERUS',lichDragon:'WORDORIA_LICH_DRAGON'}[kind]]={reset:()=>({guardian:true,[kind]:true,bossHp:100})};
     c.saveStoryVitals({hp:1,mp:0});c.startBattle();
-    assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.storyReplay,true);
+    assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.storyReplay,cleared);
     c.run.hp=0;c.run.done=true;c.run.clear=false;c.persistStoryBattleVitals();const failed=c.run;
     c.startBattle(true);
     assert.equal(c.run,failed);assert.equal(c.storyVitals().hp,0);assert.equal(c.storyVitals().mp,0);
@@ -52,7 +53,7 @@ test('cleared World 4 boss retries require recovery and preserve HP/MP after pot
     await c.recoverStoryHp(key,{});
     c.startBattle(true);
     assert.notEqual(c.run,failed);assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
-    assert.equal(c.run.elapsed,0);assert.equal(c.run.done,false);assert.equal(c.run.storyReplay,true);
+    assert.equal(c.run.elapsed,0);assert.equal(c.run.done,false);assert.equal(c.run.storyReplay,cleared);
     // A timeout retry with remaining HP must also retain spent MP.
     c.run.done=true;c.run.clear=false;c.persistStoryBattleVitals();c.startBattle(true);
     assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);

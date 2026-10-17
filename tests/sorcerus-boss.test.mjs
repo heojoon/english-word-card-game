@@ -90,12 +90,14 @@ test('win saves through the normal Story path, opens World 5 ending, and clears 
   }
 });
 
-test('midboss retry restores vitals and resets healing, damage and freeze while checking stage access',()=>{
+test('midboss retry requires recovery and preserves vitals while resetting combat state',()=>{
   const key='story-ch5-10',old={...fresh(),done:true,clear:false,hp:0,mp:0,shadowFreezeMs:2500,sorcerusDamage:100,sorcerusStreak:9};
   const c=vm.createContext({window,run:old,selectedStage:key,selectedCharacter:{id:'c',class:'mage'},stages:{[key]:{story:true,sorcerus:true}},storyStages:[{key,chapter:5,number:10}],storyStagePlayable:()=>true,storyStageUnlocked:()=>true,storyRecoveryBusy:false,storyEntryAllowed:()=>false,storyVitals:()=>({hp:0,hpMax:2,mp:0,mpMax:2}),clearInterval(){},clearTimeout(){},removeBattleReward(){},timerId:0,nextTimer:0,levelReady:()=>true,buildQuestionDeck:()=>Array(120),reducedMotion:()=>false,bossAttackSteps:()=>1,initializeBattlePet(){},stageCleared:()=>false,prepareQuestion(){},closeDialog(){},go(){},tick(){}});
   vm.runInContext(code('  function startBattle(', '  function prepareQuestion('),c);
-  c.startBattle(true);assert.equal(c.run.hp,2);assert.equal(c.run.mp,2);assert.equal(c.run.bossHp,120);assert.equal(c.run.shadowFreezeMs,0);assert.equal(c.run.sorcerusDamage,0);assert.equal(c.run.sorcerusStreak,0);
-  c.run=old;c.storyStagePlayable=()=>false;c.startBattle(true);assert.equal(c.run,old);
+  c.startBattle(true);assert.equal(c.run,old);
+  c.storyEntryAllowed=()=>true;c.storyVitals=()=>({hp:1,hpMax:2,mp:0,mpMax:2});
+  c.startBattle(true);assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.bossHp,120);assert.equal(c.run.shadowFreezeMs,0);assert.equal(c.run.sorcerusDamage,0);assert.equal(c.run.sorcerusStreak,0);
+  c.run=old;c.storyStageUnlocked=()=>false;c.startBattle(true);assert.equal(c.run,old);
 });
 
 test('animation manifests match runtime frame sizes, timing and exact contact boundaries',()=>{
