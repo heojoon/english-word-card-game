@@ -39,7 +39,9 @@ begin
       and stage='스토리 5장 10 · 보랏빛 수정동굴' and cleared and treasure_claimed and coins_earned=500) then
       raise exception 'Progression or chest guard missing';
     end if;
+    update public.game_scores set cleared=false where id=score_id;
     select * into r from public.claim_sorcerus_midboss_reward(c.id,damage,1000);
+    if not exists(select 1 from public.game_scores where id=score_id and cleared) then raise exception 'Reset progress not restored'; end if;
     if r.game_score_id<>score_id or r.reward<>0 or r.balance<>initial_balance+500 or r.healing_potions<>0
       or (r.inventory->>'red_potion_count')::integer<>initial_potions+5 then raise exception 'Duplicate reward'; end if;
     select id into other_id from public.game_characters where owner_user_id=c.owner_user_id and id<>c.id limit 1;

@@ -141,6 +141,14 @@
   try { demoState = {...demoState,...JSON.parse(localStateStorage.getItem(demoKey) || '{}')}; } catch {}
   const saveDemo = () => localStateStorage.setItem(demoKey, JSON.stringify(demoState));
   if(!demoState.potionLoadoutModel){Object.values(demoState.potionInventory||{}).forEach(state=>{state.red_potion_count=Math.max(0,Number(state.red_potion_count||0)-[state.equipped_slot_1,state.equipped_slot_2].filter(type=>type==='red').length);state.blue_potion_count=Math.max(0,Number(state.blue_potion_count||0)-[state.equipped_slot_1,state.equipped_slot_2].filter(type=>type==='blue').length);});demoState.potionLoadoutModel=1;saveDemo();}
+  function resetWorldFiveMidbossLocalClears(){
+    if(demoState.worldFiveMidbossClearResetVersion===1)return;
+    const names=['스토리 5장 10 · 보랏빛 수정동굴','스토리 5장 10 · 보랏빛 수정동굴 · 초등학생'];
+    demoState.records=demoState.records.map(row=>row.cleared&&names.includes(row.stage)?{...row,cleared:false}:row);
+    demoState.worldFiveMidbossClearResetVersion=1;
+    saveDemo();
+  }
+  if(localMode)resetWorldFiveMidbossLocalClears();
   const walletBalance = () => accountMode ? accountCrystals : Number(selectedCharacter?.coins || 0);
   const emitAudio = (id, type='bgm', options) => document.dispatchEvent(new CustomEvent('wordoria:audio',{detail:{id,type,options}}));
   const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -1642,7 +1650,7 @@
   }
   function finishRoyalSlimeBattle(clear,reason){
     if(!run?.boss||run.done)return;persistStoryBattleVitals();run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;clearInterval(timerId);clearTimeout(nextTimer);cancelSpeech();
-    if(run.crystalGhost){run.timeStopped=false;run.ghostFalling=false;run.ghostFallNotice='';go('bossResult');if(clear)claimCrystalGhostReward();return;}
+    if(run.crystalGhost){run.timeStopped=false;run.ghostFalling=false;run.ghostFallNotice='';go('bossResult');if(clear&&!run.localBossSkipped)claimCrystalGhostReward();return;}
     if(clear){storyDialogueIndex=0;go('storyBossVictory');}
     else{go('bossResult');}
   }
@@ -1653,7 +1661,7 @@
   }
 
   async function saveRoyalSlimeStageResult(battle){
-    if(!battle.directBossStage||pendingStoryRun?.result?.game_score_id)return;
+    if(battle.localBossSkipped||!battle.directBossStage||pendingStoryRun?.result?.game_score_id)return;
     if(!battle.clear||battle.correct!==ROYAL_SLIME_HP)throw new Error('boss not cleared');
     const stageRun={...pendingStoryRun,deck:battle.deck,index:battle.index,correct:battle.correct,elapsed:battle.elapsed,done:true,clear:true,reason:'boss-defeated',chest:false,treasure:0,resultStep:'summary',chestClicks:0,slashBonus:0};
     await saveBattleResult(stageRun,true);
@@ -1662,7 +1670,7 @@
   }
 
   async function claimRoyalSlimeReward(){
-    if(!run?.boss||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
+    if(!run?.boss||run.localBossSkipped||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
     const battle=run; battle.rewardPending=true;battle.rewardError=false;
     if(page==='bossResult')render();
     try{
@@ -1687,7 +1695,7 @@
   }
 
   async function claimCrystalGhostReward(){
-    if(!run?.crystalGhost||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
+    if(!run?.crystalGhost||run.localBossSkipped||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
     const battle=run;battle.rewardPending=true;battle.rewardError=false;render();
     try{
       if(battle.correct!==CRYSTAL_GHOST_HP||battle.bossHp!==0)throw new Error('boss not cleared');
@@ -1718,7 +1726,7 @@
     return `<section class="result"><div class="eyebrow">WORLD 3-7 · HIDDEN BOSS</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl(CRYSTAL_GHOST_ART))}" alt="숨겨진 크리스탈 유령"><h1>${run.clear?'숨겨진 크리스탈 유령을 물리쳤어요!':run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p class="royal-boss-reward" role="status">${reward}</p>`:''}<div class="actions">${run.rewardError?'<button class="primary" data-action="crystal-ghost-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':'<button class="primary" data-action="crystal-ghost-retry">다시 도전하기</button>'}<button class="${run.clear?'primary':'secondary'}" data-action="crystal-ghost-leave" ${run.rewardPending||run.clear&&run.rewardError?'disabled':''}>${run.clear?'월드맵으로':'떠나기'}</button></div></section>`;
   }
 
-  function renderRoyalSlimeResult(){if(run?.crystalGhost)return renderCrystalGhostResult();if(run?.guardian)return renderGuardianResult();return `<section class="result"><div class="eyebrow">WHISPERING WOODS · FINAL BOSS</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl('assets/monsters/royal-slime/royal-slime-sd.png'))}" alt="거대 로얄 슬라임"><h1>${run.clear?'거대 로얄 슬라임을 물리쳤어요!':run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p>정답 ${run.answeredCorrect??run.correct}개 · 보스 HP ${run.bossHp} / 50</p>`:''}${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??ROYAL_SLIME_REWARD)} 크리스털`}</p>`:''}<div class="actions">${run.rewardError?'<button class="primary" data-action="boss-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':'<button class="primary" data-action="boss-retry">다시 도전하기</button>'}<button class="${run.clear?'primary':'secondary'}" data-action="boss-return" ${run.rewardPending?'disabled':''}>${run.clear&&(!run.directBossStage||pendingStoryRun?.result)?'7스테이지 보상 확인':run.clear?'월드맵으로':'떠나기'}</button></div></section>`;}
+  function renderRoyalSlimeResult(){if(run?.localBossSkipped)return localBossPreviewResult();if(run?.crystalGhost)return renderCrystalGhostResult();if(run?.guardian)return renderGuardianResult();return `<section class="result"><div class="eyebrow">WHISPERING WOODS · FINAL BOSS</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl('assets/monsters/royal-slime/royal-slime-sd.png'))}" alt="거대 로얄 슬라임"><h1>${run.clear?'거대 로얄 슬라임을 물리쳤어요!':run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p>정답 ${run.answeredCorrect??run.correct}개 · 보스 HP ${run.bossHp} / 50</p>`:''}${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??ROYAL_SLIME_REWARD)} 크리스털`}</p>`:''}<div class="actions">${run.rewardError?'<button class="primary" data-action="boss-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':'<button class="primary" data-action="boss-retry">다시 도전하기</button>'}<button class="${run.clear?'primary':'secondary'}" data-action="boss-return" ${run.rewardPending?'disabled':''}>${run.clear&&(!run.directBossStage||pendingStoryRun?.result)?'7스테이지 보상 확인':run.clear?'월드맵으로':'떠나기'}</button></div></section>`;}
 
   function storyBattleBackgroundClass(){
     const stage=stages[selectedStage];
@@ -1880,13 +1888,17 @@
   }
   function skipLocalBossBattle(){
     if(!canSkipLocalBossBattle())return;
-    // Preserve actual answers and vitals while completing the boss progression counters.
+    // Victory preview only: never persist progress or rewards from a local skip.
+    run.localBossSkipped=true;
     run.answeredCorrect??=run.correct;
     run.correct=run.bossMaxHp||(run.guardian?60:ROYAL_SLIME_HP);
     run.index=run.deck.length;run.bossHp=0;run.elapsed=Math.max(1,run.elapsed);
     run.attack=false;run.stunned=false;run.paused=false;
     closeDialog();
     finishBattle(true,'local-boss-skip');
+  }
+  function localBossPreviewResult(){
+    return '<section class="result"><div class="eyebrow">LOCAL PREVIEW</div><h1>보스 전투를 스킵했어요</h1><p>클리어 기록과 보상은 저장하지 않았어요.</p><button class="primary" data-action="nav" data-page="story">월드맵으로</button></section>';
   }
   function finishGuardianBattle(clear,reason){
     if(!run?.guardian||run.done)return;
@@ -1898,7 +1910,7 @@
     else go('bossResult');
   }
   async function claimGuardianReward(){
-    if(!run?.guardian||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
+    if(!run?.guardian||run.localBossSkipped||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
     const battle=run; battle.rewardPending=true;battle.rewardError=false;render();
     try{
       if(battle.correct!==(battle.bossMaxHp||60)||battle.bossHp!==0)throw new Error('boss not cleared');
@@ -1920,6 +1932,7 @@
     finally{battle.rewardPending=false;if(run===battle&&page==='bossResult')render();}
   }
   function renderGuardianResult(){
+    if(run?.localBossSkipped)return localBossPreviewResult();
     const bossName=run.lichDragon?'부활한 리치 드래곤':run.redReaper?'붉은 사신':run.shadowSorceress?'쉐도우 소서러스':run.blackDragon?'블랙 드래곤':'크리스탈 가디언 골렘',art=run.lichDragon?'assets/novel/characters/char_lich_dragon_world5_standing.webp':run.redReaper?'assets/monsters/red-reaper/red-reaper-standing.png':run.shadowSorceress?'assets/monsters/shadow-sorceress/shadow-sorceress-standing.png':run.blackDragon?'assets/monsters/black-dragon/idle/01.png':'assets/monsters/crystal-guardian-golem/idle/01.png';
     return `<section class="result"><div class="eyebrow">${run.lichDragon?'AMETHYST CAVERN · FINAL BOSS':run.redReaper?'ILLUSION LAND · FINAL BOSS':run.shadowSorceress?'ILLUSION LAND · MID BOSS':'CRYSTAL TEMPLE · FINAL BOSS'}</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl(art))}" alt="${bossName}"><h1>${run.clear?`${bossName}을 물리쳤어요!`:run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??(run.lichDragon?window.WORDORIA_LICH_DRAGON.reward(run.elapsed):run.redReaper?500:run.shadowSorceress?200:run.blackDragon?600:500))} 크리스털`}</p>`:''}${run.lichDragon&&run.clear&&run.bossReward>700?'<p>4분 이내 처치 보너스 +300 크리스털 포함</p>':''}<div class="actions">${run.rewardError?'<button class="primary" data-action="guardian-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':`<button class="primary" data-action="${run.lichDragon?'lich-dragon-retry':run.redReaper?'red-reaper-retry':run.shadowSorceress?'shadow-sorceress-retry':run.blackDragon?'black-dragon-retry':'guardian-retry'}">다시 도전하기</button>`}<button class="${run.clear?'primary':'secondary'}" data-action="guardian-leave" ${run.rewardPending||run.clear&&run.rewardError?'disabled':''}>${run.clear?'월드맵으로':'떠나기'}</button></div></section>`;
   }
@@ -1935,7 +1948,7 @@
     if(clear){document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));}
   }
   async function saveBattleResult(run,clear){
-    if(run.result?.game_score_id)return;
+    if(run.localBossSkipped||run.result?.game_score_id)return;
     if(run.sorcerus&&clear){await saveSorcerusMidbossReward(run);return;}
     run.saveError=false;run.saveRetryable=false;
     if(localMode){const id=`demo-${Date.now()}-${Math.random()}`,stage=stageRecordName(selectedStage),coins=run.storyReplay?0:earnedCoins(run.correct,clear)+Number(run.slashBonus||0)+Number(run.feverCollected||0);selectedCharacter.coins+=coins;run.result={game_score_id:id,coins_earned:coins,balance:selectedCharacter.coins};const row={id,player,stage,correct:run.correct,total:run.deck.length,cleared:clear,character_id:selectedCharacter.id,duration_ms:Math.round(run.elapsed),coins_earned:coins,created_at:new Date().toISOString()};demoState.records.unshift(row);records=demoState.records;saveDemo();}
@@ -1943,7 +1956,7 @@
     else{run.saveError=true;run.saveRetryable=true;}
   }
   async function saveSorcerusMidbossReward(battle){
-    if(battle.savingMidbossReward||battle.result?.game_score_id)return;
+    if(battle.localBossSkipped||battle.savingMidbossReward||battle.result?.game_score_id)return;
     battle.savingMidbossReward=true;battle.saveError=false;battle.saveRetryable=false;
     const characterId=battle.storyCharacterId||selectedCharacter.id,stage=stageRecordName(selectedStage);
     try{
@@ -1953,7 +1966,11 @@
         const character=demoState.characters.find(c=>c.id===characterId);
         if(!character)throw new Error('character not found');
         const claimed=demoState.records.find(row=>row.player===player&&row.stage===stage&&row.sorcerusMidbossRewardClaimed);
-        if(claimed)result={game_score_id:claimed.id,reward:0,balance:character.coins,healing_potions:0};
+        if(claimed){
+          const previousClear=claimed.cleared;claimed.cleared=true;
+          try{saveDemo();}catch(error){claimed.cleared=previousClear;throw error;}
+          result={game_score_id:claimed.id,reward:0,balance:character.coins,healing_potions:0};
+        }
         else{
           const previousCoins=character.coins,previousRecords=demoState.records,previousInventory=demoState.potionInventory;
           const current=previousInventory?.[characterId]||potionInventory;
@@ -1987,7 +2004,7 @@
     const battle=run;battle.savingReward=true;button.disabled=true;
     try{await saveBattleResult(battle,battle.clear);}finally{battle.savingReward=false;if(run===battle&&page==='result')render();}
   }
-  function renderResult(){const r=run;if(r.saveError&&!r.result?.game_score_id)return `<section class="result"><h1>보상을 저장하지 못했어요</h1><p>이번 도전의 크리스털이 지갑에 반영되었는지 확인하지 못했어요.${r.saveRetryable?' 다시 저장해 주세요.':' 네트워크와 지갑·모험 기록을 확인해 주세요.'}</p>${r.saveRetryable?'<button class="primary" data-action="battle-reward-retry">보상 저장 다시 시도</button>':''}<button class="secondary" data-action="nav" data-page="home">홈으로</button></section>`;const result=r.result,earned=result?.coins_earned??(r.storyReplay?0:earnedCoins(r.correct,r.clear)+Number(r.slashBonus||0)+Number(r.feverCollected||0));if(!r.clear)return `<section class="result"><div class="result-symbol">${icon('aura')}</div><div class="eyebrow" style="color:var(--violet)">KEEP EXPLORING</div><h1>${r.reason==='timeout'?'시간이 다 되었어요':'다음엔 더 멀리 갈 수 있어요'}</h1><p>${esc(stages[selectedStage].name)} · ${r.correct} / ${r.deck.length} 정답<br>이번에 배운 단어는 다음 모험의 힘이 됩니다.</p><div class="reward-number">◆ +${num(earned)}</div><div class="panel row small reward-breakdown"><span>정답 <b>${r.correct}</b></span><span>풀이 시간 <b>${(r.elapsed/1000).toFixed(1)}초</b></span></div><button class="primary" data-action="retry">다시 도전하기 →</button><div class="actions"><button class="secondary" data-action="nav" data-page="dungeon">다른 던전</button><button class="secondary" data-action="nav" data-page="home">홈으로</button></div></section>`;if(r.resultStep==='chest')return chestMarkup(r);if(r.resultStep==='reward')return r.chestKind==='item'?itemRewardMarkup(r):crystalRewardMarkup(r);return clearSummaryMarkup(r,earned);}
+  function renderResult(){const r=run;if(r?.localBossSkipped)return localBossPreviewResult();if(r.saveError&&!r.result?.game_score_id)return `<section class="result"><h1>보상을 저장하지 못했어요</h1><p>이번 도전의 크리스털이 지갑에 반영되었는지 확인하지 못했어요.${r.saveRetryable?' 다시 저장해 주세요.':' 네트워크와 지갑·모험 기록을 확인해 주세요.'}</p>${r.saveRetryable?'<button class="primary" data-action="battle-reward-retry">보상 저장 다시 시도</button>':''}<button class="secondary" data-action="nav" data-page="home">홈으로</button></section>`;const result=r.result,earned=result?.coins_earned??(r.storyReplay?0:earnedCoins(r.correct,r.clear)+Number(r.slashBonus||0)+Number(r.feverCollected||0));if(!r.clear)return `<section class="result"><div class="result-symbol">${icon('aura')}</div><div class="eyebrow" style="color:var(--violet)">KEEP EXPLORING</div><h1>${r.reason==='timeout'?'시간이 다 되었어요':'다음엔 더 멀리 갈 수 있어요'}</h1><p>${esc(stages[selectedStage].name)} · ${r.correct} / ${r.deck.length} 정답<br>이번에 배운 단어는 다음 모험의 힘이 됩니다.</p><div class="reward-number">◆ +${num(earned)}</div><div class="panel row small reward-breakdown"><span>정답 <b>${r.correct}</b></span><span>풀이 시간 <b>${(r.elapsed/1000).toFixed(1)}초</b></span></div><button class="primary" data-action="retry">다시 도전하기 →</button><div class="actions"><button class="secondary" data-action="nav" data-page="dungeon">다른 던전</button><button class="secondary" data-action="nav" data-page="home">홈으로</button></div></section>`;if(r.resultStep==='chest')return chestMarkup(r);if(r.resultStep==='reward')return r.chestKind==='item'?itemRewardMarkup(r):crystalRewardMarkup(r);return clearSummaryMarkup(r,earned);}
 
   function showCharacters(){if(guestMode){showStats();return;}if(accountMode){characterCreating=false;go('characters');return;}modal(`<div class="eyebrow">CHOOSE YOUR HERO</div><h2>모험가 선택</h2>${profileBar()}<div class="character-list">${characters.map(c=>`<button class="character-row ${c.id===selectedCharacter?.id?'active':''}" data-action="select-character" data-id="${c.id}"><img src="${imagePath(c)}" alt=""><span><b>${esc(c.name)}</b><small>${characterDef(c).label} · ${variantOf(c)==='female'?'여성':'남성'}</small></span><span class="wallet">◆ ${num(c.coins)}</span></button>`).join('')||'<div class="empty-state">이 유저는 아직 캐릭터가 없어요.</div>'}</div><button class="primary" data-action="new-character" ${!dbOnline&&!localMode?'disabled':''}>＋ 새 캐릭터 만들기</button>`);}
   function showNewPlayer(){modal('<div class="eyebrow">NEW PLAYER</div><h2>새 유저 추가</h2><label class="form-label" for="player-name">유저 이름</label><input id="player-name" class="field" maxlength="12" autocomplete="off" placeholder="예: 엄마"><p>한글, 영문, 숫자, 공백, 밑줄과 하이픈을 사용할 수 있어요.</p><button class="primary" data-action="create-player">유저 추가</button>');setTimeout(()=>$('player-name')?.focus(),0);}

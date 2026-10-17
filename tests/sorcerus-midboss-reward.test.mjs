@@ -59,3 +59,11 @@ test('an uncleared boss cannot receive the fixed reward',async()=>{
   const c=setup();c.run.bossHp=1;await c.saveBattleResult(c.run,true);
   assert.ok(c.run.saveError);assert.equal(c.selectedCharacter.coins,100);assert.equal(c.records.length,0);
 });
+
+test('actual guest re-clear restores reset progress without paying the reward twice',async()=>{
+  const c=setup();await c.saveBattleResult(c.run,true);
+  c.demoState.records[0].cleared=false;c.run={...c.run,result:null};
+  await c.saveBattleResult(c.run,true);
+  assert.equal(c.demoState.records[0].cleared,true);assert.equal(c.selectedCharacter.coins,600);
+  assert.equal(c.potionInventory.red_potion_count,7);assert.equal(c.run.result.coins_earned,0);
+});
