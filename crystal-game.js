@@ -2087,6 +2087,89 @@
   function showMapStart(){showWeeklyRanking(true);}
   function showRankings(){showWeeklyRanking();}
 
+  const noticeKinds={notice:'공지',event:'이벤트',other:'기타'};
+  let noticeQueue=[],activeNotice=null,noticeBusy=false,noticeCreatingCharacter=false;
+  let noticeRecipients=new Map(),noticeUserSearchVersion=0,noticeRequestId=null,noticePendingPayload=null;
+  function noticeRewardArt(reward){
+    if(reward.currency==='crystals')return itemArt({name:'크리스털',art_path:'assets/ui/crystal-quest/rewards/ui_reward_crystal_bloom.webp'});
+    if(reward.potion_type)return `<span class="potion-bottle ${reward.potion_type==='red'?'red':'blue'}" aria-label="${reward.potion_type==='red'?'힐링포션':'마나포션'}"></span>`;
+    return itemArt(reward);
+  }
+  function noticeItemChoices(){
+    return [{key:'crystals',name:'크리스털',currency:'crystals'},...shopItems.filter(item=>item.category==='avatar').map(item=>({...item,key:String(item.id)})),
+      {key:'red',name:'힐링포션',potion_type:'red'},{key:'blue',name:'마나포션',potion_type:'blue'}];
+  }
+  async function showNoticeComposer(){
+    if(!accountMode||accountProfile?.role!=='admin')return;
+    noticeRecipients=new Map();noticeRequestId=crypto.randomUUID();noticePendingPayload=null;
+    modal(`<section class="notice-composer"><button class="text-btn" data-action="profile">← 프로필</button><div class="eyebrow">ADMIN CONTENTS</div><h2>공지 보내기</h2><form id="notice-form"><label>공지 제목<input class="field" name="title" maxlength="100" required></label><label>종류<select class="field" name="kind"><option value="notice">공지</option><option value="event">이벤트</option><option value="other">기타</option></select></label><label>공지 내용<textarea class="field" name="body" rows="6" maxlength="10000" required></textarea></label><fieldset><legend>보낼 대상</legend><div class="notice-audience"><label><input type="radio" name="audience" value="all" checked> 전체</label><label><input type="radio" name="audience" value="selected"> 특정 유저</label></div><small>전체는 발송 시점에 가입한 모든 계정에 보내요.</small><div id="notice-targets" hidden><div class="notice-search"><input id="notice-user-search" class="field" placeholder="아이디 / 이름 검색" maxlength="100" aria-label="공지 대상 검색"><button type="button" class="secondary" data-action="notice-search">검색</button></div><div id="notice-selected" class="notice-selected"></div><div id="notice-users" class="notice-user-list"></div><small>검색 결과는 최대 100명이며 선택한 유저는 검색 후에도 유지돼요.</small></div></fieldset><fieldset><legend>첨부 아이템 · 여러 개 선택 가능</legend><div class="notice-item-list">${noticeItemChoices().map(item=>`<div class="notice-item-row"><label><input type="checkbox" name="reward" value="${esc(item.key)}"><span class="notice-item-art">${noticeRewardArt(item)}</span><span>${esc(item.name)}</span></label><input class="field" type="number" min="1" max="999" step="1" value="1" data-notice-quantity="${esc(item.key)}" aria-label="${esc(item.name)} 수량" disabled></div>`).join('')}</div></fieldset><p id="notice-send-status" role="status"></p><button class="primary" type="submit">보내기</button></form></section>`);
+    await searchNoticeUsers();
+  }
+  async function searchNoticeUsers(){
+    const version=++noticeUserSearchVersion,container=$('notice-users');if(!container)return;
+    container.textContent='유저를 불러오는 중…';
+    try{
+      const users=await rpc('admin_notice_users',{p_search:$('notice-user-search')?.value.trim()||''});
+      if(version!==noticeUserSearchVersion||!container.isConnected)return;
+      container.innerHTML=users.map(user=>`<label><input type="checkbox" data-notice-user="${esc(user.user_id)}" data-label="${esc(user.login_id||user.display_name)}" ${noticeRecipients.has(user.user_id)?'checked':''}><span>${esc(user.display_name)} <small>${esc(user.login_id||'')}</small></span></label>`).join('')||'<p>검색 결과가 없어요.</p>';
+    }catch{container.innerHTML='<p>유저를 불러오지 못했어요. 검색 버튼을 눌러 다시 시도해 주세요.</p>';}
+  }
+  function updateNoticeRecipients(){
+    $('notice-selected').innerHTML=`<small>${noticeRecipients.size}명 선택</small>`+[...noticeRecipients].map(([id,label])=>`<button type="button" class="text-btn" data-action="notice-remove-user" data-id="${esc(id)}">${esc(label)} ×</button>`).join('');
+  }
+  async function sendNotice(form){
+    const button=form.querySelector('[type=submit]'),status=$('notice-send-status');if(button.disabled||!form.reportValidity())return;
+    const values=new FormData(form),audience=noticePendingPayload?.p_audience||values.get('audience');
+    if(!noticePendingPayload&&(!String(values.get('title')||'').trim()||!String(values.get('body')||'').trim())){status.textContent='공지 제목과 내용을 입력해 주세요.';return;}
+    if(audience==='selected'&&!noticeRecipients.size){status.textContent='보낼 유저를 한 명 이상 선택해 주세요.';return;}
+    const rewards=values.getAll('reward').map(key=>({...(key==='crystals'?{currency:'crystals'}:key==='red'||key==='blue'?{potion_type:key}:{item_id:Number(key)}),quantity:Number(form.querySelector(`[data-notice-quantity="${key}"]`).value)}));
+    noticePendingPayload ||= {p_request_id:noticeRequestId,p_title:String(values.get('title')).trim(),p_kind:values.get('kind'),p_body:String(values.get('body')).trim(),p_audience:audience,p_user_ids:[...noticeRecipients.keys()],p_rewards:rewards};
+    form.querySelectorAll('input,select,textarea,button').forEach(control=>control.disabled=true);
+    button.disabled=true;button.textContent='보내는 중…';status.textContent='';
+    // Lock the request contents until its result is known. Retrying uses the same ID.
+    try{
+      const count=await rpc('send_game_notice',noticePendingPayload);
+      noticeRequestId=null;
+      modal(`<div class="eyebrow">NOTICE SENT</div><h2>공지를 보냈어요</h2><p>${num(count)}개 계정에 전달했어요.</p><button class="primary" data-action="profile">프로필로 돌아가기</button>`);
+    }catch{status.textContent='발송 결과를 확인하지 못했어요. 다시 보내기를 누르면 중복 없이 확인해요.';button.disabled=false;button.textContent='다시 보내기';}
+  }
+  async function loadLoginNotices(){
+    if(!accountMode||activeNotice)return;
+    try{noticeQueue=await rpc('pending_game_notices',{});showNextNotice();}
+    catch{toast('공지를 불러오지 못했어요. 프로필에서 공지 확인을 눌러 주세요.');}
+  }
+  function showNextNotice(){
+    activeNotice=noticeQueue[0]||null;noticeBusy=false;
+    if(!activeNotice){closeDialog();return;}
+    const notice=activeNotice,rewards=notice.rewards||[];
+    modal(`<section class="login-notice"><span class="role-badge">${esc(noticeKinds[notice.kind]||'공지')}</span><h2>${esc(notice.title)}</h2><div class="notice-body">${esc(notice.body)}</div>${rewards.length?`<div class="notice-rewards" aria-label="첨부 아이템">${rewards.map(reward=>`<span class="notice-reward"><span class="notice-item-art">${noticeRewardArt(reward)}</span><small>×${num(reward.quantity)}</small></span>`).join('')}</div>${rewards.every(reward=>reward.currency==='crystals')?'<button class="primary" data-action="notice-claim">받기</button>':characters.length?`<label class="notice-character-label">받을 캐릭터<select id="notice-character" class="field">${characters.map(character=>`<option value="${esc(character.id)}" ${character.id===selectedCharacter?.id?'selected':''}>${esc(character.name)}</option>`).join('')}</select></label><button class="primary" data-action="notice-claim">받기</button>`:'<p>아이템을 받을 캐릭터를 먼저 만들어 주세요.</p><button class="primary" data-action="notice-create-character">캐릭터 만들기</button>'}<small class="notice-close-hint">받기 전에 닫으면 첨부 아이템을 받을 수 없어요.</small>`:''}<p id="notice-status" role="status"></p><button class="secondary" data-action="notice-dismiss">닫기</button></section>`,{closable:false});
+  }
+  async function finishNotice(claim=false){
+    if(!activeNotice||noticeBusy)return;
+    const notice=activeNotice,characterId=$('notice-character')?.value||null;
+    if(claim&&!characterId&&(notice.rewards||[]).some(reward=>reward.currency!=='crystals'))return;
+    noticeBusy=true;
+    document.querySelectorAll('.login-notice button,.login-notice select').forEach(button=>button.disabled=true);
+    try{
+      await rpc(claim?'claim_game_notice':'dismiss_game_notice',claim?{p_notice_id:notice.id,p_character_id:characterId}:{p_notice_id:notice.id});
+    }catch{
+      noticeBusy=false;$('notice-status').textContent='처리하지 못했어요. 다시 시도해 주세요.';
+      document.querySelectorAll('.login-notice button,.login-notice select').forEach(button=>button.disabled=false);return;
+    }
+    noticeQueue.shift();activeNotice=null;
+    if(claim){try{if((notice.rewards||[]).some(reward=>reward.currency==='crystals')){accountProfile=await loadAccountProfile();accountCrystals=Number(accountProfile.crystal_balance||0);}await loadCharacterExtras();render();}catch{/* The receipt is already saved; do not retry delivery. */}toast('선물을 받았어요');}
+    showNextNotice();
+  }
+  document.addEventListener('keydown',event=>{if(event.target.id==='notice-user-search'&&event.key==='Enter'){event.preventDefault();void searchNoticeUsers();}});
+  document.addEventListener('submit',event=>{if(event.target.id==='notice-form'){event.preventDefault();void sendNotice(event.target);}});
+  document.addEventListener('change',event=>{
+    const input=event.target;if(!input.closest('#notice-form'))return;
+    if(input.name==='audience')$('notice-targets').hidden=input.value!=='selected';
+    if(input.name==='reward')input.closest('.notice-item-row').querySelector('input[type=number]').disabled=!input.checked;
+    if(input.dataset.noticeUser){if(input.checked)noticeRecipients.set(input.dataset.noticeUser,input.dataset.label);else noticeRecipients.delete(input.dataset.noticeUser);updateNoticeRecipients();}
+  });
+  $('dialog').addEventListener('cancel',event=>{if(activeNotice){event.preventDefault();void finishNotice();}});
+
   const roleLabels={admin:'관리자',teacher:'선생님',student:'학생'};
   function profilePermissions(role){
     if(role==='admin')return ['모든 월드와 맵 관리','사용자 및 계정 권한 관리','공개·비공개 맵 플레이'];
@@ -2117,7 +2200,7 @@
     const role=profile.role||'student',roleLabel=roleLabels[role]||'학생',permissions=profilePermissions(role),verified=Boolean(profile.contact_email_active&&profile.contact_email_verified_at),email=verified?(profile.contact_email||''):'';
     const emailControl=profile.guest?'<div class="profile-empty">로그인하면 이메일을 인증하고 계정 설정을 관리할 수 있어요.</div>':verified?`<label class="profile-email-label" for="profile-email">인증된 이메일</label><div class="profile-email-row verified"><input id="profile-email" class="field" type="email" value="${esc(email)}" readonly aria-readonly="true"><button class="email-unlink" data-action="ask-unlink-email" aria-label="이메일 연동 해제" title="연동 해제">×</button></div><p class="profile-email-status">✓ 이메일 인증 완료 · 계정 보상 ${num(profile.email_reward_crystals)} ◆</p>`:`<label class="profile-email-label" for="profile-email">인증할 이메일</label><div class="profile-email-row"><input id="profile-email" class="field" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="name@example.com"><button class="secondary" data-action="send-profile-code">인증 메일</button></div><p class="profile-email-status pending">6자리 문자+숫자 코드를 이메일로 보내드려요.</p>`;
     const roleControl=verified&&role!=='admin'?`<div class="role-picker" aria-label="계정 권한 선택"><button class="${role==='student'?'active':''}" data-action="select-profile-role" data-role="student" aria-pressed="${role==='student'}">학생</button><button class="${role==='teacher'?'active':''}" data-action="select-profile-role" data-role="teacher" aria-pressed="${role==='teacher'}">선생님</button></div>`:verified&&role==='admin'?'<div class="admin-fixed-note">heojoon48@gmail.com 인증 관리자 · 권한 고정</div>':'';
-    return `<section class="profile-sheet"><div class="profile-heading"><span class="profile-gem">${icon('profile')}</span><div><div class="eyebrow">MY CRYSTAL PROFILE</div><h2>${esc(profile.display_name||player)}</h2><span class="role-badge role-${esc(role)}">${icon('shield')} ${esc(roleLabel)}</span></div></div><div class="profile-account-card"><div class="profile-row"><span>로그인 아이디</span><b>${profile.guest?'게스트 모드':esc(profile.login_id||'아이디 정보 없음')}</b></div><div class="profile-row"><span>계정 공용 크리스털</span><b>◆ ${num(profile.guest?walletBalance():profile.crystal_balance)}</b></div><div class="profile-row"><span>계정 권한</span><b>${esc(roleLabel)}</b></div></div><div class="profile-section-title"><span>${icon('mail')}</span><div><b>이메일 인증</b><small>인증을 완료하면 200 크리스털을 한 번 지급해요.</small></div></div>${emailControl}${learningLevelControl(profile)}<div class="profile-section-title"><span>${icon('shield')}</span><div><b>내 권한</b><small>${verified?'인증된 계정의 역할을 선택할 수 있어요.':'이메일 인증 후 역할을 선택할 수 있어요.'}</small></div></div>${roleControl}<ul class="permission-list">${permissions.map(item=>`<li>${esc(item)}</li>`).join('')}</ul><div class="profile-future-grid"><button disabled><span>${icon('friends')}</span><b>친구</b><small>친구 추가 · 친구 맺기</small><i>준비 중</i></button><button disabled><span>${icon('group')}</span><b>내 그룹</b><small>그룹 참여 · 구성원 관리</small><i>준비 중</i></button></div><button class="profile-signout" data-action="signout">${profile.guest?'로그인 · 회원가입으로 이동':'로그아웃'}</button></section>`;
+    return `<section class="profile-sheet"><div class="profile-heading"><span class="profile-gem">${icon('profile')}</span><div><div class="eyebrow">MY CRYSTAL PROFILE</div><h2>${esc(profile.display_name||player)}</h2><span class="role-badge role-${esc(role)}">${icon('shield')} ${esc(roleLabel)}</span></div></div><div class="profile-account-card"><div class="profile-row"><span>로그인 아이디</span><b>${profile.guest?'게스트 모드':esc(profile.login_id||'아이디 정보 없음')}</b></div><div class="profile-row"><span>계정 공용 크리스털</span><b>◆ ${num(profile.guest?walletBalance():profile.crystal_balance)}</b></div><div class="profile-row"><span>계정 권한</span><b>${esc(roleLabel)}</b></div></div><div class="profile-section-title"><span>${icon('mail')}</span><div><b>이메일 인증</b><small>인증을 완료하면 200 크리스털을 한 번 지급해요.</small></div></div>${emailControl}${learningLevelControl(profile)}<div class="profile-section-title"><span>${icon('shield')}</span><div><b>내 권한</b><small>${verified?'인증된 계정의 역할을 선택할 수 있어요.':'이메일 인증 후 역할을 선택할 수 있어요.'}</small></div></div>${roleControl}<ul class="permission-list">${permissions.map(item=>`<li>${esc(item)}</li>`).join('')}</ul>${!profile.guest?`<div class="profile-section-title"><span>${icon('mail')}</span><div><b>콘텐츠</b><small>계정에 도착한 소식을 확인해요.</small></div></div><button class="secondary" data-action="notice-inbox">공지 확인</button>${role==='admin'?'<button class="primary" data-action="notice-compose">공지 보내기</button>':''}`:''}<div class="profile-future-grid"><button disabled><span>${icon('friends')}</span><b>친구</b><small>친구 추가 · 친구 맺기</small><i>준비 중</i></button><button disabled><span>${icon('group')}</span><b>내 그룹</b><small>그룹 참여 · 구성원 관리</small><i>준비 중</i></button></div><button class="profile-signout" data-action="signout">${profile.guest?'로그인 · 회원가입으로 이동':'로그아웃'}</button></section>`;
   }
   async function showProfile(){
     modal('<div class="profile-loading"><i></i><b>프로필을 불러오는 중…</b></div>');
@@ -2184,7 +2267,7 @@
     render();
   }
   async function createPlayer(){if(guestMode)return;const input=$('player-name'),name=input?.value.trim().replace(/\s+/g,' ');if(!name||!/^[가-힣A-Za-z0-9 _-]{1,12}$/.test(name)){toast('사용할 수 있는 유저 이름을 입력해 주세요');return;}if(players.some(x=>x.toLocaleLowerCase()===name.toLocaleLowerCase())){toast('이미 등록된 유저예요');return;}const custom=readCustomPlayers();custom.push(name);localStorage.setItem('fantasyQuizPlayers',JSON.stringify(unique(custom)));players.push(name);await switchPlayer(name);showNewCharacter();}
-  async function createCharacter(button){if(guestMode&&characters.length)return;if(!classDefs[newClass]||!availableVariants(newClass).includes(newVariant))return;const input=$('character-name'),name=guestMode?'손님':input?.value.trim();if(!name){toast('캐릭터 이름을 입력해 주세요');input?.focus();return;}button.disabled=true;button.textContent='생성 중…';try{let created;if(localMode){if(demoState.characters.filter(c=>c.player===player).length&&!(demoState.characterTickets>0))throw new Error('character creation ticket required');created={id:`demo-${Date.now()}`,player,name,class:newClass,avatar_variant:newVariant,accent:'violet',coins:0,equipped_items:{}};demoState.characters.push(created);if(demoState.characters.filter(c=>c.player===player).length>1)demoState.characterTickets--;saveDemo();}else if(accountMode){const rows=await rpc('create_account_character',{p_name:name,p_class:newClass,p_avatar_variant:newVariant,p_accent:'violet'});created=Array.isArray(rows)?rows[0]:rows;}else{let rows;try{rows=await apiPost('game_characters',{player,name,class:newClass,avatar_variant:newVariant,accent:'violet'});}catch(error){if(!String(error.message).includes('avatar_variant'))throw error;rows=await apiPost('game_characters',{player,name,class:newClass,accent:'violet'});if(rows?.[0])localStorage.setItem(`fantasyQuizAvatar:${rows[0].id}`,newVariant);}created=rows?.[0];}if(created)localStorage.setItem(`fantasyQuizCharacter:${player}`,created.id);closeDialog();characterCreating=false;await refresh();if(guestMode)go('home');else if(accountMode)go('characters');toast('새 모험가가 길드에 합류했어요!');}catch(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(String(error.message).includes('ticket')?'캐릭터 추가권이 필요해요':'캐릭터 생성에 실패했습니다');}}
+  async function createCharacter(button){if(guestMode&&characters.length)return;if(!classDefs[newClass]||!availableVariants(newClass).includes(newVariant))return;const input=$('character-name'),name=guestMode?'손님':input?.value.trim();if(!name){toast('캐릭터 이름을 입력해 주세요');input?.focus();return;}button.disabled=true;button.textContent='생성 중…';try{let created;if(localMode){if(demoState.characters.filter(c=>c.player===player).length&&!(demoState.characterTickets>0))throw new Error('character creation ticket required');created={id:`demo-${Date.now()}`,player,name,class:newClass,avatar_variant:newVariant,accent:'violet',coins:0,equipped_items:{}};demoState.characters.push(created);if(demoState.characters.filter(c=>c.player===player).length>1)demoState.characterTickets--;saveDemo();}else if(accountMode){const rows=await rpc('create_account_character',{p_name:name,p_class:newClass,p_avatar_variant:newVariant,p_accent:'violet'});created=Array.isArray(rows)?rows[0]:rows;}else{let rows;try{rows=await apiPost('game_characters',{player,name,class:newClass,avatar_variant:newVariant,accent:'violet'});}catch(error){if(!String(error.message).includes('avatar_variant'))throw error;rows=await apiPost('game_characters',{player,name,class:newClass,accent:'violet'});if(rows?.[0])localStorage.setItem(`fantasyQuizAvatar:${rows[0].id}`,newVariant);}created=rows?.[0];}if(created)localStorage.setItem(`fantasyQuizCharacter:${player}`,created.id);closeDialog();characterCreating=false;await refresh();if(guestMode)go('home');else if(accountMode)go('characters');toast('새 모험가가 길드에 합류했어요!');if(noticeCreatingCharacter){noticeCreatingCharacter=false;await loadLoginNotices();}}catch(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(String(error.message).includes('ticket')?'캐릭터 추가권이 필요해요':'캐릭터 생성에 실패했습니다');}}
   async function buyCharacterTicket(button){if(!selectedCharacter||walletBalance()<200){toast('계정 크리스털이 부족해요');return false;}button.disabled=true;button.textContent='구매 중…';try{if(localMode){selectedCharacter.coins-=200;demoState.characterTickets=(demoState.characterTickets||0)+1;availableCharacterTickets=demoState.characterTickets;saveDemo();}else{const rows=await rpc('purchase_character_creation_ticket',{p_payer_character_id:selectedCharacter.id});const result=rows?.[0];if(result){accountCrystals=Number(result.new_balance);availableCharacterTickets=result.available_tickets;}}render();toast('계정 크리스털로 캐릭터 추가권을 구매했어요!');return true;}catch(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(String(error.message).includes('not enough')?'계정 크리스털이 부족해요':'추가권을 구매하지 못했어요');return false;}}
   function wishPurchaseDay(timestamp=Date.now()){
     return new Date(new Date(timestamp).getTime()+9*60*60*1000).toISOString().slice(0,10);
@@ -2276,6 +2359,12 @@
   });
   document.addEventListener('click',async event=>{const button=event.target.closest('button[data-action="retry-database"]');if(!button)return;event.preventDefault();event.stopImmediatePropagation();button.disabled=true;button.textContent='연결 중…';await refresh();toast(dbOnline?'데이터베이스에 다시 연결했어요.':'연결하지 못했어요. 잠시 후 다시 시도해 주세요.');},true);
   document.addEventListener('click',async event=>{const b=event.target.closest('button[data-action]');if(!b||b.disabled)return;const action=b.dataset.action,id=b.dataset.id;
+    if(action==='notice-compose'){await showNoticeComposer();return;}
+    if(action==='notice-search'){await searchNoticeUsers();return;}
+    if(action==='notice-remove-user'){noticeRecipients.delete(id);updateNoticeRecipients();document.querySelectorAll('[data-notice-user]').forEach(input=>{input.checked=noticeRecipients.has(input.dataset.noticeUser);});return;}
+    if(action==='notice-inbox'){await loadLoginNotices();return;}
+    if(action==='notice-claim'||action==='notice-dismiss'){await finishNotice(action==='notice-claim');return;}
+    if(action==='notice-create-character'){noticeCreatingCharacter=true;activeNotice=null;closeDialog();showNewCharacter();return;}
     if(action==='local-boss-skip'){skipLocalBossBattle();return;}
     if(action==='select-character'&&performance.now()<suppressCharacterClickUntil)return;
     if(action==='toggle-bgm'){const sound=window.wordoriaSound;if(sound){await sound.ready;sound.setBGMMuted(!sound.settings.bgmMuted);}syncBGMButtons();}else if(action==='nav')navigate(b.dataset.page);else if(action==='home')navigate('home');else if(action==='close'){closeDialog();if(page==='battle'&&run?.paused)resume();}
@@ -2315,8 +2404,8 @@
   window.addEventListener('pagehide',()=>{if(!run?.done)persistStoryBattleVitals();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&!run?.done)persistStoryBattleVitals();if(document.hidden&&page==='battle'&&run&&!run.done&&!run.paused&&!run.feedbackPending){pause();modal('<h2>모험을 잠시 멈췄어요</h2><p>다시 준비되면 계속할 수 있어요.</p><button class="primary" data-action="resume">계속하기</button>');}});
   document.addEventListener('wordoria:native-pause',()=>{if(page==='battle'&&run&&!run.done&&!run.paused&&!run.feedbackPending){pause();modal('<h2>모험을 잠시 멈췄어요</h2><p>앱으로 돌아오면 계속할 수 있어요.</p><button class="primary" data-action="resume">계속하기</button>');}});
-  document.addEventListener('wordoria:native-back',()=>{if($('dialog').open){const closeButton=document.querySelector('[data-action=close]');if(!closeButton.hidden)closeButton.click();return;}if(page==='battle'&&run&&!run.done){document.querySelector('[data-action=pause]')?.click();return;}if(page!=='home'){go('home');return;}document.dispatchEvent(new CustomEvent('wordoria:exit'));});
+  document.addEventListener('wordoria:native-back',()=>{if(activeNotice){void finishNotice();return;}if($('dialog').open){const closeButton=document.querySelector('[data-action=close]');if(!closeButton.hidden)closeButton.click();return;}if(page==='battle'&&run&&!run.done){document.querySelector('[data-action=pause]')?.click();return;}if(page!=='home'){go('home');return;}document.dispatchEvent(new CustomEvent('wordoria:exit'));});
 
   window.wordoriaSound?.ready.then(syncBGMButtons);
-  loadAll().then(()=>{if(novelTest){selectedStage='story-ch2-1';selectedStoryStage=selectedStage;selectedStoryWorld=2;storyDialogueIndex=0;go('storyChapterTwoIntro');return;}if(bossTest){selectedStage='story-lv6';run={story:true,storyReplay:true,clear:true,elapsed:0,correct:20,deck:buildQuestionDeck(stages[selectedStage]),slashBonus:0,result:{game_score_id:'local-boss-preview',coins_earned:0}};storyDialogueIndex=0;if(bossTest==='battle'||bossTest==='victory'){startRoyalSlimeBattle();if(bossTest==='victory'){run.correct=50;run.index=50;run.bossHp=0;run.elapsed=120000;finishRoyalSlimeBattle(true,'boss-defeated');}}else go('storyEpilogue');return;}if(guestMode&&selectedCharacter)page='home';render();}).catch(error=>{console.error(error);dbOnline=false;setConnection();render();});
+  loadAll().then(()=>{if(novelTest){selectedStage='story-ch2-1';selectedStoryStage=selectedStage;selectedStoryWorld=2;storyDialogueIndex=0;go('storyChapterTwoIntro');return;}if(bossTest){selectedStage='story-lv6';run={story:true,storyReplay:true,clear:true,elapsed:0,correct:20,deck:buildQuestionDeck(stages[selectedStage]),slashBonus:0,result:{game_score_id:'local-boss-preview',coins_earned:0}};storyDialogueIndex=0;if(bossTest==='battle'||bossTest==='victory'){startRoyalSlimeBattle();if(bossTest==='victory'){run.correct=50;run.index=50;run.bossHp=0;run.elapsed=120000;finishRoyalSlimeBattle(true,'boss-defeated');}}else go('storyEpilogue');return;}if(guestMode&&selectedCharacter)page='home';render();void loadLoginNotices();}).catch(error=>{console.error(error);dbOnline=false;setConnection();render();});
 })();
