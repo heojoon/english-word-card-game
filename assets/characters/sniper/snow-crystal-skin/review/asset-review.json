@@ -1,0 +1,108 @@
+{
+  "scope": "Generated assets and standalone review; production runtime not changed. Browser playback and in-engine review not performed.",
+  "visualReview": "All frames inspected at full and mobile scales over Moon White and Crystal Violet; complete silhouettes, right-facing aim, final attack active, complete final knockdown.",
+  "checks": [
+    {
+      "action": "idle",
+      "frameCount": 2,
+      "RGBA": true,
+      "equalSlots": true,
+      "exact50pxReviewGaps": true,
+      "clear8pxSideBands": true,
+      "groundLine": 312,
+      "bounds": [
+        [
+          117,
+          48,
+          372,
+          312
+        ],
+        [
+          118,
+          48,
+          372,
+          312
+        ]
+      ],
+      "animatedPreviewFrames": 2
+    },
+    {
+      "action": "attack",
+      "frameCount": 6,
+      "RGBA": true,
+      "equalSlots": true,
+      "exact50pxReviewGaps": true,
+      "clear8pxSideBands": true,
+      "groundLine": 312,
+      "bounds": [
+        [
+          117,
+          48,
+          372,
+          312
+        ],
+        [
+          95,
+          48,
+          373,
+          312
+        ],
+        [
+          120,
+          48,
+          396,
+          312
+        ],
+        [
+          98,
+          48,
+          401,
+          312
+        ],
+        [
+          116,
+          48,
+          413,
+          312
+        ],
+        [
+          81,
+          48,
+          396,
+          312
+        ]
+      ],
+      "animatedPreviewFrames": 6
+    },
+    {
+      "action": "hit",
+      "frameCount": 3,
+      "RGBA": true,
+      "equalSlots": true,
+      "exact50pxReviewGaps": true,
+      "clear8pxSideBands": true,
+      "groundLine": 312,
+      "bounds": [
+        [
+          94,
+          48,
+          372,
+          312
+        ],
+        [
+          61,
+          54,
+          348,
+          312
+        ],
+        [
+          111,
+          172,
+          400,
+          312
+        ]
+      ],
+      "animatedPreviewFrames": 3
+    }
+  ]
+}

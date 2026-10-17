@@ -1,0 +1,27 @@
+{
+  "source": "char_sniper_female_snow_crystal_keyart_v1.png",
+  "profileMaster": "char_sniper_female_snow_crystal_profile_thigh_up_v1.png",
+  "displayExport": "char_sniper_female_snow_crystal_profile_thigh_up_v1.webp",
+  "method": "Deterministic crop and transparent canvas padding; no regeneration",
+  "sourceCropXYXY": [
+    290,
+    0,
+    1030,
+    700
+  ],
+  "masterSize": [
+    768,
+    768
+  ],
+  "pasteXY": [
+    14,
+    40
+  ],
+  "displaySize": [
+    512,
+    512
+  ],
+  "framing": "Hat through upper thighs; original non-SD identity preserved",
+  "status": "Exported profile asset; not wired into runtime",
+  "notes": "Topmost hat detail already touches original source edge; original pixels retained."
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>설원 스나이퍼 · SD 애니메이션 미리보기</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f7ff;color:#24214c;font:15px system-ui,sans-serif}main{max-width:760px;margin:auto;padding:20px}h1{font-size:22px}button{border:0;border-radius:12px;background:#5751d8;color:white;padding:12px 18px;font:inherit;cursor:pointer}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.arena{height:176px;position:relative;border:1px solid #b3aecf;border-radius:16px;overflow:hidden;background:#f7f7ff;margin:12px 0}.arena.violet{background:#5751d8}.ground{position:absolute;bottom:12px;left:12px;right:12px;border-top:1px solid #60d9cf}.sprite{position:absolute;bottom:10px;left:4%;width:193.6px;height:121px;background-repeat:no-repeat;background-position:0 0;background-image:url('../char_sniper_female_snow_crystal_sd_idle_strip.png');background-size:200% 100%;animation:frames .8s steps(1,end) infinite alternate}.enemy{position:absolute;right:14%;bottom:14px;width:42px;height:42px;border-radius:44% 44% 34% 34%;background:linear-gradient(#c4fff6,#60d9cf);border:2px solid #49b8ae}.enemy:before{content:'• •';position:absolute;inset:6px;text-align:center;color:#24214c}.impact{position:absolute;right:calc(14% - 4px);bottom:10px;width:50px;height:50px;border:4px solid #bafff4;border-radius:50%;box-shadow:0 0 12px #60d9cf;opacity:0}.attack .sprite{background-image:url('../char_sniper_female_snow_crystal_sd_attack_strip.png');background-size:600% 100%;animation:frames .6s steps(5,end) both}.attack .impact{animation:impact .22s ease .48s both}.attack .enemy{animation:recoil .22s ease .48s both}.hit .sprite{background-image:url('../char_sniper_female_snow_crystal_sd_hit_strip.png');background-size:300% 100%;animation:frames .2s steps(2,end) both}.label{position:absolute;top:10px;left:14px;font-size:12px}.violet .label{color:white}.note{line-height:1.6;color:#74718a}img.sheet{width:100%;display:block;margin-top:14px}a{color:#5751d8}.links{line-height:2}.motion{display:flex;gap:8px;align-items:center}
+@keyframes frames{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes impact{0%{opacity:0;transform:scale(.4)}20%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:scale(1.3)}}
+@keyframes recoil{30%{transform:translateX(6px);filter:brightness(1.6)}100%{transform:none}}
+@media(prefers-reduced-motion:reduce){.sprite{animation:none}.attack .sprite{animation:frames .2s steps(5,end) both}.attack .impact,.attack .enemy{animation-delay:.16s}.hit .sprite{animation-duration:.12s}}
+.reduced .sprite{animation:none}.reduced.attack .sprite{animation:frames .2s steps(5,end) both}.reduced.attack .impact,.reduced.attack .enemy{animation-delay:.16s}.reduced.hit .sprite{animation:frames .12s steps(2,end) both}
+</style>
+<main>
+<h1>설원 스나이퍼 · 전투용 SD</h1>
+<p>대기 · 조준과 사격 · 피격과 쓰러짐</p>
+<div class="controls"><button data-state="idle">대기</button><button data-state="attack">사격</button><button data-state="hit">피격</button></div>
+<label class="motion"><input type="checkbox" id="reduced"> 짧은 동작으로 보기</label>
+<p id="state" aria-live="polite">대기</p>
+<div class="arena" data-arena><span class="label">밝은 배경 · 모바일 전투 크기</span><div class="ground"></div><div class="sprite"></div><div class="enemy"></div><div class="impact"></div></div>
+<div class="arena violet" data-arena><span class="label">Crystal Violet 배경</span><div class="ground"></div><div class="sprite"></div><div class="enemy"></div><div class="impact"></div></div>
+<p class="note">사격 후 대기로 돌아갑니다. 피격은 마지막 쓰러짐 자세를 유지하며, 다른 동작을 선택하면 전환됩니다. 게임 등록 전 자산 미리보기입니다.</p>
+<div class="links"><a href="../source/sd-identity.png">SD 원본</a> · <a href="idle-preview.webp">대기 애니메이션</a> · <a href="attack-preview.webp">공격 애니메이션</a> · <a href="hit-preview.webp">피격 애니메이션</a></div>
+<img class="sheet" src="attack-mobile-light-violet.png" alt="공격 6프레임과 공통 지면선">
+<img class="sheet" src="hit-mobile-light-violet.png" alt="피격 3프레임과 최종 쓰러짐">
+</main>
+<script>
+const arenas=[...document.querySelectorAll('[data-arena]')];
+const reduced=document.querySelector('#reduced');
+let resetTimer,current='idle';
+function play(state){
+  clearTimeout(resetTimer);current=state;
+  arenas.forEach(a=>{a.classList.remove('attack','hit','reduced');void a.offsetWidth;if(reduced.checked)a.classList.add('reduced');if(state!=='idle')a.classList.add(state)});
+  document.querySelector('#state').textContent={idle:'대기',attack:'조준 → 사격 → 반동',hit:'경계 → 충격 → 쓰러짐 유지'}[state];
+  if(state==='attack')resetTimer=setTimeout(()=>play('idle'),reduced.checked||matchMedia('(prefers-reduced-motion:reduce)').matches?240:720);
+}
+document.querySelectorAll('[data-state]').forEach(b=>b.addEventListener('click',()=>play(b.dataset.state)));
+reduced.addEventListener('change',()=>play(current));
+</script>
+</html>

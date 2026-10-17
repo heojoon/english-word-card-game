@@ -1,0 +1,99 @@
+{
+  "image": "char_sniper_female_snow_crystal_sd_hit_strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "index": 0,
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "impact-recoil",
+      "durationMs": 100,
+      "hit": true
+    },
+    {
+      "index": 2,
+      "name": "complete-knockdown",
+      "durationMs": 800,
+      "finalHold": true
+    }
+  ],
+  "alphaCleanup": "Alpha >=32 support expanded 2px, retains source edge alpha; no RGB color key",
+  "normalization": [
+    {
+      "source": "source/battle-generation/hit-01.png",
+      "anchorX": 740,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9731833910034602,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        32,
+        70,
+        1250,
+        1226
+      ],
+      "runtimeBounds": [
+        94,
+        48,
+        372,
+        312
+      ]
+    },
+    {
+      "source": "source/battle-generation/hit-02.png",
+      "anchorX": 855,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9976695264807788,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        22,
+        73,
+        1247,
+        1175
+      ],
+      "runtimeBounds": [
+        61,
+        54,
+        348,
+        312
+      ]
+    },
+    {
+      "source": "source/battle-generation/hit-03.png",
+      "anchorX": 630,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1,
+      "referenceStandingHeightPx": 264,
+      "note": "Source resolution calibration to canonical SD size; fallen frame retains same source scale as identity.",
+      "sourceBounds": [
+        13,
+        362,
+        1244,
+        958
+      ],
+      "runtimeBounds": [
+        111,
+        172,
+        400,
+        312
+      ]
+    }
+  ],
+  "projectile": false,
+  "reviewStatus": "Asset geometry and visual composites passed; browser/in-engine playback pending; production not replaced",
+  "finalHold": true
+}

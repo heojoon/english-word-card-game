@@ -1,0 +1,178 @@
+{
+  "image": "char_sniper_female_snow_crystal_sd_attack_strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "groundLinePx": 312,
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "index": 1,
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "index": 2,
+      "name": "aim",
+      "durationMs": 120
+    },
+    {
+      "index": 3,
+      "name": "precision-aim",
+      "durationMs": 120
+    },
+    {
+      "index": 4,
+      "name": "release",
+      "durationMs": 120,
+      "release": true,
+      "hit": true
+    },
+    {
+      "index": 5,
+      "name": "active-recoil",
+      "durationMs": 120
+    }
+  ],
+  "alphaCleanup": "Alpha >=32 support expanded 2px, retains source edge alpha; no RGB color key",
+  "normalization": [
+    {
+      "source": "source/sd-identity.png",
+      "anchorX": 707,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9964570416297609,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        114,
+        80,
+        1204,
+        1209
+      ],
+      "runtimeBounds": [
+        117,
+        48,
+        372,
+        312
+      ]
+    },
+    {
+      "source": "source/battle-generation/attack-02.png",
+      "anchorX": 734,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9757155247181266,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        31,
+        54,
+        1243,
+        1207
+      ],
+      "runtimeBounds": [
+        95,
+        48,
+        373,
+        312
+      ]
+    },
+    {
+      "source": "source/battle-generation/attack-03.png",
+      "anchorX": 625,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9656652360515022,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        27,
+        51,
+        1243,
+        1216
+      ],
+      "runtimeBounds": [
+        120,
+        48,
+        396,
+        312
+      ]
+    },
+    {
+      "source": "source/battle-generation/attack-04-v2.png",
+      "anchorX": 675,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1.3669501822600243,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        184,
+        256,
+        1130,
+        1079
+      ],
+      "runtimeBounds": [
+        98,
+        48,
+        401,
+        312
+      ]
+    },
+    {
+      "source": "source/battle-generation/attack-05-v2.png",
+      "anchorX": 653,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1.2813211845102506,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        186,
+        209,
+        1174,
+        1087
+      ],
+      "runtimeBounds": [
+        116,
+        48,
+        413,
+        312
+      ]
+    },
+    {
+      "source": "source/battle-generation/attack-06-v2.png",
+      "anchorX": 743,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1.3837638376383763,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint.",
+      "sourceBounds": [
+        205,
+        256,
+        1176,
+        1069
+      ],
+      "runtimeBounds": [
+        81,
+        48,
+        396,
+        312
+      ]
+    }
+  ],
+  "projectile": false,
+  "reviewStatus": "Asset geometry and visual composites passed; browser/in-engine playback pending; production not replaced",
+  "contactMs": 480,
+  "reducedContactMs": 160,
+  "finalActive": true,
+  "frame01MatchesIdle": true,
+  "impact": "target-local hitscan crystal flash"
+}

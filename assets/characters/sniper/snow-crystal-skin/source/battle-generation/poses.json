@@ -1,0 +1,96 @@
+{
+  "idle": [
+    {
+      "source": "source/sd-identity.png",
+      "anchorX": 707,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9964570416297609,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/idle-02.png",
+      "anchorX": 707,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9938162544169611,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    }
+  ],
+  "attack": [
+    {
+      "source": "source/sd-identity.png",
+      "anchorX": 707,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9964570416297609,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/attack-02.png",
+      "anchorX": 734,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9757155247181266,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/attack-03.png",
+      "anchorX": 625,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9656652360515022,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/attack-04-v2.png",
+      "anchorX": 675,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1.3669501822600243,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/attack-05-v2.png",
+      "anchorX": 653,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1.2813211845102506,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/attack-06-v2.png",
+      "anchorX": 743,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1.3837638376383763,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    }
+  ],
+  "hit": [
+    {
+      "source": "source/battle-generation/hit-01.png",
+      "anchorX": 740,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9731833910034602,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/hit-02.png",
+      "anchorX": 855,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 0.9976695264807788,
+      "referenceStandingHeightPx": 264,
+      "note": "Reviewed source resolution calibration; stable ground and foot midpoint."
+    },
+    {
+      "source": "source/battle-generation/hit-03.png",
+      "anchorX": 630,
+      "runtimeScale": 0.23466666666666666,
+      "sourceUnitScale": 1,
+      "referenceStandingHeightPx": 264,
+      "note": "Source resolution calibration to canonical SD size; fallen frame retains same source scale as identity."
+    }
+  ]
+}

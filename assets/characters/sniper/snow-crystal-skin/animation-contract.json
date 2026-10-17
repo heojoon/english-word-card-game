@@ -1,0 +1,77 @@
+{
+  "class": "sniper",
+  "variant": "female",
+  "skin": "snow-crystal",
+  "facing": "right",
+  "identity": "source/sd-identity.png",
+  "illustrationSource": "char_sniper_female_snow_crystal_keyart_v1.png",
+  "profile": "char_sniper_female_snow_crystal_profile_thigh_up_v1.webp",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "standingHeightPx": 264,
+  "sourceFrameGapPx": 50,
+  "geometryReason": "Wide scoped rifle, cape and complete fallen pose require wider cells without shrinking character.",
+  "projectile": false,
+  "effectBounds": "Small muzzle flash kept within character cell; target-local crystal impact at release. Existing sniper hitscan contract; no flying projectile.",
+  "actions": {
+    "idle": {
+      "frameCount": 2,
+      "names": [
+        "ready",
+        "breath"
+      ],
+      "durationsMs": [
+        800,
+        800
+      ],
+      "loop": "alternate"
+    },
+    "attack": {
+      "frameCount": 6,
+      "names": [
+        "ready",
+        "anticipation",
+        "aim",
+        "precision-aim",
+        "release",
+        "active-recoil"
+      ],
+      "durationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120
+      ],
+      "releaseFrame": 4,
+      "hitFrame": 4,
+      "contactMs": 480,
+      "reducedContactMs": 160,
+      "finalActive": true,
+      "frame01MatchesIdle": true
+    },
+    "hit": {
+      "frameCount": 3,
+      "names": [
+        "guard-notice",
+        "impact-recoil",
+        "complete-knockdown"
+      ],
+      "durationsMs": [
+        100,
+        100,
+        800
+      ],
+      "hitFrame": 1,
+      "finalHold": true
+    }
+  },
+  "status": "SD identity and 11 animation frames created; asset review passed; not integrated into production",
+  "review": "review/asset-review.json"
+}
