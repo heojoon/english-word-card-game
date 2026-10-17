@@ -1,0 +1,56 @@
+{
+  "database": {
+    "project": "uobagmggryhsqlpxhfob",
+    "migration": "20261017082358_add_sniper_snow_crystal_skin.sql",
+    "method": "Connected Supabase migration tool; CLI linked list/dry-run attempted but CLI access token unavailable",
+    "rollbackTest": "Purchase, duplicates, wallet/ledger, ownership, class eligibility, equip/unequip passed before and after migration",
+    "historyNote": "New migration version matches remote. Older pre-existing history differences were left unchanged."
+  },
+  "frontend": {
+    "tests": 344,
+    "failures": 0,
+    "build": "npm run build passed",
+    "browser": "integration-browser-review.json",
+    "scope": "Local demo purchase/equip and actual Survival attack, production CSS final knockdown hold and reset at 390px and 320px; reduced motion included",
+    "limitation": "Existing missing battle BGM files recorded as resource warnings."
+  },
+  "security": {
+    "newFindings": [],
+    "advisorsBefore": [
+      {
+        "name": "rls_enabled_no_policy",
+        "count": 4
+      },
+      {
+        "name": "anon_security_definer_function_executable",
+        "count": 17
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "count": 29
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "count": 1
+      }
+    ],
+    "advisorsAfter": [
+      {
+        "name": "rls_enabled_no_policy",
+        "count": 4
+      },
+      {
+        "name": "anon_security_definer_function_executable",
+        "count": 15
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "count": 27
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "count": 1
+      }
+    ]
+  }
+}

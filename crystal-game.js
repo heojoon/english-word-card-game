@@ -365,6 +365,7 @@
         {id:14,code:'pugilist_crystal_noir_skin',name:'크리스털 누아르 권투사',category:'avatar',price:400,icon:'◆',description:'검은 후드와 금빛 결정 건틀릿을 두른 남성 권투사 전용 스킨입니다. 전용 공격과 피격 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/pugilist-male-crystal-noir-profile-complete-hood.png'},
         {id:12,code:'mage_arcane_necromancer_skin',name:'비전 네크로맨서',category:'avatar',price:400,icon:'◆',description:'해골 지팡이와 보랏빛 영혼불을 두른 남성 마법사 전용 스킨입니다. 전용 주문 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/mage-male-arcane-necromancer-profile-v2.webp'},
         {id:15,code:'mage_starlight_rose_skin',name:'별빛 로즈 마법사',category:'avatar',price:400,icon:'◆',description:'분홍 트윈테일과 별·초승달 장식을 두른 여성 마법사 전용 스킨입니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/mage-female-starlight-rose.webp'},
+        {id:21,code:'sniper_snow_crystal_skin',name:'설원 결정 스나이퍼',category:'avatar',price:400,icon:'◆',description:'흰 털모자와 붉은 망토, 금장 저격총을 갖춘 여성 스나이퍼 전용 스킨입니다. 전용 대기·사격·피격 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/characters/sniper/snow-crystal-skin/char_sniper_female_snow_crystal_profile_thigh_up_v1.webp'},
         {id:13,code:'warrior_golden_radiance_skin',name:'황금빛 광휘의 검사',category:'avatar',price:400,icon:'◆',description:'황금 결정과 성광 대검을 든 남성 전사 전용 스킨입니다. 전용 대검 공격과 피격/쓰러짐 애니메이션이 적용됩니다.',slot:'skin',rarity:'legendary',stars:5,stat_key:null,stat_value:0,art_path:'assets/avatars/skins/warrior-male-golden-radiance.webp'},
       ];shopItems.push(...window.WORDORIA_PETS.catalog.filter(pet=>pet.code!=='pet').map(pet=>({...pet,id:`local-${pet.code}`})));shopItems.sort((a,b)=>a.price-b.price);records=demoState.records;storySkillIcons=[
         {code:'guardian_crystal',label:'수호 결정',icon_key:'shield',gem_color:'#e4e1ff',glow_color:'#c9c4ff',icon_color:'#5751D8'},
@@ -914,6 +915,7 @@
   function shopCategory(item){return item.category==='gift'?'reward':isSkin(item)?'skin':slotFor(item)==='pet'?'pet':'item';}
   function displayRarity(item){return item.category==='gift'?'special':rarityNames[item.rarity]?item.rarity:isSkin(item)?'unique':'normal';}
   function skinEligible(item,c=selectedCharacter){
+    if(item?.code==='sniper_snow_crystal_skin')return c?.class==='sniper'&&variantOf(c)==='female';
     if(item?.code==='ranger_violet_crystal_skin')return c?.class==='ranger'&&variantOf(c)==='female';
     if(item?.code==='pugilist_crystal_rose_skin')return c?.class==='pugilist'&&variantOf(c)==='female';
     if(item?.code==='pugilist_crystal_noir_skin')return c?.class==='pugilist'&&variantOf(c)==='male';
@@ -923,7 +925,7 @@
     if(item?.code==='warrior_female_golden_radiance_skin')return c?.class==='warrior'&&variantOf(c)==='female';
     return !isSkin(item);
   }
-  function skinRequirement(item){if(item?.code==='pugilist_crystal_rose_skin')return '여성 권투사 전용';if(item?.code==='pugilist_crystal_noir_skin')return '남성 권투사 전용';if(item?.code==='mage_arcane_necromancer_skin')return '남성 마법사 전용';if(item?.code==='mage_starlight_rose_skin')return '여성 마법사 전용';if(item?.code==='warrior_golden_radiance_skin')return '남성 전사 전용';if(item?.code==='warrior_female_golden_radiance_skin')return '여성 전사 전용';return '여성 궁수 전용';}
+  function skinRequirement(item){if(item?.code==='sniper_snow_crystal_skin')return '여성 스나이퍼 전용';if(item?.code==='pugilist_crystal_rose_skin')return '여성 권투사 전용';if(item?.code==='pugilist_crystal_noir_skin')return '남성 권투사 전용';if(item?.code==='mage_arcane_necromancer_skin')return '남성 마법사 전용';if(item?.code==='mage_starlight_rose_skin')return '여성 마법사 전용';if(item?.code==='warrior_golden_radiance_skin')return '남성 전사 전용';if(item?.code==='warrior_female_golden_radiance_skin')return '여성 전사 전용';return '여성 궁수 전용';}
   function inventoryQuantityMarkup(count){return count!==1?`<span class="item-quantity" aria-label="보유 수량 ${count}개">x${count}</span>`:'';}
   function renderOwnedItemCard(item){
     const count=inventory.filter(row=>String(row.item_id)===String(item.id)).length;
@@ -1232,7 +1234,10 @@
     const petMarkup=run?.petEffects?petBattleMarkup():'';
     const heroClass=selectedCharacter?.class;
     const variant=variantOf(selectedCharacter);
-    if(heroClass==='sniper'&&variant==='female')return `<div class="battle-hero battle-hero-sniper battle-hero-female" aria-label="여성 스나이퍼"><span class="battle-sprite" aria-hidden="true"></span></div>${petMarkup}`;
+    if(heroClass==='sniper'&&variant==='female'){
+      const skin=itemById(equippedMap().skin),snowSkin=skin?.code==='sniper_snow_crystal_skin';
+      return `<div class="battle-hero battle-hero-sniper battle-hero-female${snowSkin?' battle-skin-sniper_snow_crystal_skin':''}" aria-label="여성 스나이퍼${snowSkin?' · '+esc(skin.name):''}"><span class="battle-sprite" aria-hidden="true"></span></div>${petMarkup}`;
+    }
     if(heroClass==='warrior'||heroClass==='mage'||heroClass==='pugilist'||heroClass==='ranger'){
       const classLabel={warrior:'전사',mage:'마법사',pugilist:'권투사',ranger:'궁수'}[heroClass];
       const skin=itemById(equippedMap().skin),skinClass=skin?.code?` battle-skin-${esc(skin.code)}`:'';

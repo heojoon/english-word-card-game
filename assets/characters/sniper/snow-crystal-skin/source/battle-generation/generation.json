@@ -88,5 +88,10 @@
     "status": "Rejected: hat clipped at top",
     "archive": "source/battle-generation/identity-first-rejected.png"
   },
-  "runtimeIntegration": false
+  "runtimeIntegration": {
+    "skinCode": "sniper_snow_crystal_skin",
+    "variant": "female",
+    "class": "sniper",
+    "browserReview": "review/integration-browser-review.json"
+  }
 }

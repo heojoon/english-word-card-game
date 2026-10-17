@@ -169,10 +169,11 @@
     }
   ],
   "projectile": false,
-  "reviewStatus": "Asset geometry and visual composites passed; browser/in-engine playback pending; production not replaced",
+  "reviewStatus": "Integrated for female sniper Snow Crystal skin; mobile demo UI, production CSS and reduced motion verified; user approval not inferred",
   "contactMs": 480,
   "reducedContactMs": 160,
   "finalActive": true,
   "frame01MatchesIdle": true,
-  "impact": "target-local hitscan crystal flash"
+  "impact": "target-local hitscan crystal flash",
+  "browserReview": "review/integration-browser-review.json"
 }

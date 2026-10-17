@@ -38,7 +38,7 @@ test('sniper creation preview offers only available artwork and requested stat b
   assert.deepEqual(stats,[3,2,4,2]);assert.ok(existsSync(new URL('../assets/avatars/variants/sniper-female-upper-body.webp',import.meta.url)));
 });
 test('sniper battle uses its own female SD animation and never another class strip',()=>{
-  const {c}=setup();c.selectedCharacter={class:'sniper',avatar_variant:'female'};
+  const {c}=setup();Object.assign(c,{itemById:()=>null,equippedMap:()=>({})});c.selectedCharacter={class:'sniper',avatar_variant:'female'};
   vm.runInContext(source.slice(source.indexOf('  function battleHeroMarkup('),source.indexOf('  function storyBattleActions(')),c);
   assert.ok(c.battleHeroMarkup().includes('battle-hero-sniper'));assert.ok(!c.battleHeroMarkup().includes('portrait'));
   const manifest=JSON.parse(readFileSync(new URL('../assets/characters/sniper/char_sniper_female_sd_idle_strip.json',import.meta.url),'utf8'));

@@ -72,6 +72,7 @@
       "finalHold": true
     }
   },
-  "status": "SD identity and 11 animation frames created; asset review passed; not integrated into production",
-  "review": "review/asset-review.json"
+  "status": "Integrated into shop, equip, profile and shared battle rendering for female sniper only",
+  "review": "review/asset-review.json",
+  "browserReview": "review/integration-browser-review.json"
 }

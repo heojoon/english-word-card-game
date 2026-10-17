@@ -94,6 +94,7 @@
     }
   ],
   "projectile": false,
-  "reviewStatus": "Asset geometry and visual composites passed; browser/in-engine playback pending; production not replaced",
-  "finalHold": true
+  "reviewStatus": "Integrated for female sniper Snow Crystal skin; mobile demo UI, production CSS and reduced motion verified; user approval not inferred",
+  "finalHold": true,
+  "browserReview": "review/integration-browser-review.json"
 }
