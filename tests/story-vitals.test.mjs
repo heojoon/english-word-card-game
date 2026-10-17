@@ -169,3 +169,64 @@ test('collection potions show total counts and offer equip and use at HP zero',a
   c.saveStoryVitals({hp:2,mp:2});c.showPotionCollection('blue');
   assert.match(c.modalHtml,/data-action="story-recover"[^>]*disabled/);
 });
+
+function accountSetup(storage=new Map(),server=new Map()){
+  const c=setup(storage,false);
+  c.accountMode=true;c.allCharacters=[c.selectedCharacter];
+  c.apiGet=async()=>Array.from(server,([character_id,vitals])=>({character_id,...vitals}));
+  c.apiPost=async(path,row)=>{server.set(row.character_id,{hp:row.hp,mp:row.mp});};
+  vm.runInContext(source.slice(source.indexOf('  async function signOut('),source.indexOf('  async function switchPlayer(')),c);
+  c.sessionStorage={removeItem(){}};
+  c.window.WORDORIA_AUTH_CLIENT={auth:{signOut:async()=>{c.signedOut=true;}}};
+  c.location={reload(){c.reloaded=true;}};
+  return c;
+}
+test('logout saves live HP/MP before auth removal; fresh login restores server vitals without browser storage',async()=>{
+  const server=new Map(),c=accountSetup(new Map(),server);
+  c.run={story:true,storyCharacterId:'hero',hp:0,mp:0};
+  c.window.WORDORIA_AUTH_CLIENT.auth.signOut=async()=>{
+    assert.deepEqual(server.get('hero'),{hp:0,mp:0});c.signedOut=true;
+  };
+  await c.signOut();assert.equal(c.signedOut,true);assert.equal(c.reloaded,true);
+  const login=accountSetup(new Map(),server);await login.loadAccountStoryVitals();
+  assert.equal(login.storyVitals().hp,0);assert.equal(login.storyVitals().mp,0);
+});
+test('failed save prevents logout and preserves pending vitals for retry and next login',async()=>{
+  const storage=new Map(),server=new Map(),c=accountSetup(storage,server);
+  c.apiPost=async()=>{throw new Error('offline');};
+  c.run={story:true,storyCharacterId:'hero',hp:1,mp:0};
+  await c.signOut();assert.equal(c.signedOut,undefined);assert.equal(c.reloaded,undefined);
+  assert.match(c.message,/저장하지 못했어요/);
+  assert.equal(JSON.parse(storage.get('wordoria-story-vitals-v1:user:hero')).pending,true);
+  const login=accountSetup(storage,server);server.set('hero',{hp:2,mp:2});
+  await login.loadAccountStoryVitals();assert.equal(login.storyVitals().hp,1);assert.equal(login.storyVitals().mp,0);
+  assert.deepEqual(server.get('hero'),{hp:1,mp:0});
+  assert.equal(JSON.parse(storage.get('wordoria-story-vitals-v1:user:hero')).pending,undefined);
+});
+test('remote vitals override stale synced local data, and old browser-only records migrate once',async()=>{
+  const storage=new Map(),server=new Map(),c=accountSetup(storage,server);
+  storage.set('wordoria-story-vitals-v1:user:hero',JSON.stringify({hp:1,mp:0}));
+  await c.loadAccountStoryVitals();assert.deepEqual(server.get('hero'),{hp:1,mp:0});
+  server.set('hero',{hp:0,mp:1});
+  const login=accountSetup(storage,server);await login.loadAccountStoryVitals();
+  assert.equal(login.storyVitals().hp,0);assert.equal(login.storyVitals().mp,1);
+});
+test('serialized writes retain latest vitals and captured character when selection changes',async()=>{
+  const server=new Map(),c=accountSetup(new Map(),server);let release;
+  c.apiPost=async(path,row)=>{if(!release)await new Promise(resolve=>{release=resolve;});server.set(row.character_id,{hp:row.hp,mp:row.mp});};
+  c.saveStoryVitals({hp:2,mp:1});c.saveStoryVitals({hp:1,mp:0});
+  c.selectedCharacter={id:'other',class:'mage'};c.saveStoryVitals({hp:0,mp:0});
+  release();await c.flushStoryVitals();
+  assert.deepEqual(server.get('hero'),{hp:1,mp:0});assert.deepEqual(server.get('other'),{hp:0,mp:0});
+});
+test('unchanged renders do not write to server again',async()=>{
+  const c=accountSetup();let calls=0;c.apiPost=async()=>{calls++;};
+  c.saveStoryVitals({hp:1,mp:0});await c.flushStoryVitals();
+  c.saveStoryVitals({hp:1,mp:0});await c.flushStoryVitals();assert.equal(calls,1);
+});
+test('logout after post-battle potion recovery cannot overwrite recovery with the completed run',async()=>{
+  const server=new Map(),c=accountSetup(new Map(),server);
+  c.run={story:true,storyCharacterId:'hero',done:true,hp:0,mp:0};
+  c.saveStoryVitals({hp:1,mp:1});await c.signOut();
+  assert.deepEqual(server.get('hero'),{hp:1,mp:1});assert.equal(c.reloaded,true);
+});

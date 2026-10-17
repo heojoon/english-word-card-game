@@ -401,7 +401,9 @@
           apiGet(`game_characters?select=*${accountMode?`&owner_user_id=eq.${accountUserId}`:''}&order=created_at.asc`),
           apiGet('shop_items?select=id,code,name,category,price,icon,description,repeatable,slot,rarity,stars,stat_key,stat_value,art_path&active=eq.true&order=price.asc'),
           apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000')
-        ]);dbOnline=true;
+        ]);
+        if(accountMode)await loadAccountStoryVitals();
+        dbOnline=true;
         try{[storySkillIcons,storySkillDefinitions]=await Promise.all([
           apiGet('story_skill_icons?select=code,label,icon_key,asset_path,gem_color,glow_color,icon_color&active=eq.true&order=code.asc'),
           apiGet('story_skill_definitions?select=class_code,skill_code,skill_name,description,icon_code&active=eq.true&order=class_code.asc')
@@ -943,10 +945,45 @@
     return `<button class="item" data-action="item" data-id="${item.id}" data-rarity="${displayRarity(item)}">${equipped?'<span class="item-status">장착 중</span>':''}<span class="item-art">${itemArt(item)}${inventoryQuantityMarkup(count)}</span><b>${esc(item.name)}</b></button>`;
   }
   function renderItemCard(item,ownedView=false){if(ownedView)return renderOwnedItemCard(item);const owned=itemOwned(item),eq=Object.values(equippedMap()).some(id=>String(id)===String(item.id)),gear=item.category==='avatar',skin=isSkin(item),rarity=displayRarity(item);return `<button class="item" data-action="item" data-id="${item.id}" data-rarity="${rarity}"><span class="item-rarity">${rarityNames[rarity]}</span>${ownedView?`<span class="item-status">${eq?'장착 중':'보유'}</span>`:''}<span class="item-art">${itemArt(item)}</span><b>${esc(item.name)}</b>${gear?`<span class="item-stat">${skin?`${skinRequirement(item)} 스킨`:`${esc(({hp:'체력',mp:'정신',atk:'공격',luk:'행운',def:'체력'}[item.stat_key]||''))} +${num(Math.trunc(item.stat_value))}`}</span>`:''}${window.WORDORIA_PETS.catalog.some(p=>p.code===item.code)?`<span class="item-pet-skill">${esc(item.description)}</span>`:''}<small class="${owned?'owned':''}">${num(item.price)} ◆${owned?' · 보유 중':''}</small></button>`;}
-  // Story vitals are scoped to the character and this browser (guest: this session).
+  // Account vitals are restored from Supabase; local storage retains unsynced changes.
   const storyVitalsCache=new Map();
+  const pendingStoryVitals=new Map();
+  let storyVitalsSync=null;
   let storyRecoveryBusy=false;
-  function storyVitalsKey(){return `wordoria-story-vitals-v1:${localMode?demoKey:accountUserId||'legacy'}:${selectedCharacter?.id}`;}
+  function storyVitalsKey(characterId=selectedCharacter?.id){return `wordoria-story-vitals-v1:${localMode?demoKey:accountUserId||'legacy'}:${characterId}`;}
+  async function loadAccountStoryVitals(){
+    const rows=await apiGet('story_character_vitals?select=character_id,hp,mp');
+    const remote=new Map(rows.map(row=>[row.character_id,row]));
+    for(const character of allCharacters){
+      const key=storyVitalsKey(character.id);
+      if(pendingStoryVitals.has(key))continue;
+      let local;
+      try{local=JSON.parse(localStateStorage.getItem(key)||'null');}catch{}
+      const saved=local?.pending?local:remote.get(character.id)||local;
+      if(!Number.isFinite(saved?.hp)||!Number.isFinite(saved?.mp))continue;
+      storyVitalsCache.set(key,{hp:saved.hp,mp:saved.mp});
+      if(local?.pending||!remote.has(character.id)){
+        pendingStoryVitals.set(key,{characterId:character.id,hp:saved.hp,mp:saved.mp});
+      }else{
+        try{localStateStorage.setItem(key,JSON.stringify({hp:saved.hp,mp:saved.mp}));}catch{}
+      }
+    }
+    await flushStoryVitals();
+  }
+  async function flushStoryVitals(){
+    if(storyVitalsSync)return storyVitalsSync;
+    storyVitalsSync=(async()=>{
+      while(pendingStoryVitals.size){
+        const [key,saved]=pendingStoryVitals.entries().next().value;
+        await apiPost('story_character_vitals?on_conflict=character_id',{character_id:saved.characterId,hp:saved.hp,mp:saved.mp},'resolution=merge-duplicates,return=minimal');
+        if(pendingStoryVitals.get(key)===saved){
+          pendingStoryVitals.delete(key);
+          try{localStateStorage.setItem(key,JSON.stringify({hp:saved.hp,mp:saved.mp}));}catch{}
+        }
+      }
+    })();
+    try{await storyVitalsSync;}finally{storyVitalsSync=null;}
+  }
   function storyVitals(){
     const cs=combatStats(stats().level),hpMax=Math.max(1,Math.floor(cs.hp/50)),mpMax=Math.max(0,Math.floor(cs.mp/50)),key=storyVitalsKey();
     let saved=storyVitalsCache.get(key);
@@ -957,8 +994,13 @@
   function saveStoryVitals(vitals){
     if(!selectedCharacter||!Number.isFinite(vitals?.hp)||!Number.isFinite(vitals?.mp))return;
     const key=storyVitalsKey(),saved={hp:vitals.hp,mp:vitals.mp};
+    const previous=storyVitalsCache.get(key);
+    const changed=!previous||previous.hp!==saved.hp||previous.mp!==saved.mp;
     storyVitalsCache.set(key,saved);
-    try{localStateStorage.setItem(key,JSON.stringify(saved));}catch{}
+    const sync=typeof accountMode!=='undefined'&&accountMode;
+    if(sync&&changed)pendingStoryVitals.set(key,{characterId:selectedCharacter.id,...saved});
+    try{localStateStorage.setItem(key,JSON.stringify({...saved,...(sync&&pendingStoryVitals.has(key)?{pending:true}:{})}));}catch{}
+    if(sync&&pendingStoryVitals.size)void flushStoryVitals().catch(()=>{});
   }
   function persistStoryBattleVitals(){
     if(run?.story&&run.storyCharacterId===selectedCharacter?.id)saveStoryVitals(run);
@@ -2123,6 +2165,11 @@
     catch(error){console.error(error);toast(error.message);}
   }
   async function signOut(){
+    if(!run?.done)persistStoryBattleVitals();
+    try{await flushStoryVitals();}catch{
+      toast('HP·MP를 저장하지 못했어요. 연결을 확인하고 로그아웃을 다시 시도해 주세요.');
+      return;
+    }
     const client=window.WORDORIA_AUTH_CLIENT;
     if(!window.WORDORIA_GUEST&&!localMode&&client)await client.auth.signOut();
     sessionStorage.removeItem('wordoriaGuest');sessionStorage.removeItem('wordoria-guest-v1');location.reload();
@@ -2265,7 +2312,8 @@
   }, true);
   $('dialog').addEventListener('cancel',event=>{event.preventDefault();if(document.querySelector('.dialog-close').hidden)return;closeDialog();if(page==='battle'&&run?.paused)resume();});
   document.addEventListener('keydown',event=>{if(page==='battle'&&!run?.boss&&!$('dialog').open&&/^[1-4]$/.test(event.key)){event.preventDefault();answer(Number(event.key)-1);}if(['storyChapterFiveIntro','storyChapterFiveMidbossStart','storyChapterFiveMidbossEnd','storyChapterFiveBossStart','storyIntro','storyEpilogue','storyBossVictory','storyChapterTwoIntro','storyChapterTwoBossStart','storyChapterTwoBossEnd','storyPotionEvent','storyChapterFourIntro','storyChapterFourBossStart','storyChapterFourBossEnd','storyChapterFourMidbossStart','storyChapterFourMidbossEnd','storyChapterThreeIntro','storyChapterThreeBossStart','storyChapterThreeBossEnd'].includes(page)&&['Enter',' ','ArrowRight'].includes(event.key)&&!event.target.closest('button')){event.preventDefault();const lines=storyDialogueLines();if(storyDialogueIndex<lines.length-1){storyDialogueIndex++;render();}else completeStoryDialogue();}if(event.key==='Enter'&&$('player-name'))createPlayer();});
-  document.addEventListener('visibilitychange',()=>{if(document.hidden&&page==='battle'&&run&&!run.done&&!run.paused&&!run.feedbackPending){pause();modal('<h2>모험을 잠시 멈췄어요</h2><p>다시 준비되면 계속할 수 있어요.</p><button class="primary" data-action="resume">계속하기</button>');}});
+  window.addEventListener('pagehide',()=>{if(!run?.done)persistStoryBattleVitals();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&!run?.done)persistStoryBattleVitals();if(document.hidden&&page==='battle'&&run&&!run.done&&!run.paused&&!run.feedbackPending){pause();modal('<h2>모험을 잠시 멈췄어요</h2><p>다시 준비되면 계속할 수 있어요.</p><button class="primary" data-action="resume">계속하기</button>');}});
   document.addEventListener('wordoria:native-pause',()=>{if(page==='battle'&&run&&!run.done&&!run.paused&&!run.feedbackPending){pause();modal('<h2>모험을 잠시 멈췄어요</h2><p>앱으로 돌아오면 계속할 수 있어요.</p><button class="primary" data-action="resume">계속하기</button>');}});
   document.addEventListener('wordoria:native-back',()=>{if($('dialog').open){const closeButton=document.querySelector('[data-action=close]');if(!closeButton.hidden)closeButton.click();return;}if(page==='battle'&&run&&!run.done){document.querySelector('[data-action=pause]')?.click();return;}if(page!=='home'){go('home');return;}document.dispatchEvent(new CustomEvent('wordoria:exit'));});
 
