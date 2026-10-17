@@ -43,11 +43,13 @@ begin
   perform set_config('request.jwt.claim.sub',a::text,true);
   perform public.send_game_notice(closed,'closed','notice','gift','selected',array[u],'[{"currency":"crystals","quantity":50}]');
   perform set_config('request.jwt.claim.sub',u::text,true);
-  perform public.dismiss_game_notice(closed);
   rejected:=false;
-  begin perform public.claim_game_notice(closed,null);
-    exception when raise_exception then if sqlerrm<>'notice dismissed' then raise; end if; rejected:=true; end;
-  if not rejected or (select crystal_balance from public.profiles where user_id=u)<>initial_balance+400 then raise exception 'dismissed crystal gift paid'; end if;
+  begin perform public.dismiss_game_notice(closed);
+    exception when raise_exception then if sqlerrm<>'claim notice rewards first' then raise; end if; rejected:=true; end;
+  if not rejected or (select crystal_balance from public.profiles where user_id=u)<>initial_balance+400 then raise exception 'unclaimed crystal gift dismissed'; end if;
+  if not exists(select 1 from public.pending_game_notices() where id=closed) then raise exception 'unclaimed gift lost'; end if;
+  perform public.claim_game_notice(closed,null);perform public.dismiss_game_notice(closed);
+  if (select crystal_balance from public.profiles where user_id=u)<>initial_balance+450 then raise exception 'gift unavailable after blocked dismissal'; end if;
 end $test$;
 select 'crystal gifts: account wallet, no-character claim, mixed gifts, retry, validation, atomicity and dismissal passed' as result;
 rollback;

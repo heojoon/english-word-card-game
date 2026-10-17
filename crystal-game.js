@@ -2092,7 +2092,7 @@
   let noticeRecipients=new Map(),noticeUserSearchVersion=0,noticeRequestId=null,noticePendingPayload=null;
   function noticeRewardArt(reward){
     if(reward.currency==='crystals')return itemArt({name:'크리스털',art_path:'assets/ui/crystal-quest/rewards/ui_reward_crystal_bloom.webp'});
-    if(reward.potion_type)return `<span class="potion-bottle ${reward.potion_type==='red'?'red':'blue'}" aria-label="${reward.potion_type==='red'?'힐링포션':'마나포션'}"></span>`;
+    if(reward.potion_type)return `<span role="img" class="potion-icon ${reward.potion_type==='red'?'red':'blue'}" aria-label="${reward.potion_type==='red'?'힐링포션':'마나포션'}"></span>`;
     return itemArt(reward);
   }
   function noticeItemChoices(){
@@ -2142,11 +2142,13 @@
     activeNotice=noticeQueue[0]||null;noticeBusy=false;
     if(!activeNotice){closeDialog();return;}
     const notice=activeNotice,rewards=notice.rewards||[];
-    modal(`<section class="login-notice"><span class="role-badge">${esc(noticeKinds[notice.kind]||'공지')}</span><h2>${esc(notice.title)}</h2><div class="notice-body">${esc(notice.body)}</div>${rewards.length?`<div class="notice-rewards" aria-label="첨부 아이템">${rewards.map(reward=>`<span class="notice-reward"><span class="notice-item-art">${noticeRewardArt(reward)}</span><small>×${num(reward.quantity)}</small></span>`).join('')}</div>${rewards.every(reward=>reward.currency==='crystals')?'<button class="primary" data-action="notice-claim">받기</button>':characters.length?`<label class="notice-character-label">받을 캐릭터<select id="notice-character" class="field">${characters.map(character=>`<option value="${esc(character.id)}" ${character.id===selectedCharacter?.id?'selected':''}>${esc(character.name)}</option>`).join('')}</select></label><button class="primary" data-action="notice-claim">받기</button>`:'<p>아이템을 받을 캐릭터를 먼저 만들어 주세요.</p><button class="primary" data-action="notice-create-character">캐릭터 만들기</button>'}<small class="notice-close-hint">받기 전에 닫으면 첨부 아이템을 받을 수 없어요.</small>`:''}<p id="notice-status" role="status"></p><button class="secondary" data-action="notice-dismiss">닫기</button></section>`,{closable:false});
+    modal(`<section class="login-notice"><span class="role-badge">${esc(noticeKinds[notice.kind]||'공지')}</span><h2>${esc(notice.title)}</h2><div class="notice-body">${esc(notice.body)}</div>${rewards.length?`<div class="notice-rewards" aria-label="첨부 아이템">${rewards.map(reward=>`<span class="notice-reward"><span class="notice-item-art">${noticeRewardArt(reward)}</span><small>×${num(reward.quantity)}</small></span>`).join('')}</div>${notice.rewardClaimed?'<p class="notice-received" role="status">선물을 받았어요.</p>':rewards.every(reward=>reward.currency==='crystals')?'<button class="primary" data-action="notice-claim">받기</button>':characters.length?`<label class="notice-character-label">받을 캐릭터<select id="notice-character" class="field">${characters.map(character=>`<option value="${esc(character.id)}" ${character.id===selectedCharacter?.id?'selected':''}>${esc(character.name)}</option>`).join('')}</select></label><button class="primary" data-action="notice-claim">받기</button>`:'<p>아이템을 받을 캐릭터를 먼저 만들어 주세요.</p><button class="primary" data-action="notice-create-character">캐릭터 만들기</button>'}<small class="notice-close-hint">${notice.rewardClaimed?'닫기를 눌러 공지를 닫아 주세요.':'선물을 받아야 공지를 닫을 수 있어요.'}</small>`:''}<p id="notice-status" role="status"></p><button class="secondary" data-action="notice-dismiss" ${rewards.length&&!notice.rewardClaimed?'disabled':''}>닫기</button></section>`,{closable:false});
   }
   async function finishNotice(claim=false){
     if(!activeNotice||noticeBusy)return;
     const notice=activeNotice,characterId=$('notice-character')?.value||null;
+    if(!claim&&(notice.rewards||[]).length&&!notice.rewardClaimed)return;
+    if(claim&&notice.rewardClaimed)return;
     if(claim&&!characterId&&(notice.rewards||[]).some(reward=>reward.currency!=='crystals'))return;
     noticeBusy=true;
     document.querySelectorAll('.login-notice button,.login-notice select').forEach(button=>button.disabled=true);
@@ -2154,9 +2156,9 @@
       await rpc(claim?'claim_game_notice':'dismiss_game_notice',claim?{p_notice_id:notice.id,p_character_id:characterId}:{p_notice_id:notice.id});
     }catch{
       noticeBusy=false;$('notice-status').textContent='처리하지 못했어요. 다시 시도해 주세요.';
-      document.querySelectorAll('.login-notice button,.login-notice select').forEach(button=>button.disabled=false);return;
+      document.querySelectorAll('.login-notice button,.login-notice select').forEach(button=>button.disabled=button.dataset.action==='notice-dismiss'&&Boolean((notice.rewards||[]).length)&&!notice.rewardClaimed);return;
     }
-    noticeQueue.shift();activeNotice=null;
+    if(claim){notice.rewardClaimed=true;}else{noticeQueue.shift();activeNotice=null;}
     if(claim){try{if((notice.rewards||[]).some(reward=>reward.currency==='crystals')){accountProfile=await loadAccountProfile();accountCrystals=Number(accountProfile.crystal_balance||0);}await loadCharacterExtras();render();}catch{/* The receipt is already saved; do not retry delivery. */}toast('선물을 받았어요');}
     showNextNotice();
   }

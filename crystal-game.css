@@ -858,8 +858,8 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
 .notice-item-row>label>span:last-child{overflow-wrap:anywhere}.notice-item-row>input{width:68px;padding:9px}
 .notice-composer input[type=checkbox],.notice-composer input[type=radio]{width:20px;height:20px;flex-shrink:0;accent-color:var(--violet)}
 .notice-item-art{display:inline-grid;place-items:center;width:32px;height:32px;flex-shrink:0}
-.notice-item-art img{display:block;width:100%;height:100%;object-fit:contain}.notice-item-art .potion-bottle{position:relative;display:block;width:17px;height:23px;border:2px solid #b6b0dd;border-radius:5px 5px 8px 8px;background:linear-gradient(0deg,#ed738b 65%,#fff 66%)}
-.notice-item-art .potion-bottle.blue{background:linear-gradient(0deg,#7d9df2 65%,#fff 66%)}
+.notice-item-art img{display:block;width:100%;height:100%;object-fit:contain}
+.notice-item-art .potion-icon{width:32px;height:32px;flex-basis:32px;border-radius:8px}
 .notice-body{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;font-size:15px;max-height:42dvh;overflow:auto;margin:18px 0}
 .login-notice h2{overflow-wrap:anywhere}.notice-rewards{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0;padding:10px;border-radius:14px;background:#f1effc}
 .notice-reward{display:flex;align-items:center;gap:3px}.notice-reward small{color:var(--ink);font-size:11px;font-weight:750}.notice-character-label{display:grid;gap:8px}

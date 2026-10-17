@@ -38,6 +38,10 @@ begin
   rejected:=false;
   begin perform public.claim_game_notice(n,other_hero); exception when raise_exception then if sqlerrm<>'character not found' then raise; end if; rejected:=true; end;
   if not rejected then raise exception 'foreign character accepted'; end if;
+  rejected:=false;
+  begin perform public.dismiss_game_notice(n);
+    exception when raise_exception then if sqlerrm<>'claim notice rewards first' then raise; end if; rejected:=true; end;
+  if not rejected or not exists(select 1 from public.pending_game_notices() where id=n) then raise exception 'unclaimed equipment/potion gift dismissed'; end if;
   select count(*) into before_count from public.character_inventory where character_id=hero;
   perform public.claim_game_notice(n,hero); perform public.claim_game_notice(n,hero);
   if (select count(*) from public.character_inventory where character_id=hero)<>before_count+2 then raise exception 'equipment grant or retry failed'; end if;

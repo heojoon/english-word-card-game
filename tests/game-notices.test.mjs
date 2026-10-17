@@ -28,16 +28,18 @@ test('claim uses the selected owned character and advances only after the server
   const ctx=setup();vm.runInContext('showNextNotice()',ctx);
   await vm.runInContext('finishNotice(true)',ctx);
   assert.equal(ctx.calls[0].name,'claim_game_notice');assert.equal(ctx.calls[0].args.p_character_id,'hero');
-  assert.equal(ctx.noticeQueue.length,0);assert.equal(ctx.closed,true);assert.equal(ctx.rendered,true);
+  assert.equal(ctx.noticeQueue.length,1);assert.equal(ctx.activeNotice.rewardClaimed,true);assert.equal(ctx.rendered,true);
+  assert.match(ctx.html,/선물을 받았어요/);assert.doesNotMatch(ctx.html,/data-action="notice-dismiss" disabled/);
+  await vm.runInContext('finishNotice()',ctx);assert.equal(ctx.closed,true);assert.equal(ctx.noticeQueue.length,0);
 });
 test('dismiss is persisted and the next pending notice is displayed',async()=>{
-  const ctx=setup();ctx.noticeQueue.push({id:'next',kind:'event',title:'next title',body:'body',rewards:[]});
+  const ctx=setup();ctx.noticeQueue[0].rewards=[];ctx.noticeQueue.push({id:'next',kind:'event',title:'next title',body:'body',rewards:[]});
   vm.runInContext('showNextNotice()',ctx);await vm.runInContext('finishNotice()',ctx);
   assert.equal(ctx.calls[0].name,'dismiss_game_notice');assert.equal(ctx.activeNotice.id,'next');
   assert.match(ctx.html,/next title/);assert.doesNotMatch(ctx.html,/notice-claim/);
 });
 test('failed dismissal keeps the notice open for retry',async()=>{
-  const ctx=setup();ctx.rpc=async()=>{throw new Error('offline');};vm.runInContext('showNextNotice()',ctx);
+  const ctx=setup();ctx.noticeQueue[0].rewards=[];ctx.rpc=async()=>{throw new Error('offline');};vm.runInContext('showNextNotice()',ctx);
   await vm.runInContext('finishNotice()',ctx);
   assert.equal(ctx.noticeQueue.length,1);assert.equal(ctx.activeNotice.id,'n');assert.equal(ctx.noticeBusy,false);assert.notEqual(ctx.closed,true);
 });
@@ -45,7 +47,7 @@ test('rapid double click issues a single claim RPC',async()=>{
   const ctx=setup();let complete;ctx.rpc=()=>new Promise(resolve=>{complete=resolve;});
   vm.runInContext('showNextNotice()',ctx);const first=vm.runInContext('finishNotice(true)',ctx);
   assert.equal(ctx.noticeBusy,true);await vm.runInContext('finishNotice(true)',ctx);complete();await first;
-  assert.equal(ctx.noticeQueue.length,0);
+  assert.equal(ctx.noticeQueue.length,1);assert.equal(ctx.activeNotice.rewardClaimed,true);
 });
 test('accounts without a character can create one before receiving attachments',()=>{
   const ctx=setup();ctx.characters=[];vm.runInContext('showNextNotice()',ctx);
@@ -98,11 +100,27 @@ test('crystal-only gift can be claimed without a character and refreshes the acc
   vm.runInContext('showNextNotice()',ctx);
   assert.match(ctx.html,/data-action="notice-claim"/);assert.doesNotMatch(ctx.html,/notice-create-character|notice-character-label/);
   await vm.runInContext('finishNotice(true)',ctx);
-  assert.equal(ctx.calls[0].args.p_character_id,null);assert.equal(ctx.accountCrystals,450);assert.equal(ctx.noticeQueue.length,0);
+  assert.equal(ctx.calls[0].args.p_character_id,null);assert.equal(ctx.accountCrystals,450);assert.equal(ctx.noticeQueue.length,1);assert.equal(ctx.activeNotice.rewardClaimed,true);
 });
 test('mixed crystal and equipment gifts still require a character',async()=>{
   const ctx=setup();ctx.characters=[];ctx.$=()=>null;
   ctx.noticeQueue[0].rewards.push({currency:'crystals',quantity:300});
   vm.runInContext('showNextNotice()',ctx);assert.match(ctx.html,/notice-create-character/);
   await vm.runInContext('finishNotice(true)',ctx);assert.equal(ctx.calls.length,0);
+});
+
+test('unclaimed equipment, potions and crystal gifts keep close disabled and cannot be dismissed',async()=>{
+  for(const reward of [{item_id:1,quantity:1},{potion_type:'red',quantity:2},{currency:'crystals',quantity:10}]){
+    const ctx=setup();ctx.noticeQueue[0].rewards=[reward];vm.runInContext('showNextNotice()',ctx);
+    assert.match(ctx.html,/data-action="notice-dismiss" disabled/);
+    await vm.runInContext('finishNotice()',ctx);
+    assert.equal(ctx.calls.length,0);assert.equal(ctx.noticeQueue.length,1);assert.equal(ctx.activeNotice.id,'n');
+  }
+});
+test('failed reward claim keeps close disabled while allowing a receive retry',async()=>{
+  const ctx=setup();const close={dataset:{action:'notice-dismiss'}},claim={dataset:{action:'notice-claim'}};
+  ctx.document.querySelectorAll=()=>[close,claim];ctx.rpc=async()=>{throw new Error('offline');};
+  vm.runInContext('showNextNotice()',ctx);await vm.runInContext('finishNotice(true)',ctx);
+  assert.equal(close.disabled,true);assert.equal(claim.disabled,false);assert.equal(ctx.noticeQueue.length,1);
+  assert.notEqual(ctx.activeNotice.rewardClaimed,true);
 });
