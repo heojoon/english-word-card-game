@@ -1,0 +1,80 @@
+{
+  "image": "golem-sd-attack-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/half-broken-golem-generated.png",
+      "sourceBounds": [
+        34,
+        77,
+        1222,
+        1204
+      ],
+      "scale": 0.24,
+      "runtimeBounds": [
+        49,
+        42,
+        334,
+        312
+      ]
+    },
+    {
+      "source": "source-frames/attack/02-anticipation.png",
+      "sourceBounds": [
+        56,
+        88,
+        1230,
+        1188
+      ],
+      "scale": 0.24,
+      "runtimeBounds": [
+        51,
+        48,
+        333,
+        312
+      ]
+    },
+    {
+      "source": "source-frames/attack/03-contact.png",
+      "sourceBounds": [
+        26,
+        271,
+        1219,
+        1041
+      ],
+      "scale": 0.3,
+      "runtimeBounds": [
+        13,
+        81,
+        371,
+        312
+      ]
+    }
+  ],
+  "reviewStatus": "Frame-by-frame/alpha reviewed; browser validation pending"
+}

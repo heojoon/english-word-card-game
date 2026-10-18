@@ -1,0 +1,265 @@
+{
+  "date": "2026-10-17",
+  "world": "6-1",
+  "name": "반전세계",
+  "tool": "built-in image_gen",
+  "model": "미공개",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: precise-object-edit.\nAsset type: Wordoria Crystal Quest World 6-1 Inverted World map revision.\nReference roles: Image 1 = authoritative STYLE reference. Image 2 = current inverted map, edit target and terrain/material/layout reference.\nUser correction: Gameplay progresses from TOP to BOTTOM. Stage 1 is at the TOP; stage 20 is the final BOSS ARENA at the very BOTTOM. Keep the physical world UPSIDE DOWN: hanging downward trees, down-pointing violet crystals underneath inverted gold pedestals, inverted architecture, cliffs pointing upward, reversed waterfalls. DO NOT rotate the image back to upright. Change destination hierarchy rather than reversing physical gravity.\nRemove the monumental mirror gateway at the TOP, replacing it with a simple small starting landing and a single normal waypoint, connected to the road below. The upper entry should be visually modest, no arena or massive arch.\nKeep the continuous golden road winding down the inverted floating islands. At the VERY BOTTOM build the unmistakable FINAL BOSS AREA: a broad inverted cream-stone ceremonial arena with a larger single gold-rimmed waypoint and a large DOWNWARD-HANGING shattered mirror gateway, symmetrical suspended stone spires, restrained violet-blue magical energy and floating crystal fragments WITHOUT gold bases. It should feel like the culmination of the entire road. The gateway and final arena must be visibly UPSIDE DOWN, their architectural tips pointing down, matching the rest of this gravity-inverted world. The last waypoint's purple crystal also points downward. Use a wider final landing and dramatic recognizable architectural silhouette rather than any enemy character. Keep all architecture inside the canvas with safe margins. Place the boss waypoint at x52%, y93%; frame it with the hanging mirror gateway in the bottom 12% region. Keep stage 19 separate on the incoming approach at x33%,y88%. The road ENDS at the stage 20 boss platform. No path exits past it.\nComposition: full-bleed tall portrait 1:3, target 724 x 2172. Preserve existing inverted-world painterly style and continuous scrolling composition. No text, numbers or UI. EXACTLY 20 gold-pedestal violet crystal waypoints in total, including the boss; do not add or remove any. Top-to-bottom order with normalized crystal centers: 1: (54.3%, 8%); 2: (19.6%, 17%); 3: (36.9%, 23%); 4: (60.5%, 29%); 5: (82.723%, 37.744%); 6: (66.618%, 43.994%); 7: (39.092%, 47.314%); 8: (19.034%, 51.416%); 9: (39.385%, 56.201%); 10: (62.811%, 58.691%); 11: (83.016%, 62.744%); 12: (66.471%, 66.943%); 13: (42.02%, 70.215%); 14: (17.6%, 73%); 15: (36.6%, 76%); 16: (60.8%, 79%); 17: (81.7%, 82%); 18: (63.1%, 85%); 19: (33%, 88%); 20: (52%, 93%). Each successive waypoint is lower on the image. Ordinary stage waypoint pedestals stay consistent in size; stage 20 may be modestly larger for the boss area. Every crystal is unobscured. Keep the bottom gateway complete and uncropped.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "layout": "output/story-map/chapter-6-1-inverted-world-v3-runtime.webp"
+  },
+  "source": "output/story-map/chapter-6-1-inverted-world-v4-source.png",
+  "runtime": "assets/story/chapter-6-1-inverted-world-map.webp",
+  "targetDimensions": [
+    724,
+    2172
+  ],
+  "actualDimensions": [
+    725,
+    2170
+  ],
+  "stageCount": 20,
+  "progression": "top-to-bottom",
+  "runtimeRegistration": "Not integrated: crystal-game.js currently defines worlds 1–5; this request creates new map artwork only. No existing World 6 coordinates or stage names.",
+  "targetWaypoints": [
+    {
+      "stage": 1,
+      "x": 54.3,
+      "y": 8
+    },
+    {
+      "stage": 2,
+      "x": 19.6,
+      "y": 17
+    },
+    {
+      "stage": 3,
+      "x": 36.9,
+      "y": 23
+    },
+    {
+      "stage": 4,
+      "x": 60.5,
+      "y": 29
+    },
+    {
+      "stage": 5,
+      "x": 82.723,
+      "y": 37.744
+    },
+    {
+      "stage": 6,
+      "x": 66.618,
+      "y": 43.994
+    },
+    {
+      "stage": 7,
+      "x": 39.092,
+      "y": 47.314
+    },
+    {
+      "stage": 8,
+      "x": 19.034,
+      "y": 51.416
+    },
+    {
+      "stage": 9,
+      "x": 39.385,
+      "y": 56.201
+    },
+    {
+      "stage": 10,
+      "x": 62.811,
+      "y": 58.691
+    },
+    {
+      "stage": 11,
+      "x": 83.016,
+      "y": 62.744
+    },
+    {
+      "stage": 12,
+      "x": 66.471,
+      "y": 66.943
+    },
+    {
+      "stage": 13,
+      "x": 42.02,
+      "y": 70.215
+    },
+    {
+      "stage": 14,
+      "x": 17.6,
+      "y": 73
+    },
+    {
+      "stage": 15,
+      "x": 36.6,
+      "y": 76
+    },
+    {
+      "stage": 16,
+      "x": 60.8,
+      "y": 79
+    },
+    {
+      "stage": 17,
+      "x": 81.7,
+      "y": 82
+    },
+    {
+      "stage": 18,
+      "x": 63.1,
+      "y": 85
+    },
+    {
+      "stage": 19,
+      "x": 33,
+      "y": 88
+    },
+    {
+      "stage": 20,
+      "x": 52,
+      "y": 93
+    }
+  ],
+  "waypoints": [
+    {
+      "stage": 1,
+      "x": 54.678,
+      "y": 8.35
+    },
+    {
+      "stage": 2,
+      "x": 19.591,
+      "y": 13.672
+    },
+    {
+      "stage": 3,
+      "x": 37.135,
+      "y": 17.09
+    },
+    {
+      "stage": 4,
+      "x": 60.819,
+      "y": 22.461
+    },
+    {
+      "stage": 5,
+      "x": 83.187,
+      "y": 28.809
+    },
+    {
+      "stage": 6,
+      "x": 64.62,
+      "y": 33.594
+    },
+    {
+      "stage": 7,
+      "x": 37.719,
+      "y": 36.328
+    },
+    {
+      "stage": 8,
+      "x": 18.421,
+      "y": 40.039
+    },
+    {
+      "stage": 9,
+      "x": 38.304,
+      "y": 44.043
+    },
+    {
+      "stage": 10,
+      "x": 62.135,
+      "y": 47.217
+    },
+    {
+      "stage": 11,
+      "x": 82.602,
+      "y": 51.514
+    },
+    {
+      "stage": 12,
+      "x": 66.959,
+      "y": 56.396
+    },
+    {
+      "stage": 13,
+      "x": 41.228,
+      "y": 59.814
+    },
+    {
+      "stage": 14,
+      "x": 18.713,
+      "y": 63.477
+    },
+    {
+      "stage": 15,
+      "x": 36.404,
+      "y": 66.895
+    },
+    {
+      "stage": 16,
+      "x": 60.673,
+      "y": 69.678
+    },
+    {
+      "stage": 17,
+      "x": 81.871,
+      "y": 73.145
+    },
+    {
+      "stage": 18,
+      "x": 62.573,
+      "y": 76.367
+    },
+    {
+      "stage": 19,
+      "x": 40.643,
+      "y": 79.736
+    },
+    {
+      "stage": 20,
+      "x": 51.462,
+      "y": 82.227,
+      "boss": true
+    }
+  ],
+  "coordinateMeasurement": "Manual visual crystal-center measurement from 684x2048 preview, normalized to percentages; approximate. Waypoint overlay saved. All 20 y coordinates strictly increase.",
+  "review": {
+    "visual": "Twenty gold-based waypoints counted. Upper starting platform modest; bottom stage 20 larger crystal at grand inverted boss arena with hanging mirror gate and spires. Inverted world orientation retained. Continuous descending route; complete boss architecture stays within canvas. Decorative floating crystals near boss have no gold bases.",
+    "mobilePreview": "390px-wide side-by-side reference comparison inspected; 20 separate waypoint silhouettes and final boss gateway readable. Numbered overlay inspected; manual coordinates match each crystal approximately. Stage y coordinates increase strictly from 1 through 20.",
+    "runtimeAlignment": "Not applicable: artwork-only proposal; browser integration not performed.",
+    "userApproval": "pending"
+  },
+  "reviewArtifacts": [
+    "output/story-map/chapter-6-1-inverted-world-mobile-review.webp",
+    "output/story-map/chapter-6-1-inverted-world-waypoint-review.jpg",
+    "output/story-map/chapter-6-1-style-mobile-review.jpg"
+  ],
+  "revision": 4,
+  "previousVersion": "output/story-map/chapter-6-1-inverted-world-v3-runtime.webp",
+  "request": "Keep inverted physical world; progression top-to-bottom; stage 20 at bottom as boss arena.",
+  "generationHistory": [
+    {
+      "revision": 2,
+      "source": "output/story-map/chapter-6-1-inverted-world-v2-source.png",
+      "promptFile": "output/story-map/chapter-6-1-inverted-world-v2.prompt.txt",
+      "review": "Rejected: correct inverted orientation but only 18 waypoints."
+    },
+    {
+      "revision": 3,
+      "source": "output/story-map/chapter-6-1-inverted-world-v3-source.png",
+      "promptFile": "output/story-map/chapter-6-1-inverted-world-v3.prompt.txt",
+      "review": "20 distinct waypoint crystals counted after adding two on lower diagonal route."
+    },
+    {
+      "revision": 4,
+      "source": "output/story-map/chapter-6-1-inverted-world-v4-source.png",
+      "promptFile": "output/story-map/chapter-6-1-inverted-world-v4.prompt.txt",
+      "review": "20 waypoints counted, simple upper entry and final lower inverted boss gateway. Top-to-bottom order."
+    }
+  ]
+}

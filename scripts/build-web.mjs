@@ -30,6 +30,7 @@ const files = [
   'stage7.js',
   'stage8.js',
   'stage15.js',
+  'stage35.js',
   'remote-content.js',
   'avatar-art.js'
 ];

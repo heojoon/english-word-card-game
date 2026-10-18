@@ -1,0 +1,16 @@
+{
+  "identity": "source/half-broken-golem-generated.png",
+  "facing": "left",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "sourceFrameGapPx": 50,
+  "effectBounds": "Wider cells retain the remaining fist, contact flash and horizontal knockdown without shrinking the standing silhouette; ground y312; transparent safety margin >=8px.",
+  "actions": {
+    "idle": {"frameCount": 1, "source": "monster_half_broken_golem_sd_left.png", "motion": "CSS breathing, frozen by Ice Time and pause"},
+    "attack": {"frameCount": 3, "frameNames": ["ready", "anticipation", "contact"], "durationsMs": [120, 120, 260], "reducedDurationsMs": [45, 45, 120], "hitFrame": 2, "image": "golem-sd-attack-strip.png", "loop": false},
+    "hit": {"frameCount": 3, "frameNames": ["notice", "impact", "knockdown"], "durationsMs": [100, 100, 160], "reducedDurationsMs": [50, 50, 120], "impactFrame": 1, "holdFinalFrame": true, "image": "golem-sd-hit-strip.png", "loop": false}
+  },
+  "timing": "Attack HP damage at final punch; hit impact at player contact, final knockdown held until shared Story attack completion; pause-adjusted shared scheduler.",
+  "reviewStatus": "In progress; generated sources and technical checks are not user approval."
+}

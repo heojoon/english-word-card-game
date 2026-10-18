@@ -177,6 +177,13 @@ html.native-app body[data-screen=battle] .battle-reward-layer{top:calc(51px + en
 .arena.world-three-battle:before,.arena.world-three-battle:after{content:none}
 .arena.world-three-battle .arena-floor{display:none}
 
+/* World 6A/6B ordinary battles only; boss renderers retain their own scenery. */
+.arena.world-six-battle{background-color:#e1dff3;background-size:cover;background-position:center bottom;background-repeat:no-repeat}
+.arena.world-six-a-inverted{background-image:url('assets/environments/world-6a/01-inverted-world-battle.webp')}
+.arena.world-six-b-capital-road{background-image:url('assets/environments/world-6b/01-capital-road-battle.webp')}
+.arena.world-six-battle:before,.arena.world-six-battle:after{content:none}
+.arena.world-six-battle .arena-floor{display:none}
+
 /* World 4 ordinary battles: illusion forest (1–9), misty forest (11–19). */
 .arena.world-four-battle{background-color:#d9d7ee;background-size:cover;background-position:center bottom;background-repeat:no-repeat}
 .arena.world-four-illusion-forest{background-image:url('assets/environments/world-4/01-illusion-forest-battle.webp')}
@@ -188,10 +195,10 @@ html.native-app body[data-screen=battle] .battle-reward-layer{top:calc(51px + en
 .arena .story-mob{position:absolute;z-index:4;width:48px;height:40px;border-radius:58% 58% 46% 46%;background:linear-gradient(145deg,#baf8ed,#60cfc1 68%,#43a99f);box-shadow:inset -6px -6px 0 #288f9d22,0 6px 0 #4b958d18;will-change:transform;pointer-events:none}
 .arena .story-mob:before{content:"";position:absolute;left:14px;top:14px;width:5px;height:8px;border-radius:50%;background:#345f73;box-shadow:14px 0 #345f73}
 .arena .story-mob:after{content:"";position:absolute;left:20px;top:25px;width:9px;height:4px;border-bottom:2px solid #345f73;border-radius:0 0 9px 9px}
-.arena .story-mob.crystal-golem-mob,.arena .story-mob.crystal-eye-serpent-mob,.arena .story-mob.crystal-candy-mob{width:102px;height:102px;background:none;border-radius:0;box-shadow:none}
-.arena .story-mob.crystal-golem-mob:before,.arena .story-mob.crystal-eye-serpent-mob:before,.arena .story-mob.crystal-candy-mob:before{content:"";left:18%;top:auto;bottom:2%;width:64%;height:12%;border-radius:50%;background:radial-gradient(ellipse,#24214c26,transparent 72%);box-shadow:none}
-.arena .story-mob.crystal-golem-mob:after,.arena .story-mob.crystal-eye-serpent-mob:after,.arena .story-mob.crystal-candy-mob:after{content:none}
-.crystal-golem-mob img,.crystal-eye-serpent-mob img,.crystal-candy-mob img{position:relative;display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 2px #24214c30)}
+.arena .story-mob.half-broken-golem-mob,.arena .story-mob.crystal-golem-mob,.arena .story-mob.crystal-eye-serpent-mob,.arena .story-mob.crystal-candy-mob{width:102px;height:102px;background:none;border-radius:0;box-shadow:none}
+.arena .story-mob.half-broken-golem-mob:before,.arena .story-mob.crystal-golem-mob:before,.arena .story-mob.crystal-eye-serpent-mob:before,.arena .story-mob.crystal-candy-mob:before{content:"";left:18%;top:auto;bottom:2%;width:64%;height:12%;border-radius:50%;background:radial-gradient(ellipse,#24214c26,transparent 72%);box-shadow:none}
+.arena .story-mob.half-broken-golem-mob:after,.arena .story-mob.crystal-golem-mob:after,.arena .story-mob.crystal-eye-serpent-mob:after,.arena .story-mob.crystal-candy-mob:after{content:none}
+.half-broken-golem-mob img,.crystal-golem-mob img,.crystal-eye-serpent-mob img,.crystal-candy-mob img{position:relative;display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 2px #24214c30)}
 .crystal-golem-mob img{transform:scaleX(-1)}
 .story-next-word{display:flex;justify-content:flex-end;align-items:center;gap:7px;min-height:20px;margin:0 2px 2px;text-align:right}.story-next-word small{color:var(--muted);font-size:8px;font-weight:900;letter-spacing:.1em}.story-next-word b{max-width:62%;overflow:hidden;padding:4px 8px;border:1px solid #d9d5f7;border-radius:999px;background:#eeedff;color:var(--violet);font-size:10px;line-height:1.2;text-overflow:ellipsis;white-space:nowrap}
 .reward-journey{position:relative;width:100%;display:block;margin-top:18px;padding-top:0}.journey-caption{display:block;margin-bottom:9px;color:#6b638d;font-size:10px}.journey-track{position:relative;height:9px;border-radius:99px;background:#ddd8ed;box-shadow:inset 0 1px 3px #5751d821}.journey-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--bright),var(--mint),var(--gold));transition:width .35s}.journey-track span{position:absolute;top:50%;width:20px;height:20px;border:4px solid var(--mint);border-radius:50%;background:var(--violet);box-shadow:0 0 0 4px #60d9cf24,0 5px 12px #5751d82e;transform:translate(-50%,-50%)}
@@ -762,7 +769,6 @@ body[data-screen="battle"] .arena.red-reaper-arena{background:#8c82ad url('asset
 .arena:is(.shadow-sorceress-arena,.red-reaper-arena)>.guardian-health{left:auto;right:12px;top:calc(var(--battle-vitals-top) + var(--battle-vitals-height)/2);bottom:auto;width:28%;max-width:160px;margin-bottom:0;transform:translateY(-50%);z-index:9}
 
 /* World 5: one continuous twenty-stage cave map. */
-.story-map-navigation-inline{position:static;margin:0 0 10px}
 .story-world-map-5{aspect-ratio:1/3}
 .story-world-map-5 .story-map-node{height:2.667%}
 .story-world-map-5 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
@@ -881,3 +887,39 @@ body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{backgro
 @keyframes bandit-axe-spin{to{transform:rotate(-360deg)}}
 @keyframes bandit-dodge{0%,100%{translate:0 0}45%{translate:24px -8px;rotate:10deg;opacity:.55}}
 @media(prefers-reduced-motion:reduce){.bandit-dodging{animation:none;outline:3px solid #60d9cf}.bandit-axe-flight svg{animation:none}.bandit-axe-flight{animation-timing-function:steps(2,end)}}
+
+/* World 6A: full-height supplied map, with waypoints in image coordinates. */
+.story-world-map-7{aspect-ratio:1/3;background:#25205b}
+.story-world-map-7 .story-map-node{height:2.667%}
+.story-world-map-7 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
+
+.story-branch-choice h2 { line-height: 1.4; }
+.story-branch-choice p { line-height: 1.7; }
+.story-branch-options { display: grid; gap: 14px; margin-top: 22px; }
+.story-branch-options button { width: 100%; min-height: 88px; padding: 18px 14px; white-space: normal; line-height: 1.6; text-align: left; }
+.story-branch-options small { display: block; font-weight: 500; opacity: .85; }
+.story-branch-error { color: var(--violet); }
+
+/* World 6B: measured 725 x 2170 map, with compact touch targets along the downward route. */
+.story-world-map-6{aspect-ratio:725/2170}
+.story-world-map-6 .story-map-node{height:2.667%}
+.story-world-map-6 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
+
+/* World 6B ordinary road bandits share the contact-synchronized melee lifecycle. */
+.bandit-mob .spider-idle-strip{background-image:url('assets/monsters/bandit/bandit-sd-idle-strip.png')}
+.bandit-mob .spider-attack-strip{background-image:url('assets/monsters/bandit/bandit-sd-attack-strip.png')}
+.bandit-mob .spider-hit-strip{background-image:url('assets/monsters/bandit/bandit-sd-hit-strip.png')}
+
+/* World 6A: left-facing, half-destroyed stone golem; retain shared battle motion. */
+.arena.paused .half-broken-golem-mob{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.arena .half-broken-golem-mob,.arena.hit .enemy.half-broken-golem-mob{animation:none!important}}
+
+/* Wider World 6A cells preserve fist/effect size and the horizontal knockdown. */
+.arena .enemy.story-mob.half-broken-golem-mob{width:122.4px;height:102px;margin-right:-10.2px}
+/* World 6A shares the contact/pause scheduler with the other animated Story mobs. */
+.half-broken-golem-mob .spider-idle-strip{background-image:url('assets/monsters/world-6a/monster_half_broken_golem_sd_idle_wide.png');background-size:100% 100%;animation:golem-idle-breathe 1.1s ease-in-out infinite alternate}
+.half-broken-golem-mob .spider-attack-strip{background-image:url('assets/monsters/world-6a/golem-sd-attack-strip.png')}
+.half-broken-golem-mob .spider-hit-strip{background-image:url('assets/monsters/world-6a/golem-sd-hit-strip.png')}
+.half-broken-golem-mob.spider-is-hit .spider-idle-strip,.half-broken-golem-mob.spider-is-attacking .spider-idle-strip{animation:none}
+@keyframes golem-idle-breathe{to{translate:0 -3px}}
+@media(prefers-reduced-motion:reduce){.half-broken-golem-mob .spider-idle-strip{animation:none}}

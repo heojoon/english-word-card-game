@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-18",
+  "world": "6B",
+  "name": "왕국수도로 가는 길",
+  "status": "proposal-not-integrated",
+  "tool": "image_gen.imagegen",
+  "model": "미공개",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map proposal.\nScene: World 6B, Road to the Royal Capital (왕국수도로 가는 길). A welcoming, sunlit royal highway rising from a small forest-edge overnight campsite and cave-exit foothills at the bottom, winding across lush rolling meadows and wooded rocky passes, through a bandit roadblock clearing at the middle, across a cream-stone arched bridge over a turquoise river, then entering the magnificent walled royal capital at the top. Show an unoccupied wagon, a few wooden crates and a displaced wooden road barrier at the roadside clearing to suggest the bandit encounter, without weapons or people. The capital is a substantial inhabited-looking city: layered cream-stone walls, blue-violet tiled roofs, clustered townhouses, a grand open city gate and a royal castle beyond, with a discreet elegant knight commander's manor inside the walls. No library building. No unrelated temple. Keep the route as the dominant readable golden ribbon.\nReference roles: Image 1 (chapter-1-library-map.webp) = authoritative STYLE only. No existing World 6B layout image exists. Do not copy the style reference's seven-waypoint layout or library.\nComposition: portrait 9:16, target 1024 x 1792 pixels approximately. Elevated three-quarter view. Upper quarter holds the royal capital skyline and open main gate; central landscape is the journey, lower quarter is the starting forest and small unoccupied campsite. Deep terrain layers, airy clouds below the elevated land edges, soft distant blue mountains. Warm upper-left sunlight and safe adventurous daytime mood. Keep the city roofs and spires inside the canvas.\nGameplay contract: the current World 6B runtime registers ONLY ONE encounter, story-ch6-10 (도적 대장), and has no map art, no positions and no defined general-stage count yet. This is an asset proposal, not an invented full gameplay progression. Exactly ONE violet-blue crystal waypoint on ONE gold-rimmed circular pedestal, its PEDESTAL CENTER at normalized x=50%, y=55%, in the roadside bandit clearing halfway to the city. Build a broad navigable landing around this center. Keep this waypoint unobscured. No additional waypoint pedestals anywhere, including the city entrance. Any minor ambient crystals must be small raw cyan minerals without pedestals. The path must remain continuous from campsite through this landing, across the bridge and into the open capital gate. No labels or numbers. Leave wide calm stretches along the road for future stage placement without drawing extra stage circles.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\n\nREVISION: Image 2 is the first generated proposal, provided as composition/layout reference. Keep its single waypoint, terrain, winding route, campsite, bandit clearing and premium painterly treatment. Correct the clipped royal castle: zoom the entire city architecture out modestly and lower the skyline so EVERY castle tower, roof, flag and spire is fully inside the canvas, leaving at least 6% clear blue sky above the tallest spire. Keep generous right margin so no city building is cut off on the right either. Keep the established crystal pedestal centered around x=50%, y=53%. Do not add any other pedestal or stage crystal. Image 1 remains the authoritative style reference. The whole city should read as an intact distant destination, not a close-up cropped castle.",
+  "promptPath": "output/story-map/chapter-6b-road-to-capital.prompt.txt",
+  "initialPromptPath": "output/story-map/chapter-6b-road-to-capital-v1.prompt.txt",
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "existingTargetLayout": null,
+    "revisionLayout": "output/story-map/chapter-6b-road-to-capital-v1-source.png"
+  },
+  "source": "assets/story/source/chapter-6b-road-to-capital-proposal.png",
+  "runtime": "assets/story/chapter-6b-road-to-capital-proposal.webp",
+  "targetDimensions": [
+    1024,
+    1792
+  ],
+  "actualDimensions": [
+    948,
+    1659
+  ],
+  "aspectRatio": {
+    "requested": "approximately 9:16",
+    "actual": "4:7"
+  },
+  "runtimeContract": {
+    "registeredStageCount": 1,
+    "stageKey": "story-ch6-10",
+    "runtimeHasMap": false,
+    "runtimePositions": null,
+    "generalStageCount": "undefined; no stages invented"
+  },
+  "waypoints": [
+    {
+      "key": "story-ch6-10",
+      "name": "도적 대장",
+      "targetPedestalCenterPercent": [
+        50,
+        55
+      ],
+      "actualPedestalCenterPx": [
+        479,
+        916
+      ],
+      "actualPedestalCenterPercent": [
+        50.527,
+        55.214
+      ],
+      "actualCrystalCenterApproxPx": [
+        479,
+        884
+      ],
+      "measurement": "visual manual estimate; pedestal and crystal centers recorded separately"
+    }
+  ],
+  "review": {
+    "technicalStatus": "reviewed as an asset proposal",
+    "styleComparison": "side-by-side visual review against chapter-1 style reference",
+    "mobileWidthPx": 390,
+    "waypointCount": 1,
+    "route": "visually traced from campsite to clearing, bridges and city gate",
+    "cropping": "main castle spires corrected in second generation; peripheral city extends toward right image edge",
+    "uiTextCharacters": "none observed",
+    "browserButtonAlignment": "not performed; image generation only, runtime integration not requested",
+    "build": "not run; no runtime or code changes",
+    "userApproval": "pending"
+  },
+  "reviewFiles": [
+    "output/story-map/chapter-6b-road-to-capital-mobile-review.webp",
+    "output/story-map/chapter-6b-style-mobile-review.jpg"
+  ]
+}

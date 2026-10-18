@@ -1,0 +1,288 @@
+{
+  "date": "2026-10-18",
+  "world": "6B",
+  "name": "왕국수도로 가는 길",
+  "stageCount": 20,
+  "progression": "top-to-bottom",
+  "stageCountAuthority": "explicit user correction, 2026-10-18; supersedes incomplete runtime encounter registration",
+  "tool": "image_gen.imagegen",
+  "model": "미공개",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest World 6B scrollable story world map, corrected 20-stage version.\nPrimary request: World 6B Road to the Royal Capital. Exactly TWENTY stages, progressing TOP TO BOTTOM, never bottom to top. User correction overrides the incomplete runtime.\nReference roles: Image 1 = chapter-1-library-map.webp, authoritative painterly STYLE. Image 2 = obsolete World 6B one-stage proposal, subject/material reference only; its layout is explicitly superseded. Completely replace its route direction, city location and waypoint count. Do NOT put the capital at the top. Do NOT reuse its single waypoint layout.\nComposition: very tall portrait approximately 1:3, target 1024 x 3072. Elevated three-quarter view, a long continuous gently serpentine golden road progressing DOWN the image. The TOP is the START: a small empty campsite beside a cave exit in green forest foothills. The MIDDLE is the JOURNEY: lush hills, flower-lined forest roads, a bandit roadblock clearing at stage 10 (a parked wagon, crates and displaced timber barricades, no people), a turquoise stream and one cream-stone bridge. The BOTTOM is the DESTINATION: the royal capital in the lowest quarter of the image, open city gates, cream-stone walls, blue-violet roofs, townhouses, castle and knight commander's manor arranged beside and behind the final road section. Show all important architecture inside the canvas. Place the final stage in the capital's welcoming paved plaza near the bottom. No castle or city skyline at the top. No horizon or scenic filler that displaces the topmost stages. Top and bottom progress refer to 2D screen coordinates; all buildings remain upright, do not rotate the art.\nGameplay contract: exactly 20 separate violet-blue crystal waypoints on exactly 20 gold-rimmed circular pedestals, along ONE connected road in numbered sequence without drawing any numbers. Every successive pedestal is strictly lower in screen y than the previous one. Slight lateral winding is allowed, but no upward retracing, disconnected islands, branching paths, extra pedestals, hidden markers or missing crystals. Crystals should be large enough to count individually on mobile. Calm open landing around each pedestal. Avoid decorative violet crystals elsewhere; any incidental cyan minerals must have no pedestal.\nStage order and target normalized PEDESTAL CENTERS, measured from the image top-left:\nStage 1: x=18%, y=5.0%.\nStage 2: x=40%, y=9.65%.\nStage 3: x=65%, y=14.3%.\nStage 4: x=83%, y=18.95%.\nStage 5: x=65%, y=23.6%.\nStage 6: x=40%, y=28.25%.\nStage 7: x=18%, y=32.9%.\nStage 8: x=40%, y=37.55%.\nStage 9: x=65%, y=42.2%.\nStage 10: x=83%, y=46.85% — bandit-chief roadside clearing.\nStage 11: x=65%, y=51.5%.\nStage 12: x=40%, y=56.15%.\nStage 13: x=18%, y=60.8%.\nStage 14: x=40%, y=65.45%.\nStage 15: x=65%, y=70.1%.\nStage 16: x=83%, y=74.75%.\nStage 17: x=65%, y=79.4%.\nStage 18: x=40%, y=84.05%.\nStage 19: x=18%, y=88.7%.\nStage 20: x=50%, y=93.35% — final plaza in royal capital.\nBuild the terrain and road around these twenty target positions. First five stages occupy the top quarter, next five the second quarter, next five the third quarter, last five the lowest quarter. Count the pedestals before finishing. Maintain warm upper-left daylight, soft painterly foliage, layered cream cliffs, atmospheric clouds around land edges, restrained turquoise water and violet crystal accents. No library, no unrelated temple, no signs or text.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\n\nTARGETED EDIT OF IMAGE 2, KEEP THE REST OF THE MAP UNCHANGED: Image 2 mistakenly has TWENTY-FIVE crystal pedestals. Remove exactly FIVE existing crystal-and-gold-pedestal assemblies completely and paint ordinary golden path in their place, retaining road continuity. Read normalized coordinates from upper-left. REMOVE assemblies centered at (66.5%,10.8%), (66.5%,17.1%), (66.5%,28.4%), (66.5%,34.9%), and (77.5%,73.6%). These are original top-to-bottom pedestal numbers 3,5,9,11,22. Remove both purple crystal and entire gold circular base at EACH of these five places, leaving no round foundation. KEEP the other TWENTY crystal-and-gold-pedestal assemblies at their existing positions and do not add any. With these removals, the crystal in the middle of the bandit barricade clearing becomes stage 10. Final large crystal remains in the bottom capital plaza as stage 20. Do not regenerate/rearrange the city or landscape, do not shift crystals, do not add new crystals. Original 20-stage target coordinates in the earlier block are superseded by this edit's keep/remove instructions. FINAL COUNT MUST BE EXACTLY 20, not 25. Image 1 remains authoritative STYLE reference.",
+  "promptPath": "output/story-map/chapter-6b-road-to-capital-20-stage-top-down-final.prompt.txt",
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "initialSubjectOnly": "assets/story/chapter-6b-road-to-capital-proposal.webp",
+    "editTarget": "output/story-map/chapter-6b-25-stage-rejected-source.png"
+  },
+  "source": "assets/story/source/chapter-6b-road-to-capital-20-stage-top-down.png",
+  "runtime": "assets/story/chapter-6b-road-to-capital-20-stage-top-down.webp",
+  "targetDimensions": [
+    1024,
+    3072
+  ],
+  "actualDimensions": [
+    725,
+    2170
+  ],
+  "positions": [
+    {
+      "stage": 1,
+      "centerPx": [
+        141,
+        142
+      ],
+      "centerPercent": [
+        19.444,
+        6.543
+      ]
+    },
+    {
+      "stage": 2,
+      "centerPx": [
+        299,
+        186
+      ],
+      "centerPercent": [
+        41.228,
+        8.594
+      ]
+    },
+    {
+      "stage": 3,
+      "centerPx": [
+        600,
+        303
+      ],
+      "centerPercent": [
+        82.749,
+        13.965
+      ]
+    },
+    {
+      "stage": 4,
+      "centerPx": [
+        489,
+        389
+      ],
+      "centerPercent": [
+        67.398,
+        17.92
+      ]
+    },
+    {
+      "stage": 5,
+      "centerPx": [
+        299,
+        431
+      ],
+      "centerPercent": [
+        41.228,
+        19.873
+      ]
+    },
+    {
+      "stage": 6,
+      "centerPx": [
+        141,
+        499
+      ],
+      "centerPercent": [
+        19.444,
+        22.998
+      ]
+    },
+    {
+      "stage": 7,
+      "centerPx": [
+        299,
+        567
+      ],
+      "centerPercent": [
+        41.228,
+        26.123
+      ]
+    },
+    {
+      "stage": 8,
+      "centerPx": [
+        601,
+        683
+      ],
+      "centerPercent": [
+        82.895,
+        31.494
+      ]
+    },
+    {
+      "stage": 9,
+      "centerPx": [
+        478,
+        763
+      ],
+      "centerPercent": [
+        65.936,
+        35.156
+      ]
+    },
+    {
+      "stage": 10,
+      "centerPx": [
+        299,
+        828
+      ],
+      "centerPercent": [
+        41.228,
+        38.135
+      ]
+    },
+    {
+      "stage": 11,
+      "centerPx": [
+        141,
+        914
+      ],
+      "centerPercent": [
+        19.444,
+        42.139
+      ]
+    },
+    {
+      "stage": 12,
+      "centerPx": [
+        364,
+        977
+      ],
+      "centerPercent": [
+        50.146,
+        45.02
+      ]
+    },
+    {
+      "stage": 13,
+      "centerPx": [
+        596,
+        1137
+      ],
+      "centerPercent": [
+        82.164,
+        52.393
+      ]
+    },
+    {
+      "stage": 14,
+      "centerPx": [
+        299,
+        1304
+      ],
+      "centerPercent": [
+        41.228,
+        60.107
+      ]
+    },
+    {
+      "stage": 15,
+      "centerPx": [
+        141,
+        1386
+      ],
+      "centerPercent": [
+        19.444,
+        63.867
+      ]
+    },
+    {
+      "stage": 16,
+      "centerPx": [
+        299,
+        1466
+      ],
+      "centerPercent": [
+        41.228,
+        67.578
+      ]
+    },
+    {
+      "stage": 17,
+      "centerPx": [
+        565,
+        1609
+      ],
+      "centerPercent": [
+        77.924,
+        74.17
+      ]
+    },
+    {
+      "stage": 18,
+      "centerPx": [
+        445,
+        1701
+      ],
+      "centerPercent": [
+        61.404,
+        78.369
+      ]
+    },
+    {
+      "stage": 19,
+      "centerPx": [
+        182,
+        1927
+      ],
+      "centerPercent": [
+        25.146,
+        88.818
+      ]
+    },
+    {
+      "stage": 20,
+      "centerPx": [
+        360,
+        2010
+      ],
+      "centerPercent": [
+        49.708,
+        92.627
+      ]
+    }
+  ],
+  "measurement": "manual pedestal-center estimates from 684x2048 review; not generated target assumptions",
+  "review": {
+    "count": 20,
+    "monotonicDownward": true,
+    "style": "visually compared with chapter-1 reference",
+    "route": "continuous top campsite to bottom capital plaza, checked visually",
+    "mobileWidth": 390,
+    "integration": "Integrated in crystal-game.js with twenty sequential stages; mobile 390x844 and desktop 1280x900 checked in browser.",
+    "bossLandmark": "Preserve the existing stage-10 boss key at the tenth waypoint. The decorative bandit camp is around waypoint 12; gameplay order stays strictly downward.",
+    "userApproval": "User requested game integration",
+    "browser": {
+      "imageLoaded": true,
+      "stageNodes": 20,
+      "buttonCenterAlignment": "all centers within 1 CSS pixel of measured image positions",
+      "horizontalOverflow": false,
+      "generalBattle": "stage 1 enters a 60-question middle-level battle",
+      "bossEntry": "stage 10 opens the existing bandit-chief introduction",
+      "finalStage": "stage 20 reachable by map scrolling",
+      "console": "No additional errors during map and entry checks; existing favicon 404 and remote-content fallback observed."
+    },
+    "tests": {
+      "command": "npm test",
+      "passed": 401,
+      "failed": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "passed"
+    }
+  },
+  "reviewFiles": [
+    "output/story-map/chapter-6b-20-stage-waypoint-review.jpg",
+    "output/story-map/chapter-6b-20-stage-mobile-review.webp",
+    "output/story-map/chapter-6b-20-stage-style-review.jpg",
+    "output/playwright/world6b-mobile-top.png",
+    "output/playwright/world6b-mobile-bottom.png",
+    "output/playwright/world6b-desktop.png",
+    "output/playwright/world6b-boss-entry.png"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "image": "bandit-sd-idle-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": true,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 600
+    },
+    {
+      "name": "breathe",
+      "durationMs": 600
+    }
+  ]
+}

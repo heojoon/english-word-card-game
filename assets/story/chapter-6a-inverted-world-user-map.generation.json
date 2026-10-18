@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-18",
+  "world": "6A",
+  "tool": "user-provided image; Pillow WebP encoding only",
+  "model": null,
+  "prompt": null,
+  "source": "assets/story/source/chapter-6a-user-map.png",
+  "runtime": "assets/story/chapter-6a-inverted-world-user-map.webp",
+  "actualDimensions": [
+    724,
+    2172
+  ],
+  "stageCount": 20,
+  "waypoints": [
+    [
+      "18.741%",
+      "6.738%"
+    ],
+    [
+      "44.07%",
+      "8.936%"
+    ],
+    [
+      "69.693%",
+      "10.986%"
+    ],
+    [
+      "86.091%",
+      "14.893%"
+    ],
+    [
+      "64.861%",
+      "17.48%"
+    ],
+    [
+      "37.921%",
+      "20.41%"
+    ],
+    [
+      "17.862%",
+      "24.072%"
+    ],
+    [
+      "39.531%",
+      "27.686%"
+    ],
+    [
+      "66.471%",
+      "30.518%"
+    ],
+    [
+      "84.041%",
+      "33.789%"
+    ],
+    [
+      "65.154%",
+      "37.402%"
+    ],
+    [
+      "33.821%",
+      "40.674%"
+    ],
+    [
+      "16.105%",
+      "43.799%"
+    ],
+    [
+      "39.971%",
+      "47.9%"
+    ],
+    [
+      "66.618%",
+      "51.855%"
+    ],
+    [
+      "85.359%",
+      "57.129%"
+    ],
+    [
+      "64.275%",
+      "62.5%"
+    ],
+    [
+      "35.286%",
+      "67.236%"
+    ],
+    [
+      "18.302%",
+      "73.877%"
+    ],
+    [
+      "60.322%",
+      "87.354%"
+    ]
+  ],
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp"
+  },
+  "approval": "User explicitly requested integration of supplied artwork",
+  "review": {
+    "coordinates": "Existing measured 6A layout checked against supplied artwork",
+    "browser": {
+      "viewport": [
+        390,
+        844
+      ],
+      "renderedMap": [
+        344,
+        1032
+      ],
+      "imageLoaded": true,
+      "nodeCount": 20,
+      "horizontalOverflow": false,
+      "screenshots": [
+        "output/story-map/chapter-6a-integrated-mobile.png",
+        "output/story-map/chapter-6a-integrated-mobile-bottom.png"
+      ]
+    },
+    "build": "npm run build passed",
+    "tests": "391 tests passed"
+  }
+}

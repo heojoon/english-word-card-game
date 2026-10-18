@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-19",
+  "file": "01-inverted-world-battle.webp",
+  "original": "source/01-inverted-world-battle.png",
+  "prompt": "Use case: illustration-story. Asset: NEW wide landscape 16:9 environment-only side-view battle background for Wordoria Crystal Quest World 6A, Inverted World. Image 1 is the established battle scenery style/composition reference. Image 2 is ONLY location, palette and architectural reference; do NOT reproduce its overhead map layout or waypoints. Create an eye-level horizontal ancient pale-lavender stone terrace in a moonlit inverted floating world. Behind it, broken gothic arches at the outer edges, distant floating cliffs with blue waterfalls descending into luminous lavender cloud, a distant upside-down ruined silhouette high in the sky, sparse silver-blue foliage, tiny violet/cyan crystal clusters on outer margins. Bright readable cool magical atmosphere, polished hand-painted 2D anime fantasy scenery matching established battle reference, gentle atmospheric depth, medium-low contrast behind sprites. Full-width continuous flat combat ground occupying lower 28%, clear left and right sprite areas and quiet central space, ground-contact line near 85% height. Floating ruins remain BACKGROUND, safe unbroken playable floor. No characters, enemies, golems, silhouettes of people, text, runes, UI, numbers, paths, map markers, gold pedestals, borders, watermark, photorealism, pixel art, low-poly or toy-like 3D.",
+  "references": [
+    "assets/environments/world-5/01-crystal-spider-cavern-battle.webp",
+    "assets/story/chapter-6a-inverted-world-user-map.webp"
+  ],
+  "scope": "Ordinary Story battles only; boss scenery unchanged.",
+  "review": "Visually inspected: clear continuous battle floor, distinct world scenery, no characters, markers or UI. Browser checks not requested; not user-approved.",
+  "dimensions": [
+    1672,
+    941
+  ]
+}

@@ -8,7 +8,7 @@ const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const source=read('crystal-game.js');
 function setup(){
   let level='middle';
-  const c=vm.createContext({window:{},stages:JSON.parse(read('content/catalog.json')).stages,learningLevel:()=>level,stageLevel:stage=>stage?.learningLevel||'middle',records:[],accountMode:false,localHost:false,nativeApp:false,shuffle:items=>items.slice()});
+  const c=vm.createContext({window:{},stages:JSON.parse(read('content/catalog.json')).stages,learningLevel:()=>level,stageLevel:stage=>stage?.learningLevel||'middle',storyBranchPreview:null,run:null,records:[],demoState:{},accountMode:false,localHost:false,nativeApp:false,shuffle:items=>items.slice()});
   vm.runInContext(source.slice(source.indexOf('  const storyStages = ['),source.indexOf('  const storyStageKey='))+'\nthis.storyStages=storyStages;this.storyWorlds=storyWorlds;',c);
   vm.runInContext(source.slice(source.indexOf('  function stageRecordName('),source.indexOf('  function earnedCoins(')),c);
   vm.runInContext(source.slice(source.indexOf('  function buildQuestionDeck('),source.indexOf('  async function loadAll(')),c);

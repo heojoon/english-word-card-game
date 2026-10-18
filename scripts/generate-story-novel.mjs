@@ -190,26 +190,31 @@ export function parseWorldFiveNarrative(markdown,backgroundGroup){
   const midbossStart=markdown.startsWith('# 월드 5 — 중간보스 도입');
   const midbossEnd=markdown.startsWith('# 월드 5 — 중간보스 격파');
   const prologue=markdown.startsWith('# 월드 5 — 프롤로그');
+  const bossEnd=backgroundGroup==='boss-end';
   const backgroundSet=backgroundGroup||(prologue?'prologue':midbossStart?'midboss-start':midbossEnd?'midboss-end':'boss-start');
   let spiderVisible=false;
   let sceneNumber=0,location='보랏빛 수정동굴';
-  const speakers={...classes,'파이터 & 아서':'party','다크 소서러스':'mage','어둠의 소서러스':'mage','갈등의 화신':'mystery','리치 드래곤':'black-dragon','모두':'party','효과음':'scene'};
+  const speakers={...classes,'파이터 & 아서':'party','다크 소서러스':'mage','어둠의 소서러스':'mage','갈등의 화신':'mystery','리치 드래곤':'black-dragon','모두':'party','아서 & 바이올렛 & 파이터':'party','효과음':'scene'};
   for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
     const block=raw.trim();
+    if(bossEnd&&block.startsWith('## 다음 스토리'))break;
     const heading=block.match(/^## Scene (\d+)\. (.+)$/);
     if(heading){sceneNumber=Number(heading[1]);location=heading[2];continue;}
+    if(bossEnd&&block.startsWith('배경:'))continue;
     if(!sceneNumber||!block||block.startsWith('#')||block.startsWith('(월드 5')||block==='중간보스 전투 시작'||block==='보스 전투 시작')continue;
-    const dialogue=block.match(/^([^:\n]+):\s*([\s\S]+)$/);
+    const dialogue=bossEnd&&block.startsWith('[')?null:block.match(/^([^:\n]+):\s*([\s\S]+)$/);
     const speaker=dialogue?.[1]||'내레이션';
     const line={speaker,className:speakers[speaker]||'scene',text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:'violet-cave',sceneNumber,location,backgroundPath:`assets/novel/bgi/world5-${backgroundSet}-scene-${String(sceneNumber).padStart(2,'0')}.webp`};
+    if(bossEnd)line.backgroundPath='assets/novel/bgi/world5-boss-start-scene-04.webp';
     if(prologue&&sceneNumber===3&&line.text.includes('크리스탈 거미들이야'))spiderVisible=true;
     if(spiderVisible){line.sceneArt='assets/monsters/crystal-spider/design-reference.png';line.sceneArtName='크리스탈 거미';line.sceneArtClass='crystal-spider';}
     if(speaker==='월드 5의 핵심 목표')line.className='mission';
     if(speaker==='리치 드래곤')line.artPath='assets/novel/characters/char_lich_dragon_world5_standing.webp';
     if(['다크 소서러스','어둠의 소서러스'].includes(speaker))line.artPath='assets/novel/characters/char_dark_sorcerus_world5_standing.webp';
-    if(speaker==='소서러스'&&((midbossStart&&sceneNumber>=4)||(midbossEnd&&sceneNumber===1)))line.artPath='assets/novel/characters/char_sorcerus_world5_midboss_standing.webp';
-    if(/새하얗게|휘감는다/.test(line.text))line.flash=true;
-    if(/거세게 흔들|벽에 부딪/.test(line.text))line.shake=true;
+    if(speaker==='소서러스'&&bossEnd)line.artPath='assets/avatars/mage.webp';
+    else if(speaker==='소서러스'&&((midbossStart&&sceneNumber>=4)||(midbossEnd&&sceneNumber===1)))line.artPath='assets/novel/characters/char_sorcerus_world5_midboss_standing.webp';
+    if(/새하얗게|휘감는다|백색 플래시/.test(line.text))line.flash=true;
+    if(/거세게 흔들|벽에 부딪|화면 흔들림/.test(line.text))line.shake=true;
     lines.push(line);
   }
   if(!lines.length||sceneNumber<3)throw new Error('World 5 narrative is incomplete');
@@ -232,7 +237,8 @@ export async function generateStoryNovel(){
     ['world5Prologue','world-5-1-prologue.md',markdown=>parseWorldFiveNarrative(markdown,'prologue')],
     ['world5MidbossStart','world-5-midboss-start.md',markdown=>parseWorldFiveNarrative(markdown,'midboss-start')],
     ['world5MidbossEnd','world-5-midboss-end.md',markdown=>parseWorldFiveNarrative(markdown,'midboss-end')],
-    ['world5BossStart','world-5-20-boss-start.md',markdown=>parseWorldFiveNarrative(markdown,'boss-start')]
+    ['world5BossStart','world-5-20-boss-start.md',markdown=>parseWorldFiveNarrative(markdown,'boss-start')],
+    ['world5BossEnd','world-5-20-boss-end.md',markdown=>parseWorldFiveNarrative(markdown,'boss-end')]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');

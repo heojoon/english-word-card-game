@@ -1,0 +1,81 @@
+{
+  "image": "golem-sd-hit-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 100
+    },
+    {
+      "name": "impact",
+      "durationMs": 100,
+      "hit": true
+    },
+    {
+      "name": "knockdown",
+      "durationMs": 160,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/half-broken-golem-generated.png",
+      "sourceBounds": [
+        34,
+        77,
+        1222,
+        1204
+      ],
+      "scale": 0.24,
+      "runtimeBounds": [
+        49,
+        42,
+        334,
+        312
+      ]
+    },
+    {
+      "source": "source-frames/hit/02-impact.png",
+      "sourceBounds": [
+        51,
+        106,
+        1205,
+        1183
+      ],
+      "scale": 0.24,
+      "runtimeBounds": [
+        53,
+        54,
+        330,
+        312
+      ]
+    },
+    {
+      "source": "source-frames/hit/03-knockdown.png",
+      "sourceBounds": [
+        12,
+        363,
+        1243,
+        1020
+      ],
+      "scale": 0.24,
+      "runtimeBounds": [
+        44,
+        154,
+        339,
+        312
+      ]
+    }
+  ],
+  "reviewStatus": "Frame-by-frame/alpha reviewed; browser validation pending"
+}

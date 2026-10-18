@@ -1,0 +1,32 @@
+{
+  "image": "monster_half_broken_golem_sd_left.png",
+  "name": "반쯤 부서진 골렘",
+  "world": "6A",
+  "storyChapter": 7,
+  "tool": "built-in image_gen",
+  "source": "source/half-broken-golem-generated.png",
+  "reference": "assets/monsters/crystal-golem/crystal-golem-normal-sd-right.png",
+  "prompt": "Use case: stylized-concept. Create a production single full-body transparent SD/chibi battle monster for Wordoria Crystal Quest World 6A: a HALF-DESTROYED STONE GOLEM. Reference image is style and compact proportions only, not intact crystal anatomy. Bright premium 2D anime fantasy game sprite, dark violet colored contours, crisp soft cel shading, selective soft gradients, large readable rounded silhouette, not pixel art or 3D. Three-quarter LEFT-facing stance looking toward image left, big head, squat legs, oversized remaining fist. Ancient pale cool-gray stone with lavender shadows, worn chipped stone blocks. Approximately half its original stone body is missing: entire far-side shoulder and arm broken away, large missing wedge of head and torso, exposed glowing violet-blue chest crystal and broken hollow edges. Remaining one massive fist and two short uneven legs keep it standing. Sparse small floating stone fragments held by mint magic at missing shoulder, no additional arm outline. Asymmetrical and unmistakably broken at 102px, determined glowing cyan eye, child-friendly not horror. Keep subject entire inside square with generous transparent margins, stable bottom center ground line, no floor or cast shadow, no text, no background, genuine transparent alpha. One character only. Match the reference's polished illustrated game asset quality, but stone is dominant and crystal is a small exposed core.",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 1,
+  "layout": "single",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frames": [
+    {
+      "name": "idle",
+      "durationMs": 1100
+    }
+  ],
+  "displayCell": {
+    "width": 102,
+    "height": 102
+  },
+  "animation": "Shared story-mob CSS idle bob and existing attack-completion removal; no independent attack strip.",
+  "review": "review/mobile-alpha-review.png",
+  "reviewStatus": "Generated identity inspected; alpha and 102px review; browser review not performed."
+}

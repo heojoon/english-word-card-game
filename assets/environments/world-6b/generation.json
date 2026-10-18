@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-19",
+  "file": "01-capital-road-battle.webp",
+  "original": "source/01-capital-road-battle.png",
+  "references": [
+    "assets/environments/world-5/01-crystal-spider-cavern-battle.webp",
+    "assets/story/chapter-6b-road-to-capital-20-stage-top-down.webp"
+  ],
+  "scope": "Ordinary Story battles only; boss scenery unchanged.",
+  "review": "Visually inspected: clear continuous battle floor, distinct world scenery, no characters, markers or UI. Browser checks not requested; not user-approved.",
+  "dimensions": [
+    1672,
+    941
+  ]
+}

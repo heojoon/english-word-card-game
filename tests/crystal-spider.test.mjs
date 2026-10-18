@@ -4,12 +4,12 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
-function setup(reduced=false){
+function setup(reduced=false,bandit=false,golem=false){
   let now=0,sequence=0;
   const timers=[],events=[],classes=new Set(),entries=Array.from({length:10},(_,id)=>({id,entry:[`word${id}`,'n',`뜻${id}`]}));
   const arena={classList:{add:(...values)=>values.forEach(v=>classes.add(v)),remove:(...values)=>values.forEach(v=>classes.delete(v))},querySelector:()=>null};
   const c=vm.createContext({
-    run:{story:true,crystalSpider:true,hp:2,hpMax:2,index:0,correct:0,deck:entries,matchBoard:entries.slice(0,5),matchEn:entries.slice(0,5),matched:new Set(),selectedKo:null,selectedEn:null,slashExpiresAt:0,iceTimeActive:true},
+    run:{story:true,crystalSpider:!bandit&&!golem,banditMob:bandit,golemMob:golem,hp:2,hpMax:2,index:0,correct:0,deck:entries,matchBoard:entries.slice(0,5),matchEn:entries.slice(0,5),matched:new Set(),selectedKo:null,selectedEn:null,slashExpiresAt:0,iceTimeActive:true},
     selectedCharacter:{class:'warrior'},performance:{now:()=>now},reducedMotion:()=>reduced,
     battleContactDelay:()=>reduced?120:710,STORY_QUESTIONS_PER_TURN:5,nextTimer:null,
     render(){},persistStoryBattleVitals(){},storyVitalsMarkup:()=>'',refreshPetBattleFeedback(){},
@@ -90,7 +90,7 @@ test('paused player attacks preserve contact timing and final-frame hold before 
   advance(1);assert.equal(c.run.pendingDefeat,false);
 });
 
-test('the battle renderer uses spiders only for World 5 and keeps existing chapter art',()=>{
+test('the battle renderer selects animated World 5/6B mobs and keeps existing chapter art',()=>{
   const {c}=setup();
   const begin=source.indexOf('  function renderBattle('),end=source.indexOf('  function spiritMessage(',begin);
   Object.assign(c,{stages:{test:{storyChapter:5,name:'test'}},selectedStage:'test',esc:String,deployedAssetUrl:String,
@@ -98,6 +98,9 @@ test('the battle renderer uses spiders only for World 5 and keeps existing chapt
   c.run.matchKo=c.run.matchEn;c.run.elapsed=0;c.run.storyTimeLimit=30000;
   vm.runInContext(source.slice(begin,end),c);
   assert.match(c.renderBattle(),/crystal-spider-mob/);
+  c.stages.test.storyChapter=6;c.run.crystalSpider=false;c.run.banditMob=true;
+  assert.match(c.renderBattle(),/bandit-mob/);
+  c.run.banditMob=false;
   for(const [chapter,art] of [[2,'crystal-golem'],[3,'crystal-eye-serpent'],[4,'monster_crystal_candy']]){
     c.stages.test.storyChapter=chapter;
     const html=c.renderBattle();assert.match(html,new RegExp(art));assert.doesNotMatch(html,/crystal-spider-mob/);
@@ -115,10 +118,10 @@ test('stale and timed out attacks cannot damage the next battle; lethal contact 
   advance(260);assert.equal(c.reason,'hp-zero');
 });
 
-test('sprite manifests describe contiguous 320px RGBA strips with held knockdown and exact review gutters',()=>{
+for(const monster of ['crystal-spider','bandit'])test(`${monster} manifests describe contiguous RGBA strips with held knockdown and exact review gutters`,()=>{
   for(const [action,count] of [['idle',2],['attack',3],['hit',3]]){
-    const root=new URL('../assets/monsters/crystal-spider/',import.meta.url);
-    const manifest=JSON.parse(readFileSync(new URL(`crystal-spider-sd-${action}-strip.json`,root),'utf8'));
+    const root=new URL(`../assets/monsters/${monster}/`,import.meta.url);
+    const manifest=JSON.parse(readFileSync(new URL(`${monster}-sd-${action}-strip.json`,root),'utf8'));
     const png=readFileSync(new URL(manifest.image,root));
     assert.equal(png.readUInt32BE(16),count*320);assert.equal(png.readUInt32BE(20),320);
     assert.equal(png[25],6,'RGBA PNG');
@@ -127,5 +130,65 @@ test('sprite manifests describe contiguous 320px RGBA strips with held knockdown
     assert.equal(review.readUInt32BE(16),count*320+(count-1)*50);
     if(action==='hit'){assert.equal(manifest.frames[2].name,'knockdown');assert.equal(manifest.frames[2].hold,true);}
     if(action==='attack')assert.equal(manifest.frames[2].hit,true);
+  }
+});
+
+for(const reduced of [false,true])test(`World 6B bandits synchronize damage, knockdown hold and pause, reduced=${reduced}`,()=>{
+  const {c,pick,advance,events}=setup(reduced,true);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/bandit-mob/g)||[]).length,5);
+  pick(0,1);
+  const contact=reduced?90:240;
+  advance(contact-1);assert.equal(c.run.hp,2);
+  advance(1);assert.equal(c.run.hp,1);assert.deepEqual(events,['error']);
+  advance(reduced?120:260);assert.equal(c.run.stunned,false);
+  pick(0,0);const heroContact=reduced?120:710;
+  advance(heroContact-1);assert.deepEqual(events,['error']);
+  advance(1);assert.deepEqual(events,['error','success']);assert.equal(c.run.pendingDefeat,true);
+  advance(400);assert.equal(c.run.pendingDefeat,false);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/bandit-mob/g)||[]).length,4);
+});
+
+test('World 6B pause preserves contact and the full knockdown hold',()=>{
+  const {c,pick,advance,events}=setup(false,true);
+  pick(0,0);advance(300);c.run.paused=true;advance(1000);
+  assert.deepEqual(events,[]);assert.equal(c.run.pendingDefeat,true);
+  c.run.spiderPausedMs=1000;c.run.paused=false;advance(410);
+  assert.deepEqual(events,['success']);advance(259);
+  assert.equal(c.run.pendingDefeat,true);advance(1);assert.equal(c.run.pendingDefeat,false);
+});
+
+for(const reduced of [false,true])test(`World 6A golem attacks and falls at contact, reduced=${reduced}`,()=>{
+  const {c,pick,advance,events}=setup(reduced,false,true);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/half-broken-golem-mob/g)||[]).length,5);
+  pick(0,1);
+  const contact=reduced?90:240;
+  assert.equal((c.crystalSpiderMobsMarkup().match(/spider-is-attacking/g)||[]).length,1);
+  assert.equal(c.run.iceTimeActive,false);
+  advance(contact-1);assert.equal(c.run.hp,2);
+  advance(1);assert.equal(c.run.hp,1);assert.deepEqual(events,['error']);
+  advance(reduced?120:260);assert.equal(c.run.stunned,false);
+  pick(0,0);const heroContact=reduced?120:710;
+  assert.equal((c.crystalSpiderMobsMarkup().match(/spider-is-hit/g)||[]).length,1);
+  advance(heroContact-1);assert.deepEqual(events,['error']);
+  advance(1);assert.deepEqual(events,['error','success']);
+  advance((reduced?170:260)-1);assert.equal(c.run.pendingDefeat,true);
+  advance(400);assert.equal(c.run.pendingDefeat,false);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/half-broken-golem-mob/g)||[]).length,4);
+});
+
+test('World 6A pauses both attack phases and rejects stale strikes after battle exit',()=>{
+  for(const hit of [false,true]){
+    const {c,pick,advance,events}=setup(false,false,true);
+    pick(0,hit?0:1);advance(100);c.run.paused=true;advance(1000);
+    assert.equal(c.run.hp,2);assert.deepEqual(events,[]);
+    c.run.spiderPausedMs=1000;c.run.paused=false;
+    advance((hit?710:240)-101);assert.deepEqual(events,[]);
+    advance(1);assert.deepEqual(events,[hit?'success':'error']);
+    if(hit){advance(259);assert.equal(c.run.pendingDefeat,true);advance(1);assert.equal(c.run.pendingDefeat,false);}
+  }
+  for(const mode of ['exit','timeout']){
+    const {c,pick,advance,events}=setup(false,false,true);pick(0,1);
+    if(mode==='exit')c.run={story:true,hp:3};else c.run.timeoutPending=true;
+    advance(1000);assert.equal(c.run.hp,mode==='exit'?3:2);assert.deepEqual(events,[]);
   }
 });

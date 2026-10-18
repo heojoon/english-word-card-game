@@ -6248,6 +6248,362 @@ window.WORDORIA_NOVELS = {
       "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     }
   ],
+  "world5BossEnd": [
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "리치 드래곤! 항복해! 이제 도망갈 곳은 없어!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "크하하하! 내가 너희 같은 녀석들에게 항복할 것 같으냐!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "마지막 경고다. 더 이상 저항하지 마!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "항복은 없다! 차라리 다 같이 죽어버리자!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(리치 드래곤이 동굴의 중심부에 마력을 집중한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "설마…! 이 동굴 전체를 무너뜨릴 생각이냐?!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "크하하하! 이제 아무도 살아 나가지 못한다!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "젠장! 일단 변신 해제!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(어둠의 기운이 사라지고 소서러스가 원래 모습으로 돌아온다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "얘들아! 얼른 저 포탈로 도망쳐!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "소서러스! 너는?!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나도 곧 따라갈게! 서둘러!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "어림없지!!",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "[효과음: 쿠구구구궁!! / 화면 흔들림]",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "shake": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(천장에서 거대한 바위들이 떨어지기 시작한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 1,
+      "location": "리치 드래곤의 최후",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "길이 막혔어!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "이대로는 포탈까지 갈 수 없어!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "소서러스! 어떻게든 같이 빠져나가자!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…안 되겠어. 얘들아, 너희라도 살아야 해.",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "무슨 소리야?!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "미안해…!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 마지막 마력을 끌어모아 동료들을 공중으로 띄운다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "으아아! 뭐 하는 거야?!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "소서러스! 멈춰!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다들… 꼭 살아남아.",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(강력한 마법으로 세 사람을 포탈 안으로 밀어 넣는다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "아서 & 바이올렛 & 파이터",
+      "className": "party",
+      "text": "소서러스으으!!!",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잘 가…… 얘들아.",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(포탈이 완전히 닫힌다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 2,
+      "location": "마지막 작별",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "크하하하! 동굴은 계속 무너지고 있다! 이제 어떻게 할 거지?!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…아직 방법이 있어!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "뭐라고?!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "반전세계…! 반전세계로 향하는 거울이다!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 무너진 바위 뒤에 있는 고대 거울을 발견한다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    },
+    {
+      "speaker": "리치 드래곤",
+      "className": "black-dragon",
+      "text": "어림없다! 절대로 도망치게 두지 않겠다!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/novel/characters/char_lich_dragon_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 잘 있어라, 리치 드래곤!",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp",
+      "artPath": "assets/avatars/mage.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 거울 속으로 뛰어든다.)",
+      "scene": "violet-cave",
+      "sceneNumber": 3,
+      "location": "반전세계로 향하는 거울",
+      "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
+    }
+  ],
   "world4Potion4": [
     {
       "speaker": "내레이션",

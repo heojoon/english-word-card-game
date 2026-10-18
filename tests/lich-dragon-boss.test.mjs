@@ -92,7 +92,7 @@ test('runtime renders all ten mixed cards with shared skills, dragon strips and 
 test('local rewards are 700 plus an inclusive four-minute 300 bonus, with zero replay rewards',async()=>{
   for(const [elapsed,reward] of [[240000,1000],[240001,700]]){
     const s={...fresh(),clear:true,bossHp:0,correct:200,elapsed};
-    const c=vm.createContext({window,run:s,localMode:true,selectedStage:'story-ch5-20',selectedCharacter:{id:'hero',coins:0},player:'p',demoState:{records:[]},records:[],stageRecordName:()=> 'stage',render(){},saveDemo(){},toast(){},page:'bossResult',esc:String,num:String,deployedAssetUrl:x=>x});
+    const c=vm.createContext({window,run:s,localMode:true,selectedStage:'story-ch5-20',selectedCharacter:{id:'hero',coins:0},player:'p',demoState:{records:[]},records:[],stageRecordName:()=> 'stage',render(){},showStoryBranchChoice(){},saveDemo(){},toast(){},page:'bossResult',showStoryBranchChoice(){},esc:String,num:String,deployedAssetUrl:x=>x});
     vm.runInContext(code('  async function claimGuardianReward(', '  async function finishBattle('),c);
     await c.claimGuardianReward();assert.equal(s.bossReward,reward);assert.equal(c.selectedCharacter.coins,reward);
     if(reward===1000)assert.match(c.renderGuardianResult(),/보너스 \+300/);
@@ -124,20 +124,50 @@ test('runtime accepts a kill at the time limit and lets its final-frame hold fin
 
 test('account reward failure can be retried and uses the battle owner and new RPC',async()=>{
   const s={...fresh(),clear:true,bossHp:0,correct:200,elapsed:240000,storyCharacterId:'owner'},calls=[];
-  const c=vm.createContext({window,run:s,localMode:false,selectedStage:'story-ch5-20',selectedCharacter:{id:'other'},player:'p',records:[],stageRecordName:()=> 'stage',render(){},toast(){},page:'bossResult',rpc:async(name,args)=>{calls.push([name,args]);if(calls.length===1)throw Error('offline');return [{game_score_id:1,reward:1000,balance:1000}];}});
+  const c=vm.createContext({window,run:s,localMode:false,selectedStage:'story-ch5-20',selectedCharacter:{id:'other'},player:'p',records:[],stageRecordName:()=> 'stage',render(){},toast(){},page:'bossResult',showStoryBranchChoice(){},rpc:async(name,args)=>{calls.push([name,args]);if(calls.length===1)throw Error('offline');return [{game_score_id:1,reward:1000,balance:1000}];}});
   vm.runInContext(code('  async function claimGuardianReward(', '  function renderGuardianResult('),c);
   await c.claimGuardianReward();assert.equal(s.rewardError,true);assert.equal(s.rewardPending,false);
   await c.claimGuardianReward();assert.equal(s.rewardError,false);assert.equal(s.bossReward,1000);assert.equal(c.records[0].total,200);
   assert.equal(calls[1][0],'claim_lich_dragon_boss_reward');assert.deepEqual(JSON.parse(JSON.stringify(calls[1][1])),{p_character_id:'owner',p_correct:200,p_duration_ms:240000});
 });
 
-test('finish clears both boss skills and returns a result without standard or chest rewards',()=>{
+test('finish clears boss skills and routes actual victory through its ending before rewards',()=>{
   for(const clear of [true,false]){
     const s={...fresh(),tornadoMs:900,tornadoContactMs:600,drainQueue:[100],iceTimeActive:true,lichClearElapsed:240000},pages=[],claims=[];
     const c=vm.createContext({window,run:s,persistStoryBattleVitals(){},clearInterval(){},clearTimeout(){},removeBattleReward(){},cancelSpeech(){},timerId:0,nextTimer:0,go:p=>pages.push(p),claimGuardianReward:()=>claims.push(true)});
     vm.runInContext(code('  function finishGuardianBattle(', '  async function claimGuardianReward('),c);
-    c.finishGuardianBattle(clear,clear?'boss-defeated':'leave');assert.deepEqual(pages,['bossResult']);assert.equal(claims.length,clear?1:0);
+    c.finishGuardianBattle(clear,clear?'boss-defeated':'leave');assert.deepEqual(pages,[clear?'storyChapterFiveBossEnd':'bossResult']);assert.equal(claims.length,0);
+    if(clear)assert.equal(c.storyDialogueIndex,0);
     assert.equal(s.tornadoMs,0);assert.equal(s.tornadoContactMs,0);assert.equal(s.drainQueue.length,0);assert.equal(s.iceTimeActive,false);
     if(clear)assert.equal(s.elapsed,240000);
   }
+});
+
+test('World 5 victory completion and skip enter rewards once; defeats and preview skips never claim',()=>{
+  for(const state of [{lichDragon:true,done:true,clear:true},{lichDragon:true,done:true,clear:false},{lichDragon:true,done:true,clear:true,localBossSkipped:true},{lichDragon:true,done:false,clear:true}]){
+    const pages=[],claims=[];
+    const c=vm.createContext({page:'storyChapterFiveBossEnd',run:state,go:p=>{pages.push(p);c.page=p;},claimGuardianReward:()=>claims.push(true),bossEncounter:()=>false,startBattle(){assert.fail('ending must not restart combat');}});
+    vm.runInContext(code('  function completeStoryDialogue(', '  function storyDialogueLines('),c);
+    c.completeStoryDialogue();
+    const valid=state.done&&state.clear;
+    assert.deepEqual(pages,valid?['bossResult']:[]);
+    assert.equal(claims.length,valid&&!state.localBossSkipped?1:0);
+  }
+  assert.match(source,/action==='story-dialogue-skip'\)\{completeStoryDialogue\(\)/);
+});
+
+test('generated World 5 ending preserves dialogue and only includes story beats with available art',()=>{
+  const w={};vm.runInNewContext(read('story-novel.js'),{window:w});
+  const lines=w.WORDORIA_NOVELS.world5BossEnd,markdown=read('assets/novel/world-5-20-boss-end.md');
+  const story=markdown.split('## Scene 01.')[1].split('## 다음 스토리')[0];
+  const spoken=story.split(/\n\s*\n/).map(block=>block.trim()).filter(block=>!block.startsWith('[')&&!block.startsWith('배경:')).map(block=>block.match(/^([^:\n]+):\s*([\s\S]+)$/)).filter(Boolean).map(match=>[match[1],match[2]]);
+  assert.deepEqual(Array.from(lines.filter(l=>l.speaker!=='내레이션'),l=>[l.speaker,l.text]),spoken);
+  for(const line of lines.filter(l=>l.speaker==='소서러스'))assert.equal(line.artPath,'assets/avatars/mage.webp');
+  for(const line of lines.filter(l=>l.speaker==='어둠의 소서러스'))assert.equal(line.artPath,'assets/novel/characters/char_dark_sorcerus_world5_standing.webp');
+  assert.equal(new Set(lines.map(l=>l.sceneNumber)).size,3);
+  assert.ok(lines.some(l=>l.shake));
+  if(story.includes('백색 플래시'))assert.ok(lines.some(l=>l.flash));
+  assert.doesNotMatch(lines.map(l=>l.text).join(' '),/연출 제안|BGM:|다음 스토리|world-6/);
+  for(const line of lines)for(const path of [line.backgroundPath,line.artPath].filter(Boolean))assert.ok(readFileSync(new URL('../'+path,import.meta.url)).length);
+  assert.match(source,/storyChapterFiveBossEnd:renderStoryChapterFiveBossEnd/);
 });

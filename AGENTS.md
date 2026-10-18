@@ -58,6 +58,9 @@ Before generating or editing Crystal Quest equipment, shop, or inventory item im
 
 ## World map image generation
 
+- User-confirmed map rule (2026-10-18): all new or regenerated world maps progress from top to bottom. Place the starting stage at the top, increase stage order downward, and put the destination/final stage at the bottom.
+- World 6B, `왕국수도로 가는 길`, has exactly 20 stages, with the existing bandit-chief boss at stage 10. Its vocabulary matches the same-numbered World 6A stage for both learning levels: WordMax Level 3 Day 1–10, each day used for two consecutive stages. Use the user-confirmed 20-stage contract for map generation and integration; never infer the total from a partially implemented encounter list.
+
 Before generating, regenerating, editing, or integrating a Story world-map image, read `WORLD_MAP_IMAGE_GUIDE.md` and use the `crystal-quest-world-map` skill at `.agents/skills/crystal-quest-world-map/SKILL.md` together with the available `imagegen` skill. Follow this workflow regardless of which image-generation tool is requested.
 
 - Always inspect and attach `assets/story/chapter-1-library-map.webp` as the authoritative style reference; distinguish it from the target map's layout reference.

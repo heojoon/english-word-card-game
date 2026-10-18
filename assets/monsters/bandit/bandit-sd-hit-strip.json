@@ -1,0 +1,28 @@
+{
+  "image": "bandit-sd-hit-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "frames": [
+    {
+      "name": "guard",
+      "durationMs": 100
+    },
+    {
+      "name": "impact",
+      "durationMs": 100
+    },
+    {
+      "name": "knockdown",
+      "durationMs": 160,
+      "hold": true
+    }
+  ]
+}

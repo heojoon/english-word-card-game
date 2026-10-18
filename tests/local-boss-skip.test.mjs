@@ -8,6 +8,7 @@ const code=(start,end)=>source.slice(source.indexOf(start),source.indexOf(end));
 function setup(flags={boss:true},total=50){
   const pages=[],claims=[],cleared=[];
   const context=vm.createContext({
+    window:{WORDORIA_LICH_DRAGON:{clear(run){run.tornadoMs=0;}}},
     localHost:true,nativeApp:false,page:'battle',ROYAL_SLIME_HP:50,
     run:{story:true,...flags,deck:Array(total),bossMaxHp:total,correct:3,index:3,bossHp:total-3,elapsed:0,hp:2,mp:1,iceTimeActive:true,attack:true,stunned:true,paused:true},
     timerId:1,nextTimer:2,storyDialogueIndex:4,
@@ -26,6 +27,7 @@ test('local boss skip completes all boss types through their existing victory fl
     [{boss:true},50,'storyBossVictory'],
     [{boss:true,crystalGhost:true},90,'bossResult'],
     [{guardian:true},60,'storyChapterTwoBossEnd'],
+    [{guardian:true,lichDragon:true},200,'storyChapterFiveBossEnd'],
     [{guardian:true,blackDragon:true},60,'storyChapterThreeBossEnd'],
     [{guardian:true,shadowSorceress:true},100,'storyChapterFourMidbossEnd'],
   ]){
@@ -94,4 +96,20 @@ test('local clear reset is limited to World 5-10 and runs only once',()=>{
   assert.equal(c.demoState.characters[0].coins,900);assert.equal(c.demoState.potionInventory.hero.red_potion_count,5);
   assert.equal(c.demoState.records[0].sorcerusMidbossRewardClaimed,true);
   c.demoState.records[0].cleared=true;c.resetWorldFiveMidbossLocalClears();assert.equal(c.demoState.records[0].cleared,true);assert.equal(saves,1);
+});
+
+test('World 5 local skip plays the ending then completes into a preview without a claim',()=>{
+  const {context:c,pages,claims}=setup({guardian:true,lichDragon:true},200);
+  let choices=0;c.showStoryBranchChoice=()=>choices++;
+  c.claimGuardianReward=()=>claims.push('guardian');
+  vm.runInContext(code('  function completeStoryDialogue(', '  function storyDialogueLines('),c);
+  c.skipLocalBossBattle();
+  assert.equal(c.page,'storyChapterFiveBossEnd');
+  assert.equal(c.storyDialogueIndex,0);
+  c.completeStoryDialogue();
+  assert.deepEqual(pages,['storyChapterFiveBossEnd','bossResult']);
+  assert.deepEqual(claims,[]);
+  assert.equal(c.run.localBossSkipped,true);
+  assert.equal(c.run.result,undefined);
+  assert.equal(choices,1);
 });

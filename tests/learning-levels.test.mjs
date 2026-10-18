@@ -8,7 +8,7 @@ function content(level){
   const words=prefix=>Array.from({length:8},(_,i)=>[`${prefix}${i}`,'명',`${prefix} 뜻 ${i}`]);
   const stages={};
   for(let n=1;n<=7;n++)stages[`s${n}`]={name:`Stage ${n}`,words:words('middle')};
-  const context={localHost:false,nativeApp:false,window:{QUIZ_STAGES:stages},accountMode:true,accountProfile:{learning_level:level}};
+  const context={storyBranchPreview:null,run:null,accountStoryBranch:null,demoState:{},localHost:false,nativeApp:false,window:{QUIZ_STAGES:stages},accountMode:true,accountProfile:{learning_level:level}};
   vm.runInNewContext(readFileSync(new URL('../stage8.js',import.meta.url),'utf8'),context);
   vm.runInNewContext(setup+';globalThis.api={configureStoryContent,levelReady,storyStages,stages};',context);
   return context;
@@ -219,7 +219,7 @@ test('local web access unlocks every story map without changing clear records',(
   for(let index=0;index<api.storyStages.length;index++)assert.equal(context.progress.storyStageUnlocked(index),index===0);
   context.localHost=true;
   for(let index=0;index<api.storyStages.length;index++){
-    assert.equal(context.progress.storyStageUnlocked(index),true);
+    assert.equal(context.progress.storyStageUnlocked(index),(api.storyStages[index].chapter||1)<6);
     assert.equal(context.progress.stageCleared(api.storyStages[index].key),false);
   }
   assert.deepEqual(context.records,[]);

@@ -46,11 +46,12 @@ test('decks exhaust unique cycles and extend beyond 200 answers when bosses dodg
   vm.runInContext(code('  function prepareQuestion(', '  function initializeBattlePet('),c);c.prepareQuestion();assert.equal(s.deck.length,400);assert.ok(s.question);
 });
 test('World 6B unlocks after World 5, keeps records across levels, and ships reference plus rules',()=>{
-  let level='middle';const c=vm.createContext({window,stages:JSON.parse(read('content/catalog.json')).stages,learningLevel:()=>level,stageLevel:s=>s?.learningLevel||'middle',records:[],accountMode:false,localHost:false,nativeApp:false});
+  let level='middle';const c=vm.createContext({window,stages:JSON.parse(read('content/catalog.json')).stages,learningLevel:()=>level,stageLevel:s=>s?.learningLevel||'middle',storyBranchPreview:null,run:null,records:[],demoState:{storyBranch:'6B'},accountMode:false,localHost:false,nativeApp:false});
   vm.runInContext(code('  const storyStages = [','  const storyStageKey=')+'\nthis.storyStages=storyStages;',c);
   vm.runInContext(code('  function stageRecordName(','  function earnedCoins('),c);c.configureStoryContent();
   const i=c.storyStages.findIndex(s=>s.key==='story-ch6-10');assert.equal(c.storyStageUnlocked(i),false);
-  c.records.push({stage:c.stageRecordName('story-ch5-20'),cleared:true});assert.equal(c.storyStageUnlocked(i),true);
+  c.records.push({stage:c.stageRecordName('story-ch5-20'),cleared:true});assert.equal(c.storyStageUnlocked(i),false);
+  c.records.push({stage:c.stageRecordName('story-ch6-9'),cleared:true});assert.equal(c.storyStageUnlocked(i),true);
   const name=c.stageRecordName('story-ch6-10');c.records.push({stage:name,cleared:true});level='elementary';c.configureStoryContent();assert.equal(c.stageRecordName('story-ch6-10'),name);assert.equal(c.stageCleared('story-ch6-10'),true);
   assert.equal(c.stages['story-ch6-10'].banditChief,true);assert.ok(c.stages['story-ch6-10'].words.length>=4);
   assert.ok(readFileSync(new URL('../'+rules.ART,import.meta.url)).length);assert.match(read('index.html'),/src="bandit-chief-boss.js/);assert.match(read('scripts/build-web.mjs'),/'bandit-chief-boss.js'/);

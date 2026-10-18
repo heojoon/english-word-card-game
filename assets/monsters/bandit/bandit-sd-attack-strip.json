@@ -1,0 +1,28 @@
+{
+  "image": "bandit-sd-attack-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ]
+}

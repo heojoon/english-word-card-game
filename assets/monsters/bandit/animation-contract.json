@@ -1,0 +1,67 @@
+{
+  "identity": "source/identity-master.png",
+  "identityApproval": "New design requested by user; no separate visual approval claimed",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "effectBounds": "Complete character and cutlass inside each cell, ground y312, minimum 8px safety band",
+  "actions": {
+    "idle": {
+      "count": 2,
+      "names": [
+        "ready",
+        "breathe"
+      ],
+      "durationsMs": [
+        600,
+        600
+      ],
+      "loop": true
+    },
+    "attack": {
+      "count": 3,
+      "names": [
+        "ready",
+        "anticipation",
+        "contact"
+      ],
+      "durationsMs": [
+        120,
+        120,
+        260
+      ],
+      "hitFrame": 2,
+      "loop": false
+    },
+    "hit": {
+      "count": 3,
+      "names": [
+        "guard",
+        "impact",
+        "knockdown"
+      ],
+      "durationsMs": [
+        100,
+        100,
+        160
+      ],
+      "holdFinal": true,
+      "loop": false
+    }
+  },
+  "destination": "bandit-sd-<action>-strip.png",
+  "runtimeIntegration": "World 6B ordinary Story encounters, excluding existing boss renderer",
+  "tool": "built-in image_gen",
+  "prompts": "source/generation-prompts.json",
+  "productionNotes": [
+    "Generated strips had variable spacing and overlapping horizontal extents. Complete alpha-connected poses extracted; contact, recoil and knockdown re-generated as isolated images.",
+    "Review masters rebuilt with exactly 50px transparent gaps; runtime slots contiguous. No color-key removal.",
+    "Left-facing ordinary underling design uses burgundy bandana/scarf, brown leather vest, ivory shirt and curved silver cutlass."
+  ],
+  "reviewStatus": "Per-frame alpha, light/violet and mobile composites reviewed. Browser not run per repository instruction; no user visual approval inferred."
+}
