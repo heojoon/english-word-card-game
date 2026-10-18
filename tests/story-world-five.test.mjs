@@ -74,7 +74,7 @@ test('World 5 exposes one continuous map with twenty nodes in descending order',
   assert.equal((html.match(/class="story-world-map /g)||[]).length,1);
   assert.equal((html.match(/data-action="story-stage-select"/g)||[]).length,20);
   assert.match(html,/data-stage="story-ch5-20"/);
-  assert.match(html,/data-world="6" disabled/);
+  assert.match(html,/data-world="6" >/);
 });
 
 test('World 5 novels preserve spoken lines and stage entries enforce the usual checks',()=>{
