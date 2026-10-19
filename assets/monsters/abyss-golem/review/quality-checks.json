@@ -58,5 +58,6 @@
   ],
   "build": "npm run build passed",
   "browserReview": false,
-  "productionIntegrated": false
+  "productionIntegrated": true,
+  "integrationTests": "tests/abyss-golem-boss.test.mjs, tests/abyss-golem-reward.test.mjs"
 }

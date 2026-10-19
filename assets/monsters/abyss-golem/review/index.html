@@ -9,7 +9,7 @@
 <h1>심연의 골렘</h1>
 <p>심연의 지배자의 심복. 심연에서 가장 강하다고 자부하며, 침입자는 묻지도 않고 스매시로 부숴버린다.</p>
 <div class="stats"><span>HP 200</span><span>5분</span><span>보상 300 크리스털</span></div>
-<p class="warning">아트·모션 검토용. 실제 월드 6A 전투와 보상에는 아직 연결되지 않았습니다.</p>
+<p class="warning">아트·모션 미리보기입니다. 실제 보스는 월드 6A 10단계에서 만날 수 있습니다.</p>
 <div class="stage" id="stage"><div class="floor"></div><div class="target" id="target" aria-label="플레이어 위치"></div><div class="actor" id="actor" role="img" aria-label="심연의 골렘 SD 애니메이션"></div></div>
 <div class="caption" id="caption" role="status"></div>
 <div class="controls" id="controls">
@@ -17,7 +17,7 @@
 </div>
 <p><button id="background">배경색 전환</button> <button id="replay">다시 재생</button></p>
 <p>그라운드 스탬핑: 60초마다 80% 확률로 발동. 도약 후 발 접촉 순간 HP 절반 감소, 현재 HP 1이면 Game Over.<br>배드락라이즈: 10초마다 발동, 공격 방어 확률 77%. 몸이 검게 변한다.</p>
-<p class="warning">홀수 HP의 반감 처리와 방어 지속시간은 전투 구현 전에 정할 항목입니다. 아래 움직임은 아트 타이밍 미리보기이며 확률·피해 계산을 실행하지 않습니다.</p>
+<p class="warning">홀수 HP는 반감 후 소수점을 버립니다. 방어 준비는 다음 공격 1회에서 소모됩니다. 아래 움직임은 아트 타이밍 미리보기이며 확률·피해 계산을 실행하지 않습니다.</p>
 <img class="cg" src="../monster_abyss_golem_standing.png" alt="심연의 골렘 전신 스탠딩 CG">
 <p><a href="../monster_abyss_golem_standing.png">스탠딩 CG</a> · <a href="../animation-contract.json">보스·애니메이션 명세</a> · <a href="../generation.json">생성 프롬프트</a></p>
 <script type="module">
