@@ -1,0 +1,72 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "path": "assets/items/equipment/item_gale_boots_normal.webp",
+      "role": "primary authority for softly rounded silver metal, pale lavender leather and lining, beveled seams, and smooth hand-painted shading; attached to every generation call"
+    },
+    {
+      "path": "assets/items/equipment/item_starlight_crown_legendary.webp",
+      "role": "authority for faceted crystal refraction and polished collectible finish; attached to every generation call without copying legendary gold excess"
+    }
+  ],
+  "shared_prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile shop and inventory equipment icon. Match the attached Crystal Quest item rendering technique closely: polished hand-painted mobile fantasy illustration, dark moon-silver metal, desaturated deep-violet leather or cloth, violet/magenta/faint ember-red corrupted crystal refraction, smooth dimensional gradients, fine restrained highlights, subtle thin violet contour, and a clean enamel-like finish. Friendly fantasy for upper-elementary and middle-school players, mysterious and attack-focused without horror. Rarity: Special (2-star), with more glow and ornament than normal Gale equipment and clearly less gold and spectacle than the legendary crown. Output one centered complete object in a gentle three-quarter view with about ten percent clear padding and true transparent alpha. No characters, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, border, watermark, thick black comic ink, hard flat cel shading, pixel art, low-poly, photorealism, horror gore, skulls, demonic faces, or clipped edges.",
+  "runtime": {
+    "size": [512, 512],
+    "format": "WebP",
+    "transparent": true,
+    "normalization": "Resize the 1254 x 1254 transparent original to 512 x 512 with Lanczos resampling; preserve source composition, padding, and alpha."
+  },
+  "review": {
+    "status": "technical review passed",
+    "user_approved": false,
+    "backgrounds": ["#F7F7FF", "#5751D8"],
+    "thumbnail_sizes": [64, 128],
+    "findings": "All seven silhouettes remain distinct at inventory size. Transparent alpha is present in every runtime WebP; no painted background or visible edge residue was found. Sword, boots, cape, ring, armor, and staff have fully transparent canvas edges. The helmet has only a near-transparent antialias sample at the left edge (alpha 1/255), with no visible clipping in the review composite.",
+    "composite": "output/imagegen/corrupted-equipment/review-light-violet.jpg"
+  },
+  "items": {
+    "sword": {
+      "prompt": "Create one Corrupted Sword (타락한 검), a special-rarity attack-focused weapon from a unified corrupted equipment set. Use a long elegant dark moon-silver blade with subtle blackened edges, deep violet grip, restrained thorn-like guard, and a prominent corrupted crystal that refracts violet, magenta, and faint ember-red light. Add a few controlled glowing corruption veins while remaining friendly fantasy. Single complete sword centered diagonally; full blade and pommel visible; readable at 64–128 px.",
+      "additional_reference": "assets/items/equipment/item_gale_sword_normal.webp",
+      "source": "output/imagegen/corrupted-equipment/corrupted-sword-original.png",
+      "art_path": "assets/items/equipment/item_corrupted_sword_special.webp"
+    },
+    "boots": {
+      "prompt": "Create one pair of Corrupted Boots (타락한 장화), special-rarity attack-focused boots. Keep an elegant paired ankle-boot construction and readable footwear silhouette, with blackened silver toe and heel armor, deep violet leather, restrained thorn-like trim, faceted corrupted crystals glowing violet, magenta, and faint ember-red, and a few controlled glowing corruption veins. No oversized spikes.",
+      "additional_reference": "assets/items/equipment/item_gale_boots_normal.webp",
+      "source": "output/imagegen/corrupted-equipment/corrupted-boots-original.png",
+      "art_path": "assets/items/equipment/item_corrupted_boots_special.webp"
+    },
+    "helmet": {
+      "prompt": "Create one Corrupted Helmet (타락한 투구), a special-rarity attack-focused closed fantasy helmet. Use dark moon-silver layered plates, deep violet padded interior, restrained backward horn or wing-like fins, a central faceted corrupted crystal glowing violet, magenta, and faint ember-red, and a few controlled luminous corruption veins. Keep the face opening clear and the helmet wearable, youthful fantasy rather than sinister horror.",
+      "additional_reference": "assets/items/equipment/item_gale_helmet_normal.webp",
+      "source": "output/imagegen/corrupted-equipment/corrupted-helmet-original.png",
+      "art_path": "assets/items/equipment/item_corrupted_helmet_special.webp"
+    },
+    "cape": {
+      "prompt": "Create one Cloak of Corruption (타락의 망토), a special-rarity attack-focused cloak. Use layered deep-violet cloth with a blackened-silver collar and trim, restrained torn-looking pointed hems that remain polished and collectible, a central faceted corrupted crystal glowing violet, magenta, and faint ember-red, and elegant luminous corruption veins woven into the fabric. Show the whole cloak without a wearer.",
+      "additional_reference": "assets/items/equipment/item_gale_cape_normal.webp",
+      "source": "output/imagegen/corrupted-equipment/corrupted-cape-original.png",
+      "art_path": "assets/items/equipment/item_corrupted_cape_special.webp"
+    },
+    "ring": {
+      "prompt": "Create one Ring of Corruption (타락의 반지), a special-rarity attack-focused ring. Use a thick but elegant dark moon-silver band with deep-violet inner metal, restrained thorn-like shoulders, one prominent faceted corrupted crystal glowing violet, magenta, and faint ember-red, and a few controlled luminous corruption veins. Preserve a clearly transparent open center and wearable ring silhouette.",
+      "additional_reference": "assets/items/equipment/item_gale_ring_normal.webp",
+      "source": "output/imagegen/corrupted-equipment/corrupted-ring-original.png",
+      "art_path": "assets/items/equipment/item_corrupted_ring_special.webp"
+    },
+    "armor": {
+      "prompt": "Create one Corrupted Armor (타락한 갑옷), special-rarity attack-focused torso armor. Use blackened moon-silver layered plates, deep-violet padded underlayer, restrained sharp wing or thorn motifs, a central faceted corrupted crystal glowing violet, magenta, and faint ember-red, and a few controlled luminous corruption veins across the breastplate. Show the complete wearable torso and shoulder armor with empty neck and arm openings and no body inside.",
+      "additional_reference": "assets/items/equipment/item_gale_armor_normal.webp",
+      "source": "output/imagegen/corrupted-equipment/corrupted-armor-original.png",
+      "art_path": "assets/items/equipment/item_corrupted_armor_special.webp"
+    },
+    "staff": {
+      "prompt": "Create one Corrupted Staff (타락한 지팡이), a special-rarity attack-focused magical weapon. Use a complete long dark moon-silver staff with deep-violet wrapped grip, restrained thorn-like metal arcs around a large faceted corrupted crystal at the head, violet, magenta, and faint ember-red refraction, and controlled luminous corruption veins down the shaft. The silhouette must unmistakably read as a magic staff, not a spear, sword, or scepter; show the full head, shaft, and butt cap diagonally.",
+      "additional_reference": "assets/items/equipment/item_water_staff_normal.webp",
+      "source": "output/imagegen/corrupted-equipment/corrupted-staff-original.png",
+      "art_path": "assets/items/equipment/item_corrupted_staff_special.webp"
+    }
+  }
+}
