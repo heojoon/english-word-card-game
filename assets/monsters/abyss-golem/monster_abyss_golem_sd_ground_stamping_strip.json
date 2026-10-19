@@ -1,0 +1,101 @@
+{
+  "image": "monster_abyss_golem_sd_ground_stamping_strip.png",
+  "actionLabel": "그라운드 스탬핑",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "generatedSource": "source/ground-stamping-generated.png",
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "crouch",
+      "durationMs": 240
+    },
+    {
+      "name": "airborne-foot-raised",
+      "durationMs": 300
+    },
+    {
+      "name": "stomp-contact",
+      "durationMs": 220,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/ground-stamping-generated.png",
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        32,
+        156,
+        697,
+        694
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        30,
+        102,
+        289,
+        312
+      ]
+    },
+    {
+      "source": "source/ground-stamping-generated.png",
+      "sourceBox": [
+        724,
+        0,
+        1449,
+        724
+      ],
+      "foregroundBounds": [
+        42,
+        18,
+        722,
+        656
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        27,
+        47,
+        292,
+        296
+      ]
+    },
+    {
+      "source": "source/stamp-contact-generated.png",
+      "sourceBox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "foregroundBounds": [
+        40,
+        146,
+        1231,
+        1122
+      ],
+      "scale": 0.245,
+      "runtimeBounds": [
+        14,
+        73,
+        306,
+        312
+      ]
+    }
+  ],
+  "reviewStatus": "Alpha and packing checked; visual review recorded in README; production integration pending"
+}

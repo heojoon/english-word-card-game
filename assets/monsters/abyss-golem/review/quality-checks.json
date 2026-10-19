@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "action": "attack",
+      "rgba": true,
+      "dimensions": [
+        1152,
+        384
+      ],
+      "threeFrames": true,
+      "safeBounds": true,
+      "sourceAndReviewGap50px": true
+    },
+    {
+      "action": "bedrock-rise",
+      "rgba": true,
+      "dimensions": [
+        960,
+        320
+      ],
+      "threeFrames": true,
+      "safeBounds": true,
+      "sourceAndReviewGap50px": true
+    },
+    {
+      "action": "ground-stamping",
+      "rgba": true,
+      "dimensions": [
+        960,
+        320
+      ],
+      "threeFrames": true,
+      "safeBounds": true,
+      "sourceAndReviewGap50px": true
+    },
+    {
+      "action": "hit",
+      "rgba": true,
+      "dimensions": [
+        960,
+        320
+      ],
+      "threeFrames": true,
+      "safeBounds": true,
+      "sourceAndReviewGap50px": true
+    },
+    {
+      "action": "idle",
+      "rgba": true,
+      "dimensions": [
+        960,
+        320
+      ],
+      "threeFrames": true,
+      "safeBounds": true,
+      "sourceAndReviewGap50px": true
+    }
+  ],
+  "build": "npm run build passed",
+  "browserReview": false,
+  "productionIntegrated": false
+}

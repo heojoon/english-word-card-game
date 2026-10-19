@@ -1,0 +1,101 @@
+{
+  "image": "monster_abyss_golem_sd_bedrock_rise_strip.png",
+  "actionLabel": "배드락라이즈",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "generatedSource": "source/bedrock-rise-generated.png",
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "brace",
+      "durationMs": 180
+    },
+    {
+      "name": "darkening",
+      "durationMs": 180
+    },
+    {
+      "name": "black-stone-guard",
+      "durationMs": 360,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/bedrock-rise-generated.png",
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        58,
+        14,
+        704,
+        706
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        34,
+        42,
+        286,
+        312
+      ]
+    },
+    {
+      "source": "source/bedrock-rise-generated.png",
+      "sourceBox": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "foregroundBounds": [
+        58,
+        14,
+        704,
+        705
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        34,
+        43,
+        286,
+        312
+      ]
+    },
+    {
+      "source": "source/bedrock-rise-generated.png",
+      "sourceBox": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        58,
+        14,
+        703,
+        706
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        34,
+        42,
+        286,
+        312
+      ]
+    }
+  ],
+  "reviewStatus": "Alpha and packing checked; visual review recorded in README; production integration pending"
+}

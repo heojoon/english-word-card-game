@@ -1,0 +1,100 @@
+{
+  "image": "monster_abyss_golem_sd_idle_strip.png",
+  "actionLabel": "대기",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "generatedSource": "source/idle-generated.png",
+  "loop": true,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 350
+    },
+    {
+      "name": "breathe",
+      "durationMs": 350
+    },
+    {
+      "name": "settle",
+      "durationMs": 350
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/idle-generated.png",
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        17,
+        18,
+        716,
+        710
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        23,
+        42,
+        296,
+        312
+      ]
+    },
+    {
+      "source": "source/idle-generated.png",
+      "sourceBox": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "foregroundBounds": [
+        23,
+        8,
+        711,
+        710
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        26,
+        38,
+        294,
+        312
+      ]
+    },
+    {
+      "source": "source/idle-generated.png",
+      "sourceBox": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        15,
+        17,
+        713,
+        710
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        24,
+        42,
+        296,
+        312
+      ]
+    }
+  ],
+  "reviewStatus": "Alpha and packing checked; visual review recorded in README; production integration pending"
+}

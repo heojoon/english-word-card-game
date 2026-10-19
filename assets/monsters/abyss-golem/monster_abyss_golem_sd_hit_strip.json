@@ -1,0 +1,101 @@
+{
+  "image": "monster_abyss_golem_sd_hit_strip.png",
+  "actionLabel": "피격 / 다운",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "generatedSource": "source/hit-generated.png",
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "guard-notice",
+      "durationMs": 140
+    },
+    {
+      "name": "strongest-recoil",
+      "durationMs": 180
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 600,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/hit-generated.png",
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        11,
+        49,
+        701,
+        670
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        25,
+        70,
+        294,
+        312
+      ]
+    },
+    {
+      "source": "source/hit-generated.png",
+      "sourceBox": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "foregroundBounds": [
+        0,
+        152,
+        702,
+        670
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        23,
+        110,
+        297,
+        312
+      ]
+    },
+    {
+      "source": "source/hit-generated.png",
+      "sourceBox": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        0,
+        388,
+        704,
+        690
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        22,
+        194,
+        297,
+        312
+      ]
+    }
+  ],
+  "reviewStatus": "Alpha and packing checked; visual review recorded in README; production integration pending"
+}

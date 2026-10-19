@@ -1,0 +1,101 @@
+{
+  "image": "monster_abyss_golem_sd_attack_strip.png",
+  "actionLabel": "스매시",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "generatedSource": "source/attack-generated.png",
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 180
+    },
+    {
+      "name": "wind-up",
+      "durationMs": 220
+    },
+    {
+      "name": "smash-contact",
+      "durationMs": 180,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/sd-identity.png",
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        17,
+        18,
+        716,
+        710
+      ],
+      "scale": 0.39,
+      "runtimeBounds": [
+        55,
+        104,
+        328,
+        374
+      ]
+    },
+    {
+      "source": "source/smash-wind-up-generated.png",
+      "sourceBox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "foregroundBounds": [
+        128,
+        30,
+        1142,
+        1207
+      ],
+      "scale": 0.28,
+      "runtimeBounds": [
+        50,
+        44,
+        334,
+        374
+      ]
+    },
+    {
+      "source": "source/smash-contact-generated.png",
+      "sourceBox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "foregroundBounds": [
+        15,
+        182,
+        1244,
+        1135
+      ],
+      "scale": 0.28,
+      "runtimeBounds": [
+        20,
+        107,
+        364,
+        374
+      ]
+    }
+  ],
+  "reviewStatus": "Alpha and packing checked; visual review recorded in README; production integration pending"
+}

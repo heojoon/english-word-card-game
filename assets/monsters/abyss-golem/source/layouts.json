@@ -1,0 +1,191 @@
+{
+  "idle": {
+    "source": "source/idle-generated.png",
+    "boxes": [
+      [
+        0,
+        0,
+        724,
+        724
+      ],
+      [
+        724,
+        0,
+        1448,
+        724
+      ],
+      [
+        1448,
+        0,
+        2172,
+        724
+      ]
+    ],
+    "scale": 0.39
+  },
+  "attack": {
+    "source": "source/attack-generated.png",
+    "boxes": [
+      [
+        0,
+        0,
+        724,
+        724
+      ],
+      [
+        724,
+        0,
+        1448,
+        724
+      ],
+      [
+        1448,
+        0,
+        2172,
+        724
+      ]
+    ],
+    "scale": 0.39,
+    "overrides": {
+      "0": {
+        "source": "source/sd-identity.png",
+        "box": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "scale": 0.39
+      },
+      "1": {
+        "source": "source/smash-wind-up-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "scale": 0.28
+      },
+      "2": {
+        "source": "source/smash-contact-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "scale": 0.28
+      }
+    }
+  },
+  "ground-stamping": {
+    "source": "source/ground-stamping-generated.png",
+    "boxes": [
+      [
+        0,
+        0,
+        724,
+        724
+      ],
+      [
+        724,
+        0,
+        1449,
+        724
+      ],
+      [
+        1449,
+        0,
+        2173,
+        724
+      ]
+    ],
+    "scale": 0.39,
+    "overrides": {
+      "2": {
+        "source": "source/stamp-contact-generated.png",
+        "box": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "scale": 0.245
+      }
+    },
+    "yOffsets": [
+      0,
+      -16,
+      0
+    ],
+    "confirmedNeighborFragments": {
+      "1": [
+        [
+          670,
+          450,
+          725,
+          724
+        ]
+      ]
+    }
+  },
+  "bedrock-rise": {
+    "source": "source/bedrock-rise-generated.png",
+    "boxes": [
+      [
+        0,
+        0,
+        724,
+        724
+      ],
+      [
+        724,
+        0,
+        1448,
+        724
+      ],
+      [
+        1448,
+        0,
+        2172,
+        724
+      ]
+    ],
+    "scale": 0.39
+  },
+  "hit": {
+    "source": "source/hit-generated.png",
+    "boxes": [
+      [
+        0,
+        0,
+        724,
+        724
+      ],
+      [
+        724,
+        0,
+        1448,
+        724
+      ],
+      [
+        1448,
+        0,
+        2172,
+        724
+      ]
+    ],
+    "scale": 0.39,
+    "confirmedNeighborFragments": {
+      "0": [
+        [
+          710,
+          0,
+          724,
+          724
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "심연의 골렘",
+  "world": "6A",
+  "role": "midboss",
+  "description": "심연의 지배자의 심복으로 자칭 심연에서 가장 쎄다고 자부한다. 침입자는 물어보지도 않고 스매시로 부숴버리는 성격",
+  "hp": 200,
+  "timeLimitMs": 300000,
+  "rewardCrystals": 300,
+  "scope": "Art assets and animation specification; battle and reward integration pending.",
+  "skills": [
+    {"id": "ground-stamping", "name": "그라운드 스탬핑", "intervalMs": 60000, "activationProbability": 0.8, "effect": "플레이어 HP를 절반으로 감소. 현재 HP가 1이면 Game Over.", "rounding": "미지정: 전투 연결 시 결정 필요", "damageEvent": "stomp-contact", "motion": "플레이어 쪽으로 도약해 발로 밟음"},
+    {"id": "bedrock-rise", "name": "배드락라이즈", "intervalMs": 10000, "blockProbability": 0.77, "effect": "적의 공격을 막아냄", "duration": "미지정: 전투 연결 시 결정 필요", "motion": "몸 전체가 검게 경화됨"}
+  ],
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "sourceFrameGapPx": 50,
+  "effectBounds": "Complete body and local effects inside each slot with transparent safety margin; screen-space leap is separate.",
+  "actions": {
+    "idle": {"frameNames": ["ready", "breathe", "settle"], "durationMs": [350, 350, 350], "loop": true},
+    "attack": {"frameWidth": 384, "frameHeight": 384, "reason": "Raised fist and smash effect need larger cells to preserve physical head/body scale.", "frameNames": ["ready", "wind-up", "smash-contact"], "durationMs": [180, 220, 180], "hitFrame": 2},
+    "ground-stamping": {"frameNames": ["crouch", "airborne-foot-raised", "stomp-contact"], "durationMs": [240, 300, 220], "hitFrame": 2, "screenMotion": "Move toward player during airborne frame, damage on contact, then return separately."},
+    "bedrock-rise": {"frameNames": ["brace", "darkening", "black-stone-guard"], "durationMs": [180, 180, 360], "holdLastFrame": true},
+    "hit": {"frameNames": ["guard-notice", "strongest-recoil", "complete-knockdown"], "durationMs": [140, 180, 600], "holdLastFrame": true}
+  },
+  "reviewStatus": "15 frames generated, normalized and visually reviewed on light/violet/mobile composites; alpha and packing checked. User approval and production battle integration pending."
+}

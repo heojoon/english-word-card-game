@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>심연의 골렘 · 아트 리뷰</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#24214c;background:#f7f7ff}*{box-sizing:border-box}body{max-width:900px;margin:auto;padding:24px}h1{margin-bottom:8px}p{line-height:1.6}.stats,.controls{display:flex;flex-wrap:wrap;gap:8px}.stats span,button{border:1px solid #d7d4ee;border-radius:16px;padding:10px 14px;background:white;color:inherit}button{cursor:pointer;font:inherit}button[aria-pressed=true]{background:#5751d8;color:white}.stage{margin:20px 0;background:#e9e8fb;border-radius:24px;min-height:350px;position:relative;overflow:hidden}.stage.violet{background:#5751d8}.actor{position:absolute;width:320px;height:320px;right:0;bottom:10px;background-size:300% 100%;background-repeat:no-repeat;transform-origin:50% 97.5%}.floor{position:absolute;left:5%;right:5%;bottom:18px;border-top:2px solid #60d9cf}.target{position:absolute;left:8%;bottom:18px;width:32px;height:58px;background:#7868ef;border:3px solid #f7f7ff;border-radius:20px 20px 8px 8px}.target.contact{box-shadow:0 0 0 12px #60d9cf,0 0 26px #ffcf67}.caption{min-height:28px;font-weight:700}a{color:#5751d8}.cg{display:block;max-width:100%;max-height:540px;object-fit:contain;margin:auto}.warning{color:#74718a;font-size:14px}@media(max-width:450px){body{padding:16px}.actor{right:-25px}.stage{min-height:330px}}
+</style>
+<h1>심연의 골렘</h1>
+<p>심연의 지배자의 심복. 심연에서 가장 강하다고 자부하며, 침입자는 묻지도 않고 스매시로 부숴버린다.</p>
+<div class="stats"><span>HP 200</span><span>5분</span><span>보상 300 크리스털</span></div>
+<p class="warning">아트·모션 검토용. 실제 월드 6A 전투와 보상에는 아직 연결되지 않았습니다.</p>
+<div class="stage" id="stage"><div class="floor"></div><div class="target" id="target" aria-label="플레이어 위치"></div><div class="actor" id="actor" role="img" aria-label="심연의 골렘 SD 애니메이션"></div></div>
+<div class="caption" id="caption" role="status"></div>
+<div class="controls" id="controls">
+<button data-action="idle">대기</button><button data-action="attack">스매시</button><button data-action="ground-stamping">그라운드 스탬핑</button><button data-action="bedrock-rise">배드락라이즈</button><button data-action="hit">피격 → 다운 유지</button>
+</div>
+<p><button id="background">배경색 전환</button> <button id="replay">다시 재생</button></p>
+<p>그라운드 스탬핑: 60초마다 80% 확률로 발동. 도약 후 발 접촉 순간 HP 절반 감소, 현재 HP 1이면 Game Over.<br>배드락라이즈: 10초마다 발동, 공격 방어 확률 77%. 몸이 검게 변한다.</p>
+<p class="warning">홀수 HP의 반감 처리와 방어 지속시간은 전투 구현 전에 정할 항목입니다. 아래 움직임은 아트 타이밍 미리보기이며 확률·피해 계산을 실행하지 않습니다.</p>
+<img class="cg" src="../monster_abyss_golem_standing.png" alt="심연의 골렘 전신 스탠딩 CG">
+<p><a href="../monster_abyss_golem_standing.png">스탠딩 CG</a> · <a href="../animation-contract.json">보스·애니메이션 명세</a> · <a href="../generation.json">생성 프롬프트</a></p>
+<script type="module">
+const actor=document.querySelector('#actor'),stage=document.querySelector('#stage'),caption=document.querySelector('#caption'),target=document.querySelector('#target');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');let action='idle',epoch=0,handle=0,meta;
+async function play(next){action=next;const ticket=++epoch;cancelAnimationFrame(handle);target.classList.remove('contact');actor.style.transform='';caption.textContent='불러오는 중…';
+try{const response=await fetch(`../monster_abyss_golem_sd_${next.replaceAll('-','_')}_strip.json`);if(!response.ok)throw Error(response.status);const data=await response.json();await new Promise((resolve,reject)=>{const im=new Image;im.onload=resolve;im.onerror=reject;im.src=`../${data.image}`});if(ticket!==epoch)return;meta=data;const displayScale=Math.min(.85,(stage.clientWidth-20)/meta.frameWidth);actor.style.width=`${meta.frameWidth*displayScale}px`;actor.style.height=`${meta.frameHeight*displayScale}px`;actor.style.backgroundImage=`url('../${meta.image}')`;actor.style.backgroundSize=`${meta.frameCount*100}% 100%`;for(const button of document.querySelectorAll('[data-action]'))button.setAttribute('aria-pressed',String(button.dataset.action===next));const start=performance.now(),speed=reduced.matches ? .35 : 1,durations=meta.frames.map(f=>f.durationMs*speed),total=durations.reduce((a,b)=>a+b,0);let contactSeen=false;
+function tick(now){if(ticket!==epoch)return;const elapsed=now-start,time=meta.loop?elapsed%total:Math.min(elapsed,total-0.01);let index=0,offset=time;while(index<durations.length-1&&offset>=durations[index]){offset-=durations[index++]}actor.style.backgroundPosition=`${index/(meta.frameCount-1)*100}% 0`;caption.textContent=`${meta.actionLabel} · ${meta.frames[index].name}`;
+if(next==='ground-stamping'){const distance=reduced.matches?12:Math.max(30,stage.clientWidth-200),lift=reduced.matches?8:45;const x=index===0?0:-distance;actor.style.transform=`translate(${x}px,${index===1?-lift:0}px)`}
+if(meta.frames[index].hit&&!contactSeen){contactSeen=true;target.classList.add('contact')}if(elapsed>=total&& !meta.loop){if(!meta.holdLastFrame)handle=requestAnimationFrame(()=>play('idle'));return}handle=requestAnimationFrame(tick)}handle=requestAnimationFrame(tick);
+}catch(error){if(ticket===epoch)caption.textContent=`애니메이션을 불러오지 못했습니다: ${error.message}`}}
+document.querySelector('#controls').onclick=e=>{if(e.target.dataset.action)play(e.target.dataset.action)};document.querySelector('#background').onclick=()=>stage.classList.toggle('violet');document.querySelector('#replay').onclick=()=>play(action);play('idle');
+</script>
+</html>
