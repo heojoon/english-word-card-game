@@ -57,7 +57,7 @@ test('World 6B unlocks after World 5, keeps records across levels, and ships ref
   assert.ok(readFileSync(new URL('../'+rules.ART,import.meta.url)).length);assert.match(read('index.html'),/src="bandit-chief-boss.js/);assert.match(read('scripts/build-web.mjs'),/'bandit-chief-boss.js'/);
 });
 test('shared Ice Time freezes countdown, timeout ends combat, and lethal hit hold can complete',()=>{
-  const s=fresh(),outcomes=[];const c=vm.createContext({window,run:s,performance:{now:()=>1000},selectedCharacter:{class:'mage'},updateWarriorSlash(){},render(){},$:()=>null,document:{dispatchEvent(){},querySelector:()=>null},CustomEvent:class{},setTimeout(){},finishBattle:(clear,reason)=>outcomes.push([clear,reason])});
+  const s=fresh(),outcomes=[];const c=vm.createContext({window,run:s,performance:{now:()=>1000},selectedCharacter:{class:'mage'},updateWarriorSlash(){},render(){},syncBanditChiefBattleVisual(){},$:()=>null,document:{dispatchEvent(){},querySelector:()=>null},CustomEvent:class{},setTimeout(){},finishBattle:(clear,reason)=>outcomes.push([clear,reason])});
   vm.runInContext(code('  function advanceGuardianBattle(','  function renderRoyalSlimeBattle('),c);
   vm.runInContext(code('  function canActivateMageIceTime(','  function updateWarriorSlash('),c);
   c.activateMageIceTime();assert.equal(s.mp,1);c.advanceGuardianBattle(5000);assert.equal(s.elapsed,0);assert.equal(s.axeElapsed,0);
@@ -88,8 +88,50 @@ test('retry requires recovered HP and resets HP, skill clocks and dodge without 
   vm.runInContext(code('  function startBattle(','  function prepareQuestion('),c);c.startBattle(true);assert.equal(c.run,old);
   c.storyEntryAllowed=()=>true;c.storyVitals=()=>({hp:1,hpMax:2,mp:0,mpMax:2});c.startBattle(true);assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);assert.equal(c.run.bossHp,200);assert.equal(c.run.axeElapsed,0);assert.equal(c.run.banditDodgeReady,false);assert.equal(c.run.bossAttackSteps,3);
 });
-test('renderer includes shared Ice Time, HP, readable answers and a rotating axe without SD assets',()=>{
+test('renderer uses black-coat SD art, shared Ice Time, HP, four answers and a separate axe layer',()=>{
   const s={...fresh(),question:{choices:['yes','no','a','b'],prompt:'word',answer:'yes'},axeFlightMs:600,iceTimeActive:true};
   const c=vm.createContext({window,run:s,esc:String,deployedAssetUrl:x=>x,royalSlimeTime:()=>'',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',iceTimeEffectMarkup:()=>'<i class="ice-time-field"></i>',eagleEyeEffectMarkup:()=>'',storyBattleActions:()=>''});
-  vm.runInContext(code('  function renderBanditChiefBattle(','  function renderGuardianBattle('),c);const html=c.renderBanditChiefBattle();assert.match(html,/ice-time-field/);assert.match(html,/aria-valuemax="200"/);assert.match(html,/bandit-axe-flight/);assert.equal((html.match(/data-action="answer"/g)||[]).length,4);assert.doesNotMatch(html,/_sd_/);
+  vm.runInContext(code('  function banditChiefSpriteStyle(','  function renderGuardianBattle('),c);const html=c.renderBanditChiefBattle();assert.match(html,/ice-time-field/);assert.match(html,/aria-valuemax="200"/);assert.match(html,/bandit-axe-flight/);assert.equal((html.match(/data-action="answer"/g)||[]).length,4);assert.match(html,/char_bandit_chief_sd_attack_strip.png/);assert.match(html,/char_bandit_chief_sd_projectile_strip.png/);assert.doesNotMatch(html,/bandit-chief-reference|<svg/);
+});
+
+test('SD wind-up leads release, contact remains at flight arrival, and reduced motion retains order',()=>{
+  for(const reduced of [false,true]){
+    const s=fresh(),scale=reduced?.5:1;s.guardianReducedMotion=reduced;
+    rules.advance(s,5000-320*scale,()=>.9);assert.equal(rules.visual(s).action,'attack');assert.equal(rules.visual(s).frame,0);assert.equal(rules.projectile(s),null);
+    rules.advance(s,319*scale,()=>.9);assert.equal(rules.visual(s).frame,3);assert.equal(rules.projectile(s),null);
+    rules.advance(s,scale,()=>.9);assert.equal(rules.visual(s).frame,4);assert.equal(rules.projectile(s).progress,0);assert.equal(s.hp,20);
+    rules.advance(s,80*scale,()=>.9);assert.equal(rules.visual(s).frame,5);assert.equal(s.hp,20);
+    rules.advance(s,519*scale,()=>0);assert.ok(rules.projectile(s).progress>.99);assert.equal(s.hp,20);
+    rules.advance(s,scale,()=>0);assert.equal(s.hp,19);assert.equal(rules.projectile(s),null);
+  }
+});
+
+test('pause and Ice Time freeze exact SD/flight positions without resetting on repeated renders',()=>{
+  const s=fresh();rules.advance(s,5200,()=>.9);
+  const pose=JSON.stringify(rules.visual(s)),axe=JSON.stringify(rules.projectile(s));
+  s.iceTimeActive=true;rules.advance(s,1000,()=>.9);assert.equal(JSON.stringify(rules.visual(s)),pose);assert.equal(JSON.stringify(rules.projectile(s)),axe);
+  s.iceTimeActive=false;rules.advance(s,1000,()=>.9,0);assert.equal(JSON.stringify(rules.projectile(s)),axe);
+  s.paused=true;rules.advance(s,1000,()=>.9);assert.equal(JSON.stringify(rules.visual(s)),pose);
+  s.paused=false;rules.advance(s,100,()=>.9);assert.notEqual(JSON.stringify(rules.projectile(s)),axe);
+});
+
+test('dodge uses its own poses and lethal damage holds the prone final frame without recovery',()=>{
+  const s=fresh();rules.advance(s,6000,()=>.6);assert.equal(rules.visual(s).action,'dodge');assert.equal(rules.visual(s).frame,0);
+  rules.advance(s,200,()=>.9);assert.equal(rules.visual(s).frame,2);rules.advance(s,300,()=>.9);assert.equal(rules.visual(s).action,'idle');
+  s.bossHp=1;rules.answer(s,true,200);s.banditDodgeReady=false;rules.advance(s,100,()=>.9);assert.equal(rules.visual(s).action,'hit');assert.equal(rules.visual(s).frame,0);
+  rules.advance(s,100,()=>.9);assert.equal(rules.visual(s).frame,1);rules.advance(s,200,()=>.9);assert.equal(rules.visual(s).frame,2);
+  rules.advance(s,799,()=>.9);assert.equal(rules.visual(s).frame,2);assert.equal(s.guardianPhase,'defeat');assert.ok(rules.advance(s,1,()=>.9).includes('victory'));
+});
+
+test('axe travel uses actual local hero/enemy geometry at narrow, wide and scaled viewports',()=>{
+  for(const width of [296,366,600])for(const zoom of [1,.8]){
+    const s=fresh();s.axeFlightMs=300;s.axeElapsed=300;const style={setProperty(k,v){this[k]=v;}},flight={style},sprite={style:{}};
+    const rect=(left,top,w,h)=>({left:left*zoom+12,top:top*zoom+40,width:w*zoom,height:h*zoom});
+    const enemy={getBoundingClientRect:()=>rect(width-170,30,160,160)},hero={getBoundingClientRect:()=>rect(10,50,100,140)};
+    const arena={clientWidth:width,clientHeight:210,getBoundingClientRect:()=>rect(0,0,width,210),querySelector:q=>q.includes('bandit-chief-enemy')?enemy:hero};
+    const c=vm.createContext({window,run:s,deployedAssetUrl:x=>x,$:()=>arena,document:{querySelector:q=>q==='.bandit-chief-sprite'?sprite:flight}});
+    vm.runInContext(code('  function banditChiefSpriteStyle(','  function renderBanditChiefBattle('),c);c.syncBanditChiefBattleVisual();
+    assert.ok(Math.abs(parseFloat(style.left)-((width-170+160*(rules.THROW_ORIGIN.x/320-.2))+60)/2)<.01);assert.equal(style['--axe-angle'],'-360deg');
+    s.axeFlightMs=1;c.syncBanditChiefBattleVisual();assert.ok(Math.abs(parseFloat(style.left)-60)<1);assert.match(sprite.style.cssText,/background-size:600%/);
+  }
 });

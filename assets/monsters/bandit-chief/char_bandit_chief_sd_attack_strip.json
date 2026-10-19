@@ -1,0 +1,151 @@
+{
+  "image": "char_bandit_chief_sd_attack_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "spacedReviewImage": "review/attack-spaced-master.png",
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 80
+    },
+    {
+      "index": 1,
+      "name": "anticipation",
+      "durationMs": 80
+    },
+    {
+      "index": 2,
+      "name": "wind-up",
+      "durationMs": 80
+    },
+    {
+      "index": 3,
+      "name": "aim",
+      "durationMs": 80
+    },
+    {
+      "index": 4,
+      "name": "release",
+      "durationMs": 80,
+      "release": true
+    },
+    {
+      "index": 5,
+      "name": "attack-peak",
+      "durationMs": 200
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/identity-generated.png",
+      "bodyTop": 16,
+      "ground": 1010,
+      "pivot": 760,
+      "scale": 0.23641851106639838,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        187,
+        8,
+        1433,
+        1018
+      ]
+    },
+    {
+      "source": "source/attack-anticipation-generated.png",
+      "bodyTop": 12,
+      "ground": 1010,
+      "pivot": 905,
+      "scale": 0.23547094188376755,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        236,
+        4,
+        1483,
+        1018
+      ]
+    },
+    {
+      "source": "source/attack-windup-generated.png",
+      "bodyTop": 102,
+      "ground": 991,
+      "pivot": 795,
+      "scale": 0.2643419572553431,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        42,
+        45,
+        1525,
+        999
+      ]
+    },
+    {
+      "source": "source/attack-aim-generated.png",
+      "bodyTop": 98,
+      "ground": 1008,
+      "pivot": 860,
+      "scale": 0.25824175824175827,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        132,
+        15,
+        1536,
+        1016
+      ]
+    },
+    {
+      "source": "source/attack-release-generated.png",
+      "bodyTop": 17,
+      "ground": 1003,
+      "pivot": 905,
+      "scale": 0.2383367139959432,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        110,
+        9,
+        1530,
+        1011
+      ]
+    },
+    {
+      "source": "source/attack-peak-generated.png",
+      "bodyTop": 32,
+      "ground": 998,
+      "pivot": 880,
+      "scale": 0.2432712215320911,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        25,
+        24,
+        1521,
+        1006
+      ]
+    }
+  ],
+  "review": {
+    "technical": "complete; inspect review composites",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred from technical review"
+  },
+  "finalFrameHoldUntil": "axe contact; the throwing hand stays empty throughout flight"
+}

@@ -1,0 +1,86 @@
+{
+  "image": "char_bandit_chief_sd_idle_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "spacedReviewImage": "review/idle-spaced-master.png",
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 400
+    },
+    {
+      "index": 1,
+      "name": "breath",
+      "durationMs": 400
+    },
+    {
+      "index": 2,
+      "name": "settle",
+      "durationMs": 400
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/identity-generated.png",
+      "bodyTop": 16,
+      "ground": 1010,
+      "pivot": 760,
+      "scale": 0.23641851106639838,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        187,
+        8,
+        1433,
+        1018
+      ]
+    },
+    {
+      "source": "source/idle-blink-generated.png",
+      "bodyTop": 6,
+      "ground": 1012,
+      "pivot": 760,
+      "scale": 0.23359840954274355,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        148,
+        0,
+        1457,
+        1020
+      ]
+    },
+    {
+      "source": "source/identity-generated.png",
+      "bodyTop": 16,
+      "ground": 1010,
+      "pivot": 760,
+      "scale": 0.23641851106639838,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        187,
+        8,
+        1433,
+        1018
+      ]
+    }
+  ],
+  "review": {
+    "technical": "complete; inspect review composites",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred from technical review"
+  }
+}

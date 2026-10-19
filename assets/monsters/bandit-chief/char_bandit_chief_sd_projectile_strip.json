@@ -1,0 +1,48 @@
+{
+  "image": "char_bandit_chief_sd_projectile_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 1,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "sourceFrameGapPx": 50,
+  "spacedReviewImage": "review/projectile-spaced-master.png",
+  "frames": [
+    {
+      "index": 0,
+      "name": "axe",
+      "durationMs": 600
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/projectile-generated.png",
+      "scale": 0.16750418760469013,
+      "normalizedGroundY": null,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        40,
+        77,
+        1234,
+        1182
+      ]
+    }
+  ],
+  "review": {
+    "technical": "complete; inspect review composites",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred from technical review"
+  },
+  "timeline": {
+    "releaseMs": 320,
+    "flightMs": 600,
+    "contactMs": 920,
+    "hit": true,
+    "rotation": "screen-space clockwise/anticlockwise transform; no redraw; reduced-motion quarter turn"
+  }
+}

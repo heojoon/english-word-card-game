@@ -870,23 +870,17 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
 .login-notice h2{overflow-wrap:anywhere}.notice-rewards{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0;padding:10px;border-radius:14px;background:#f1effc}
 .notice-reward{display:flex;align-items:center;gap:3px}.notice-reward small{color:var(--ink);font-size:11px;font-weight:750}.notice-character-label{display:grid;gap:8px}
 .login-notice .secondary{width:100%;min-height:44px}.notice-close-hint{margin-top:10px}.login-notice .primary{width:100%}
-/* World 6B uses the supplied identity reference until SD art is commissioned. */
+/* World 6B: black-coat SD character and independently clocked thrown axe. */
 .bandit-encounter{text-align:center;margin-top:18px;padding:20px}
 .bandit-encounter>img{width:min(100%,280px);max-height:300px;object-fit:cover;object-position:center 18%;border-radius:20px}
 body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{background:linear-gradient(155deg,#eff5dd,#e9e5fa 65%,#ddd7c9)}
 .bandit-chief-arena>.guardian-health{left:auto;right:12px;top:40px;bottom:auto;width:32%;z-index:9}
-.bandit-chief-enemy{overflow:visible}
-.bandit-chief-reference{height:100%;width:100%;object-fit:cover;object-position:25% 20%;border-radius:24px;box-shadow:0 4px 20px #5751d829}
+.bandit-chief-arena .bandit-chief-enemy{overflow:visible;right:6%;bottom:12px;width:clamp(132px,38vw,160px);height:clamp(132px,38vw,160px);max-width:none;aspect-ratio:1}
+.bandit-chief-sprite{position:absolute;display:block;height:100%;left:50%;bottom:0;transform:translateX(-50%);background-repeat:no-repeat;filter:drop-shadow(0 4px 3px #24214c40);animation:none}
 .bandit-hp-label{position:absolute;right:12px;top:12px;z-index:5;font-size:12px;font-weight:800;color:#38345d;background:#ffffffdf;border-radius:12px;padding:4px 8px}
-.bandit-dodging{animation:bandit-dodge 500ms ease-out both}
-.bandit-defeated{opacity:.4;transform:translateY(15px) rotate(12deg)}
-.bandit-axe-flight{position:absolute;left:72%;top:38%;width:52px;height:52px;z-index:8;pointer-events:none;animation:bandit-axe-travel var(--axe-duration) linear var(--axe-delay) both}
-.bandit-axe-flight svg{width:100%;height:100%;filter:drop-shadow(0 0 5px #fff);animation:bandit-axe-spin 180ms linear var(--axe-delay) infinite}
-.bandit-chief-arena.ice-time-active .bandit-axe-flight,.bandit-chief-arena.ice-time-active .bandit-axe-flight svg,.bandit-chief-arena.paused *{animation-play-state:paused}
-@keyframes bandit-axe-travel{from{left:72%;top:38%}50%{top:22%}to{left:14%;top:48%}}
-@keyframes bandit-axe-spin{to{transform:rotate(-360deg)}}
-@keyframes bandit-dodge{0%,100%{translate:0 0}45%{translate:24px -8px;rotate:10deg;opacity:.55}}
-@media(prefers-reduced-motion:reduce){.bandit-dodging{animation:none;outline:3px solid #60d9cf}.bandit-axe-flight svg{animation:none}.bandit-axe-flight{animation-timing-function:steps(2,end)}}
+.bandit-axe-flight{position:absolute;width:128px;height:128px;z-index:8;pointer-events:none;transform:translate(-50%,-50%) rotate(var(--axe-angle,0deg));animation:none}
+.bandit-axe-flight img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 3px #fff9)}
+.bandit-chief-arena.paused *{animation-play-state:paused}
 
 /* World 6A: full-height supplied map, with waypoints in image coordinates. */
 .story-world-map-7{aspect-ratio:1/3;background:#25205b}

@@ -1,0 +1,31 @@
+{
+  "policy": "Source pixels/alpha preserved. Anatomical body and head scale guide normalization; axe bounds do not determine body scale. Group sheets rejected for weak gutters/edge safety; only the complete isolated recoil is retained from a clean central region.",
+  "actions": {
+    "idle": [
+      {"source":"source/identity-generated.png","bodyTop":16,"ground":1010,"pivot":760},
+      {"source":"source/idle-blink-generated.png","bodyTop":6,"ground":1012,"pivot":760},
+      {"source":"source/identity-generated.png","bodyTop":16,"ground":1010,"pivot":760}
+    ],
+    "attack": [
+      {"source":"source/identity-generated.png","bodyTop":16,"ground":1010,"pivot":760},
+      {"source":"source/attack-anticipation-generated.png","bodyTop":12,"ground":1010,"pivot":905},
+      {"source":"source/attack-windup-generated.png","bodyTop":102,"ground":991,"pivot":795},
+      {"source":"source/attack-aim-generated.png","bodyTop":98,"ground":1008,"pivot":860},
+      {"source":"source/attack-release-generated.png","bodyTop":17,"ground":1003,"pivot":905},
+      {"source":"source/attack-peak-generated.png","bodyTop":32,"ground":998,"pivot":880}
+    ],
+    "dodge": [
+      {"source":"source/identity-generated.png","bodyTop":16,"ground":1010,"pivot":760},
+      {"source":"source/dodge-lean-generated.png","bodyTop":145,"ground":1011,"pivot":760},
+      {"source":"source/dodge-sidestep-generated.png","bodyTop":33,"ground":994,"pivot":760}
+    ],
+    "hit": [
+      {"source":"source/hit-guard-generated.png","bodyTop":14,"ground":1010,"pivot":760},
+      {"source":"source/hit-group-generated.png","crop":[695,0,675,724],"scale":0.36,"ground":693,"pivot":420},
+      {"source":"source/hit-knockdown-generated.png","scale":0.236,"ground":857,"pivot":917}
+    ],
+    "projectile": [
+      {"source":"source/projectile-generated.png"}
+    ]
+  }
+}

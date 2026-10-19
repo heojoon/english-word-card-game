@@ -145,13 +145,14 @@ test('finish clears boss skills and routes actual victory through its ending bef
 
 test('World 5 victory completion and skip enter rewards once; defeats and preview skips never claim',()=>{
   for(const state of [{lichDragon:true,done:true,clear:true},{lichDragon:true,done:true,clear:false},{lichDragon:true,done:true,clear:true,localBossSkipped:true},{lichDragon:true,done:false,clear:true}]){
-    const pages=[],claims=[];
-    const c=vm.createContext({page:'storyChapterFiveBossEnd',run:state,go:p=>{pages.push(p);c.page=p;},claimGuardianReward:()=>claims.push(true),bossEncounter:()=>false,startBattle(){assert.fail('ending must not restart combat');}});
+    const pages=[],claims=[],branches=[];
+    const c=vm.createContext({page:'storyChapterFiveBossEnd',run:state,go:p=>{pages.push(p);c.page=p;},claimGuardianReward:()=>claims.push(true),showStoryBranchChoice:()=>branches.push(true),bossEncounter:()=>false,startBattle(){assert.fail('ending must not restart combat');}});
     vm.runInContext(code('  function completeStoryDialogue(', '  function storyDialogueLines('),c);
     c.completeStoryDialogue();
     const valid=state.done&&state.clear;
     assert.deepEqual(pages,valid?['bossResult']:[]);
     assert.equal(claims.length,valid&&!state.localBossSkipped?1:0);
+    assert.equal(branches.length,valid&&state.localBossSkipped?1:0);
   }
   assert.match(source,/action==='story-dialogue-skip'\)\{completeStoryDialogue\(\)/);
 });

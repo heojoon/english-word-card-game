@@ -1,0 +1,37 @@
+{
+  "generator": "image_gen built-in",
+  "normalization": "FFmpeg Lanczos; lossless crop/atlas packing; no color keys",
+  "browser": "not requested; not run",
+  "actions": {
+    "idle": {
+      "frameCount": 3,
+      "frameWidth": 448,
+      "frameHeight": 320,
+      "spacedWidth": 1444
+    },
+    "attack": {
+      "frameCount": 6,
+      "frameWidth": 448,
+      "frameHeight": 320,
+      "spacedWidth": 2938
+    },
+    "dodge": {
+      "frameCount": 3,
+      "frameWidth": 448,
+      "frameHeight": 320,
+      "spacedWidth": 1444
+    },
+    "hit": {
+      "frameCount": 3,
+      "frameWidth": 448,
+      "frameHeight": 320,
+      "spacedWidth": 1444
+    },
+    "projectile": {
+      "frameCount": 1,
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "spacedWidth": 320
+    }
+  }
+}

@@ -893,6 +893,7 @@
     nav.innerHTML=[['home','홈'],['dungeon','모험'],['gear','장비'],['shop','상점']].map(([id,label])=>`<button data-action="nav" data-page="${id}" ${active===id?'aria-current="page"':''}>${icon(id)}<span>${label}</span></button>`).join('');
     const renderer={storyPotionEvent:renderStoryPotionEvent,storyChapterFiveIntro:renderStoryChapterFiveIntro,storyChapterFiveMidbossStart:renderStoryChapterFiveMidbossStart,storyChapterFiveMidbossEnd:renderStoryChapterFiveMidbossEnd,storyChapterFiveBossStart:renderStoryChapterFiveBossStart,storyChapterFiveBossEnd:renderStoryChapterFiveBossEnd,characters:renderCharacterGate,home:renderHome,gear:renderGear,shop:renderShop,dungeon:renderDungeon,survival:renderSurvival,story:renderStory,storyIntro:renderStoryIntro,storyEpilogue:renderStoryEpilogue,storyBossVictory:renderStoryBossVictory,storyChapterThreeBossStart:renderStoryChapterThreeBossStart,storyChapterThreeBossEnd:renderStoryChapterThreeBossEnd,storyChapterFourIntro:renderStoryChapterFourIntro,storyChapterFourBossStart:renderStoryChapterFourBossStart,storyChapterFourBossEnd:renderStoryChapterFourBossEnd,storyChapterFourMidbossStart:renderStoryChapterFourMidbossStart,storyChapterFourMidbossEnd:renderStoryChapterFourMidbossEnd,storyChapterThreeIntro:renderStoryChapterThreeIntro,storyChapterTwoIntro:renderStoryChapterTwoIntro,storyChapterTwoBossStart:renderStoryChapterTwoBossStart,storyChapterTwoBossEnd:renderStoryChapterTwoBossEnd,stages:renderStages,battle:renderBattle,bossResult:renderRoyalSlimeResult,result:renderResult}[page]||renderHome;
     $('screen').innerHTML=renderer()+localBossSkipMarkup();
+    if(page==='battle'&&run?.banditChief)syncBanditChiefBattleVisual();
     if(page==='battle'&&run?.story)refreshStorySelections();
     if(page==='battle'&&(selectedCharacter?.class==='sniper'||['mage_starlight_rose_skin','ranger_violet_crystal_skin'].includes(itemById(equippedMap(selectedCharacter).skin)?.code)))setHeroAttackTravel();
     const storyHero=$('screen').querySelector('.story-map-hero');
@@ -1486,10 +1487,30 @@
     const sprite=document.querySelector('.sorcerus-sprite');
     if(sprite)sprite.style.cssText=sorcerusSpriteStyle();
   }
+  function banditChiefSpriteStyle(){
+    const boss=window.WORDORIA_BANDIT_CHIEF,sprite=boss.visual(run);
+    return `width:${sprite.width/320*100}%;background-image:url('${deployedAssetUrl(boss.SPRITE_ROOT+'char_bandit_chief_sd_'+sprite.file+'_strip.png')}');background-size:${sprite.count*100}% 100%;background-position:${sprite.frame/(sprite.count-1)*100}% 0`;
+  }
+  function syncBanditChiefBattleVisual(){
+    const sprite=document.querySelector('.bandit-chief-sprite');
+    if(sprite)sprite.style.cssText=banditChiefSpriteStyle();
+    const flight=document.querySelector('.bandit-axe-flight'),pose=window.WORDORIA_BANDIT_CHIEF.projectile(run);
+    if(!flight||!pose)return;
+    const arena=$('arena'),enemy=arena?.querySelector('.bandit-chief-enemy'),hero=arena?.querySelector('.battle-hero, .portrait');
+    if(!arena||!enemy||!hero)return;
+    const a=arena.getBoundingClientRect(),e=enemy.getBoundingClientRect(),h=hero.getBoundingClientRect(),p=pose.progress;
+    // Scale rect coordinates into local CSS pixels (also works in scaled previews).
+    const sx=arena.clientWidth/a.width,sy=arena.clientHeight/a.height;
+    const origin=window.WORDORIA_BANDIT_CHIEF.THROW_ORIGIN;
+    const startX=(e.left-a.left+e.width*(origin.x/320-.2))*sx,startY=(e.top-a.top+e.height*origin.y/320)*sy;
+    const endX=(h.left-a.left+h.width*.5)*sx,endY=(h.top-a.top+h.height*.52)*sy;
+    flight.style.left=`${startX+(endX-startX)*p}px`;
+    flight.style.top=`${startY+(endY-startY)*p-(run.guardianReducedMotion?0:Math.sin(p*Math.PI)*18)}px`;
+    flight.style.setProperty('--axe-angle',`${pose.rotation}deg`);
+  }
   function renderBanditChiefBattle(){
-    const scale=run.guardianReducedMotion?.5:1;
     const choices=run.question.choices.map((choice,index)=>`<button class="answer" data-action="answer" data-index="${index}" ${run.locked||run.paused?'disabled':''}><span>${index+1}</span>${esc(choice)}${run.eagleEyeActive&&choice===run.question.answer?'<small class="eagle-answer-hint" role="status">정답</small>':''}${run.sniperInsight?sniperAnswerHintMarkup(choice):''}${run.petHint?petAnswerHintMarkup(choice):''}</button>`).join('');
-    return `<div class="royal-boss-heading"><div><div class="eyebrow">WORLD 6B · MID BOSS</div><h1>도적 대장</h1></div><div class="royal-boss-clock" id="boss-clock"><small>TIME LEFT</small><strong id="boss-timer">${royalSlimeTime(Math.max(0,run.storyTimeLimit-run.elapsed))}</strong></div></div><div id="arena" class="arena guardian-boss-arena bandit-chief-arena ${run.paused?'paused':''} ${run.iceTimeActive?'ice-time-active':''} ${run.attack?'hit':''} ${run.stunned||run.banditAxeHit?'wrong story-stunned':''}"><div class="arena-floor"></div>${battleHeroMarkup()}${run.sniperInsight?passiveBannerMarkup():''}<div class="guardian-enemy bandit-chief-enemy ${run.banditDodgeMs>0?'bandit-dodging':''} ${run.guardianPhase==='defeat'?'bandit-defeated':''}"><img class="bandit-chief-reference" src="${esc(deployedAssetUrl(window.WORDORIA_BANDIT_CHIEF.ART))}" alt="도적 대장">${run.sniperInsight?sniperTargetMarkup():''}</div><div class="guardian-health" role="meter" aria-label="도적 대장 HP" aria-valuemin="0" aria-valuemax="200" aria-valuenow="${run.bossHp}"><i id="guardian-energy-fill" style="width:${run.bossHp/2}%"></i></div><span class="bandit-hp-label">HP ${run.bossHp} / 200 · DMG ${run.bossAttackSteps}</span>${storyVitalsMarkup()}${iceTimeEffectMarkup()}${eagleEyeEffectMarkup()}${run.axeFlightMs>0?`<div class="bandit-axe-flight" style="--axe-duration:${600*scale}ms;--axe-delay:${run.axeFlightMs-600*scale}ms" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M19 56 43 8" stroke="#785038" stroke-width="7" stroke-linecap="round"/><path d="M34 12 48 18 60 7Q61 31 40 34L29 27Z" fill="#dce0f0" stroke="#5751d8" stroke-width="2"/></svg></div>`:''}<div class="royal-boss-skill-notice" role="status" aria-live="polite">${esc(run.banditNotice||'')}${run.banditDodgeReady?' · 회피 대기':''}</div><div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div></div>${storyBattleActions()}<div class="question-card guardian-question"><h1>${esc(run.question.prompt)}</h1></div><div class="answers guardian-answers">${choices}</div>`;
+    return `<div class="royal-boss-heading"><div><div class="eyebrow">WORLD 6B · MID BOSS</div><h1>도적 대장</h1></div><div class="royal-boss-clock" id="boss-clock"><small>TIME LEFT</small><strong id="boss-timer">${royalSlimeTime(Math.max(0,run.storyTimeLimit-run.elapsed))}</strong></div></div><div id="arena" class="arena guardian-boss-arena bandit-chief-arena ${run.paused?'paused':''} ${run.iceTimeActive?'ice-time-active':''} ${run.attack?'hit':''} ${run.stunned||run.banditAxeHit?'wrong story-stunned':''}"><div class="arena-floor"></div>${battleHeroMarkup()}${run.sniperInsight?passiveBannerMarkup():''}<div class="guardian-enemy bandit-chief-enemy"><span class="bandit-chief-sprite" style="${banditChiefSpriteStyle()}" role="img" aria-label="검정 외투를 입고 왼쪽을 바라보는 도적 대장"></span>${run.sniperInsight?sniperTargetMarkup():''}</div><div class="guardian-health" role="meter" aria-label="도적 대장 HP" aria-valuemin="0" aria-valuemax="200" aria-valuenow="${run.bossHp}"><i id="guardian-energy-fill" style="width:${run.bossHp/2}%"></i></div><span class="bandit-hp-label">HP ${run.bossHp} / 200 · DMG ${run.bossAttackSteps}</span>${storyVitalsMarkup()}${iceTimeEffectMarkup()}${eagleEyeEffectMarkup()}${run.axeFlightMs>0?`<div class="bandit-axe-flight" aria-hidden="true"><img src="${esc(deployedAssetUrl(window.WORDORIA_BANDIT_CHIEF.SPRITE_ROOT+'char_bandit_chief_sd_projectile_strip.png'))}" alt=""></div>`:''}<div class="royal-boss-skill-notice" role="status" aria-live="polite">${esc(run.banditNotice||'')}${run.banditDodgeReady?' · 회피 대기':''}</div><div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div></div>${storyBattleActions()}<div class="question-card guardian-question"><h1>${esc(run.question.prompt)}</h1></div><div class="answers guardian-answers">${choices}</div>`;
   }
   function renderGuardianBattle(){
     if(run.banditChief)return renderBanditChiefBattle();
@@ -1663,6 +1684,7 @@
       if(petActivated)refreshPetBattleFeedback();
     }else if(events.length)render();
     if(run.sorcerus)syncSorcerusBattleVisual();
+    if(run.banditChief)syncBanditChiefBattleVisual();
     const remaining=Math.max(0,run.storyTimeLimit-run.elapsed),timer=$('boss-timer');
     if(timer)timer.textContent=royalSlimeTime(remaining);
     $('boss-clock')?.classList.toggle('danger',remaining<=30000);

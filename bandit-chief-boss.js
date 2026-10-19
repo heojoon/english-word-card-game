@@ -2,7 +2,37 @@
 (() => {
   'use strict';
   const HP=200,TIME_MS=300000,AXE_INTERVAL_MS=5000,DODGE_INTERVAL_MS=6000;
-  const ART='assets/novel/characters/char_bandit_chief_world6b_reference.png';
+  const ART='assets/novel/characters/char_bandit_chief_world6b_black_coat_design.png';
+  const SPRITE_ROOT='assets/monsters/bandit-chief/';
+  const THROW_ORIGIN={x:74,y:167}; // Palm in the normalized 448 x 320 release frame.
+  const ANIMATIONS={idle:[400,400,400],attack:[80,80,80,80,80,200],dodge:[100,100,300],hit:[100,200,700]};
+  // Wind-up precedes each scheduled release; the five-second cadence is unchanged.
+  function visual(state){
+    const scale=state.guardianReducedMotion?.5:1,phase=state.guardianPhase;
+    let action='idle',elapsed=state.guardianReducedMotion?0:(state.banditIdleMs||0)%1200;
+    if(phase==='defeat'){
+      action='hit';elapsed=100+(1000*scale-state.guardianRemaining)/scale;
+    }else if(state.axeElapsed>=AXE_INTERVAL_MS-320*scale){
+      action='attack';elapsed=(state.axeElapsed-(AXE_INTERVAL_MS-320*scale))/scale;
+    }else if(state.axeFlightMs>0){
+      action='attack';elapsed=320+state.axeElapsed/scale;
+    }else if(state.banditDodgeMs>0){
+      action='dodge';elapsed=500-state.banditDodgeMs/scale;
+    }else if(phase==='hit'&&state.guardianVisual==='hit'){
+      action='hit';elapsed=100; // Contact enters impact; only lethal damage reaches knockdown.
+    }else if(phase==='player-attack'&&state.guardianRemaining<=100*scale&&!state.banditDodgeReady){
+      action='hit';elapsed=0; // Notice the player's attack immediately before contact.
+    }
+    const durations=ANIMATIONS[action];let frame=0;
+    while(frame<durations.length-1&&elapsed>=durations[frame]){elapsed-=durations[frame];frame++;}
+    return {action,file:action,width:448,height:320,count:durations.length,frame};
+  }
+  function projectile(state){
+    const scale=state.guardianReducedMotion?.5:1;
+    if(state.axeFlightMs<=0)return null;
+    const progress=Math.min(1,Math.max(0,1-state.axeFlightMs/(600*scale)));
+    return {progress,rotation:state.guardianReducedMotion?-progress*90:-progress*720};
+  }
   const INFO={name:'도적 대장',description:'왕국수도로 가는 길을 막아선 도적 대장',hp:HP,time:'5분',art:ART,skill:'도끼 던지기',skillDescription:'5초마다 도끼를 던져 50% 확률로 HP 1 피해를 줘요.',skill2:'회피하기',skill2Description:'6초마다 70% 확률로 다음 정답 공격 1회를 회피해요. 정답과 학습 기록은 유지돼요.'};
   function deck(words,shuffle){
     const pool=Array.from(new Map(words.map(entry=>[entry[0].toLowerCase(),entry])).values());
@@ -15,7 +45,7 @@
     }
     return result;
   }
-  function reset(){return {guardian:true,banditChief:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,guardianPhase:'idle',guardianVisual:'idle',guardianRemaining:0,axeElapsed:0,dodgeElapsed:0,axeFlightMs:0,banditDodgeReady:false,banditDodgeMs:0,banditNotice:'',banditNoticeMs:0,banditPendingDamage:0};}
+  function reset(){return {guardian:true,banditChief:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,guardianPhase:'idle',guardianVisual:'idle',guardianRemaining:0,axeElapsed:0,dodgeElapsed:0,axeFlightMs:0,banditIdleMs:0,banditDodgeReady:false,banditDodgeMs:0,banditNotice:'',banditNoticeMs:0,banditPendingDamage:0};}
   function clear(state){state.axeFlightMs=0;state.banditDodgeReady=false;state.banditDodgeMs=0;state.banditAxeHit=false;state.banditNotice='';state.banditNoticeMs=0;state.axeElapsed=0;state.dodgeElapsed=0;}
   function answer(state,correct,contactMs){
     if(state.done||state.paused||state.locked||state.guardianPhase!=='idle'||state.hp<=0||state.bossHp<=0)return false;
@@ -42,7 +72,7 @@
       if(state.banditNoticeMs>0)step=Math.min(step,state.banditNoticeMs);
       budget-=step;
       const flying=state.axeFlightMs>0,dodging=state.banditDodgeMs>0,noticing=state.banditNoticeMs>0;
-      if(alive){state.axeElapsed+=step*rate;state.dodgeElapsed+=step*rate;}
+      if(alive){state.axeElapsed+=step*rate;state.dodgeElapsed+=step*rate;state.banditIdleMs=(state.banditIdleMs||0)+step*rate;}
       if(flying)state.axeFlightMs=Math.max(0,state.axeFlightMs-step*rate);
       state.banditDodgeMs=Math.max(0,state.banditDodgeMs-step);state.banditNoticeMs=Math.max(0,state.banditNoticeMs-step);
       if(dodging&&!state.banditDodgeMs)events.push('dodge-end');
@@ -70,5 +100,5 @@
     }
     return events;
   }
-  window.WORDORIA_BANDIT_CHIEF={HP,TIME_MS,AXE_INTERVAL_MS,DODGE_INTERVAL_MS,ART,INFO,deck,reset,answer,advance,clear};
+  window.WORDORIA_BANDIT_CHIEF={HP,TIME_MS,AXE_INTERVAL_MS,DODGE_INTERVAL_MS,ART,INFO,SPRITE_ROOT,THROW_ORIGIN,ANIMATIONS,visual,projectile,deck,reset,answer,advance,clear};
 })();

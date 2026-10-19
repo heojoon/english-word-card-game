@@ -1,0 +1,25 @@
+{
+  "character": "World 6B Bandit Chief, black coat",
+  "identityReference": "../../novel/characters/char_bandit_chief_world6b_black_coat_design.png",
+  "referencePathsRelativeTo": "assets/monsters/bandit-chief/",
+  "facing": "left",
+  "style": "Crystal Quest SD; no pixel art; adult identity in compact nonsexualized proportions",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "widthReason": "Keep a common body scale while the large axe, throwing arm and prone knockdown fit safely.",
+  "sourceFrameGapPx": 50,
+  "throwOrigin": {"x":74,"y":167,"coordinateSpace":"448 x 320 normalized release frame"},
+  "sourcePolicy": "Identity master first. Small isolated groups for wide axe poses; preserve originals. Assemble exact 50 px transparent review gutters and contiguous runtime slots.",
+  "actions": {
+    "idle": {"frames": ["ready", "breath", "settle"], "durationMs": [400, 400, 400], "loop": true},
+    "attack": {"frames": ["ready", "anticipation", "wind-up", "aim", "release", "attack-peak"], "durationMs": [80, 80, 80, 80, 80, 200], "releaseMs": 320, "finalPose": "active throw, empty throwing hand; no recovery"},
+    "dodge": {"frames": ["notice", "lean-away", "sidestep"], "durationMs": [100, 100, 300], "duration": 500},
+    "hit": {"frames": ["guard-notice", "impact-recoil", "knockdown"], "durationMs": [100, 200, 700], "hitFrame": 1, "finalFrameHold": true},
+    "projectile": {"frames": ["axe"], "durationMs": [600], "anchor": {"x": 0.5, "y": 0.5}, "contactMs": 600, "flightMs": 600, "releaseDelayMs": 320, "animation": "One generated axe master rotates and travels in screen space. Character holds the empty-handed attack peak throughout flight.", "damage": "One 50% roll at flight arrival only; no damage during wind-up."}
+  },
+  "runtimeFilePattern": "char_bandit_chief_sd_<action>_strip.png",
+  "reducedMotion": "Half-duration wind-up, flight, dodge and hit; preserve release before contact and final defeat frame hold.",
+  "freeze": "Pause freezes all timelines. Ice Time and pet clock freeze idle/axe wind-up/flight, while player contact and boss recoil finish.",
+  "review": {"technical": "pending", "browser": "not requested; not run", "userApproval": "black coat direction requested; animation review pending"}
+}

@@ -1,0 +1,94 @@
+{
+  "image": "char_bandit_chief_sd_hit_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "spacedReviewImage": "review/hit-spaced-master.png",
+  "frames": [
+    {
+      "index": 0,
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "impact-recoil",
+      "durationMs": 200,
+      "hit": true
+    },
+    {
+      "index": 2,
+      "name": "knockdown",
+      "durationMs": 700
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/hit-guard-generated.png",
+      "bodyTop": 14,
+      "ground": 1010,
+      "pivot": 760,
+      "scale": 0.2359437751004016,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        278,
+        6,
+        1425,
+        1018
+      ]
+    },
+    {
+      "source": "source/hit-group-generated.png",
+      "crop": [
+        695,
+        0,
+        675,
+        724
+      ],
+      "scale": 0.36,
+      "ground": 693,
+      "pivot": 420,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        2,
+        85,
+        675,
+        691
+      ]
+    },
+    {
+      "source": "source/hit-knockdown-generated.png",
+      "scale": 0.236,
+      "ground": 857,
+      "pivot": 917,
+      "normalizedGroundY": 312,
+      "framingAlphaThreshold": 16,
+      "sourceSafetyPaddingPx": 8,
+      "alphaBounds": [
+        82,
+        185,
+        1751,
+        865
+      ]
+    }
+  ],
+  "review": {
+    "technical": "complete; inspect review composites",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred from technical review"
+  },
+  "finalFrameHold": true,
+  "runtimeContactEntryFrame": 1,
+  "note": "Nonlethal damage holds impact; lethal damage proceeds to prone frame. Notice is shown before player contact."
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>도적 대장 SD 애니메이션</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#24214c;background:#f7f7ff}body{max-width:1050px;margin:auto;padding:20px}h1{font-size:23px}p{line-height:1.5}button,select,label{font:inherit}button,select{padding:10px;border:1px solid #d7d3ed;border-radius:12px;background:white;color:#24214c}nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:sticky;top:0;background:#f7f7fff2;padding:10px 0;z-index:2}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}article{border:1px solid #d7d3ed;border-radius:20px;padding:12px;background:white;min-width:0}h2{font-size:17px;margin:5px 0 10px}canvas{display:block;width:100%;height:auto;border-radius:12px;background:#5751d8}.frame-row{display:flex;gap:6px;overflow:auto;padding:8px 0}.frame-row img{width:110px;height:auto;background:#5751d8;border:1px solid #ccc;border-radius:8px}output{font-size:13px}a{color:#5751d8}.note{color:#74718a;font-size:13px}
+</style>
+<h1>도적 대장 · 검정 외투 SD</h1>
+<p>대기 3프레임 · 도끼 투척 6프레임 · 회피 3프레임 · 피격/쓰러짐 3프레임</p>
+<nav><button id="pause">일시정지</button><button id="restart">다시 재생</button><label>배경 <select id="bg"><option value="#5751D8">크리스털 바이올렛</option><option value="#F7F7FF">문 화이트</option></select></label><label><input type="checkbox" id="reduced"> 모션 감소</label></nav>
+<p class="note">쓰러짐은 마지막 프레임을 유지합니다. 투척은 준비 320ms 후 발사, 비행 600ms 후 접촉합니다. 이 파일은 자산 미리보기이며 실제 게임 브라우저 검증 결과를 의미하지 않습니다.</p>
+<div class="grid" id="grid"></div>
+<script src="../../../../bandit-chief-boss.js"></script>
+<script>
+const boss=window.WORDORIA_BANDIT_CHIEF,defs={idle:{title:'대기',frames:[400,400,400]},attack:{title:'도끼 투척',frames:[80,80,80,80,80,200]},dodge:{title:'회피',frames:[100,100,300]},hit:{title:'피격 → 완전 쓰러짐',frames:[100,200,700]}};
+const images={},panels={};let paused=false,elapsed=0,last=performance.now();
+for(const [action,d]of Object.entries(defs)){
+ const el=document.createElement('article');el.innerHTML=`<h2>${d.title}</h2><canvas width="448" height="320"></canvas><output></output><div class="frame-row">${d.frames.map((_,i)=>`<img src="../${action}/${String(i+1).padStart(2,'0')}.png" alt="${d.title} ${i+1}번 프레임">`).join('')}</div>`;document.querySelector('#grid').append(el);panels[action]=el;const im=new Image();im.src=`../char_bandit_chief_sd_${action}_strip.png`;images[action]=im;
+}
+const composite=document.createElement('article');composite.innerHTML='<h2>투척 → 회전 비행 → 접촉 (모바일 크기)</h2><canvas width="366" height="210"></canvas><output></output>';document.querySelector('#grid').prepend(composite);
+const axe=new Image();axe.src='../char_bandit_chief_sd_projectile_strip.png';
+document.querySelector('#pause').onclick=()=>{paused=!paused;document.querySelector('#pause').textContent=paused?'계속 재생':'일시정지';};document.querySelector('#restart').onclick=()=>{elapsed=0;};
+function draw(){const now=performance.now();if(!paused)elapsed+=Math.min(now-last,100);last=now;const scale=document.querySelector('#reduced').checked?.5:1,bg=document.querySelector('#bg').value;
+ for(const [action,d]of Object.entries(defs)){const canvas=panels[action].querySelector('canvas'),ctx=canvas.getContext('2d');ctx.fillStyle=bg;ctx.fillRect(0,0,448,320);let t=elapsed/scale,frame=0;if(action==='idle')t%=1200;else if(action!=='hit')t%=d.frames.reduce((a,b)=>a+b,0)+600;while(frame<d.frames.length-1&&t>=d.frames[frame]){t-=d.frames[frame];frame++;}if(images[action].complete&&images[action].naturalWidth)ctx.drawImage(images[action],448*frame,0,448,320,0,0,448,320);panels[action].querySelector('output').textContent=`${frame+1} / ${d.frames.length}${action==='hit'&&frame===2?' · 마지막 프레임 유지':''}`;}
+ const c=composite.querySelector('canvas'),ctx=c.getContext('2d'),t=(elapsed/scale)%2200,s={...boss.reset(),hp:3,axeElapsed:t<320?4680+t:t-320,axeFlightMs:t>=320&&t<920?(920-t)*scale:0,guardianReducedMotion:scale===.5};if(t<320)s.axeElapsed=5000-320*scale+t*scale;else s.axeElapsed=(t-320)*scale;
+ ctx.fillStyle=bg;ctx.fillRect(0,0,366,210);ctx.strokeStyle='#60d9cf';ctx.beginPath();ctx.moveTo(0,192);ctx.lineTo(366,192);ctx.stroke();
+ const v=boss.visual(s);if(images[v.action]?.naturalWidth)ctx.drawImage(images[v.action],v.frame*448,0,448,320,174,32,224,160);
+ ctx.fillStyle='#60d9cf';ctx.beginPath();ctx.arc(58,140,19,0,Math.PI*2);ctx.fill();
+ const p=boss.projectile(s),ox=174+boss.THROW_ORIGIN.x*.5,oy=32+boss.THROW_ORIGIN.y*.5;if(p&&axe.naturalWidth){ctx.save();ctx.translate(ox+(58-ox)*p.progress,oy+(140-oy)*p.progress-(scale===.5?0:Math.sin(p.progress*Math.PI)*18));ctx.rotate(p.rotation*Math.PI/180);ctx.drawImage(axe,-64,-64,128,128);ctx.restore();}
+ if(t>=920&&t<1100){ctx.strokeStyle='#ffcf67';ctx.lineWidth=3;ctx.beginPath();ctx.arc(58,140,25+(t-920)/12,0,Math.PI*2);ctx.stroke();}
+ composite.querySelector('output').textContent=t<320?'준비':t<920?'발사 · 회전 비행':t<1100?'접촉 · 피해 판정':'대기';requestAnimationFrame(draw);
+}requestAnimationFrame(draw);
+</script></html>
