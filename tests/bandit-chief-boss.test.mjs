@@ -13,29 +13,29 @@ test('200 HP / five minutes; DMG 3 applies at contact, counts one answer, and ca
   rules.advance(s,300);s.bossHp=2;rules.answer(s,true,200);rules.advance(s,200);assert.equal(s.bossHp,0);
   assert.equal(s.guardianPhase,'defeat');assert.ok(rules.advance(s,1000).includes('victory'));
 });
-test('axes launch every five seconds and resolve 50 percent damage at arrival',()=>{
-  const s=fresh();rules.advance(s,4999,()=>.5);assert.equal(s.axeFlightMs,0);
-  assert.ok(rules.advance(s,1,()=>.5).includes('axe-start'));assert.equal(s.hp,20);
-  rules.advance(s,599,()=>.49);assert.equal(s.hp,20);assert.ok(rules.advance(s,1,()=>.49).includes('axe-hit'));assert.equal(s.hp,19);
-  rules.advance(s,4400,()=>.9);assert.equal(s.axeFlightMs,600);assert.ok(rules.advance(s,600,()=>.5).includes('axe-miss'));assert.equal(s.hp,19);
+test('axes launch every 25 seconds and resolve 33 percent damage at arrival',()=>{
+  const s=fresh();rules.advance(s,24999,()=>.33);assert.equal(s.axeFlightMs,0);
+  assert.ok(rules.advance(s,1,()=>.33).includes('axe-start'));assert.equal(s.hp,20);
+  rules.advance(s,599,()=>.329);assert.equal(s.hp,20);assert.ok(rules.advance(s,1,()=>.329).includes('axe-hit'));assert.equal(s.hp,19);
+  rules.advance(s,24400,()=>.9);assert.equal(s.axeFlightMs,600);assert.ok(rules.advance(s,600,()=>.33).includes('axe-miss'));assert.equal(s.hp,19);
 });
-test('70 percent dodge every six seconds blocks exactly one correct attack while retaining answers',()=>{
-  const s=fresh();rules.advance(s,6000,()=>.69);assert.equal(s.banditDodgeReady,true);
+test('55 percent dodge every ten seconds blocks exactly one correct attack while retaining answers',()=>{
+  const s=fresh();rules.advance(s,10000,()=>.549);assert.equal(s.banditDodgeReady,true);
   rules.answer(s,true,200);assert.ok(rules.advance(s,200,()=>.9).includes('dodged'));assert.equal(s.bossHp,200);assert.equal(s.correct,1);
   rules.advance(s,300,()=>.9);rules.answer(s,true,200);rules.advance(s,500,()=>.9);assert.equal(s.bossHp,197);assert.equal(s.correct,2);
-  const miss=fresh();rules.advance(miss,6000,()=>.7);assert.equal(miss.banditDodgeReady,false);
+  const miss=fresh();rules.advance(miss,10000,()=>.55);assert.equal(miss.banditDodgeReady,false);
 });
 test('pause, Ice Time and pet time stop skill clocks and axes but contact feedback completes',()=>{
-  const s=fresh();rules.advance(s,5000,()=>.9);s.paused=true;rules.advance(s,20000);assert.equal(s.axeFlightMs,600);
+  const s=fresh();rules.advance(s,25000,()=>.9);s.paused=true;rules.advance(s,20000);assert.equal(s.axeFlightMs,600);
   s.paused=false;s.iceTimeActive=true;rules.advance(s,20000);assert.equal(s.axeFlightMs,600);assert.equal(s.axeElapsed,0);
   rules.answer(s,true,200);rules.advance(s,500);assert.equal(s.bossHp,197);assert.equal(s.axeFlightMs,600);
   s.iceTimeActive=false;rules.advance(s,1000,()=>.9,0);assert.equal(s.axeFlightMs,600);
   rules.advance(s,600,()=>0);assert.equal(s.hp,19);
 });
 test('large delta, simultaneous skills, reduced motion and lethal axes retain event ordering',()=>{
-  const s=fresh();const events=Array.from(rules.advance(s,30600,()=>0));assert.equal(events.filter(e=>e==='axe-start').length,6);assert.equal(events.filter(e=>e==='axe-hit').length,6);assert.equal(events.filter(e=>e==='dodge-start').length,5);
-  const reduced=fresh();reduced.guardianReducedMotion=true;rules.advance(reduced,5000,()=>0);assert.equal(reduced.axeFlightMs,300);rules.advance(reduced,300,()=>0);assert.equal(reduced.hp,19);
-  const lethal=fresh();lethal.hp=1;assert.ok(rules.advance(lethal,5600,()=>0).includes('defeat-player'));assert.equal(lethal.hp,0);assert.equal(lethal.axeFlightMs,0);
+  const s=fresh();const events=Array.from(rules.advance(s,30600,()=>0));assert.equal(events.filter(e=>e==='axe-start').length,1);assert.equal(events.filter(e=>e==='axe-hit').length,1);assert.equal(events.filter(e=>e==='dodge-start').length,3);
+  const reduced=fresh();reduced.guardianReducedMotion=true;rules.advance(reduced,25000,()=>0);assert.equal(reduced.axeFlightMs,300);rules.advance(reduced,300,()=>0);assert.equal(reduced.hp,19);
+  const lethal=fresh();lethal.hp=1;assert.ok(rules.advance(lethal,25600,()=>0).includes('defeat-player'));assert.equal(lethal.hp,0);assert.equal(lethal.axeFlightMs,0);
 });
 test('decks exhaust unique cycles and extend beyond 200 answers when bosses dodge',()=>{
   const words=Array.from({length:8},(_,i)=>['word'+i,'n','뜻'+i]);
@@ -97,7 +97,7 @@ test('renderer uses black-coat SD art, shared Ice Time, HP, four answers and a s
 test('SD wind-up leads release, contact remains at flight arrival, and reduced motion retains order',()=>{
   for(const reduced of [false,true]){
     const s=fresh(),scale=reduced?.5:1;s.guardianReducedMotion=reduced;
-    rules.advance(s,5000-320*scale,()=>.9);assert.equal(rules.visual(s).action,'attack');assert.equal(rules.visual(s).frame,0);assert.equal(rules.projectile(s),null);
+    rules.advance(s,25000-320*scale,()=>.9);assert.equal(rules.visual(s).action,'attack');assert.equal(rules.visual(s).frame,0);assert.equal(rules.projectile(s),null);
     rules.advance(s,319*scale,()=>.9);assert.equal(rules.visual(s).frame,3);assert.equal(rules.projectile(s),null);
     rules.advance(s,scale,()=>.9);assert.equal(rules.visual(s).frame,4);assert.equal(rules.projectile(s).progress,0);assert.equal(s.hp,20);
     rules.advance(s,80*scale,()=>.9);assert.equal(rules.visual(s).frame,5);assert.equal(s.hp,20);
@@ -107,7 +107,7 @@ test('SD wind-up leads release, contact remains at flight arrival, and reduced m
 });
 
 test('pause and Ice Time freeze exact SD/flight positions without resetting on repeated renders',()=>{
-  const s=fresh();rules.advance(s,5200,()=>.9);
+  const s=fresh();rules.advance(s,25200,()=>.9);
   const pose=JSON.stringify(rules.visual(s)),axe=JSON.stringify(rules.projectile(s));
   s.iceTimeActive=true;rules.advance(s,1000,()=>.9);assert.equal(JSON.stringify(rules.visual(s)),pose);assert.equal(JSON.stringify(rules.projectile(s)),axe);
   s.iceTimeActive=false;rules.advance(s,1000,()=>.9,0);assert.equal(JSON.stringify(rules.projectile(s)),axe);
@@ -116,7 +116,7 @@ test('pause and Ice Time freeze exact SD/flight positions without resetting on r
 });
 
 test('dodge uses its own poses and lethal damage holds the prone final frame without recovery',()=>{
-  const s=fresh();rules.advance(s,6000,()=>.6);assert.equal(rules.visual(s).action,'dodge');assert.equal(rules.visual(s).frame,0);
+  const s=fresh();rules.advance(s,10000,()=>.54);assert.equal(rules.visual(s).action,'dodge');assert.equal(rules.visual(s).frame,0);
   rules.advance(s,200,()=>.9);assert.equal(rules.visual(s).frame,2);rules.advance(s,300,()=>.9);assert.equal(rules.visual(s).action,'idle');
   s.bossHp=1;rules.answer(s,true,200);s.banditDodgeReady=false;rules.advance(s,100,()=>.9);assert.equal(rules.visual(s).action,'hit');assert.equal(rules.visual(s).frame,0);
   rules.advance(s,100,()=>.9);assert.equal(rules.visual(s).frame,1);rules.advance(s,200,()=>.9);assert.equal(rules.visual(s).frame,2);
