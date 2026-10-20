@@ -11,3 +11,4 @@
 - 보상: `claim_morgana_reward`가 소유권, 6A 분기, 19단계 클리어를 확인한다. 계정 지갑을 잠그고 영수증을 확인해 캐릭터를 바꿔도 중복 지급하지 않는다. 패배·재도전·상자·콤보로 추가 보상하지 않는다.
 - 서버 검증: 연결된 운영 DB에서 트랜잭션 안에 첫 지급 500, 재지급 0, 패배 0, 타인 캐릭터 거부를 확인한 뒤 전부 롤백했다. 보상 RPC의 authenticated SECURITY DEFINER 권한은 계정 지갑 원자적 갱신을 위한 의도된 권한이며 함수 내부에서 인증·소유권을 검사한다.
 - 브라우저 검증과 사용자 미술 승인은 아직 진행하지 않았다.
+- 스토리 스탠딩 CG: `assets/novel/characters/char_morgana_world6a_standing.webp`. 원화의 일반 비율과 정체성을 유지해 배경 없이 제작했으며, 최종보스 시작·승리 후 대화·살림/죽임 결말에서 사용한다. 배경 포함 소개 원화와 전투 SD는 별도로 유지한다. 생성 원본·프롬프트·검수 기록은 `assets/novel/characters/source/morgana-standing-generated.png` 및 `char_morgana_world6a_standing.generation.json`에 보존한다.

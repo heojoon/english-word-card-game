@@ -228,7 +228,7 @@ export function parseWorldSixANarrative(markdown,{section='all',location='반전
     '다크 소서러스':'assets/novel/characters/char_dark_sorcerus_world5_standing.webp',
     '쉐도우 소서러스(변신)':'assets/novel/characters/char_dark_sorcerus_world5_standing.webp',
     '심연의 골렘':'assets/monsters/abyss-golem/monster_abyss_golem_standing.png',
-    '모르가나':'assets/monsters/morgana/morgana-standing.webp'
+    '모르가나':'assets/novel/characters/char_morgana_world6a_standing.webp'
   };
   let active=section==='all'||section==='prelude';
   for(const raw of markdown.replace(/\r\n/g,'\n').split('\n')){

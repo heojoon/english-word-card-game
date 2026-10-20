@@ -1,0 +1,16 @@
+{
+  "asset": "char_morgana_world6a_standing.webp",
+  "tool": "built-in image_gen",
+  "use_case": "background-extraction",
+  "reference": "assets/monsters/morgana/morgana-standing.webp",
+  "source": "source/morgana-standing-generated.png",
+  "usage": "World 6A final boss introduction, victory prelude, kill and spare endings",
+  "prompt": "Use case: background-extraction. Asset type: transparent standing character CG for Wordoria Crystal Quest visual novel. Edit target: attached Morgana full-body illustration. Extract/redraw ONLY the same Morgana character as a clean isolated full-body standing CG with real transparent alpha. Preserve her face, violet eyes, long dark purple hair, black ram horns with gold details, gold orbital crown, black and purple long gown with gold filigree, pose, hands and character proportions from the reference; retain the original elegant anime illustration rendering, NOT chibi or SD. Keep the complete crown, horns, hair, gown hem and hands within frame with small transparent margins. Remove ALL environment, ruins, towers, floating stones, ground, giant celestial rings, background lightning and scenic purple clouds. Retain only small magic orbs directly above hands and closely attached costume details. No background color, no painted checkerboard, no floor, no cast shadow plane, no text, no watermark. Character only on genuine transparent background.",
+  "normalization": "24 px transparent margin on all sides; WebP quality 92, alpha preserved",
+  "review": {
+    "alpha": "Verified transparent alpha and transparent corners; reviewed over Moon White and Crystal Violet",
+    "identity": "Original full-size character proportions, horns, crown, hair, gown, hands and small magic orbs preserved; environment removed",
+    "browserChecked": false,
+    "userApproval": false
+  }
+}

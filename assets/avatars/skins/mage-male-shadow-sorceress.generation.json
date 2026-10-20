@@ -1,0 +1,27 @@
+{
+  "tool": "image_gen.imagegen",
+  "intent": "Add intertwined shadow-world background to existing skin CG",
+  "prompt": "Edit target: reference image 1, the approved Shadow Sorceress standing CG. Reference image 2 (Starlight Rose Mage) is ONLY the portrait canvas aspect ratio, character-versus-background composition and rendering-quality reference; do NOT copy its female character, pink hair, hat, moon or stars. Create ONE finished vertical skin-shop/profile illustration with an opaque full-bleed background, aspect 512:764 (approximately 2:3), intended export 512x764. Preserve the exact male Shadow Sorceress identity from image 1: same tousled short dark hair, glowing lavender eyes, shadow-black face and skin, midnight-violet ornate robes, crystal clasp, enormous violet crystal staff and reaching casting hand, youthful anime proportions, original pose and detailed linework/materials. Reframe and naturally extend the square source composition into a vertical portrait; retain the complete head, readable staff head and casting hand, upper body and flowing robes, with lower robes continuing to the bottom crop. Do not redesign the character, lighten his shadow skin, change gender, add a hat or replace the staff. The requested new background is a SHADOW WORLD COMPLEXLY INTERTWINED: layered looping dark-violet shadow ribbons, twisted interlocking roots and impossible fragmented arches and stairways, offset mirrored spatial fragments, woven spectral paths folding through one another at different depths. A sophisticated tangled dimensional labyrinth, dark indigo and purple with restrained violet/cyan crystalline rim light and atmospheric depth. Detailed but organized into large readable forms; background slightly softer/dimmer so the face and hand remain the clear focal points. Shadow threads must read as scenery BEHIND the character rather than binding or covering him. Match Wordoria Crystal Quest polished premium 2D anime fantasy illustration: clean linework, soft cel-painted gradients, luminous violet-blue crystal, deep plum shadows, nonsexualized adventurous character. Full opaque artwork right to all four edges. No borders, UI, text, labels, watermark, extra people, horror, gore, skulls, photorealism, pixel art, toy 3D. This is a skin portrait, not a world map and not an SD battle sprite.",
+  "references": [
+    {
+      "path": "assets/monsters/shadow-sorceress/shadow-sorceress-standing.png",
+      "role": "Edit target and character identity"
+    },
+    {
+      "path": "assets/avatars/skins/mage-female-starlight-rose.webp",
+      "role": "512x764 canvas and composition reference"
+    }
+  ],
+  "source": "assets/avatars/skins/source/mage-male-shadow-sorceress-shadow-world.png",
+  "runtime": "assets/avatars/skins/mage-male-shadow-sorceress.webp",
+  "runtimeSize": [
+    512,
+    764
+  ],
+  "background": "opaque",
+  "review": {
+    "visual": "Character identity and reaching-hand pose preserved; interlocking arches, stairways and shadow ribbons in background",
+    "userApproval": "pending",
+    "browser": "not run"
+  }
+}

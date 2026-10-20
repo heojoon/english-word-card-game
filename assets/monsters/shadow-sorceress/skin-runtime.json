@@ -1,0 +1,44 @@
+{
+  "code": "mage_shadow_sorceress_skin",
+  "price": 800,
+  "class": "mage",
+  "variant": "male",
+  "portrait": "assets/avatars/skins/mage-male-shadow-sorceress.webp",
+  "sourceFacing": "left",
+  "runtimeFacing": "right",
+  "mirror": "CSS scale: -1 1 on each sprite element",
+  "cellHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "states": {
+    "idle": {
+      "manifest": "shadow-sorceress-sd-idle-strip.json",
+      "durationMs": 1200
+    },
+    "attack": {
+      "manifest": "shadow-sorceress-sd-attack-strip.json",
+      "durationMs": 400,
+      "contactMs": 200,
+      "reducedDurationMs": 120,
+      "reducedContactMs": 60,
+      "finalFrameHold": true
+    },
+    "hit": {
+      "manifest": "shadow-sorceress-sd-hit-strip.json",
+      "durationMs": 300,
+      "reducedDurationMs": 120,
+      "finalFrameHold": true
+    }
+  },
+  "review": {
+    "source": "Existing approved concept and technically reviewed strips reused without image edits",
+    "browser": "Not run: only on user request"
+  },
+  "portraitSource": "assets/avatars/skins/source/mage-male-shadow-sorceress-shadow-world.png",
+  "portraitSize": [
+    512,
+    764
+  ]
+}

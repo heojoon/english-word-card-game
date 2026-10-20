@@ -967,3 +967,35 @@ body[data-screen="battle"] .arena.guardian-boss-arena.elliot-arena{background:#e
 @keyframes morgana-fall{to{transform:translateY(12px) rotate(75deg);opacity:.6}}
 @keyframes morgana-heal{0%{opacity:0;transform:scale(.6)}20%,75%{opacity:1}to{opacity:0;transform:scale(1.15)}}
 @media(prefers-reduced-motion:reduce){.morgana-idle{animation:none}.morgana-hit{animation:none;filter:brightness(1.3)}.morgana-defeat{animation:none;transform:rotate(65deg);opacity:.6}.morgana-heal-ring{animation:none}.morgana-chaos .battle-hero{rotate:none!important}}
+
+/* Shadow Sorceress skin reuses the approved boss strips, mirrored toward the enemy.
+   384x320 idle/attack cells, 448x320 knockdown cells; contact is frame 2 at 200ms. */
+.arena .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin{--battle-cell-height:115.29px;--battle-ground-bottom:13.118px;--battle-cell-aspect:1.2;animation:none!important;transform:none!important}
+.battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite{background-image:url('assets/monsters/shadow-sorceress/shadow-sorceress-sd-idle-strip.png');background-size:200% 100%;background-position:0 0;scale:-1 1;animation:shadow-skin-frames 1.2s steps(1,end) infinite!important}
+.arena.hit .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite{background-image:url('assets/monsters/shadow-sorceress/shadow-sorceress-sd-attack-strip.png');background-size:300% 100%;animation:shadow-skin-frames .4s steps(2,end) both!important}
+.arena.wrong .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin,.arena.story-stunned .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin{--battle-cell-aspect:1.4}
+.arena.wrong .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite,.arena.story-stunned .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite{background-image:url('assets/monsters/shadow-sorceress/shadow-sorceress-sd-hit-strip.png');background-size:300% 100%;animation:shadow-skin-frames .3s steps(2,end) both!important}
+.arena.hit:has(.battle-skin-mage_shadow_sorceress_skin) .enemy,.arena.hit:has(.battle-skin-mage_shadow_sorceress_skin) .enemy-label,.arena.hit:has(.battle-skin-mage_shadow_sorceress_skin) .crystal-shards i{animation-delay:.2s!important}
+.arena.paused .battle-skin-mage_shadow_sorceress_skin .battle-sprite{animation-play-state:paused!important}
+@keyframes shadow-skin-frames{from{background-position:0 0}to{background-position:100% 0}}
+@media(prefers-reduced-motion:reduce){
+  .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite{animation:none!important}
+  .arena.hit .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite{animation:shadow-skin-frames .12s steps(2,end) both!important}
+  .arena.wrong .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite,.arena.story-stunned .battle-hero-mage.battle-hero-male.battle-skin-mage_shadow_sorceress_skin .battle-sprite{animation:shadow-skin-frames .12s steps(2,end) both!important}
+  .arena.hit:has(.battle-skin-mage_shadow_sorceress_skin) .enemy,.arena.hit:has(.battle-skin-mage_shadow_sorceress_skin) .enemy-label,.arena.hit:has(.battle-skin-mage_shadow_sorceress_skin) .crystal-shards i{animation-delay:.06s!important}
+}
+
+
+/* Illustrated Shadow Sorceress skin uses the Starlight Rose portrait layout. */
+.hero.shadow-sorceress-scene,.gear-status-hero.shadow-sorceress-scene,.character-select .select-card-face.shadow-sorceress-scene{background:radial-gradient(ellipse at 75% 42%,#49236e,#211741 65%,#191530);isolation:isolate}
+.hero.shadow-sorceress-scene:before,.gear-status-hero.shadow-sorceress-scene:before,.character-select .select-card-face.shadow-sorceress-scene:before{content:"";position:absolute;inset:-24px;width:auto;height:auto;border:0;border-radius:0;box-shadow:none;background:url('assets/avatars/skins/mage-male-shadow-sorceress.webp?v=20261020-shadow-world') center 45%/cover no-repeat;filter:blur(24px);opacity:.42;pointer-events:none;z-index:0}
+.shadow-sorceress-scene .portrait img,.select-card-face.shadow-sorceress-scene>img{filter:none;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}
+.hero.shadow-sorceress-scene .portrait{width:156px;height:232px;right:12px;bottom:0}
+.hero.shadow-sorceress-scene>.level{z-index:4}
+.hero.shadow-sorceress-scene .hero-hint{padding:5px 8px;border-radius:99px;background:#211741d9}
+.hero.shadow-sorceress-scene .hero-copy{max-width:52%;text-shadow:0 2px 8px #191530}
+.hero.shadow-sorceress-scene .hero-copy h1{overflow-wrap:anywhere}
+.gear-status-hero.shadow-sorceress-scene:after,.gear-status-hero.shadow-sorceress-scene .gear-character:before{display:none}
+.gear-status-hero.shadow-sorceress-scene .gear-character{width:240px;height:350px;bottom:0}
+.gear-status-hero.shadow-sorceress-scene .gear-identity{text-shadow:0 2px 8px #191530}
+.character-select .select-card-face.shadow-sorceress-scene>img{left:0;bottom:0;width:100%;height:100%;object-fit:contain}

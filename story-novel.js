@@ -7690,7 +7690,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7707,7 +7707,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7724,7 +7724,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7750,7 +7750,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7767,7 +7767,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7784,7 +7784,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7801,7 +7801,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -7826,7 +7826,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7878,7 +7878,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -7906,7 +7906,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -7924,7 +7924,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -7959,7 +7959,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8020,7 +8020,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "모르가나",
@@ -8029,7 +8029,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8056,7 +8056,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8083,7 +8083,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8136,7 +8136,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8170,7 +8170,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8205,7 +8205,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8231,7 +8231,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8266,7 +8266,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8413,7 +8413,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8431,7 +8431,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -8456,7 +8456,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -8493,7 +8493,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 저주의 결말",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8593,7 +8593,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "모르가나",
@@ -8602,7 +8602,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8620,7 +8620,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -8637,7 +8637,7 @@ window.WORDORIA_NOVELS = {
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
-      "artPath": "assets/monsters/morgana/morgana-standing.webp"
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
     }
   ],
   "world6bPrologue": [
