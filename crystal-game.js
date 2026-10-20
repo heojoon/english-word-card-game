@@ -1140,8 +1140,42 @@
   function potionCount(type){return Number(potionInventory[potionTypes[type].countKey]||0);}
   function equippedPotions(){return [potionInventory.equipped_slot_1||null,potionInventory.equipped_slot_2||null];}
   function potionShopCard(type){const item=potionTypes[type];return `<button class="item potion-shop-card ${item.className}" data-action="potion-shop-item" data-potion="${type}"><span class="item-rarity">소모품</span><span class="item-art potion-shop-art"><span class="potion-icon ${item.className}" aria-hidden="true"></span></span><b>${item.name}</b><span class="item-stat">${item.effect} · 보유 ×${potionCount(type)}</span><small>◆ ${POTION_PRICE} · 구매하기</small></button>`;}
-  function showPotionShopItem(type){const item=potionTypes[type];if(!item)return;modal(`<div class="eyebrow">CONSUMABLE · ${item.effect}</div><div class="item-art item-detail-art potion-detail-art"><span class="potion-icon ${item.className}" aria-hidden="true"></span></div><h2>${item.name}</h2><p>${item.effect} 포션입니다. 구매 후 장비 상태창에서 최대 2개까지 장착할 수 있어요.</p><div class="item-detail-stat"><span>보유 수량</span><b>×${potionCount(type)}</b></div><div class="item-price-line"><b>◆ ${POTION_PRICE}</b><span aria-hidden="true">/</span><b class="item-sale-price" aria-label="판매가 ${Math.floor(POTION_PRICE/5)} 크리스털">◆ ${Math.floor(POTION_PRICE/5)}</b></div><button class="primary" data-action="buy-potion" data-potion="${type}" ${walletBalance()<POTION_PRICE?'disabled':''}>${walletBalance()<POTION_PRICE?'크리스털이 부족해요':'구매하기'}</button>`);}
-  async function purchasePotion(type,button){const item=potionTypes[type];if(!item||!selectedCharacter)return;if(walletBalance()<POTION_PRICE){toast('크리스털이 부족해요');return;}button.disabled=true;button.textContent='구매 중…';try{if(localMode){selectedCharacter.coins-=POTION_PRICE;const current={...potionInventory};current[item.countKey]=Number(current[item.countKey]||0)+1;demoState.potionInventory={...(demoState.potionInventory||{}),[selectedCharacter.id]:current};saveDemo();}else{const rows=await rpc('purchase_story_potion',{p_character_id:selectedCharacter.id,p_potion_type:type});const result=rows?.[0];if(result){if(accountMode)accountCrystals=Number(result.new_balance);else selectedCharacter.coins=Number(result.new_balance);}}await loadCharacterExtras();closeDialog();render();if(button.dataset.recovery==='true')showStoryRecovery(button.dataset.stage||'');toast(`${item.name}을(를) 구매했어요`);}catch(error){console.error(error);button.disabled=false;button.textContent='다시 시도';toast(String(error.message).includes('not enough')?'크리스털이 부족해요':'포션을 구매하지 못했어요. 다시 시도해 주세요.');}}
+  function showPotionShopItem(type){const item=potionTypes[type];if(!item)return;modal(`<div class="eyebrow">CONSUMABLE · ${item.effect}</div><div class="item-art item-detail-art potion-detail-art"><span class="potion-icon ${item.className}" aria-hidden="true"></span></div><h2>${item.name}</h2><p>${item.effect} 포션입니다. 구매 후 장비 상태창에서 최대 2개까지 장착할 수 있어요.</p><div class="item-detail-stat"><span>보유 수량</span><b>×${potionCount(type)}</b></div><div class="item-price-line"><b>◆ ${POTION_PRICE}</b><span aria-hidden="true">/</span><b class="item-sale-price" aria-label="판매가 ${Math.floor(POTION_PRICE/5)} 크리스털">◆ ${Math.floor(POTION_PRICE/5)}</b></div><div class="potion-purchase-actions">${[1,5,10].map(quantity=>`<button class="${quantity===1?'primary':'secondary'}" data-action="buy-potion" data-potion="${type}" data-quantity="${quantity}" ${potionPurchaseBusy||walletBalance()<POTION_PRICE*quantity?'disabled':''}>${quantity}개 구매 · ◆ ${POTION_PRICE*quantity}</button>`).join('')}</div>${walletBalance()<POTION_PRICE?'<p role="status">크리스털이 부족해요</p>':''}`);}
+  let potionPurchaseBusy=false;
+  async function purchasePotion(type,button){
+    const item=potionTypes[type],quantity=Number(button.dataset.quantity||1),character=selectedCharacter;
+    if(!item||!character||potionPurchaseBusy||![1,5,10].includes(quantity))return;
+    if(walletBalance()<POTION_PRICE*quantity){toast('크리스털이 부족해요');return;}
+    potionPurchaseBusy=true;
+    const buttons=Array.from(document.querySelectorAll('[data-action="buy-potion"]'),element=>({element,disabled:element.disabled})),label=button.textContent;
+    buttons.forEach(({element})=>element.disabled=true);button.disabled=true;button.textContent='구매 중…';
+    let purchased=0,purchaseError=null;
+    try{
+      if(localMode){
+        const current={...potionInventory};current[item.countKey]=Number(current[item.countKey]||0)+quantity;
+        character.coins-=POTION_PRICE*quantity;
+        demoState.potionInventory={...(demoState.potionInventory||{}),[character.id]:current};saveDemo();purchased=quantity;
+      }else{
+        // The existing RPC buys one potion atomically; stop at the first failure.
+        for(let index=0;index<quantity;index++){
+          const rows=await rpc('purchase_story_potion',{p_character_id:character.id,p_potion_type:type}),result=rows?.[0];
+          if(!result)throw new Error('potion purchase unavailable');
+          purchased++;
+          if(accountMode)accountCrystals=Number(result.new_balance);else character.coins=Number(result.new_balance);
+          if(selectedCharacter?.id===character.id)potionInventory={...potionInventory,red_potion_count:Number(result.red_potion_count),blue_potion_count:Number(result.blue_potion_count)};
+          button.textContent=`구매 중… ${purchased}/${quantity}`;
+        }
+      }
+    }catch(error){console.error(error);purchaseError=error;}
+    finally{
+      potionPurchaseBusy=false;buttons.forEach(({element,disabled})=>element.disabled=disabled);button.disabled=false;button.textContent=label;
+    }
+    if(purchased){
+      await loadCharacterExtras();closeDialog();render();
+      if(button.dataset.recovery==='true')showStoryRecovery(button.dataset.stage||'');
+      toast(purchaseError?`${item.name} ${purchased}개 구매 완료. 나머지 ${quantity-purchased}개는 구매하지 못했어요.`:`${item.name} ${purchased}개를 구매했어요`);
+    }else toast(String(purchaseError?.message).includes('not enough')?'크리스털이 부족해요':'포션을 구매하지 못했어요. 다시 시도해 주세요.');
+  }
   function potionSlotButton(index){const type=equippedPotions()[index],item=type?potionTypes[type]:null;return `<button class="gear-status-slot gear-status-potion-slot ${item?`equipped ${item.className}`:'empty'}" data-action="potion-slot" data-index="${index}" aria-label="소모품 슬롯 ${index+1}${item?`, ${item.name} 1개 장착`: ', 비어 있음'}" title="${item?`${item.name} · 1개 장착`:'소모품 장착'}"><span>${item?`<span class="potion-icon ${item.className}" aria-hidden="true"></span>`:icon('bag')}</span>${item?'':`<small>도구 ${index+1}</small><i>소모품</i>`}</button>`;}
   function showPotionSlot(index){const equipped=equippedPotions(),available=['red','blue'].filter(type=>potionCount(type)+(equipped[index]===type?1:0)>0),options=available.map(type=>{const item=potionTypes[type],current=equipped[index]===type,remaining=potionCount(type)+(current?1:0)-(current?1:0);return `<button class="potion-choice ${item.className}" data-action="equip-potion" data-slot-index="${index}" data-potion="${type}" ${current?'disabled':''}><span class="potion-icon ${item.className}" aria-hidden="true"></span><span><b>${item.name}</b><small>${item.effect} · 장착 후 남음 ×${remaining}</small></span><strong>${current?'장착 중':'1개 장착'}</strong></button>`;}).join('');modal(`<div class="eyebrow">ADVENTURE TOOLS · SLOT ${index+1}</div><h2>장착할 소모품을 선택해 주세요</h2><p>장착하면 보유 수량에서 1개가 빠집니다. 같은 포션도 각 칸에 1개씩 장착할 수 있어요.</p><div class="potion-choice-list">${options||'<div class="empty-state">보유한 포션이 없어요. 상점에서 포션을 구매해 주세요.</div>'}</div>${equipped[index]?`<button class="secondary potion-unequip" data-action="unequip-potion" data-slot-index="${index}">장착 해제 · 인벤토리로 돌려놓기</button>`:''}`);}
   async function setPotionLoadout(index,type){const current=equippedPotions(),slots=current.slice();slots[index]=type;const nextCounts={red:potionCount('red')+current.filter(value=>value==='red').length-slots.filter(value=>value==='red').length,blue:potionCount('blue')+current.filter(value=>value==='blue').length-slots.filter(value=>value==='blue').length};if(nextCounts.red<0||nextCounts.blue<0){toast('보유 수량이 부족해 장착할 수 없어요');return;}try{if(localMode){potionInventory={...potionInventory,red_potion_count:nextCounts.red,blue_potion_count:nextCounts.blue,equipped_slot_1:slots[0],equipped_slot_2:slots[1]};demoState.potionInventory={...(demoState.potionInventory||{}),[selectedCharacter.id]:potionInventory};saveDemo();}else{await rpc('equip_story_potions',{p_character_id:selectedCharacter.id,p_slots:slots});await loadCharacterExtras();}closeDialog();render();toast(type?'포션을 장착했어요':'포션 장착을 해제했어요');}catch(error){console.error(error);toast(String(error.message).includes('insufficient potion')?'포션 보유 수량이 부족해요':'포션 장착에 실패했어요. 다시 시도해 주세요.');}}
