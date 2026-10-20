@@ -108,16 +108,24 @@ test('production JSON potion response recovers HP 0 through the real HTTP RPC wr
     const storage=new Map(),c=setup(storage,false),requests=[];c.saveStoryVitals({hp:0,mp:0});
     if(equipped)c.potionInventory.equipped_slot_1='red';
     const before=c.storyHealingCount();
+    let serverInventory={...c.potionInventory};
     Object.assign(c,{accountMode:true,DB_URL:'https://test.invalid',DB_KEY:'test-key',accountSession:{access_token:'test-token'},window:{WORDORIA_AUTH_CLIENT:{auth:{getSession:async()=>({data:{session:{user:{id:c.accountUserId},access_token:'test-token'}}})}}},fetchWithTimeout:async(url,options)=>{
-      requests.push({url,body:JSON.parse(options.body)});
-      const inventory={red_potion_count:equipped?2:1,blue_potion_count:1,equipped_slot_1:'red',equipped_slot_2:'blue'};
-      const result=url.endsWith('/equip_story_potions')?[inventory]:{...inventory,type:'red',equipped_slot_1:null};
+      const body=JSON.parse(options.body);requests.push({url,body});
+      if(url.endsWith('/equip_story_potions')){
+        const current=[serverInventory.equipped_slot_1,serverInventory.equipped_slot_2],slots=body.p_slots;
+        for(const type of ['red','blue'])serverInventory[`${type}_potion_count`]+=current.filter(value=>value===type).length-slots.filter(value=>value===type).length;
+        [serverInventory.equipped_slot_1,serverInventory.equipped_slot_2]=slots;
+        return {ok:true,text:async()=>JSON.stringify([serverInventory])};
+      }
+      const index=body.p_slot_index-1,type=[serverInventory.equipped_slot_1,serverInventory.equipped_slot_2][index];
+      serverInventory={...serverInventory,[`equipped_slot_${index+1}`]:null};
+      const result={...serverInventory,type};
       return {ok:true,text:async()=>JSON.stringify(result)};
     }});
     vm.runInContext(source.slice(source.indexOf('  async function headers('),source.indexOf('  const characterDef =')),c);
     await c.recoverStoryHp('two',{});
     assert.equal(c.storyVitals().hp,1);assert.equal(c.storyVitals().mp,0);assert.equal(c.storyHealingCount(),before-1);
-    assert.equal(c.potionInventory.equipped_slot_1,null);assert.equal(c.potionInventory.equipped_slot_2,'blue');assert.match(c.modalHtml,/스테이지 입장/);
+    assert.equal(c.potionInventory.equipped_slot_1,equipped?'red':null);assert.equal(c.potionInventory.equipped_slot_2,'blue');assert.match(c.modalHtml,/스테이지 입장/);
     assert.equal(requests.filter(request=>request.url.endsWith('/use_story_potion')).length,1);
     c.startStoryStage('two');assert.equal(c.page,'battle');assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
     assert.equal(setup(storage,false).storyVitals().hp,1);
@@ -164,10 +172,30 @@ test('collection potions show total counts and offer equip and use at HP zero',a
   c.showPotionCollection('blue');
   assert.match(c.modalHtml,/data-action="potion-collection-equip"/);
   assert.match(c.modalHtml,/data-action="story-recover"[^>]*>사용하기/);
+  assert.match(c.modalHtml,/data-action="story-recover-all"[^>]*>전부 회복 사용/);
   c.setPotionLoadout=async(index,type)=>{assert.equal(index,0);assert.equal(type,'red');};
   await c.equipPotionToEmptySlot('red',{});
   c.saveStoryVitals({hp:2,mp:2});c.showPotionCollection('blue');
   assert.match(c.modalHtml,/data-action="story-recover"[^>]*disabled/);
+  assert.match(c.modalHtml,/data-action="story-recover-all"[^>]*disabled/);
+});
+
+test('full recovery uses bag potions first and equipped potions only after the bag is empty',async()=>{
+  const c=setup();c.saveStoryVitals({hp:0,mp:0});
+  c.potionInventory={red_potion_count:2,blue_potion_count:0,equipped_slot_1:'red',equipped_slot_2:null};
+  await c.recoverStoryHp('',{},'red',true);
+  assert.equal(c.storyVitals().hp,2);assert.equal(c.potionInventory.red_potion_count,0);assert.equal(c.potionInventory.equipped_slot_1,'red');
+  c.saveStoryVitals({hp:0,mp:0});
+  await c.recoverStoryHp('',{},'red',true);
+  assert.equal(c.storyVitals().hp,1);assert.equal(c.potionInventory.equipped_slot_1,null);assert.equal(c.storyPotionCount('red'),0);
+});
+
+test('full recovery stops at max MP and consumes only the required potion count',async()=>{
+  const c=setup();c.saveStoryVitals({hp:1,mp:0});
+  c.potionInventory={red_potion_count:0,blue_potion_count:3,equipped_slot_1:null,equipped_slot_2:'blue'};
+  await c.recoverStoryHp('',{},'blue',true);
+  assert.equal(c.storyVitals().mp,2);assert.equal(c.potionInventory.blue_potion_count,1);assert.equal(c.potionInventory.equipped_slot_2,'blue');
+  assert.match(c.message,/마나포션 2개/);
 });
 
 function accountSetup(storage=new Map(),server=new Map()){

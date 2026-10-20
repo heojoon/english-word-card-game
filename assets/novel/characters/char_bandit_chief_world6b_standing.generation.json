@@ -1,0 +1,21 @@
+{
+  "asset": "char_bandit_chief_world6b_standing.png",
+  "use_case": "illustration-story",
+  "usage": "World 6B stage 10 visual-novel dialogue for the Bandit Chief, including the encounter, defeat prelude, release branch, and arrest branch.",
+  "references": [
+    "char_bandit_chief_world6b_black_coat_design.png"
+  ],
+  "dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "format": "RGBA PNG",
+  "sha256": "33f69c8c1b05ffaee1957ce82a96bddafe5d956facc9a343ddd7edd7c2b7d99d",
+  "prompt": "Use case: illustration-story. Asset type: Wordoria Crystal Quest World 6B visual-novel standing character CG. Input image 1 is the authoritative character identity and finalized black-coat costume reference. Preserve the same rugged adult male face, tousled dark-brown hair, light stubble, strong brows, confident mischievous grin, black and charcoal long coat, black fur shoulder mantle, cream open-collar tunic, worn brown leather belts and boots, restrained gold coin ornaments, and the same very large chipped double-headed steel axe with wrapped wooden handle. Create one polished isolated full-body standing CG for a mobile visual-novel story scene. Use natural heroic adult proportions, not chibi, in a three-quarter view with a relaxed cocky stance, axe resting securely across one shoulder, free hand near his belt, and both boots visible. Keep the character's entire silhouette and complete axe inside a portrait canvas with generous clear margins. Use bright premium 2D anime fantasy illustration, clean colored linework, crisp soft cel shading, selective smooth gradients, soft upper-left daylight, subtle cool violet ambient shadows, and restrained warm gold highlights. Use true transparent alpha, preserve the finalized black coat and identity, keep cream cloth opaque, and include no floor shadow, panels, text, frame, scenery, extra characters, blood, gore, pixel art, 3D, chibi proportions, cropping, or watermark.",
+  "review": {
+    "identity": "Matches the finalized black-coat design reference, including face, hair, fur mantle, layered belts, coin ornaments, boots, and chipped axe.",
+    "composition": "Complete head-to-toe portrait silhouette with both boots and the full axe inside the canvas.",
+    "alpha": "Verified RGBA with transparent exterior pixels; opaque cream cloth is preserved.",
+    "status": "technical review complete; user approval not inferred"
+  }
+}

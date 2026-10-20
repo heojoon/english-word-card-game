@@ -728,6 +728,10 @@ body[data-screen="battle"] .arena.dark-ice-frozen.paused .dark-ice-prison{animat
 .item-price-line .item-sale-price{color:#d83a4a}
 .item-equip-sale-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
 dialog .item-equip-sale-actions>button{width:100%;margin:0;min-height:44px}
+.potion-use-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+dialog .potion-use-actions>button{width:100%;min-width:0;min-height:46px;margin:0;padding-inline:10px;white-space:normal;line-height:1.25}
+.potion-recovery-buy{width:100%;margin:8px 0 12px}
+@media(max-width:360px){.potion-use-actions{gap:7px}.potion-use-actions>button{font-size:10px}}
 
 /* World 4-20: SD Red Reaper and card permutations controlled by combat time. */
 body[data-screen="battle"] .arena.red-reaper-arena{background:#8c82ad url('assets/environments/world-4/20-red-reaper-battle.webp') center bottom/cover no-repeat}
@@ -901,6 +905,8 @@ body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{backgro
 .story-branch-options button { width: 100%; min-height: 88px; padding: 18px 14px; white-space: normal; line-height: 1.6; text-align: left; }
 .story-branch-options small { display: block; font-weight: 500; opacity: .85; }
 .story-branch-error { color: var(--violet); }
+.world-six-a-ending-choice,.world-six-b-ending-choice{width:min(100%,680px);margin:clamp(24px,8vh,72px) auto;padding:clamp(22px,6vw,40px);border:1px solid #d9d4f2;border-radius:28px;background:linear-gradient(145deg,#fff,#f0edff);box-shadow:0 20px 50px #24214c24}
+.world-six-a-ending-choice .story-branch-options button,.world-six-b-ending-choice .story-branch-options button{min-height:96px}
 
 /* World 6B: measured 725 x 2170 map, with compact touch targets along the downward route. */
 .story-world-map-6{aspect-ratio:725/2170}

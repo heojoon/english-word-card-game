@@ -6604,6 +6604,2612 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/novel/bgi/world5-boss-start-scene-04.webp"
     }
   ],
+  "world6aPrologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 반전된 세계에서 걷고 있다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "하아… 여기가 반전세계라니. 정말 이상한 곳이네.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그러게. 하늘에는 땅이 떠 있고, 땅에는 별이 박혀 있네.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "근데 이 세계에서 어떻게 나가야 하지?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그걸 나한테 물어보면 어떡하냐.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "너는 나보다 아는 게 많잖아.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그렇다고 모든 걸 아는 건 아니거든?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아서랑 파이터, 바이올렛은 무사하겠지…?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "네가 포탈로 던져 넣었으니까 살아 있을 거야.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그래… 꼭 다시 만나야 해.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 가방에서 검보랏빛 결정을 꺼낸다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "한번 사용해 볼까?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "마력도 강해졌네. 꽤 쓸 만하겠어.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(멀리서 땅이 진동한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "shake": true
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "잠깐… 저건?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(안개 너머로 거대한 돌의 형체들이 나타난다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "말도 안 돼…! 저 녀석들은 1만 년 전에 멸종했잖아!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "심연의 지배자의 수하들… 골렘이야.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저런 녀석들이 왜 여기 있는 거지?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이 세계가 정상적이지 않다는 증거겠지.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "일단 조심해서 지나가자.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(두 인격의 대화가 끝나자 유적 안쪽에서 거대한 울음소리가 들린다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "???",
+      "className": "mystery",
+      "text": "침입자… 발견….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 프롤로그",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    }
+  ],
+  "world6aMidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 유적의 깊은 곳에 도착한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "여기까지 오는 데도 꽤 힘들었네.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이상해. 심연의 골렘들이 점점 강해지고 있어.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "그러고 보니 처음 본 녀석들보다 훨씬 커졌어.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "중심부에 가까워질수록 마력이 강해지는 것 같아.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거대한 석문이 저절로 열린다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "문이 열렸어…!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(석조 제단 위에서 검보라색 마력이 솟아오른다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "크르르르… 침입자….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "뭐야?! 엄청 크잖아!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "조심해. 일반 골렘과는 비교도 안 돼.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "이곳은… 심연의 지배자의 영역….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "심연의 지배자? 그게 누구야?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "하찮은 존재가 감히 그분의 이름을 묻는가!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "아니, 그냥 궁금해서 물어본 건데….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "대화가 안 통하는 녀석이네.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "이곳에 들어온 자는 살아서 나갈 수 없다!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "난 꼭 나가야 하거든? 친구들이 기다리고 있어.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "너의 생명력은 곧 심연의 제물이 될 것이다!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "저 녀석, 몸 전체에서 강한 저주가 느껴져.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "저주라니?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "체력을 직접 깎아내리는 종류의 마법이야.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "심연의 고통을 맛보아라!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(골렘의 팔에서 검은 사슬이 뻗어 나온다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "위험해!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 뒤로 뛰어 공격을 피한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "좋아. 공격 패턴은 대충 알겠어.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "방심하지 마. 저 녀석은 아직 진짜 힘을 보여주지 않았어.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "침입자… 제거한다!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "좋아, 덤벼!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 유적",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    }
+  ],
+  "world6aMidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(심연의 골렘이 무릎을 꿇는다. 온몸이 부서져 있다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "심연의 골렘! 이제 항복해!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "그럴 수 없다…!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "아직도 싸울 생각이야?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "나는 쓰러지더라도 네 체력의 절반은 빼앗을 수 있다!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "상관없어! 익스플로전!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거대한 폭발이 골렘을 향한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "쉴드!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 방어막이 폭발을 막아낸다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "크하하하! 어림없다!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쉐도우 소서러스의 모습이 사라진다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "…어디로 갔지?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(골렘의 뒤에서 쉐도우 소서러스가 나타난다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "쉐도우… 임팩…!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "검은 사슬!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 사슬이 쉐도우 소서러스의 온몸을 휘감는다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "크윽! 몸이 안 움직여!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "심연의 고통!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(강력한 저주가 몸속으로 파고든다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "크아아아악!!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "조심해! 이 공격을 두 번만 더 당했다가는….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "죽겠지…!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "나 진짜 이 몸에서 나가고 싶다….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "그래서 어쩌라고?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "주도권 맡겨.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "뭐?! 너한테?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "누구와 이야기하는 것이냐? 허공에 대고 떠들다니, 정신이 나간 모양이군!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "어쨌든 끝이다! 최고의 고통을 선사해 주마!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "페인… 임ㅍ…!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(순간 쉐도우 소서러스의 눈빛이 검게 변한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "ㅋㅋㅋㅋㅋㅋ! 주문 봉인!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "읍… 읍…!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "시끄럽게 굴더니 이제 조용해졌네?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "심연의 골렘",
+      "className": "golem",
+      "text": "으으으…!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/abyss-golem/monster_abyss_golem_standing.png"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "죽어라!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "데스 익스플로전!!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "[연출",
+      "className": "scene",
+      "text": "검보라색 에너지 폭발 / 화면 암전과 강한 진동",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true,
+      "shake": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거대한 폭발이 신전을 뒤흔든다. 심연의 골렘은 흔적도 없이 사라진다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "후우… 생각보다 별거 아니잖아?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 신체의 주도권을 되찾는다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "쉐도우 소서러스(변신)",
+      "className": "mage",
+      "text": "크윽… 일단 변신 해제….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(원래 모습으로 돌아온 소서러스가 무릎을 꿇는다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "하아… 하아….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다크 소서러스… 대체 네 정체가 뭐야?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…뭐가?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "어떻게 저 골렘을 한 번에 없애버린 거야?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그냥 마법 좀 썼는데?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그냥 마법이라고?! 그게?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그보다 빨리 가자. 아직 최종 보스가 남았잖아.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…그래. 돌아가려면 끝까지 가야겠지.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 심연의 골렘 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    }
+  ],
+  "world6aBossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 긴 복도를 지나 거대한 왕좌의 방에 도착한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "하아… 드디어 끝인가?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "아직 모르지. 조심해.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "근데 여긴 정말 조용하네.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "조용할 때가 더 위험한 법이야.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아… 심심하다. 나 혼자네.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…나도 있거든?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아, 그렇지. 내 머릿속에 한 명 더 있지.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…사람 취급은 하는 거냐?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "사람이 아니잖아. 인격이잖아.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "어쨌든 최종 흑막만 쓰러뜨리면 애들한테 돌아갈 수 있지 않을까?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "가능성은 있겠지.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아서랑 바이올렛, 파이터… 다들 기다리고 있을 거야.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "???",
+      "className": "mystery",
+      "text": "가소롭구나….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "???",
+      "className": "mystery",
+      "text": "한낱 벌레에 불과한 네가 이곳까지 오다니.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(왕좌 주변의 공간이 뒤틀리기 시작한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "누구야?! 모습을 드러내!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거대한 왕좌 위에 모르가나가 나타난다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "나는 반전세계의 지배자이자 모든 뒤틀린 공간을 다스리는 모르가나다!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네가 이 세계를 지배한다고?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "이곳의 시간과 공간, 모든 만물은 내 뜻에 따라 움직인다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 네가 날 원래 세계로 보내줄 수도 있겠네?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "하찮은 필멸자여. 감히 나에게 명령하는 것이냐?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "명령이 아니라 물어보는 거거든?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "얘는 상대가 누군지 몰라도 겁이 없네….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "네가 심연의 골렘을 파괴했다는 사실은 알고 있다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그랬지. 꽤 강하더라.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "하지만 그것은 내 수하에 불과하다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "뭐?! 그 정도 괴물이 그냥 수하라고?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "네 힘으로는 나에게 상처 하나 입히지 못할 것이다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "해보지 않고 어떻게 알아? 덤벼라!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "어리석구나. 만물이 내 조종 아래 있는데….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갑자기 바닥이 살아 움직이며 거대한 돌기둥이 솟아오른다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "뭐야?! 땅이 움직여…!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "이것이 반전세계의 지배자가 가진 힘이다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다크!! 좀 도와줘!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "하아… 알았어. 이번에는 제대로 해보자고.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "주도권 지배!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스의 눈동자가 검게 변하고 다크 소서러스가 몸의 주도권을 장악한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "자, 이제 상대는 나다!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "흥미롭군. 하나의 몸에 두 개의 인격이라….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "구경은 끝났어. 덤벼!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나의 왕좌",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    }
+  ],
+  "world6aBossEndPrelude": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나가 왕좌 앞에서 천천히 일어난다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "제법이군. 여기까지 버티다니.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "너도 생각보다 강하네.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "하지만 여기까지다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그건 내가 할 말인데?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "포이즌 쇼크!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(맹독의 마력이 모르가나를 향해 날아간다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "가소롭군.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나가 손을 들어 마법을 반사한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "뭐?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반사된 마법이 다크 소서러스에게 적중한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "커헉?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다크 소서러스가 뒤로 날아가 벽에 처박힌다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "shake": true
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이런 씨… 마나가…!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "이제 끝이구나.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "잘 가라, 필멸자여.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나의 손 위에 거대한 진노란색 마력 구체가 생성된다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "누가 필멸자래…?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "…무슨 소리냐?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "난 반필멸자거든…?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "싸우다 죽지 않아….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "허세를 부리는구나!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "허세인지 아닌지… 직접 확인해 보시지!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다크 소서러스가 남은 마력을 주먹에 집중한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "진심 일격…!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "다크… 익스플로전 블로우!!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검보라색 마력이 거대한 폭발을 일으키며 모르가나에게 돌진한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "…!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나가 황금색 방어막을 펼친다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "[효과음",
+      "className": "scene",
+      "text": "콰아아앙!! → 쩌저적!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(방어막에 거대한 균열이 생긴다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "이, 이럴 수가…! 내 방어막이?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "아직 끝나지 않았어!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "연계 공격… 움직임 제한!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 마력의 사슬이 모르가나의 몸을 묶는다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "이런 것쯤은…!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나가 사슬을 풀려고 한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이때를 노렸다!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "…?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "마지막 필살!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "사이코키네시스!!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나의 몸이 공중으로 떠오른다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "뭐, 뭐냐?! 내 몸이…!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "날아가라!!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나가 엄청난 속도로 날아가 왕좌 뒤편의 거대한 벽에 처박힌다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "shake": true
+    },
+    {
+      "speaker": "[효과음",
+      "className": "scene",
+      "text": "콰아아아아아아앙!!! / 화면 전체 흔들림",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "flash": true,
+      "shake": true
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(벽이 무너지고 거대한 먼지구름이 발생한다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "shake": true
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "하아… 하아….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스(머릿속)",
+      "className": "mage",
+      "text": "해치웠나?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…….",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스(머릿속)",
+      "className": "mage",
+      "text": "다크? 왜 대답이 없어?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "내가 다 때려잡았는데 회복 주문을 걸고 자빠졌냐!!!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스(머릿속)",
+      "className": "mage",
+      "text": "아니, 혹시 모르잖아!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "꼭 그런 말을 해야겠냐?!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(먼지구름이 서서히 걷힌다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(무너진 왕좌 아래에서 희미한 황금빛이 깜빡인다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스(머릿속)",
+      "className": "mage",
+      "text": "…어? 저기 뭔가 빛나는데?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…뭐?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(두 인격이 동시에 무너진 왕좌를 바라본다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "(힘들어하며) 이런..",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "아직 살아 있다니 끈질기군 !!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "(힘을 모은다...) 오오오오오오오!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "사이코키네시스 !!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "( 모르가나의 몸이 결박 된다. 모르가나는 몸을 부르르 떤다)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "내 패배를 인정하마.. 목숨만은.. 제발 자비를 베풀어줘..",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이미 저항할 수 없는 적을 죽이는 건 웬지 떨더름 한데 ...;;;",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "무슨 헛소리야!! 빨리 끝내버리자..",
+      "scene": "inverted-world",
+      "location": "반전세계 · 모르가나 격파",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    }
+  ],
+  "world6aBossEndKill": [
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이얏!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "으아아아아아아아아악!! 너희들을 저주한다!!!!!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나가 먼지가 되어서져 버린다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "으윽 ... 뭐지? 심장이.. 모르가나의 저주인가!?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "모르가나를 죽이고 나니 뒤쪽에서 벌벌 떨고 있던 파란리본 올빼미가 나온다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이 녀석을 여기 두고 갈 순 없지",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "반짝꼬리여우",
+      "className": "scene",
+      "text": "(기뻐하는 모습이다.)",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "- 월드 7A 요정의 나라",
+      "scene": "inverted-world",
+      "location": "반전세계 · 저주의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    }
+  ],
+  "world6aBossEndSpare": [
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그냥 가자.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "무슨 짓이야. 이렇게 힘들어 이겨 놓고 그냥 간다고?",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "...",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잘 모르겠어 차마 ...",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "가라, 앞으로 또 다시 악한 일을 한다면 다시 와서 너를 가만히 두지 않을 거야!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "고..고맙다..",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "나를 살려주는 대신 이 세계에 숨겨진 보물에 대한 이야기를 해주지.. 반전세계에 존재하는 검은 호수 안에는 아무도 발견하지 못한 것이 있다고 하더군...",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그런 이야기는 들어 본 적이 없는데!? 헛소리",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "검은 호수는 사실 심연의 심연을 들여다 봐야지만 들어갈 수 있기 때문이지, 자 이 구슬을 가져가라 그럼 검은 호수에 들어갈 수 있을 것이다.",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "음.. 밑져야 본전이니 한번 가보자.. 아서와 동료들을 만나기 전에 뭔가 굉장한 걸 가지고 가면 좋을 것 같아!",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "그럼 나는 이만.. 부디 심연이 너를 바라보지 않기를..",
+      "scene": "inverted-world",
+      "location": "반전세계 · 자비의 결말",
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+    }
+  ],
+  "world6bPrologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(동굴을 탈출한 아서, 파이터, 바이올렛이 모닥불 앞에 앉아 있다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "수도로의 출발",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "소서러스도 무사히 빠져나왔겠지…?",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "수도로의 출발",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "분명 방법을 찾았을 거야. 우리도 할 일을 해야 해.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "수도로의 출발",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "타락한 천사에 대한 단서를 찾아보자. 워드 왕국 수도라면 정보를 얻을 수 있을 거야.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "수도로의 출발",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "좋아. 그럼 수도로 가자!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "수도로의 출발",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "오늘은 여기서 쉬고, 날이 밝으면 출발하자.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "수도로의 출발",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(하룻밤이 지나고, 세 사람은 수도를 향해 길을 나선다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "수도로의 출발",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검과 도끼를 든 도적들이 길을 막는다.)",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "길을 막는 도적들",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "길을 막고 뭘 하려는 거야?",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "길을 막는 도적들",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(도적들이 무기를 치켜들며 달려든다.)",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "길을 막는 도적들",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "flash": true
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "모두 조심해! 제압하되 죽이지는 마!",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "길을 막는 도적들",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "알겠어. 움직임을 막을게!",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "길을 막는 도적들",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "화면 전환 → 일반 전투 진입",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "길을 막는 도적들",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    }
+  ],
+  "world6bMidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(도적들이 쓰러져 움직이지 못한다. 거친 발소리와 함께 도적 대장이 나타난다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "도적 대장의 등장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "shake": true
+    },
+    {
+      "speaker": "도적 대장",
+      "className": "bandit-chief",
+      "text": "감히 내 부하들을 이렇게 만들다니! 내가 복수해 주마!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "도적 대장의 등장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_bandit_chief_world6b_standing.png"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "목숨은 다치게 하지 않았어. 길을 비켜 줘.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "도적 대장의 등장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "도적 대장",
+      "className": "bandit-chief",
+      "text": "그 말을 믿을 것 같으냐!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "도적 대장의 등장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_bandit_chief_world6b_standing.png"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "말이 안 통하네. 이쪽도 제압할 수밖에 없겠어.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "도적 대장의 등장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이번에도 죽이지 마. 모두 준비해!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "도적 대장의 등장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "화면 전환 → 도적 대장 전투",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "도적 대장의 등장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    }
+  ],
+  "world6bMidbossEndPrelude": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(패배한 도적 대장이 무기를 내려놓고 무릎을 꿇는다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "도적 대장",
+      "className": "bandit-chief",
+      "text": "사, 살려 주세요! 제가 값나가는 보물 아이템을 드릴 테니 용서해 주세요!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_bandit_chief_world6b_standing.png"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이제 와서 보물로 넘어가려고?",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아서, 어떻게 할 거야?",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    }
+  ],
+  "world6bMidbossEndRelease": [
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그래, 다음부터는 그러면 안 된다.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "도적 대장",
+      "className": "bandit-chief",
+      "text": "네! 다음에 또 안 봤으면 하네요!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_bandit_chief_world6b_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(도적 대장이 서둘러 떠난다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "도적 대장의 속마음",
+      "className": "bandit-chief",
+      "text": "두고 보자…",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_bandit_chief_world6b_standing.png"
+    }
+  ],
+  "world6bMidbossEndArrest": [
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그냥 풀어줄 수는 없어. 우리와 함께 수도로 가자.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "도망칠 생각은 하지 마.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 도적 대장을 데리고 수도로 향한다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    }
+  ],
+  "world6bCapital": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(수도에 도착한 일행이 거리를 돌아다니며 정보를 모은다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "왕성의 주교가 타락한 천사에 대해 알고 있다는 소문이 있어.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 주교를 찾아가면 되겠네!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "왕성에 바로 들어가기는 어려울 거야. 먼저 내 스승님을 만나 보자.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "네 스승님이라면…?",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "기사단장 엘로잇 님. 세계에 단 다섯 명뿐인 소드마스터 중 한 분이야.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그런 분이 네 스승님이라고?!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 우리 사정을 말씀드리면 주교를 만날 방법을 알려 주실지도 몰라.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세 사람은 기사단장 엘로잇의 저택으로 향한다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "타락한 천사의 단서",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    }
+  ],
+  "world6bBossStart": [
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "스승님, 오랜만입니다.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "스승과의 재회",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "아서로구나. 동료들과 함께 무슨 일이지?",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "스승과의 재회",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "타락한 천사에 대한 정보를 찾고 있습니다. 왕성의 주교님이 아신다는 소문을 들었어요.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "스승과의 재회",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "주교님을 만날 수 있도록 도와주실 수 있나요?",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "스승과의 재회",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "먼저 너희가 이 일에 나설 실력이 있는지 확인하고 싶구나.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "스승과의 재회",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "내 공격을 5분 동안 견뎌 보아라. 시험을 통과하면 주교님께 전할 추천 편지를 준비해 주마.",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "5분의 시험",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "5분이라… 해 보자!",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "5분의 시험",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "방심하면 안 돼. 스승님은 소드마스터야.",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "5분의 시험",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "준비되었느냐? 시작하겠다!",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "5분의 시험",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "화면 전환 → 생존형 보스전",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "5분의 시험",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    }
+  ],
+  "world6bBossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "타이머 00:00 → 시험 종료",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "시험 종료",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "거기까지. 5분이 지났다.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "시험 종료",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(엘로잇이 검을 내린다. 일행은 숨을 고른다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "시험 종료",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "하아… 버텼다!",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "시험 종료",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "정말 만만한 시험이 아니었어…",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "시험 종료",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "스승님, 저희는 통과한 건가요?",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "시험 종료",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "그래. 너희의 실력은 충분히 확인했다.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "시험 종료",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "약속대로 왕성의 주교님께 전달할 추천 편지를 준비하마.",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "내일의 약속",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "감사합니다, 스승님!",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "내일의 약속",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "엘로잇",
+      "className": "warrior",
+      "text": "편지는 내일 준비해 두겠다. 오늘은 푹 쉬도록 해라.",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "내일의 약속",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "드디어 타락한 천사의 단서에 다가갈 수 있겠네.",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "내일의 약속",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "좋아! 내일은 왕성이다!",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "내일의 약속",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행은 다음 날을 기다리며 휴식을 취한다.)",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "내일의 약속",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "페이드아웃 → 월드 6B 이야기 종료",
+      "scene": "capital-road",
+      "sceneNumber": 2,
+      "location": "내일의 약속",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    }
+  ],
   "world4Potion4": [
     {
       "speaker": "내레이션",

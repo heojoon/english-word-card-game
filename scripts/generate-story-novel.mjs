@@ -220,6 +220,68 @@ export function parseWorldFiveNarrative(markdown,backgroundGroup){
   if(!lines.length||sceneNumber<3)throw new Error('World 5 narrative is incomplete');
   return lines;
 }
+export function parseWorldSixANarrative(markdown,{section='all',location='반전세계'}={}){
+  const lines=[];
+  const backgroundPath='assets/environments/world-6a/01-inverted-world-battle.webp';
+  const speakerClasses={...classes,'쉐도우 소서러스(변신)':'mage','다크 소서러스':'mage','소서러스(머릿속)':'mage','심연의 골렘':'golem','모르가나':'mystery'};
+  const artPaths={
+    '다크 소서러스':'assets/novel/characters/char_dark_sorcerus_world5_standing.webp',
+    '쉐도우 소서러스(변신)':'assets/novel/characters/char_dark_sorcerus_world5_standing.webp',
+    '심연의 골렘':'assets/monsters/abyss-golem/monster_abyss_golem_standing.png'
+  };
+  let active=section==='all'||section==='prelude';
+  for(const raw of markdown.replace(/\r\n/g,'\n').split('\n')){
+    const block=raw.trim();
+    if(!block)continue;
+    if(/^### 모르가나를\s*죽인다\.?$/.test(block)){active=section==='kill';continue;}
+    if(/^### 모르가나를\s*살린다\.?$/.test(block)){active=section==='spare';continue;}
+    if(section==='prelude'&&block.includes('선택지가 나온다'))break;
+    if(!active||block==='---'||block.startsWith('#')||block.startsWith('- 다음')||block.startsWith('- 보상'))continue;
+    const dialogue=block.match(/^([^:\n]+?)\s*:\s*([\s\S]+)$/);
+    const speaker=(dialogue?.[1]||'내레이션').trim();
+    const text=(dialogue?.[2]||block).replace(/^\[|\]$/g,'').replace(/\s*\n\s*/g,' ').trim();
+    if(!text||text.includes('선택지가 나온다')||/HP\s*,\s*MP\s*가 각각 0/.test(text))continue;
+    const line={speaker,className:speakerClasses[speaker]||(speaker==='???'?'mystery':'scene'),text,scene:'inverted-world',location,backgroundPath};
+    if(artPaths[speaker])line.artPath=artPaths[speaker];
+    if(/폭발|콰아|눈빛이 검게|마력 구체/.test(text))line.flash=true;
+    if(/진동|흔들림|벽에 처박|무너지고/.test(text))line.shake=true;
+    lines.push(line);
+  }
+  if(!lines.length)throw new Error(`World 6A narrative section is incomplete: ${section}`);
+  return lines;
+}
+export function parseWorldSixBNarrative(markdown,{section='all',location='왕국수도로 가는 길'}={}){
+  const lines=[];
+  const backgroundPath='assets/environments/world-6b/01-capital-road-battle.webp';
+  const speakerClasses={...classes,'도적 대장':'bandit-chief','도적 대장의 속마음':'bandit-chief','엘로잇':'warrior'};
+  const artPaths={
+    '도적 대장':'assets/novel/characters/char_bandit_chief_world6b_standing.png',
+    '도적 대장의 속마음':'assets/novel/characters/char_bandit_chief_world6b_standing.png'
+  };
+  let sceneNumber=0,sceneLocation=location,active=section==='all'||section==='prelude';
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    if(!block)continue;
+    const sceneHeading=block.match(/^## Scene (\d+)\. (.+)$/);
+    if(sceneHeading){sceneNumber=Number(sceneHeading[1]);sceneLocation=sceneHeading[2];continue;}
+    if(/^## 선택\./.test(block)){if(section==='prelude')break;active=false;continue;}
+    if(/^### A\. 풀어준다/.test(block)){active=section==='release';continue;}
+    if(/^### B\. 풀어주지 않고 수도로 데려간다/.test(block)){active=section==='arrest';continue;}
+    if(/^## (보상 및 후속 연결 메모|게임 연결 메모|후속 연결 메모)/.test(block))break;
+    if(!active||!sceneNumber||block.startsWith('#')||block.startsWith('- ')||block.startsWith('다음 스토리:')||block.startsWith('영어 단어 게임')||block.startsWith('왕국 수도로 가는 길')||block.startsWith('기사단장 엘로잇의 저택')||block.startsWith('배경:')||block.startsWith('일반 적:'))continue;
+    const dialogue=block.startsWith('[')?null:block.match(/^([^:\n]+?):\s*([\s\S]+)$/);
+    const speaker=(dialogue?.[1]||'내레이션').trim();
+    const text=(dialogue?.[2]||block).replace(/^\[|\]$/g,'').replace(/\s*\/\s*BGM:[\s\S]*$/,'').replace(/\s*\/\s*제한 시간[\s\S]*$/,'').replace(/\s*\n\s*/g,' ').trim();
+    if(!text)continue;
+    const line={speaker,className:speakerClasses[speaker]||(speaker==='???'?'mystery':'scene'),text,scene:'capital-road',sceneNumber,location:sceneLocation,backgroundPath};
+    if(artPaths[speaker])line.artPath=artPaths[speaker];
+    if(/달려든다|치켜들|강력한 검기|오러/.test(text))line.flash=true;
+    if(/거친 발소리|쓰러져/.test(text))line.shake=true;
+    lines.push(line);
+  }
+  if(!lines.length)throw new Error(`World 6B narrative section is incomplete: ${section}`);
+  return lines;
+}
 export async function generateStoryNovel(){
   const novels={};
   for(const [key,filename,parse] of [
@@ -238,7 +300,22 @@ export async function generateStoryNovel(){
     ['world5MidbossStart','world-5-midboss-start.md',markdown=>parseWorldFiveNarrative(markdown,'midboss-start')],
     ['world5MidbossEnd','world-5-midboss-end.md',markdown=>parseWorldFiveNarrative(markdown,'midboss-end')],
     ['world5BossStart','world-5-20-boss-start.md',markdown=>parseWorldFiveNarrative(markdown,'boss-start')],
-    ['world5BossEnd','world-5-20-boss-end.md',markdown=>parseWorldFiveNarrative(markdown,'boss-end')]
+    ['world5BossEnd','world-5-20-boss-end.md',markdown=>parseWorldFiveNarrative(markdown,'boss-end')],
+    ['world6aPrologue','world-6a-1-prologue.md',markdown=>parseWorldSixANarrative(markdown,{location:'반전세계 · 프롤로그'})],
+    ['world6aMidbossStart','world-6a-midboss-start.md',markdown=>parseWorldSixANarrative(markdown,{location:'반전세계 · 심연의 유적'})],
+    ['world6aMidbossEnd','world-6a-midboss-end.md',markdown=>parseWorldSixANarrative(markdown,{location:'반전세계 · 심연의 골렘 격파'})],
+    ['world6aBossStart','world-6a-boss-start.md',markdown=>parseWorldSixANarrative(markdown,{location:'반전세계 · 모르가나의 왕좌'})],
+    ['world6aBossEndPrelude','world-6a-boss-end.md',markdown=>parseWorldSixANarrative(markdown,{section:'prelude',location:'반전세계 · 모르가나 격파'})],
+    ['world6aBossEndKill','world-6a-boss-end.md',markdown=>parseWorldSixANarrative(markdown,{section:'kill',location:'반전세계 · 저주의 결말'})],
+    ['world6aBossEndSpare','world-6a-boss-end.md',markdown=>parseWorldSixANarrative(markdown,{section:'spare',location:'반전세계 · 자비의 결말'})],
+    ['world6bPrologue','world-6b-1-prologue.md',markdown=>parseWorldSixBNarrative(markdown,{location:'왕국수도로 가는 길 · 프롤로그'})],
+    ['world6bMidbossStart','world-6b-midboss-start.md',markdown=>parseWorldSixBNarrative(markdown,{location:'왕국수도로 가는 길 · 도적 대장'})],
+    ['world6bMidbossEndPrelude','world-6b-midboss-end.md',markdown=>parseWorldSixBNarrative(markdown,{section:'prelude',location:'왕국수도로 가는 길 · 도적 대장 격파'})],
+    ['world6bMidbossEndRelease','world-6b-midboss-end.md',markdown=>parseWorldSixBNarrative(markdown,{section:'release',location:'왕국수도로 가는 길 · 도적 대장 석방'})],
+    ['world6bMidbossEndArrest','world-6b-midboss-end.md',markdown=>parseWorldSixBNarrative(markdown,{section:'arrest',location:'왕국수도로 가는 길 · 수도 이송'})],
+    ['world6bCapital','world-6b-capital.md',markdown=>parseWorldSixBNarrative(markdown,{location:'워드 왕국 수도'})],
+    ['world6bBossStart','world-6b-boss-start.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘로잇의 저택'})],
+    ['world6bBossEnd','world-6b-boss-end.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘로잇의 저택 · 시험 통과'})]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');
