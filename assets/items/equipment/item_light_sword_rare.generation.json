@@ -1,0 +1,64 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-21",
+  "prompt": "Match the TWO attached inventory artworks closely. Reference 1 is Gale Boots: primary authority for silver metal, pale lavender leather and lining, elegant beveled seams, smoothly blended soft highlights and shadows. Reference 2 is Starlight Crown: authority for faceted violet-blue/cyan crystal refraction and polished collectible fantasy finish. Match rendering technique, not unrelated shapes.\nPolished hand-painted mobile fantasy inventory illustration, gentle three-quarter view, subtle thin violet contour edges, softly rounded dimensional metal, restrained fine highlights, rich soft volumetric shading.\nLIGHT COLLECTION identity: luminous pearl-white silver, pale lavender shadows, slender champagne-gold sunray trim, a main clear cyan/violet prismatic crystal, elegant small sunburst motif. Rarity RARE (three stars in game, but DO NOT draw stars or labels), moderate ornament and restrained glow, less ornate than the legendary crown.\nOutput: one centered complete equipment object, square canvas, ten percent clear padding, true transparent alpha. No floor, cast shadow, pedestal, text, price, border, person, mannequin. No hard comic cel shading, thick black ink, sketch outlines, pixel art, low-poly, photorealism.\nItem: A complete sword of Light, diagonal blade lower-left to hilt upper-right, pearl-silver long blade with a softly luminous central channel, small golden sunray crossguard and one cyan-violet crystal.",
+  "references": [
+    {
+      "path": "/Users/hjoon/Documents/git/english-word-card-game/assets/items/equipment/item_gale_boots_normal.webp",
+      "role": "silver metal and soft shading"
+    },
+    {
+      "path": "/Users/hjoon/Documents/git/english-word-card-game/assets/items/equipment/item_starlight_crown_legendary.webp",
+      "role": "crystal refraction and collectible finish"
+    }
+  ],
+  "source": "output/imagegen/light-equipment/sword-source.png",
+  "runtime": "assets/items/equipment/item_light_sword_rare.webp",
+  "source_dimensions": [
+    1254,
+    1254
+  ],
+  "source_alpha_extrema": [
+    0,
+    255
+  ],
+  "source_bbox": [
+    33,
+    21,
+    1228,
+    1239
+  ],
+  "runtime_dimensions": [
+    512,
+    512
+  ],
+  "runtime_alpha_extrema": [
+    0,
+    255
+  ],
+  "runtime_bbox": [
+    71,
+    58,
+    448,
+    461
+  ],
+  "review_status": "technical visual review passed; not user approval",
+  "user_approved": false,
+  "review": {
+    "backgrounds": [
+      "#F7F7FF",
+      "#5751D8"
+    ],
+    "thumbnail_sizes": [
+      64,
+      128
+    ],
+    "real_alpha": true,
+    "white_materials_preserved": true,
+    "object_openings_preserved": true,
+    "no_clipping": true,
+    "style_matches_references": true,
+    "notes": "Reviewed all six exports together at full and thumbnail sizes; soft silver/lavender shading and cyan-violet crystals match the required references. Ten percent padding normalized without color-key removal.",
+    "composite": "output/imagegen/light-equipment/review-light-violet.jpg"
+  }
+}
