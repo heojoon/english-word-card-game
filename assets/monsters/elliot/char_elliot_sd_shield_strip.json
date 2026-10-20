@@ -1,0 +1,99 @@
+{
+  "image": "char_elliot_sd_shield_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "raise-sword",
+      "durationMs": 200
+    },
+    {
+      "name": "plant-sword",
+      "durationMs": 200
+    },
+    {
+      "name": "golden-aura",
+      "durationMs": 200
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/shield-group-generated.png",
+      "box": [
+        0,
+        0,
+        712,
+        743
+      ],
+      "scale": 0.34,
+      "pivotX": 335,
+      "feetY": 724,
+      "foregroundBounds": [
+        26,
+        13,
+        701,
+        728
+      ],
+      "runtimeBounds": [
+        119,
+        58,
+        349,
+        301
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/shield-plant-generated.png",
+      "scale": 0.236,
+      "pivotX": 800,
+      "feetY": 1040,
+      "foregroundBounds": [
+        359,
+        18,
+        1467,
+        1042
+      ],
+      "runtimeBounds": [
+        120,
+        59,
+        381,
+        301
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/shield-final-generated.png",
+      "scale": 0.235,
+      "pivotX": 700,
+      "feetY": 980,
+      "foregroundBounds": [
+        203,
+        12,
+        1467,
+        999
+      ],
+      "runtimeBounds": [
+        107,
+        73,
+        404,
+        305
+      ],
+      "groundY": 300
+    }
+  ],
+  "review": {
+    "technical": "RGBA, packing, 50px gutters and light/violet mobile frame composites reviewed",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred"
+  }
+}

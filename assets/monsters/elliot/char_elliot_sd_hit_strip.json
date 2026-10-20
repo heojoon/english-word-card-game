@@ -1,0 +1,95 @@
+{
+  "image": "char_elliot_sd_hit_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "guard-notice",
+      "durationMs": 120
+    },
+    {
+      "name": "impact-recoil",
+      "durationMs": 180,
+      "hit": true
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 600,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/identity-generated.png",
+      "scale": 0.236,
+      "pivotX": 850,
+      "feetY": 1045,
+      "foregroundBounds": [
+        89,
+        11,
+        1426,
+        1054
+      ],
+      "runtimeBounds": [
+        44,
+        56,
+        360,
+        302
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/hit-recoil-generated.png",
+      "scale": 0.23,
+      "pivotX": 790,
+      "feetY": 980,
+      "foregroundBounds": [
+        12,
+        16,
+        1528,
+        977
+      ],
+      "runtimeBounds": [
+        45,
+        78,
+        394,
+        299
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/hit-down-generated.png",
+      "scale": 0.18,
+      "pivotX": 890,
+      "feetY": 800,
+      "foregroundBounds": [
+        45,
+        206,
+        1742,
+        794
+      ],
+      "runtimeBounds": [
+        72,
+        193,
+        377,
+        299
+      ],
+      "groundY": 300
+    }
+  ],
+  "review": {
+    "technical": "RGBA, packing, 50px gutters and light/violet mobile frame composites reviewed",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred"
+  }
+}

@@ -227,7 +227,8 @@ export function parseWorldSixANarrative(markdown,{section='all',location='반전
   const artPaths={
     '다크 소서러스':'assets/novel/characters/char_dark_sorcerus_world5_standing.webp',
     '쉐도우 소서러스(변신)':'assets/novel/characters/char_dark_sorcerus_world5_standing.webp',
-    '심연의 골렘':'assets/monsters/abyss-golem/monster_abyss_golem_standing.png'
+    '심연의 골렘':'assets/monsters/abyss-golem/monster_abyss_golem_standing.png',
+    '모르가나':'assets/monsters/morgana/morgana-standing.webp'
   };
   let active=section==='all'||section==='prelude';
   for(const raw of markdown.replace(/\r\n/g,'\n').split('\n')){
@@ -253,8 +254,9 @@ export function parseWorldSixANarrative(markdown,{section='all',location='반전
 export function parseWorldSixBNarrative(markdown,{section='all',location='왕국수도로 가는 길'}={}){
   const lines=[];
   const backgroundPath='assets/environments/world-6b/01-capital-road-battle.webp';
-  const speakerClasses={...classes,'도적 대장':'bandit-chief','도적 대장의 속마음':'bandit-chief','엘로잇':'warrior'};
+  const speakerClasses={...classes,'도적 대장':'bandit-chief','도적 대장의 속마음':'bandit-chief','엘리엇':'elliot'};
   const artPaths={
+    '엘리엇':'assets/novel/characters/char_elliot_world6b_standing.webp',
     '도적 대장':'assets/novel/characters/char_bandit_chief_world6b_standing.png',
     '도적 대장의 속마음':'assets/novel/characters/char_bandit_chief_world6b_standing.png'
   };
@@ -267,8 +269,8 @@ export function parseWorldSixBNarrative(markdown,{section='all',location='왕국
     if(/^## 선택\./.test(block)){if(section==='prelude')break;active=false;continue;}
     if(/^### A\. 풀어준다/.test(block)){active=section==='release';continue;}
     if(/^### B\. 풀어주지 않고 수도로 데려간다/.test(block)){active=section==='arrest';continue;}
-    if(/^## (보상 및 후속 연결 메모|게임 연결 메모|후속 연결 메모)/.test(block))break;
-    if(!active||!sceneNumber||block.startsWith('#')||block.startsWith('- ')||block.startsWith('다음 스토리:')||block.startsWith('영어 단어 게임')||block.startsWith('왕국 수도로 가는 길')||block.startsWith('기사단장 엘로잇의 저택')||block.startsWith('배경:')||block.startsWith('일반 적:'))continue;
+    if(/^## (보상 및 후속 연결 메모|게임 연결 메모|후속 연결 메모|전투 계약)/.test(block))break;
+    if(!active||!sceneNumber||block.startsWith('#')||block.startsWith('- ')||block.startsWith('다음 스토리:')||block.startsWith('영어 단어 게임')||block.startsWith('왕국 수도로 가는 길')||block.startsWith('기사단장 엘리엇의 저택')||block.startsWith('배경:')||block.startsWith('일반 적:'))continue;
     const dialogue=block.startsWith('[')?null:block.match(/^([^:\n]+?):\s*([\s\S]+)$/);
     const speaker=(dialogue?.[1]||'내레이션').trim();
     const text=(dialogue?.[2]||block).replace(/^\[|\]$/g,'').replace(/\s*\/\s*BGM:[\s\S]*$/,'').replace(/\s*\/\s*제한 시간[\s\S]*$/,'').replace(/\s*\n\s*/g,' ').trim();
@@ -314,8 +316,8 @@ export async function generateStoryNovel(){
     ['world6bMidbossEndRelease','world-6b-midboss-end.md',markdown=>parseWorldSixBNarrative(markdown,{section:'release',location:'왕국수도로 가는 길 · 도적 대장 석방'})],
     ['world6bMidbossEndArrest','world-6b-midboss-end.md',markdown=>parseWorldSixBNarrative(markdown,{section:'arrest',location:'왕국수도로 가는 길 · 수도 이송'})],
     ['world6bCapital','world-6b-capital.md',markdown=>parseWorldSixBNarrative(markdown,{location:'워드 왕국 수도'})],
-    ['world6bBossStart','world-6b-boss-start.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘로잇의 저택'})],
-    ['world6bBossEnd','world-6b-boss-end.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘로잇의 저택 · 시험 통과'})]
+    ['world6bBossStart','world-6b-boss-start.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘리엇의 저택'})],
+    ['world6bBossEnd','world-6b-boss-end.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘리엇의 저택 · 시험 통과'})]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');

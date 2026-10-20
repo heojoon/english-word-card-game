@@ -1,0 +1,93 @@
+{
+  "image": "char_elliot_sd_idle_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": true,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 400
+    },
+    {
+      "name": "breath-blink",
+      "durationMs": 400
+    },
+    {
+      "name": "settle",
+      "durationMs": 400
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/identity-generated.png",
+      "scale": 0.236,
+      "pivotX": 850,
+      "feetY": 1045,
+      "foregroundBounds": [
+        89,
+        11,
+        1426,
+        1054
+      ],
+      "runtimeBounds": [
+        44,
+        56,
+        360,
+        302
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/idle-blink-generated.png",
+      "scale": 0.236,
+      "pivotX": 850,
+      "feetY": 1045,
+      "foregroundBounds": [
+        89,
+        10,
+        1432,
+        1051
+      ],
+      "runtimeBounds": [
+        44,
+        56,
+        361,
+        302
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/identity-generated.png",
+      "scale": 0.236,
+      "pivotX": 850,
+      "feetY": 1045,
+      "foregroundBounds": [
+        89,
+        11,
+        1426,
+        1054
+      ],
+      "runtimeBounds": [
+        44,
+        56,
+        360,
+        302
+      ],
+      "groundY": 300
+    }
+  ],
+  "review": {
+    "technical": "RGBA, packing, 50px gutters and light/violet mobile frame composites reviewed",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "review": "technical and frame composites; browser not requested",
+  "actions": {
+    "idle": {
+      "frameCount": 3,
+      "runtimeSize": [
+        1344,
+        320
+      ],
+      "sourceSize": [
+        4552,
+        1060
+      ],
+      "spacedSize": [
+        1444,
+        320
+      ],
+      "bounds": [
+        [
+          44,
+          56,
+          360,
+          302
+        ],
+        [
+          44,
+          56,
+          361,
+          302
+        ],
+        [
+          44,
+          56,
+          360,
+          302
+        ]
+      ],
+      "alpha": "real alpha; white clothing preserved",
+      "gaps": "exactly 50px transparent"
+    },
+    "attack": {
+      "frameCount": 3,
+      "runtimeSize": [
+        1344,
+        320
+      ],
+      "sourceSize": [
+        5116,
+        1060
+      ],
+      "spacedSize": [
+        1444,
+        320
+      ],
+      "bounds": [
+        [
+          47,
+          65,
+          374,
+          301
+        ],
+        [
+          107,
+          107,
+          421,
+          301
+        ],
+        [
+          23,
+          79,
+          367,
+          301
+        ]
+      ],
+      "alpha": "real alpha; white clothing preserved",
+      "gaps": "exactly 50px transparent"
+    },
+    "shield": {
+      "frameCount": 3,
+      "runtimeSize": [
+        1344,
+        320
+      ],
+      "sourceSize": [
+        4708,
+        1060
+      ],
+      "spacedSize": [
+        1444,
+        320
+      ],
+      "bounds": [
+        [
+          119,
+          58,
+          349,
+          301
+        ],
+        [
+          120,
+          59,
+          381,
+          301
+        ],
+        [
+          107,
+          73,
+          404,
+          305
+        ]
+      ],
+      "alpha": "real alpha; white clothing preserved",
+      "gaps": "exactly 50px transparent"
+    },
+    "hit": {
+      "frameCount": 3,
+      "runtimeSize": [
+        1344,
+        320
+      ],
+      "sourceSize": [
+        5422,
+        1060
+      ],
+      "spacedSize": [
+        1444,
+        320
+      ],
+      "bounds": [
+        [
+          44,
+          56,
+          360,
+          302
+        ],
+        [
+          45,
+          78,
+          394,
+          299
+        ],
+        [
+          72,
+          193,
+          377,
+          299
+        ]
+      ],
+      "alpha": "real alpha; white clothing preserved",
+      "gaps": "exactly 50px transparent"
+    }
+  }
+}

@@ -7689,7 +7689,8 @@ window.WORDORIA_NOVELS = {
       "text": "나는 반전세계의 지배자이자 모든 뒤틀린 공간을 다스리는 모르가나다!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7705,7 +7706,8 @@ window.WORDORIA_NOVELS = {
       "text": "이곳의 시간과 공간, 모든 만물은 내 뜻에 따라 움직인다.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7721,7 +7723,8 @@ window.WORDORIA_NOVELS = {
       "text": "하찮은 필멸자여. 감히 나에게 명령하는 것이냐?",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7746,7 +7749,8 @@ window.WORDORIA_NOVELS = {
       "text": "네가 심연의 골렘을 파괴했다는 사실은 알고 있다.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7762,7 +7766,8 @@ window.WORDORIA_NOVELS = {
       "text": "하지만 그것은 내 수하에 불과하다.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7778,7 +7783,8 @@ window.WORDORIA_NOVELS = {
       "text": "네 힘으로는 나에게 상처 하나 입히지 못할 것이다.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7794,7 +7800,8 @@ window.WORDORIA_NOVELS = {
       "text": "어리석구나. 만물이 내 조종 아래 있는데….",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -7818,7 +7825,8 @@ window.WORDORIA_NOVELS = {
       "text": "이것이 반전세계의 지배자가 가진 힘이다.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -7869,7 +7877,8 @@ window.WORDORIA_NOVELS = {
       "text": "흥미롭군. 하나의 몸에 두 개의 인격이라….",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나의 왕좌",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -7896,7 +7905,8 @@ window.WORDORIA_NOVELS = {
       "text": "제법이군. 여기까지 버티다니.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -7913,7 +7923,8 @@ window.WORDORIA_NOVELS = {
       "text": "하지만 여기까지다.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -7947,7 +7958,8 @@ window.WORDORIA_NOVELS = {
       "text": "가소롭군.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8007,7 +8019,8 @@ window.WORDORIA_NOVELS = {
       "text": "이제 끝이구나.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "모르가나",
@@ -8015,7 +8028,8 @@ window.WORDORIA_NOVELS = {
       "text": "잘 가라, 필멸자여.",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8041,7 +8055,8 @@ window.WORDORIA_NOVELS = {
       "text": "…무슨 소리냐?",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8067,7 +8082,8 @@ window.WORDORIA_NOVELS = {
       "text": "허세를 부리는구나!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8119,7 +8135,8 @@ window.WORDORIA_NOVELS = {
       "text": "…!!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8152,7 +8169,8 @@ window.WORDORIA_NOVELS = {
       "text": "이, 이럴 수가…! 내 방어막이?!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8186,7 +8204,8 @@ window.WORDORIA_NOVELS = {
       "text": "이런 것쯤은…!!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8211,7 +8230,8 @@ window.WORDORIA_NOVELS = {
       "text": "…?!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8245,7 +8265,8 @@ window.WORDORIA_NOVELS = {
       "text": "뭐, 뭐냐?! 내 몸이…!!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8391,7 +8412,8 @@ window.WORDORIA_NOVELS = {
       "text": "(힘들어하며) 이런..",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8408,7 +8430,8 @@ window.WORDORIA_NOVELS = {
       "text": "(힘을 모은다...) 오오오오오오오!!",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -8432,7 +8455,8 @@ window.WORDORIA_NOVELS = {
       "text": "내 패배를 인정하마.. 목숨만은.. 제발 자비를 베풀어줘..",
       "scene": "inverted-world",
       "location": "반전세계 · 모르가나 격파",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -8468,7 +8492,8 @@ window.WORDORIA_NOVELS = {
       "text": "으아아아아아아아아악!! 너희들을 저주한다!!!!!",
       "scene": "inverted-world",
       "location": "반전세계 · 저주의 결말",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -8567,7 +8592,8 @@ window.WORDORIA_NOVELS = {
       "text": "고..고맙다..",
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "모르가나",
@@ -8575,7 +8601,8 @@ window.WORDORIA_NOVELS = {
       "text": "나를 살려주는 대신 이 세계에 숨겨진 보물에 대한 이야기를 해주지.. 반전세계에 존재하는 검은 호수 안에는 아무도 발견하지 못한 것이 있다고 하더군...",
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -8592,7 +8619,8 @@ window.WORDORIA_NOVELS = {
       "text": "검은 호수는 사실 심연의 심연을 들여다 봐야지만 들어갈 수 있기 때문이지, 자 이 구슬을 가져가라 그럼 검은 호수에 들어갈 수 있을 것이다.",
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -8608,7 +8636,8 @@ window.WORDORIA_NOVELS = {
       "text": "그럼 나는 이만.. 부디 심연이 너를 바라보지 않기를..",
       "scene": "inverted-world",
       "location": "반전세계 · 자비의 결말",
-      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
+      "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp",
+      "artPath": "assets/monsters/morgana/morgana-standing.webp"
     }
   ],
   "world6bPrologue": [
@@ -8956,7 +8985,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "아서",
       "className": "warrior",
-      "text": "기사단장 엘로잇 님. 세계에 단 다섯 명뿐인 소드마스터 중 한 분이야.",
+      "text": "기사단장 엘리엇 님. 세계에 단 다섯 명뿐인 소드마스터 중 한 분이야.",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "타락한 천사의 단서",
@@ -8983,7 +9012,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(세 사람은 기사단장 엘로잇의 저택으로 향한다.)",
+      "text": "(세 사람은 기사단장 엘리엇의 저택으로 향한다.)",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "타락한 천사의 단서",
@@ -9001,13 +9030,14 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
+      "speaker": "엘리엇",
+      "className": "elliot",
       "text": "아서로구나. 동료들과 함께 무슨 일이지?",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "스승과의 재회",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
       "speaker": "아서",
@@ -9028,22 +9058,24 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
+      "speaker": "엘리엇",
+      "className": "elliot",
       "text": "먼저 너희가 이 일에 나설 실력이 있는지 확인하고 싶구나.",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "스승과의 재회",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
-      "text": "내 공격을 5분 동안 견뎌 보아라. 시험을 통과하면 주교님께 전할 추천 편지를 준비해 주마.",
+      "speaker": "엘리엇",
+      "className": "elliot",
+      "text": "내 공격을 5분 동안 견디며 내 기력을 절반 이하로 낮춰 보아라. 시험을 통과하면 주교님께 전할 추천 편지를 준비해 주마.",
       "scene": "capital-road",
       "sceneNumber": 2,
       "location": "5분의 시험",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -9064,13 +9096,14 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
+      "speaker": "엘리엇",
+      "className": "elliot",
       "text": "준비되었느냐? 시작하겠다!",
       "scene": "capital-road",
       "sceneNumber": 2,
       "location": "5분의 시험",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -9093,18 +9126,19 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
+      "speaker": "엘리엇",
+      "className": "elliot",
       "text": "거기까지. 5분이 지났다.",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "시험 종료",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(엘로잇이 검을 내린다. 일행은 숨을 고른다.)",
+      "text": "(엘리엇이 검을 내린다. 일행은 숨을 고른다.)",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "시험 종료",
@@ -9138,22 +9172,24 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
-      "text": "그래. 너희의 실력은 충분히 확인했다.",
+      "speaker": "엘리엇",
+      "className": "elliot",
+      "text": "그래. 5분을 버티면서 내 기력을 절반 이하로 낮췄구나. 너희의 실력은 충분히 확인했다.",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "시험 종료",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
+      "speaker": "엘리엇",
+      "className": "elliot",
       "text": "약속대로 왕성의 주교님께 전달할 추천 편지를 준비하마.",
       "scene": "capital-road",
       "sceneNumber": 2,
       "location": "내일의 약속",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
       "speaker": "아서",
@@ -9165,13 +9201,14 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
-      "speaker": "엘로잇",
-      "className": "warrior",
+      "speaker": "엘리엇",
+      "className": "elliot",
       "text": "편지는 내일 준비해 두겠다. 오늘은 푹 쉬도록 해라.",
       "scene": "capital-road",
       "sceneNumber": 2,
       "location": "내일의 약속",
-      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
       "speaker": "바이올렛",

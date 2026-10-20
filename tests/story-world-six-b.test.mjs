@@ -57,7 +57,8 @@ test('6B matches same-numbered 6A vocabulary and source days for both levels wit
       assert.equal(stage.source.sheet,`Day ${day}`);
       assert.equal(stage.words.length,30);
       assert.match(stage.desc,new RegExp(`Day ${day} · 30단어`));
-      assert.equal(stage.questionCount,number===10?200:level==='middle'?60:40);
+      assert.equal(stage.questionCount,number===20?500:number===10?200:level==='middle'?60:40);
+      assert.equal(stage.elliot,number===20);
       assert.equal(stage.banditChief,number===10);assert.equal(stage.sorcerus,false);assert.equal(stage.lichDragon,false);
       assert.doesNotMatch(stage.recordName,/초등학생/);
     }

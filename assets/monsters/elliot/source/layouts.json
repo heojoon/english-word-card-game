@@ -1,0 +1,22 @@
+{
+  "idle": [
+    {"source":"source/identity-generated.png","scale":0.236,"pivotX":850,"feetY":1045},
+    {"source":"source/idle-blink-generated.png","scale":0.236,"pivotX":850,"feetY":1045},
+    {"source":"source/identity-generated.png","scale":0.236,"pivotX":850,"feetY":1045}
+  ],
+  "attack": [
+    {"source":"source/attack-charge-generated.png","scale":0.23,"pivotX":800,"feetY":1040},
+    {"source":"source/attack-rush-generated.png","scale":0.215,"pivotX":730,"feetY":920},
+    {"source":"source/attack-contact-generated.png","scale":0.23,"pivotX":900,"feetY":990}
+  ],
+  "shield": [
+    {"source":"source/shield-group-generated.png","box":[0,0,712,743],"scale":0.34,"pivotX":335,"feetY":724},
+    {"source":"source/shield-plant-generated.png","scale":0.236,"pivotX":800,"feetY":1040},
+    {"source":"source/shield-final-generated.png","scale":0.235,"pivotX":700,"feetY":980}
+  ],
+  "hit": [
+    {"source":"source/identity-generated.png","scale":0.236,"pivotX":850,"feetY":1045},
+    {"source":"source/hit-recoil-generated.png","scale":0.23,"pivotX":790,"feetY":980},
+    {"source":"source/hit-down-generated.png","scale":0.18,"pivotX":890,"feetY":800}
+  ]
+}

@@ -24,21 +24,23 @@ test('World 6B narrative parser preserves scenes and separates the bandit decisi
   assert.ok(readFileSync(new URL('../assets/novel/characters/char_bandit_chief_world6b_standing.png',import.meta.url)).length>100_000);
 });
 
-test('generated novels include the playable World 6B story and future Elliot source data',()=>{
+test('generated novels include Elliot trial, standing CG and both survival goals',()=>{
   const context={window:{}};
   vm.runInNewContext(read('story-novel.js'),context);
   const novels=context.window.WORDORIA_NOVELS;
   for(const key of ['world6bPrologue','world6bMidbossStart','world6bMidbossEndPrelude','world6bMidbossEndRelease','world6bMidbossEndArrest','world6bCapital','world6bBossStart','world6bBossEnd'])assert.ok(novels[key]?.length,key);
   assert.ok(novels.world6bMidbossStart.some(line=>line.speaker==='도적 대장'&&line.artPath==='assets/novel/characters/char_bandit_chief_world6b_standing.png'));
-  assert.ok(novels.world6bCapital.some(line=>line.text.includes('기사단장 엘로잇')));
-  assert.ok(novels.world6bBossStart.some(line=>line.text.includes('5분 동안 견뎌')));
+  assert.ok(novels.world6bCapital.some(line=>line.text.includes('기사단장 엘리엇')));
+  assert.ok(novels.world6bBossStart.some(line=>line.text.includes('5분 동안 견디며 내 기력을 절반 이하')));
+  assert.ok(novels.world6bBossStart.filter(line=>line.speaker==='엘리엇').every(line=>line.artPath==='assets/novel/characters/char_elliot_world6b_standing.webp'));
+  assert.ok(!novels.world6bBossStart.some(line=>line.text.startsWith('- HP')));
 });
 
 test('World 6B routes stage 1, stage 10 victory, and stage 20 victory through their stories',()=>{
   const source=read('crystal-game.js');
-  assert.match(source,/stage\.chapter===6&&\[1,10\]\.includes\(stage\.number\)/);
+  assert.match(source,/stage\.chapter===6&&\[1,10,20\]\.includes\(stage\.number\)/);
   assert.match(source,/storyStage\?\.chapter===6&&storyStage\?\.number===10\?'storyChapterSixBMidbossEnd'/);
-  assert.match(source,/storyStage\?\.chapter===6&&storyStage\?\.number===20\?'storyChapterSixBCapital'/);
+  assert.match(source,/storyStage\?\.chapter===6&&storyStage\?\.number===20\?'storyChapterSixBBossEnd'/);
   assert.match(source,/data-action="world-six-b-midboss-choice"/);
-  assert.doesNotMatch(source,/stage\.chapter===6&&\[1,10,20\]/);
+  assert.match(source,/stage.number===10\?'storyChapterSixBMidbossStart':'storyChapterSixBCapital'/);
 });

@@ -1,0 +1,94 @@
+{
+  "image": "char_elliot_sd_attack_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "golden-charge",
+      "durationMs": 180
+    },
+    {
+      "name": "rush-windup",
+      "durationMs": 220
+    },
+    {
+      "name": "sword-contact",
+      "durationMs": 180,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "source/attack-charge-generated.png",
+      "scale": 0.23,
+      "pivotX": 800,
+      "feetY": 1040,
+      "foregroundBounds": [
+        31,
+        17,
+        1452,
+        1043
+      ],
+      "runtimeBounds": [
+        47,
+        65,
+        374,
+        301
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/attack-rush-generated.png",
+      "scale": 0.215,
+      "pivotX": 730,
+      "feetY": 920,
+      "foregroundBounds": [
+        187,
+        22,
+        1648,
+        925
+      ],
+      "runtimeBounds": [
+        107,
+        107,
+        421,
+        301
+      ],
+      "groundY": 300
+    },
+    {
+      "source": "source/attack-contact-generated.png",
+      "scale": 0.23,
+      "pivotX": 900,
+      "feetY": 990,
+      "foregroundBounds": [
+        24,
+        30,
+        1521,
+        996
+      ],
+      "runtimeBounds": [
+        23,
+        79,
+        367,
+        301
+      ],
+      "groundY": 300
+    }
+  ],
+  "review": {
+    "technical": "RGBA, packing, 50px gutters and light/violet mobile frame composites reviewed",
+    "browser": "not requested; not run",
+    "userApproval": "not inferred"
+  }
+}

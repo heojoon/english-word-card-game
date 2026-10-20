@@ -931,6 +931,22 @@ body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{backgro
 .half-broken-golem-mob.spider-is-hit .spider-idle-strip,.half-broken-golem-mob.spider-is-attacking .spider-idle-strip{animation:none}
 @keyframes golem-idle-breathe{to{translate:0 -3px}}
 @media(prefers-reduced-motion:reduce){.half-broken-golem-mob .spider-idle-strip{animation:none}}
+/* Elliot's sampled frames share the battle clock with contact damage. */
+body[data-screen="battle"] .arena.guardian-boss-arena.elliot-arena{background:#e4e2ed url('assets/environments/world-6b/01-capital-road-battle.webp') center bottom/cover no-repeat}
+.elliot-arena{isolation:isolate}
+.elliot-arena .elliot-enemy{width:62%;max-width:270px;height:auto;aspect-ratio:448/320;bottom:8px;right:-6px;overflow:visible;z-index:6;transform:none;animation:none}
+.elliot-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;filter:drop-shadow(0 3px 4px #24214c55)}
+.elliot-shield-aura{display:none;position:absolute;inset:4% 15% 0;border:2px solid #fff4b6;border-radius:45% 45% 25% 25%;background:linear-gradient(0deg,#ffcf6788,transparent 80%);box-shadow:0 0 20px #ffcf67aa,inset 0 0 18px #ffcf6788;pointer-events:none}
+.elliot-shielded .elliot-shield-aura{display:block}
+.elliot-hp-target{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 3px #24214c}
+.elliot-arena>.guardian-health{left:auto;right:12px;top:40px;bottom:auto;width:42%;z-index:9;overflow:visible}
+.elliot-arena .royal-boss-skill-notice{top:auto;bottom:3px;left:50%;transform:translateX(-50%);max-width:95%;width:max-content;padding:3px 7px;line-height:1.25;font-size:10px;color:#24214c;background:#f7f7ffe8;border-radius:10px;z-index:10}
+.elliot-arena .royal-boss-skill-notice:empty{display:none}
+.elliot-trial-goal{text-align:center;font-size:12px;font-weight:800;color:var(--ink);margin:8px 0}
+.elliot-player-hit .battle-hero{filter:brightness(1.45) drop-shadow(0 0 7px #ffcf67)}
+.elliot-arena .arena-floor{display:none}
+.elliot-arena.paused *{animation-play-state:paused!important}
+@media(max-width:360px){.elliot-arena .elliot-enemy{width:65%;right:-12px}.elliot-trial-goal{font-size:11px}}
 /* Morgana: independent rotate keeps player attack/contact transforms intact. */
 .morgana-arena{isolation:isolate}
 .morgana-arena .guardian-enemy{width:51%;max-width:210px;bottom:3px}

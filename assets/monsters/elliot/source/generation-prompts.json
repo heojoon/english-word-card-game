@@ -1,0 +1,111 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "source/user-reference.png",
+  "sdIdentity": "source/identity-generated.png",
+  "standing": "../../novel/characters/char_elliot_world6b_standing.webp",
+  "prompts": {
+    "Standing": {
+      "prompt": "Extract ONLY the full standing man on the LEFT of the supplied reference image as a full-body visual-novel standing CG with real transparent alpha. Faithfully preserve his identity: handsome mature silver ash-blond swept hair tied with navy ribbon, short light beard, blue eyes, confident gentle knight commander, navy white gold ornate royal armor, white fur shoulder cape with navy lining and gold embroidery, armored boots, ornate gold longsword with blue crystal held tip downward. Keep entire head, cape, boots and sword tip inside canvas with generous transparent margins. Remove all background, castle, ground, other inset faces and the bottom-right action panel. Complete any edge of left cape obscured/cropped by reference. Retain white cloth as opaque white, natural original fine anime illustration style, no redesign, no text, no border. Single full-body man, standing pose from reference.",
+      "references": [
+        "source/user-reference.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-46abb5d4-5851-45ce-8df6-ee6fb5d934cc.png"
+    },
+    "Identity": {
+      "prompt": "Create ONE isolated full-body Crystal Quest SD/chibi battle identity sprite for Elliot, the male royal knight commander in the attached reference. Image 1 is canonical identity: silver ash-blond swept hair tied with navy ribbon, blue eyes, short silver beard, calm confident seasoned male swordmaster; preserve this age identity with compact nonsexualized chibi proportions, large readable head and hands, 2.7 heads tall. White fur shoulder cape, white and navy blue royal coat/armor with delicate gold trims, silver greaves/boots and gauntlets; ornate gold longsword with blue crystal. Three-quarter SIDE view facing LEFT, ready stance, sword angled down-left, feet on common groundline. Polished clean anime 2D SD art matching a premium friendly fantasy mobile RPG, not pixel art, not 3D toy. Real transparent background, no floor/shadow blob, no scenery, text, panels or extra person. Entire head cape feet and sword visible with generous 10% transparent safety margins. One complete character only. Intended runtime body head-to-feet height 250px inside 448x320 cell, bottom-center anchor 0.5,0.975; preserve realistic sword silhouette and white opaque cloth.",
+      "references": [
+        "source/user-reference.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-b8526258-f998-4c81-a8f9-a43251973861.png"
+    },
+    "Idle": {
+      "prompt": "Edit the attached canonical SD Elliot identity into an idle blink source frame. Change ONLY eyelids closed in a relaxed blink and very subtle chest breathing/cape relaxation. Keep the exact head/body proportions, same full-body scale/pose, sword angle and blue crystal, same left-facing orientation, white navy gold armor and white fur cape, boots, hair and beard. Single full-body sprite on real transparent alpha, entire sword/head/cape/feet visible with margin. No floor/background/text. Do not redesign or add effects. This frame will alternate with the original identity for a stable 3-frame idle loop.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-b3ca06db-34a6-461a-986d-2d0e833f9d93.png"
+    },
+    "Attack": {
+      "prompt": "Image 1 is the canonical SD Elliot identity. Generate a production sprite source sheet: EXACTLY THREE FULL BODY FRAMES in one horizontal row, equal roomy slots, exactly 50px genuinely transparent gutters between adjacent slots. All face LEFT with SAME scale and ground line. Preserve face, tied silver hair, small beard, navy-white-gold royal armor, white fur cape, silver boots and ornate gold sword. Style stays polished 2D SD/chibi anime fantasy, not pixel art. Action AURA SWORD: frame 1 golden-charge, feet planted, sword raised and its blade begins glowing GOLD instead of blue; frame 2 rush-windup, leaning and striding LEFT with sword drawn behind ready to slash, cape trails right; frame 3 CONTACT PEAK active powerful sword slash down-left, golden arc tight around sword, complete character still visible, no recovery. Motion approaches player left; screen-space travel is handled by game, keep body locally centered. Full sword, head, cape, boots and all glow INSIDE each slot with 10% alpha safety band. Large readable head, compact body as reference; no redesign. Real RGBA transparent background. No scene, ground, text, grid, border, opponent, blood, checkerboard. No overlapping cells; EXACTLY 50px transparent gaps. Prefer 1536x768 or wider sheet. Three complete characters only.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "group source rejected for crowded or clipped effect/insufficient gutters; isolated replacements used",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-534ca1b9-35e3-4f50-b984-bd38f31a92c6.png"
+    },
+    "Shield": {
+      "prompt": "Image 1 canonical SD Elliot identity. Generate EXACTLY THREE full-body sequential SHIELD CAST frames in a single horizontal row, equal roomy slots and exactly 50px of real transparent gutter between adjacent slots. Same body scale and same ground line, three-quarter facing LEFT. Preserve silver swept tied hair, blue eyes, small silver beard, navy white gold royal armor, silver boots/gauntlets, white fur navy-lined cape and ornate gold longsword with blue crystal. Action Radiant Shield: frame 1 both hands raise the sword vertically upright in front, POINT DOWN; frame 2 push sword point into the ground directly in front of feet, knees slightly bent; frame 3 sword planted vertically point-down, both hands firmly on pommel and towering GOLDEN AURA rises around him, luminous gold wisps within his slot (no scenery/actual floor). Compact nonsexualized 2.7-head chibi body, large readable head/hands, polished anime Crystal Quest 2D SD. Entire character and sword/cape/aura visible inside every cell, with generous alpha margins, no cropping/overlap or neighboring pixels. Exactly 50px alpha gutters. Background true transparent alpha, white cloth must remain opaque. No text, borders, layout guides, extra characters, painted checkerboard, floor or scene.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "First complete raised-sword slot selected; remaining crowded slots replaced by isolated Plant and Final sources.",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-db78984c-9818-42ac-bf0c-38cda6d0b5fa.png"
+    },
+    "Hit": {
+      "prompt": "Use attached image as canonical identity. Production HIT/KNOCKDOWN sprite source sheet, EXACTLY THREE frames horizontally, equal roomy slots with EXACTLY 50px genuine transparent gap between adjacent frames. Same SD Elliot man, silver tied swept hair, small beard, blue eyes, white fur cape/navy white gold armor/silver boots/ornate sword, compact 2.7-head full body, polished 2D Crystal Quest anime SD. Facing LEFT all three frames. 1 GUARD/NOTICE: standing full body sword guarding left. 2 IMPACT/STRONG RECOIL: visibly recoiling torso/head and arms backward RIGHT from a hit, knees bending but feet planted, sword remains in hand, clear surprised expression. 3 COMPLETE KNOCKDOWN: completely lying on side across ground, head LEFT boots RIGHT, unable to stand, sword still beside hand inside cell; NOT kneeling, crouching, sitting or recovering. No wounds/blood/attacker. Keep same body scale (do NOT enlarge prone frame), stable ground line. All hair/cape/weapon/feet fully visible with safety margin. No scenery/floor, labels, border, guides, text or checkerboard. Real RGBA alpha transparency, preserve white clothes opaque. Exactly three complete characters, exactly 50px alpha gutters; no crossing slots. Wider slots permitted for prone body.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "group source rejected for crowded or clipped effect/insufficient gutters; isolated replacements used",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-79380bb9-7039-44d1-b620-86210b63742a.png"
+    },
+    "AttackCharge": {
+      "prompt": "Single ISOLATED full-body SD Elliot frame, facing left. Canonical identity attached: keep exact short silver swept tied hair with navy ribbon (not long hair), small silver beard, blue eyes, white fur/navy white gold royal armor, silver boots, large SD head, compact body. Pose: AURA SWORD charge stance. Sword raised diagonally UP-LEFT in both hands, BLADE GLOWS GOLD with tight restrained aura. Confident focused face, feet planted. One complete full body figure only, centered in a wide landscape transparent canvas, generous 15% clear alpha margin on all four sides, NO clipping. Full sword tip, full boots and entire cape contained safely. 2D Crystal Quest chibi anime, preserve attached identity body scale. No scene/floor/shadow/text/border/extra people. REAL RGBA transparent background, preserve opaque white cloth, no checkerboard.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-ab69958f-f851-4ded-9224-4e22c6654bac.png"
+    },
+    "AttackRush": {
+      "prompt": "Single ISOLATED full-body SD Elliot frame, facing left. Canonical identity attached: keep exact short silver swept tied hair with navy ribbon (not long hair), small silver beard, blue eyes, white fur/navy white gold royal armor, silver boots, large SD head, compact body. Pose: AURA SWORD rush wind-up, leaning and striding LEFT with ornate gold sword held backward horizontally toward right, golden blade, preparing forward slash, cape trails right. Confident focused face. One complete full body figure only, centered in WIDE landscape transparent canvas, generous 15% clear alpha margin on all four sides, NO clipping. Full sword tip, both boots, hands and entire cape contained safely. 2D Crystal Quest chibi anime, preserve attached identity body scale. No scene/floor/shadow/text/border/extra people. REAL RGBA transparent background, preserve opaque white cloth, no checkerboard.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-35839c44-7503-47e7-b63b-e9e234d2ceb1.png"
+    },
+    "AttackContact": {
+      "prompt": "Single ISOLATED full-body SD Elliot frame, facing left. Canonical identity attached: keep exact short silver swept tied hair with navy ribbon (not long hair), small silver beard, blue eyes, white fur/navy white gold royal armor, silver boots, large SD head, compact body. Pose: AURA SWORD CONTACT PEAK, powerful sword slash DOWN-LEFT in two hands, low lunging stance LEFT, ornate sword blade glowing GOLD, one bounded restrained golden crescent close to blade, cape trails right. This is active strike, not idle or recovery. One complete figure only, centered in WIDE landscape transparent canvas, 15% clear alpha margin ALL sides, NO clipping, sword tip/effect/cape/head/both boots entirely INSIDE canvas. Keep readable silhouette of man, do not obscure him with effect. 2D Crystal Quest chibi anime, preserve attached identity body scale. No scene/floor/shadow/text/border/extra people. REAL RGBA transparent background, opaque white cloth, no checkerboard.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-93916ea2-c9c7-402a-aa91-285e931581d9.png"
+    },
+    "ShieldFinal": {
+      "prompt": "Create ONE isolated full-body SD Elliot Radiant Shield final frame using attached exact identity. Facing left, silver swept tied hair, small beard, blue eyes, white fur/navy white gold royal commander armor, boots, ornate gold sword. BOTH HANDS ON POMMEL of sword PLANTED VERTICALLY POINT DOWN in front of feet, proud upright guarding stance. Golden magical aura rises around him in restrained elegant wisps, bounded with generous 15% empty alpha margin around ALL sides. Entire figure, full boots and sword tip and full cape safely inside canvas. Wide landscape framing, compact 2.7-head SD anime Crystal Quest style. One character only. No text, ground, scene, extra body, checkerboard. Genuine transparent RGBA background, white cloth opaque. Do not turn sword into a shield object.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-a6091521-7815-42d9-9e6b-cce1532bcd7e.png"
+    },
+    "ShieldPlant": {
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-71d62e31-4778-4977-921f-663263f209e8.png"
+    },
+    "HitRecoil": {
+      "prompt": "Create ONE isolated full-body SD Elliot HIT impact/strong recoil pose using attached exact identity. Facing left, silver swept tied hair/navy ribbon, small beard/blue eyes, white fur/navy white gold royal commander armor/boots/ornate gold blue-crystal sword. He visibly reels BACK to the RIGHT from a hit from left: torso and head leaned back, startled grimace, knees bending, sword still in one hand angled down-left, feet on ground. Clear strongest recoil, NOT neutral or attacking. Same compact 2.7-head SD proportions and head size as identity, polished anime Crystal Quest 2D. Entire head hair cape boots and sword safely inside WIDE landscape canvas with 15% clear alpha margin ALL SIDES. Genuine transparent background, white opaque cloth preserved. One character only, no floor, text, blood/wounds/attacker, border or checkerboard.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-af059030-183f-4449-920b-6b0ea5ac6a4e.png"
+    },
+    "HitDown": {
+      "prompt": "Create ONE isolated full-body SD Elliot complete KNOCKDOWN pose using attached exact identity. Silver swept tied hair/navy ribbon, small beard, white fur/navy white gold royal commander armor/boots/ornate gold blue crystal sword. Completely LYING ON HIS SIDE along groundline, HEAD LEFT, BOOTS RIGHT, eyes closed exhausted but unharmed. Body fully down/unable to stand. NOT crouching/kneeling/sitting/recovering. Sword still held/alongside hand fully visible. Same compact chibi body/head scale as identity, polished anime Crystal Quest 2D SD. Entire hair head cape feet and complete sword safely inside WIDE landscape canvas with generous 15% transparent safety margin ALL sides. Genuine RGBA transparency, white cloth opaque. One character only; no floor/background/scenery/text/checkerboard/attacker/blood/wound.",
+      "references": [
+        "source/identity-generated.png"
+      ],
+      "status": "selected source; normalize and review",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1587c-74e8-75d1-9a66-eee1f7c3bf03\\exec-711617f0-4099-4051-a18f-ff039af22e96.png"
+    }
+  }
+}

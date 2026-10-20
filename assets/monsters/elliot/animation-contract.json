@@ -1,0 +1,23 @@
+{
+  "character": "엘리엇 · World 6B stage 20 royal knight commander",
+  "identityReference": "source/user-reference.png",
+  "facing": "left",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "widthReason": "Complete longsword, cape, sweeping contact pose and prone body at constant body scale.",
+  "bodyHeightPx": 250,
+  "feetGroundY": 300,
+  "groundReason": "Reserve 12px beneath boots for sword tip / golden glow while retaining the common 0.975 bottom-center anchor.",
+  "sourceFrameGapPx": 50,
+  "runtimeFilePattern": "char_elliot_sd_<action>_strip.png",
+  "actions": {
+    "idle": {"frameNames": ["ready", "breath-blink", "settle"], "durationMs": [400,400,400], "loop": true},
+    "attack": {"frameNames": ["golden-charge", "rush-windup", "sword-contact"], "durationMs": [180,220,180], "hitFrame": 2, "contactMs": 400},
+    "shield": {"frameNames": ["raise-sword", "plant-sword", "golden-aura"], "durationMs": [200,200,200], "holdLastFrame": false, "effectDurationMs": 10000},
+    "hit": {"frameNames": ["guard-notice", "impact-recoil", "complete-knockdown"], "durationMs": [120,180,600], "hitFrame": 1, "holdLastFrame": true, "trialException": "Nonlethal recoil uses frame 2. Trial success is acknowledgment, not boss death; no knockdown triggered by HP zero."}
+  },
+  "reducedMotion": "Half-duration action poses; shorter spatial approach, retain contact event. Idle frame 1 held.",
+  "freeze": "Pause freezes all states. Ice Time/pet freeze countdown, skill cadence and enemy action while player attack contact and recoil complete.",
+  "review": {"technical": "RGBA, packing, 50px gutters and light/violet mobile frame composites reviewed", "browser": "not requested; not run", "userApproval": "not inferred"}
+}
