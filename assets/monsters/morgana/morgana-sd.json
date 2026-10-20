@@ -1,0 +1,26 @@
+{
+  "image": "morgana-sd.png",
+  "frameWidth": 512,
+  "frameHeight": 512,
+  "frameCount": 1,
+  "layout": "single",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "frames": [
+    {
+      "name": "idle-cast-ready",
+      "durationMs": 1800
+    }
+  ],
+  "runtimeAnimation": {
+    "idle": "CSS float",
+    "hit": "300ms recoil at player contact",
+    "defeat": "held CSS knockdown",
+    "chaos": "player individual rotate, 360 degrees per 1000ms for 10000ms",
+    "heal": "white ring and four sparkles for 1600ms"
+  },
+  "reducedMotion": "No idle float, player rotation or card travel; keep state notices and HP feedback."
+}

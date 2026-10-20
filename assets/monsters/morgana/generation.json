@@ -1,0 +1,25 @@
+{
+  "character": "Morgana",
+  "tool": "built-in image_gen",
+  "identityReference": "source/user-reference.png",
+  "generationOriginal": "source/identity.png",
+  "runtime": "morgana-sd.png",
+  "introduction": "morgana-standing.webp",
+  "prompt": "Use case: character-design. Asset: transparent full-body SD boss identity for Wordoria Crystal Quest, Morgana, mistress of the abyss. Attached image is the authoritative identity reference. Preserve her long flowing dark purple hair, purple eyes, two curved black/gold ram horns, intricate gold orbital crown, black and purple gold-trimmed high-neck full-length armored gown, black feather-like cape and violet crystal orb. Adapt to polished 2D anime fantasy chibi, large readable head and hands, compact body, fully covered nonsexualized costume, clean cel shading with soft gradients and restrained crystal glow, not pixel art. One single complete character in three-quarter view FACING LEFT toward player; entire horns, cape, hands, orb and feet inside frame with generous transparent margins; no scenery, no text, no frame. Calm imperious ready-to-cast idle pose, orb floating above forward open hand, stable ground line at 95% canvas. Transparent alpha background, portrait or square. This is a boss sprite displayed 150px high; simplify tiny filigree to readable gold shapes. Save to workspace assets/monsters/morgana/source/identity.png if supported.",
+  "frameWidth": 512,
+  "frameHeight": 512,
+  "frameCount": 1,
+  "layout": "single",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "animation": "Runtime CSS idle, recoil and defeat; independent player rotation and white healing ring.",
+  "review": {
+    "alpha": true,
+    "lightAndVioletComposite": "source/alpha-review.jpg",
+    "userApproval": false,
+    "browserChecked": false,
+    "technicalReview": "Identity and alpha inspected at source and 320px over Moon White and Crystal Violet; runtime CSS states reviewed in code. Browser not run per repository policy."
+  }
+}

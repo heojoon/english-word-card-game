@@ -43,7 +43,8 @@ test('6A renders twenty matching nodes with only previous and next world navigat
   for(let i=1;i<20;i++)assert.ok(parseFloat(world.positions[i][1])>parseFloat(world.positions[i-1][1]));
   for(let n=1;n<=20;n++){
     const stage=c.stages[`story-ch6a-${n}`];
-    assert.equal(stage.questionCount,n===10?200:60);
+    assert.equal(stage.questionCount,[10,20].includes(n)?200:60);
+    assert.equal(stage.morgana,n===20);
     assert.equal(stage.abyssGolem,n===10);
     assert.deepEqual(stage.words,c.stages[`s${35+Math.floor((n-1)/2)}`].words);
     assert.equal(stage.source.sheet,`Day ${Math.ceil(n/2)}`);
@@ -81,7 +82,7 @@ test('6A imports all ten source sheets in order for both levels without altering
       for(const number of [day*2-1,day*2]){
         const stage=c.stages[`story-ch6a-${number}`];
         assert.equal(stage.learningLevel,level);
-        assert.equal(stage.questionCount,number===10?200:level==='middle'?60:40);
+        assert.equal(stage.questionCount,[10,20].includes(number)?200:level==='middle'?60:40);
         assert.deepEqual(JSON.parse(JSON.stringify(stage.words)),original.words);
         assert.deepEqual(JSON.parse(JSON.stringify(stage.source)),original.source);
         assert.match(stage.desc,new RegExp(`Day ${day} · 30단어`));

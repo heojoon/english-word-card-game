@@ -21,7 +21,7 @@ const files = [
   'character-select-concepts.js',
   'crystal-game.css',
   'crystal-game.js',
-  'story-novel.js', 'abyss-golem-boss.js', 'bandit-chief-boss.js', 'lich-dragon-boss.js', 'sorcerus-boss.js', 'guardian-boss.js', 'red-reaper-boss.js', 'shadow-sorceress-boss.js', 'black-dragon-boss.js', 'pet-system.js',
+  'story-novel.js', 'morgana-boss.js', 'abyss-golem-boss.js', 'bandit-chief-boss.js', 'lich-dragon-boss.js', 'sorcerus-boss.js', 'guardian-boss.js', 'red-reaper-boss.js', 'shadow-sorceress-boss.js', 'black-dragon-boss.js', 'pet-system.js',
   'sound-manager.js',
   'native-bridge.js',
   'stages.js',
