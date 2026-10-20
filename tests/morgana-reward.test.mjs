@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 const code=(a,b)=>source.slice(source.indexOf(a),source.indexOf(b));
 function setup(localMode=true){
-  const character={id:'hero',coins:100};const c=vm.createContext({localMode,dbOnline:true,selectedCharacter:character,selectedStage:'story-ch6a-20',player:'learner',demoState:{characters:[character],records:[]},records:[],accountCrystals:100,stageRecordName:()=> '스토리 6A장 20 · 반전세계',saveDemo(){},run:{morgana:true,clear:true,bossHp:0,correct:67,elapsed:120000,storyCharacterId:'hero',deck:Array(67)},go(p){c.page=p;}});
+  const character={id:'hero',coins:100};const c=vm.createContext({window:{WORDORIA_MORGANA:{TIME_MS:330000}},localMode,dbOnline:true,selectedCharacter:character,selectedStage:'story-ch6a-20',player:'learner',demoState:{characters:[character],records:[]},records:[],accountCrystals:100,stageRecordName:()=> '스토리 6A장 20 · 반전세계',saveDemo(){},run:{morgana:true,clear:true,bossHp:0,correct:67,elapsed:120000,storyCharacterId:'hero',deck:Array(67)},go(p){c.page=p;}});
   vm.runInContext(code('  async function saveBattleResult(', '  async function saveSorcerusMidbossReward('),c);vm.runInContext(code('  function resultNext(', '  async function tapChest('),c);return c;
 }
 test('guest first clear pays exactly 500, bypasses chests and does not repeat across characters or reset progress',async()=>{
@@ -29,4 +29,13 @@ test('account uses battle character and authoritative balance, serializes saves,
 test('uncleared boss cannot claim victory and offline failures remain retryable',async()=>{
   const c=setup();c.run.bossHp=1;await c.saveBattleResult(c.run,true);assert.ok(c.run.saveError);assert.equal(c.selectedCharacter.coins,100);
   const remote=setup(false);remote.dbOnline=false;await remote.saveBattleResult(remote.run,true);assert.ok(remote.run.saveRetryable);assert.equal(remote.records.length,0);
+});
+
+test('account preserves clear times beyond five minutes up to the new limit',async()=>{
+  for(const elapsed of [300001,329999,330000,330001]){
+    const c=setup(false);c.run.elapsed=elapsed;let duration;
+    c.rpc=async(name,input)=>{duration=input.p_duration_ms;return [{game_score_id:8,reward:500,balance:600}];};
+    await c.saveBattleResult(c.run,true);
+    assert.equal(duration,Math.min(elapsed,330000));assert.equal(c.run.saveError,false);
+  }
 });

@@ -14,8 +14,8 @@ const hit=(s,id=s.morganaCards.find(c=>!s.matched.has(c.id)).id)=>{
   rules.advance(s,200);rules.advance(s,300);
 };
 
-test('Morgana uses 200 HP, five minutes and enough unique five-pair boards after a full heal',()=>{
-  const s=fresh();assert.equal(s.bossHp,200);assert.equal(s.storyTimeLimit,300000);assert.equal(s.deck.length,400);
+test('Morgana uses 200 HP, five minutes thirty seconds and enough unique five-pair boards after a full heal',()=>{
+  const s=fresh();assert.equal(s.bossHp,200);assert.equal(s.storyTimeLimit,330000);assert.equal(s.deck.length,400);assert.equal(rules.INFO.time,'5분 30초');
   for(let i=0;i<s.deck.length;i+=5)assert.equal(new Set(s.deck.slice(i,i+5).map(x=>x.entry[0])).size,5);
   assert.match(rules.INFO.rewardDescription,/500/);assert.equal(rules.INFO.description,'심연의 주인');
 });
@@ -81,7 +81,7 @@ test('wrong answer releases Ice Time and fatal damage clears boss effects',()=>{
 
 test('renderer exposes same-column matching, shared Ice Time, heal ring and exact runtime asset',()=>{
   const s=fresh();s.iceTimeActive=true;s.morganaHealMs=1600;
-  const c=vm.createContext({window,run:s,esc:String,deployedAssetUrl:x=>x,royalSlimeTime:()=> '05:00',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',iceTimeEffectMarkup:()=>'<i class="ice-time-field"></i>',eagleEyeEffectMarkup:()=>'',storyBattleActions:()=>'',sniperPairHintAttributes:()=>'',sniperPairHintMarkup:()=>'',petPairHintMarkup:()=>'',eaglePairHintMarkup:()=>''});
+  const c=vm.createContext({window,run:s,esc:String,deployedAssetUrl:x=>x,royalSlimeTime:()=> '05:30',battleHeroMarkup:()=>'',storyVitalsMarkup:()=>'',iceTimeEffectMarkup:()=>'<i class="ice-time-field"></i>',eagleEyeEffectMarkup:()=>'',storyBattleActions:()=>'',sniperPairHintAttributes:()=>'',sniperPairHintMarkup:()=>'',petPairHintMarkup:()=>'',eaglePairHintMarkup:()=>''});
   vm.runInContext(code('  function renderMorganaBattle(', '  function renderLichDragonBattle('),c);const html=c.renderMorganaBattle();
   assert.equal((html.match(/data-action="morgana-pick"/g)||[]).length,10);assert.match(html,/morgana-heal-ring/);assert.match(html,/ice-time-field/);assert.match(html,/aria-valuemax="200"/);assert.match(html,/morgana-sd.png/);
   for(const path of [rules.ART,rules.SPRITE])assert.ok(readFileSync(new URL('../'+path,import.meta.url)).length);
@@ -91,7 +91,8 @@ test('countdown integration respects freeze and timeout, with victory hold allow
   const s=fresh(),outcomes=[];const c=vm.createContext({window,run:s,Math,shuffle,updateWarriorSlash(){},syncMorganaMotion(){},render(){},document:{querySelector:()=>null,querySelectorAll:()=>[],dispatchEvent(){}},CustomEvent:class{},$:()=>null,finishBattle:(clear,reason)=>outcomes.push([clear,reason])});
   vm.runInContext(code('  function advanceMorganaBattle(', '  function lichDragonPick('),c);
   s.iceTimeActive=true;c.advanceMorganaBattle(5000);assert.equal(s.elapsed,0);assert.equal(s.morganaSkillElapsed,0);
-  s.iceTimeActive=false;s.elapsed=299999;c.advanceMorganaBattle(1000);assert.equal(s.elapsed,300000);assert.deepEqual(outcomes,[[false,'timeout']]);
+  s.iceTimeActive=false;s.elapsed=299999;c.advanceMorganaBattle(1000);assert.equal(s.elapsed,300999);assert.deepEqual(outcomes,[]);
+  s.elapsed=329999;c.advanceMorganaBattle(1000);assert.equal(s.elapsed,330000);assert.deepEqual(outcomes,[[false,'timeout']]);
   outcomes.length=0;s.bossHp=0;s.guardianPhase='defeat';s.guardianRemaining=1000;c.advanceMorganaBattle(1000);assert.deepEqual(outcomes,[[true,'boss-defeated']]);
 });
 

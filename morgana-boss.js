@@ -1,10 +1,10 @@
 /* World 6A-20: freely mixed matching cards, chaos rotations and one full heal. */
 (() => {
   'use strict';
-  const HP=200,TIME_MS=300000,INTERVAL_MS=20000,CHAOS_MS=10000,SHIFT_MS=800,HEAL_THRESHOLD=60,HEAL_MS=1600;
+  const HP=200,TIME_MS=330000,INTERVAL_MS=20000,CHAOS_MS=10000,SHIFT_MS=800,HEAL_THRESHOLD=60,HEAL_MS=1600;
   const ART='assets/monsters/morgana/morgana-standing.webp';
   const SPRITE='assets/monsters/morgana/morgana-sd.png';
-  const INFO={name:'모르가나',description:'심연의 주인',hp:HP,time:'5분',art:ART,skill:'혼돈의 저주',skillDescription:'20초마다 10초 동안 영어·한글 카드를 모두 섞고 왼쪽 열은 위로, 오른쪽 열은 아래로 움직여요. 같은 열의 위아래 카드도 연결할 수 있어요. 플레이어는 빙글빙글 회전해요.',skill2:'리프레시힐',skill2Description:'HP가 30% 이하가 되면 한 번만 하얀 별빛 원에 감싸여 HP를 100%까지 회복해요.',rewardDescription:'최초 처치 보상 500 크리스털'};
+  const INFO={name:'모르가나',description:'심연의 주인',hp:HP,time:'5분 30초',art:ART,skill:'혼돈의 저주',skillDescription:'20초마다 10초 동안 영어·한글 카드를 모두 섞고 왼쪽 열은 위로, 오른쪽 열은 아래로 움직여요. 같은 열의 위아래 카드도 연결할 수 있어요. 플레이어는 빙글빙글 회전해요.',skill2:'리프레시힐',skill2Description:'HP가 30% 이하가 되면 한 번만 하얀 별빛 원에 감싸여 HP를 100%까지 회복해요.',rewardDescription:'최초 처치 보상 500 크리스털'};
   function deck(words,shuffle){
     const pool=Array.from(new Map(words.map(entry=>[entry[0].toLowerCase(),entry])).values());
     if(pool.length<5)throw Error('모르가나는 서로 다른 단어가 5개 이상 필요해요');
