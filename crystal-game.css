@@ -877,7 +877,8 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
 /* World 6B: black-coat SD character and independently clocked thrown axe. */
 .bandit-encounter{text-align:center;margin-top:18px;padding:20px}
 .bandit-encounter>img{width:min(100%,280px);max-height:300px;object-fit:cover;object-position:center 18%;border-radius:20px}
-body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{background:linear-gradient(155deg,#eff5dd,#e9e5fa 65%,#ddd7c9)}
+body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{background:#e9e1c9 url('assets/environments/world-6b/02-bandit-chief-road-battle.webp') center bottom/cover no-repeat}
+.bandit-chief-arena .arena-floor{display:none}
 .bandit-chief-arena>.guardian-health{left:auto;right:12px;top:40px;bottom:auto;width:32%;z-index:9}
 .bandit-chief-arena .bandit-chief-enemy{overflow:visible;right:6%;bottom:12px;width:clamp(132px,38vw,160px);height:clamp(132px,38vw,160px);max-width:none;aspect-ratio:1}
 .bandit-chief-sprite{position:absolute;display:block;height:100%;left:50%;bottom:0;transform:translateX(-50%);background-repeat:no-repeat;filter:drop-shadow(0 4px 3px #24214c40);animation:none}

@@ -1,0 +1,25 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-21",
+  "file": "02-bandit-chief-road-battle.webp",
+  "original": "source/02-bandit-chief-road-battle.png",
+  "references": [
+    {
+      "file": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "role": "Existing World 6B style reference; transformed into a distinct bandit-road ambush scene"
+    }
+  ],
+  "scope": "World 6B stage 10 bandit-chief animated battle arena.",
+  "prompt": "Use case: stylized-concept. Asset type: finished 2D side-view battle background for Wordoria Crystal Quest World 6B stage 10, bandit-chief midboss. Transform the attached existing World 6B scenery reference into a NEW distinct roadside ambush battlefield, preserving its polished hand-painted anime fantasy environment style, luminous daylight, richly painted natural foliage, warm pale stone, soft lavender-blue atmospheric depth and friendly adventure mood. Scene: the kingdom capital road blocked by bandits, a broad weathered pale sandstone road clearing between rocky pine-forest slopes, a rough wooden road barricade pulled aside at the far right BACKGROUND, a few supply crates and rolled sacks tucked at the far edges, distant lavender mountains and a small distant blue-roof capital watchtower. No waterfall panorama dominating this scene. Landscape 16:9 composition, ideally 1672x941 or larger. Camera looks horizontally across the arena with mild ground perspective; broad continuous level warm stone/dirt floor spans full width across lower 35 percent. Both lower left and lower right must stay spacious and empty for separately animated hero and large axe-wielding bandit boss. Keep central sightline open for a flying axe; visual detail concentrated behind and around outer edges, upper-right area low contrast for HP bars. The road should read as a roadside ambush, not a castle courtyard or stage-selection map. Painterly textured 2D animation background, gently simplified forms, attractive lush greenery and sunlit highlights with cool shadows. No characters, people, monsters, weapons in foreground, text, letters, logos, UI, borders, waypoints, stage markers, circles, particle effects, pixel art, low-poly 3D, plastic toy materials, gritty violence, or ominous horror. Opaque full-bleed environment only.",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "runtime": {
+    "format": "WebP",
+    "quality": 88,
+    "backgroundPosition": "center bottom",
+    "backgroundSize": "cover"
+  },
+  "review": "Generated image visually inspected: continuous floor, open combat space, roadside barricade and supplies at edges, no baked characters or UI. Browser checks not requested; not user-approved."
+}
