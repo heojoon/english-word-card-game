@@ -66,7 +66,7 @@
       ?storyStages.slice(0,7).map((stage,index)=>world?.code==='7YA8'?stages[world.keys[index]]:null)
       :[1,1,2,3,4,5,1].map(number=>stages[`s${number}`]);
     const forestReviewSources=level==='elementary'&&world?.code==='7YA8'
-      ?Array.from({length:6},(_,index)=>world.keys.map(key=>stages[key]).find(source=>source?.name?.trim().toLowerCase()===`day.${index+2}`))
+      ?Array.from({length:6},(_,index)=>world.keys.map(key=>stages[key]).find(source=>new RegExp(`^day\\.${index+2}(?:\\b|$)`,'i').test(source?.name?.trim()||'')))
       :[];
     const forestReviewSeen=new Set();
     const forestReviewWords=forestReviewSources.length===6&&forestReviewSources.every(source=>source&&stageLevel(source)==='elementary'&&source.words.length>=4)
