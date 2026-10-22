@@ -11324,12 +11324,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "멈춰라. 살아 있는 자가 건널 다리가 아니다.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -11340,12 +11341,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "모르가나… 그자가 또 호수 밖에서 혀를 놀렸군.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -11373,12 +11375,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "처음에는 모두 보물을 찾았다. 나중에는 노래가 부르는 곳으로 걸어갔지.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -11389,12 +11392,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "그 말을 하지 않은 자도 없었다.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -11462,12 +11466,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "길을 보는 눈을 가져왔군. 그렇다면 눈을 감겨 주마.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -11521,12 +11526,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "내 노래를 들으면서도… 끝까지 창끝을 보았군.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -11546,12 +11552,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "누구와 말하는 것이냐?",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -11579,12 +11586,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "둘이서 한 길을 보고 있었나….",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -11603,12 +11611,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "물러서라! 내 노래는 끝났지만, 대왕의 노래는 아직 끝나지 않았다.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -11627,12 +11636,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "이 호수의 것은 모두 그분의 부름에 응한다. 나도… 오래 따랐지.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -11652,12 +11662,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "왕좌 위의 지팡이. 심연의 세이렌 지팡이다. 대왕은 그것으로 노래를 호수 끝까지 보낸다.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -11668,12 +11679,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "대왕 앞에서는 네가 가장 듣고 싶은 말이 들릴 것이다. 이 구슬이 길을 보여 주어도… 네 발까지 붙잡아 주지는 못한다.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -11692,12 +11704,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "너는 나를 이겼다. 물러날 길을 다시 막는 수치는 겪지 않겠다.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -11743,33 +11756,35 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "내 궁전까지 걸어온 손님이라. 기사가 창을 놓친 모양이구나.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "소서러스",
       "className": "mage",
-      "text": "네가 검은 세이렌의 대왕이야?",
+      "text": "네가 검은 세이렌의 대왕, 다크 트라이튼이야?",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
-      "text": "그렇다. 그리고 네가 찾는 보물도 여기 있지.",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
+      "text": "그렇다. 이 검은 호수의 왕, 다크 트라이튼이다. 그리고 네가 찾는 보물도 여기 있지.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(대왕이 지팡이를 들어 올린다. 휘어진 은빛 끝에 검푸른 결정이 박혀 있다. 결정 안에서는 작은 물결들이 끊임없이 부딪친다.)",
+      "text": "(은백색 수염이 갑옷 위로 흘러내린다. 다크 트라이튼이 크리스털 삼지창을 들어 올리자, 왕좌 옆에 놓인 심연의 세이렌 지팡이가 검푸른 빛을 낸다. 휘어진 은빛 끝의 결정 안에서 작은 물결들이 부딪친다.)",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
@@ -11784,12 +11799,13 @@ window.WORDORIA_NOVELS = {
       "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "모르가나의 구슬까지 가져왔군. 무엇을 주고 받았느냐?",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "소서러스",
@@ -11800,12 +11816,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "목숨 하나를 놓아주고 내 보물을 얻으러 왔다? 꽤 비싼 답례를 기대했구나.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "소서러스",
@@ -11816,12 +11833,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "그렇다면 지금은 무엇 때문에 탐내느냐?",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "소서러스",
@@ -11834,7 +11852,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(대왕이 지팡이 끝으로 바닥을 가볍게 두드린다. 검은 물이 둥근 거울처럼 솟아오른다. 그 안에서 아서가 소서러스를 바라본다.)",
+      "text": "(대왕이 삼지창 끝으로 바닥을 가볍게 두드린다. 검은 물이 둥근 거울처럼 솟아오른다. 그 안에서 아서가 소서러스를 바라본다.)",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
@@ -11856,12 +11874,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "지팡이를 주마. 저 목소리를 따라 물속으로 들어오너라. 네 친구들이 있는 곳까지 데려다주지.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "내레이션",
@@ -11946,17 +11965,18 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "기껏 그리운 얼굴을 보여 주었거늘… 끝내 내 노래를 거스르겠다는 것이냐!",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(물거울이 터진다. 대왕이 왕좌에서 몸을 일으키자 검은 파도가 방 둘레를 감싸고, 지팡이의 결정이 날카롭게 울린다.)",
+      "text": "(물거울이 터진다. 대왕이 왕좌에서 몸을 일으키자 검은 파도가 방 둘레를 감싸고, 삼지창의 결정이 날카롭게 울린다.)",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
@@ -11983,18 +12003,19 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(대왕의 왕관이 갈라진다. 마지막 마법이 검은 파도를 가르고, 대왕의 손에서 지팡이가 튕겨 나온다. 소서러스가 달려가 지팡이를 붙잡는다.)",
+      "text": "(대왕의 왕관이 갈라진다. 마지막 마법이 검은 파도를 가르고, 대왕의 손에서 삼지창이 튕겨 나온다. 왕좌 옆 지팡이를 둘러싸던 검은 물결도 풀려난다. 소서러스가 달려가 심연의 세이렌 지팡이를 붙잡는다.)",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "돌려다오! 그 지팡이는… 나의…!",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "내레이션",
@@ -12005,12 +12026,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌의 대왕",
-      "className": "scene",
+      "speaker": "다크 트라이튼",
+      "className": "dark-triton",
       "text": "어찌하여 따르지 않았느냐. 누구나 그리운 목소리에는… 돌아보는 법인데….",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/monsters/dark-triton/dark-triton-standing.png"
     },
     {
       "speaker": "소서러스",
@@ -12170,12 +12192,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "노래가… 멎었군.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -12186,12 +12209,13 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     },
     {
-      "speaker": "검은 세이렌 기사",
-      "className": "scene",
+      "speaker": "네레우스",
+      "className": "nereus",
       "text": "…돌아오는 발소리를 듣는 날도 있구나.",
       "scene": "world-7b",
       "location": "심연의 검은 호수",
-      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_nereus_world7b_standing.webp"
     },
     {
       "speaker": "내레이션",

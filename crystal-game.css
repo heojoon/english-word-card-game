@@ -1,3 +1,7 @@
+#nav>button{min-height:60px;gap:2px;padding:5px 4px;color:var(--muted)}
+#nav>button[aria-current=page]{color:var(--violet)}
+#nav .footer-menu-icon{display:block;flex:none;width:36px;height:36px;object-fit:contain;pointer-events:none;opacity:.8;filter:saturate(.8)}
+#nav>button[aria-current=page] .footer-menu-icon{opacity:1;filter:none}
 .boot{min-height:500px;display:grid;place-content:center;justify-items:center;gap:14px;color:var(--muted);font-size:12px}.boot i{width:38px;height:38px;border:4px solid #ddd8ef;border-top-color:var(--violet);border-radius:50%;animation:spin .8s linear infinite}.connection-error{color:var(--danger)}
 .profile-switch{display:flex;gap:7px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:none}.profile-switch::-webkit-scrollbar{display:none}.profile-chip{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:999px;padding:9px 13px;font-size:11px}.profile-chip.active{background:var(--violet);border-color:var(--violet);color:white}.profile-chip.add{border-style:dashed;color:var(--violet)}
 .onboarding{padding:26px 20px;text-align:center}.onboarding .result-symbol{margin-bottom:16px}.onboarding h1{font-size:25px;margin:8px 0 12px}.onboarding p{font-size:12px;line-height:1.8;color:var(--muted);margin-bottom:18px}.onboarding .primary{margin-top:10px}
@@ -788,6 +792,14 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
 .arena.world-five-battle:before,.arena.world-five-battle:after{content:none}
 .arena.world-five-battle .arena-floor{display:none}
 
+/* World 7B: underwater ruins, Nereus bridge, and the Siren throne chamber. */
+body[data-screen="battle"] .arena.world-seven-b-battle{background-color:#172540;background-size:cover;background-position:center bottom;background-repeat:no-repeat}
+body[data-screen="battle"] .arena.world-seven-b-ruins{background-image:url('assets/environments/world-7b/01-black-lake-ruins-battle.webp')}
+body[data-screen="battle"] .arena.world-seven-b-midboss{background-image:url('assets/environments/world-7b/02-nereus-bridge-battle.webp')}
+body[data-screen="battle"] .arena.world-seven-b-final-boss{background-image:url('assets/environments/world-7b/03-siren-throne-battle.webp')}
+.arena.world-seven-b-battle:before,.arena.world-seven-b-battle:after{content:none}
+.arena.world-seven-b-battle .arena-floor{display:none}
+
 /* Eagle Eye shares Ice Time's activation lettering and stays above the enemy. */
 .eagle-eye-field{position:absolute;z-index:10;right:5%;top:8%;width:min(170px,44%);height:80px;object-fit:contain;pointer-events:none;filter:drop-shadow(0 0 7px #7868ef88);animation:eagle-eye-reveal .2s ease-out both}
 .arena-combo.eagle-eye-announcement{--ice-light:#e8fbff;--ice-edge:#99e5eb;animation-duration:1s}
@@ -815,6 +827,11 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
 .skeleton-scorched .spider-idle-strip{background-image:url('assets/monsters/world-7a/skeleton-scorched-sd-idle-strip.png')}
 .skeleton-scorched .spider-attack-strip{background-image:url('assets/monsters/world-7a/skeleton-scorched-sd-attack-strip.png')}
 .skeleton-scorched .spider-hit-strip{background-image:url('assets/monsters/world-7a/skeleton-scorched-sd-hit-strip.png')}
+/* World 7B: wide cells preserve the spear and tail at the same body scale. */
+.arena .enemy.story-mob.lizardman-mob{width:153px;height:102px;margin-right:-25.5px}
+.lizardman-mob .spider-idle-strip{background-image:url('assets/monsters/world-7b/black-lizardman-sd-idle-strip.png')}
+.lizardman-mob .spider-attack-strip{background-image:url('assets/monsters/world-7b/black-lizardman-sd-attack-strip.png')}
+.lizardman-mob .spider-hit-strip{background-image:url('assets/monsters/world-7b/black-lizardman-sd-hit-strip.png')}
 @media(prefers-reduced-motion:reduce){
   .crystal-spider-mob .spider-idle-strip{animation:none}
   .spider-is-attacking .spider-attack-strip{animation-duration:90ms}
@@ -1017,3 +1034,73 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 .story-world-map-9{aspect-ratio:1/3}
 .story-world-map-9 .story-map-node{height:2.025%}
 .story-world-map-9 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
+/* World 7B: keep all boss motion above the matching board. */
+.nereus-arena{background:radial-gradient(ellipse at 54% 68%,#4b688a80,transparent 55%),linear-gradient(#172540,#344365 68%,#26354f);isolation:isolate}
+.nereus-arena .arena-floor{background:linear-gradient(transparent,#667d9770);border-top:1px solid #94d9e780}
+.nereus-arena .nereus-enemy{width:52%;height:auto;aspect-ratio:448/320;right:0;top:auto;bottom:12%;transition:opacity 100ms}
+.nereus-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;background-position:0 0;image-rendering:auto}
+.nereus-enemy.nereus-hidden{opacity:0}
+.nereus-enemy.nereus-shaking{animation:nereus-shake 120ms linear infinite}
+.nereus-projectiles{position:absolute;inset:0;pointer-events:none;z-index:5}
+.nereus-spear{position:absolute;top:38%;width:28%;aspect-ratio:2/1;transform:translate(-50%,-50%);background-image:url('assets/monsters/nereus/char_nereus_sd_projectile_strip.png');background-size:300% 100%;background-repeat:no-repeat}
+.nereus-arena.ice-time-active .nereus-enemy,.nereus-arena.paused .nereus-enemy{animation-play-state:paused}
+.nereus-match-board .english{overflow-wrap:anywhere}
+.dark-triton-arena{isolation:isolate}
+.dark-triton-arena .dark-triton-enemy{width:62%;max-width:280px;height:auto;aspect-ratio:480/320;right:-1%;top:auto;bottom:9%}
+.dark-triton-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;background-position:0 0;image-rendering:auto;filter:drop-shadow(0 5px 4px #24214c55)}
+.dark-triton-projectiles{position:absolute;inset:0;pointer-events:none;z-index:5}
+.dark-triton-projectile{position:absolute;width:34%;max-width:160px;aspect-ratio:480/320;transform:translate(-50%,-50%);background-size:300% 100%;background-repeat:no-repeat}
+.dark-triton-match-board .english{overflow-wrap:anywhere}
+@keyframes nereus-shake{0%,100%{transform:translateX(-5px)}50%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.nereus-enemy.nereus-shaking{animation:none;filter:brightness(1.3)}.nereus-arena .nereus-enemy{transition:none}}
+/* Crystal podium: use the exact battle appearance without battle state effects. */
+.hall-of-fame{margin-top:22px;padding:20px 16px 14px;border:1px solid var(--line);border-radius:26px;background:radial-gradient(ellipse at 50% 48%,#e9e5ff80,transparent 66%),linear-gradient(155deg,#fff,var(--surface));isolation:isolate}
+.hall-of-fame-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hall-of-fame-header h2{margin:4px 0 0;font-size:23px;letter-spacing:-.06em;color:var(--ink)}
+.hall-of-fame-header .eyebrow{color:var(--muted);font-size:10px;letter-spacing:.04em}
+.hall-of-fame-refresh{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--violet);font-size:25px;cursor:pointer}
+.hall-of-fame-refresh:disabled{opacity:.45}
+.hall-of-fame-tabs{display:flex;gap:4px;padding:4px;margin:18px 0;background:#ebe8f8;border-radius:15px}
+.hall-of-fame-tabs button{display:flex;align-items:center;justify-content:center;gap:4px;flex:1;min-width:0;min-height:44px;padding:8px 4px;border:0;border-radius:12px;background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.hall-of-fame-tabs button[aria-pressed=true]{background:#fff;color:var(--violet);box-shadow:0 3px 8px #5751d817}
+.hall-of-fame-tabs small{font-size:8px;font-weight:700}
+.hall-of-fame-caption{text-align:center}
+.hall-of-fame-caption h3{margin:0;font-size:14px;color:var(--ink)}
+.hall-of-fame-caption p{margin:5px 0 0;font-size:10px;color:var(--muted)}
+.hall-of-fame-status{font-size:11px;line-height:1.6;text-align:center;color:var(--muted)}
+.hall-of-fame-status:not(:empty){margin-top:12px}
+.hall-of-fame-podium{display:grid;grid-template-columns:1fr 1.12fr 1fr;align-items:end;gap:6px;list-style:none;margin:8px 0 0;padding:0}
+.hall-of-fame-place{--hall-size:clamp(64px,22vw,96px);min-width:0;text-align:center}
+.hall-of-fame-place-1{--hall-size:clamp(74px,25vw,110px)}
+.hall-of-fame-stage{position:relative;height:120px;display:flex;align-items:end;justify-content:center}
+.hall-of-fame-stage:before{content:"";position:absolute;bottom:0;width:74%;height:14px;border-radius:50%;background:#5751d81a;filter:blur(3px)}
+.hall-of-fame .battle-hero{position:relative;inset:auto;flex:none;width:var(--hall-size);height:var(--hall-size);transform:none!important;animation:none!important;pointer-events:none}
+.hall-of-fame .battle-hero .battle-sprite{width:calc(100% * var(--hall-aspect,1))!important;height:100%;margin-left:calc((100% - 100% * var(--hall-aspect,1))/2)!important;transform:none!important;filter:drop-shadow(0 5px 4px #24214c24);will-change:auto}
+.hall-of-fame :is(.battle-skin-warrior_golden_radiance_skin,.battle-skin-warrior_female_golden_radiance_skin,.battle-hero-sniper){--hall-aspect:1.6}
+.hall-of-fame :is(.battle-skin-mage_starlight_rose_skin,.battle-skin-mage_shadow_sorceress_skin){--hall-aspect:1.2}
+.hall-of-fame-step{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:64px;border:1px solid #d9d5f3;border-radius:14px 14px 8px 8px;background:linear-gradient(155deg,#efedff,#e1ddf7);box-shadow:inset 0 2px 0 #ffffffb3}
+.hall-of-fame-place-1 .hall-of-fame-step{min-height:88px;border-color:#efcf82;background:linear-gradient(150deg,#fff3cf,#ffe2a0)}
+.hall-of-fame-place-3 .hall-of-fame-step{min-height:54px;background:linear-gradient(150deg,#f5eeec,#ecdfda);border-color:#e5d6d0}
+.hall-of-fame-rank{font-size:23px;line-height:1;font-weight:900;color:var(--violet)}
+.hall-of-fame-rank small{font-size:10px;margin-left:2px;font-weight:700}
+.hall-of-fame-place-1 .hall-of-fame-rank{color:#8b6019}
+.hall-of-fame-value{font-size:12px;color:var(--ink);font-variant-numeric:tabular-nums}
+.hall-of-fame-name{min-height:62px;padding:9px 1px 0;overflow-wrap:anywhere;line-height:1.4}
+.hall-of-fame-name small{display:block;margin-bottom:3px;font-size:10px;color:var(--muted)}
+.hall-of-fame-name b{display:block;font-size:12px;color:var(--ink)}
+.hall-of-fame-unknown{display:grid;place-items:center;width:60px;height:80px;font-size:32px;color:#c9c3e4}
+.hall-of-fame-vacant .hall-of-fame-step{opacity:.55}
+.hall-of-fame-note{margin:12px 0 0;text-align:center;font-size:9px;line-height:1.6;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){.hall-of-fame .battle-hero .battle-sprite{animation:none!important}}
+/* Home level and EXP sit together on a translucent glass badge. */
+.home-hero-card{position:relative}
+.home-level-progress{position:absolute;top:15px;left:16px;z-index:5;display:flex;align-items:center;gap:8px;width:calc(100% - 116px);max-width:218px;min-height:38px;padding:4px 10px 4px 4px;border:1px solid #ffffff38;border-radius:18px;background:#24214c45;box-shadow:0 4px 12px #24214c14;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--surface);text-align:left;cursor:pointer}
+.home-level-progress .level{flex:none;padding:7px 9px;background:#60d9cfd9;font-size:11px;line-height:1.2}
+.home-inline-exp{display:flex;flex:1;min-width:0;flex-direction:column;gap:5px}
+.home-exp-copy{display:flex;align-items:center;justify-content:space-between;gap:4px;font-size:8px;line-height:1.2;white-space:nowrap;font-variant-numeric:tabular-nums}
+.home-exp-copy>span{font-size:7px;opacity:.8;letter-spacing:.04em}
+.home-exp-copy b{font-weight:700}
+.home-exp-track{display:block;height:4px;overflow:hidden;border-radius:99px;background:#ffffff30;box-shadow:inset 0 1px 2px #24214c24}
+.home-exp-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--mint),#d4fff7);box-shadow:0 0 6px #60d9cf55}
+.home-level-progress:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+@media(max-width:360px){.home-level-progress{gap:6px;padding-right:7px}.home-exp-copy>span{display:none}}

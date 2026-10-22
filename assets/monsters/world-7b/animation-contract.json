@@ -1,0 +1,23 @@
+{
+  "name": "검은 도마뱀 창병",
+  "world": "7B",
+  "stages": "1-14,16-29",
+  "excludedBossStages": [15, 30],
+  "identity": "source/black-lizardman-spear-identity-v1.png",
+  "facing": "left",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "safeMarginPx": 8,
+  "effectBounds": "Entire spear, tail, feet and crest inside each wide cell; no detached projectile.",
+  "actions": {
+    "idle": {"frames": ["ready", "breath"], "durationMs": [600, 600], "loop": true},
+    "attack": {"frames": ["ready", "anticipation", "spear-contact"], "durationMs": [120, 120, 260], "hitFrame": 2, "holdFinal": true},
+    "hit": {"frames": ["notice", "impact", "knockdown"], "durationMs": [100, 100, 160], "holdFinal": true}
+  },
+  "destinationPattern": "black-lizardman-sd-<action>-strip.png",
+  "runtime": "Shared Story mob player: damage/contact at 240ms (90ms reduced motion), hit synced to hero contact, pause-safe callbacks, Ice Time idle freeze.",
+  "reviewStatus": "Production contract; browser checks only on explicit user request."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "흑조의 창기사 네레우스",
+  "summary": "검은 호수의 다리를 지키며 세 갈래 창과 물안개로 침입자의 시야를 빼앗는 세이렌 기사.",
+  "image": "char_nereus_world7b_standing.webp",
+  "source": "assets/monsters/nereus/source/standing.png",
+  "role": "World 7B-15 standing CG; separate from SD battle art",
+  "width": 1024,
+  "height": 1536,
+  "alpha": true,
+  "userApproved": false,
+  "technicalReview": "CG and SD identity inspected; transparent export; browser review not requested"
+}

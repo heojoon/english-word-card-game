@@ -1,0 +1,6 @@
+{
+  "readyHeadWidthPx": 360,
+  "anticipationHeadWidthPx": 500,
+  "contactHeadWidthPx": 520,
+  "method": "Reviewed snout-to-rear-head widths; isolated poses calibrated against first idle frame before shared scaling. Contact silhouette is shorter because knees and torso lean into thrust."
+}

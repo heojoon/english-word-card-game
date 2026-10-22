@@ -1,0 +1,85 @@
+{
+  "image": "char_dark_triton_trident_throw_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.2803738317757009,
+  "sourceCuts": [
+    [
+      0,
+      1536
+    ],
+    [
+      0,
+      1536
+    ],
+    [
+      0,
+      1536
+    ]
+  ],
+  "isolatedSourceCalibration": [
+    {
+      "pose": "trident-throw-anticipation",
+      "scale": 0.8534396809571286,
+      "targetHeight": 856
+    },
+    {
+      "pose": "trident-throw-aim",
+      "scale": 0.8761514841351075,
+      "targetHeight": 856
+    },
+    {
+      "pose": "trident-throw-release",
+      "scale": 0.8690355329949239,
+      "targetHeight": 856
+    }
+  ],
+  "alphaDustThreshold": 8,
+  "effectBoundsPx": [
+    [
+      121,
+      72,
+      364,
+      312
+    ],
+    [
+      9,
+      72,
+      371,
+      312
+    ],
+    [
+      62,
+      72,
+      377,
+      312
+    ]
+  ],
+  "loop": false,
+  "finalHold": false,
+  "reset": "idle",
+  "frames": [
+    {
+      "name": "anticipation",
+      "durationMs": 180
+    },
+    {
+      "name": "aim",
+      "durationMs": 180
+    },
+    {
+      "name": "release",
+      "durationMs": 240,
+      "release": true
+    }
+  ],
+  "reviewStatus": "Offline review only; user approval and in-engine review pending."
+}

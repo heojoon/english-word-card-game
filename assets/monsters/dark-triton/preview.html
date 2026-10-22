@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>다크 트라이튼 · 제작 미리보기</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;background:#f7f7ff;color:#24214c;font:16px system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:24px}h1{margin:0 0 8px}p{line-height:1.6}button{font:inherit;border:1px solid #d8d5ed;border-radius:20px;padding:10px 16px;background:white;color:#24214c;cursor:pointer}button[aria-pressed=true]{background:#5751d8;color:white}nav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}article{border:1px solid #dedcf0;background:white;border-radius:20px;padding:16px}article img{width:100%;height:auto;display:block}article h2{font-size:18px}canvas{display:block;width:100%;height:auto;border-radius:20px;background:linear-gradient(#eeedff,#d9f5f2)}.violet canvas,.violet article{background:#5751d8;color:white}.standing{max-height:640px;object-fit:contain}small{color:#625c82}.notice{min-height:2em;color:#5751d8;font-weight:bold}a{color:#5751d8}
+</style>
+<main>
+  <h1>다크 트라이튼</h1>
+  <p>검은 호수의 메아리에 잠식된 인어 왕. HP 220 · 5분 · 연결문제</p>
+  <p><small>자산 검토용 미리보기 · 실제 게임 전투 적용 및 사용자 승인 전</small></p>
+  <nav><button id="theme">배경: 밝게 / 보라</button><button id="pause">일시정지</button><button id="motion" aria-pressed="false">동작 줄이기</button></nav>
+  <nav id="actions"><button data-action="idle" aria-pressed="true">대기</button><button data-action="stormsurge">스톰서지</button><button data-action="trident-throw">트라이던트 쓰루</button><button data-action="hit">피격 → 쓰러짐 유지</button></nav>
+  <canvas width="960" height="360" aria-label="다크 트라이튼 캐릭터 및 투사체 재생"></canvas>
+  <p class="notice" role="status">대기</p>
+  <p><small>스킬 재생에서는 캐릭터의 발사 후 투사체가 왼쪽 목표점에 도달합니다. 접촉 프레임에서 효과를 표시합니다. 실제 플레이어 캐릭터 대신 목표 원으로 위치를 표시합니다.</small></p>
+  <div class="gallery">
+    <article><h2>스탠딩 CG</h2><img class="standing" src="dark-triton-standing.png" alt="은백색 수염과 수정 삼지창을 지닌 인어 왕"></article>
+    <article><h2>SD 외형 기준</h2><img src="source/identity.png" alt="다크 트라이튼 SD 외형 기준"></article>
+  </div>
+  <p><a href="animation-contract.json">전투·애니메이션 명세</a> · <a href="README.md">제작 기록</a></p>
+</main>
+<script>
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d');
+const notice=document.querySelector('.notice');
+const specs={
+  idle:{file:'char_dark_triton_idle_strip.png',durations:[600,600]},
+  stormsurge:{file:'char_dark_triton_stormsurge_strip.png',durations:[180,180,240],projectile:'wave'},
+  'trident-throw':{file:'char_dark_triton_trident_throw_strip.png',durations:[180,180,240],projectile:'trident'},
+  hit:{file:'char_dark_triton_hit_strip.png',durations:[120,140,600]},
+  wave:{file:'fx_dark_triton_wave_strip.png',durations:[110,140,180]},
+  trident:{file:'fx_dark_triton_trident_strip.png',durations:[110,140,180]}
+};
+for(const spec of Object.values(specs)){spec.image=new Image();spec.image.src=spec.file;}
+let action='idle',elapsed=0,last=0,paused=false,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelector('#motion').setAttribute('aria-pressed',String(reduced));
+function frameAt(durations,time,loop=false){const total=durations.reduce((a,b)=>a+b,0);if(loop)time%=total;for(let i=0;i<durations.length;i++){if(time<durations[i])return i;time-=durations[i];}return durations.length-1;}
+function drawFrame(spec,frame,x,y,w=480,h=320){if(spec.image.complete&&spec.image.naturalWidth)ctx.drawImage(spec.image,frame*480,0,480,320,x,y,w,h);}
+function select(next){action=next;elapsed=0;for(const button of document.querySelectorAll('[data-action]'))button.setAttribute('aria-pressed',String(button.dataset.action===next));}
+document.querySelector('#actions').onclick=e=>{if(e.target.dataset.action)select(e.target.dataset.action);};
+document.querySelector('#theme').onclick=()=>document.body.classList.toggle('violet');
+document.querySelector('#pause').onclick=e=>{paused=!paused;e.target.textContent=paused?'재생':'일시정지';};
+document.querySelector('#motion').onclick=e=>{reduced=!reduced;e.target.setAttribute('aria-pressed',String(reduced));select(action);};
+function tick(now){if(last&&!paused)elapsed+=Math.min(now-last,100);last=now;ctx.clearRect(0,0,960,360);
+  const speed=reduced ? 0.4 : 1,time=elapsed/speed,spec=specs[action];
+  ctx.strokeStyle='#60d9cf';ctx.lineWidth=4;ctx.beginPath();ctx.arc(140,210,44,0,Math.PI*2);ctx.stroke();
+  ctx.fillStyle=document.body.classList.contains('violet')?'white':'#24214c';ctx.font='20px system-ui';ctx.fillText('접촉 목표',98,295);
+  const end=spec.durations.reduce((a,b)=>a+b,0);
+  const drawing=spec.projectile&&time>end+600?specs.idle:spec;
+  drawFrame(drawing,frameAt(drawing.durations,drawing===spec?time:time-end-600,drawing===specs.idle),430,30);
+  let message=action==='idle'?'대기':action==='hit'?(time>=260?'쓰러짐 · 마지막 프레임 유지':'피격 반응'):'준비 → 발사';
+  if(spec.projectile){const flight=time-360,fx=specs[spec.projectile];
+    if(flight>=0&&flight<430){const progress=Math.min(1,flight/250);const origin=action==='stormsurge'?465:530;drawFrame(fx,frameAt(fx.durations,flight),origin-120-progress*(origin-140),95+progress*35,240,160);}
+    if(flight>=250)message=action==='stormsurge'?'접촉 · 카드 무작위 섞기':'접촉 · 플레이어 HP −1';
+  }
+  notice.textContent=message;
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+</script>
+</html>

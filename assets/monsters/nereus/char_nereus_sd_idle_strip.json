@@ -1,0 +1,90 @@
+{
+  "image": "char_nereus_sd_idle_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": true,
+  "holdLastFrame": false,
+  "normalization": [
+    {
+      "source": "idle-sheet.png",
+      "box": [
+        0,
+        0,
+        715,
+        715
+      ],
+      "scale": 0.4,
+      "pivotX": 439.5,
+      "feetY": 694,
+      "runtimeBounds": [
+        62,
+        40,
+        318,
+        312
+      ]
+    },
+    {
+      "source": "idle-sheet.png",
+      "box": [
+        715,
+        0,
+        1477,
+        715
+      ],
+      "scale": 0.4,
+      "pivotX": 462.0,
+      "feetY": 694,
+      "runtimeBounds": [
+        56,
+        41,
+        334,
+        312
+      ]
+    },
+    {
+      "source": "idle-sheet.png",
+      "box": [
+        1477,
+        0,
+        2200,
+        715
+      ],
+      "scale": 0.4,
+      "pivotX": 446.0,
+      "feetY": 695,
+      "runtimeBounds": [
+        57,
+        40,
+        321,
+        312
+      ]
+    }
+  ],
+  "review": {
+    "userApproved": false,
+    "browser": "not run; repository requires explicit request",
+    "technical": "passed: all frames inspected over white and Crystal Violet, full props, alpha, cell bounds, ground line and exact 50px review gaps verified"
+  },
+  "frames": [
+    {
+      "name": "guard",
+      "durationMs": 350
+    },
+    {
+      "name": "inhale",
+      "durationMs": 350
+    },
+    {
+      "name": "exhale",
+      "durationMs": 350
+    }
+  ]
+}

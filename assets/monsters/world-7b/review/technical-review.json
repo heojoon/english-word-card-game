@@ -1,0 +1,20 @@
+{
+  "status": "offline review passed",
+  "runtimeCell": [480, 320],
+  "displaySizePx": [153, 102],
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "checks": {
+    "exactFrameCounts": true,
+    "realRgbaAlpha": true,
+    "allPoseBoundsInsideCells": true,
+    "completeSpearAndTail": true,
+    "headScaleCalibratedForIsolatedAttackPoses": true,
+    "attackBladeFacesLeftThroughout": true,
+    "hitFinalPoseCompletelyDown": true,
+    "lightAndCrystalVioletMobileCompositesReviewed": true
+  },
+  "artifacts": ["idle-mobile-light-violet.png", "attack-mobile-light-violet.png", "hit-mobile-light-violet.png", "validation.json"],
+  "browserReview": "Not requested; no browser playtest performed.",
+  "userApproval": "Identity accepted for game integration by user; generated animation poses have technical review only."
+}

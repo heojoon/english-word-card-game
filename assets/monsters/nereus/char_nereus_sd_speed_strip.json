@@ -1,0 +1,72 @@
+{
+  "image": "char_nereus_sd_speed_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "normalization": [
+    {
+      "source": "speed-01.png",
+      "scale": 0.28,
+      "pivotX": 751.0,
+      "feetY": 1170,
+      "runtimeBounds": [
+        33,
+        26,
+        350,
+        312
+      ]
+    },
+    {
+      "source": "speed-02.png",
+      "scale": 0.28,
+      "pivotX": 704.5,
+      "feetY": 1124,
+      "runtimeBounds": [
+        30,
+        67,
+        375,
+        312
+      ]
+    },
+    {
+      "source": "speed-03.png",
+      "scale": 0.28,
+      "pivotX": 822.0,
+      "feetY": 1190,
+      "runtimeBounds": [
+        19,
+        9,
+        327,
+        312
+      ]
+    }
+  ],
+  "review": {
+    "userApproved": false,
+    "browser": "not run; repository requires explicit request",
+    "technical": "passed: all frames inspected over white and Crystal Violet, full props, alpha, cell bounds, ground line and exact 50px review gaps verified"
+  },
+  "frames": [
+    {
+      "name": "brace",
+      "durationMs": 120
+    },
+    {
+      "name": "sway-left",
+      "durationMs": 120
+    },
+    {
+      "name": "sway-right",
+      "durationMs": 240
+    }
+  ]
+}

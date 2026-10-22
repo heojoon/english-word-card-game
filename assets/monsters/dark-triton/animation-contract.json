@@ -1,0 +1,30 @@
+{
+  "id": "dark-triton",
+  "name": "다크 트라이튼",
+  "world": "7B",
+  "stage": 30,
+  "summary": "한때 호수의 노래와 물길을 지키던 인어 왕. 심연의 메아리에 잠식되어 조개 왕좌에 군림하며, 크리스털 삼지창으로 검은 물결과 궁전의 수문을 다스린다. 오만한 왕의 명령을 꺾어야 심연의 세이렌 지팡이로 향하는 길이 열린다.",
+  "battle": {"hp": 220, "timeLimitSeconds": 300, "questionType": "matching"},
+  "skills": [
+    {"id": "stormsurge", "name": "스톰서지", "trigger": {"intervalSeconds": 10}, "effect": "shuffle-cards", "animation": "stormsurge", "projectile": "wave", "damage": 0},
+    {"id": "trident-throw", "name": "트라이던트 쓰루", "trigger": {"hpPercentThresholds": [50, 40, 30, 20, 10], "eachThresholdOnce": true}, "effect": "player-hp-loss", "damage": 1, "animation": "trident-throw", "projectile": "trident"}
+  ],
+  "facing": "left",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "wideCellReason": "Keep the merfolk tail, crown and long trident readable without shrinking the body for horizontal actions.",
+  "anchor": {"x": 0.5, "y": 0.975},
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "actions": {
+    "idle": {"frames": ["ready", "breath"], "durationsMs": [600, 600], "loop": true},
+    "stormsurge": {"frames": ["anticipation", "charge", "release"], "durationsMs": [180, 180, 240], "releaseFrame": 3, "reset": "idle", "castOrigin": "left-facing trident prongs; both hands channel the wave through the weapon"},
+    "trident-throw": {"frames": ["anticipation", "aim", "release"], "durationsMs": [180, 180, 240], "releaseFrame": 3, "reset": "idle", "propContract": "Trident stays in hand before release; detached projectile owns the thrown trident after release. Weapon reappears on reset by magic."},
+    "hit": {"frames": ["guard-notice", "impact-recoil", "knockdown"], "durationsMs": [120, 140, 600], "hitFrame": 2, "finalHold": true}
+  },
+  "projectiles": {
+    "wave": {"frames": ["launch", "travel", "contact"], "durationsMs": [110, 140, 180], "releaseFrame": 1, "hitFrame": 3, "anchor": {"x": 0.5, "y": 0.5}, "effect": "Shuffle at contact; no additional damage."},
+    "trident": {"frames": ["launch", "travel", "contact"], "durationsMs": [110, 140, 180], "releaseFrame": 1, "hitFrame": 3, "anchor": {"x": 0.5, "y": 0.5}, "effect": "Apply one player HP loss at contact."}
+  },
+  "review": {"userApproval": "user requested application of generated assets", "productionIntegration": "wired to World 7B stage 30; not deployed", "browserReview": "not run; browser checks only on user request"}
+}

@@ -1,0 +1,62 @@
+{
+  "image": "fx_dark_triton_wave_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.336,
+  "sourceCuts": [
+    0,
+    617,
+    1267,
+    1900
+  ],
+  "isolatedSourceCalibration": [],
+  "alphaDustThreshold": 8,
+  "effectBoundsPx": [
+    [
+      146,
+      85,
+      333,
+      234
+    ],
+    [
+      137,
+      68,
+      342,
+      252
+    ],
+    [
+      139,
+      55,
+      341,
+      265
+    ]
+  ],
+  "loop": false,
+  "finalHold": false,
+  "reset": null,
+  "frames": [
+    {
+      "name": "launch",
+      "durationMs": 110,
+      "release": true
+    },
+    {
+      "name": "travel",
+      "durationMs": 140
+    },
+    {
+      "name": "contact",
+      "durationMs": 180,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline review only; user approval and in-engine review pending."
+}

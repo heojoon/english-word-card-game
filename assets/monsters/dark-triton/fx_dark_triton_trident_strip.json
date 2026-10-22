@@ -1,0 +1,62 @@
+{
+  "image": "fx_dark_triton_trident_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.5932203389830508,
+  "sourceCuts": [
+    0,
+    632,
+    1264,
+    1900
+  ],
+  "isolatedSourceCalibration": [],
+  "alphaDustThreshold": 8,
+  "effectBoundsPx": [
+    [
+      57,
+      88,
+      422,
+      231
+    ],
+    [
+      58,
+      86,
+      422,
+      234
+    ],
+    [
+      57,
+      55,
+      423,
+      265
+    ]
+  ],
+  "loop": false,
+  "finalHold": false,
+  "reset": null,
+  "frames": [
+    {
+      "name": "launch",
+      "durationMs": 110,
+      "release": true
+    },
+    {
+      "name": "travel",
+      "durationMs": 140
+    },
+    {
+      "name": "contact",
+      "durationMs": 180,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline review only; user approval and in-engine review pending."
+}

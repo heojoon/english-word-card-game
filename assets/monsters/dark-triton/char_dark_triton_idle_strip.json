@@ -1,0 +1,49 @@
+{
+  "image": "char_dark_triton_idle_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.2803738317757009,
+  "sourceCuts": [
+    0,
+    911,
+    1798
+  ],
+  "isolatedSourceCalibration": [],
+  "alphaDustThreshold": 8,
+  "effectBoundsPx": [
+    [
+      125,
+      72,
+      361,
+      312
+    ],
+    [
+      122,
+      72,
+      363,
+      312
+    ]
+  ],
+  "loop": true,
+  "finalHold": false,
+  "reset": null,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 600
+    },
+    {
+      "name": "breath",
+      "durationMs": 600
+    }
+  ],
+  "reviewStatus": "Offline review only; user approval and in-engine review pending."
+}

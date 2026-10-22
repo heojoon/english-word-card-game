@@ -1,0 +1,79 @@
+{
+  "strips": [
+    {
+      "image": "char_dark_triton_hit_strip.png",
+      "size": [
+        1440,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "gapsVerified": true
+    },
+    {
+      "image": "char_dark_triton_idle_strip.png",
+      "size": [
+        960,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "gapsVerified": true
+    },
+    {
+      "image": "char_dark_triton_stormsurge_strip.png",
+      "size": [
+        1440,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "gapsVerified": true
+    },
+    {
+      "image": "char_dark_triton_trident_throw_strip.png",
+      "size": [
+        1440,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "gapsVerified": true
+    },
+    {
+      "image": "fx_dark_triton_trident_strip.png",
+      "size": [
+        1440,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "gapsVerified": true
+    },
+    {
+      "image": "fx_dark_triton_wave_strip.png",
+      "size": [
+        1440,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "gapsVerified": true
+    }
+  ],
+  "contactMs": 610,
+  "browser": "not requested; not run",
+  "userApproval": "pending"
+}

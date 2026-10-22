@@ -1,0 +1,73 @@
+{
+  "image": "char_nereus_sd_attack_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "normalization": [
+    {
+      "source": "attack-01.png",
+      "scale": 0.28,
+      "pivotX": 751.0,
+      "feetY": 1164,
+      "runtimeBounds": [
+        32,
+        52,
+        358,
+        312
+      ]
+    },
+    {
+      "source": "attack-02.png",
+      "scale": 0.28,
+      "pivotX": 735.5,
+      "feetY": 1162,
+      "runtimeBounds": [
+        35,
+        53,
+        362,
+        312
+      ]
+    },
+    {
+      "source": "attack-03.png",
+      "scale": 0.28,
+      "pivotX": 664.0,
+      "feetY": 1156,
+      "runtimeBounds": [
+        55,
+        32,
+        384,
+        312
+      ]
+    }
+  ],
+  "review": {
+    "userApproved": false,
+    "browser": "not run; repository requires explicit request",
+    "technical": "passed: all frames inspected over white and Crystal Violet, full props, alpha, cell bounds, ground line and exact 50px review gaps verified"
+  },
+  "frames": [
+    {
+      "name": "anticipation",
+      "durationMs": 200
+    },
+    {
+      "name": "aim",
+      "durationMs": 200
+    },
+    {
+      "name": "release-follow-through",
+      "durationMs": 100,
+      "release": true
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "image": "char_nereus_sd_projectile_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 224,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "normalization": [
+    {
+      "source": "projectile-sheet.png",
+      "box": [
+        0,
+        0,
+        581,
+        921
+      ],
+      "scale": 0.6,
+      "pivotX": 296.5,
+      "feetY": 482.0,
+      "runtimeBounds": [
+        64,
+        73,
+        385,
+        151
+      ]
+    },
+    {
+      "source": "projectile-sheet.png",
+      "box": [
+        581,
+        0,
+        1150,
+        921
+      ],
+      "scale": 0.6,
+      "pivotX": 280.5,
+      "feetY": 477.0,
+      "runtimeBounds": [
+        66,
+        35,
+        381,
+        190
+      ]
+    },
+    {
+      "source": "projectile-sheet.png",
+      "box": [
+        1150,
+        0,
+        1708,
+        921
+      ],
+      "scale": 0.6,
+      "pivotX": 269.0,
+      "feetY": 478.0,
+      "runtimeBounds": [
+        79,
+        43,
+        369,
+        181
+      ]
+    }
+  ],
+  "review": {
+    "userApproved": false,
+    "browser": "not run; repository requires explicit request",
+    "technical": "passed: all frames inspected over white and Crystal Violet, full props, alpha, cell bounds, ground line and exact 50px review gaps verified"
+  },
+  "frames": [
+    {
+      "name": "flight",
+      "durationMs": 600
+    },
+    {
+      "name": "contact",
+      "durationMs": 80,
+      "hit": true
+    },
+    {
+      "name": "dissolve",
+      "durationMs": 120
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "idle": [
+    {
+      "source": "idle-sheet.png",
+      "box": [
+        0,
+        0,
+        715,
+        715
+      ],
+      "scale": 0.4
+    },
+    {
+      "source": "idle-sheet.png",
+      "box": [
+        715,
+        0,
+        1477,
+        715
+      ],
+      "scale": 0.4
+    },
+    {
+      "source": "idle-sheet.png",
+      "box": [
+        1477,
+        0,
+        2200,
+        715
+      ],
+      "scale": 0.4
+    }
+  ],
+  "attack": [
+    {
+      "source": "attack-01.png",
+      "scale": 0.28
+    },
+    {
+      "source": "attack-02.png",
+      "scale": 0.28
+    },
+    {
+      "source": "attack-03.png",
+      "scale": 0.28
+    }
+  ],
+  "speed": [
+    {
+      "source": "speed-01.png",
+      "scale": 0.28
+    },
+    {
+      "source": "speed-02.png",
+      "scale": 0.28
+    },
+    {
+      "source": "speed-03.png",
+      "scale": 0.28
+    }
+  ],
+  "hit": [
+    {
+      "source": "hit-sheet.png",
+      "box": [
+        0,
+        0,
+        676,
+        721
+      ],
+      "scale": 0.4
+    },
+    {
+      "source": "hit-02.png",
+      "scale": 0.25
+    },
+    {
+      "source": "hit-03.png",
+      "scale": 0.25
+    }
+  ],
+  "projectile": [
+    {
+      "source": "projectile-sheet.png",
+      "box": [
+        0,
+        0,
+        581,
+        921
+      ],
+      "scale": 0.6
+    },
+    {
+      "source": "projectile-sheet.png",
+      "box": [
+        581,
+        0,
+        1150,
+        921
+      ],
+      "scale": 0.6
+    },
+    {
+      "source": "projectile-sheet.png",
+      "box": [
+        1150,
+        0,
+        1708,
+        921
+      ],
+      "scale": 0.6
+    }
+  ]
+}

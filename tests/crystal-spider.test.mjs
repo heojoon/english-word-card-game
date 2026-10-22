@@ -4,12 +4,12 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
-function setup(reduced=false,bandit=false,golem=false,skeleton=null){
+function setup(reduced=false,bandit=false,golem=false,skeleton=null,lizard=false){
   let now=0,sequence=0;
   const timers=[],events=[],classes=new Set(),entries=Array.from({length:10},(_,id)=>({id,entry:[`word${id}`,'n',`뜻${id}`]}));
   const arena={classList:{add:(...values)=>values.forEach(v=>classes.add(v)),remove:(...values)=>values.forEach(v=>classes.delete(v))},querySelector:()=>null};
   const c=vm.createContext({
-    run:{story:true,crystalSpider:!bandit&&!golem&&!skeleton,banditMob:bandit,golemMob:golem,skeletonMob:Boolean(skeleton),skeletonVariant:skeleton,hp:2,hpMax:2,index:0,correct:0,deck:entries,matchBoard:entries.slice(0,5),matchEn:entries.slice(0,5),matched:new Set(),selectedKo:null,selectedEn:null,slashExpiresAt:0,iceTimeActive:true},
+    run:{story:true,crystalSpider:!bandit&&!golem&&!skeleton&&!lizard,banditMob:bandit,golemMob:golem,skeletonMob:Boolean(skeleton),skeletonVariant:skeleton,lizardMob:lizard,hp:2,hpMax:2,index:0,correct:0,deck:entries,matchBoard:entries.slice(0,5),matchEn:entries.slice(0,5),matched:new Set(),selectedKo:null,selectedEn:null,slashExpiresAt:0,iceTimeActive:true},
     selectedCharacter:{class:'warrior'},performance:{now:()=>now},reducedMotion:()=>reduced,
     battleContactDelay:()=>reduced?120:710,STORY_QUESTIONS_PER_TURN:5,nextTimer:null,
     render(){},persistStoryBattleVitals(){},storyVitalsMarkup:()=>'',refreshPetBattleFeedback(){},
@@ -101,6 +101,10 @@ test('the battle renderer selects animated World 5/6B mobs and keeps existing ch
   c.stages.test.storyChapter=6;c.run.crystalSpider=false;c.run.banditMob=true;
   assert.match(c.renderBattle(),/bandit-mob/);
   c.run.banditMob=false;
+  c.stages.test.storyChapter=9;c.run.lizardMob=true;
+  assert.match(c.renderBattle(),/lizardman-mob/);
+  assert.match(c.renderBattle(),/검은 도마뱀 창병/);
+  c.run.lizardMob=false;
   for(const [chapter,art] of [[2,'crystal-golem'],[3,'crystal-eye-serpent'],[4,'monster_crystal_candy']]){
     c.stages.test.storyChapter=chapter;
     const html=c.renderBattle();assert.match(html,new RegExp(art));assert.doesNotMatch(html,/crystal-spider-mob/);
@@ -224,4 +228,37 @@ test('World 6A pauses both attack phases and rejects stale strikes after battle 
     if(mode==='exit')c.run={story:true,hp:3};else c.run.timeoutPending=true;
     advance(1000);assert.equal(c.run.hp,mode==='exit'?3:2);assert.deepEqual(events,[]);
   }
+});
+
+for(const reduced of [false,true])test(`World 7B spear contact and final knockdown hold, reduced=${reduced}`,()=>{
+  const {c,pick,advance,events}=setup(reduced,false,false,null,true);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/lizardman-mob/g)||[]).length,5);
+  pick(0,1);
+  assert.equal(c.run.iceTimeActive,false);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/spider-is-attacking/g)||[]).length,1);
+  advance((reduced?90:240)-1);assert.equal(c.run.hp,2);
+  advance(1);assert.equal(c.run.hp,1);assert.deepEqual(events,['error']);
+  advance(reduced?120:260);assert.equal(c.run.stunned,false);
+  pick(0,0);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/spider-is-hit/g)||[]).length,1);
+  advance((reduced?120:710)-1);assert.deepEqual(events,['error']);
+  advance(1);assert.deepEqual(events,['error','success']);
+  advance((reduced?170:260)-1);assert.equal(c.run.pendingDefeat,true);
+  advance(400);assert.equal(c.run.pendingDefeat,false);
+  assert.equal((c.crystalSpiderMobsMarkup().match(/lizardman-mob/g)||[]).length,4);
+  assert.doesNotMatch(c.crystalSpiderMobsMarkup(),/spider-is-hit|spider-is-attacking/);
+});
+
+test('World 7B pauses damage and defeat callbacks and discards strikes after exit',()=>{
+  for(const correct of [false,true]){
+    const {c,pick,advance,events}=setup(false,false,false,null,true);
+    pick(0,correct?0:1);advance(100);c.run.paused=true;advance(1000);
+    assert.equal(c.run.hp,2);assert.deepEqual(events,[]);
+    c.run.spiderPausedMs=1000;c.run.paused=false;
+    advance((correct?710:240)-101);assert.deepEqual(events,[]);
+    advance(1);assert.deepEqual(events,[correct?'success':'error']);
+    if(correct){advance(259);assert.equal(c.run.pendingDefeat,true);advance(1);assert.equal(c.run.pendingDefeat,false);}
+  }
+  const {c,pick,advance,events}=setup(false,false,false,null,true);
+  pick(0,1);c.run=null;advance(1000);assert.deepEqual(events,[]);
 });

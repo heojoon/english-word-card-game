@@ -1,0 +1,40 @@
+{
+  "tool": "built-in image_gen",
+  "created": "2026-10-23",
+  "runtimeSize": [
+    128,
+    128
+  ],
+  "displaySize": [
+    36,
+    36
+  ],
+  "background": "true transparent alpha",
+  "review": "All four illustrations visually reviewed at 36px and 72px over Moon White and Crystal Violet. Each 128px runtime WebP has verified transparent alpha. Source PNGs preserved under output/footer-navigation/source. Browser review not run.",
+  "icons": [
+    {
+      "id": "home",
+      "file": "ui_nav_home_v1.webp",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16423-c30c-7280-a9a4-b2caa042d4f4\\exec-72b78b76-ec51-4241-92dd-7334ea800d2c.png",
+      "prompt": "Use case: stylized-concept. Asset type: production bottom-navigation icon for Wordoria Crystal Quest, a bright premium mobile fantasy RPG. Create ONE isolated icon, centered in a square canvas with 12% transparent padding, silhouette fills about 76% canvas. WORDORIA CRYSTAL QUEST STYLE — bright premium 2D anime fantasy illustration, clean dark violet outer contours, crisp three-step soft cel shading, selective polished gradients, large instantly readable rounded silhouette, luminous violet-blue crystal glass, restrained mint rim light, tiny refined gold accents, moon-white resting areas, clean enamel-like surfaces. Palette #5751D8 #7868EF #60D9CF #FFCF67 #F7F7FF #24214C. Soft upper-left lighting. Must read clearly at 32px; use very few large parts and bold outer contour, no tiny details. Isolated single subject, true transparent alpha background, no floor, no frame, no text, no lettering, no watermark, no floating particles, no circular badge or tile. No pixel art, no photorealism, no 3D render. Subject: HOME: one cozy small fantasy house, chunky purple crystal gabled roof, moon-white walls, large open arched violet doorway, tiny mint diamond above doorway. Front three-quarter view. One compact simple house only."
+    },
+    {
+      "id": "dungeon",
+      "file": "ui_nav_dungeon_v1.webp",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16423-c30c-7280-a9a4-b2caa042d4f4\\exec-ac099fa7-55dd-4f1d-b78a-3de2efedc975.png",
+      "prompt": "Use case: stylized-concept. Asset type: production bottom-navigation icon for Wordoria Crystal Quest, a bright premium mobile fantasy RPG. Create ONE isolated icon, centered in a square canvas with 12% transparent padding, silhouette fills about 76% canvas. WORDORIA CRYSTAL QUEST STYLE — bright premium 2D anime fantasy illustration, clean dark violet outer contours, crisp three-step soft cel shading, selective polished gradients, large instantly readable rounded silhouette, luminous violet-blue crystal glass, restrained mint rim light, tiny refined gold accents, moon-white resting areas, clean enamel-like surfaces. Palette #5751D8 #7868EF #60D9CF #FFCF67 #F7F7FF #24214C. Soft upper-left lighting. Must read clearly at 32px; use very few large parts and bold outer contour, no tiny details. Isolated single subject, true transparent alpha background, no floor, no frame, no text, no lettering, no watermark, no floating particles, no circular badge or tile. No pixel art, no photorealism, no 3D render. Subject: ADVENTURE: one chunky fantasy compass, round moon-white and lavender rim, prominent violet and mint four-point compass needle, tiny gold top loop. Nearly frontal slight three-quarter view. One compact simple compass only."
+    },
+    {
+      "id": "gear",
+      "file": "ui_nav_gear_v1.webp",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16423-c30c-7280-a9a4-b2caa042d4f4\\exec-3f6f6f9a-f6b5-4819-b880-d032fa18ae07.png",
+      "prompt": "Use case: stylized-concept. Asset type: production bottom-navigation icon for Wordoria Crystal Quest, a bright premium mobile fantasy RPG. Create ONE isolated icon, centered in a square canvas with 12% transparent padding, silhouette fills about 76% canvas. WORDORIA CRYSTAL QUEST STYLE — bright premium 2D anime fantasy illustration, clean dark violet outer contours, crisp three-step soft cel shading, selective polished gradients, large instantly readable rounded silhouette, luminous violet-blue crystal glass, restrained mint rim light, tiny refined gold accents, moon-white resting areas, clean enamel-like surfaces. Palette #5751D8 #7868EF #60D9CF #FFCF67 #F7F7FF #24214C. Soft upper-left lighting. Must read clearly at 32px; use very few large parts and bold outer contour, no tiny details. Isolated single subject, true transparent alpha background, no floor, no frame, no text, no lettering, no watermark, no floating particles, no circular badge or tile. No pixel art, no photorealism, no 3D render. Subject: EQUIPMENT: one moon-white enamel kite shield with silver-lavender edges, large cyan-violet central crystal, one short broad sword slanting behind it with violet hilt and silver blade. Compact unified emblem with distinct shield and blade silhouette. No helmet, no armor suit."
+    },
+    {
+      "id": "shop",
+      "file": "ui_nav_shop_v1.webp",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16423-c30c-7280-a9a4-b2caa042d4f4\\exec-053e431b-3962-4582-9a0a-995b9240f334.png",
+      "prompt": "Use case: stylized-concept. Asset type: production bottom-navigation icon for Wordoria Crystal Quest, a bright premium mobile fantasy RPG. Create ONE isolated icon, centered in a square canvas with 12% transparent padding, silhouette fills about 76% canvas. WORDORIA CRYSTAL QUEST STYLE — bright premium 2D anime fantasy illustration, clean dark violet outer contours, crisp three-step soft cel shading, selective polished gradients, large instantly readable rounded silhouette, luminous violet-blue crystal glass, restrained mint rim light, tiny refined gold accents, moon-white resting areas, clean enamel-like surfaces. Palette #5751D8 #7868EF #60D9CF #FFCF67 #F7F7FF #24214C. Soft upper-left lighting. Must read clearly at 32px; use very few large parts and bold outer contour, no tiny details. Isolated single subject, true transparent alpha background, no floor, no frame, no text, no lettering, no watermark, no floating particles, no circular badge or tile. No pixel art, no photorealism, no 3D render. Subject: SHOP: one small fantasy market stall with a chunky violet-and-moon-white striped awning, mint counter and a single little gold coin emblem on the front. Nearly frontal slight three-quarter view. Compact simple stall silhouette, no merchandise clutter."
+    }
+  ]
+}

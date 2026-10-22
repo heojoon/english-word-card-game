@@ -1,0 +1,44 @@
+{
+  "image": "black-lizardman-sd-attack-strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.33946251768033947,
+  "sourceImageSize": [
+    [
+      1586,
+      992
+    ],
+    [
+      1774,
+      887
+    ]
+  ],
+  "sourceCuts": [],
+  "loop": false,
+  "holdFinal": true,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "spear-contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline alpha, bounds and mobile frame review; browser checks not requested."
+}

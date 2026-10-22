@@ -297,6 +297,14 @@ export function parseWorldSevenNarrative(markdown,{world,location}={}){
       backgroundPath:world==='7a'?'assets/story/chapter-7a-burning-ancient-tower-map.webp':'assets/story/chapter-7b-black-lake-map.webp'};
     if(speaker==='다크 소서러스')line.artPath='assets/novel/characters/char_dark_sorcerus_world5_standing.webp';
     if(speaker==='모르가나')line.artPath='assets/novel/characters/char_morgana_world6a_standing.webp';
+    if(world==='7b'&&['검은 세이렌의 대왕','다크 트라이튼'].includes(speaker)){
+      line.speaker='다크 트라이튼';line.className='dark-triton';
+      line.artPath='assets/monsters/dark-triton/dark-triton-standing.png';
+    }
+    if(world==='7b'&&speaker==='검은 세이렌 기사'){
+      line.speaker='네레우스';line.className='nereus';
+      line.artPath='assets/novel/characters/char_nereus_world7b_standing.webp';
+    }
     lines.push(line);
   }
   if(!lines.length)throw new Error(`World ${world} narrative is incomplete`);

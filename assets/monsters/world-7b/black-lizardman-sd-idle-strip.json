@@ -1,0 +1,37 @@
+{
+  "image": "black-lizardman-sd-idle-strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.33946251768033947,
+  "sourceImageSize": [
+    2014,
+    781
+  ],
+  "sourceCuts": [
+    0,
+    1001,
+    2014
+  ],
+  "loop": true,
+  "holdFinal": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 600
+    },
+    {
+      "name": "breath",
+      "durationMs": 600
+    }
+  ],
+  "reviewStatus": "Offline alpha, bounds and mobile frame review; browser checks not requested."
+}

@@ -1,0 +1,80 @@
+{
+  "image": "char_nereus_sd_hit_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "facing": "left",
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": true,
+  "normalization": [
+    {
+      "source": "hit-sheet.png",
+      "box": [
+        0,
+        0,
+        676,
+        721
+      ],
+      "scale": 0.4,
+      "pivotX": 415.5,
+      "feetY": 708,
+      "runtimeBounds": [
+        65,
+        60,
+        321,
+        312
+      ]
+    },
+    {
+      "source": "hit-02.png",
+      "scale": 0.25,
+      "pivotX": 671.0,
+      "feetY": 1225,
+      "runtimeBounds": [
+        68,
+        19,
+        362,
+        312
+      ]
+    },
+    {
+      "source": "hit-03.png",
+      "scale": 0.25,
+      "pivotX": 627.5,
+      "feetY": 962,
+      "runtimeBounds": [
+        71,
+        152,
+        377,
+        312
+      ]
+    }
+  ],
+  "review": {
+    "userApproved": false,
+    "browser": "not run; repository requires explicit request",
+    "technical": "passed: all frames inspected over white and Crystal Violet, full props, alpha, cell bounds, ground line and exact 50px review gaps verified"
+  },
+  "frames": [
+    {
+      "name": "guard-notice",
+      "durationMs": 140
+    },
+    {
+      "name": "impact-recoil",
+      "durationMs": 180,
+      "hit": true
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 600,
+      "hold": true
+    }
+  ]
+}

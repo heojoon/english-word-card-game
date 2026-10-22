@@ -1,0 +1,86 @@
+{
+  "image": "char_dark_triton_stormsurge_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.2803738317757009,
+  "sourceCuts": [
+    [
+      0,
+      911,
+      1798
+    ],
+    [
+      0,
+      1536
+    ],
+    [
+      0,
+      1536
+    ]
+  ],
+  "isolatedSourceCalibration": [
+    {
+      "pose": "idle",
+      "scale": 1.0,
+      "targetHeight": 856
+    },
+    {
+      "pose": "stormsurge-charge",
+      "scale": 0.8620342396777442,
+      "targetHeight": 856
+    },
+    {
+      "pose": "stormsurge-release",
+      "scale": 0.8716904276985743,
+      "targetHeight": 856
+    }
+  ],
+  "alphaDustThreshold": 8,
+  "effectBoundsPx": [
+    [
+      125,
+      72,
+      361,
+      312
+    ],
+    [
+      22,
+      72,
+      376,
+      312
+    ],
+    [
+      9,
+      72,
+      370,
+      312
+    ]
+  ],
+  "loop": false,
+  "finalHold": false,
+  "reset": "idle",
+  "frames": [
+    {
+      "name": "anticipation",
+      "durationMs": 180
+    },
+    {
+      "name": "charge",
+      "durationMs": 180
+    },
+    {
+      "name": "release",
+      "durationMs": 240,
+      "release": true
+    }
+  ],
+  "reviewStatus": "Offline review only; user approval and in-engine review pending."
+}

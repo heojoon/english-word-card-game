@@ -1,0 +1,87 @@
+{
+  "image": "char_dark_triton_hit_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.2803738317757009,
+  "sourceCuts": [
+    [
+      0,
+      911,
+      1798
+    ],
+    [
+      0,
+      1254
+    ],
+    [
+      0,
+      1774
+    ]
+  ],
+  "isolatedSourceCalibration": [
+    {
+      "pose": "idle",
+      "scale": 1.0,
+      "targetHeight": 856
+    },
+    {
+      "pose": "hit-impact",
+      "scale": 0.7080231596360629,
+      "targetHeight": 856
+    },
+    {
+      "pose": "hit-knockdown",
+      "scale": 0.6602254428341385,
+      "targetHeight": 410
+    }
+  ],
+  "alphaDustThreshold": 8,
+  "effectBoundsPx": [
+    [
+      125,
+      72,
+      361,
+      312
+    ],
+    [
+      119,
+      72,
+      357,
+      312
+    ],
+    [
+      91,
+      197,
+      392,
+      312
+    ]
+  ],
+  "loop": false,
+  "finalHold": true,
+  "reset": null,
+  "frames": [
+    {
+      "name": "guard-notice",
+      "durationMs": 120
+    },
+    {
+      "name": "impact-recoil",
+      "durationMs": 140,
+      "hit": true
+    },
+    {
+      "name": "knockdown",
+      "durationMs": 600,
+      "hold": true
+    }
+  ],
+  "reviewStatus": "Offline review only; user approval and in-engine review pending."
+}

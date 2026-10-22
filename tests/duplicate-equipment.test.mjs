@@ -42,3 +42,33 @@ test('duplicate copies display one quantity badge and do not multiply equipped s
   assert.match(html,/x2/);assert.equal((html.match(/item-status/g)||[]).length,1);
   const stats=vm.runInContext('combatStats(1)',ctx);assert.equal(stats.bonus.hp,12);assert.equal(stats.equipped,1);
 });
+
+for(const chapter of [5,6,7]){
+  test(`world ${chapter===7?'6A':chapter} chest can grant normal and special equipment only`,async()=>{
+    for(const roll of [0,0.999999]){
+      const ctx=setup();ctx.stages.story1={storyChapter:chapter,storyNumber:4};
+      ctx.shopItems=[boots,
+        {...boots,id:2,rarity:'special'},
+        {...boots,id:3,rarity:'rare'},
+        {...boots,id:4,rarity:'unique'},
+        {...boots,id:5,rarity:'legendary'},
+        {...boots,id:6,rarity:'special',slot:'skin'},
+        {...boots,id:7,rarity:'special',active:false},
+        {...boots,id:8,rarity:'special',category:'gift'}];
+      vm.runInContext(`Math.random=()=>${roll};`+extract('claimStoryItemReward'),ctx);
+      const reward=await vm.runInContext('claimStoryItemReward()',ctx);
+      assert.equal(reward.item_id,roll===0?1:2);
+      assert.equal(reward.potion_count,3);
+      assert.equal(ctx.demoState.inventory.at(-1).item_id,reward.item_id);
+    }
+  });
+}
+test('other world chests keep their existing equipment pool',async()=>{
+  for(const chapter of [1,2,3,4,8,9]){
+    const ctx=setup();ctx.stages.story1={storyChapter:chapter,storyNumber:4};
+    ctx.shopItems=[boots,{...boots,id:2,rarity:'special'},{...boots,id:3,rarity:'unique'}];
+    vm.runInContext(extract('claimStoryItemReward'),ctx);
+    const reward=await vm.runInContext('claimStoryItemReward()',ctx);
+    assert.equal(reward.item_id,3);
+  }
+});
