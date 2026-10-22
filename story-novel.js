@@ -9247,6 +9247,3462 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     }
   ],
+  "world7aPrologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(무너진 왕좌의 방. 소서러스가 바닥에 쓰러져 있다. 반짝꼬리여우가 그의 소매를 잡아당기고, 파란리본 올빼미는 곁을 떠나지 않는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "야. 눈 떠. 내 목소리 들리지?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…들려. 조금만 조용히 해. 심장이 울려서 머리까지 아파.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "아까는 그 심장 소리도 안 들렸거든.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모르가나가 마지막에… 우리를 저주한다고 했지.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "남은 생명력도, 마력도 전부 끌어내렸어. 지독한 녀석.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그런데 어떻게 살아 있는 거야?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "네 의식이 끊어지기 전에 내가 붙잡았어. 몸 하나에 둘이 사는 게 이럴 때는 쓸모가 있네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…고마워.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "고맙다는 말은 일어날 수 있을 때 해.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반짝꼬리여우가 가방에서 회복 물품을 밀어낸다. 소서러스는 조금씩 기운을 되찾고, 벽에 기대 오랫동안 숨을 고른다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "너희도 안 도망갔구나. 무서웠을 텐데.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그 올빼미, 아까부터 문 쪽만 보고 있어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "우리가 따라오길 바라는 건가?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파란리본 올빼미가 낮게 날아 왕좌 뒤편의 틈으로 들어간다. 그 안에는 불탄 책과 돌로 된 지도판이 남아 있다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이건… 모르가나가 쓰던 방인가 봐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "잠깐. 그 지도판, 먼지 좀 닦아 봐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "탑 그림 옆에 글씨가 있어. ‘차원 포털 미러’?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "미러… 거울 형태의 차원문이야. 원래 세계의 흔적을 비춰 길을 잇는다고 들었어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 저걸 찾으면 아서한테 돌아갈 수 있어?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "남아 있다면. 그리고 제대로 작동한다면.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "말을 꼭 두 번이나 불안하게 해야 해?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "모르가나만 쓰러뜨리면 돌아갈 줄 알았잖아. 이번에는 확인하고 움직이자고.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 지도판 아래의 글귀를 손끝으로 짚는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "‘심연의 불타는 고대 탑. 미러는 가장 높은 곳에 잠든다.’",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "저 창밖을 봐. 찾는 데 오래 걸리지는 않겠네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(뒤집힌 하늘 아래, 거대한 탑 하나가 붉게 타오른다. 불길은 탑을 삼키면서도 좀처럼 사그라지지 않는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…저기까지 가라고? 탑 전체가 불타는데?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이제 네가 불안한 말을 두 번 하네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "여기는 농담할 때마다 더 위험한 게 나타나는 것 같아.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그러니까 조용히 준비해. 마력도 아직 제대로 안 돌아왔어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "가슴에 남은 이 검은 자국은?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "저주의 흔적이야. 당장 사라질 것 같지는 않아.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…그때 내가 끝까지 말렸어야 했을까.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "나한테 맡겼던 걸 후회해?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모르겠어. 지금은 그 비명만 자꾸 생각나.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…다음에는 네가 결정해. 대신 멍하니 있다가 쓰러지지는 마.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 지도판의 길을 종이에 옮긴다. 파란리본 올빼미가 어깨에 내려앉고, 반짝꼬리여우는 열린 문 앞에서 기다린다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "올빼미까지 데려가면 길이 더 힘들겠지?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이미 어깨에 올라탔는데 이제 와서 묻냐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "좋아. 다 같이 돌아가자. 아서한테 소개할 친구도 늘었네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그 소개는 꼭 살아서 해라. 자, 왼쪽 길부터야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 무너진 궁전을 나선다. 멀리서 두 갈래의 울음소리가 겹쳐 들린다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    }
+  ],
+  "world7aMidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(탑으로 이어지는 협곡. 길 한가운데 깊은 홈 두 줄이 파여 있고, 절벽에는 거대한 무언가가 긁고 지나간 흔적이 남아 있다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이 자국, 수레바퀴라고 하기에는 너무 큰데.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "바위가 끌린 흔적이야. 그것도 아주 무거운 바위.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "탑을 지으려고 돌을 나른 건가?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "건축가가 저런 발자국을 남기지는 않지.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반짝꼬리여우가 소서러스 뒤로 숨는다. 앞쪽 안개가 갈라지며, 등에 거대한 돌을 진 괴수가 나타난다. 하나의 몸 위에서 두 개의 머리가 서로 다른 방향을 살핀다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "머리가… 두 개야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "케우르스. 심연의 고대 괴수야. 저 무게를 지고도 달릴 수 있어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "멈춰라. 작은 발소리.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "살아 있는 냄새가 난다. 모르가나의 궁전에서 왔군.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "맞아. 우리는 저 탑으로 가려고 해. 길을 좀 지나가도 될까?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "탑으로 가는 자는 돌아오지 않는다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "돌아오지 못하면 이 길도 기억하지 못하지.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "충고는 고마운데, 거기 가야 집으로 돌아갈 수 있거든.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "집…?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "이곳에 들어온 자에게 집은 없다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "저 녀석이 고개를 숙이면 옆으로 피해. 등 위의 돌부터 봐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "싸우려고 온 게 아니야. 네가 지고 있는 돌도 건드리지 않을게.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "건드릴 수 있다고 생각하느냐?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "이 돌 아래에는 수백 개의 무기가 부서져 있다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오른쪽 머리가 소서러스의 가슴을 향해 코를 들이민다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "잠깐. 지배자의 저주다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "네가… 모르가나를 해쳤느냐?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…모르가나는 죽었어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "그렇다면 명령은 끝났군.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "아니다. 탑을 지키라는 명령은 거두어지지 않았다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잠깐, 둘이 먼저 이야기해 보는 건 어때?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "너 지금 우리한테는 못 하던 말을 아주 쉽게 한다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "길을 비켜 주면 다시 불려 갈지도 모른다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "그러니 아무도 보내지 않는다!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(케우르스가 등을 기울인다. 거대한 돌이 어깨를 타고 앞으로 미끄러지며 길바닥을 찍는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "으악! 말하다가 던지기야?!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "오른쪽으로! 여우부터 챙겨!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 반짝꼬리여우를 안고 몸을 날린다. 돌이 지나간 자리에 협곡 바닥이 갈라진다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "한 걸음도 못 간다!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "돌아가라. 아니면 여기서 납작해져라!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "돌아갈 길을 찾으러 왔다니까!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "왼쪽이 앞을 보고 오른쪽이 돌을 움직여. 둘이 고개를 맞출 때 조심해.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 두 머리를 동시에 상대해야겠네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "몸은 하나야. 발을 헛디디게 하면 돌 무게를 못 버틸 거야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "좋아. 이번에는 내가 움직일게. 위험한 쪽을 알려 줘!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파란리본 올빼미와 반짝꼬리여우가 바위 뒤로 피한다. 케우르스가 돌을 다시 등에 올리며 포효한다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    }
+  ],
+  "world7aMidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(케우르스의 앞발이 무너진 지면에 빠진다. 괴수가 균형을 잃고, 등에 진 돌이 한쪽으로 기울어진다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "일어나라! 왼발을 빼!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "돌부터 붙잡아! 등이 찢어진다!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "뒤로 물러나! 돌이 떨어져!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "우리한테 하는 말이야, 저 녀석한테 하는 말이야?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "둘 다! 사이코키네시스!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스의 마력이 돌을 잠시 받친다. 케우르스가 몸을 빼자 돌이 옆으로 굴러떨어져 길가에 박힌다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "…왜 받쳤느냐?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그대로 떨어지면 네 머리까지 깔렸을 거야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "우리를 쓰러뜨리러 온 것이 아니었나?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "길을 지나가고 싶다고 처음부터 말했잖아.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그리고 이제 길은 비었네. 다시 막지만 마.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(케우르스가 일어나려다 주저앉는다. 두 머리가 나란히 바닥에 닿는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "돌을… 다시 올려야 한다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "일어나라. 탑을 지키지 않으면….",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모르가나가 벌을 줬어?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "돌을 내려놓을 때마다 등을 불태웠다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "길을 벗어나면 두 머리를 서로 묶었다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그래서 계속 같은 길만 걸었던 거구나.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이제 그 명령을 내릴 녀석은 없어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "…정말 돌아오지 않는가?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 하지만 우리도 여기서 일어난 일을 없던 일로 만들 수는 없어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "그렇다면 돌을 들지 않아도 되는가?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "적어도 우리 때문에 다시 들 필요는 없어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오랫동안 돌에 눌려 있던 케우르스의 등이 천천히 펴진다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "탑으로 간다고 했지.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "차원 포털 미러를 찾고 있어. 꼭대기에 있는 게 맞아?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "맞다. 하지만 붉은 기사가 그 앞을 지킨다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "모르가나의 부하가 또 남았나.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "레드스컬나이트. 탑의 해골 기사들을 거느리는 지휘관이다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "탑이 처음 불타던 날부터 그 자리에 서 있었다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "미러를 부수지는 않았겠지?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "부술 수 없다. 그것이 깨지면 탑의 불길도 다른 세계로 넘어간다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "그러니 미러 앞에서는 마법을 함부로 던지지 마라.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…폭발 한 번으로 끝낼 생각은 접어야겠네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "가르쳐 줘서 고마워. 넌 이제 어디로 갈 거야?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 왼쪽 머리",
+      "className": "scene",
+      "text": "아직 정하지 못했다. 내 발로 길을 고른 적이 없어서.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "케우르스의 오른쪽 머리",
+      "className": "scene",
+      "text": "우선은… 조금 눕고 싶다. 돌이 없는 쪽으로.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그거 좋네. 우리도 집에 가면 실컷 잘 거야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그러려면 먼저 탑을 올라야지. 가자.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(케우르스가 몸을 옆으로 비켜 길을 내준다. 소서러스와 두 동물이 지나간 뒤, 두 머리가 조심스럽게 서로에게 등을 기댄다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    }
+  ],
+  "world7aBossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(불타는 고대 탑의 마지막 계단. 파란리본 올빼미가 돌아와 날갯짓으로 위쪽을 가리킨다. 소서러스가 그을린 문을 밀어 연다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "하아… 이제 계단만 봐도 다리가 아파.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "투덜댈 힘은 남았네. 앞을 봐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(탑 꼭대기 중앙에 거대한 거울이 서 있다. 검은 거울면에는 낯선 풍경들이 잠깐씩 비쳤다 사라진다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저게 차원 포털 미러…!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "테두리는 멀쩡해. 아직 작동하고 있어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그런데 거울에 비치는 곳이 계속 바뀌는데?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "목적지가 정해지지 않은 거야. 가까이 가서 살펴봐야겠어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "거기서 멈춰라.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(불길 속에서 갑옷 소리가 울린다. 불타는 눈을 가진 해골 기사가 걸어 나온다. 찢어진 검은 망토 끝으로 재가 흩날리고, 검에는 붉은 불꽃이 감겨 있다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네가 레드스컬나이트구나.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "내 이름을 알고도 이 계단을 올랐느냐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "알아도 올라와야 했어. 집으로 가는 길이 여기뿐이거든.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "이 미러를 통과할 수 있는 자는 모르가나가 허락한 자뿐이다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그 모르가나는 죽었어. 이제 길을 열어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "…주군의 기척이 사라진 이유가 너였군.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "더 싸우고 싶지는 않아. 미러만 쓰게 해 줘.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "주군을 죽인 자에게 퇴로를 내어 주라는 것이냐?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "넌 모르가나가 없어도 계속 여기를 지킬 거야?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "나의 마지막 명령은 아직 끝나지 않았다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "탑이 다 타 버려도 그 소리만 할 모양이네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "살도, 피도, 이름을 불러 주던 자들도 이 불 속에 버렸다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…그렇게까지 지켜야 하는 거야?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "명령마저 버리면 내게 무엇이 남겠느냐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(레드스컬나이트가 검끝으로 바닥을 긋는다. 불길이 길게 솟아올라 계단과 미러 사이를 가른다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "뒤로! 검이 지나간 자리에도 불이 남아!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "올빼미, 여우랑 기둥 뒤로 가! 거기는 아직 불이 안 붙었어!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "저주받은 심장이군. 작은 불씨만 닿아도 버티기 어려울 텐데.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그러니까 빨리 지나가게 해 주면 서로 좋잖아.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "여기서 쓰러져라. 네가 떠나지 못했다는 보고가 나의 마지막 임무다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "듣는 사람도 없는데 보고는 무슨 보고야!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다크. 미러를 등지고 싸우면 안 돼.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "알아. 네가 오른쪽으로 움직여. 저 검이 기둥 쪽을 향하게 만들자.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "하나의 몸에서 목소리가 둘이라… 어느 쪽이 죽음을 맞이할 테냐?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "둘 다 안 죽어. 저기 기다리는 애들도 데리고 나갈 거야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이번에는 주도권 달라는 말 안 할게. 발만 꼬이지 마.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "너도 갑자기 큰 마법 쓰지 마. 미러에 금이라도 가면 끝이야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "동료를 지킬수록 네가 설 자리는 좁아질 것이다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 네가 한 걸음 물러나게 만들면 되겠네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "온다. 검을 들어 올릴 때 왼발부터 봐!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "불타는 탑의 이름으로, 너의 귀환을 금한다!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(레드스컬나이트가 불타는 검을 치켜든다. 소서러스가 미러에서 멀어지는 방향으로 몸을 낮춘다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    }
+  ],
+  "world7aBossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(레드스컬나이트의 검이 바닥에 떨어진다. 갑옷의 불길이 잦아들고, 지휘관이 한쪽 무릎을 꿇는다. 소서러스는 미러 앞을 가로막은 채 거칠게 숨을 쉰다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "검을… 놓치다니.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "끝났어. 더는 일어나지 마.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "검에서 떨어져. 불씨는 아직 남아 있어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "미러를 등지고 서는 대신… 끝까지 내 검을 옆으로 돌렸군.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저게 깨지면 다른 세계까지 불탄다며. 우리 집일 수도 있잖아.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "승리를 위해 출구를 부수는 자들도 있었다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "우린 돌아가려고 싸웠어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(레드스컬나이트가 비어 있는 손을 들어 올린다. 소서러스가 경계하자, 기사는 천천히 손을 내린다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "마지막 일격은 내리지 않는가?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…네가 정해.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "검을 다시 들지 않으면 우리도 공격하지 않을 거야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "모르가나에게도 그리 말했느냐?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…그때는 그렇게 끝내지 못했어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "그 대가가 네 가슴에 새겨졌군.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 돌아가도 잊지는 못할 것 같아.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "…미러 아래의 문양을 보아라. 길을 여는 글귀다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 망토가 재처럼 흩어진다. 기사의 눈에 남은 불빛이 작아진다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "왜 알려 주는 거야?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "나는 패했다. 더는 네 앞을 막을 검이 없다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "소서러스. 기둥이 무너지고 있어. 오래 못 버텨.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "레드스컬나이트",
+      "className": "scene",
+      "text": "가라. 나의 보고는… 여기서 끝이다.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(레드스컬나이트가 고개를 숙인다. 불타던 눈이 꺼지고, 빈 갑옷이 조용히 바닥에 내려앉는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…이제 쉬어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파란리본 올빼미와 반짝꼬리여우가 달려온다. 소서러스가 둘을 품에 모으고 미러 아래의 글귀를 읽는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "‘떠나온 세계의 마력을 대고, 그곳에서 너를 부르던 목소리를 떠올려라.’",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "네 마력이면 돼. 반전세계로 오기 전부터 가지고 있었으니까.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저주도 같이 넘어가면? 모르가나의 마력이잖아.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "저주가 남아 있는 건 우리 몸이야. 문은 목적지만 찾으면 돼. 치료는 돌아가서 생각하자.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 거울 테두리에 손을 댄다. 거울면을 가득 채운 낯선 풍경들이 빠르게 스쳐 간다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아서… 파이터… 바이올렛….",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "얼굴만 떠올리지 마. 너희끼리 무슨 이야기를 했는지 생각해 봐.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "파이터가 늘 먼저 밥 먹자고 했어. 바이올렛은 내 가방이 열렸다고 알려 줬고….",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아서는 헤어질 때도 자기 걱정은 하지 말라고 했지.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그 말을 듣고도 넌 계속 걱정했겠네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "당연하지. 친구니까.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거울 속 풍경이 멈춘다. 반전되지 않은 푸른 하늘과 바람에 흔들리는 풀이 나타난다. 틈새로 서늘한 바람이 불어온다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "하늘이… 위에 있어.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그 당연한 게 이렇게 반가울 줄은 몰랐네.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다크. 너도 넘어갈 수 있지?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "몸 하나라고 몇 번을 말하냐. 어서 가. 천장 내려온다!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "여우도, 올빼미도 꽉 붙어 있어. 손… 아니, 발 놓지 마!",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "귀환하면 첫 번째로 할 일은 정했어?",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 다들 살아 있다고 확인하고… 네가 붙잡아 줬다는 이야기도 할 거야.",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 두 동물을 안고 미러를 통과한다. 무너지는 돌기둥 사이로 거울빛이 닫힌다. 풀밭 위에 주저앉은 소서러스의 가슴에는 여전히 희미한 검은 자국이 남아 있다. 그가 숨을 들이마신다. 이번에는 재 냄새가 나지 않는다.)",
+      "scene": "world-7a",
+      "location": "심연의 불타는 고대 탑",
+      "backgroundPath": "assets/story/chapter-7a-burning-ancient-tower-map.webp"
+    }
+  ],
+  "world7bPrologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반전세계의 메마른 골짜기. 소서러스가 검은 호숫가에 멈춰 선다. 반짝꼬리여우가 물가에 코를 가까이 댔다가 황급히 물러난다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "여기가 모르가나가 말한 호수인가 봐.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "바람은 부는데 물결이 하나도 없네. 돌 하나 던져 봐.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 작은 돌을 던진다. 돌은 소리도, 물보라도 없이 검은 수면 속으로 사라진다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…깊이가 얼마나 되는 거야?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "재러 들어갈 생각은 하지 마.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "보물을 찾으러 왔으니까 들어가기는 해야지.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "모르가나가 친절하게 길을 알려 줬다는 게 마음에 걸려. 우리를 여기로 보내고 혼자 웃고 있을지도 몰라.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럴 수도 있겠지. 그래도 구슬까지 줬잖아. 확인만 해 보자.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 모르가나의 구슬을 꺼낸다. 구슬 속의 희미한 빛이 호수 한가운데를 향해 길게 늘어난다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "‘심연의 심연을 들여다봐야 한다’고 했어. 이걸 통해서 보라는 뜻일까?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(구슬을 눈앞에 들자, 검은 수면 아래로 계단이 보인다. 맨눈으로 보면 아무것도 없다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…진짜 길이 있었네. 오른쪽으로 조금. 깨진 계단을 밟지 마.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "너도 보여?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "네 눈으로 보고 있잖아.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "맞다. 이런 때는 꽤 편하네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 발끝으로 첫 계단을 누른다. 구슬이 빛나며 물을 양옆으로 밀어낸다. 호수 아래로 좁은 통로가 열린다. 반짝꼬리여우는 그의 발목에 바짝 붙는다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "걱정 마. 네 꼬리 젖기 전에 돌아올게.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그런 약속은 여기서 제일 지키기 어려울 것 같은데.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 내려가자 머리 위로 검은 물이 맞물린다. 통로에는 숨 쉴 공기가 남아 있다. 멀리서 가느다란 노랫소리가 들린다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "아서의 목소리",
+      "className": "scene",
+      "text": "소서러스. 여기야. 이쪽으로 와.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아서…?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "멈춰. 아서가 여기에 있을 리 없어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 소리 쪽으로 든 발을 거둔다. 통로 밖의 물속에서 커다란 눈 하나가 천천히 감긴다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "방금, 내가 나가기를 기다렸어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "반가운 목소리를 들려주고 물속으로 끌어들이는 거야. 여기서는 들리는 대로 따라가면 안 돼.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 네 목소리도 흉내 내면?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…내가 말할 때는 머릿속에서 들리잖아. 저 소리는 귀로 들리고.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "좋아. 헷갈리면 먼저 너한테 물어볼게.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(계단 아래의 부서진 기둥 사이에서 검은 물갈퀴가 솟는다. 기다란 발톱들이 마른 돌바닥을 긁는다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "첫 손님이 왔네. 지팡이 들어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "보물 찾으러 가는 길이 쉬울 줄은 몰랐지만… 입구부터 너무하잖아!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 여우를 등 뒤로 보내고 지팡이를 겨눈다. 구슬의 빛이 심연의 괴물들을 비춘다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    }
+  ],
+  "world7bMidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(심연의 괴물들을 물리치며 내려온 일행이 긴 돌다리에 도착한다. 다리 아래로 검은 물이 소용돌이친다. 건너편에는 뾰족한 첨탑을 가진 궁전이 서 있다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "물속에 궁전까지 있었어. 보물이 있다면 저기겠지?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "다리 한가운데부터 봐. 장식 갑옷은 아닌 것 같아.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 비늘 갑옷을 두른 기사가 고개를 든다. 투구 옆에는 지느러미 같은 장식이 뻗어 있고, 긴 창 끝에서는 검은 물이 흘러내린다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "멈춰라. 살아 있는 자가 건널 다리가 아니다.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "우리는 모르가나가 알려 준 보물을 찾으러 왔어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "모르가나… 그자가 또 호수 밖에서 혀를 놀렸군.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "‘또’라니. 우리만 보낸 게 아니었나 봐.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "전에 온 사람들은 어떻게 됐는데?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기사가 창자루로 다리를 두드린다. 물속에서 무수한 그림자가 모여든다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "처음에는 모두 보물을 찾았다. 나중에는 노래가 부르는 곳으로 걸어갔지.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…우리는 그렇게 안 될 거야.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "그 말을 하지 않은 자도 없었다.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기사의 투구 안에서 낮은 노랫소리가 흐른다. 다리 건너편이 일렁이며 햇빛 가득한 풀밭으로 바뀐다. 익숙한 사람들이 손을 흔든다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "파이터의 목소리",
+      "className": "scene",
+      "text": "야! 언제까지 거기 있을 거야? 밥 다 식는다!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "바이올렛의 목소리",
+      "className": "scene",
+      "text": "얼른 와. 다들 기다리고 있어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…진짜 같아.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "발밑을 봐. 풀밭이 아니야.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 아래를 본다. 발끝 바로 앞, 다리의 난간이 끊겨 있다. 환상 속 친구들이 서 있는 자리는 물살이 휘몰아치는 허공이다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "너희는… 내가 떨어져도 계속 웃고 있겠구나.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 구슬을 들어 올린다. 빛이 닿은 자리에서 풀밭이 지워지고 궁전의 닫힌 문이 드러난다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "길을 보는 눈을 가져왔군. 그렇다면 눈을 감겨 주마.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기사가 창을 낮춘다. 창날 양옆으로 검은 물이 모여든다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "노랫소리에 정신 팔리지 마. 창이 먼저 온다!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "듣고 있어. 이번에는 네 목소리를!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(창날이 돌다리를 긁으며 다가온다. 소서러스가 지팡이를 세우고 마력을 모은다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    }
+  ],
+  "world7bMidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 세이렌 기사의 창이 부러진다. 투구를 타고 흐르던 물이 쏟아지고, 기사는 다리 위에 한쪽 무릎을 꿇는다. 노랫소리가 뚝 끊어진다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "하아… 이제 친구들 목소리로 부르지 마.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "내 노래를 들으면서도… 끝까지 창끝을 보았군.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "내가 안 봤으면 두 번은 찔렸겠지만.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "알아. 두 번 다 고마워.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "누구와 말하는 것이냐?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "같이 온 친구. 눈에는 안 보여도 옆에서 계속 잔소리해 줘.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "설명을 꼭 그렇게 해야 하냐.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기사가 소서러스를 올려다본다. 비어 있는 투구 안에서 희미한 빛이 흔들린다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "둘이서 한 길을 보고 있었나….",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(궁전 안에서 깊은 음이 울린다. 기사의 갑옷 틈에서 검은 물줄기가 솟아나 소서러스의 발목을 향해 뻗는다. 기사가 부러진 창으로 물줄기를 내리찍는다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "왜 갑자기…!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "물러서라! 내 노래는 끝났지만, 대왕의 노래는 아직 끝나지 않았다.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(물줄기가 물러난다. 기사는 떨리는 팔로 창자루를 짚는다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "대왕이 네 몸까지 움직이는 거야?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "이 호수의 것은 모두 그분의 부름에 응한다. 나도… 오래 따랐지.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "오래 머물지 마. 궁전에서 다시 마력이 모이고 있어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "우리가 찾는 보물도 그 대왕이 가지고 있어?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "왕좌 위의 지팡이. 심연의 세이렌 지팡이다. 대왕은 그것으로 노래를 호수 끝까지 보낸다.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그걸 멈추면 이 물줄기도 멈추겠네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "대왕 앞에서는 네가 가장 듣고 싶은 말이 들릴 것이다. 이 구슬이 길을 보여 주어도… 네 발까지 붙잡아 주지는 못한다.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기사가 창자루를 바닥의 홈에 밀어 넣는다. 다리 끝의 문이 무거운 소리를 내며 열린다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "길을 열어 주는 거야?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "너는 나를 이겼다. 물러날 길을 다시 막는 수치는 겪지 않겠다.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기사가 몸을 끌어 난간 옆으로 비킨다. 반짝꼬리여우가 그의 앞에서 잠깐 멈췄다가 소서러스를 따라간다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "여기서 기다려. 그 노래, 우리가 멈춰 볼게.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이번 약속은 꼭 지켜야겠네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(열린 문 너머에서 차가운 물안개가 밀려온다. 일행은 지팡이가 잠든 궁전으로 들어간다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    }
+  ],
+  "world7bBossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(궁전의 괴물들을 물리친 일행이 가장 깊은 방에 도착한다. 천장에는 호수의 검은 물이 매달려 있고, 거대한 조개껍데기 왕좌에는 왕관을 쓴 세이렌이 앉아 있다. 길고 검은 꼬리가 왕좌 아래를 감싼다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "내 궁전까지 걸어온 손님이라. 기사가 창을 놓친 모양이구나.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네가 검은 세이렌의 대왕이야?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "그렇다. 그리고 네가 찾는 보물도 여기 있지.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(대왕이 지팡이를 들어 올린다. 휘어진 은빛 끝에 검푸른 결정이 박혀 있다. 결정 안에서는 작은 물결들이 끊임없이 부딪친다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "저거야. 호수의 마력이 전부 저 끝으로 모이고 있어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "모르가나의 구슬까지 가져왔군. 무엇을 주고 받았느냐?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모르가나를 살려 줬어. 대신 이곳을 알려 줬지.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "목숨 하나를 놓아주고 내 보물을 얻으러 왔다? 꽤 비싼 답례를 기대했구나.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "보물이 탐나서 살려 준 건 아니야. 그 이야기는 나중에 들었어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "그렇다면 지금은 무엇 때문에 탐내느냐?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "친구들과 다시 만났을 때… 나도 도움이 되고 싶어. 그동안 다들 얼마나 힘들었을지 모르니까.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(대왕이 지팡이 끝으로 바닥을 가볍게 두드린다. 검은 물이 둥근 거울처럼 솟아오른다. 그 안에서 아서가 소서러스를 바라본다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "아서의 목소리",
+      "className": "scene",
+      "text": "늦었잖아. 우리끼리는 더 버티기 힘들어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…아서.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "지팡이를 주마. 저 목소리를 따라 물속으로 들어오너라. 네 친구들이 있는 곳까지 데려다주지.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반짝꼬리여우가 소서러스의 옷자락을 문다. 소서러스는 물거울을 바라본 채 한 걸음 움직인다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "소서러스. 네 손 봐.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…손?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "떨리고 있어. 너 지금 무서운 거야. 그런데 저 녀석은 네가 괜찮은지 한 번도 안 묻네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 멈춘다. 물거울 속 아서는 똑같은 표정으로 손을 내밀고 있다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아서는… 내가 다쳤는지부터 물었을 거야.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "아서의 목소리",
+      "className": "scene",
+      "text": "늦었잖아. 우리끼리는 더 버티기 힘들어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "같은 말밖에 못 하는구나. 네가 아는 건 내가 걱정하는 마음뿐이니까.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 여우의 옷 물린 자락을 부드럽게 풀어 준다. 그리고 물거울에서 물러나 지팡이를 겨눈다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "돌아갈 길은 우리가 찾을게. 그 목소리부터 돌려줘.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "기껏 그리운 얼굴을 보여 주었거늘… 끝내 내 노래를 거스르겠다는 것이냐!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(물거울이 터진다. 대왕이 왕좌에서 몸을 일으키자 검은 파도가 방 둘레를 감싸고, 지팡이의 결정이 날카롭게 울린다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "온다. 이번에는 나도 힘을 보탤게.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 둘 다 끝까지 깨어 있자!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    }
+  ],
+  "world7bBossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(대왕의 왕관이 갈라진다. 마지막 마법이 검은 파도를 가르고, 대왕의 손에서 지팡이가 튕겨 나온다. 소서러스가 달려가 지팡이를 붙잡는다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "돌려다오! 그 지팡이는… 나의…!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(대왕이 손을 뻗지만 파도는 일어나지 않는다. 왕좌를 감싸던 검은 물이 풀려나고, 그의 거대한 몸이 물안개처럼 흩어지기 시작한다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌의 대왕",
+      "className": "scene",
+      "text": "어찌하여 따르지 않았느냐. 누구나 그리운 목소리에는… 돌아보는 법인데….",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나도 돌아봤어. 혼자였다면 따라갔을지도 몰라.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그래도 마지막에는 네가 멈췄잖아.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네가 불러 줬으니까.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(대왕이 입을 열지만 노랫소리는 나오지 않는다. 왕좌 위로 검은 물이 쏟아지고, 대왕의 모습이 그 안으로 무너진다. 깨진 왕관만 돌바닥을 굴러간다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(고요해진 방. 지팡이 끝의 결정에서 가느다란 소리가 울린다. 소서러스가 놀라 팔을 뻗어 지팡이를 멀리 든다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잠깐. 이거 또 노래하려는 거 아니지?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "마력을 세게 쥐지 말고 조금 풀어 봐. 아까 대왕이 하던 대로 누르고 있잖아.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 천천히 숨을 내쉰다. 날카롭던 소리가 맑아지고, 결정 안의 검은 물결 사이로 푸른빛이 번진다. 발밑에 고인 물이 부드럽게 양옆으로 갈라진다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…내가 움직이고 있어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "심연의 세이렌 지팡이. 모르가나가 보물이라고 부를 만하네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아서한테 보여 주면 놀라겠지?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "네가 살아 돌아온 것부터 놀랄걸. 지팡이 자랑은 그다음에 해.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반짝꼬리여우가 지팡이 끝을 올려다본다. 소서러스가 낮게 내려 주자, 여우는 코를 갖다 댔다가 차가운 기운에 재채기를 한다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "하하. 너는 별로 마음에 안 드나 봐.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(천장에서 물방울이 떨어진다. 노래가 사라지며 왕좌의 방으로 물이 조금씩 스며든다. 그때 지팡이의 푸른빛이 왕좌 뒤 벽면에 닿는다. 검은 물때 아래에서 호수와 펼쳐진 책을 새긴 문양이 잠깐 드러난다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이제 나가자. 물속에서 보물 자랑할 생각은 없지?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "구슬은… 아직 빛나고 있어!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(모르가나의 구슬 속에 처음 내려왔던 계단이 비친다. 소서러스가 구슬을 앞에 들고, 새 지팡이로 발밑의 물을 밀어내며 돌아간다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(돌다리에는 검은 세이렌 기사가 앉아 있다. 갑옷을 타고 흐르던 물줄기는 사라졌다. 그는 소서러스가 든 지팡이를 바라본다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "노래가… 멎었군.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이제 네 몸을 마음대로 움직이지 않을 거야.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "검은 세이렌 기사",
+      "className": "scene",
+      "text": "…돌아오는 발소리를 듣는 날도 있구나.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기사가 천천히 일어나 길을 비켜 준다. 소서러스는 고개를 끄덕이고 계단을 오른다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(호숫가. 소서러스가 마지막 계단을 밟자, 뒤에서 검은 수면이 닫힌다. 구슬의 빛은 잦아들지만 새 지팡이의 결정에는 푸른빛이 남아 있다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "꼬리 안 젖었네. 약속 지켰다!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반짝꼬리여우가 젖은 소서러스의 신발을 앞발로 건드린다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "네 신발까지는 약속 안 해서 다행이네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…양말도.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 신발의 물을 털어 내며 웃는다. 멀리 펼쳐진 반전세계의 길을 바라보고 지팡이를 고쳐 쥔다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이제 돌아갈 길을 찾자. 다들 기다릴 거야.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그래. 이번에는 진짜 목소리로 잔소리 좀 들어 보자고.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 돌아서려는 순간, 지팡이의 결정이 다시 빛난다. 검은 수면 위에 왕좌 뒤에서 본 것과 같은 문양이 떠오른다. 지팡이를 가까이 대자 물결이 둥글게 갈라지고, 계단 대신 희고 잔잔한 빛이 길을 이룬다. 반짝꼬리여우가 공기 냄새를 맡고 조심스럽게 앞발을 내민다. 소서러스는 구슬을 챙긴 뒤 빛 너머로 걸어간다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다음 장면: 「신의 호수 — 물에 잠긴 과거」로 이어진다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    }
+  ],
+  "world7bEpilogue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(빛을 지나자 발밑에 얕은 물결이 번진다. 검은 호수와 달리 바닥이 훤히 보이는 맑은 호수다. 물 위에는 희고 부서진 기둥들이 서 있고, 한가운데 작은 섬에 돌로 된 서대가 놓여 있다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…여기는?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "신의 호수야….",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "신의 호수? 검은 호수 안에 이런 곳이 있었다고?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "저 기둥의 문양을 본 적 있어. 신성한 기억을 물에 남기는 곳이라고 했지. 정말 남아 있을 줄은….",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "여기 책이 있어. 물 한 방울 안 묻었네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "잠깐. 펼치기 전에 마력부터….",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 책을 펼친다. 비어 있던 종이 위로 빛이 번진다. 갑자기 눈앞이 흐려지고, 발밑의 맑은 물이 잿빛 흙으로 바뀐다. 무너진 성벽과 불타는 들판, 하늘을 가르는 검은 구름이 나타난다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "뭐지? 방금까지 호수에 있었는데!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "과거 장면을 환상으로 보여 주는 거야. 그런데… 누가 이런 걸 남겼지?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반짝꼬리여우가 날아오는 돌조각에 몸을 움츠린다. 돌은 아무것에도 부딪치지 않고 일행을 통과한다. 전장 한복판에서 모르가나가 거대한 검은 마법진을 펼친다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "악의 씨앗이 뿌리를 내려 어둠의 시대가 도래할지니… 그곳에 네가 있을 자리는 없다, 천사!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "그렇게는 안 되지, 모르가나!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(희고 커다란 날개를 펼친 천사가 내려선다. 갑옷은 빛나고, 눈에는 아직 어둠이 깃들지 않았다. 소서러스가 기억하는 타락한 천사와 같은 얼굴이다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저 얼굴… 타락한 천사잖아! 그런데 날개가…!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…! 타락하기 전이야.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "과거에 이 둘이 싸웠다고?!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "지켜야 할 것들이 발목을 잡는구나. 저 폐허를 보아라. 네가 구한 것이 얼마나 남았지?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "아직 살아 있는 사람들이 있다. 네가 그들에게 손대도록 두지는 않겠어!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "그렇다면 그 땅에 함께 엎드려라. 앱솔루트 그래비티!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(공기가 일그러진다. 날아오르던 천사가 땅으로 내리꽂힌다. 거대한 충격과 함께 땅이 움푹 패이고, 흰 깃털이 흙먼지 속으로 흩어진다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "크아악…!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저 상태로는…! 일어나면 안 돼!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "들리지 않아. 우리는 기억을 보고 있을 뿐이야.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(천사가 부러진 창을 짚고 다시 일어선다. 한쪽 날개가 처졌지만, 손끝에는 금빛이 모인다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "하늘의 권능으로… 라이트 제네시스!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(땅에서 수많은 광선이 솟아올라 검은 마법진을 꿰뚫는다. 모르가나의 방어막이 갈라지고 눈부신 빛이 전장을 뒤덮는다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "으아아악! 감히…!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "내 전력을 다해서라도 이 세계를 어둠으로 물들이는 걸 막겠어!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "어리석구나! 그 몸으로 얼마나 더 빛을 낼 수 있을 것 같으냐!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(천사가 잠시 눈을 감는다. 목에 걸린 작은 문양을 쥔 손이 떨린다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "스승님… 알고 있습니다. 제가 무엇을 해야 할지….",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "스승님? 저 천사에게도 스승이 있었어?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "천계의 사슬이여… 모든 선한 마음이여. 이 손으로 악을 봉인할지니, 전심전력으로 나에게 힘을…!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(빛의 사슬이 무너진 성벽과 대지에서 솟아오른다. 사슬은 모르가나를 감싸고, 천사의 두 팔에도 깊이 감긴다. 두 존재 사이의 공간이 거울처럼 갈라진다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "제정신이냐! 그걸 쓰면 너도 무사하지 못한다!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "알아! 그래도 여기서 멈추지 않으면 모두가…!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "천사",
+      "className": "mystery",
+      "text": "나에게 힘을 주소서! 신성한 빛으로, 너를 이 세계에서 추방하노라!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "모르가나",
+      "className": "mystery",
+      "text": "크아아악! 이 사슬을… 풀어라아아!",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_morgana_world6a_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갈라진 공간 너머로 땅과 하늘이 뒤집힌 반전세계가 보인다. 모르가나가 빛의 사슬에 끌려 그 안으로 떨어진다. 천사는 무릎을 꿇는다. 그의 손을 감싼 사슬에 검은 금이 번지는 순간, 책장이 넘어가는 소리와 함께 전장이 사라진다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…끝난 거야? 천사는 어떻게 된 거지?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "모르가나를 반전세계로 추방한 건 저 천사였어. 하지만 그 뒤에 무슨 일이 생겼는지는 안 보여 줬네.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모두를 지키려고 저렇게까지 했는데… 왜 우리가 아는 모습이 된 거야?",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "아직은 몰라. 저 사슬 때문이라고 단정할 수도 없어.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(책의 마지막 장에는 글씨 대신 천사가 쥐었던 것과 같은 문양이 남아 있다. 소서러스가 문양을 종이에 옮긴다. 누가 책을 남겼는지 알려 주는 이름은 어디에도 없다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "…이제 뭘 해야 할지 알았어. 천사의 스승을 찾는 거야. 그 사람이라면 이 주문과 제자에 대해 알겠지.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그래. 이 문양도 단서가 될 거야. 일단 신의 호수부터 빠져나가자.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "구슬은 잘 챙겼지? 들어온 길이 닫히기 전에 움직여.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 돌아가서 친구들에게도 이야기하자. 우리가 본 천사와, 아직 모르는 일들을.",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 책을 덮는다. 서대 곁의 물에는 더 이상 전장이 비치지 않는다. 일행은 구슬에 남은 입구의 흔적과 지팡이의 푸른빛을 따라 검은 호숫가로 돌아온다. 소서러스는 문양을 옮긴 종이를 가방 깊숙이 넣는다. 반전세계에서 나갈 길을 찾는 여정에, 천사의 스승을 찾아야 할 이유가 더해졌다.)",
+      "scene": "world-7b",
+      "location": "심연의 검은 호수",
+      "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
+    }
+  ],
   "world4Potion4": [
     {
       "speaker": "내레이션",

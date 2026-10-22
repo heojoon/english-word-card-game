@@ -284,6 +284,24 @@ export function parseWorldSixBNarrative(markdown,{section='all',location='왕국
   if(!lines.length)throw new Error(`World 6B narrative section is incomplete: ${section}`);
   return lines;
 }
+export function parseWorldSevenNarrative(markdown,{world,location}={}){
+  const lines=[];
+  const speakerClasses={...classes,'다크 소서러스':'mage','모르가나':'mystery','타락하기 전의 천사':'mystery','천사':'mystery'};
+  for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
+    const block=raw.trim();
+    if(!block||block.startsWith('#')||block==='---')continue;
+    const dialogue=block.startsWith('(')?null:block.match(/^([^:\n]+?):\s*([\s\S]+)$/);
+    const speaker=(dialogue?.[1]||'내레이션').trim();
+    const text=(dialogue?.[2]||block).replace(/\s*\n\s*/g,' ').trim();
+    const line={speaker,className:speakerClasses[speaker]||'scene',text,scene:`world-${world}`,location,
+      backgroundPath:world==='7a'?'assets/story/chapter-7a-burning-ancient-tower-map.webp':'assets/story/chapter-7b-black-lake-map.webp'};
+    if(speaker==='다크 소서러스')line.artPath='assets/novel/characters/char_dark_sorcerus_world5_standing.webp';
+    if(speaker==='모르가나')line.artPath='assets/novel/characters/char_morgana_world6a_standing.webp';
+    lines.push(line);
+  }
+  if(!lines.length)throw new Error(`World ${world} narrative is incomplete`);
+  return lines;
+}
 export async function generateStoryNovel(){
   const novels={};
   for(const [key,filename,parse] of [
@@ -319,6 +337,12 @@ export async function generateStoryNovel(){
     ['world6bBossStart','world-6b-boss-start.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘리엇의 저택'})],
     ['world6bBossEnd','world-6b-boss-end.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘리엇의 저택 · 시험 통과'})]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
+  for(const world of ['7a','7b']){
+    const location=world==='7a'?'심연의 불타는 고대 탑':'심연의 검은 호수';
+    for(const [key,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end'],...(world==='7b'?[['Epilogue','epilogue']]:[])]){
+      novels[`world${world}${key}`]=parseWorldSevenNarrative(await readFile(new URL(`../assets/novel/world-${world}-${file}.md`,import.meta.url),'utf8'),{world,location});
+    }
+  }
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');
   for(const milestone of [4,8,12,16]){

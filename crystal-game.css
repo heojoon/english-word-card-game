@@ -904,7 +904,6 @@ body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{backgro
 
 /* World 6A: full-height supplied map, with waypoints in image coordinates. */
 .story-world-map-8{aspect-ratio:1/3}
-.story-world-map-8 .story-map-navigation{top:auto;bottom:8px}
 .story-world-map-8 .story-map-node{height:2.025%}
 .story-world-map-8 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
 .story-world-map-7{aspect-ratio:1/3;background:#25205b}
@@ -1016,6 +1015,5 @@ body[data-screen="battle"] .arena.guardian-boss-arena.elliot-arena{background:#e
 dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white-space:normal}
 
 .story-world-map-9{aspect-ratio:1/3}
-.story-world-map-9 .story-map-navigation{top:auto;bottom:8px}
 .story-world-map-9 .story-map-node{height:2.025%}
 .story-world-map-9 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
