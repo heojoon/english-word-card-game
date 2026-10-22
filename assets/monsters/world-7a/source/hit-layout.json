@@ -1,0 +1,5 @@
+{
+  "normal": {"standingSkullWidthPx": 340, "downSkullWidthPx": 355},
+  "scorched": {"standingSkullWidthPx": 340, "downSkullWidthPx": 355},
+  "method": "Calibrate the independently generated fallen skull against the first standing hit pose; preserve one action scale after source calibration."
+}

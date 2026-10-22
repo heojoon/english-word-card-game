@@ -1,0 +1,43 @@
+{
+  "image": "skeleton-scorched-sd-attack-strip.png",
+  "frameWidth": 416,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.39087947882736157,
+  "sourceImageSize": [
+    1706,
+    922
+  ],
+  "sourceCuts": [
+    0,
+    628,
+    1144,
+    1706
+  ],
+  "loop": false,
+  "holdFinal": true,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "sword-contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline bounds/alpha and frame review; browser review not requested; user visual approval not inferred."
+}

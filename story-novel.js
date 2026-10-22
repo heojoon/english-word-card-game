@@ -8538,7 +8538,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "- 월드 7A 요정의 나라",
+      "text": "- 월드 7A 심연의 불타는 고대 탑",
       "scene": "inverted-world",
       "location": "반전세계 · 저주의 결말",
       "backgroundPath": "assets/environments/world-6a/01-inverted-world-battle.webp"
@@ -9070,20 +9070,20 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "엘리엇",
       "className": "elliot",
-      "text": "내 공격을 5분 동안 견디며 내 기력을 절반 이하로 낮춰 보아라. 시험을 통과하면 주교님께 전할 추천 편지를 준비해 주마.",
+      "text": "내 공격을 4분 동안 견디며 내 기력을 절반 이하로 낮춰 보아라. 시험을 통과하면 주교님께 전할 추천 편지를 준비해 주마.",
       "scene": "capital-road",
       "sceneNumber": 2,
-      "location": "5분의 시험",
+      "location": "4분의 시험",
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
       "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
     {
       "speaker": "파이터",
       "className": "fighter",
-      "text": "5분이라… 해 보자!",
+      "text": "4분이라… 해 보자!",
       "scene": "capital-road",
       "sceneNumber": 2,
-      "location": "5분의 시험",
+      "location": "4분의 시험",
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
@@ -9092,7 +9092,7 @@ window.WORDORIA_NOVELS = {
       "text": "방심하면 안 돼. 스승님은 소드마스터야.",
       "scene": "capital-road",
       "sceneNumber": 2,
-      "location": "5분의 시험",
+      "location": "4분의 시험",
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     },
     {
@@ -9101,7 +9101,7 @@ window.WORDORIA_NOVELS = {
       "text": "준비되었느냐? 시작하겠다!",
       "scene": "capital-road",
       "sceneNumber": 2,
-      "location": "5분의 시험",
+      "location": "4분의 시험",
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
       "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
     },
@@ -9111,7 +9111,7 @@ window.WORDORIA_NOVELS = {
       "text": "화면 전환 → 생존형 보스전",
       "scene": "capital-road",
       "sceneNumber": 2,
-      "location": "5분의 시험",
+      "location": "4분의 시험",
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     }
   ],
@@ -9128,7 +9128,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "엘리엇",
       "className": "elliot",
-      "text": "거기까지. 5분이 지났다.",
+      "text": "거기까지. 4분이 지났다.",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "시험 종료",
@@ -9174,7 +9174,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "엘리엇",
       "className": "elliot",
-      "text": "그래. 5분을 버티면서 내 기력을 절반 이하로 낮췄구나. 너희의 실력은 충분히 확인했다.",
+      "text": "그래. 4분을 버티면서 내 기력을 절반 이하로 낮췄구나. 너희의 실력은 충분히 확인했다.",
       "scene": "capital-road",
       "sceneNumber": 1,
       "location": "시험 종료",

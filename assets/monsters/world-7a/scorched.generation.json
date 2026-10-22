@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "references": {
+    "idle": "source/normal-idle-generated.png",
+    "attack": "source/normal-attack-generated.png"
+  },
+  "prompts": {
+    "idle": "Use case: precise-object-edit. Create the scorched variant of this SAME Wordoria Crystal Quest skeleton soldier animation sheet. Change ONLY material surface: small stylized charcoal-gray soot patches across skull, ribs and feet, darkened metal shoulder guard, slightly singed belt edge, and 2 or 3 TINY amber ember flecks close to body per frame. Keep bones mostly readable light ivory. Eyes MUST STAY VIOLET. Preserve EXACT existing poses, proportions, skull sizes, camera, sword shape, frame count, sequence, baseline, positions and transparent margins. No red eyes, no cape, no flaming sword, no fire aura, no horror, no blood. Preserve genuine transparent alpha, clean anime soft cel painting, indigo lines, lavender shadows. Horizontal equal frame slots, exactly 50px fully transparent gap between frame cells; no cropping and no ember crosses a cell boundary. No background, no text, no extra frames. Exactly TWO frames: ready and slightly open-jaw rattle. Keep foot positions fixed.",
+    "attack": "Use case: precise-object-edit. Create the scorched variant of this SAME Wordoria Crystal Quest skeleton soldier animation sheet. Change ONLY material surface: small stylized charcoal-gray soot patches across skull, ribs and feet, darkened metal shoulder guard, slightly singed belt edge, and 2 or 3 TINY amber ember flecks close to body per frame. Keep bones mostly readable light ivory. Eyes MUST STAY VIOLET. Preserve EXACT existing poses, proportions, skull sizes, camera, sword shape, frame count, sequence, baseline, positions and transparent margins. No red eyes, no cape, no flaming sword, no fire aura, no horror, no blood. Preserve genuine transparent alpha, clean anime soft cel painting, indigo lines, lavender shadows. Horizontal equal frame slots, exactly 50px fully transparent gap between frame cells; no cropping and no ember crosses a cell boundary. No background, no text, no extra frames. Exactly THREE frames: ready, raised-sword anticipation, active left-down sword contact. Final pose must stay an active sword strike."
+  },
+  "outputs": {
+    "idle": "source/scorched-idle-generated.png",
+    "attack": "source/scorched-attack-generated.png"
+  },
+  "reviewStatus": "Offline alpha/bounds and actual mobile-size light/violet review passed; browser review not requested; user approval not inferred."
+}

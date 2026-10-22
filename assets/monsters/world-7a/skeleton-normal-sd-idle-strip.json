@@ -1,0 +1,37 @@
+{
+  "image": "skeleton-normal-sd-idle-strip.png",
+  "frameWidth": 416,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.31290743155149936,
+  "sourceImageSize": [
+    1808,
+    870
+  ],
+  "sourceCuts": [
+    0,
+    931,
+    1808
+  ],
+  "loop": true,
+  "holdFinal": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 600
+    },
+    {
+      "name": "rattle",
+      "durationMs": 600
+    }
+  ],
+  "reviewStatus": "Offline bounds/alpha and frame review; browser review not requested; user visual approval not inferred."
+}

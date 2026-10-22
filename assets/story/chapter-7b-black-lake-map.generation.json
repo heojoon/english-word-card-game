@@ -1,0 +1,155 @@
+{
+  "date": "2026-10-22",
+  "tool": "image_gen.imagegen (built-in)",
+  "model": "미공개",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map.\nScene: World 7B, Black Lake of the Abyss. Start at a dry ravine and still black lake shore at TOP. Descend via revealed cream-stone stairs into breathable underwater passages, ruined sluice gates, shell-strewn ruins. A long stone bridge at stage 15 crosses swirling dark water at the middle, the Black Siren Knight's narrative location, but do not paint any knight. Lower half descends through palace terraces to a magnificent pointed-spire underwater palace and huge empty seashell throne chamber at stage 30 at the BOTTOM. Suggest the hidden divine lake as a small turquoise illuminated grotto off the route, without an extra waypoint. No figures or bosses painted. Mysterious cool teal and indigo underwater environment with pearly cream stone and restrained gold route edges, luminous aquatic foliage, caustic light filtering from above, soft underwater haze instead of outdoor clouds below the lake. Retain warm filtered highlights and painterly reference materials; keep paths and every crystal bright, readable, inviting rather than horror.\nReference roles: Image 1 = authoritative style only; no existing target layout.\nComposition: portrait 1024 x 3072, 1:3 aspect ratio, full bleed. Thirty distinct waypoints spaced across the width; route always descends from top to bottom. Palace architecture grows in the lower half with final throne terrace at bottom.\nGameplay contract: exactly 30 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals. Stage order and normalized centers: 1: x=18%, y=5%; 2: x=40%, y=7.5%; 3: x=64%, y=10%; 4: x=81%, y=12.5%; 5: x=63%, y=15%; 6: x=40%, y=17.5%; 7: x=19%, y=20%; 8: x=39%, y=22.5%; 9: x=64%, y=25%; 10: x=81%, y=27.5%; 11: x=63%, y=30%; 12: x=40%, y=32.5%; 13: x=19%, y=35%; 14: x=40%, y=37.5%; 15: x=65%, y=41%; 16: x=80%, y=46%; 17: x=63%, y=49%; 18: x=40%, y=52%; 19: x=19%, y=55%; 20: x=39%, y=58%; 21: x=64%, y=61%; 22: x=80%, y=64%; 23: x=63%, y=67%; 24: x=40%, y=70%; 25: x=19%, y=73%; 26: x=39%, y=76%; 27: x=64%, y=79%; 28: x=80%, y=82%; 29: x=63%, y=86%; 30: x=48%, y=92%. Build ONE continuous broad winding path through these centers, maintaining increasing y. Each crystal is centered on its pedestal; all pedestal centers must be visible and separate. No extra waypoint pedestals, no crystals used as decorative pseudo-waypoints.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": null,
+  "storyReference": "assets/novel/world-7b-scenario.md",
+  "original": "assets/story/source/world7b/01-generated.png",
+  "runtime": "assets/story/chapter-7b-black-lake-map.webp",
+  "requestedDimensions": [
+    1024,
+    3072
+  ],
+  "actualDimensions": [
+    724,
+    2172
+  ],
+  "runtimeDimensions": [
+    724,
+    2172
+  ],
+  "actualMeasuredStagePositions": [
+    [
+      "17.327%",
+      "4.463%"
+    ],
+    [
+      "39.435%",
+      "6.605%"
+    ],
+    [
+      "62.317%",
+      "7.816%"
+    ],
+    [
+      "79.167%",
+      "9.386%"
+    ],
+    [
+      "61.920%",
+      "10.821%"
+    ],
+    [
+      "40.571%",
+      "12.258%"
+    ],
+    [
+      "20.303%",
+      "13.688%"
+    ],
+    [
+      "40.318%",
+      "15.916%"
+    ],
+    [
+      "63.252%",
+      "17.527%"
+    ],
+    [
+      "80.146%",
+      "19.371%"
+    ],
+    [
+      "63.510%",
+      "21.305%"
+    ],
+    [
+      "40.443%",
+      "23.294%"
+    ],
+    [
+      "20.529%",
+      "25.329%"
+    ],
+    [
+      "40.484%",
+      "27.872%"
+    ],
+    [
+      "64.993%",
+      "30.790%"
+    ],
+    [
+      "81.285%",
+      "34.728%"
+    ],
+    [
+      "63.292%",
+      "37.147%"
+    ],
+    [
+      "40.224%",
+      "38.835%"
+    ],
+    [
+      "19.863%",
+      "41.509%"
+    ],
+    [
+      "40.211%",
+      "44.207%"
+    ],
+    [
+      "62.534%",
+      "46.575%"
+    ],
+    [
+      "79.974%",
+      "50.406%"
+    ],
+    [
+      "62.515%",
+      "52.462%"
+    ],
+    [
+      "39.785%",
+      "55.211%"
+    ],
+    [
+      "20.776%",
+      "58.883%"
+    ],
+    [
+      "39.866%",
+      "61.581%"
+    ],
+    [
+      "62.443%",
+      "64.223%"
+    ],
+    [
+      "80.882%",
+      "67.243%"
+    ],
+    [
+      "64.056%",
+      "70.015%"
+    ],
+    [
+      "48.467%",
+      "93.444%"
+    ]
+  ],
+  "layout": "assets/story/chapter-7b-map-layout.json",
+  "review": {
+    "technical": "Passed: 30 crystals visually counted and centers measured; mobile 390x844 and desktop 1280x900 image loading, button alignment, final stage and zero page errors verified; 509 Node tests passed.",
+    "userApproval": "not requested / not granted",
+    "coordinateEvidence": "output/story-map/world7b-coordinate-review.jpg",
+    "browserEvidence": "output/story-map/world7b-browser-review.json",
+    "testEvidence": "output/story-map/world7b-tests.log",
+    "build": "npm run build passed",
+    "buildEvidence": "output/story-map/world7b-build.log"
+  }
+}

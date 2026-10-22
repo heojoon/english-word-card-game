@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "source/normal-identity.png",
+  "prompts": {
+    "hit-pair": "Use case: identity-preserve. Transparent RGBA Wordoria Crystal Quest SD skeleton soldier hit animation. Preserve exactly the attached ivory skull skeleton identity, violet eyes, belt, one shoulder guard, chipped short sword, clean anime linework, soft cel shadows. LEFT-facing. No red eyes, no fire, no blood, no background, floor, labels or text. Generous empty transparent margins around every prop and bone, no clipping. Generate EXACTLY TWO standing poses in a single horizontal strip with two equal 800x800 cells separated by EXACTLY 50 transparent pixels. COMPOSITION: first entire pose confined to left cell with 100px inner left/right margins; second entire pose confined to right cell with 100px margins. Frame1 NOTICE/GUARD: surprised face, sword in same low forward-left stance as identity, feet planted, no comic punctuation. Frame2 IMPACT/STRONGEST RECOIL: skull and shoulders flung backward toward RIGHT, knees buckle, one foot raised, sword retained in left hand but short blade does not extend outside slot. Complete body visible. Same skull size, standing body scale and baseline in both cells. No third pose.",
+    "hit-down": "Use case: identity-preserve. Transparent RGBA Wordoria Crystal Quest SD skeleton soldier hit animation. Preserve exactly the attached ivory skull skeleton identity, violet eyes, belt, one shoulder guard, chipped short sword, clean anime linework, soft cel shadows. LEFT-facing. No red eyes, no fire, no blood, no background, floor, labels or text. Generous empty transparent margins around every prop and bone, no clipping. Generate ONE isolated COMPLETE KNOCKDOWN pose only. Skeleton has collapsed into a low pile of its own ivory bones, fallen round skull lying on its side atop ribs, belt and single shoulder guard among bones. The skull is same shape and size relative to bones as reference, violet eyes dim but visible. Short sword lies horizontally alongside bone pile, pointing LEFT, fully contained inside frame; keep total sword-plus-pile width modest (less than 75% square canvas width). Full pile and entire sword visible, 12% empty margin on all sides, square composition. This is a low horizontal collapsed pile, NOT sitting or crouching, no recovery. No comic punctuation."
+  },
+  "outputs": {
+    "pair": "source/normal-hit-pair-generated.png",
+    "down": "source/normal-hit-down-generated.png"
+  },
+  "reason": "Rejected crowded original hit strip. Generated notice/impact as a two-frame group and complete knockdown as one isolated pose.",
+  "reviewStatus": "Offline light/violet review passed after skull calibration and wider 416x320 runtime cell packing; browser review not requested."
+}

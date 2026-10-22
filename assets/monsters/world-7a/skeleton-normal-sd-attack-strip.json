@@ -1,0 +1,43 @@
+{
+  "image": "skeleton-normal-sd-attack-strip.png",
+  "frameWidth": 416,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceScale": 0.3953871499176277,
+  "sourceImageSize": [
+    1708,
+    921
+  ],
+  "sourceCuts": [
+    0,
+    627,
+    1142,
+    1708
+  ],
+  "loop": false,
+  "holdFinal": true,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "sword-contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline bounds/alpha and frame review; browser review not requested; user visual approval not inferred."
+}

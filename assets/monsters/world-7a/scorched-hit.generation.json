@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "references": {
+    "pair": "source/normal-hit-pair-generated.png",
+    "down": "source/normal-hit-down-generated.png"
+  },
+  "prompts": {
+    "pair": "Use case: precise-object-edit. Change ONLY surface colors of the attached TWO-frame skeleton soldier hit animation to the scorched world 7A variant: subtle small charcoal soot patches on ivory skull, ribs, shins and toes, darkened iron shoulder guard, singed leather belt edges, just 2-3 tiny amber ember flecks close to body in each frame. Keep ivory bones readable and BOTH eyes VIOLET, not red. Preserve exactly these TWO poses (notice/guard, strongest impact recoil), framing, proportions, skull size, sword shape, anatomy, baseline and frame order. No added poses. No fire aura, no flaming sword, cape, blood or horror. Genuine transparent alpha, no backdrop, labels, text or floor. Use equal frame cells with exactly 50 pixels fully transparent gap and generous safe margins inside each cell. All limbs and sword inside their own cell, no clipping. Preserve clean anime linework and soft cel painting.",
+    "down": "Use case: precise-object-edit. Change ONLY the material surface of this ONE collapsed skeleton soldier pose into the scorched Worldoria Crystal Quest world 7A variant: restrained charcoal soot patches across ivory skull and bones, darker shoulder guard, slightly singed leather belt, two tiny amber ember flecks immediately beside the pile. Preserve EXACT fallen pose, low horizontal silhouette, skull size, bone arrangement, short sword lying LEFT, camera, linework, proportions and transparent margins. Eyes stay VIOLET, not red. Keep bones mostly light ivory and readable. Absolutely no standing, sitting, recovery, new poses, cape, flaming sword, blood or horror. Preserve genuine transparent alpha background and no floor or text. One complete isolated bone pile with sword, all elements inside frame. Clean anime linework with polished soft cel painting, lavender shadows."
+  },
+  "outputs": {
+    "pair": "source/scorched-hit-pair-generated.png",
+    "down": "source/scorched-hit-down-generated.png"
+  },
+  "reviewStatus": "Offline alpha/bounds review; user visual approval and browser review not inferred."
+}

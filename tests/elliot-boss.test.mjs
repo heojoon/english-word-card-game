@@ -8,8 +8,8 @@ const rules=window.WORDORIA_ELLIOT;
 const fresh=()=>({...rules.reset(),hp:100,hpMax:100,index:0,correct:0,elapsed:0,bossAttackSteps:1});
 const hit=(s,damage=1)=>{s.bossAttackSteps=damage;assert.ok(rules.answer(s,true,200));rules.advance(s,200);rules.advance(s,300);};
 
-test('Elliot uses 500 HP, five minutes, 800 crystals and stable vocabulary cycles',()=>{
-  const s=fresh();assert.equal(s.bossHp,500);assert.equal(s.storyTimeLimit,300000);assert.equal(rules.REWARD,800);
+test('Elliot uses 500 HP, four minutes, 800 crystals and stable vocabulary cycles',()=>{
+  const s=fresh();assert.equal(s.bossHp,500);assert.equal(s.storyTimeLimit,240000);assert.equal(rules.REWARD,800);
   const words=Array.from({length:10},(_,i)=>['w'+i,'n','뜻'+i]);const deck=rules.deck(words,x=>x.reverse());
   assert.equal(deck.length,500);for(let i=0;i<500;i+=10)assert.equal(new Set(deck.slice(i,i+10).map(x=>x.entry[0])).size,10);
   for(let i=1;i<deck.length;i++)assert.notEqual(deck[i-1].entry[0],deck[i].entry[0]);
@@ -31,13 +31,13 @@ test('simultaneous shield and sword retain the sword cast and apply a single hit
   rules.advance(s,600);assert.equal(s.elliotAction,'attack');rules.advance(s,399);assert.equal(s.hp,hp);rules.advance(s,1);assert.equal(s.hp,hp-1);
 });
 test('victory requires both complete survival and HP <= 250; zero boss HP never wins early',()=>{
-  for(const hp of [250,0]){const s=fresh();s.bossHp=hp;assert.equal(rules.won(s),false);const events=rules.advance(s,299999);assert.ok(!events.includes('victory'));assert.ok(rules.advance(s,1).includes('victory'));assert.equal(s.elapsed,300000);}
-  const s=fresh();s.bossHp=251;assert.ok(rules.advance(s,300000).includes('trial-failed'));assert.equal(rules.won(s),false);
+  for(const hp of [250,0]){const s=fresh();s.bossHp=hp;assert.equal(rules.won(s),false);const events=rules.advance(s,239999);assert.ok(!events.includes('victory'));assert.ok(rules.advance(s,1).includes('victory'));assert.equal(s.elapsed,240000);}
+  const s=fresh();s.bossHp=251;assert.ok(rules.advance(s,240000).includes('trial-failed'));assert.equal(rules.won(s),false);
 });
 test('large clock steps and small clock steps produce the same skills, HP and outcome',()=>{
   const a=fresh(),b=fresh();a.bossHp=b.bossHp=250;let hits=0;
-  for(let i=0;i<300000;i+=25)hits+=rules.advance(a,25).filter(x=>x==='aura-hit').length;
-  const events=rules.advance(b,900000);assert.equal(a.hp,b.hp);assert.equal(hits,14);assert.equal(a.elapsed,300000);assert.equal(b.elapsed,300000);assert.ok(events.includes('victory'));
+  for(let i=0;i<240000;i+=25)hits+=rules.advance(a,25).filter(x=>x==='aura-hit').length;
+  const events=rules.advance(b,900000);assert.equal(a.hp,b.hp);assert.equal(hits,11);assert.equal(a.elapsed,240000);assert.equal(b.elapsed,240000);assert.ok(events.includes('victory'));
 });
 test('pause, Ice Time and pet stop freeze skill clocks, shield and enemy poses; player contact completes',()=>{
   const s=fresh();rules.advance(s,20200);const before={hp:s.hp,clock:s.elliotClock,pose:s.elliotActionMs};
@@ -55,19 +55,50 @@ test('reduced motion preserves contact and cleanup resets shield, queue and Ice 
   const s=fresh();s.guardianReducedMotion=true;rules.advance(s,20000);rules.advance(s,199);assert.equal(s.hp,100);rules.advance(s,1);assert.equal(s.hp,99);
   rules.advance(s,40000-s.elliotClock);s.iceTimeActive=true;rules.clear(s);assert.equal(s.elliotShieldUntil,0);assert.equal(s.elliotAuraPending,0);assert.equal(s.iceTimeActive,false);
 });
-test('actual mage skill and mana potion enable Ice Time reuse; correct and wrong choices release it',async()=>{
+test('actual mage skill and mana potion enable Ice Time reuse; full boards and mistakes release it',async()=>{
   const source=read('crystal-game.js');
   const s={...fresh(),story:true,mp:1,mpMax:1,question:{choices:['yes','no'],answer:'yes',entry:['word','n','뜻']}};
+  s.deck=rules.deck(Array.from({length:7},(_,i)=>['word'+i,'n','뜻'+i]),x=>x);rules.board(s,x=>x);
   const c=vm.createContext({window,run:s,localMode:true,selectedCharacter:{id:'hero',class:'mage'},performance:{now:()=>1000},render(){},toast(){},speak(){},saveDemo(){},potionInventory:{equipped_slot_1:'blue'},demoState:{potionInventory:{}},equippedPotions:()=>['blue'],potionTypes:{blue:{name:'마나포션'}},battleContactDelay:()=>200});
   c.setTimeout=()=>1;
   vm.runInContext(source.slice(source.indexOf('  function canActivateMageIceTime()'),source.indexOf('  function updateWarriorSlash(')),c);
-  vm.runInContext(source.slice(source.indexOf('  function guardianAnswer('),source.indexOf('  function advanceGuardianBattle(')),c);
+  vm.runInContext(source.slice(source.indexOf('  function elliotPick('),source.indexOf('  function advanceElliotBattle(')),c);
+  c.document={dispatchEvent(){}};c.CustomEvent=function(){};
   const potionStart=source.indexOf('  async function useStoryPotion(');vm.runInContext(source.slice(potionStart,source.indexOf('\n',potionStart)),c);
   c.activateMageIceTime();assert.equal(s.mp,0);assert.equal(s.iceTimeActive,true);rules.advance(s,10000);assert.equal(s.elapsed,0);
-  c.guardianAnswer(0);assert.equal(s.iceTimeActive,false);rules.advance(s,500);assert.equal(s.bossHp,499);
+  for(let id=0;id<5;id++){
+    c.elliotPick({dataset:{side:'ko',id}});c.elliotPick({dataset:{side:'en',id}});
+    assert.equal(s.iceTimeActive,true);rules.advance(s,500);assert.equal(s.iceTimeActive,id<4);
+  }
+  assert.equal(s.bossHp,495);rules.board(s,x=>x);
   await c.useStoryPotion(0,{disabled:false});assert.equal(s.mp,1);assert.equal(c.potionInventory.equipped_slot_1,null);
-  c.activateMageIceTime();assert.equal(s.mp,0);assert.equal(s.iceTimeActive,true);c.guardianAnswer(1);assert.equal(s.iceTimeActive,false);assert.equal(s.hp,99);
+  c.activateMageIceTime();assert.equal(s.mp,0);assert.equal(s.iceTimeActive,true);c.elliotPick({dataset:{side:'ko',id:5}});c.elliotPick({dataset:{side:'en',id:6}});assert.equal(s.iceTimeActive,false);assert.equal(s.hp,99);
   rules.clear(s);assert.equal(s.iceTimeActive,false);
+});
+test('matching pairs apply player DMG only at contact, reject repeats and renew complete boards',()=>{
+  const s=fresh();s.bossAttackSteps=7;s.deck=rules.deck(Array.from({length:7},(_,i)=>['w'+i,'n','뜻'+i]),x=>x.reverse());rules.board(s,x=>x);
+  for(let i=0;i<500;i+=5)assert.equal(new Set(s.deck.slice(i,i+5).map(x=>x.entry[0])).size,5);
+  for(let id=0;id<5;id++){
+    assert.equal(rules.pick(s,'ko',id,200),'selected');assert.equal(rules.pick(s,'en',id,200),'correct');
+    const hp=s.bossHp;rules.advance(s,199);assert.equal(s.bossHp,hp);rules.advance(s,1);assert.equal(s.bossHp,hp-7);
+    const events=rules.advance(s,300);assert.ok(events.includes(id===4?'board-ready':'ready'));assert.equal(rules.pick(s,'ko',id,200),false);
+  }
+  assert.equal(s.correct,5);rules.board(s,x=>x);assert.equal(s.matchBoard.length,5);assert.equal(s.matchEn[0].id,5);assert.equal(s.matched.size,0);
+});
+test('Elliot renderer uses matching controls, numeric HP and no boss gauge',()=>{
+  const source=read('crystal-game.js');const renderer=source.slice(source.indexOf('  function renderElliotBattle('),source.indexOf('  function elliotPick('));
+  assert.ok(renderer.includes('data-action="story-pick"'));assert.ok(renderer.includes('HP ${run.bossHp} / 500'));
+  assert.ok(!renderer.includes('guardian-health'));assert.ok(!renderer.includes('guardian-answer'));assert.ok(renderer.includes('4분'));
+});
+test('ranger and spirit hints work on Elliot matching boards without a multiple-choice question',()=>{
+  const source=read('crystal-game.js'),s={...fresh(),story:true,mp:1,deck:rules.deck(Array.from({length:5},(_,i)=>['w'+i,'n','뜻'+i]),x=>x)};
+  rules.board(s,x=>x);
+  const c=vm.createContext({window,run:s,selectedCharacter:{class:'ranger'}});
+  vm.runInContext(source.slice(source.indexOf('  function canActivateRangerEagleEye('),source.indexOf('  function activateRangerEagleEye(')),c);
+  assert.equal(c.canActivateRangerEagleEye(),true);
+  vm.runInContext(read('pet-system.js'),c);const pets=c.window.WORDORIA_PETS;
+  const effect=pets.attach(s,pets.catalog.find(p=>p.code==='pet'),{random:()=>0});
+  assert.equal(effect.onQuestion(),true);assert.equal(s.petHint.pairId,0);
 });
 test('capital story leads to trial introduction, then battle; success dialogue returns to results',()=>{
   const source=read('crystal-game.js');const start=source.indexOf('  function completeStoryDialogue()');

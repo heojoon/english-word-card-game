@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Asset type: transparent full-body canonical identity for Wordoria Crystal Quest world 7A skeleton soldier normal enemy. One cute SD/chibi skeleton soldier, three-quarter side view facing LEFT, large round ivory skull with small glowing violet eyes, short compact ribcage and limbs, large readable hands, harmless mischievous determined expression. Wears a simple brown leather belt and ONE small dull silver iron shoulder guard. Holds a short old chipped silver sword pointing toward the LEFT; free hand slightly raised. Simple rounded stylized bones, no anatomical horror detail. No helmet, no cloak, no fire, no red eyes, no armor suit, no scenery, no text, no drop shadow plane. Clean dark indigo linework + polished soft anime cel painting, pale lavender shadows on warm ivory bones, restrained cool metal highlight, soft upper-left light. Bright high-end mobile fantasy RPG illustration, not pixel art, not 3D. Entire character and sword visible with generous transparent safety margins on all sides. Square 1024 canvas, feet on same ground line, subject ~75% canvas height, bottom-center pivot. Genuine transparent alpha background, no matte/checkerboard.",
+  "output": "source/normal-identity.png",
+  "referenceRole": "New skeleton identity in approved Crystal Quest direction; existing bandit idle inspected for shipped SD rendering.",
+  "reviewStatus": "Identity selected for task; user visual approval not inferred."
+}

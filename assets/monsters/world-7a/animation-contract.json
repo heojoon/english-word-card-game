@@ -1,0 +1,77 @@
+{
+  "name": "í•´ê³¨ ë³‘ì‚¬",
+  "world": "7A",
+  "facing": "left",
+  "frameWidth": 416,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "safeMarginPx": 8,
+  "variants": {
+    "normal": {
+      "stages": [
+        1,
+        14
+      ],
+      "identity": "ivory bones, violet eyes, chipped sword, belt, one iron shoulder guard"
+    },
+    "scorched": {
+      "stages": [
+        16,
+        29
+      ],
+      "identity": "same soldier with soot marks and a few tiny amber embers; violet eyes retained"
+    }
+  },
+  "bossStages": [
+    15,
+    30
+  ],
+  "actions": {
+    "idle": {
+      "frames": [
+        "ready",
+        "rattle"
+      ],
+      "durationMs": [
+        600,
+        600
+      ],
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        "ready",
+        "anticipation",
+        "sword-contact"
+      ],
+      "durationMs": [
+        120,
+        120,
+        260
+      ],
+      "hitFrame": 2,
+      "holdFinal": true
+    },
+    "hit": {
+      "frames": [
+        "notice",
+        "impact",
+        "bone-pile-knockdown"
+      ],
+      "durationMs": [
+        100,
+        100,
+        160
+      ],
+      "holdFinal": true
+    }
+  },
+  "effects": "Use a wider 416px cell to contain the fallen sword and bone pile at unchanged skull scale. All bones, sword and embers stay inside each cell; no blood, red eyes, cloak or flaming sword.",
+  "runtime": "Reuse shared Story mob timing, target selection, pause-safe callbacks, Ice Time idle freeze and reduced motion.",
+  "reviewStatus": "Offline review passed for all frames at actual mobile size over light and Crystal Violet backgrounds; alpha, bounds, scale and ground line checked. Browser review not requested; user visual approval not inferred."
+}

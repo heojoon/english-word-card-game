@@ -1,24 +1,45 @@
-/* World 6B-20: a five-minute swordmaster trial, not an HP-race kill. */
+/* World 6B-20: a four-minute swordmaster matching trial. */
 (() => {
   'use strict';
-  const HP=500,TIME_MS=300000,REWARD=800,AURA_INTERVAL_MS=20000,SHIELD_INTERVAL_MS=60000,SHIELD_MS=10000;
+  const HP=500,TIME_MS=240000,REWARD=800,AURA_INTERVAL_MS=20000,SHIELD_INTERVAL_MS=60000,SHIELD_MS=10000;
   const SPRITE_ROOT='assets/monsters/elliot/',ART='assets/novel/characters/char_elliot_world6b_standing.webp';
   const ANIMATIONS={idle:[400,400,400],attack:[180,220,180],shield:[200,200,200],hit:[120,180,600]};
-  const INFO={name:'엘리엇',description:'전 세계에 다섯 명뿐인 소드마스터 중 한 명. 아서의 스승이자 왕국의 기사단장으로, 누구도 범접하지 못할 실력의 벽을 넘어선 자예요.',hp:HP,time:'5분',art:ART,skill:'오러 소드',skillDescription:'20초마다 황금빛 검으로 돌진해 HP 1 피해를 줘요.',skill2:'광휘의 방패',skill2Description:'1분마다 검을 바닥에 꽂고 황금 오러를 일으켜 10초 동안 모든 피해를 막아요.',rewardDescription:'5분 동안 생존하고 보스 HP를 250 이하로 낮추면 승리! 최초 보상 800 크리스털 · 계정당 한 번'};
+  const INFO={name:'엘리엇',description:'전 세계에 다섯 명뿐인 소드마스터 중 한 명. 아서의 스승이자 왕국의 기사단장으로, 누구도 범접하지 못할 실력의 벽을 넘어선 자예요.',hp:HP,time:'4분',art:ART,skill:'오러 소드',skillDescription:'20초마다 황금빛 검으로 돌진해 HP 1 피해를 줘요.',skill2:'광휘의 방패',skill2Description:'1분마다 검을 바닥에 꽂고 황금 오러를 일으켜 10초 동안 모든 피해를 막아요.',rewardDescription:'4분 동안 생존하고 보스 HP를 250 이하로 낮추면 승리! 최초 보상 800 크리스털 · 계정당 한 번'};
   const scale=s=>s.guardianReducedMotion?.5:1;
   function reset(){return {guardian:true,elliot:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,guardianPhase:'idle',guardianVisual:'idle',guardianRemaining:0,elliotClock:0,elliotNextAura:AURA_INTERVAL_MS,elliotNextShield:SHIELD_INTERVAL_MS,elliotShieldUntil:0,elliotAction:'idle',elliotActionMs:0,elliotAuraPending:0,elliotContact:false,elliotNotice:'',elliotNoticeMs:0,elliotPlayerHit:false,elliotPendingDamage:0};}
-  function clear(s){s.elliotAction='idle';s.elliotActionMs=0;s.elliotAuraPending=0;s.elliotShieldUntil=0;s.elliotNotice='';s.elliotNoticeMs=0;s.elliotPlayerHit=false;s.elliotPendingDamage=0;s.iceTimeActive=false;}
+  function clear(s){s.elliotAction='idle';s.elliotActionMs=0;s.elliotAuraPending=0;s.elliotShieldUntil=0;s.elliotNotice='';s.elliotNoticeMs=0;s.elliotPlayerHit=false;s.elliotPendingDamage=0;s.iceTimeActive=false;s.selectedKo=null;s.selectedEn=null;s.pendingPair=null;}
   const shielded=s=>s.elliotClock<s.elliotShieldUntil;
   const won=s=>s.elliotClock>=TIME_MS&&s.hp>0&&s.bossHp<=250;
   function deck(words,shuffle){
-    const pool=Array.from(new Map(words.map(e=>[e[0].toLowerCase(),e])).values());
-    if(pool.length<4)throw Error('엘리엇은 네 개 이상의 고유 단어가 필요해요');
-    const out=[];
-    for(let cycle=0;out.length<HP;cycle++){
-      const entries=shuffle([...pool]);if(entries[0][0]===out.at(-1)?.entry[0])[entries[0],entries[1]]=[entries[1],entries[0]];
-      for(const entry of entries){if(out.length===HP)break;out.push({entry,mode:cycle%2?'ko-en':'en-ko'});}
+    const pool=Array.from(new Map(words.map(entry=>[entry[0].toLowerCase(),entry])).values());
+    if(pool.length<5)throw Error('엘리엇은 서로 다른 단어가 5개 이상 필요해요');
+    const result=[];let cycle=[];
+    while(result.length<HP){
+      const used=new Set(result.slice(Math.floor(result.length/5)*5).map(x=>x.entry[0].toLowerCase()));
+      if(!cycle.length)cycle=shuffle([...pool]);
+      let next=cycle.findIndex(entry=>!used.has(entry[0].toLowerCase())&&entry[0]!==result.at(-1)?.entry[0]);
+      if(next<0)next=cycle.findIndex(entry=>!used.has(entry[0].toLowerCase()));
+      const entry=next>=0?cycle.splice(next,1)[0]:shuffle(pool.filter(entry=>!used.has(entry[0].toLowerCase())))[0];
+      result.push({entry,mode:'match'});
     }
-    return out;
+    return result;
+  }
+  function board(s,shuffle){
+    if(s.index+5>s.deck.length)s.deck.push(...deck(s.deck.map(x=>x.entry),shuffle));
+    s.matchBoard=s.deck.slice(s.index,s.index+5);
+    const pairs=s.matchBoard.map((x,i)=>({entry:x.entry,id:s.index+i}));
+    s.matchKo=shuffle([...pairs]);s.matchEn=shuffle([...pairs]);s.matched=new Set();
+    s.selectedKo=null;s.selectedEn=null;s.pendingPair=null;
+  }
+  function pick(s,side,id,contactMs){
+    if(!['ko','en'].includes(side)||s.done||s.paused||s.locked||s.stunned||s.weavingStepDodging||s.guardianPhase!=='idle'||s.matched.has(id)||!s.matchEn.some(x=>x.id===id))return false;
+    s[side==='ko'?'selectedKo':'selectedEn']=id;
+    if(s.selectedKo===null||s.selectedEn===null)return 'selected';
+    const correct=s.selectedKo===s.selectedEn;
+    if(!answer(s,correct,contactMs))return false;
+    s.pendingPair=correct?id:null;s.selectedKo=null;s.selectedEn=null;
+    if(!correct){s.iceTimeActive=false;s.slashCombo=0;}
+    return correct?'correct':'wrong';
   }
   function answer(s,correct,contactMs){
     if(s.done||s.paused||s.locked||s.hp<=0||s.elliotClock>=TIME_MS||s.guardianPhase!=='idle')return false;
@@ -75,10 +96,11 @@
         if(s.guardianRemaining<=0){
           if(phase==='player-attack'){
             s.correct++;s.index++;
+            if(s.pendingPair!==null&&s.pendingPair!==undefined){s.matched.add(s.pendingPair);s.pendingPair=null;if(s.matched.size===s.matchBoard.length)s.iceTimeActive=false;}
             if(shielded(s)){notice('광휘의 방패 · 피해 방어');events.push('blocked');s.guardianVisual='guard';}
             else{s.bossHp=Math.max(0,s.bossHp-s.elliotPendingDamage);events.push('hit');s.guardianVisual='hit';}
             s.elliotPendingDamage=0;s.guardianPhase='hit';s.guardianRemaining=300*m;
-          }else{s.attack=false;s.stunned=false;s.locked=false;s.guardianPhase='idle';s.guardianVisual='idle';events.push('ready');}
+          }else{s.attack=false;s.stunned=false;s.locked=false;s.guardianPhase='idle';s.guardianVisual='idle';events.push(s.matchBoard&&s.matched.size===s.matchBoard.length?'board-ready':'ready');}
         }
       }
       if(action==='attack'&&!s.elliotContact&&s.elliotActionMs<=180*m){
@@ -94,5 +116,5 @@
     }
     return events;
   }
-  window.WORDORIA_ELLIOT={HP,TIME_MS,REWARD,AURA_INTERVAL_MS,SHIELD_INTERVAL_MS,SHIELD_MS,SPRITE_ROOT,ART,ANIMATIONS,INFO,reset,clear,deck,answer,advance,visual,motion,shielded,won};
+  window.WORDORIA_ELLIOT={HP,TIME_MS,REWARD,AURA_INTERVAL_MS,SHIELD_INTERVAL_MS,SHIELD_MS,SPRITE_ROOT,ART,ANIMATIONS,INFO,reset,clear,deck,board,pick,answer,advance,visual,motion,shielded,won};
 })();

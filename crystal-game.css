@@ -808,6 +808,13 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
 .spider-is-attacking .spider-attack-strip{visibility:visible;animation:crystal-spider-strip 240ms steps(2,end) calc(0ms - var(--spider-phase-elapsed,0ms)) forwards}
 .arena.ice-time-active .crystal-spider-mob .spider-idle-strip,.arena.paused .crystal-spider-sprite{animation-play-state:paused}
 @keyframes crystal-spider-strip{from{background-position:0 0}to{background-position:100% 0}}
+.arena .enemy.story-mob.skeleton-mob{width:132.6px;height:102px;margin-right:-15.3px}
+.skeleton-normal .spider-idle-strip{background-image:url('assets/monsters/world-7a/skeleton-normal-sd-idle-strip.png')}
+.skeleton-normal .spider-attack-strip{background-image:url('assets/monsters/world-7a/skeleton-normal-sd-attack-strip.png')}
+.skeleton-normal .spider-hit-strip{background-image:url('assets/monsters/world-7a/skeleton-normal-sd-hit-strip.png')}
+.skeleton-scorched .spider-idle-strip{background-image:url('assets/monsters/world-7a/skeleton-scorched-sd-idle-strip.png')}
+.skeleton-scorched .spider-attack-strip{background-image:url('assets/monsters/world-7a/skeleton-scorched-sd-attack-strip.png')}
+.skeleton-scorched .spider-hit-strip{background-image:url('assets/monsters/world-7a/skeleton-scorched-sd-hit-strip.png')}
 @media(prefers-reduced-motion:reduce){
   .crystal-spider-mob .spider-idle-strip{animation:none}
   .spider-is-attacking .spider-attack-strip{animation-duration:90ms}
@@ -896,6 +903,10 @@ body[data-screen="battle"] .arena.guardian-boss-arena.bandit-chief-arena{backgro
 .abyss-golem-arena.paused *{animation-play-state:paused!important}
 
 /* World 6A: full-height supplied map, with waypoints in image coordinates. */
+.story-world-map-8{aspect-ratio:1/3}
+.story-world-map-8 .story-map-navigation{top:auto;bottom:8px}
+.story-world-map-8 .story-map-node{height:2.025%}
+.story-world-map-8 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
 .story-world-map-7{aspect-ratio:1/3;background:#25205b}
 .story-world-map-7 .story-map-node{height:2.667%}
 .story-world-map-7 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}
@@ -1003,3 +1014,8 @@ body[data-screen="battle"] .arena.guardian-boss-arena.elliot-arena{background:#e
 
 .potion-purchase-actions{display:grid;gap:10px;margin-top:18px}
 dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white-space:normal}
+
+.story-world-map-9{aspect-ratio:1/3}
+.story-world-map-9 .story-map-navigation{top:auto;bottom:8px}
+.story-world-map-9 .story-map-node{height:2.025%}
+.story-world-map-9 .story-map-hero{left:calc(var(--story-x) - 30px);top:calc(var(--story-y) - 14px)}

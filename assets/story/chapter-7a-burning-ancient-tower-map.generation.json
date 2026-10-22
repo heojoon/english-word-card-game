@@ -1,0 +1,280 @@
+{
+  "date": "2026-10-21",
+  "tool": "image_gen.imagegen (built-in)",
+  "model": "미공개",
+  "editType": "lighting-weather",
+  "timeOfDay": "late night / midnight",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": "assets/story/source/world7a/04-day-runtime.webp",
+  "previousGenerationRecord": "assets/story/source/world7a/04-day-generation.json",
+  "storyReference": "assets/novel/world-7a-scenario.md",
+  "requestedDimensions": [
+    724,
+    2172
+  ],
+  "actualDimensions": [
+    724,
+    2172
+  ],
+  "runtime": "assets/story/chapter-7a-burning-ancient-tower-map.webp",
+  "original": "assets/story/source/world7a/05-late-night-generated.png",
+  "layout": "assets/story/chapter-7a-map-layout.json",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: lighting-weather.\nAsset type: Wordoria Crystal Quest World 7A story world map, late-night lighting edit.\nReference roles: Image 1 chapter-1-library-map.webp = authoritative PAINTERLY STYLE reference only. Image 2 chapter-7a-burning-ancient-tower-map.webp = EDIT TARGET and exact layout/architecture reference.\nUser-requested exception to the daytime default above: transform IMAGE 2 into DEEP LATE NIGHT. It must clearly feel like midnight, much darker than the current daytime map. Remove all warm daylight and sunlit white clouds. Use a dark indigo and navy night sky, deep cool blue-violet stone shadows, subdued blue moonlight from upper left, dim blue-gray clouds and mist in the abyss, dark desaturated foliage. Existing orange tower flames and lit windows cast small warm amber pools on nearby stone, while existing violet-blue waypoint crystals and the large portal mirror emit controlled local magical light. Do not make the whole terrain brightly lit by magic. Keep routes readable via subtle moonlit edges, dark muted ochre path surfaces and crystal highlights. Rich dark night atmosphere, painterly material depth, no crushed flat black areas, no horror redesign. Not sunset, dusk, golden hour, bright daytime or a generic blue color tint: genuine nighttime illumination.\nComposition: preserve Image 2's entire exact composition, 1:3 portrait aspect ratio and 724x2172 canvas if possible. Preserve the exact architecture, canyon cliffs, stairs, paths, flames, windows, lower portal mirror, all 30 crystals and their gold-rimmed circular pedestals. DO NOT MOVE, REMOVE, ADD, RESIZE or redesign any waypoint or object. No new moon object or extra scenery is necessary. Change ONLY time of day, ambient brightness, color temperature and local lighting/shadows. The top-to-bottom route remains unchanged.\nGameplay contract: EXACTLY 30 existing violet-blue crystal waypoint pedestals. Preserve normalized crystal centers, stage 1 to 30: 1: (18.612%, 3.787%); 2: (41.958%, 5.623%); 3: (65.518%, 8.168%); 4: (79.495%, 10.222%); 5: (61.215%, 12.462%); 6: (39.715%, 14.651%); 7: (18.991%, 16.506%); 8: (39.875%, 18.955%); 9: (63.225%, 21.211%); 10: (76.825%, 23.689%); 11: (22.249%, 26.974%); 12: (42.925%, 29.828%); 13: (65.550%, 31.964%); 14: (79.105%, 34.095%); 15: (63.479%, 36.628%); 16: (56.313%, 40.983%); 17: (39.180%, 43.437%); 18: (19.018%, 46.588%); 19: (38.351%, 50.415%); 20: (47.728%, 54.473%); 21: (65.424%, 56.045%); 22: (79.801%, 58.832%); 23: (64.971%, 62.615%); 24: (40.196%, 64.995%); 25: (18.974%, 69.168%); 26: (40.555%, 72.486%); 27: (65.069%, 76.043%); 28: (74.472%, 78.576%); 29: (50.924%, 81.579%); 30: (69.616%, 92.246%). Keep all separate, unobscured and readable on a mobile display; preserve 15th and 30th boss location landings.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n",
+  "references": [
+    "assets/story/chapter-1-library-map.webp",
+    "assets/story/source/world7a/04-day-runtime.webp"
+  ],
+  "runtimeStagePositions": [
+    [
+      "18.612%",
+      "3.787%"
+    ],
+    [
+      "41.958%",
+      "5.623%"
+    ],
+    [
+      "65.518%",
+      "8.168%"
+    ],
+    [
+      "79.495%",
+      "10.222%"
+    ],
+    [
+      "61.215%",
+      "12.462%"
+    ],
+    [
+      "39.715%",
+      "14.651%"
+    ],
+    [
+      "18.991%",
+      "16.506%"
+    ],
+    [
+      "39.875%",
+      "18.955%"
+    ],
+    [
+      "63.225%",
+      "21.211%"
+    ],
+    [
+      "76.825%",
+      "23.689%"
+    ],
+    [
+      "22.249%",
+      "26.974%"
+    ],
+    [
+      "42.925%",
+      "29.828%"
+    ],
+    [
+      "65.550%",
+      "31.964%"
+    ],
+    [
+      "79.105%",
+      "34.095%"
+    ],
+    [
+      "63.479%",
+      "36.628%"
+    ],
+    [
+      "56.313%",
+      "40.983%"
+    ],
+    [
+      "39.180%",
+      "43.437%"
+    ],
+    [
+      "19.018%",
+      "46.588%"
+    ],
+    [
+      "38.351%",
+      "50.415%"
+    ],
+    [
+      "47.728%",
+      "54.473%"
+    ],
+    [
+      "65.424%",
+      "56.045%"
+    ],
+    [
+      "79.801%",
+      "58.832%"
+    ],
+    [
+      "64.971%",
+      "62.615%"
+    ],
+    [
+      "40.196%",
+      "64.995%"
+    ],
+    [
+      "18.974%",
+      "69.168%"
+    ],
+    [
+      "40.555%",
+      "72.486%"
+    ],
+    [
+      "65.069%",
+      "76.043%"
+    ],
+    [
+      "74.472%",
+      "78.576%"
+    ],
+    [
+      "50.924%",
+      "81.579%"
+    ],
+    [
+      "69.616%",
+      "92.246%"
+    ]
+  ],
+  "actualMeasuredStagePositions": [
+    [
+      "18.366%",
+      "3.641%"
+    ],
+    [
+      "41.593%",
+      "5.505%"
+    ],
+    [
+      "65.360%",
+      "8.151%"
+    ],
+    [
+      "79.286%",
+      "10.040%"
+    ],
+    [
+      "61.007%",
+      "12.308%"
+    ],
+    [
+      "39.437%",
+      "14.490%"
+    ],
+    [
+      "18.762%",
+      "16.385%"
+    ],
+    [
+      "39.616%",
+      "18.813%"
+    ],
+    [
+      "62.899%",
+      "21.079%"
+    ],
+    [
+      "76.556%",
+      "23.570%"
+    ],
+    [
+      "21.998%",
+      "26.819%"
+    ],
+    [
+      "42.529%",
+      "29.662%"
+    ],
+    [
+      "65.209%",
+      "31.851%"
+    ],
+    [
+      "78.816%",
+      "33.983%"
+    ],
+    [
+      "63.230%",
+      "36.479%"
+    ],
+    [
+      "55.970%",
+      "40.877%"
+    ],
+    [
+      "38.982%",
+      "43.516%"
+    ],
+    [
+      "18.886%",
+      "46.637%"
+    ],
+    [
+      "38.127%",
+      "50.366%"
+    ],
+    [
+      "47.615%",
+      "54.517%"
+    ],
+    [
+      "65.089%",
+      "55.966%"
+    ],
+    [
+      "79.561%",
+      "58.718%"
+    ],
+    [
+      "64.801%",
+      "62.501%"
+    ],
+    [
+      "40.172%",
+      "65.167%"
+    ],
+    [
+      "18.677%",
+      "69.030%"
+    ],
+    [
+      "40.356%",
+      "72.433%"
+    ],
+    [
+      "64.872%",
+      "75.957%"
+    ],
+    [
+      "74.319%",
+      "78.480%"
+    ],
+    [
+      "50.640%",
+      "81.401%"
+    ],
+    [
+      "69.515%",
+      "92.213%"
+    ]
+  ],
+  "review": {
+    "technical": "Passed: 30 waypoint visual and coordinate checks; mobile 390x844 and desktop 1280x900 image loading/button alignment; zero browser page errors; 3 World 7A regression tests passed; npm run build passed.",
+    "userApproval": "not requested / not granted",
+    "waypointCount": 30,
+    "waypointMeasurement": "All 30 previously recorded centers have a visible violet crystal within the local inspection window; measured highlight centroids remain within 0.8% x / 0.5% y of runtime coordinates. Original geometry and runtime coordinates preserved.",
+    "medianLuminanceRatio": 0.48215334230960033,
+    "lighting": "Deep indigo night, cool blue shadows, dark clouds, local amber flames and violet crystal/portal lighting. Existing paths and all 30 pedestals visually inspected.",
+    "browserEvidence": "output/story-map/world7a-night-browser-review.json"
+  }
+}
