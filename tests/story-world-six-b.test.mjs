@@ -44,9 +44,9 @@ test('6B progresses sequentially, preserves legacy boss replay and shares progre
   for(let number=1;number<=20;number++){assert.equal(unlocked(number),true);assert.equal(c.stageCleared(`story-ch6-${number}`),true);}
   c.demoState.storyBranch='6A';assert.equal(unlocked(10),false);assert.equal(unlocked(20),false);
 });
-test('6B matches same-numbered 6A vocabulary and source days for both levels without changing boss rules',()=>{
+test('6B matches same-numbered 6A middle-school vocabulary without changing boss rules',()=>{
   const {c,switchLevel}=setup();
-  for(const level of ['middle','elementary']){
+  for(const level of ['middle']){
     switchLevel(level);
     for(let number=1;number<=20;number++){
       const stage=c.stages[`story-ch6-${number}`];
@@ -63,4 +63,40 @@ test('6B matches same-numbered 6A vocabulary and source days for both levels wit
       assert.doesNotMatch(stage.recordName,/초등학생/);
     }
   }
+});
+
+test('6A and 6B elementary mix only forest days 2–7 across all forty stages, including bosses',()=>{
+  const {c,switchLevel}=setup();
+  const records=new Map(Array.from({length:20},(_,i)=>i+1).flatMap(n=>['story-ch6a-','story-ch6-'].map(prefix=>[prefix+n,c.stages[prefix+n].recordName])));
+  const keys=Array.from({length:7},(_,i)=>`creator:forest-${i+1}`);
+  keys.forEach((key,i)=>{c.stages[key]={name:`day.${i+1}`,mapId:key,learningLevel:'elementary',words:Array.from({length:10},(_,n)=>[`day${i+1}-word${n}`,'명',`뜻 ${i+1}-${n}`]).concat([['shared','명','공통']])};});
+  const world={code:'7YA8',keys:keys.slice().reverse()};
+  switchLevel('elementary');c.configureStoryContent(world);
+  for(let number=1;number<=20;number++){
+    for(const prefix of ['story-ch6a-','story-ch6-']){
+      const stage=c.stages[prefix+number];
+      assert.equal(stage.words.length,61);
+      assert.equal(new Set(stage.words.map(row=>row[0])).size,61);
+      assert.ok(stage.words.every(row=>row[0]==='shared'||/^day[2-7]-word/.test(row[0])));
+      for(let day=2;day<=7;day++)assert.equal(stage.words.filter(row=>row[0].startsWith(`day${day}-`)).length,10);
+      assert.equal(stage.source,undefined);assert.equal(stage.sourceMapId,undefined);
+      assert.equal(stage.learningLevel,'elementary');assert.equal(stage.recordName,records.get(prefix+number));
+      assert.match(stage.desc,/속삭이는 숲 · day.2~7 혼합/);assert.doesNotMatch(stage.desc,/WordMax/);
+      assert.equal(stage.questionCount,number===20?(prefix==='story-ch6-'?500:200):number===10?200:40);
+      assert.equal(stage.elliot,prefix==='story-ch6-'&&number===20);
+      assert.equal(stage.banditChief,prefix==='story-ch6-'&&number===10);
+      assert.equal(stage.morgana,prefix==='story-ch6a-'&&number===20);
+      assert.equal(stage.abyssGolem,prefix==='story-ch6a-'&&number===10);
+    }
+    assert.deepEqual(c.stages[`story-ch6-${number}`].words,c.stages[`story-ch6a-${number}`].words);
+    assert.deepEqual(c.stages[`story-ch5-${number}`].words,c.stages[`story-ch4-${number}`].words);
+  }
+  for(const missingWorld of [null,{code:'OTHER',keys},{code:'7YA8',keys:keys.slice(0,6)}]){
+    c.configureStoryContent(missingWorld);
+    for(const key of records.keys())assert.equal(c.stages[key].words.length,0);
+  }
+  c.configureStoryContent(world);assert.equal(c.stages['story-ch6a-1'].words.length,61);
+  switchLevel('middle');
+  assert.equal(c.stages['story-ch6a-1'].source.sheet,'Day 1');
+  assert.equal(c.stages['story-ch6-1'].words.length,30);
 });

@@ -53,7 +53,10 @@ test('World 6B unlocks after World 5, keeps records across levels, and ships ref
   c.records.push({stage:c.stageRecordName('story-ch5-20'),cleared:true});assert.equal(c.storyStageUnlocked(i),false);
   c.records.push({stage:c.stageRecordName('story-ch6-9'),cleared:true});assert.equal(c.storyStageUnlocked(i),true);
   const name=c.stageRecordName('story-ch6-10');c.records.push({stage:name,cleared:true});level='elementary';c.configureStoryContent();assert.equal(c.stageRecordName('story-ch6-10'),name);assert.equal(c.stageCleared('story-ch6-10'),true);
-  assert.equal(c.stages['story-ch6-10'].banditChief,true);assert.ok(c.stages['story-ch6-10'].words.length>=4);
+  const keys=Array.from({length:7},(_,index)=>`creator:forest-${index+1}`);
+  keys.forEach((key,index)=>{c.stages[key]={name:`day.${index+1}`,learningLevel:'elementary',words:Array.from({length:5},(_,i)=>[`easy-${index}-${i}`,'명','뜻'])};});
+  c.configureStoryContent({code:'7YA8',keys});
+  assert.equal(c.stages['story-ch6-10'].banditChief,true);assert.equal(c.stages['story-ch6-10'].words.length,30);
   assert.equal(rules.ART,'assets/novel/characters/char_bandit_chief_world6b_standing.png');
   assert.ok(readFileSync(new URL('../'+rules.ART,import.meta.url)).length);assert.match(read('index.html'),/src="bandit-chief-boss.js/);assert.match(read('scripts/build-web.mjs'),/'bandit-chief-boss.js'/);
 });

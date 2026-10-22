@@ -41,23 +41,13 @@ test('World 5 unlocks after World 4 stage 20 and keeps records when the learning
   }
 });
 
-test('World 5 keeps middle-school pools and mixes forest days 2–7 for every elementary stage',()=>{
+test('World 5 reuses World 4 word pools and assigns its own midboss for both levels',()=>{
   const {c,switchLevel}=setup();
-  const keys=Array.from({length:7},(_,index)=>`creator:forest-${index+1}`);
-  keys.forEach((key,index)=>{c.stages[key]={name:`day.${index+1}`,mapId:key,learningLevel:'elementary',words:Array.from({length:10},(_,i)=>[`day${index+1}-word${i}`,'명',`뜻 ${index+1}-${i}`]).concat([['shared','명','공통']])};});
   for(const level of ['middle','elementary']){
     switchLevel(level);
-    c.configureStoryContent({code:'7YA8',keys:keys.slice().reverse()});
     for(let number=1;number<=20;number++){
       const stage=c.stages[`story-ch5-${number}`];
-      if(level==='middle')assert.equal(JSON.stringify(stage.words),JSON.stringify(c.stages[`story-ch4-${number}`].words));
-      else{
-        assert.equal(stage.words.length,61);
-        assert.equal(new Set(stage.words.map(row=>row[0])).size,61);
-        assert.ok(stage.words.every(row=>row[0]==='shared'||/^day[2-7]-word/.test(row[0])));
-        for(let day=2;day<=7;day++)assert.equal(stage.words.filter(row=>row[0].startsWith(`day${day}-`)).length,10);
-        assert.equal(stage.sourceMapId,undefined);
-      }
+      assert.equal(JSON.stringify(stage.words),JSON.stringify(c.stages[`story-ch4-${number}`].words));
       assert.equal(stage.questionCount,number===20?200:number===10?120:level==='middle'?60:40);
       assert.equal(stage.sorcerus,number===10);
       assert.equal(stage.lichDragon,number===20);
@@ -65,21 +55,8 @@ test('World 5 keeps middle-school pools and mixes forest days 2–7 for every el
       assert.equal(stage.redReaper,false);
       assert.equal(stage.shadowSorceress,false);
       assert.equal(stage.blackDragon,false);
-      assert.match(stage.desc,number===20?/부활한 리치 드래곤/:number===10?/이성을 잃은 소서러스/:level==='middle'?/월드 4 단어 임시 재사용/:/속삭이는 숲 · day.2~7 혼합/);
+      assert.match(stage.desc,number===20?/부활한 리치 드래곤/:number===10?/이성을 잃은 소서러스/:/월드 4 단어 임시 재사용/);
     }
-  }
-});
-
-test('World 5 elementary clears stale pools and never falls back when forest maps are unavailable',()=>{
-  const {c,switchLevel}=setup();
-  switchLevel('elementary');
-  const keys=Array.from({length:7},(_,index)=>`creator:forest-${index+1}`);
-  keys.forEach((key,index)=>{c.stages[key]={name:`day.${index+1}`,learningLevel:'elementary',words:Array.from({length:5},(_,i)=>[`easy-${index}-${i}`,'명','뜻'])};});
-  c.configureStoryContent({code:'7YA8',keys});
-  assert.equal(c.stages['story-ch5-1'].words.length,30);
-  for(const world of [null,{code:'OTHER',keys},{code:'7YA8',keys:keys.slice(0,6)}]){
-    c.configureStoryContent(world);
-    for(let number=1;number<=20;number++)assert.equal(c.stages[`story-ch5-${number}`].words.length,0);
   }
 });
 

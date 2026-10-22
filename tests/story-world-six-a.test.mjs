@@ -68,11 +68,11 @@ test('6A renders twenty matching nodes with only previous and next world navigat
   assert.doesNotMatch(html,/data-stage="story-ch6a-2"/);
 });
 
-test('6A imports all ten source sheets in order for both levels without altering shared progress or other worlds',()=>{
+test('6A imports all ten middle-school source sheets without altering shared progress or other worlds',()=>{
   const {c,switchLevel}=setup(),snapshot=JSON.parse(read('content/sources/wordmax-level3-day1-10.json'));
   assert.equal(snapshot.days.length,10);
   const world5=JSON.stringify(c.stages['story-ch5-1'].words);
-  for(const level of ['middle','elementary']){
+  for(const level of ['middle']){
     switchLevel(level);
     for(let day=1;day<=10;day++){
       const original=snapshot.days[day-1];
