@@ -2271,6 +2271,7 @@
   function storyBattleBackgroundClass(){
     const stage=stages[selectedStage];
     if(!run.story)return '';
+    if(stage?.storyChapter===8)return `world-seven-a-battle ${stage.storyNumber===15?'world-seven-a-midboss':stage.storyNumber===30?'world-seven-a-final-boss':'world-seven-a-road'}`;
     if(stage?.storyChapter===9)return `world-seven-b-battle ${stage.storyNumber===15?'world-seven-b-midboss':stage.storyNumber===30?'world-seven-b-final-boss':'world-seven-b-ruins'}`;
     if(stage?.storyChapter===6||stage?.storyChapter===7){
       if(run.boss||run.guardian)return '';

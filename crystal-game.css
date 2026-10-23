@@ -792,6 +792,14 @@ body[data-screen="battle"] .arena.world-five-final-boss{background-image:url('as
 .arena.world-five-battle:before,.arena.world-five-battle:after{content:none}
 .arena.world-five-battle .arena-floor{display:none}
 
+/* World 7A: tower road, Keurus pass, and the portal mirror summit. */
+body[data-screen="battle"] .arena.world-seven-a-battle{background-color:#202a51;background-size:cover;background-position:center bottom;background-repeat:no-repeat}
+body[data-screen="battle"] .arena.world-seven-a-road{background-image:url('assets/environments/world-7a/01-burning-tower-road-battle.webp')}
+body[data-screen="battle"] .arena.world-seven-a-midboss{background-image:url('assets/environments/world-7a/02-keurus-pass-battle.webp')}
+body[data-screen="battle"] .arena.world-seven-a-final-boss{background-image:url('assets/environments/world-7a/03-portal-mirror-summit-battle.webp')}
+.arena.world-seven-a-battle:before,.arena.world-seven-a-battle:after{content:none}
+.arena.world-seven-a-battle .arena-floor{display:none}
+
 /* World 7B: underwater ruins, Nereus bridge, and the Siren throne chamber. */
 body[data-screen="battle"] .arena.world-seven-b-battle{background-color:#172540;background-size:cover;background-position:center bottom;background-repeat:no-repeat}
 body[data-screen="battle"] .arena.world-seven-b-ruins{background-image:url('assets/environments/world-7b/01-black-lake-ruins-battle.webp')}

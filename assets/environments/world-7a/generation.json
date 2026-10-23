@@ -1,0 +1,35 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-23",
+  "dimensions": [1672, 941],
+  "references": [
+    {"file": "assets/environments/world-5/01-crystal-spider-cavern-battle.webp", "role": "painterly eye-level battle composition and level empty combat floor"},
+    {"file": "assets/story/chapter-7a-burning-ancient-tower-map.webp", "role": "World 7A stonework, violet crystal and fire palette; not map camera or waypoints"},
+    {"file": "assets/novel/world-7a-scenario.md", "role": "story locations and boss encounter order"}
+  ],
+  "commonPrompt": "Single full-bleed 16:9 landscape illustration for Wordoria Crystal Quest World 7A. Premium hand-painted fantasy environment with nuanced blue-gray ancient stone, atmospheric indigo depth, violet-blue crystal and restrained amber flame. Eye-level side battle camera; flat uninterrupted stone combat lane across bottom 30 percent, ground line near 78 percent height; quiet empty silhouette areas at player x24 percent and enemy x76 percent, clear center. Lower contrast than composited characters, soft painterly light, child-friendly dramatic fantasy. No people, monsters, skeletons, weapons, human statues, loot, waypoint markers, UI, letters, numbers, logos or watermark. No pixel art, plastic 3D, low-poly, horror, lava on floor or visual clutter in combat lane. Opaque landscape image.",
+  "images": [
+    {
+      "file": "01-burning-tower-road-battle.webp",
+      "original": "source/01-burning-tower-road-battle.png",
+      "stages": "1–14, 16–29",
+      "scenePrompt": "A ruined gray stone causeway through the abyssal canyon approaching the Burning Ancient Tower; broken arches and distant tower silhouette set back, small controlled amber flames at outer edges, violet-blue crystals in rocky walls, faint ash in the night sky. Open level stone fighting lane."
+    },
+    {
+      "file": "02-keurus-pass-battle.webp",
+      "original": "source/02-keurus-pass-battle.png",
+      "stages": "15",
+      "scenePrompt": "Keurus's deserted mountain pass guarding the Burning Ancient Tower: broad blue-gray stone bridge above an indigo abyss, weathered gate pylons on left and right, massive boulders and old drag marks only beyond the level floor, distant firelit tower. Do not depict Keurus or another creature."
+    },
+    {
+      "file": "03-portal-mirror-summit-battle.webp",
+      "original": "source/03-portal-mirror-summit-battle.png",
+      "stages": "30",
+      "scenePrompt": "Empty summit sanctuary of the Burning Ancient Tower. Fractured stone arches frame a luminous oval dimensional mirror deep in the background, weathered gold rim and cool blue-violet portal energy. Amber flames on distant side pillars. Open flat stone battle floor, with no knight or creature depicted."
+    }
+  ],
+  "review": {
+    "visual": "All three originals inspected: consistent painterly stone and crystal treatment, distinct locations, empty level combat space, no characters or UI.",
+    "userApproved": false
+  }
+}
