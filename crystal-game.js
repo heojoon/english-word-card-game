@@ -1057,6 +1057,7 @@
           <div class="hall-of-fame-stage">${row?hallOfFameHeroMarkup(row):'<span class="hall-of-fame-unknown" aria-hidden="true">◇</span>'}</div>
           <div class="hall-of-fame-step"><span class="hall-of-fame-rank">${index+1}<small>위</small></span><strong class="hall-of-fame-value">${value}</strong></div>
           <div class="hall-of-fame-name">${row?`<small>${esc(row.player_name)}의</small><b>${esc(row.character_name)}</b>`:`<small>${hallOfFameRows===null?'집계 중':'다음 주인공은?'}</small><b>빈자리</b>`}</div>
+          ${key==='story'&&row?.last_story_stage?`<p class="hall-of-fame-story-clear">최종 클리어 <b>${esc(row.last_story_stage)}</b></p>`:''}
         </li>`;
       }).join('')}</ol>
       <p class="hall-of-fame-note">캐릭터별 TOP 3 · 동점은 누적 정답 수순${localMode?' · 체험 기록 제외':''}</p>

@@ -1104,3 +1104,6 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 .home-exp-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--mint),#d4fff7);box-shadow:0 0 6px #60d9cf55}
 .home-level-progress:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
 @media(max-width:360px){.home-level-progress{gap:6px;padding-right:7px}.home-exp-copy>span{display:none}}
+
+.hall-of-fame-story-clear{margin:4px 0 0;font-size:10px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}
+.hall-of-fame-story-clear b{display:block;color:var(--violet);font-size:12px;font-variant-numeric:tabular-nums}
