@@ -20,12 +20,12 @@ function setup(){
   c.configureStoryContent();
   return {c,switchLevel(v){level=v;c.configureStoryContent();}};
 }
-test('7A uses thirty successive full Level 3 Days, thirty matching questions and two seconds per word',()=>{
+test('7A uses thirty successive full Level 3 Days, with a 180 HP final boss',()=>{
   const {c}=setup();
   for(let n=1;n<=30;n++){
     const s=c.stages[`story-ch7a-${n}`];
     const original=c.stages[`s${n<=10?n+34:n+4}`];
-    assert.equal(s.questionCount,30);
+    assert.equal(s.questionCount,n===30?180:30);
     assert.equal(s.questionTimeMs,2000);
     assert.equal(s.story,true);
     assert.equal(s.words.length,30);

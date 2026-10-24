@@ -1,0 +1,38 @@
+{
+  "image": "char_red_skull_knight_sd_attack_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceImage": "source/attack-generated.png",
+  "sourceCuts": [
+    0,
+    700,
+    1370,
+    2117
+  ],
+  "frames": [
+    {
+      "name": "guard",
+      "durationMs": 200
+    },
+    {
+      "name": "raise",
+      "durationMs": 220
+    },
+    {
+      "name": "contact",
+      "durationMs": 300,
+      "hit": true
+    }
+  ],
+  "loop": false,
+  "finalHold": false,
+  "reviewStatus": "Technical alpha and frame review; user visual approval pending"
+}

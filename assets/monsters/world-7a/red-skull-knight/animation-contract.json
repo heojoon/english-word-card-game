@@ -1,0 +1,24 @@
+{
+  "character": "레드스컬나이트",
+  "world": "7A",
+  "stage": 30,
+  "identityReference": "assets/novel/characters/char_red_skull_knight_world7a_standing.webp",
+  "tool": "built-in image_gen",
+  "facing": "left",
+  "runtimeCell": [480, 320],
+  "anchor": [0.5, 0.975],
+  "sourceFrameGapPx": 50,
+  "sourceOriginals": ["source/idle-generated.png", "source/attack-generated.png", "source/hit-generated.png"],
+  "actions": {
+    "idle": {"frames": ["ready", "breath"], "durationsMs": [600, 600], "loop": true},
+    "attack": {"frames": ["guard", "raise", "contact"], "durationsMs": [200, 220, 300], "hitFrame": 3},
+    "hit": {"frames": ["notice", "impact", "knockdown"], "durationsMs": [120, 160, 800], "finalHold": true}
+  },
+  "prompts": {
+    "idle": "Use the attached full-body Red Skull Knight identity art. Two full-body left-facing SD/chibi idle frames: grounded guard stance sword low, then subtle breathing and cape ember sway. Preserve ivory skull, ember-red eyes, dark violet commander armor with gold trim and red crystal, torn black cape, flaming sword. Same scale and ground line. Transparent background, no scenery, text, gore or checkerboard. Request 50px transparent panel gap.",
+    "attack": "Use the attached identity art. Three left-facing full-body SD poses: sword guarded, sword raised overhead with orange flame, leftward downward fire sword strike at contact. Preserve armor, cape, sword, size and ground line. Transparent background, no scenery, text, gore or checkerboard. Request 50px transparent panel gaps.",
+    "hit": "Use the attached identity art. Three left-facing full-body SD poses: guard/notice, strongest recoil, complete knockdown with sword lying beside empty armor. No recovery or blood. Preserve armor, cape, sword and scale. Transparent background, no scenery, text or checkerboard. Request 50px transparent panel gaps."
+  },
+  "normalization": "Generated originals retained; review masters have exact 50px transparent gaps. Runtime strips use contiguous equal-sized RGBA cells. The generated hit source had a detached cape fragment at the third panel boundary; the normalized third cell clears an 82x205px upper-left safety area.",
+  "reviewStatus": "Frame and alpha technical review complete; user visual approval and browser playback review pending"
+}

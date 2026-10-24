@@ -1075,6 +1075,18 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 .dark-triton-projectiles{position:absolute;inset:0;pointer-events:none;z-index:5}
 .dark-triton-projectile{position:absolute;width:34%;max-width:160px;aspect-ratio:480/320;transform:translate(-50%,-50%);background-size:300% 100%;background-repeat:no-repeat}
 .dark-triton-match-board .english{overflow-wrap:anywhere}
+/* World 7A final boss: sampled SD frames and contact-timed flame trails. */
+.red-skull-knight-arena{isolation:isolate}
+.red-skull-knight-arena .red-skull-knight-enemy{width:62%;max-width:280px;height:auto;aspect-ratio:480/320;right:-1%;top:auto;bottom:9%;overflow:visible}
+.red-skull-knight-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;background-position:0 0;image-rendering:auto;filter:drop-shadow(0 5px 4px #24214c88)}
+.red-skull-knight-projectiles{position:absolute;inset:0;pointer-events:none;z-index:5}
+.red-skull-knight-projectile{position:absolute;width:22%;height:18px;max-width:105px;border-radius:100% 12% 100% 12%;transform:translate(-50%,-50%) rotate(-17deg);background:linear-gradient(90deg,#fff4ad,#ff9b31 32%,#ea3930 75%,transparent);box-shadow:0 0 12px #ff5b29,0 0 3px #fff5c8 inset}
+.red-skull-knight-projectile.slash{height:25px;transform:translate(-50%,-50%) rotate(-38deg)}
+.red-skull-knight-arena .guardian-health{left:auto;right:12px;top:40px;bottom:auto;width:40%;z-index:9}
+.red-skull-knight-arena .royal-boss-skill-notice{top:auto;bottom:3px;left:50%;transform:translateX(-50%);max-width:95%;width:max-content;padding:3px 7px;line-height:1.25;font-size:10px;color:#24214c;background:#fff8e8ed;border-radius:10px;z-index:10}
+.red-skull-knight-arena .royal-boss-skill-notice:empty{display:none}
+.red-skull-knight-match-board .english{overflow-wrap:anywhere}
+.red-skull-knight-arena.paused *{animation-play-state:paused!important}
 @keyframes nereus-shake{0%,100%{transform:translateX(-5px)}50%{transform:translateX(5px)}}
 @media(prefers-reduced-motion:reduce){.nereus-enemy.nereus-shaking{animation:none;filter:brightness(1.3)}.nereus-arena .nereus-enemy{transition:none}}
 /* Crystal podium: use the exact battle appearance without battle state effects. */

@@ -1,0 +1,37 @@
+{
+  "image": "char_red_skull_knight_sd_hit_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceImage": "source/hit-generated.png",
+  "sourceCuts": [
+    0,
+    700,
+    1360,
+    2171
+  ],
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 120
+    },
+    {
+      "name": "impact",
+      "durationMs": 160
+    },
+    {
+      "name": "knockdown",
+      "durationMs": 800
+    }
+  ],
+  "loop": false,
+  "finalHold": true,
+  "reviewStatus": "Technical alpha and frame review; user visual approval pending"
+}
