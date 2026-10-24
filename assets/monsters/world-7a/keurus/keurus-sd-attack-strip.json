@@ -1,0 +1,31 @@
+{
+  "image": "keurus-sd-attack-strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdFinal": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 180
+    },
+    {
+      "name": "weight-shift",
+      "durationMs": 190
+    },
+    {
+      "name": "stone-stomp-contact",
+      "durationMs": 340,
+      "hit": true
+    }
+  ]
+}

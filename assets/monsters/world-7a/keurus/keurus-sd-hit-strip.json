@@ -1,0 +1,32 @@
+{
+  "image": "keurus-sd-hit-strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdFinal": true,
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 100
+    },
+    {
+      "name": "impact",
+      "durationMs": 130,
+      "hit": true
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 300,
+      "hold": true
+    }
+  ]
+}

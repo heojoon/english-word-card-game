@@ -799,6 +799,22 @@ body[data-screen="battle"] .arena.world-seven-a-midboss{background-image:url('as
 body[data-screen="battle"] .arena.world-seven-a-final-boss{background-image:url('assets/environments/world-7a/03-portal-mirror-summit-battle.webp')}
 .arena.world-seven-a-battle:before,.arena.world-seven-a-battle:after{content:none}
 .arena.world-seven-a-battle .arena-floor{display:none}
+.arena .enemy.story-mob.keurus-mob{right:8px;bottom:12px;width:min(56%,250px);height:auto;aspect-ratio:8/5;border:0;border-radius:0;background:none;box-shadow:none;overflow:visible;animation:none!important;translate:none;transform:none;opacity:1}
+.keurus-sprite{position:absolute;inset:0;background-repeat:no-repeat;background-position:0 0;image-rendering:auto}
+.keurus-idle{background-image:url('assets/monsters/world-7a/keurus/keurus-sd-idle-strip.png');background-size:200% 100%;animation:keurus-idle 1040ms steps(1,end) infinite}
+.keurus-attack{background-image:url('assets/monsters/world-7a/keurus/keurus-sd-attack-strip.png');background-size:300% 100%;display:none}
+.keurus-hit{background-image:url('assets/monsters/world-7a/keurus/keurus-sd-hit-strip.png');background-size:300% 100%;display:none}
+.keurus-mob.attack .keurus-idle,.keurus-mob.hit .keurus-idle,.keurus-mob.down .keurus-idle{display:none}
+.keurus-mob.attack .keurus-attack{display:block;animation:keurus-attack 710ms steps(2,end) both}
+.keurus-mob.hit .keurus-hit{display:block;animation:keurus-hit 260ms steps(1,end) both}
+.keurus-mob.down .keurus-hit{display:block;background-position:100% 0}
+.arena.paused .keurus-sprite,.arena.ice-time-active .keurus-idle{animation-play-state:paused}
+.keurus-notice{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:12;max-width:90%;padding:4px 10px;border-radius:14px;background:rgba(36,33,76,.88);color:#fff;font-size:12px;font-weight:700;text-align:center;pointer-events:none}
+.keurus-notice:empty{display:none}
+@keyframes keurus-idle{to{background-position:100% 0}}
+@keyframes keurus-attack{to{background-position:100% 0}}
+@keyframes keurus-hit{to{background-position:50% 0}}
+@media (prefers-reduced-motion:reduce){.keurus-idle{animation-duration:1500ms}.keurus-mob.attack .keurus-attack{animation-duration:250ms}.keurus-mob.hit .keurus-hit{animation-duration:140ms}}
 
 /* World 7B: underwater ruins, Nereus bridge, and the Siren throne chamber. */
 body[data-screen="battle"] .arena.world-seven-b-battle{background-color:#172540;background-size:cover;background-position:center bottom;background-repeat:no-repeat}

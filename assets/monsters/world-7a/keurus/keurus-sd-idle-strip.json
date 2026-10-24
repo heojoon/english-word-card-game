@@ -1,0 +1,26 @@
+{
+  "image": "keurus-sd-idle-strip.png",
+  "frameWidth": 512,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "loop": true,
+  "holdFinal": false,
+  "frames": [
+    {
+      "name": "grounded",
+      "durationMs": 520
+    },
+    {
+      "name": "breath",
+      "durationMs": 520
+    }
+  ]
+}
