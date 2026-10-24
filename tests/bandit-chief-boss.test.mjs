@@ -7,8 +7,8 @@ const window={};vm.runInNewContext(read('bandit-chief-boss.js'),{window});
 const rules=window.WORDORIA_BANDIT_CHIEF,source=read('crystal-game.js');
 const code=(a,b)=>source.slice(source.indexOf(a),source.indexOf(b));
 const fresh=()=>({...rules.reset(),story:true,hp:20,mp:2,correct:0,index:0,elapsed:0,locked:false,paused:false,done:false,bossAttackSteps:3});
-test('200 HP / five minutes; DMG 3 applies at contact, counts one answer, and caps lethal damage',()=>{
-  const s=fresh();assert.equal(s.storyTimeLimit,300000);rules.answer(s,true,200);rules.advance(s,199);assert.equal(s.bossHp,200);
+test('200 HP / six minutes; DMG 3 applies at contact, counts one answer, and caps lethal damage',()=>{
+  const s=fresh();assert.equal(s.storyTimeLimit,360000);assert.equal(rules.INFO.time,'6분');rules.answer(s,true,200);rules.advance(s,199);assert.equal(s.bossHp,200);
   assert.ok(rules.advance(s,1).includes('hit'));assert.equal(s.bossHp,197);assert.equal(s.correct,1);assert.equal(s.index,1);
   rules.advance(s,300);s.bossHp=2;rules.answer(s,true,200);rules.advance(s,200);assert.equal(s.bossHp,0);
   assert.equal(s.guardianPhase,'defeat');assert.ok(rules.advance(s,1000).includes('victory'));
@@ -72,7 +72,7 @@ test('shared Ice Time freezes countdown, timeout ends combat, and lethal hit hol
   vm.runInContext(code('  function advanceGuardianBattle(','  function renderRoyalSlimeBattle('),c);
   vm.runInContext(code('  function canActivateMageIceTime(','  function updateWarriorSlash('),c);
   c.activateMageIceTime();assert.equal(s.mp,1);c.advanceGuardianBattle(5000);assert.equal(s.elapsed,0);assert.equal(s.axeElapsed,0);
-  s.iceTimeActive=false;s.elapsed=299999;c.advanceGuardianBattle(1);assert.deepEqual(outcomes,[[false,'timeout']]);
+  s.iceTimeActive=false;s.elapsed=359999;c.advanceGuardianBattle(1);assert.deepEqual(outcomes,[[false,'timeout']]);
   outcomes.length=0;s.guardianPhase='defeat';s.guardianRemaining=1000;s.bossHp=0;c.advanceGuardianBattle(1000);assert.deepEqual(outcomes,[[true,'boss-defeated']]);
 });
 test('answers release Ice Time and a mana potion enables reuse',async()=>{

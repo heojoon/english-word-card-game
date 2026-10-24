@@ -29,11 +29,13 @@ test('7B shares all thirty 7A vocabulary pools; Nereus has a dedicated 200-HP ma
     }
   }
 });
-test('7B is admin-only and retains shared progress across learning levels',()=>{
+test('7B opens after 6B completion and retains shared progress across learning levels',()=>{
   const {c,switchLevel}=setup(),index=c.storyStages.findIndex(s=>s.key==='story-ch7b-1');
   assert.equal(c.storyStageUnlocked(index),false);
-  c.records.push({stage:c.stageRecordName('story-ch6a-20'),cleared:true});
+  c.records.push({stage:c.stageRecordName('story-ch6-20'),cleared:true});
   assert.equal(c.storyStageUnlocked(index),false);
+  c.demoState.storyBranch='6B';
+  assert.equal(c.storyStageUnlocked(index),true);
   c.accountMode=true;c.accountProfile={role:'admin'};
   assert.equal(c.storyStageUnlocked(index),true);
   const record=c.stageRecordName('story-ch7b-1');
@@ -42,14 +44,14 @@ test('7B is admin-only and retains shared progress across learning levels',()=>{
   switchLevel('elementary');
   assert.equal(c.stageRecordName('story-ch7b-1'),record);
   assert.equal(c.storyStageUnlocked(index+1),true);
-  c.accountProfile={role:'teacher'};c.accountStoryBranch='6A';
-  assert.equal(c.storyStageUnlocked(index),false);
+  c.accountMode=false;c.accountProfile={role:'teacher'};c.accountStoryBranch='6B';
+  assert.equal(c.storyStageUnlocked(index),true);
 });
 test('7B runtime follows thirty measured crystal centers from top to bottom',()=>{
   const {c}=setup(),world=c.storyWorlds.find(w=>w.displayNumber==='7B');
   const layout=JSON.parse(read('assets/story/chapter-7b-map-layout.json'));
   assert.equal(world.art,layout.art);
-  assert.equal(world.unlockAfter,7);
+  assert.equal(world.unlockAfter,6);
   assert.equal(world.positions.length,30);
   assert.deepEqual(JSON.parse(JSON.stringify(world.positions)),layout.positions);
   for(let i=1;i<30;i++)assert.ok(parseFloat(world.positions[i][1])>parseFloat(world.positions[i-1][1]));

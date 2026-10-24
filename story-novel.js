@@ -8880,6 +8880,25 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "도적 대장",
       "className": "bandit-chief",
+      "text": "약속하죠. 이 반짝꼬리 여우도 데려가 주세요.",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
+      "artPath": "assets/novel/characters/char_bandit_chief_world6b_standing.png"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반짝꼬리 여우가 일행에게 다가와 아서의 곁에 선다.)",
+      "scene": "capital-road",
+      "sceneNumber": 1,
+      "location": "목숨을 구걸하는 대장",
+      "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
+    },
+    {
+      "speaker": "도적 대장",
+      "className": "bandit-chief",
       "text": "네! 다음에 또 안 봤으면 하네요!",
       "scene": "capital-road",
       "sceneNumber": 1,

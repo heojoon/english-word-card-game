@@ -1,7 +1,7 @@
 /* World 6B: independent skill clocks, with damage resolved at contact. */
 (() => {
   'use strict';
-  const HP=200,TIME_MS=300000,AXE_INTERVAL_MS=25000,DODGE_INTERVAL_MS=10000;
+  const HP=200,TIME_MS=360000,AXE_INTERVAL_MS=25000,DODGE_INTERVAL_MS=10000;
   const ART='assets/novel/characters/char_bandit_chief_world6b_standing.png';
   const SPRITE_ROOT='assets/monsters/bandit-chief/';
   const THROW_ORIGIN={x:74,y:167}; // Palm in the normalized 448 x 320 release frame.
@@ -33,7 +33,7 @@
     const progress=Math.min(1,Math.max(0,1-state.axeFlightMs/(600*scale)));
     return {progress,rotation:state.guardianReducedMotion?-progress*90:-progress*720};
   }
-  const INFO={name:'도적 대장',description:'왕국수도로 가는 길을 막아선 도적 대장',hp:HP,time:'5분',art:ART,skill:'도끼 던지기',skillDescription:'25초마다 도끼를 던져 33% 확률로 HP 1 피해를 줘요.',skill2:'회피하기',skill2Description:'10초마다 55% 확률로 다음 정답 공격 1회를 회피해요. 정답과 학습 기록은 유지돼요.'};
+  const INFO={name:'도적 대장',description:'왕국수도로 가는 길을 막아선 도적 대장',hp:HP,time:'6분',art:ART,skill:'도끼 던지기',skillDescription:'25초마다 도끼를 던져 33% 확률로 HP 1 피해를 줘요.',skill2:'회피하기',skill2Description:'10초마다 55% 확률로 다음 정답 공격 1회를 회피해요. 정답과 학습 기록은 유지돼요.'};
   function deck(words,shuffle){
     const pool=Array.from(new Map(words.map(entry=>[entry[0].toLowerCase(),entry])).values());
     if(pool.length<4)throw new Error('도적 대장은 네 개 이상의 고유 단어가 필요해요');

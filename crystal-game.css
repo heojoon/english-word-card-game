@@ -682,6 +682,15 @@ body:has(dialog[open]) .black-dragon-drain i{animation-play-state:paused}
 .arena.hit:has(.pet-time-status:not([hidden])) .story-mob{animation-play-state:running!important}
 
 /* Boss information belongs to the entry screen, above the learning battle. */
+.story-stage-introduction{display:grid;gap:12px;text-align:left}
+.story-stage-introduction .eyebrow{color:#5751d8}
+.story-stage-introduction h2{margin:0;color:#24214c;font-size:clamp(20px,5vw,26px);line-height:1.3;word-break:keep-all}
+.story-stage-introduction-desc{margin:0;color:#57536e;font-size:14px;line-height:1.6;word-break:keep-all}
+.story-stage-introduction-goal{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #dedaf7;border-radius:15px;background:#f7f7ff;color:#24214c;font-size:13px}
+.story-stage-introduction-goal span{flex:0 0 auto;color:#5751d8;font-weight:900}.story-stage-introduction-goal b{font-weight:800}
+.story-stage-introduction .story-enter-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:2px}
+.story-stage-introduction .story-enter-actions button{min-width:0;min-height:46px;margin:0}
+@media(max-width:360px){.story-stage-introduction .story-enter-actions{grid-template-columns:1fr}}
 .boss-introduction{padding:14px;border:1px solid #5751d82e;border-radius:22px;background:linear-gradient(145deg,#f7f7ff,#edeaff);text-align:center}
 .boss-introduction>img{display:block;width:130px;height:130px;object-fit:contain;margin:0 auto 8px}
 .boss-introduction h3{margin:6px 0;color:#24214c}.boss-introduction p{font-size:13px;line-height:1.55}

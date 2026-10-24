@@ -17,23 +17,19 @@ function setup(reduced=false){
   vm.runInContext(source.slice(source.indexOf('  function selectStoryWorld('),source.indexOf('  function confirmStoryStage(')),context);
   return {context,calls,advance:ms=>{now+=ms;}};
 }
-test('first click moves; entry requires another click after arrival',()=>{
-  const {context:c,calls,advance}=setup();
-  c.selectStoryStage('second');assert.equal(c.selectedStoryStage,'second');assert.deepEqual(calls,[]);
-  c.selectStoryStage('second');assert.deepEqual(calls,[]);
-  advance(650);assert.deepEqual(calls,[]);
-  c.selectStoryStage('second');assert.deepEqual(calls,['second']);
+test('tapping an unlocked map node selects it and opens its introduction',()=>{
+  const {context:c,calls}=setup();
+  c.selectStoryStage('second');assert.equal(c.selectedStoryStage,'second');assert.deepEqual(calls,['second']);
 });
-test('initial stage and reduced motion still require two clicks',()=>{
+test('initial stage and reduced motion open the introduction on one tap',()=>{
   for(const key of ['first','second']){
     const {context:c,calls}=setup(true);
-    c.selectStoryStage(key);assert.deepEqual(calls,[]);
     c.selectStoryStage(key);assert.deepEqual(calls,[key]);
   }
 });
-test('locked stages cannot move the hero and changing worlds resets confirmation',()=>{
+test('locked stages cannot open an introduction and world changes reset selection state',()=>{
   const {context:c,calls}=setup(true);
   c.selectStoryStage('locked');assert.equal(c.selectedStoryStage,'first');assert.equal(c.storyStageArmedKey,null);
   c.selectStoryStage('second');c.selectStoryWorld(2);assert.equal(c.storyStageArmedKey,null);
-  c.selectStoryStage('second');assert.deepEqual(calls,[]);
+  c.selectStoryStage('second');assert.deepEqual(calls,['second','second']);
 });

@@ -179,6 +179,9 @@ test('world 4 entry confirmation describes the selected learning-level source',(
   vm.runInContext(source.slice(source.indexOf('  function confirmStoryStage('),source.indexOf('  function startStoryStage(')),c);
   c.confirmStoryStage('story-ch4-1');
   assert.match(c.modalHtml,/WordMax Level 3/);
+  assert.match(c.modalHtml,/story-stage-introduction/);
+  assert.match(c.modalHtml,/data-action="story-enter-confirm"/);
+  assert.match(c.modalHtml,/단어를 연결해 스테이지 클리어/);
   switchLevel('elementary');
   c.confirmStoryStage('story-ch4-1');
   assert.match(c.modalHtml,/교육부지정 초등영단어 800/);

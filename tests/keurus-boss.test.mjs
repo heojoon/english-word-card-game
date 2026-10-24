@@ -73,6 +73,19 @@ test('Ice Time and pet time stop hold both skill cycles', () => {
   assert.equal(battle.run.hp, 2);
 });
 
+test('World 7A midboss introduction explains Keurus and both skills before entry', () => {
+  const body = source.slice(source.indexOf('  function bossIntroductionMarkup('), source.indexOf('  function confirmStoryStage('));
+  const context = createContext({window:{}, esc:String, deployedAssetUrl:path=>path});
+  new Script(`${body}\nthis.bossIntroductionMarkup=bossIntroductionMarkup;`).runInContext(context);
+  const html = context.bossIntroductionMarkup({chapter:8, number:15});
+  assert.match(html, /케우르스/);
+  assert.match(html, /keurus\/idle\/01\.png/);
+  assert.match(html, /제한시간 5분/);
+  assert.match(html, /쌍두 교란/);
+  assert.match(html, /거암 내려찍기/);
+  assert.doesNotMatch(html, /HP undefined/);
+});
+
 test('SD strips keep contiguous RGBA cells, transparent review gaps and final down hold', () => {
   const root = new URL('../assets/monsters/world-7a/keurus/', import.meta.url);
   for (const [action, count] of [['idle', 2], ['attack', 3], ['hit', 3]]) {

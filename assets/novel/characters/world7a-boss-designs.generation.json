@@ -1,0 +1,26 @@
+{
+  "world": "7A",
+  "purpose": "Standalone transparent boss character key art; visual designs only, not battle animation or runtime integration",
+  "tool": "built-in image_gen",
+  "style": "Wordoria Crystal Quest Illustration: clean dark-violet anime linework, three-step soft cel shading, upper-left key light, luminous violet-blue crystal, restrained mint light and gold accents, mobile-readable silhouettes, true transparent alpha",
+  "characters": [
+    {
+      "name": "케우르스",
+      "role": "stage 15 midboss",
+      "design": "One massive quadruped body with two separate heads and contrasting amber/violet eyes; blue-violet hide, lavender chest, a single enormous strapped stone with crystal seams on its back. Both heads, four paws, stone and tail remain visible.",
+      "source": "source/keurus-world7a-generated.png",
+      "export": "char_keurus_world7a_standing.webp",
+      "sourceDimensions": [1254, 1254]
+    },
+    {
+      "name": "레드스컬나이트",
+      "role": "stage 30 final boss",
+      "design": "An ivory skull with ember-red flame eyes, dark violet commander armor with a red crystal crest, a torn black cape and one flaming red-orange sword. Full body and sword remain visible; distinct from the ordinary 7A skeleton soldier.",
+      "source": "source/red-skull-knight-world7a-generated.png",
+      "export": "char_red_skull_knight_world7a_standing.webp",
+      "sourceDimensions": [1227, 1282]
+    }
+  ],
+  "constraints": "Original IP; no scenery, floor, text, gore, horror, pixel art or painted checkerboard",
+  "reviewStatus": "Technical alpha and visual inspection only; no user visual approval or browser integration claimed"
+}

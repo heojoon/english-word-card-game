@@ -36,12 +36,12 @@ test('7A uses thirty successive full Level 3 Days, with a 180 HP final boss',()=
   }
   assert.match(source,/storyTimeLimit:deck.length\*\(source.questionTimeMs\|\|3000\)/);
 });
-test('7A is admin-only and preserves progress between learning levels',()=>{
+test('7A opens after 6A completion and preserves progress between learning levels',()=>{
   const {c,switchLevel}=setup();
   const index=c.storyStages.findIndex(s=>s.key==='story-ch7a-1');
   assert.equal(c.storyStageUnlocked(index),false);
   c.records.push({stage:c.stageRecordName('story-ch6a-20'),cleared:true});
-  assert.equal(c.storyStageUnlocked(index),false);
+  assert.equal(c.storyStageUnlocked(index),true);
   c.accountMode=true;c.accountProfile={role:'admin'};
   assert.equal(c.storyStageUnlocked(index),true);
   const first=c.stageRecordName('story-ch7a-1');
@@ -50,8 +50,8 @@ test('7A is admin-only and preserves progress between learning levels',()=>{
   assert.equal(c.stageRecordName('story-ch7a-1'),first);
   assert.equal(c.storyStageUnlocked(index+1),true);
   assert.equal(c.stages['story-ch7a-1'].questionCount,30);
-  c.accountProfile={role:'student'};c.accountStoryBranch='6A';
-  assert.equal(c.storyStageUnlocked(index),false);
+  c.accountMode=false;c.accountProfile={role:'student'};c.accountStoryBranch='6A';
+  assert.equal(c.storyStageUnlocked(index),true);
 });
 test('7A map matches its recorded layout and progresses downward through thirty waypoints',()=>{
   const {c}=setup(),w=c.storyWorlds.find(w=>w.displayNumber==='7A');
