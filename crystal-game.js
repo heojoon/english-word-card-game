@@ -2596,7 +2596,11 @@
     await saveBattleResult(run,clear);
     if(clear&&run.story)storyDialogueIndex=0;
     const storyIndex=storyStages.findIndex(stage=>stage.key===selectedStage),storyStage=storyStages[storyIndex];
-    if(clear&&run.story){const next=storyStages.find((stage,index)=>!stageCleared(stage.key)&&storyStageUnlocked(index));if(next){selectedStoryStage=next.key;selectedStoryWorld=next.chapter||1;}}
+    if(clear&&run.story&&storyStage){
+      const next=storyStages.find(stage=>(stage.chapter||1)===(storyStage.chapter||1)&&stage.number===storyStage.number+1);
+      selectedStoryStage=next?.key||storyStage.key;
+      selectedStoryWorld=storyStage.chapter||1;
+    }
     go(clear&&run.story&&[8,9].includes(storyStage?.chapter)&&[15,30].includes(storyStage?.number)?(storyStage.number===15?'storyChapterSevenMidbossEnd':'storyChapterSevenBossEnd'):clear&&run.story&&storyStage?.chapter===6&&storyStage?.number===20?'storyChapterSixBBossEnd':clear&&run.story&&storyStage?.chapter===6&&storyStage?.number===10?'storyChapterSixBMidbossEnd':clear&&run.story&&storyStage?.chapter===7&&storyStage?.number===20?'storyChapterSixABossEnd':clear&&run.story&&storyStage?.chapter===7&&storyStage?.number===10?'storyChapterSixAMidbossEnd':clear&&run.story&&storyStage?.chapter===5&&storyStage?.number===10?'storyChapterFiveMidbossEnd':clear&&run.story&&storyStage?.chapter===4&&storyStage?.number===20?'storyChapterFourBossEnd':clear&&run.story&&storyStage?.chapter===4&&storyStage?.number===10?'storyChapterFourMidbossEnd':clear&&run.story&&storyStage?.chapter===2&&storyStage?.number===7?'storyChapterTwoBossEnd':clear&&run.story&&(storyStage?.epilogue||((storyStage?.chapter||1)===1&&storyStage?.number===7))?'storyEpilogue':'result');
 
     if(clear){document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));}

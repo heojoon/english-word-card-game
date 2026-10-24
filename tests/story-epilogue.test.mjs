@@ -33,6 +33,29 @@ test('failed stage 1 and other cleared stages open results',async()=>{
     assert.deepEqual(pages,['result']);
   }
 });
+
+test('clearing a story stage selects the following stage in the same world',async()=>{
+  for(const replay of [false,true]){
+    const {context}=setup('story-ch6-10',replay);
+    context.storyStages=[
+      {key:'story-ch5-1',chapter:5,number:1},
+      {key:'story-ch6a-11',chapter:7,number:11},
+      {key:'story-ch6-10',chapter:6,number:10},
+      {key:'story-ch6-11',chapter:6,number:11},
+    ];
+    await context.finishBattle(true,'complete');
+    assert.equal(context.selectedStoryStage,'story-ch6-11');
+    assert.equal(context.selectedStoryWorld,6);
+  }
+});
+
+test('clearing the last stage keeps its world selected',async()=>{
+  const {context}=setup('story-ch6-20');
+  context.storyStages=[{key:'story-ch6-20',chapter:6,number:20},{key:'story-ch7a-1',chapter:8,number:1}];
+  await context.finishBattle(true,'complete');
+  assert.equal(context.selectedStoryStage,'story-ch6-20');
+  assert.equal(context.selectedStoryWorld,6);
+});
 test('reward receipt does not reopen the epilogue',()=>{
   const {context,pages}=setup();context.run.chest=true;context.run.chestKind='item';
   context.receiveReward();assert.deepEqual(pages,['story']);
