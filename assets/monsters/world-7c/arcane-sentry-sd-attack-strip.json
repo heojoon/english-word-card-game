@@ -1,0 +1,32 @@
+{
+  "image": "arcane-sentry-sd-attack-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdFinal": true,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "sword-contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ],
+  "reviewStatus": "Offline alpha/bounds/mobile review. In-engine integration and user approval pending."
+}

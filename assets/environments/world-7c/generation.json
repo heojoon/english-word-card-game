@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "created": "2026-10-25",
+  "review": "Offline technical review only; user approval and in-engine verification pending.",
+  "prompt": "Use case: stylized-concept. Create ONE empty 16:9 landscape battle background for Wordoria Crystal Quest WORLD 7C ROYAL UNDERGROUND DUNGEON. Attached image is world-setting/color/material reference ONLY, not camera or layout. Eye-level side-view battle arena inside a cathedral's ancient magical underground vault. Cream limestone arches, carved columns with restrained old brass mechanisms, turquoise water channels along the sides, a distant sealed archway, faint blue-violet magical atmosphere, subtle ivy near a ceiling opening, warm gold lamps contrasted with cool cyan skylight. Fine premium hand-painted fantasy scenery with soft painterly texture, delicately colored edges, atmospheric distance, natural dimensional stone; match the reference palette. Foreground lower 40 percent is a broad uninterrupted level pale-stone floor for two fighters, low contrast and uncluttered, ground baseline near 83 percent image height. Architecture framing at far sides; soft distant detail at center. Bright mysterious adventurous mood suitable for children, no horror. NO characters, monsters, text, words, numbers, waypoints, map paths, UI, watermark. No low-poly toy rendering, no plastic, no black cartoon outlines, no pixel art. Output preferably 1536x864 or another 16:9 landscape canvas.",
+  "references": [
+    {
+      "path": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "role": "setting, palette and material reference; not layout or camera"
+    }
+  ],
+  "source": "source/royal-dungeon-battle.png",
+  "runtime": "01-royal-dungeon-battle.webp",
+  "usage": "Shared general-battle scenery; bosses and narrative backgrounds not defined by this asset."
+}

@@ -1,0 +1,34 @@
+{
+  "tool": "built-in image_gen",
+  "created": "2026-10-25",
+  "review": "Offline technical review only; user approval and in-engine verification pending.",
+  "identity": {
+    "source": "source/identity.png",
+    "prompt": "Use case: stylized-concept. Create ONE isolated full-body enemy identity master for Wordoria Crystal Quest WORLD 7C. A small ancient ARCANE SENTRY, an animated empty magical armor automaton guarding a royal cathedral underground archive. Compact SD/chibi proportions, large rounded closed helmet, narrow friendly cyan glowing eye slit (no human face), pale ivory/silver armor with restrained old brass edging, small teal faceted crystal core on chest, muted violet cloth tabard, chunky readable hands and boots. Short broad silver sword pointing diagonally down-left in right hand, small round ivory shield with a cyan gem in left hand. NO wings, crown, long cape or boss ornamentation: a modest common soldier, distinct from a final guardian knight and a golem. Faces LEFT in readable three-quarter side battle stance, stable planted feet and clear silhouette at 128px. Polished anime-inspired clean 2D SD fantasy game art, softly shaded volume and cool violet shadows, no pixel art. One complete character centered in square canvas, generous transparent margins, whole sword/shield and feet within canvas. Genuine transparent RGBA background, no scenery, floor, ground shadow, labels, border, watermark, other characters, blood or horror."
+  },
+  "actions": {
+    "idle": {
+      "source": "source/idle-generated.png",
+      "prompt": "Use case: stylized-concept. Image 1 is the exact canonical identity of the ancient arcane sentry common monster. Preserve helmet, eye slit, ivory/silver and brass armor, cyan chest crystal and shield crystal, violet tabard, short broad sword, proportions and LEFT facing. Create ONE horizontal TWO-frame IDLE sprite strip for a mobile 2D RPG, equal wide slots, exactly 50px fully transparent gap between slots, generous safety margins, same character scale and foot baseline. Each slot contains one complete character with complete sword and shield. Frame1 same planted ready stance as reference. Frame2 subtle breathing: torso rises slightly and shield settles, cyan eyes narrowed slightly; feet stay planted, no walking, no big movement. Polished clean 2D SD/chibi illustration matching reference, not 3D or pixel art. Genuine transparent RGBA, NO floor, shadow ellipse, text, frame borders, labels, background, additional characters, cropped weapons or feet. Horizontal landscape 2:1 or wider.",
+      "references": [
+        "source/identity.png"
+      ]
+    },
+    "attack": {
+      "source": "source/attack-generated.png",
+      "prompt": "Use case: stylized-concept. Image1 is canonical ARCANE SENTRY identity. Preserve exact pale ivory/silver brass armor, closed rounded helmet cyan eye slit, chest cyan gem, violet tabard, compact sword and round cyan gem shield. Create ONE horizontal THREE-frame ATTACK strip. Each slot is EXTRA WIDE with complete character, full sword and shield, generous transparent safety margins at ALL outer edges. Exactly 50px fully transparent gap between each neighboring slot. Stable same character size and foot ground line, facing LEFT always. Frame1 ready sword low pointing left; Frame2 anticipation, sword lifted behind helmet, shield raised, torso turns slightly back; Frame3 strong LEFT sword slash at contact, blade extended low-left, knees bent and torso forward, shield stays attached. Three clearly different poses, last is attack peak never recovery. Short sword no excessive effect; restrained small cyan arc next to blade only if it fits. No detached projectiles. Full helmet, boots, sword tip and shield must remain well inside each slot with at least 7 percent empty margins. Genuinely transparent RGBA, clean polished 2D SD chibi art matching identity. No floor, shadow, text, borders, labels, additional characters, chopped props, pixel art, gore. Wide landscape around 3:1 aspect ratio.",
+      "references": [
+        "source/identity.png"
+      ]
+    },
+    "hit": {
+      "source": "source/hit-generated.png",
+      "prompt": "Use case: stylized-concept. Image1 canonical ancient ARCANE SENTRY common monster. Preserve exact closed ivory silver brass helmet cyan eye slit, cyan chest gem and round shield gem, violet tabard, short sword and shield. Create ONE horizontal THREE-frame HIT/KNOCKDOWN strip. Each frame contains one complete same armored automaton and props. Facing LEFT, same body scale across all frames, generous fully transparent outer margins. Exactly 50px fully transparent gap between frames. Frame1 notices impact, bracing shield, feet planted, sword low. Frame2 strongest recoil, torso leaning backward RIGHT, head tilted back, arms recoil but sword/shield retained. Frame3 COMPLETE KNOCKDOWN lying entirely HORIZONTAL ON GROUND, helmet at left and feet at right, armor slumped, sword and shield beside/attached to hands, cyan eyes dim, no recovery, no crouching or kneeling. Knockdown has same body size/mass as standing, occupies wider lower part of slot, baseline same. Wide slots so laid-out body, sword, shield never crop or cross cells. No attacker, blood or injuries. Clean polished 2D SD/chibi fantasy art, not pixel art or 3D. Genuine transparent RGBA background, no floor, shadows, text, labels, separators, borders or guide lines. Landscape 3:1.",
+      "references": [
+        "source/identity.png"
+      ]
+    }
+  },
+  "normalization": "scripts/assemble-world7c-sentry.py; connected alpha-component extraction; no color keying. Generated spacing was approximate; normalized source masters and review sheets enforce exact 50px transparent inter-slot gap. Runtime is contiguous 448x320 cells, ground y312; common scale per action based on ready height 240px.",
+  "integration": "7C remains map preview; no combat stats, unlocks or rewards added."
+}

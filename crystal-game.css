@@ -1154,7 +1154,12 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 .hall-of-fame-story-clear{margin:4px 0 0;font-size:10px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}
 .hall-of-fame-story-clear b{display:block;color:var(--violet);font-size:12px;font-variant-numeric:tabular-nums}
 
-/* World 7C map preview: thirty measured waypoints; combat comes later. */
+/* World 7C: thirty measured waypoints and shared matching battles. */
 .story-world-map-10{aspect-ratio:1/3}
 .story-world-map-10 .story-map-node{height:2.025%}
 .story-world-map-10 .story-map-node:disabled{opacity:1;cursor:default}
+body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('assets/environments/world-7c/01-royal-dungeon-battle.webp');background-size:cover;background-position:center}
+.arena .enemy.story-mob.arcane-sentry-mob{width:142.8px;height:102px;margin-right:-20.4px}
+.arcane-sentry-mob .spider-idle-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-idle-strip.png')}
+.arcane-sentry-mob .spider-attack-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-attack-strip.png')}
+.arcane-sentry-mob .spider-hit-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-hit-strip.png')}

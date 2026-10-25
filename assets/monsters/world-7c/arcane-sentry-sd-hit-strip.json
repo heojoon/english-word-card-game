@@ -1,0 +1,33 @@
+{
+  "image": "arcane-sentry-sd-hit-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdFinal": true,
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 100
+    },
+    {
+      "name": "impact",
+      "durationMs": 100,
+      "hit": true
+    },
+    {
+      "name": "knockdown",
+      "durationMs": 160,
+      "hold": true
+    }
+  ],
+  "reviewStatus": "Offline alpha/bounds/mobile review. In-engine integration and user approval pending."
+}
