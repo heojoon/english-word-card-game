@@ -1,0 +1,624 @@
+{
+  "date": "2026-10-25",
+  "world": "7C",
+  "tool": "built-in image_gen.imagegen",
+  "model": "not disclosed by tool",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "initialLayoutReference": null,
+  "generationHistory": [
+    {
+      "source": "assets/story/source/world7c/01-initial-29-waypoints.png",
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map.\nScene: WORLD 7C, ROYAL UNDERGROUND DUNGEON. A bright mysterious cutaway dungeon below the royal cathedral. At TOP a modest cream-stone cathedral stair entrance with ivy and daylight shafts; descend through ancient cream-stone vaults, turquoise water channels, blue-violet atmospheric mist and safely readable golden paths. Stage 10 on a great old stone bridge over a blue-lit abyss at the upper-middle; below it the sealed archive corridors and old magical mechanisms; at BOTTOM a beautiful luminous relic vault with a wing-carved gate and a small pale holy relic inside an architectural niche. Empty scenery only: no golem, knight or people. Underground blue skylight supplemented by warm lamps; refined warm/cool painterly lighting matching reference, never horror. Floating exposed rock layers and luminous mist communicate descent.\nReference roles: Image 1 = authoritative style only. No existing target layout image exists.\nComposition: VERY TALL portrait 1:3 aspect ratio, ideally 1024x3072 pixels. Main uninterrupted winding route descends strictly TOP TO BOTTOM; each successive waypoint center has greater y. Cathedral at top, relic vault bottom. Keep full route and 30 waypoint pedestals visible, 8% side safety margins. Waypoints must NOT be in parallel route columns.\nGameplay contract: exactly 30 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals. Waypoint crystals should be small enough to allow 30 distinct landings, and consistent in size, about 3% image width. Order and normalized centers (x%,y%): 1(22,6),2(40,8.7),3(62,11.4),4(78,14.1),5(61,16.8),6(40,19.5),7(22,22.2),8(40,24.9),9(61,27.6),10(77,30.3),11(61,33),12(40,35.7),13(22,38.4),14(40,41.1),15(61,43.8),16(78,46.5),17(61,49.2),18(40,51.9),19(22,54.6),20(40,57.3),21(61,60),22(78,62.7),23(61,65.4),24(40,68.1),25(22,70.8),26(40,73.5),27(61,76.2),28(78,79),29(60,83),30(49,92). Stage 10 bridge, stage 30 relic-vault landing. Build golden paths and stairs around these centers, wide stone landings, one continuous descending sequence. Every waypoint separate and unobscured. NO extra violet crystals on pedestals anywhere. Architectural relic is pale white-gold, never another purple waypoint.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n",
+      "review": "Rejected: 29 waypoints instead of 30."
+    },
+    {
+      "source": "assets/story/source/world7c/02-final-30-waypoints.png",
+      "references": [
+        "assets/story/chapter-1-library-map.webp",
+        "assets/story/source/world7c/01-initial-29-waypoints.png"
+      ],
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map.\nScene: WORLD 7C, ROYAL UNDERGROUND DUNGEON. A bright mysterious cutaway dungeon below the royal cathedral. At TOP a modest cream-stone cathedral stair entrance with ivy and daylight shafts; descend through ancient cream-stone vaults, turquoise water channels, blue-violet atmospheric mist and safely readable golden paths. Stage 10 on a great old stone bridge over a blue-lit abyss at the upper-middle; below it the sealed archive corridors and old magical mechanisms; at BOTTOM a beautiful luminous relic vault with a wing-carved gate and a small pale holy relic inside an architectural niche. Empty scenery only: no golem, knight or people. Underground blue skylight supplemented by warm lamps; refined warm/cool painterly lighting matching reference, never horror. Floating exposed rock layers and luminous mist communicate descent.\nReference roles: Image 1 = authoritative style only. No existing target layout image exists.\nComposition: VERY TALL portrait 1:3 aspect ratio, ideally 1024x3072 pixels. Main uninterrupted winding route descends strictly TOP TO BOTTOM; each successive waypoint center has greater y. Cathedral at top, relic vault bottom. Keep full route and 30 waypoint pedestals visible, 8% side safety margins. Waypoints must NOT be in parallel route columns.\nGameplay contract: exactly 30 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals. Waypoint crystals should be small enough to allow 30 distinct landings, and consistent in size, about 3% image width. Order and normalized centers (x%,y%): 1(22,6),2(40,8.7),3(62,11.4),4(78,14.1),5(61,16.8),6(40,19.5),7(22,22.2),8(40,24.9),9(61,27.6),10(77,30.3),11(61,33),12(40,35.7),13(22,38.4),14(40,41.1),15(61,43.8),16(78,46.5),17(61,49.2),18(40,51.9),19(22,54.6),20(40,57.3),21(61,60),22(78,62.7),23(61,65.4),24(40,68.1),25(22,70.8),26(40,73.5),27(61,76.2),28(78,79),29(60,83),30(49,92). Stage 10 bridge, stage 30 relic-vault landing. Build golden paths and stairs around these centers, wide stone landings, one continuous descending sequence. Every waypoint separate and unobscured. NO extra violet crystals on pedestals anywhere. Architectural relic is pale white-gold, never another purple waypoint.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nEDIT REQUEST: Image 1 remains authoritative style. Image 2 is the first generated 7C target map, preserve its exact painted geography, image dimensions 724x2172, ALL its 29 existing violet crystals and pedestals and path layout. It has only TWENTY NINE waypoint pedestals. Add exactly ONE additional small violet-blue crystal on gold-rimmed circular landing on the golden descending stairs near normalized x=47%, y=85%, between the existing landing at about (56%,81%) and final landing at about (59%,92%). Widen just that stair landing to fit. This creates exactly THIRTY distinct waypoint pedestals. Keep final waypoint at the bottom winged relic vault, keep all other artwork unchanged. No numbers/text.\n",
+      "review": "30 visible waypoints; added landing before final vault."
+    }
+  ],
+  "runtime": "assets/story/chapter-7c-royal-dungeon-map.webp",
+  "targetDimensions": [
+    1024,
+    3072
+  ],
+  "actualSourceDimensions": [
+    724,
+    2172
+  ],
+  "runtimeDimensions": [
+    724,
+    2172
+  ],
+  "stageCount": 30,
+  "midbossStage": 10,
+  "finalBossStage": 30,
+  "progression": "top-to-bottom",
+  "actualWaypointPixelCenters": [
+    [
+      169,
+      121
+    ],
+    [
+      293,
+      173
+    ],
+    [
+      435,
+      217
+    ],
+    [
+      562,
+      236
+    ],
+    [
+      458,
+      277
+    ],
+    [
+      301,
+      315
+    ],
+    [
+      169,
+      369
+    ],
+    [
+      299,
+      425
+    ],
+    [
+      434,
+      477
+    ],
+    [
+      573,
+      514
+    ],
+    [
+      450,
+      592
+    ],
+    [
+      300,
+      645
+    ],
+    [
+      169,
+      691
+    ],
+    [
+      300,
+      759
+    ],
+    [
+      434,
+      831
+    ],
+    [
+      572,
+      862
+    ],
+    [
+      447,
+      954
+    ],
+    [
+      300,
+      1002
+    ],
+    [
+      171,
+      1049
+    ],
+    [
+      302,
+      1120
+    ],
+    [
+      436,
+      1196
+    ],
+    [
+      572,
+      1248
+    ],
+    [
+      445,
+      1325
+    ],
+    [
+      297,
+      1390
+    ],
+    [
+      165,
+      1462
+    ],
+    [
+      297,
+      1545
+    ],
+    [
+      453,
+      1651
+    ],
+    [
+      394,
+      1724
+    ],
+    [
+      358,
+      1867
+    ],
+    [
+      427,
+      1997
+    ]
+  ],
+  "actualWaypointPositions": [
+    [
+      "23.343%",
+      "5.571%"
+    ],
+    [
+      "40.470%",
+      "7.965%"
+    ],
+    [
+      "60.083%",
+      "9.991%"
+    ],
+    [
+      "77.624%",
+      "10.866%"
+    ],
+    [
+      "63.260%",
+      "12.753%"
+    ],
+    [
+      "41.575%",
+      "14.503%"
+    ],
+    [
+      "23.343%",
+      "16.989%"
+    ],
+    [
+      "41.298%",
+      "19.567%"
+    ],
+    [
+      "59.945%",
+      "21.961%"
+    ],
+    [
+      "79.144%",
+      "23.665%"
+    ],
+    [
+      "62.155%",
+      "27.256%"
+    ],
+    [
+      "41.436%",
+      "29.696%"
+    ],
+    [
+      "23.343%",
+      "31.814%"
+    ],
+    [
+      "41.436%",
+      "34.945%"
+    ],
+    [
+      "59.945%",
+      "38.260%"
+    ],
+    [
+      "79.006%",
+      "39.687%"
+    ],
+    [
+      "61.740%",
+      "43.923%"
+    ],
+    [
+      "41.436%",
+      "46.133%"
+    ],
+    [
+      "23.619%",
+      "48.297%"
+    ],
+    [
+      "41.713%",
+      "51.565%"
+    ],
+    [
+      "60.221%",
+      "55.064%"
+    ],
+    [
+      "79.006%",
+      "57.459%"
+    ],
+    [
+      "61.464%",
+      "61.004%"
+    ],
+    [
+      "41.022%",
+      "63.996%"
+    ],
+    [
+      "22.790%",
+      "67.311%"
+    ],
+    [
+      "41.022%",
+      "71.133%"
+    ],
+    [
+      "62.569%",
+      "76.013%"
+    ],
+    [
+      "54.420%",
+      "79.374%"
+    ],
+    [
+      "49.448%",
+      "85.958%"
+    ],
+    [
+      "58.978%",
+      "91.943%"
+    ]
+  ],
+  "coordinateMeasurement": "Manual review of gold pedestal centers with violet-body component detection and numbered overlay.",
+  "review": {
+    "technical": "passed",
+    "style": "Compared to authoritative library map: painterly cream stone, foliage, violet crystals and atmospheric depth. Underground light matches dungeon setting.",
+    "waypoints": "30 separate pedestals; increasing y; continuous descending path; no clipping.",
+    "browser": [
+      {
+        "name": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "nodes": 30,
+        "combat": "disabled pending implementation",
+        "alignment": [
+          {
+            "stage": 1,
+            "errorX": 0.0014429824561403848,
+            "errorY": 0.0006116504854372096
+          },
+          {
+            "stage": 2,
+            "errorX": 0.00033625730993946945,
+            "errorY": 0.0008009708737866106
+          },
+          {
+            "stage": 3,
+            "errorX": 0.0044181286549687115,
+            "errorY": 0.00010194174757316432
+          },
+          {
+            "stage": 4,
+            "errorX": 0.0015584795321643696,
+            "errorY": 0.001315533980582373
+          },
+          {
+            "stage": 5,
+            "errorX": 0.0015935672514615362,
+            "errorY": 0.001179611650487189
+          },
+          {
+            "stage": 6,
+            "errorX": 0.0042763157894754045,
+            "errorY": 0.0005728155339816965
+          },
+          {
+            "stage": 7,
+            "errorX": 0.0014429824561403848,
+            "errorY": 0.00022572815534260826
+          },
+          {
+            "stage": 8,
+            "errorX": 0.0013991228070153738,
+            "errorY": 0.0008592233009707684
+          },
+          {
+            "stage": 9,
+            "errorX": 0.003479532163737531,
+            "errorY": 0.001048543689318393
+          },
+          {
+            "stage": 10,
+            "errorX": 0.0001769005848046845,
+            "errorY": 0.001468446601940343
+          },
+          {
+            "stage": 11,
+            "errorX": 0.0022222222222225696,
+            "errorY": 0.00023543689320604244
+          },
+          {
+            "stage": 12,
+            "errorX": 0.0023377192982465544,
+            "errorY": 0.0009150485436890676
+          },
+          {
+            "stage": 13,
+            "errorX": 0.0014429824561403848,
+            "errorY": 0.0011966019417464224
+          },
+          {
+            "stage": 14,
+            "errorX": 0.0023377192982465544,
+            "errorY": 0.0011286407766988305
+          },
+          {
+            "stage": 15,
+            "errorX": 0.003479532163737531,
+            "errorY": 0.001504854368931774
+          },
+          {
+            "stage": 16,
+            "errorX": 0.003807017543863367,
+            "errorY": 0.001016990291262232
+          },
+          {
+            "stage": 17,
+            "errorX": 0.0029751461988283268,
+            "errorY": 6.31067961194276e-05
+          },
+          {
+            "stage": 18,
+            "errorX": 0.0023377192982465544,
+            "errorY": 0.0013252427184511362
+          },
+          {
+            "stage": 19,
+            "errorX": 0.0033201754385956406,
+            "errorY": 0.0005800970873721667
+          },
+          {
+            "stage": 20,
+            "errorX": 0.0006461988304096167,
+            "errorY": 0.0009830097087331069
+          },
+          {
+            "stage": 21,
+            "errorX": 0.0007880116959029237,
+            "errorY": 0.0002864077669926246
+          },
+          {
+            "stage": 22,
+            "errorX": 0.003807017543863367,
+            "errorY": 0.0014757281553414714
+          },
+          {
+            "stage": 23,
+            "errorX": 0.0010979532163659655,
+            "errorY": 0.001269417475732837
+          },
+          {
+            "stage": 24,
+            "errorX": 0.004090643274849981,
+            "errorY": 0.00024757281553178245
+          },
+          {
+            "stage": 25,
+            "errorX": 0.001257309941518514,
+            "errorY": 0.0006237864077718314
+          },
+          {
+            "stage": 26,
+            "errorX": 0.004090643274849981,
+            "errorY": 0.0013252427184511362
+          },
+          {
+            "stage": 27,
+            "errorX": 0.0004692982456120376,
+            "errorY": 0.0011674757281525672
+          },
+          {
+            "stage": 28,
+            "errorX": 0.002054093567252835,
+            "errorY": 0.0005169902912598445
+          },
+          {
+            "stage": 29,
+            "errorX": 0.0008143274853793514,
+            "errorY": 0.0007791262135867782
+          },
+          {
+            "stage": 30,
+            "errorX": 0.00047807017543988195,
+            "errorY": 0.0012524271844682744
+          }
+        ],
+        "errors": [],
+        "failed": []
+      },
+      {
+        "name": "desktop",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "nodes": 30,
+        "combat": "disabled pending implementation",
+        "alignment": [
+          {
+            "stage": 1,
+            "errorX": 0.001313679245281918,
+            "errorY": 0.0006140282131665842
+          },
+          {
+            "stage": 2,
+            "errorX": 0.0034610849056591064,
+            "errorY": 0.0006583072100312393
+          },
+          {
+            "stage": 3,
+            "errorX": 0.0004528301886779218,
+            "errorY": 6.152037617468409e-05
+          },
+          {
+            "stage": 4,
+            "errorX": 0.0001792452830216007,
+            "errorY": 0.0007472570532911504
+          },
+          {
+            "stage": 5,
+            "errorX": 0.0008608490566004434,
+            "errorY": 0.0007468652037623258
+          },
+          {
+            "stage": 6,
+            "errorX": 0.0029186320754703843,
+            "errorY": 0.0008938087774286174
+          },
+          {
+            "stage": 7,
+            "errorX": 0.001313679245281918,
+            "errorY": 0.0010983542319742412
+          },
+          {
+            "stage": 8,
+            "errorX": 0.002304245283021089,
+            "errorY": 0.00023863636363685714
+          },
+          {
+            "stage": 9,
+            "errorX": 0.00248820754716661,
+            "errorY": 0.00028291536050062405
+          },
+          {
+            "stage": 10,
+            "errorX": 0.0019009433962224875,
+            "errorY": 0.0009619905956093078
+          },
+          {
+            "stage": 11,
+            "errorX": 0.0014033018867891656,
+            "errorY": 0.00041614420062430213
+          },
+          {
+            "stage": 12,
+            "errorX": 0.00026886792453240105,
+            "errorY": 0.0011528213166158707
+          },
+          {
+            "stage": 13,
+            "errorX": 0.001313679245281918,
+            "errorY": 0.0007163009404358434
+          },
+          {
+            "stage": 14,
+            "errorX": 0.00026886792453240105,
+            "errorY": 0.0005936520376224053
+          },
+          {
+            "stage": 15,
+            "errorX": 0.00248820754716661,
+            "errorY": 0.0007915360501513646
+          },
+          {
+            "stage": 16,
+            "errorX": 0.0002511792452821737,
+            "errorY": 0.001214341692787002
+          },
+          {
+            "stage": 17,
+            "errorX": 0.002824292452835664,
+            "errorY": 0.0003413009404411582
+          },
+          {
+            "stage": 18,
+            "errorX": 0.00026886792453240105,
+            "errorY": 6.50470219483168e-05
+          },
+          {
+            "stage": 19,
+            "errorX": 0.0009280660377335437,
+            "errorY": 0.000320924764885433
+          },
+          {
+            "stage": 20,
+            "errorX": 0.0008832547169816962,
+            "errorY": 5.094043886799682e-05
+          },
+          {
+            "stage": 21,
+            "errorX": 0.0021025943396182356,
+            "errorY": 0.0005693573667713281
+          },
+          {
+            "stage": 22,
+            "errorX": 0.0002511792452821737,
+            "errorY": 0.0003891065830714524
+          },
+          {
+            "stage": 23,
+            "errorX": 0.0032099056603769327,
+            "errorY": 0.0003753918495235098
+          },
+          {
+            "stage": 24,
+            "errorX": 0.002689858490562358,
+            "errorY": 0.0008491379310413549
+          },
+          {
+            "stage": 25,
+            "errorX": 0.0010849056603774443,
+            "errorY": 0.0010470219435774197
+          },
+          {
+            "stage": 26,
+            "errorX": 0.002689858490562358,
+            "errorY": 6.504702193410594e-05
+          },
+          {
+            "stage": 27,
+            "errorX": 0.0026674528301882106,
+            "errorY": 0.00031387147336658927
+          },
+          {
+            "stage": 28,
+            "errorX": 0.0015153301886812187,
+            "errorY": 0.001204153605016245
+          },
+          {
+            "stage": 29,
+            "errorX": 0.0007712264150967485,
+            "errorY": 0.0009075235109747837
+          },
+          {
+            "stage": 30,
+            "errorX": 0.0009952830188737494,
+            "errorY": 0.0004059561128428868
+          }
+        ],
+        "errors": [],
+        "failed": []
+      }
+    ],
+    "coordinateOverlay": "output/story-map/world7c-coordinate-review.jpg",
+    "browserEvidence": "output/story-map/world7c-browser-review.json",
+    "build": "npm run build passed",
+    "userApproval": "not requested or recorded"
+  },
+  "integration": "Map preview only. Disabled stage buttons; no combat, score records, new vocabulary or rewards. Navigation from 6B."
+}
