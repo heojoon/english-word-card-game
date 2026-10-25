@@ -1022,7 +1022,19 @@
     syncBGM(page);
     if(page==='story'&&!$('dialog').open)showStoryBranchChoice();
   }
-  function go(target){if(target==='story'&&beginWorldFourPotionEvent())target='storyPotionEvent';if(target==='story'){storyStageArmedKey=null;storyMapMoveUntil=0;}if(guestMode&&!selectedCharacter)target='characters';if(target==='characters'){characterArmedId=null;characterPreviewId=selectedCharacter?.id||null;}page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});}
+  function storyResumeStorageKey(){return `wordoria:lastStoryStage:${accountUserId||player}:${selectedCharacter?.id||'none'}`;}
+  function restoreLastStoryStage(){
+    let saved=null;
+    try{saved=JSON.parse(localStateStorage.getItem(storyResumeStorageKey())||'null');}catch{}
+    const available=stage=>stage&&storyBranchAllowed(stage.chapter||1)&&storyStagePlayable(stage.key)&&storyStageUnlocked(storyStages.indexOf(stage))&&levelReady(stages[stage.key]);
+    let stage=storyStages.find(stage=>stage.key===saved?.key);
+    if(!available(stage))stage=null;
+    const latest=selectedRecords().slice().sort((a,b)=>new Date(b.created_at)-new Date(a.created_at)).find(record=>storyStages.some(stage=>stageRecordName(stage.key)===record.stage&&available(stage)));
+    if(latest&&(!stage||new Date(latest.created_at).getTime()>Number(saved?.playedAt||0)))stage=storyStages.find(stage=>stageRecordName(stage.key)===latest.stage&&available(stage));
+    if(!stage)stage=storyStages.find(available);
+    if(stage){selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;}
+  }
+  function go(target){if(target==='story')restoreLastStoryStage();if(target==='story'&&beginWorldFourPotionEvent())target='storyPotionEvent';if(target==='story'){storyStageArmedKey=null;storyMapMoveUntil=0;}if(guestMode&&!selectedCharacter)target='characters';if(target==='characters'){characterArmedId=null;characterPreviewId=selectedCharacter?.id||null;}page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});if(target==='story')requestAnimationFrame(()=>{if(page==='story')$('screen').querySelector('.story-map-node.selected')?.scrollIntoView({block:'center',behavior:'instant'});});}
   function navigate(target){if(page==='battle'&&run&&!run.done){pause();modal(`<div class="eyebrow">PAUSED</div><h2>이번 도전을 마칠까요?</h2><p>지금까지 맞힌 문제의 보상과 기록은 저장됩니다.</p><div class="actions"><button class="secondary" data-action="resume">계속하기</button><button class="primary" data-action="leave" data-page="${target}">저장하고 이동</button></div>`);return;}go(target);}
   function profileBar(){if(accountMode||guestMode)return '';return `<div class="profile-switch">${players.map(name=>`<button class="profile-chip ${name===player?'active':''}" data-action="player" data-player="${esc(name)}">${esc(name)}</button>`).join('')}<button class="profile-chip add" data-action="add-player">＋ 유저</button></div>`;}
   function classStatsMarkup(d){return `<div class="class-stat-grid" aria-label="${esc(d.label)} 기본 능력치">${Object.entries({hp:'체력',mp:'정신',atk:'공격',luk:'행운'}).map(([key,label])=>`<span><small>${label}</small><i>${'<b></b>'.repeat(d.stats[key])}</i></span>`).join('')}</div>`;}
@@ -1410,6 +1422,7 @@
     if(!stage||!storyStageUnlocked(index)||!levelReady(stages[stage.key]))return;
     if(!storyEntryAllowed(stage.key))return;
     selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;selectedStage=stage.key;closeDialog();
+    try{localStateStorage.setItem(storyResumeStorageKey(),JSON.stringify({key:stage.key,playedAt:Date.now()}));}catch{}
     if(stage.chapter===3&&stage.number===7&&hasWordCrystalSpirit()){showCrystalGhostEncounter();return;}
     if((stage.chapter||1)===1&&stage.number===7){run={story:true,directBossStage:true,storyReplay:stageCleared(stage.key),result:null};pendingStoryRun=null;storyDialogueIndex=0;go('storyEpilogue');return;}
     if(stage.chapter===10&&stage.number===10){storyDialogueIndex=0;go('storyChapterSevenMidbossStart');return;}

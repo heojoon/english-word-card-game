@@ -44,7 +44,7 @@ test('each fixed milestone has a distinct complete story and existing runtime ba
 });
 
 test('entering story redirects to the pending event before rendering the map',()=>{
-  const c=setup();Object.assign(c,{guestMode:true,$:()=>({focus(){},scrollTo(){}})});c.window.scrollTo=()=>{};
+  const c=setup();Object.assign(c,{guestMode:true,restoreLastStoryStage(){},requestAnimationFrame(){},$:()=>({focus(){},scrollTo(){}})});c.window.scrollTo=()=>{};
   vm.runInContext(source.slice(source.indexOf('  function go('),source.indexOf('  function navigate(')),c);
   c.go('story');assert.equal(c.page,'storyPotionEvent');assert.equal(c.storyDialogueIndex,0);
   c.worldFourPotionClaims.add(4);c.go('story');assert.equal(c.page,'story');
