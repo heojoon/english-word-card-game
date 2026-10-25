@@ -8,7 +8,7 @@ const boots={id:1,name:'질풍의 장화',category:'avatar',price:103};
 function setup(local=true){
   const character={id:'hero',coins:100,equipped_items:{feet:1},equipped_item_id:1};
   const state={inventory:[{character_id:'hero',item_id:1},{character_id:'hero',item_id:1}],potionInventory:{}};
-  const ctx=vm.createContext({selectedCharacter:character,demoState:state,localMode:local,accountMode:!local,accountCrystals:100,potionInventory:{red_potion_count:1,blue_potion_count:0,equipped_slot_1:'red',equipped_slot_2:'blue'},POTION_PRICE:20,potionTypes:{red:{name:'힐링포션',countKey:'red_potion_count'},blue:{name:'마나포션',countKey:'blue_potion_count'}},itemOwned:item=>state.inventory.some(row=>row.character_id==='hero'&&row.item_id===item.id),equippedMap:()=>({...character.equipped_items}),saveDemo(){},loadCharacterExtras:async()=>{},closeDialog(){ctx.closed=true;},render(){},toast:text=>ctx.message=text,console:{error(){}},apiGet:async()=>[],Math});
+  const ctx=vm.createContext({selectedCharacter:character,demoState:state,localMode:local,accountMode:!local,accountCrystals:100,potionInventory:{red_potion_count:1,blue_potion_count:0,gold_potion_count:0,equipped_slot_1:'red',equipped_slot_2:'blue'},potionTypes:{red:{name:'힐링포션',countKey:'red_potion_count',price:20},blue:{name:'마나포션',countKey:'blue_potion_count',price:20},gold:{name:'골드포션',countKey:'gold_potion_count',price:190}},itemOwned:item=>state.inventory.some(row=>row.character_id==='hero'&&row.item_id===item.id),equippedMap:()=>({...character.equipped_items}),saveDemo(){},loadCharacterExtras:async()=>{},closeDialog(){ctx.closed=true;},render(){},toast:text=>ctx.message=text,console:{error(){}},apiGet:async()=>[],Math});
   ctx.potionCount=type=>ctx.potionInventory[ctx.potionTypes[type].countKey];
   ctx.equippedPotions=()=>[ctx.potionInventory.equipped_slot_1,ctx.potionInventory.equipped_slot_2];
   ctx.storyPotionCount=type=>ctx.potionCount(type)+ctx.equippedPotions().filter(p=>p===type).length;
@@ -23,6 +23,11 @@ test('sales consume one copy, credit floor(price/5), preserve duplicate equipmen
 test('potion sale uses bag first, then removes one equipped potion without healing',async()=>{
   const c=setup();await c.sellOwnedItem(null,'red',{});assert.equal(c.potionInventory.red_potion_count,0);assert.equal(c.potionInventory.equipped_slot_1,'red');assert.equal(c.selectedCharacter.coins,104);
   await c.sellOwnedItem(null,'red',{});assert.equal(c.potionInventory.equipped_slot_1,null);assert.equal(c.potionInventory.equipped_slot_2,'blue');assert.equal(c.selectedCharacter.coins,108);
+});
+test('gold potion sale credits 38 crystals',async()=>{
+  const c=setup();c.potionInventory.gold_potion_count=1;
+  await c.sellOwnedItem(null,'gold',{});
+  assert.equal(c.selectedCharacter.coins,138);assert.equal(c.potionInventory.gold_potion_count,0);
 });
 test('remote sale failure preserves wallet and inventory and enables retry',async()=>{
   const c=setup(false),button={};c.rpc=async()=>{throw new Error('failure');};

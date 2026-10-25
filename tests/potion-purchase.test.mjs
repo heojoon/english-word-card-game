@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
 function setup({local=false,balance=300}={}){
-  const c=vm.createContext({potionTypes:{red:{name:'힐링포션',countKey:'red_potion_count'},blue:{name:'마나포션',countKey:'blue_potion_count'}},POTION_PRICE:20,selectedCharacter:{id:'hero',coins:balance},accountMode:!local,localMode:local,accountCrystals:balance,potionInventory:{red_potion_count:2,blue_potion_count:3},demoState:{},document:{querySelectorAll:()=>c.buttons},console:{error(){}},toast:text=>c.message=text,saveDemo(){},closeDialog(){},render(){},loadCharacterExtras:async()=>{},showStoryRecovery:stage=>c.recoveryStage=stage,modal:html=>c.html=html});
+  const c=vm.createContext({potionTypes:{red:{name:'힐링포션',countKey:'red_potion_count',price:20},blue:{name:'마나포션',countKey:'blue_potion_count',price:20},gold:{name:'골드포션',countKey:'gold_potion_count',price:190,effect:'HP·MP 모두 회복'}},selectedCharacter:{id:'hero',coins:balance},accountMode:!local,localMode:local,accountCrystals:balance,potionInventory:{red_potion_count:2,blue_potion_count:3,gold_potion_count:0},demoState:{},document:{querySelectorAll:()=>c.buttons},console:{error(){}},toast:text=>c.message=text,saveDemo(){},closeDialog(){},render(){},loadCharacterExtras:async()=>{},showStoryRecovery:stage=>c.recoveryStage=stage,modal:html=>c.html=html});
   c.buttons=[{dataset:{quantity:'5'},textContent:'5개 구매',disabled:false},{disabled:true}];
   c.walletBalance=()=>local?c.selectedCharacter.coins:c.accountCrystals;
   c.potionCount=type=>c.potionInventory[c.potionTypes[type].countKey];
@@ -49,4 +49,11 @@ test('overlapping quantity buttons send only one batch and unlock after completi
 test('recovery purchase without quantity still buys one and reopens recovery',async()=>{
   const c=setup({local:true}),button=c.buttons[0];button.dataset={recovery:'true',stage:'1-1'};
   await c.purchasePotion('red',button);assert.equal(c.selectedCharacter.coins,280);assert.equal(c.recoveryStage,'1-1');
+});
+test('gold potion costs 190 and credits only its own inventory',async()=>{
+  const c=setup({local:true,balance:400});c.showPotionShopItem('gold');
+  assert.match(c.html,/1개 구매 · ◆ 190/);assert.match(c.html,/5개 구매 · ◆ 950/);
+  const button=c.buttons[0];button.dataset.quantity='1';await c.purchasePotion('gold',button);
+  assert.equal(c.selectedCharacter.coins,210);assert.equal(c.demoState.potionInventory.hero.gold_potion_count,1);
+  assert.equal(c.demoState.potionInventory.hero.red_potion_count,2);
 });

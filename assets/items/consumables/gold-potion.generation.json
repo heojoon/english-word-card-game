@@ -1,0 +1,12 @@
+{
+  "asset": "gold-potion.png",
+  "tool": "imagegen",
+  "dimensions": [1254, 1254],
+  "transparent": true,
+  "references": [
+    "assets/items/equipment/item_gale_boots_normal.webp",
+    "assets/items/equipment/item_starlight_crown_legendary.webp",
+    "assets/items/consumables/potions.png"
+  ],
+  "prompt": "One centered round glass gold potion for a Crystal Quest shop icon. Luminous liquid gold surrounds a red crystal heart and cyan-blue crystal star to show full HP and MP restoration. Gold faceted stopper, soft silver highlights, pale lavender shadows, violet-blue and cyan crystal details. Painterly polished fantasy item, front view, readable at 64 px, genuine transparent background. No text, pedestal, logo, or other objects."
+}

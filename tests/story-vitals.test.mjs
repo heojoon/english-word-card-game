@@ -18,6 +18,13 @@ test('first play is full; HP 1 / MP 0 persists to another stage and after reload
   c.run.hp=1;c.run.mp=0;c.persistStoryBattleVitals();c.run.done=true;c.selectedStage='two';c.startBattle();assert.equal(c.run.hp,1);assert.equal(c.run.mp,0);
   const reload=setup(storage);reload.startBattle();assert.equal(reload.run.hp,1);assert.equal(reload.run.mp,0);
 });
+test('gold potion restores both persisted vitals to maximum and consumes one copy',async()=>{
+  const c=setup();c.potionInventory.gold_potion_count=1;c.saveStoryVitals({hp:0,mp:0});
+  await c.recoverStoryHp('one',null,'gold');
+  assert.equal(c.storyVitals().hp,2);assert.equal(c.storyVitals().mp,2);
+  assert.equal(c.potionInventory.gold_potion_count,0);
+  assert.equal(c.potionInventory.equipped_slot_2,'blue');
+});
 test('vitals are separate for characters, users and demo/production, independent of stage',()=>{
   const storage=new Map(),c=setup(storage);c.saveStoryVitals({hp:0,mp:0});c.selectedCharacter.id='other';assert.equal(c.storyVitals().hp,2);
   c.selectedCharacter.id='hero';assert.equal(c.storyVitals().hp,0);c.demoKey='another-demo';assert.equal(c.storyVitals().hp,2);
