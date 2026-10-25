@@ -8,8 +8,8 @@ const rules=window.WORDORIA_ELLIOT;
 const fresh=()=>({...rules.reset(),hp:100,hpMax:100,index:0,correct:0,elapsed:0,bossAttackSteps:1});
 const hit=(s,damage=1)=>{s.bossAttackSteps=damage;assert.ok(rules.answer(s,true,200));rules.advance(s,200);rules.advance(s,300);};
 
-test('Elliot uses 500 HP, four minutes, 800 crystals and stable vocabulary cycles',()=>{
-  const s=fresh();assert.equal(s.bossHp,500);assert.equal(s.storyTimeLimit,240000);assert.equal(rules.REWARD,800);
+test('Elliot uses 500 HP, 90 seconds, 800 crystals and stable vocabulary cycles',()=>{
+  const s=fresh();assert.equal(s.bossHp,500);assert.equal(s.storyTimeLimit,90000);assert.equal(rules.REWARD,800);
   const words=Array.from({length:10},(_,i)=>['w'+i,'n','뜻'+i]);const deck=rules.deck(words,x=>x.reverse());
   assert.equal(deck.length,500);for(let i=0;i<500;i+=10)assert.equal(new Set(deck.slice(i,i+10).map(x=>x.entry[0])).size,10);
   for(let i=1;i<deck.length;i++)assert.notEqual(deck[i-1].entry[0],deck[i].entry[0]);
@@ -31,13 +31,13 @@ test('simultaneous shield and sword retain the sword cast and apply a single hit
   rules.advance(s,600);assert.equal(s.elliotAction,'attack');rules.advance(s,399);assert.equal(s.hp,hp);rules.advance(s,1);assert.equal(s.hp,hp-1);
 });
 test('victory requires both complete survival and HP <= 250; zero boss HP never wins early',()=>{
-  for(const hp of [250,0]){const s=fresh();s.bossHp=hp;assert.equal(rules.won(s),false);const events=rules.advance(s,239999);assert.ok(!events.includes('victory'));assert.ok(rules.advance(s,1).includes('victory'));assert.equal(s.elapsed,240000);}
-  const s=fresh();s.bossHp=251;assert.ok(rules.advance(s,240000).includes('trial-failed'));assert.equal(rules.won(s),false);
+  for(const hp of [250,0]){const s=fresh();s.bossHp=hp;assert.equal(rules.won(s),false);const events=rules.advance(s,89999);assert.ok(!events.includes('victory'));assert.ok(rules.advance(s,1).includes('victory'));assert.equal(s.elapsed,90000);}
+  const s=fresh();s.bossHp=251;assert.ok(rules.advance(s,90000).includes('trial-failed'));assert.equal(rules.won(s),false);
 });
 test('large clock steps and small clock steps produce the same skills, HP and outcome',()=>{
   const a=fresh(),b=fresh();a.bossHp=b.bossHp=250;let hits=0;
-  for(let i=0;i<240000;i+=25)hits+=rules.advance(a,25).filter(x=>x==='aura-hit').length;
-  const events=rules.advance(b,900000);assert.equal(a.hp,b.hp);assert.equal(hits,11);assert.equal(a.elapsed,240000);assert.equal(b.elapsed,240000);assert.ok(events.includes('victory'));
+  for(let i=0;i<90000;i+=25)hits+=rules.advance(a,25).filter(x=>x==='aura-hit').length;
+  const events=rules.advance(b,900000);assert.equal(a.hp,b.hp);assert.equal(hits,4);assert.equal(a.elapsed,90000);assert.equal(b.elapsed,90000);assert.ok(events.includes('victory'));
 });
 test('pause, Ice Time and pet stop freeze skill clocks, shield and enemy poses; player contact completes',()=>{
   const s=fresh();rules.advance(s,20200);const before={hp:s.hp,clock:s.elliotClock,pose:s.elliotActionMs};
@@ -88,7 +88,7 @@ test('matching pairs apply player DMG only at contact, reject repeats and renew 
 test('Elliot renderer uses matching controls, numeric HP and no boss gauge',()=>{
   const source=read('crystal-game.js');const renderer=source.slice(source.indexOf('  function renderElliotBattle('),source.indexOf('  function elliotPick('));
   assert.ok(renderer.includes('data-action="story-pick"'));assert.ok(renderer.includes('HP ${run.bossHp} / 500'));
-  assert.ok(!renderer.includes('guardian-health'));assert.ok(!renderer.includes('guardian-answer'));assert.ok(renderer.includes('4분'));
+  assert.ok(!renderer.includes('guardian-health'));assert.ok(!renderer.includes('guardian-answer'));assert.ok(renderer.includes('1분 30초'));
 });
 test('ranger and spirit hints work on Elliot matching boards without a multiple-choice question',()=>{
   const source=read('crystal-game.js'),s={...fresh(),story:true,mp:1,deck:rules.deck(Array.from({length:5},(_,i)=>['w'+i,'n','뜻'+i]),x=>x)};

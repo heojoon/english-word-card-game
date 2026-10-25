@@ -1,10 +1,10 @@
-/* World 6B-20: a four-minute swordmaster matching trial. */
+/* World 6B-20: a 90-second swordmaster matching trial. */
 (() => {
   'use strict';
-  const HP=500,TIME_MS=240000,REWARD=800,AURA_INTERVAL_MS=20000,SHIELD_INTERVAL_MS=60000,SHIELD_MS=10000;
+  const HP=500,TIME_MS=90000,REWARD=800,AURA_INTERVAL_MS=20000,SHIELD_INTERVAL_MS=60000,SHIELD_MS=10000;
   const SPRITE_ROOT='assets/monsters/elliot/',ART='assets/novel/characters/char_elliot_world6b_standing.webp';
   const ANIMATIONS={idle:[400,400,400],attack:[180,220,180],shield:[200,200,200],hit:[120,180,600]};
-  const INFO={name:'엘리엇',description:'전 세계에 다섯 명뿐인 소드마스터 중 한 명. 아서의 스승이자 왕국의 기사단장으로, 누구도 범접하지 못할 실력의 벽을 넘어선 자예요.',hp:HP,time:'4분',art:ART,skill:'오러 소드',skillDescription:'20초마다 황금빛 검으로 돌진해 HP 1 피해를 줘요.',skill2:'광휘의 방패',skill2Description:'1분마다 검을 바닥에 꽂고 황금 오러를 일으켜 10초 동안 모든 피해를 막아요.',rewardDescription:'4분 동안 생존하고 보스 HP를 250 이하로 낮추면 승리! 최초 보상 800 크리스털 · 계정당 한 번'};
+  const INFO={name:'엘리엇',description:'전 세계에 다섯 명뿐인 소드마스터 중 한 명. 아서의 스승이자 왕국의 기사단장으로, 누구도 범접하지 못할 실력의 벽을 넘어선 자예요.',hp:HP,time:'1분 30초',art:ART,skill:'오러 소드',skillDescription:'20초마다 황금빛 검으로 돌진해 HP 1 피해를 줘요.',skill2:'광휘의 방패',skill2Description:'1분마다 검을 바닥에 꽂고 황금 오러를 일으켜 10초 동안 모든 피해를 막아요.',rewardDescription:'1분 30초 동안 생존하고 보스 HP를 250 이하로 낮추면 승리! 최초 보상 800 크리스털 · 계정당 한 번'};
   const scale=s=>s.guardianReducedMotion?.5:1;
   function reset(){return {guardian:true,elliot:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,guardianPhase:'idle',guardianVisual:'idle',guardianRemaining:0,elliotClock:0,elliotNextAura:AURA_INTERVAL_MS,elliotNextShield:SHIELD_INTERVAL_MS,elliotShieldUntil:0,elliotAction:'idle',elliotActionMs:0,elliotAuraPending:0,elliotContact:false,elliotNotice:'',elliotNoticeMs:0,elliotPlayerHit:false,elliotPendingDamage:0};}
   function clear(s){s.elliotAction='idle';s.elliotActionMs=0;s.elliotAuraPending=0;s.elliotShieldUntil=0;s.elliotNotice='';s.elliotNoticeMs=0;s.elliotPlayerHit=false;s.elliotPendingDamage=0;s.iceTimeActive=false;s.selectedKo=null;s.selectedEn=null;s.pendingPair=null;}

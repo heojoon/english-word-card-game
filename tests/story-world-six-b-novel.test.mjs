@@ -31,7 +31,7 @@ test('generated novels include Elliot trial, standing CG and both survival goals
   for(const key of ['world6bPrologue','world6bMidbossStart','world6bMidbossEndPrelude','world6bMidbossEndRelease','world6bMidbossEndArrest','world6bCapital','world6bBossStart','world6bBossEnd'])assert.ok(novels[key]?.length,key);
   assert.ok(novels.world6bMidbossStart.some(line=>line.speaker==='도적 대장'&&line.artPath==='assets/novel/characters/char_bandit_chief_world6b_standing.png'));
   assert.ok(novels.world6bCapital.some(line=>line.text.includes('기사단장 엘리엇')));
-  assert.ok(novels.world6bBossStart.some(line=>line.text.includes('4분 동안 견디며 내 기력을 절반 이하')));
+  assert.ok(novels.world6bBossStart.some(line=>line.text.includes('1분 30초 동안 견디며 내 기력을 절반 이하')));
   assert.ok(novels.world6bBossStart.filter(line=>line.speaker==='엘리엇').every(line=>line.artPath==='assets/novel/characters/char_elliot_world6b_standing.webp'));
   assert.ok(!novels.world6bBossStart.some(line=>line.text.startsWith('- HP')));
 });
