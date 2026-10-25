@@ -75,7 +75,7 @@ test('Ice Time and pet time stop hold both skill cycles', () => {
 
 test('World 7A midboss introduction explains Keurus and both skills before entry', () => {
   const body = source.slice(source.indexOf('  function bossIntroductionMarkup('), source.indexOf('  function confirmStoryStage('));
-  const context = createContext({window:{}, esc:String, deployedAssetUrl:path=>path});
+  const context = createContext({window:{}, KEURUS_BOSS:{hp:200}, esc:String, deployedAssetUrl:path=>path});
   new Script(`${body}\nthis.bossIntroductionMarkup=bossIntroductionMarkup;`).runInContext(context);
   const html = context.bossIntroductionMarkup({chapter:8, number:15});
   assert.match(html, /케우르스/);
@@ -83,7 +83,9 @@ test('World 7A midboss introduction explains Keurus and both skills before entry
   assert.match(html, /제한시간 5분/);
   assert.match(html, /쌍두 교란/);
   assert.match(html, /거암 내려찍기/);
-  assert.doesNotMatch(html, /HP undefined/);
+  assert.match(html, /HP 200/);
+  assert.match(html, /400 크리스탈/);
+  assert.match(html, /피버타임 없음/);
 });
 
 test('SD strips keep contiguous RGBA cells, transparent review gaps and final down hold', () => {
@@ -105,4 +107,34 @@ test('SD strips keep contiguous RGBA cells, transparent review gaps and final do
   assert.equal(attack.frames[2].hit, true);
   assert.equal(hit.frames[2].name, 'complete-knockdown');
   assert.equal(hit.frames[2].hold, true);
+});
+
+test('boss creation owns HP, reward, five-minute limit and no fever',()=>{
+  const config=source.match(/  const KEURUS_BOSS =[^\n]+/)[0];
+  const create=source.match(/  function createKeurusBoss\(\)\{[^\n]+/)[0];
+  const c=createContext({bossAttackSteps:()=>3});
+  new Script(`${config}\n${create}\nthis.state=createKeurusBoss();this.reward=KEURUS_BOSS.reward;`).runInContext(c);
+  assert.equal(c.state.bossHp,200);assert.equal(c.state.bossMaxHp,200);
+  assert.equal(c.state.bossAttackSteps,3);assert.equal(c.state.storyTimeLimit,300000);
+  assert.equal(c.state.fever,false);assert.equal(c.reward,400);
+});
+
+test('contact applies DMG, clamps HP and ignores paused, exited or finished battles',()=>{
+  const fn=source.match(/  function applyKeurusContact\(battle\)\{[\s\S]*?\n  \}/)[0];
+  const battle={bossHp:200,bossAttackSteps:3};let renders=0;const pending=[];
+  const c=createContext({run:battle,render:()=>renders++,setTimeout:fn=>pending.push(fn)});
+  new Script(`${fn}\nthis.contact=applyKeurusContact;`).runInContext(c);
+  c.contact(battle);assert.equal(battle.bossHp,197);assert.equal(renders,1);
+  battle.paused=true;c.contact(battle);assert.equal(battle.bossHp,197);
+  battle.paused=false;pending.shift()();assert.equal(battle.bossHp,194);
+  battle.bossHp=1;c.contact(battle);assert.equal(battle.bossHp,0);
+  battle.done=true;c.contact(battle);assert.equal(renders,3);
+  c.run={};c.contact(battle);assert.equal(renders,3);
+});
+
+test('Keurus uses HP victory, fixed server reward and bypasses fever and chests',()=>{
+  assert.match(source,/if\(run.keurus&&run.bossHp<=0\)\{run.iceTimeActive=false;finishBattle\(true,'boss-defeated'\)/);
+  assert.match(source,/function beginFeverIntro\(\)\{if\(!run\|\|run.done\|\|run.keurus\)return/);
+  assert.match(source,/claim_keurus_reward/);
+  assert.match(source,/if\(run.keurus\|\|run.redSkullKnight/);
 });
