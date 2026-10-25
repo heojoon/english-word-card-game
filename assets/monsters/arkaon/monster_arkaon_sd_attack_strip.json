@@ -1,0 +1,96 @@
+{
+  "image": "monster_arkaon_sd_attack_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 300
+    },
+    {
+      "name": "wind-up",
+      "durationMs": 300
+    },
+    {
+      "name": "contact",
+      "durationMs": 300,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "sourceBox": [
+        0,
+        0,
+        680,
+        724
+      ],
+      "foregroundBounds": [
+        13,
+        17,
+        671,
+        705
+      ],
+      "scale": 0.3488372093023256,
+      "runtimeBounds": [
+        45,
+        72,
+        275,
+        312
+      ]
+    },
+    {
+      "sourceBox": [
+        680,
+        0,
+        1384,
+        724
+      ],
+      "foregroundBounds": [
+        10,
+        32,
+        701,
+        702
+      ],
+      "scale": 0.3488372093023256,
+      "runtimeBounds": [
+        39,
+        78,
+        280,
+        312
+      ]
+    },
+    {
+      "sourceBox": [
+        1384,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        1,
+        117,
+        776,
+        699
+      ],
+      "scale": 0.3488372093023256,
+      "runtimeBounds": [
+        25,
+        109,
+        295,
+        312
+      ]
+    }
+  ],
+  "userApproved": false
+}

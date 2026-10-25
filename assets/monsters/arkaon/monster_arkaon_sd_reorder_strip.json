@@ -1,0 +1,95 @@
+{
+  "image": "monster_arkaon_sd_reorder_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "charge",
+      "durationMs": 200
+    },
+    {
+      "name": "spread-runes",
+      "durationMs": 250
+    },
+    {
+      "name": "rearrange",
+      "durationMs": 350
+    }
+  ],
+  "normalization": [
+    {
+      "sourceBox": [
+        0,
+        0,
+        629,
+        803
+      ],
+      "foregroundBounds": [
+        85,
+        123,
+        588,
+        713
+      ],
+      "scale": 0.4067796610169492,
+      "runtimeBounds": [
+        57,
+        72,
+        262,
+        312
+      ]
+    },
+    {
+      "sourceBox": [
+        629,
+        0,
+        1315,
+        803
+      ],
+      "foregroundBounds": [
+        1,
+        122,
+        686,
+        715
+      ],
+      "scale": 0.4067796610169492,
+      "runtimeBounds": [
+        20,
+        71,
+        299,
+        312
+      ]
+    },
+    {
+      "sourceBox": [
+        1315,
+        0,
+        1959,
+        803
+      ],
+      "foregroundBounds": [
+        52,
+        120,
+        586,
+        714
+      ],
+      "scale": 0.4067796610169492,
+      "runtimeBounds": [
+        51,
+        70,
+        268,
+        312
+      ]
+    }
+  ],
+  "userApproved": false
+}

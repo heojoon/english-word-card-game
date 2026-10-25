@@ -1,0 +1,322 @@
+{
+  "idle": {
+    "size": [
+      960,
+      320
+    ],
+    "sourceSize": [
+      2172,
+      724
+    ],
+    "frames": [
+      {
+        "sourceBox": [
+          0,
+          0,
+          723,
+          724
+        ],
+        "foregroundBounds": [
+          35,
+          21,
+          695,
+          707
+        ],
+        "scale": 0.3498542274052478,
+        "runtimeBounds": [
+          44,
+          72,
+          275,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          723,
+          0,
+          1449,
+          724
+        ],
+        "foregroundBounds": [
+          27,
+          16,
+          703,
+          707
+        ],
+        "scale": 0.3498542274052478,
+        "runtimeBounds": [
+          41,
+          70,
+          278,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          1449,
+          0,
+          2172,
+          724
+        ],
+        "foregroundBounds": [
+          23,
+          20,
+          689,
+          707
+        ],
+        "scale": 0.3498542274052478,
+        "runtimeBounds": [
+          43,
+          72,
+          276,
+          312
+        ]
+      }
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "spacedWidth": 1060
+  },
+  "attack": {
+    "size": [
+      960,
+      320
+    ],
+    "sourceSize": [
+      2172,
+      724
+    ],
+    "frames": [
+      {
+        "sourceBox": [
+          0,
+          0,
+          680,
+          724
+        ],
+        "foregroundBounds": [
+          13,
+          17,
+          671,
+          705
+        ],
+        "scale": 0.3488372093023256,
+        "runtimeBounds": [
+          45,
+          72,
+          275,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          680,
+          0,
+          1384,
+          724
+        ],
+        "foregroundBounds": [
+          10,
+          32,
+          701,
+          702
+        ],
+        "scale": 0.3488372093023256,
+        "runtimeBounds": [
+          39,
+          78,
+          280,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          1384,
+          0,
+          2172,
+          724
+        ],
+        "foregroundBounds": [
+          1,
+          117,
+          776,
+          699
+        ],
+        "scale": 0.3488372093023256,
+        "runtimeBounds": [
+          25,
+          109,
+          295,
+          312
+        ]
+      }
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "spacedWidth": 1060
+  },
+  "hit": {
+    "size": [
+      960,
+      320
+    ],
+    "sourceSize": [
+      2172,
+      724
+    ],
+    "frames": [
+      {
+        "sourceBox": [
+          0,
+          0,
+          715,
+          724
+        ],
+        "foregroundBounds": [
+          30,
+          11,
+          698,
+          697
+        ],
+        "scale": 0.3498542274052478,
+        "runtimeBounds": [
+          43,
+          72,
+          277,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          715,
+          0,
+          1413,
+          724
+        ],
+        "foregroundBounds": [
+          15,
+          100,
+          683,
+          696
+        ],
+        "scale": 0.3498542274052478,
+        "runtimeBounds": [
+          43,
+          103,
+          277,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          1413,
+          0,
+          2172,
+          724
+        ],
+        "foregroundBounds": [
+          13,
+          426,
+          740,
+          702
+        ],
+        "scale": 0.3498542274052478,
+        "runtimeBounds": [
+          33,
+          215,
+          287,
+          312
+        ]
+      }
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "spacedWidth": 1060
+  },
+  "reorder": {
+    "size": [
+      960,
+      320
+    ],
+    "sourceSize": [
+      1959,
+      803
+    ],
+    "frames": [
+      {
+        "sourceBox": [
+          0,
+          0,
+          629,
+          803
+        ],
+        "foregroundBounds": [
+          85,
+          123,
+          588,
+          713
+        ],
+        "scale": 0.4067796610169492,
+        "runtimeBounds": [
+          57,
+          72,
+          262,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          629,
+          0,
+          1315,
+          803
+        ],
+        "foregroundBounds": [
+          1,
+          122,
+          686,
+          715
+        ],
+        "scale": 0.4067796610169492,
+        "runtimeBounds": [
+          20,
+          71,
+          299,
+          312
+        ]
+      },
+      {
+        "sourceBox": [
+          1315,
+          0,
+          1959,
+          803
+        ],
+        "foregroundBounds": [
+          52,
+          120,
+          586,
+          714
+        ],
+        "scale": 0.4067796610169492,
+        "runtimeBounds": [
+          51,
+          70,
+          268,
+          312
+        ]
+      }
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "spacedWidth": 1060
+  }
+}

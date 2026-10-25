@@ -21,14 +21,16 @@ test('7C shares every 7A/7B word pool and runs six five-pair groups in sixty sec
       const stage=c.stages[`story-ch7c-${n}`];
       assert.deepEqual(stage.words,c.stages[`story-ch7a-${n}`].words);
       assert.deepEqual(stage.words,c.stages[`story-ch7b-${n}`].words);
-      assert.equal(stage.questionCount,30);
+      assert.equal(stage.questionCount,n===10?200:30);
       assert.equal(stage.questionTimeMs,2000);
       assert.equal(stage.vocabularyDay,n);
-      assert.equal(stage.encounterName,n===10?'인공 심연의 골렘':n===30?'봉인의 수호기사':null);
+      assert.equal(stage.encounterName,n===10?'봉인 병기 아르카온':n===30?'봉인의 수호기사':null);
+      assert.equal(stage.arkaon,n===10);
       assert.equal(stage.guardian,false);
       assert.equal(stage.redSkullKnight,false);
       assert.equal(stage.nereus,false);
       assert.equal(stage.darkTriton,false);
+      if(n===10)continue; // Dedicated boss clock and deck are covered by arkaon-boss.test.mjs.
       const deck=c.buildQuestionDeck(stage);
       assert.equal(deck.length*stage.questionTimeMs,60000);
       assert.equal(new Set(deck.map(q=>q.entry[0].toLowerCase())).size,Math.min(30,stage.words.length));

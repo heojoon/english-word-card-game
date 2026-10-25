@@ -1,0 +1,82 @@
+{
+  "name": "봉인 병기 아르카온",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "contactMs": 600,
+  "actions": {
+    "idle": {
+      "cuts": [
+        0,
+        723,
+        1449,
+        2172
+      ],
+      "names": [
+        "ready",
+        "inhale",
+        "settle"
+      ],
+      "durations": [
+        350,
+        350,
+        350
+      ]
+    },
+    "attack": {
+      "cuts": [
+        0,
+        680,
+        1384,
+        2172
+      ],
+      "names": [
+        "ready",
+        "wind-up",
+        "contact"
+      ],
+      "durations": [
+        300,
+        300,
+        300
+      ],
+      "hitFrame": 2
+    },
+    "hit": {
+      "cuts": [
+        0,
+        715,
+        1413,
+        2172
+      ],
+      "names": [
+        "guard",
+        "impact",
+        "knockdown"
+      ],
+      "durations": [
+        140,
+        180,
+        600
+      ],
+      "holdLastFrame": true
+    },
+    "reorder": {
+      "names": [
+        "charge",
+        "spread-runes",
+        "rearrange"
+      ],
+      "durations": [
+        200,
+        250,
+        350
+      ]
+    }
+  }
+}

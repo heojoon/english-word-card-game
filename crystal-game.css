@@ -1163,3 +1163,7 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .arcane-sentry-mob .spider-idle-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-idle-strip.png')}
 .arcane-sentry-mob .spider-attack-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-attack-strip.png')}
 .arcane-sentry-mob .spider-hit-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-hit-strip.png')}
+
+/* World 7C: royal artificial abyss guardian. Frame selection follows the battle clock. */
+.arkaon-arena .arkaon-enemy{width:48%;height:auto;aspect-ratio:1;right:1%;top:auto;bottom:10%}
+.arkaon-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;image-rendering:auto}

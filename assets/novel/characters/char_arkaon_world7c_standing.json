@@ -1,0 +1,11 @@
+{
+  "name": "봉인 병기 아르카온",
+  "image": "char_arkaon_world7c_standing.webp",
+  "source": "assets/monsters/arkaon/source/standing.png",
+  "role": "World 7C-10 standing CG; separate from SD battle sprites",
+  "width": 1024,
+  "height": 1536,
+  "alpha": true,
+  "userApproved": false,
+  "technicalReview": "CG and SD identity inspected; alpha export; browser review not requested"
+}

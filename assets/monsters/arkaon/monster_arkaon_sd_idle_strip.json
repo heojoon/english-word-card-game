@@ -1,0 +1,95 @@
+{
+  "image": "monster_arkaon_sd_idle_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": true,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 350
+    },
+    {
+      "name": "inhale",
+      "durationMs": 350
+    },
+    {
+      "name": "settle",
+      "durationMs": 350
+    }
+  ],
+  "normalization": [
+    {
+      "sourceBox": [
+        0,
+        0,
+        723,
+        724
+      ],
+      "foregroundBounds": [
+        35,
+        21,
+        695,
+        707
+      ],
+      "scale": 0.3498542274052478,
+      "runtimeBounds": [
+        44,
+        72,
+        275,
+        312
+      ]
+    },
+    {
+      "sourceBox": [
+        723,
+        0,
+        1449,
+        724
+      ],
+      "foregroundBounds": [
+        27,
+        16,
+        703,
+        707
+      ],
+      "scale": 0.3498542274052478,
+      "runtimeBounds": [
+        41,
+        70,
+        278,
+        312
+      ]
+    },
+    {
+      "sourceBox": [
+        1449,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        23,
+        20,
+        689,
+        707
+      ],
+      "scale": 0.3498542274052478,
+      "runtimeBounds": [
+        43,
+        72,
+        276,
+        312
+      ]
+    }
+  ],
+  "userApproved": false
+}

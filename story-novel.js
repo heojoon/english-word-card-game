@@ -9266,6 +9266,572 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     }
   ],
+  "world7cMidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "왕국 지하 던전 · 중간보스전 · 스테이지 10",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 지하 던전 깊숙한 곳에 도착한다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "대체 얼마나 더 내려가야 하는 거야?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "지도에는 이 아래에 커다란 공동이 있다고 되어 있어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "잠깐. 저기 다리가 있어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "다리? 이걸 건너가라고?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "바닥이 보이지 않을 정도로 깊네...",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "설마 떨어지는 건 아니겠지?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "조심해서 건너자.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 돌다리에 발을 올리는 순간 주변의 마법진이 빛난다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "기다려! 마력이 움직이고 있어!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "뭐?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쿠구구궁!)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다리가 흔들려!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "저 아래에서 뭔가 올라오고 있어!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(심연에서 거대한 수호자가 모습을 드러낸다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "으악! 저게 뭐야?!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "골렘...?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "단순한 골렘이 아니야. 던전 전체의 마력과 연결되어 있어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "침입자... 감지...",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "말도 하는데?!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "왕국의 봉인을 침범한 자... 제거한다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "우린 성흔의 파편을 찾으러 왔어!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "승인되지 않은 자의 접근은 금지되어 있다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "오래된 명령을 그대로 수행하는 마법 병기 같아.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 설득하는 건 불가능한 거야?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아마도.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "최종 경고. 즉시 후퇴하라.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "물러설 수 없어. 우리에겐 그 유물이 필요해!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "경고 무시... 전투 체계 가동.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(인공 심연의 골렘 눈이 붉게 빛난다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "좋아! 돌덩이든 뭐든 부숴주겠어!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "무리하지 마! 다리가 무너지면 끝이야!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "모두 준비해! 온다!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    }
+  ],
+  "world7cMidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "왕국 지하 던전 · 인공 심연의 골렘 격파 후",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "배경",
+      "className": "scene",
+      "text": "지하 공동의 돌다리 / BGM: 전투의 여운에서 긴박한 테마로 전환",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(골렘이 한쪽 무릎을 꿇는다. 붉게 빛나던 눈이 깜빡이고, 다리 아래로 이어진 마력의 선이 끊어진다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "전투 체계… 정지…",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "됐다! 이제 지나갈 수 있겠지?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(발밑에서 돌이 갈라진다. 바이올렛이 몸을 돌리는 순간 다리 가장자리가 무너진다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "앗!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 바이올렛의 손을 붙잡는다. 파이터가 뒤에서 아서의 허리띠를 잡고 버틴다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "잡았어! 파이터, 조금만 버텨!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "버티고 있어! 그런데 이 돌바닥도 오래 못 버티겠는데!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "골렘이 다리의 마력도 붙들고 있었어. 연결이 끊기면서 무너지는 거야!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다시 연결할 수 있어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "손이 자유로워지면… 해 볼게!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(둘이 힘을 모아 바이올렛을 끌어 올린다. 바이올렛이 무릎을 짚고 골렘의 가슴에 남은 문양을 살핀다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "여기야. 끊어진 문양만 이어 주면 돼!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "방금 쓰러뜨렸는데 다시 깨우자고?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다리를 살리려면 이 수호자의 힘이 필요해. 내가 받칠게.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서와 파이터가 기울어진 골렘의 팔을 떠받친다. 바이올렛이 갈라진 문양 사이로 마력을 흘려보낸다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "보조 회로… 복구… 교량 유지 명령… 재개…",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(골렘이 커다란 손으로 다리의 균열을 누른다. 흔들림이 멎는다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "배경",
+      "className": "scene",
+      "text": "안정된 돌다리와 열린 석문 / BGM: 조용한 탐색 테마",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "후아… 이번에는 우리가 널 고쳤네.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "통로… 안정… 잔여 전력… 부족…",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "더 움직이지 마. 지금은 다리를 지탱하는 것만으로 충분해.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "안쪽에도 너 같은 수호자가 있어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "성흔 보관실… 최종 수호자… 대기 중…",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "역시 하나로 끝나지는 않는구나.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아르카온",
+      "className": "arkaon",
+      "text": "성흔의 파편… 반출에는… 수호자의 승인… 필요…",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "알겠어. 직접 만나 볼게.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(골렘 뒤의 석문이 조금씩 열린다. 파이터가 먼저 건너편의 단단한 바닥을 확인한다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이쪽은 괜찮아! 한 명씩 건너와!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "돌아올 때까지 다리가 버텨 주면 좋겠네.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "고마워. 우리 모두 무사히 돌아올게.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(골렘의 희미한 푸른 눈빛을 뒤로하고 세 사람이 석문 안으로 들어간다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "다음 스토리",
+      "className": "scene",
+      "text": "[성흔 보관실의 수호기사](world-7c-boss-start.md)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    }
+  ],
   "world7aPrologue": [
     {
       "speaker": "내레이션",
