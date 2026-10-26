@@ -1,0 +1,36 @@
+{
+  "revision": "05994ab",
+  "base": "https://heojoon.github.io/english-word-card-game/",
+  "checks": [
+    {
+      "path": "sorcerus-boss.js",
+      "status": 200,
+      "bytes": 6917,
+      "sha256": "9cc1b3ed313c8b92d7c2c21a75b85b26de53f6a0f700626099f57fa9baef7623"
+    },
+    {
+      "path": "assets/monsters/sorcerus/char_sorcerus_sd_idle_strip.png",
+      "status": 200,
+      "bytes": 343382,
+      "sha256": "f79f908d064b95798974f05c46778a3e61f4885bccf81fe16ec5a634fa776ac1"
+    },
+    {
+      "path": "assets/monsters/sorcerus/char_sorcerus_sd_ice_time_strip.png",
+      "status": 200,
+      "bytes": 516962,
+      "sha256": "e6de97b371c9eca2b1d56514f998f25f5a8ac025d5594053dca49a0adbc05d49"
+    },
+    {
+      "path": "assets/monsters/sorcerus/char_sorcerus_sd_healing_strip.png",
+      "status": 200,
+      "bytes": 365049,
+      "sha256": "e55e59099355d20be2d1c5477564e284d039b81351b771ce66874f00aadb97e3"
+    },
+    {
+      "path": "assets/monsters/sorcerus/char_sorcerus_sd_hit_strip.png",
+      "status": 200,
+      "bytes": 409774,
+      "sha256": "22de99494a7590d0fe2c60dfd58b7f9047b0a05b5c96f2ae2231781109202fc0"
+    }
+  ]
+}

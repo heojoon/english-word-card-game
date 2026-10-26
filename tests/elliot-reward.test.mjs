@@ -13,9 +13,9 @@ test('first trial clear pays exactly 800 with no chests, account-wide receipt pr
   c.resultNext();assert.equal(c.page,'story');const other={id:'other',coins:20};c.demoState.characters.push(other);c.selectedCharacter=other;c.run={...c.run,result:null,storyCharacterId:'other'};
   await c.saveBattleResult(c.run,true);assert.equal(other.coins,20);assert.equal(c.run.result.coins_earned,0);assert.equal(c.records.length,1);
 });
-test('loss pays zero and early, dead or insufficient-damage clear cannot pay',async()=>{
+test('loss pays zero and early or dead clear cannot pay',async()=>{
   const c=setup();c.run.hp=0;await c.saveBattleResult(c.run,false);assert.equal(c.selectedCharacter.coins,100);assert.equal(c.records[0].cleared,false);
-  for(const patch of [{elapsed:89999},{hp:0},{bossHp:251}]){const c=setup();Object.assign(c.run,patch);await c.saveBattleResult(c.run,true);assert.ok(c.run.saveError);assert.equal(c.records.length,0);}
+  for(const patch of [{elapsed:89999},{hp:0}]){const c=setup();Object.assign(c.run,patch);await c.saveBattleResult(c.run,true);assert.ok(c.run.saveError);assert.equal(c.records.length,0);}
 });
 test('storage failure rolls back wallet and retry pays once',async()=>{
   const c=setup();c.saveDemo=()=>{throw Error('quota');};await c.saveBattleResult(c.run,true);assert.equal(c.selectedCharacter.coins,100);assert.equal(c.demoState.records.length,0);
@@ -26,4 +26,8 @@ test('account RPC sends the actual trial character, survival duration and both H
   c.rpc=(name,input)=>{assert.equal(name,'claim_elliot_reward');args=input;calls++;return new Promise(done=>resolve=done);};
   const first=c.saveBattleResult(c.run,true);await c.saveBattleResult(c.run,true);assert.equal(calls,1);assert.equal(args.p_character_id,'hero');assert.equal(args.p_boss_hp,250);assert.equal(args.p_player_hp,1);assert.equal(args.p_duration_ms,90000);
   resolve([]);await first;assert.ok(c.run.saveRetryable);c.rpc=async()=>[{game_score_id:7,reward:0,balance:900}];await c.saveBattleResult(c.run,true);assert.equal(c.accountCrystals,900);assert.equal(c.run.result.coins_earned,0);
+});
+
+test('survival pays even with full boss HP and no correct answers',async()=>{
+ const c=setup();Object.assign(c.run,{bossHp:500,correct:0});await c.saveBattleResult(c.run,true);assert.equal(c.run.result.coins_earned,800);
 });

@@ -9089,12 +9089,13 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "엘리엇",
       "className": "elliot",
-      "text": "내 공격을 1분 30초 동안 견디며 내 기력을 절반 이하로 낮춰 보아라. 시험을 통과하면 주교님께 전할 추천 편지를 준비해 주마.",
+      "text": "내 공격을 1분 30초 동안 견뎌 보아라. 3초 동안 내게 피해를 주지 않으면 오러 소드를 두 번 연속 쓰겠다. 시험을 통과하면 주교님께 전할 추천 편지를 준비해 주마.",
       "scene": "capital-road",
       "sceneNumber": 2,
       "location": "1분 30초의 시험",
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp",
-      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp",
+      "flash": true
     },
     {
       "speaker": "파이터",
@@ -9266,15 +9267,481 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/environments/world-6b/01-capital-road-battle.webp"
     }
   ],
-  "world7cMidbossStart": [
+  "world7cPrologue": [
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "왕국 지하 던전 · 중간보스전 · 스테이지 10",
+      "text": "(아서 일행이 대성당의 문을 열고 들어온다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "와아... 대단한데? 왕국에 이런 성당이 있었어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "워드 왕국에서 가장 오래된 성당이야. 왕실과도 깊은 관계가 있다고 들었어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "엘리엇 스승님이 말씀하신 장소가 여기야.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그런데 주교라는 사람이 정말 우리를 만나줄까?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "스승님이 직접 편지를 써주셨으니까 괜찮을 거야.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "엘리엇 님과 주교님은 오래전부터 알고 지내던 사이였다고 했지?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 젊었을 때 함께 고대 마법을 연구했대.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(성당 안쪽에서 주교가 나타난다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "어서 오십시오. 아서 군.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "...! 제 이름을 어떻게 아셨나요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "오랜 친구에게서 편지를 받았습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주교가 품에서 봉인된 편지를 꺼낸다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "엘리엇이 보내준 편지입니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "스승님께서 미리 보내셨군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "그렇습니다. 여러분이 지나온 여정도 자세하게 적혀 있더군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "크리스탈 사원에서의 사건, 드래곤과의 싸움, 그리고 타락한 천사의 등장까지.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그럼 저희가 찾아온 이유도 알고 계시겠네요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "타락한 천사의 정체를 알아내고, 그를 물리칠 방법을 찾으러 왔겠지요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이야기가 빠르네! 그럼 방법도 알고 있어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "서두르지 마십시오. 우선 보여드릴 것이 있습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주교가 일행을 대성당 지하의 기록실로 안내한다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "타락한 천사는 원래 천계에서 내려온 강력한 존재였습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "역시 천계와 관련이 있었군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "하지만 그는 인간을 지키기는커녕 인간의 생명과 마력을 빼앗았습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그래서 타락한 천사라고 불리게 된 건가요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "그렇습니다. 과거 수많은 기사와 마법사들이 그를 막으려 했습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그래서 어떻게 됐어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "대부분 목숨을 잃었습니다. 끝내 살아남은 이들이 힘을 모아 그를 봉인했지요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그런데 지금은 그 봉인이 풀린 상태라는 거군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "그렇습니다. 그리고 그 봉인을 해제한 자가 누구인지는 아직 밝혀지지 않았습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "타락한 천사를 다시 봉인할 수는 없을까요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "봉인하는 것과 완전히 쓰러뜨리는 것은 다릅니다. 이번에는 그의 힘 자체를 끊어야 합니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그 방법이 뭔데?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "천사의 힘을 유지하는 신성력의 핵을 파괴하는 것입니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "일반적인 공격으로도 가능한가요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "불가능에 가깝습니다. 하지만 그것을 가능하게 하는 고대 유물이 하나 존재합니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주교가 오래된 석판을 보여준다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "이름은 '성흔의 파편'. 천사의 신성력에 간섭할 수 있는 고대의 보물이지요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그런 물건이 실제로 존재한다고요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "이 왕국의 지하에 잠들어 있습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 당장 찾으러 가자!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "문제는 그곳이 수백 년 동안 봉인되어 있었다는 사실입니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주교가 고대의 봉인문 앞에 선다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "이곳이 왕국의 던전입니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "엄청나게 오래된 문이네요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "안에는 고대의 마법 병기와 수호자들이 남아 있습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "유물을 보호하기 위해 설치된 것들이겠군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "그렇습니다. 그리고 그보다 더 위험한 비밀도 있을지 모릅니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "우리도 지금까지 꽤 많은 괴물을 상대했잖아. 해볼 만해!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "엘리엇이 왜 여러분을 믿고 보냈는지 알 것 같군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "스승님은 뭐라고 적으셨나요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "'내 제자 아서는 아직 미숙하지만, 절대로 동료를 저버리지 않는 아이입니다.'",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "...스승님.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "그 믿음이 틀리지 않았기를 바랍니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주교가 봉인문에 마력을 주입한다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "문을 열겠습니다. 부디 성흔의 파편을 찾아 무사히 돌아오십시오.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네. 반드시 돌아오겠습니다!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거대한 문이 열리며 일행이 던전으로 들어간다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 프롤로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    }
+  ],
+  "world7cMidbossStart": [
     {
       "speaker": "내레이션",
       "className": "scene",
@@ -9549,25 +10016,9 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "왕국 지하 던전 · 인공 심연의 골렘 격파 후",
-      "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
-    },
-    {
-      "speaker": "배경",
-      "className": "scene",
-      "text": "지하 공동의 돌다리 / BGM: 전투의 여운에서 긴박한 테마로 전환",
-      "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
-    },
-    {
-      "speaker": "내레이션",
-      "className": "scene",
       "text": "(골렘이 한쪽 무릎을 꿇는다. 붉게 빛나던 눈이 깜빡이고, 다리 아래로 이어진 마력의 선이 끊어진다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9575,7 +10026,7 @@ window.WORDORIA_NOVELS = {
       "className": "arkaon",
       "text": "전투 체계… 정지…",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
       "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
     },
@@ -9584,7 +10035,7 @@ window.WORDORIA_NOVELS = {
       "className": "fighter",
       "text": "됐다! 이제 지나갈 수 있겠지?",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9592,7 +10043,7 @@ window.WORDORIA_NOVELS = {
       "className": "scene",
       "text": "(발밑에서 돌이 갈라진다. 바이올렛이 몸을 돌리는 순간 다리 가장자리가 무너진다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9600,7 +10051,7 @@ window.WORDORIA_NOVELS = {
       "className": "ranger",
       "text": "앗!",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9608,7 +10059,7 @@ window.WORDORIA_NOVELS = {
       "className": "scene",
       "text": "(아서가 바이올렛의 손을 붙잡는다. 파이터가 뒤에서 아서의 허리띠를 잡고 버틴다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9616,7 +10067,7 @@ window.WORDORIA_NOVELS = {
       "className": "warrior",
       "text": "잡았어! 파이터, 조금만 버텨!",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9624,7 +10075,7 @@ window.WORDORIA_NOVELS = {
       "className": "fighter",
       "text": "버티고 있어! 그런데 이 돌바닥도 오래 못 버티겠는데!",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9632,7 +10083,7 @@ window.WORDORIA_NOVELS = {
       "className": "ranger",
       "text": "골렘이 다리의 마력도 붙들고 있었어. 연결이 끊기면서 무너지는 거야!",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9640,7 +10091,7 @@ window.WORDORIA_NOVELS = {
       "className": "warrior",
       "text": "다시 연결할 수 있어?",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9648,7 +10099,7 @@ window.WORDORIA_NOVELS = {
       "className": "ranger",
       "text": "손이 자유로워지면… 해 볼게!",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9656,7 +10107,7 @@ window.WORDORIA_NOVELS = {
       "className": "scene",
       "text": "(둘이 힘을 모아 바이올렛을 끌어 올린다. 바이올렛이 무릎을 짚고 골렘의 가슴에 남은 문양을 살핀다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9664,7 +10115,7 @@ window.WORDORIA_NOVELS = {
       "className": "ranger",
       "text": "여기야. 끊어진 문양만 이어 주면 돼!",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9672,7 +10123,7 @@ window.WORDORIA_NOVELS = {
       "className": "fighter",
       "text": "방금 쓰러뜨렸는데 다시 깨우자고?",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9680,7 +10131,7 @@ window.WORDORIA_NOVELS = {
       "className": "warrior",
       "text": "다리를 살리려면 이 수호자의 힘이 필요해. 내가 받칠게.",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9688,7 +10139,7 @@ window.WORDORIA_NOVELS = {
       "className": "scene",
       "text": "(아서와 파이터가 기울어진 골렘의 팔을 떠받친다. 바이올렛이 갈라진 문양 사이로 마력을 흘려보낸다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9696,7 +10147,7 @@ window.WORDORIA_NOVELS = {
       "className": "arkaon",
       "text": "보조 회로… 복구… 교량 유지 명령… 재개…",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
       "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
     },
@@ -9705,15 +10156,7 @@ window.WORDORIA_NOVELS = {
       "className": "scene",
       "text": "(골렘이 커다란 손으로 다리의 균열을 누른다. 흔들림이 멎는다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
-    },
-    {
-      "speaker": "배경",
-      "className": "scene",
-      "text": "안정된 돌다리와 열린 석문 / BGM: 조용한 탐색 테마",
-      "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9721,7 +10164,7 @@ window.WORDORIA_NOVELS = {
       "className": "fighter",
       "text": "후아… 이번에는 우리가 널 고쳤네.",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9729,7 +10172,7 @@ window.WORDORIA_NOVELS = {
       "className": "arkaon",
       "text": "통로… 안정… 잔여 전력… 부족…",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
       "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
     },
@@ -9738,7 +10181,7 @@ window.WORDORIA_NOVELS = {
       "className": "ranger",
       "text": "더 움직이지 마. 지금은 다리를 지탱하는 것만으로 충분해.",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9746,7 +10189,7 @@ window.WORDORIA_NOVELS = {
       "className": "warrior",
       "text": "안쪽에도 너 같은 수호자가 있어?",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9754,7 +10197,7 @@ window.WORDORIA_NOVELS = {
       "className": "arkaon",
       "text": "성흔 보관실… 최종 수호자… 대기 중…",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
       "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
     },
@@ -9763,7 +10206,7 @@ window.WORDORIA_NOVELS = {
       "className": "fighter",
       "text": "역시 하나로 끝나지는 않는구나.",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9771,7 +10214,7 @@ window.WORDORIA_NOVELS = {
       "className": "arkaon",
       "text": "성흔의 파편… 반출에는… 수호자의 승인… 필요…",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
       "artPath": "assets/novel/characters/char_arkaon_world7c_standing.webp"
     },
@@ -9780,7 +10223,7 @@ window.WORDORIA_NOVELS = {
       "className": "warrior",
       "text": "알겠어. 직접 만나 볼게.",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9788,7 +10231,7 @@ window.WORDORIA_NOVELS = {
       "className": "scene",
       "text": "(골렘 뒤의 석문이 조금씩 열린다. 파이터가 먼저 건너편의 단단한 바닥을 확인한다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9796,7 +10239,7 @@ window.WORDORIA_NOVELS = {
       "className": "fighter",
       "text": "이쪽은 괜찮아! 한 명씩 건너와!",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9804,7 +10247,7 @@ window.WORDORIA_NOVELS = {
       "className": "ranger",
       "text": "돌아올 때까지 다리가 버텨 주면 좋겠네.",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9812,7 +10255,7 @@ window.WORDORIA_NOVELS = {
       "className": "warrior",
       "text": "고마워. 우리 모두 무사히 돌아올게.",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
@@ -9820,15 +10263,789 @@ window.WORDORIA_NOVELS = {
       "className": "scene",
       "text": "(골렘의 희미한 푸른 눈빛을 뒤로하고 세 사람이 석문 안으로 들어간다.)",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 봉인의 돌다리 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    }
+  ],
+  "world7cBossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오래된 마법 병기들이 멈춰 선 복도를 지나자 거대한 문이 나타난다. 문에는 날개 달린 존재를 여러 사람이 둘러싼 부조가 새겨져 있다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     },
     {
-      "speaker": "다음 스토리",
-      "className": "scene",
-      "text": "[성흔 보관실의 수호기사](world-7c-boss-start.md)",
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저 날개… 타락한 천사인가?",
       "scene": "world-7c",
-      "location": "왕국 지하 던전 · 봉인의 돌다리",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아마도. 이쪽은 그를 봉인했던 사람들이겠지.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 부조 아래의 글자를 따라 손을 움직인다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "여기에도 글이 있어. 하지만 많이 닳았어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "읽을 수 있는 부분만 볼게. ‘힘이 돌아오는 길을 끊고…’ 그다음은 지워졌네.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "주교님이 말한 신성력의 핵과 관계가 있을까?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "안에 있는 기록을 보면 알 수 있을지도 몰라.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 문을 밀자 안쪽의 수정등이 차례로 켜진다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(방 가운데 작은 빛의 파편이 떠 있다. 그 앞에는 검과 방패를 든 빈 갑옷이 서 있다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저거야? 생각보다 작네.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "가까이 가기만 해도 마력이 흔들려. 조심해.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갑옷의 투구 안에 푸른 빛이 켜진다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "성흔 보관실에 도달한 자들이여. 목적을 밝혀라.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "타락한 천사가 다시 나타났어. 그의 힘을 막기 위해 성흔의 파편이 필요해.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "봉인의 해제는 감지했다. 그러나 외부의 소식만으로 유물을 내줄 수는 없다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 여기서 계속 지키고만 있을 거야? 밖에서는 사람들이 위험하다고!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "이 파편을 빼앗아 봉인된 자에게 바치려는 이들도 있었다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그래서 문을 열어 준 주교님의 허락만으로는 부족한 거구나.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "그렇다. 문을 여는 권한과 파편을 맡는 자격은 다르다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "어떻게 하면 우리를 믿어 주겠어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "검을 들어라. 너희가 위험 앞에서 어떻게 행동하는지 확인하겠다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(수호기사가 방패를 들어 올린다. 보관대 둘레에 빛의 벽이 생긴다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "또 실력 시험이네. 엘리엇 님한테 배운 걸 벌써 써먹겠어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "방패와 보관대가 연결되어 있어. 힘으로 밀어붙이면 공격이 되돌아올 거야.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그러면 서로 신호를 맞추자. 혼자 들어가지 말고.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "마지막으로 묻겠다. 이 유물을 위해 무엇을 내놓을 수 있느냐?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "위험은 감수하겠어. 하지만 동료를 희생시키겠다는 약속은 할 수 없어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(수호기사가 잠시 멈췄다가 검을 앞으로 겨눈다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "그 대답을 끝까지 지켜라. 심판을 시작한다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    }
+  ],
+  "world7cBossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(수호기사의 방패에 금이 간다. 검끝이 바닥에 닿고 투구의 빛이 낮아진다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "전투… 종료…",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검을 거둔다. 파이터도 들고 있던 무기를 내린다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이제 통과한 거지? 더 움직이는 갑옷은 없는 거지?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "잠깐, 보관대의 마력이 새고 있어!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(깨진 방패에서 가느다란 빛줄기가 튄다. 바이올렛이 보관대의 문양을 눌러 흐름을 안정시키고, 두 사람이 곁을 지킨다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "괜찮아?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "응. 이제 안정됐어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "유물을 향해 달려갈 수도 있었다. 어째서 멈추었느냐?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "바이올렛이 위험하다고 했잖아. 먼저 확인해야지.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "너희는 전투 중에도 서로의 목소리를 놓치지 않았다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "혼자서는 여기까지 오지도 못했을걸.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "인정한다. 성흔의 파편을 너희에게 맡기겠다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(빛의 벽이 사라진다. 아서가 보관대 앞에 서자 손바닥만 한 파편이 천천히 내려온다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이걸로 천사의 신성력의 핵을 부술 수 있는 거야?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "파편은 신성력을 흔들어 핵을 감싼 보호막에 틈을 낸다. 핵에 닿을 길을 열어 주는 것이다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그 틈이 생겼을 때 우리가 공격해야 한다는 뜻이네.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "그렇다. 틈은 오래 유지되지 않는다. 서로의 움직임을 맞춰야 한다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "좋아. 방금처럼 하면 되겠네!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "예전에 싸웠던 사람들은 왜 천사를 쓰러뜨리지 못했어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "그들은 파편으로 보호막을 열었다. 그러나 핵에 이르기 전에 힘을 소진했다. 살아남은 이들은 남은 힘을 모아 천사를 봉인했다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "주교님이 말씀하신 마지막 봉인…",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "파편을 가졌다는 이유로 승리를 확신하지 마라. 준비 없이 쓰면 같은 일을 되풀이하게 된다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 파편을 천으로 감싸 조심스럽게 보관한다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "기억할게. 이걸 쓸 방법부터 제대로 배우겠어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 보관대 뒤에서 깨진 기록석을 발견한다. 표면의 문자들이 희미하게 떠오른다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "여기 마지막 봉인에 대한 기록이 있어. 천사를 가둔 힘은 남아 있었는데… 누군가 바깥에서 봉인을 열었대.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "스스로 빠져나온 게 아니었어?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "해제 명령은 외부에서 들어왔다. 명령을 보낸 자의 신원은 남아 있지 않다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그런 중요한 건 왜 안 남아 있는 거야?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "기록이 끊긴 부분이 있어. 오래돼서 망가진 건지, 누가 지운 건지는 모르겠어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "주교님께 보여 드리자. 봉인에 대해 아시니까 읽을 방법이 있을지도 몰라.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "기록의 사본을 가져가도 좋다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 남은 문양과 글자를 종이에 옮긴다. 수호기사가 돌아가는 통로를 연다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "봉인의 수호기사",
+      "className": "scene",
+      "text": "지상으로 향하는 길을 열었다. 파편과 함께 돌아가라.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "고마워. 당신이 지켜 온 걸 헛되게 하지 않을게.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세 사람이 열린 통로로 나간다. 수호기사는 빈 보관대 옆에 검을 세우고 다시 고요해진다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    }
+  ],
+  "world7cEpilogue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "성흔의 파편 획득 후 · 왕성 부속 대성당",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(지하에서 올라오는 계단 끝에 주교가 서 있다. 아서, 파이터, 바이올렛이 먼지 묻은 모습으로 걸어 나온다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "돌아오셨군요. 모두 무사합니까?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "다리까지 무너져서 큰일 날 뻔했어. 그래도 셋 다 멀쩡해!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "안쪽 수호자의 승인을 받았어요. 파편도 가져왔고요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 천을 펼친다. 성흔의 파편이 대성당의 빛을 받아 은은하게 반짝인다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "기록에서 보던 모습 그대로군요… 오랫동안 누구도 가져오지 못했던 것을.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이걸로 보호막을 흔들 수는 있지만, 핵을 파괴하는 건 저희가 해야 한다고 들었어요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "그렇습니다. 이제부터 사용법과 과거의 전투 기록을 함께 살펴봐야겠군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "바로 천사를 찾으러 가는 건 아니구나.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "준비 없이 가면 전에 싸웠던 분들과 같은 일을 겪을 수 있어. 이번에는 끝까지 해내야 해.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 기록석에서 옮긴 종이를 책상 위에 펼친다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "수호자의 기록이에요. 누군가 외부에서 봉인 해제 명령을 보냈대요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "외부에서… 그렇다면 봉인이 약해지기만을 기다렸던 것은 아니군요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "누가 이런 명령을 내릴 수 있나요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주교가 오래된 장부를 꺼내 종이 옆에 놓는다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "당시 봉인에 참여했던 이들의 기록부터 확인해야겠습니다. 이 문양만으로 누군가를 지목할 수는 없습니다.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "기록이 중간에 끊겨 있어요. 남은 부분만으로 복원할 수 있을까요?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "주교",
+      "className": "scene",
+      "text": "다른 사본과 대조해 보겠습니다. 엘리엇에게도 기사단에 남은 자료를 찾아 달라고 부탁하지요.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "천사를 막을 방법도 찾고, 누가 풀어 줬는지도 알아내야 하네.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 다시 같은 일이 일어나게 둘 수는 없어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주교가 기록을 살피는 동안 일행은 엘리엇에게 돌아갈 준비를 한다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "먼저 쉬고 오라고 하셨어. 자료를 찾는 데 시간이 좀 걸리겠지.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "다행이다. 나 이제 배고파서 검도 못 들겠어.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "스승님께 무사히 돌아왔다고 말씀드리자. 파편도 보여 드리고.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "이번에는 시험부터 보자고 하시는 거 아니야?",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그건 내일! 아니, 며칠 뒤에!",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 웃으며 파편을 넣은 주머니의 매듭을 확인한다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "오늘은 쉬자. 셋 다 돌아왔으니까.",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세 사람이 나란히 대성당 계단을 내려간다. 뒤편 기록실에는 늦도록 불빛이 남아 있다.)",
+      "scene": "world-7c",
+      "location": "왕국 지하 던전 · 대성당 · 에필로그",
       "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
     }
   ],

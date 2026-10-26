@@ -1,0 +1,150 @@
+TAP version 13
+# Subtest: 220 HP, five minutes, unique five-pair boards and vocabulary cycles for both pool sizes
+ok 1 - 220 HP, five minutes, unique five-pair boards and vocabulary cycles for both pool sizes
+  ---
+  duration_ms: 12.46
+  ...
+# Subtest: storm starts every ten seconds; release precedes contact and shuffle preserves answered cards
+ok 2 - storm starts every ten seconds; release precedes contact and shuffle preserves answered cards
+  ---
+  duration_ms: 2.2374
+  ...
+# Subtest: all crossed HP thresholds queue exactly one throw apiece, including multi-threshold hits
+ok 3 - all crossed HP thresholds queue exactly one throw apiece, including multi-threshold hits
+  ---
+  duration_ms: 0.8603
+  ...
+# Subtest: pause freezes everything; ice freezes countdown/idle and defers queued casts; wrong releases it
+ok 4 - pause freezes everything; ice freezes countdown/idle and defers queued casts; wrong releases it
+  ---
+  duration_ms: 0.9396
+  ...
+# Subtest: ice ends at five-pair group completion, shared MP activation/overlay works again after potion restoration
+ok 5 - ice ends at five-pair group completion, shared MP activation/overlay works again after potion restoration
+  ---
+  duration_ms: 5.776
+  ...
+# Subtest: reduced motion preserves release before a single contact; clear/death cancels queued attacks
+ok 6 - reduced motion preserves release before a single contact; clear/death cancels queued attacks
+  ---
+  duration_ms: 1.1389
+  ...
+# Subtest: lethal contact cancels pending skills, holds fully down frame, and permits last-millisecond victory
+ok 7 - lethal contact cancels pending skills, holds fully down frame, and permits last-millisecond victory
+  ---
+  duration_ms: 4.29
+  ...
+# Subtest: real runtime selection reaches the boss instead of being rejected; renderer uses SD and shared active skills
+ok 8 - real runtime selection reaches the boss instead of being rejected; renderer uses SD and shared active skills
+  ---
+  duration_ms: 5.088
+  ...
+# Subtest: runtime and native staging include boss, sprite contracts agree with release/contact and final hold
+ok 9 - runtime and native staging include boss, sprite contracts agree with release/contact and final hold
+  ---
+  duration_ms: 7.336
+  ...
+# Subtest: 7B narrative uses the standing CG for Dark Triton while preserving other speakers
+ok 10 - 7B narrative uses the standing CG for Dark Triton while preserving other speakers
+  ---
+  duration_ms: 25.7289
+  ...
+# Subtest: World 7B-15 has 200 HP, five-minute matching and three independent 12% rolls
+ok 11 - World 7B-15 has 200 HP, five-minute matching and three independent 12% rolls
+  ---
+  duration_ms: 2.3551
+  ...
+# Subtest: five unique pairs per board and unique vocabulary cycles before reuse
+ok 12 - five unique pairs per board and unique vocabulary cycles before reuse
+  ---
+  duration_ms: 11.0595
+  ...
+# Subtest: every HP threshold triggers once; skipped thresholds queue full 10-second windows
+ok 13 - every HP threshold triggers once; skipped thresholds queue full 10-second windows
+  ---
+  duration_ms: 1.5306
+  ...
+# Subtest: all five thresholds trigger at 50/40/30/20/10 percent and survive board transitions
+ok 14 - all five thresholds trigger at 50/40/30/20/10 percent and survive board transitions
+  ---
+  duration_ms: 0.6518
+  ...
+# Subtest: pause freezes everything; ice pauses clock/stealth/idle while attacks resolve
+ok 15 - pause freezes everything; ice pauses clock/stealth/idle while attacks resolve
+  ---
+  duration_ms: 0.9418
+  ...
+# Subtest: wrong answer releases ice and pause rejects selection
+ok 16 - wrong answer releases ice and pause rejects selection
+  ---
+  duration_ms: 0.3847
+  ...
+# Subtest: shared mage activation spends MP, shows the 1.2-second overlay and allows restored MP reuse
+ok 17 - shared mage activation spends MP, shows the 1.2-second overlay and allows restored MP reuse
+  ---
+  duration_ms: 5.7118
+  ...
+# Subtest: projectile release precedes contact, reduced motion preserves three contacts
+ok 18 - projectile release precedes contact, reduced motion preserves three contacts
+  ---
+  duration_ms: 0.843
+  ...
+# Subtest: death cancels remaining spears; lethal boss hit holds knockdown and releases all effects
+ok 19 - death cancels remaining spears; lethal boss hit holds knockdown and releases all effects
+  ---
+  duration_ms: 0.9155
+  ...
+# Subtest: three visible releases are spaced 500ms apart, with 600ms of flight each
+ok 20 - three visible releases are spaced 500ms apart, with 600ms of flight each
+  ---
+  duration_ms: 1.4364
+  ...
+# Subtest: a lethal hit on the last timer millisecond finishes the defeat animation before victory
+ok 21 - a lethal hit on the last timer millisecond finishes the defeat animation before victory
+  ---
+  duration_ms: 4.1142
+  ...
+# Subtest: runtime routes encounter, intro, matching, ice overlay, cleanup and native staging
+ok 22 - runtime routes encounter, intro, matching, ice overlay, cleanup and native staging
+  ---
+  duration_ms: 4.7132
+  ...
+# Subtest: real matching renderer runs with active skill hints and masks every English card
+ok 23 - real matching renderer runs with active skill hints and masks every English card
+  ---
+  duration_ms: 4.6862
+  ...
+# Subtest: production strips match timing contracts, RGBA cells and declared contact/release frames
+ok 24 - production strips match timing contracts, RGBA cells and declared contact/release frames
+  ---
+  duration_ms: 4.618
+  ...
+# Subtest: 7B shares all thirty 7A vocabulary pools; Nereus has a dedicated 200-HP matching battle
+ok 25 - 7B shares all thirty 7A vocabulary pools; Nereus has a dedicated 200-HP matching battle
+  ---
+  duration_ms: 16.7116
+  ...
+# Subtest: 7B is admin-only and retains shared progress across learning levels
+ok 26 - 7B is admin-only and retains shared progress across learning levels
+  ---
+  duration_ms: 8.879
+  ...
+# Subtest: 7B runtime follows thirty measured crystal centers from top to bottom
+ok 27 - 7B runtime follows thirty measured crystal centers from top to bottom
+  ---
+  duration_ms: 9.2205
+  ...
+# Subtest: 7B ordinary lizardmen exclude both boss stages and other worlds
+ok 28 - 7B ordinary lizardmen exclude both boss stages and other worlds
+  ---
+  duration_ms: 7.9871
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 505.0748

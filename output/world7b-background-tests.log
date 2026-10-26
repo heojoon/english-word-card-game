@@ -1,0 +1,140 @@
+TAP version 13
+# Subtest: World 7B-15 has 200 HP, five-minute matching and three independent 12% rolls
+ok 1 - World 7B-15 has 200 HP, five-minute matching and three independent 12% rolls
+  ---
+  duration_ms: 2.4646
+  ...
+# Subtest: five unique pairs per board and unique vocabulary cycles before reuse
+ok 2 - five unique pairs per board and unique vocabulary cycles before reuse
+  ---
+  duration_ms: 10.2211
+  ...
+# Subtest: every HP threshold triggers once; skipped thresholds queue full 10-second windows
+ok 3 - every HP threshold triggers once; skipped thresholds queue full 10-second windows
+  ---
+  duration_ms: 1.9155
+  ...
+# Subtest: all five thresholds trigger at 50/40/30/20/10 percent and survive board transitions
+ok 4 - all five thresholds trigger at 50/40/30/20/10 percent and survive board transitions
+  ---
+  duration_ms: 0.7212
+  ...
+# Subtest: pause freezes everything; ice pauses clock/stealth/idle while attacks resolve
+ok 5 - pause freezes everything; ice pauses clock/stealth/idle while attacks resolve
+  ---
+  duration_ms: 0.9841
+  ...
+# Subtest: wrong answer releases ice and pause rejects selection
+ok 6 - wrong answer releases ice and pause rejects selection
+  ---
+  duration_ms: 0.8275
+  ...
+# Subtest: shared mage activation spends MP, shows the 1.2-second overlay and allows restored MP reuse
+ok 7 - shared mage activation spends MP, shows the 1.2-second overlay and allows restored MP reuse
+  ---
+  duration_ms: 4.523
+  ...
+# Subtest: projectile release precedes contact, reduced motion preserves three contacts
+ok 8 - projectile release precedes contact, reduced motion preserves three contacts
+  ---
+  duration_ms: 0.7585
+  ...
+# Subtest: death cancels remaining spears; lethal boss hit holds knockdown and releases all effects
+ok 9 - death cancels remaining spears; lethal boss hit holds knockdown and releases all effects
+  ---
+  duration_ms: 0.8425
+  ...
+# Subtest: a lethal hit on the last timer millisecond finishes the defeat animation before victory
+ok 10 - a lethal hit on the last timer millisecond finishes the defeat animation before victory
+  ---
+  duration_ms: 3.7657
+  ...
+# Subtest: runtime routes encounter, intro, matching, ice overlay, cleanup and native staging
+ok 11 - runtime routes encounter, intro, matching, ice overlay, cleanup and native staging
+  ---
+  duration_ms: 3.9426
+  ...
+# Subtest: real matching renderer runs with active skill hints and masks every English card
+ok 12 - real matching renderer runs with active skill hints and masks every English card
+  ---
+  duration_ms: 3.9761
+  ...
+# Subtest: production strips match timing contracts, RGBA cells and declared contact/release frames
+ok 13 - production strips match timing contracts, RGBA cells and declared contact/release frames
+  ---
+  duration_ms: 5.0958
+  ...
+# Subtest: World 5 unlocks after World 4 stage 20 and keeps records when the learning level changes
+ok 14 - World 5 unlocks after World 4 stage 20 and keeps records when the learning level changes
+  ---
+  duration_ms: 24.452
+  ...
+# Subtest: World 5 reuses World 4 word pools and assigns its own midboss for both levels
+ok 15 - World 5 reuses World 4 word pools and assigns its own midboss for both levels
+  ---
+  duration_ms: 20.5503
+  ...
+# Subtest: World 5 exposes one continuous map with twenty nodes in descending order
+ok 16 - World 5 exposes one continuous map with twenty nodes in descending order
+  ---
+  duration_ms: 17.2857
+  ...
+# Subtest: World 5 novels preserve spoken lines and stage entries enforce the usual checks
+ok 17 - World 5 novels preserve spoken lines and stage entries enforce the usual checks
+  ---
+  duration_ms: 16.6069
+  ...
+# Subtest: World 5 boss CGs follow possession and recovery without replacing other appearances
+ok 18 - World 5 boss CGs follow possession and recovery without replacing other appearances
+  ---
+  duration_ms: 3.6141
+  ...
+# Subtest: World 5 renders all fourteen scene backgrounds through deployed asset URLs
+ok 19 - World 5 renders all fourteen scene backgrounds through deployed asset URLs
+  ---
+  duration_ms: 101.8388
+  ...
+# Subtest: World 5 narratives load all fourteen scene backgrounds and reveal the spider at its announcement
+ok 20 - World 5 narratives load all fourteen scene backgrounds and reveal the spider at its announcement
+  ---
+  duration_ms: 79.715
+  ...
+# Subtest: World 5 battles select distinct normal, midboss and final boss backgrounds
+ok 21 - World 5 battles select distinct normal, midboss and final boss backgrounds
+  ---
+  duration_ms: 16.2616
+  ...
+# Subtest: World 5 midboss ending only completes a saved win and never restarts the battle
+ok 22 - World 5 midboss ending only completes a saved win and never restarts the battle
+  ---
+  duration_ms: 6.8804
+  ...
+# Subtest: 7B shares all thirty 7A vocabulary pools; Nereus has a dedicated 200-HP matching battle
+ok 23 - 7B shares all thirty 7A vocabulary pools; Nereus has a dedicated 200-HP matching battle
+  ---
+  duration_ms: 13.6665
+  ...
+# Subtest: 7B is admin-only and retains shared progress across learning levels
+ok 24 - 7B is admin-only and retains shared progress across learning levels
+  ---
+  duration_ms: 10.104
+  ...
+# Subtest: 7B runtime follows thirty measured crystal centers from top to bottom
+ok 25 - 7B runtime follows thirty measured crystal centers from top to bottom
+  ---
+  duration_ms: 7.2539
+  ...
+# Subtest: 7B ordinary lizardmen exclude both boss stages and other worlds
+ok 26 - 7B ordinary lizardmen exclude both boss stages and other worlds
+  ---
+  duration_ms: 7.6065
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 948.0077

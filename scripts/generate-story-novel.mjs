@@ -290,6 +290,7 @@ export function parseWorldSevenNarrative(markdown,{world,location}={}){
   for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
     const block=raw.trim();
     if(!block||block.startsWith('#')||block==='---')continue;
+    if(world==='7c'&&(/^(배경:|다음 스토리:|왕국 지하 던전|워드 왕국)/.test(block)||/^\[.*\]$/.test(block)))continue;
     const dialogue=block.startsWith('(')?null:block.match(/^([^:\n]+?):\s*([\s\S]+)$/);
     const speaker=(dialogue?.[1]||'내레이션').trim();
     const text=(dialogue?.[2]||block).replace(/\s*\n\s*/g,' ').trim();
@@ -346,7 +347,7 @@ export async function generateStoryNovel(){
     ['world6bBossStart','world-6b-boss-start.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘리엇의 저택'})],
     ['world6bBossEnd','world-6b-boss-end.md',markdown=>parseWorldSixBNarrative(markdown,{location:'기사단장 엘리엇의 저택 · 시험 통과'})]
   ])novels[key]=parse(await readFile(new URL('../assets/novel/'+filename,import.meta.url),'utf8'));
-  for(const [phase,file] of [['MidbossStart','midboss-start'],['MidbossEnd','midboss-end']])novels[`world7c${phase}`]=parseWorldSevenNarrative(await readFile(new URL(`../assets/novel/world-7c-${file}.md`,import.meta.url),'utf8'),{world:'7c',location:'왕국 지하 던전 · 봉인의 돌다리'});
+  for(const [phase,file,place] of [['Prologue','prologue','대성당 · 프롤로그'],['MidbossStart','midboss-start','봉인의 돌다리'],['MidbossEnd','midboss-end','봉인의 돌다리 · 승리'],['BossStart','boss-start','성흔 보관실'],['BossEnd','boss-end','성흔 보관실 · 승리'],['Epilogue','epilogue','대성당 · 에필로그']])novels[`world7c${phase}`]=parseWorldSevenNarrative(await readFile(new URL(`../assets/novel/world-7c-${file}.md`,import.meta.url),'utf8'),{world:'7c',location:`왕국 지하 던전 · ${place}`});
   for(const world of ['7a','7b']){
     const location=world==='7a'?'심연의 불타는 고대 탑':'심연의 검은 호수';
     for(const [key,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end'],...(world==='7b'?[['Epilogue','epilogue']]:[])]){

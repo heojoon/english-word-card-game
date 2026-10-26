@@ -1,0 +1,52 @@
+from pathlib import Path
+import re, shutil, subprocess
+root=Path('C:/git/english-word-card-game')
+dest=root/'output/sorcerus-deployment'
+def base(path):
+    return subprocess.check_output(['git','-c',f'safe.directory={root.as_posix()}','show',f'origin/main:{path}'],cwd=root).decode('utf-8')
+current=(root/'crystal-game.js').read_text(encoding='utf-8')
+s=base('crystal-game.js')
+def section(text,start,end):return text[text.index(start):text.index(end,text.index(start))]
+def replace_section(start,end,value):
+    global s
+    s=s.replace(section(s,start,end),value,1)
+line=next(line for line in current.splitlines() if line.startswith('      stages[stage.key]='))
+line=re.sub(r"stage\.number===20\?'[^']*':",'',line,count=1).replace('stage.number===20?200:','').replace('lichDragon:chapter===5&&stage.number===20,','')
+old=next(line for line in s.splitlines() if line.startswith('      stages[stage.key]='))
+s=s.replace(old,line,1)
+s=s.replace('  function buildQuestionDeck(source){','  function buildQuestionDeck(source){\n    if(source.sorcerus)return window.WORDORIA_SORCERUS.deck(source.words,shuffle);',1)
+intro=section(current,'  function bossIntroductionMarkup(','  function confirmStoryStage(')
+intro=re.sub(r"const info=chapter===5&&stage.number===20\?\{[^\n]+\}\n      :chapter===5",'const info=chapter===5',intro,count=1)
+replace_section('  function bossIntroductionMarkup(','  function confirmStoryStage(',intro)
+start=section(current,'  function startBattle(','  function prepareQuestion(')
+start=start.replace('(source.lichDragon&&run?.lichDragon)||','')
+start='\n'.join(line for line in start.split('\n') if 'if(source.lichDragon)Object.assign' not in line)
+replace_section('  function startBattle(','  function prepareQuestion(',start)
+prepare=section(current,'  function prepareQuestion(','  function initializeBattlePet(')
+prepare=prepare.replace("if(run.lichDragon){window.WORDORIA_LICH_DRAGON.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}",'')
+replace_section('  function prepareQuestion(','  function initializeBattlePet(',prepare)
+s=s.replace('  function renderGuardianBattle(){',section(current,'  function renderSorcerusBattle(','  function renderGuardianBattle(')+'  function renderGuardianBattle(){\n    if(run.sorcerus)return renderSorcerusBattle();',1)
+answer=section(current,'  function guardianAnswer(','  function advanceGuardianBattle(').replace('if(run?.redReaper||run?.lichDragon)return;','if(run?.redReaper)return;')
+replace_section('  function guardianAnswer(','  function advanceGuardianBattle(',answer)
+advance=section(current,'  function advanceGuardianBattle(','  function renderRoyalSlimeBattle(').replace('    if(run?.lichDragon){advanceLichDragonBattle(delta,clockDelta);return;}\n','')
+replace_section('  function advanceGuardianBattle(','  function renderRoyalSlimeBattle(',advance)
+pause=section(current,'  function pause(','  function cancelSpeech(').replace('run.lichDragon||','')
+replace_section('  function pause(','  function cancelSpeech(',pause)
+replace_section('  async function finishBattle(','  async function saveBattleResult(',section(current,'  async function finishBattle(','  async function saveBattleResult('))
+s=s.replace("else if(action==='start'||action==='retry')startBattle();","else if(action==='start'||action==='retry')startBattle(Boolean(action==='retry'&&run?.sorcerus));",1)
+assert 'lichDragon' not in s and 'LICH_DRAGON' not in s
+(dest/'crystal-game.js').write_text(s,encoding='utf-8')
+css=(root/'crystal-game.css').read_text(encoding='utf-8')
+addition=css[css.index('.sorcerus-arena .guardian-enemy'):css.index('/* World 5 final boss:')]
+(dest/'crystal-game.css').write_text(base('crystal-game.css')+'\n'+addition,encoding='utf-8')
+s=base('index.html').replace('  <script src="guardian-boss.js','  <script src="sorcerus-boss.js?v=20261016-sd-animation" defer></script>\n  <script src="guardian-boss.js').replace('crystal-game.js?v=20261016-world5-scenes','crystal-game.js?v=20261016-sd-animation').replace('crystal-game.css?v=20261016-world5-scenes','crystal-game.css?v=20261016-sd-animation')
+(dest/'index.html').write_text(s,encoding='utf-8')
+s=base('scripts/build-web.mjs').replace("'story-novel.js', 'guardian-boss.js'","'story-novel.js', 'sorcerus-boss.js', 'guardian-boss.js'")
+(dest/'scripts/build-web.mjs').write_text(s,encoding='utf-8')
+s=base('tests/story-world-five.test.mjs').replace("  c.configureStoryContent();","  vm.runInContext(read('sorcerus-boss.js'),c);\n  c.configureStoryContent();",1).replace("assert.equal(stage.questionCount,level==='middle'?60:40);","assert.equal(stage.questionCount,number===10?120:level==='middle'?60:40);\n      assert.equal(stage.sorcerus,number===10);")
+s=s.replace('assert.match(stage.desc,/월드 4 단어 임시 재사용/);','assert.match(stage.desc,number===10?/이성을 잃은 소서러스/:/월드 4 단어 임시 재사용/);')
+(dest/'tests/story-world-five.test.mjs').write_text(s,encoding='utf-8')
+shutil.copy2(root/'sorcerus-boss.js',dest/'sorcerus-boss.js')
+shutil.copy2(root/'tests/sorcerus-boss.test.mjs',dest/'tests/sorcerus-boss.test.mjs')
+shutil.copytree(root/'assets/monsters/sorcerus',dest/'assets/monsters/sorcerus',dirs_exist_ok=True)
+print('Prepared isolated midboss source, assets and tests; no unrelated final-boss, pet or database changes.')

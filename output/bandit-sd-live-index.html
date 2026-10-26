@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7ff">
+  <meta name="description" content="영단어 정답이 마법 공격이 되는 크리스털 퀘스트">
+  <title>Wordoria · Crystal Quest</title>
+  <link rel="stylesheet" href="playable-preview.css?v=20260911-2">
+  <link rel="stylesheet" href="crystal-game.css?v=20261019-bandit-sd">
+  <link rel="stylesheet" href="assets/characters/mage/starlight-rose-skin/battle.css?v=20261009-star-animation">
+  <link rel="stylesheet" href="title-screen.css?v=20261007-learning-levels">
+  <script src="app-config.js?v=20260916-2" defer></script>
+  <script src="title-screen.js?v=20261008-production-db" defer></script>
+  <script src="stages.js?v=20260909-rpg" defer></script>
+  <script src="stage6.js?v=20260911-hq" defer></script>
+  <script src="stage7.js?v=20260914-day02" defer></script>
+  <script src="stage8.js?v=20261009-story-temple" defer></script>
+  <script src="stage15.js?v=20261012-world4-day11-30" defer></script>
+  <script src="stage35.js?v=20261018-world6a-day1-10" defer></script>
+  <script src="native-bridge.js?v=20260911-1" defer></script>
+  <script src="elementary-stages.js?v=20261013-world4-admin-test" defer></script>
+  <script src="remote-content.js?v=20261007-learning-levels" defer></script>
+  <script src="sound-manager.js?v=20261010-bgm-only" defer></script>
+  <script src="pet-system.js?v=20261016-lich-dragon" defer></script>
+  <script src="black-dragon-boss.js?v=20261013-pet-shop" defer></script>
+  <script src="red-reaper-boss.js?v=20261014-reaper-chance60" defer></script>
+  <script src="shadow-sorceress-boss.js?v=20261013-shadow-boss" defer></script>
+  <script src="lich-dragon-boss.js?v=20261016" defer></script>
+  <script src="bandit-chief-boss.js?v=20261019-bandit-sd" defer></script>
+  <script src="sorcerus-boss.js?v=20261016-midboss" defer></script>
+  <script src="guardian-boss.js?v=20261013-pet-shop" defer></script>
+  <script src="story-novel.js?v=20261018-world5-victory-male-mage" defer></script>
+  <script src="crystal-game.js?v=20261019-bandit-sd" defer></script>
+</head>
+<body class="entry-active" data-screen="loading">
+  <div class="preview-label"><span>CRYSTAL QUEST</span><span>STUDY = BATTLE</span></div>
+  <div class="phone">
+    <section id="entry-screen" class="entry-screen" aria-labelledby="entry-game-title" aria-busy="true">
+      <img id="entry-background" class="entry-background" alt="크리스털 성문 앞에 모인 마법사, 전사, 궁수 모험가">
+      <div class="entry-shell">
+        <header class="entry-brand">
+          <span class="entry-brand-mark">WORDORIA</span>
+          <h1 id="entry-game-title" class="entry-title"><span>CRYSTAL</span><span>QUEST</span></h1>
+          <p class="entry-tagline">STUDY = BATTLE</p>
+        </header>
+        <form id="entry-form" class="entry-auth" novalidate>
+          <h2 id="entry-form-title">모험을 시작하세요</h2>
+          <div class="entry-fields">
+            <label><span>로그인 아이디</span><input id="entry-email" type="text" inputmode="text" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" placeholder="아이디" required></label>
+            <label><span>비밀번호</span><input id="entry-password" type="password" autocomplete="current-password" placeholder="비밀번호" required></label>
+            <label id="entry-confirm-wrap" hidden><span>비밀번호 확인</span><input id="entry-confirm-password" type="password" autocomplete="new-password" placeholder="비밀번호 확인"></label>
+            <label id="entry-level-wrap" hidden><span>당신의 레벨</span><select id="entry-learning-level" aria-label="당신의 레벨"><option value="">당신의 레벨을 선택하세요</option><option value="elementary">초등학생</option><option value="middle">중학생</option><option value="high" disabled>고등학생 · 준비 중</option><option value="adult" disabled>일반인 · 준비 중</option></select></label>
+          </div>
+          <button id="entry-submit" class="entry-submit" type="submit" disabled>확인 중…</button>
+          <div class="entry-secondary">
+            <button id="entry-switch-mode" type="button" disabled>회원가입</button><i aria-hidden="true"></i><button id="entry-guest" type="button" disabled>손님으로 시작</button>
+          </div>
+          <p id="entry-status" class="entry-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <small id="entry-release" class="entry-release"></small>
+    </section>
+    <header class="topbar">
+      <button data-action="home" class="wordmark" aria-label="Wordoria 홈">WORDORIA</button>
+      <span id="topbar-action" class="topbar-action"></span>
+    </header>
+    <main id="screen" tabindex="-1"><div class="boot"><i></i><b>모험가 기록을 불러오는 중…</b></div></main>
+    <nav id="nav" aria-label="주 메뉴"></nav>
+  </div>
+  <noscript>게임을 시작하려면 JavaScript를 활성화해 주세요.</noscript>
+  <footer class="preview-footer"><span id="connection-status">데이터베이스 연결 중…</span></footer>
+  <dialog id="dialog"><div id="dialog-content"></div><button class="dialog-close" data-action="close" aria-label="닫기">×</button></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+> wordoria-crystal-quest@1.1.1 build
+> npm run build:novel && node --check crystal-game.js && npm run build:content && npm run build:native && npm run build:auth && npm run build:creator && node scripts/build-web.mjs
+
+
+> wordoria-crystal-quest@1.1.1 build:novel
+> node scripts/generate-story-novel.mjs
+
+Prepared visual novels: world2Prologue: 81 / world2BossStart: 160 / world2BossEnd: 66 / world3Prologue: 86 / world3BossStart: 74 / world3BossEnd: 85 / world4Prologue: 19 / world4MidbossStart: 39 / world4MidbossEnd: 10 / world4BossStart: 33 / world4BossEnd: 43 / world5Prologue: 31 / world5MidbossStart: 26 / world5MidbossEnd: 27 / world5BossStart: 36 / world5BossEnd: 37 / world6aPrologue: 24 / world6aMidbossStart: 30 / world6aMidbossEnd: 50 / world6aBossStart: 44 / world6aBossEndPrelude: 67 / world6aBossEndKill: 8 / world6aBossEndSpare: 11 / world6bPrologue: 13 / world6bMidbossStart: 7 / world6bMidbossEndPrelude: 4 / world6bMidbossEndRelease: 4 / world6bMidbossEndArrest: 3 / world6bCapital: 9 / world6bBossStart: 10 / world6bBossEnd: 14 / world7aPrologue: 43 / world7aMidbossStart: 42 / world7aMidbossEnd: 41 / world7aBossStart: 42 / world7aBossEnd: 45 / world7bPrologue: 33 / world7bMidbossStart: 26 / world7bMidbossEnd: 28 / world7bBossStart: 30 / world7bBossEnd: 37 / world7bEpilogue: 50 / world4Potion4: 6 / world4Potion8: 6 / world4Potion12: 6 / world4Potion16: 6 beats.
+
+> wordoria-crystal-quest@1.1.1 build:content
+> node scripts/generate-content-catalog.mjs
+
+Generated content/catalog.json (81 stages, version 9f66b21a5e5e).
+
+> wordoria-crystal-quest@1.1.1 build:native
+> esbuild mobile/native-entry.js --bundle --format=iife --minify --outfile=native-bridge.js
+
+
+  native-bridge.js  10.9kb
+
+Done in 293ms
+
+> wordoria-crystal-quest@1.1.1 build:auth
+> esbuild title-screen-entry.js --bundle --format=iife --minify --outfile=title-screen.js
+
+
+  title-screen.js  224.3kb
+
+Done in 674ms
+
+> wordoria-crystal-quest@1.1.1 build:creator
+> esbuild map-creator-entry.js --bundle --format=iife --minify --outfile=map-creator.js
+
+
+  map-creator.js  246.0kb
+
+Done in 404ms
+Prepared dist\ for Capacitor.

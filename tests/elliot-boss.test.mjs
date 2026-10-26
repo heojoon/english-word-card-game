@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const window={};vm.runInNewContext(read('elliot-boss.js'),{window});
 const rules=window.WORDORIA_ELLIOT;
-const fresh=()=>({...rules.reset(),hp:100,hpMax:100,index:0,correct:0,elapsed:0,bossAttackSteps:1});
+const fresh=()=>({...rules.reset(),elliotNextInactivity:Infinity,hp:100,hpMax:100,index:0,correct:0,elapsed:0,bossAttackSteps:1});
 const hit=(s,damage=1)=>{s.bossAttackSteps=damage;assert.ok(rules.answer(s,true,200));rules.advance(s,200);rules.advance(s,300);};
 
 test('Elliot uses 500 HP, 90 seconds, 800 crystals and stable vocabulary cycles',()=>{
@@ -30,9 +30,9 @@ test('simultaneous shield and sword retain the sword cast and apply a single hit
   const s=fresh();rules.advance(s,60000);const hp=s.hp;assert.equal(s.elliotAction,'shield');
   rules.advance(s,600);assert.equal(s.elliotAction,'attack');rules.advance(s,399);assert.equal(s.hp,hp);rules.advance(s,1);assert.equal(s.hp,hp-1);
 });
-test('victory requires both complete survival and HP <= 250; zero boss HP never wins early',()=>{
-  for(const hp of [250,0]){const s=fresh();s.bossHp=hp;assert.equal(rules.won(s),false);const events=rules.advance(s,89999);assert.ok(!events.includes('victory'));assert.ok(rules.advance(s,1).includes('victory'));assert.equal(s.elapsed,90000);}
-  const s=fresh();s.bossHp=251;assert.ok(rules.advance(s,90000).includes('trial-failed'));assert.equal(rules.won(s),false);
+test('victory requires survival only; zero boss HP never wins early',()=>{
+  for(const hp of [500,251,250,0]){const s=fresh();s.bossHp=hp;assert.equal(rules.won(s),false);const events=rules.advance(s,89999);assert.ok(!events.includes('victory'));assert.ok(rules.advance(s,1).includes('victory'));assert.equal(s.elapsed,90000);}
+  const s=fresh();s.hp=0;assert.ok(rules.advance(s,90000).includes('defeat-player'));assert.equal(rules.won(s),false);
 });
 test('large clock steps and small clock steps produce the same skills, HP and outcome',()=>{
   const a=fresh(),b=fresh();a.bossHp=b.bossHp=250;let hits=0;
@@ -107,4 +107,19 @@ test('capital story leads to trial introduction, then battle; success dialogue r
   vm.runInContext(source.slice(start,source.indexOf('\n',start)),c);
   c.completeStoryDialogue();assert.equal(c.page,'storyChapterSixBBossStart');assert.equal(c.storyDialogueIndex,0);
   c.completeStoryDialogue();assert.equal(c.started,true);c.page='storyChapterSixBBossEnd';c.run.done=true;c.completeStoryDialogue();assert.equal(c.page,'result');
+});
+
+// Keep the existing periodic-skill tests isolated; exercise the real inactivity clock here.
+test('three seconds without damage triggers two consecutive swords and repeats',()=>{
+ const s={...fresh(),elliotNextInactivity:rules.INACTIVITY_MS};
+ assert.ok(!rules.advance(s,2999).includes('aura-start'));
+ assert.ok(rules.advance(s,1).includes('inactivity-punish'));assert.equal(s.elliotAction,'attack');
+ const events=rules.advance(s,1160);assert.equal(events.filter(x=>x==='aura-hit').length,2);assert.equal(s.hp,98);
+ assert.ok(rules.advance(s,1840).includes('inactivity-punish'));
+});
+test('only actual damage resets inactivity; frozen clocks do not advance it',()=>{
+ const s={...fresh(),elliotNextInactivity:3000};rules.advance(s,2000);hit(s,7);assert.equal(s.elliotNextInactivity,5200);
+ s.paused=true;rules.advance(s,10000);s.paused=false;s.iceTimeActive=true;rules.advance(s,10000);s.iceTimeActive=false;rules.advance(s,10000,Math.random,0);assert.equal(s.elliotClock,2500);
+ s.elliotShieldUntil=10000;hit(s);assert.equal(s.elliotNextInactivity,5200);
+ assert.ok(rules.advance(s,2200).includes('inactivity-punish'));
 });

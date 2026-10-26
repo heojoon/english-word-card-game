@@ -26,15 +26,15 @@ test('World 7 entry and dialogue completion route each milestone and the 7B epil
   const c=vm.createContext({stages:{},storyStageUnlocked:()=>true,levelReady:()=>true,storyEntryAllowed:()=>true,closeDialog(){},go(p){c.page=p;},startBattle(){c.page='battle';}});
   vm.runInContext(slice('  function startStoryStage(','  function renderStages('),c);
   vm.runInContext(slice('  function worldSevenNovelKey(','  function storyDialogueLines('),c);
-  for(const chapter of [8,9])for(const [number,phase] of [[1,'Intro'],[15,'MidbossStart'],[30,'BossStart'],[2,null]]){
+  for(const chapter of [8,9,10])for(const [number,phase] of [[1,'Intro'],[chapter===10?10:15,'MidbossStart'],[30,'BossStart'],[2,null]]){
     const stage={key:'stage',chapter,number};c.storyStages=[stage];c.stages.stage={storyChapter:chapter};
     c.startStoryStage('stage');
     assert.equal(c.page,phase?`storyChapterSeven${phase}`:'battle');
-    if(phase){assert.equal(c.worldSevenNovelKey(),`world${chapter===8?'7a':'7b'}${phase==='Intro'?'Prologue':phase}`);c.completeStoryDialogue();assert.equal(c.page,'battle');}
+    if(phase){assert.equal(c.worldSevenNovelKey(),`world${chapter===10?'7c':chapter===8?'7a':'7b'}${phase==='Intro'?'Prologue':phase}`);c.completeStoryDialogue();assert.equal(c.page,'battle');}
     c.page='storyChapterSevenMidbossEnd';c.completeStoryDialogue();assert.equal(c.page,'result');
     c.page='storyChapterSevenBossEnd';c.completeStoryDialogue();
     assert.equal(c.page,chapter===8?'result':'storyChapterSevenEpilogue');
-    if(chapter===9){assert.equal(c.storyDialogueIndex,0);c.completeStoryDialogue();assert.equal(c.page,'result');}
+    if(chapter!==8){assert.equal(c.storyDialogueIndex,0);c.completeStoryDialogue();assert.equal(c.page,'result');}
   }
 });
 
@@ -56,12 +56,20 @@ test('pause world exit returns to the active world for normal battles and all bo
 });
 
 test('World 7 victory shows ending dialogue while defeat and ordinary stages show results',async()=>{
-  for(const chapter of [8,9])for(const number of [2,15,30])for(const clear of [true,false]){
+  for(const chapter of [8,9,10])for(const number of [2,chapter===10?10:15,30])for(const clear of [true,false]){
     const stage={key:'active',chapter,number};
     const c=vm.createContext({run:{story:true,deck:[],correct:0},selectedStage:'active',storyStages:[stage],persistStoryBattleVitals(){},clearInterval(){},clearTimeout(){},removeBattleReward(){},cancelSpeech(){},timerId:0,nextTimer:0,saveBattleResult:async()=>{},stageCleared:()=>true,storyStageUnlocked:()=>true,go:p=>{c.page=p;},document:{dispatchEvent(){}},CustomEvent:class{}});
     vm.runInContext(slice('  async function finishBattle(','  async function saveBattleResult('),c);
     await c.finishBattle(clear,clear?'complete':'leave');
-    assert.equal(c.page,clear&&number!==2?`storyChapterSeven${number===15?'MidbossEnd':'BossEnd'}`:'result');
+    assert.equal(c.page,clear&&number!==2?`storyChapterSeven${number===(chapter===10?10:15)?'MidbossEnd':'BossEnd'}`:'result');
     assert.equal(c.run.done,true);
   }
 });
+
+ test('World 7C exports every scene without authoring metadata',()=>{
+ const c={window:{}};vm.runInNewContext(read('story-novel.js'),c);
+ for(const phase of ['Prologue','MidbossStart','MidbossEnd','BossStart','BossEnd','Epilogue']){
+ const lines=c.window.WORDORIA_NOVELS[`world7c${phase}`];assert.ok(lines.length>10);
+ for(const line of lines){assert.ok(!line.text.includes('](world-7c-'));assert.notEqual(line.speaker,'BGM');for(const path of [line.artPath,line.backgroundPath].filter(Boolean))assert.ok(existsSync(new URL('../'+path,import.meta.url)),path);}
+ }
+ });

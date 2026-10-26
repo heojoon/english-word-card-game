@@ -1,0 +1,548 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  * Run actions/checkout@v4
+  * Run actions/setup-node@v4
+  * Run actions/setup-java@v4
+  * Set up Android SDK
+  * Install Android SDK packages
+  * Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  * Run actions/setup-java@v4
+  * Set up Android SDK
+  * Install Android SDK packages
+  * Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  * Run actions/setup-java@v4
+  * Set up Android SDK
+  * Install Android SDK packages
+  * Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  * Set up Android SDK
+  * Install Android SDK packages
+  * Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  * Set up Android SDK
+  * Install Android SDK packages
+  * Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  * Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push less than a minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  * Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  * Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 1 minute ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 2 minutes ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 2 minutes ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 2 minutes ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  * Run actions/upload-artifact@v4
+  * Post Run actions/setup-java@v4
+  * Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main Android build · 39239970942
+Triggered via push about 2 minutes ago
+
+JOBS
+* debug-apk (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run actions/setup-java@v4
+  ✓ Post Run actions/setup-node@v4
+  * Post Run actions/checkout@v4
+✓ main Android build · 39239970942
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ debug-apk in 2m15s (ID 118018130699)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run actions/setup-node@v4
+  ✓ Run actions/setup-java@v4
+  ✓ Set up Android SDK
+  ✓ Install Android SDK packages
+  ✓ Run npm ci
+  ✓ Run npm run android:sync
+  ✓ Build debug APK
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run actions/setup-java@v4
+  ✓ Post Run actions/setup-node@v4
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+debug-apk: .github#3
+
+! setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+debug-apk: .github#15
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+debug-apk: .github#1
+
