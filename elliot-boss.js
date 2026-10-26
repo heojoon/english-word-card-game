@@ -1,13 +1,13 @@
 /* World 6B-20: a 90-second swordmaster matching trial. */
 (() => {
   'use strict';
-  const HP=500,TIME_MS=90000,REWARD=800,AURA_INTERVAL_MS=20000,SHIELD_INTERVAL_MS=60000,SHIELD_MS=10000,INACTIVITY_MS=3000;
+  const HP=500,TIME_MS=90000,REWARD=800,AURA_INTERVAL_MS=20000,SHIELD_INTERVAL_MS=60000,SHIELD_MS=10000,INACTIVITY_MS=10000,WARNING_MS=3000;
   const SPRITE_ROOT='assets/monsters/elliot/',ART='assets/novel/characters/char_elliot_world6b_standing.webp';
   const ANIMATIONS={idle:[400,400,400],attack:[180,220,180],shield:[200,200,200],hit:[120,180,600]};
-  const INFO={name:'엘리엇',description:'전 세계에 다섯 명뿐인 소드마스터 중 한 명. 아서의 스승이자 왕국의 기사단장으로, 누구도 범접하지 못할 실력의 벽을 넘어선 자예요.',hp:HP,time:'1분 30초',art:ART,skill:'오러 소드',skillDescription:'20초마다 황금빛 검으로 돌진해 HP 1 피해를 줘요. 3초 동안 보스에게 피해를 주지 않으면 즉시 2연속 공격해요.',skill2:'광휘의 방패',skill2Description:'1분마다 검을 바닥에 꽂고 황금 오러를 일으켜 10초 동안 모든 피해를 막아요.',rewardDescription:'1분 30초 동안 생존하면 승리! 최초 보상 800 크리스털 · 계정당 한 번'};
+  const INFO={name:'엘리엇',description:'전 세계에 다섯 명뿐인 소드마스터 중 한 명. 아서의 스승이자 왕국의 기사단장으로, 누구도 범접하지 못할 실력의 벽을 넘어선 자예요.',hp:HP,time:'1분 30초',art:ART,skill:'오러 소드',skillDescription:'20초마다 황금빛 검으로 돌진해 HP 1 피해를 줘요. 10초 동안 보스에게 피해를 주지 않으면 즉시 2연속 공격해요.',skill2:'광휘의 방패',skill2Description:'1분마다 검을 바닥에 꽂고 황금 오러를 일으켜 10초 동안 모든 피해를 막아요.',rewardDescription:'1분 30초 동안 생존하면 승리! 최초 보상 800 크리스털 · 계정당 한 번'};
   const scale=s=>s.guardianReducedMotion?.5:1;
-  function reset(){return {guardian:true,elliot:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,guardianPhase:'idle',guardianVisual:'idle',guardianRemaining:0,elliotClock:0,elliotNextInactivity:INACTIVITY_MS,elliotNextAura:AURA_INTERVAL_MS,elliotNextShield:SHIELD_INTERVAL_MS,elliotShieldUntil:0,elliotAction:'idle',elliotActionMs:0,elliotAuraPending:0,elliotContact:false,elliotNotice:'',elliotNoticeMs:0,elliotPlayerHit:false,elliotPendingDamage:0};}
-  function clear(s){s.elliotAction='idle';s.elliotActionMs=0;s.elliotAuraPending=0;s.elliotShieldUntil=0;s.elliotNotice='';s.elliotNoticeMs=0;s.elliotPlayerHit=false;s.elliotPendingDamage=0;s.iceTimeActive=false;s.selectedKo=null;s.selectedEn=null;s.pendingPair=null;}
+  function reset(){return {guardian:true,elliot:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,guardianPhase:'idle',guardianVisual:'idle',guardianRemaining:0,elliotClock:0,elliotNextInactivity:INACTIVITY_MS,elliotInactivityWarning:false,elliotNextAura:AURA_INTERVAL_MS,elliotNextShield:SHIELD_INTERVAL_MS,elliotShieldUntil:0,elliotAction:'idle',elliotActionMs:0,elliotAuraPending:0,elliotContact:false,elliotNotice:'',elliotNoticeMs:0,elliotPlayerHit:false,elliotPendingDamage:0};}
+  function clear(s){s.elliotInactivityWarning=false;s.elliotAction='idle';s.elliotActionMs=0;s.elliotAuraPending=0;s.elliotShieldUntil=0;s.elliotNotice='';s.elliotNoticeMs=0;s.elliotPlayerHit=false;s.elliotPendingDamage=0;s.iceTimeActive=false;s.selectedKo=null;s.selectedEn=null;s.pendingPair=null;}
   const shielded=s=>s.elliotClock<s.elliotShieldUntil;
   const won=s=>s.elliotClock>=TIME_MS&&s.hp>0;
   function deck(words,shuffle){
@@ -76,6 +76,7 @@
       let step=budget;
       if(phase!=='idle')step=Math.min(step,s.guardianRemaining);
       if(rate>0){
+        if(!s.elliotInactivityWarning)step=Math.min(step,Math.max(0,s.elliotNextInactivity-WARNING_MS-s.elliotClock)/rate);
         step=Math.min(step,(TIME_MS-s.elliotClock)/rate,(s.elliotNextAura-s.elliotClock)/rate,(s.elliotNextInactivity-s.elliotClock)/rate,(s.elliotNextShield-s.elliotClock)/rate);
         if(shielded(s))step=Math.min(step,(s.elliotShieldUntil-s.elliotClock)/rate);
         if(action!=='idle')step=Math.min(step,s.elliotActionMs/rate);
@@ -98,7 +99,7 @@
             s.correct++;s.index++;
             if(s.pendingPair!==null&&s.pendingPair!==undefined){s.matched.add(s.pendingPair);s.pendingPair=null;if(s.matched.size===s.matchBoard.length)s.iceTimeActive=false;}
             if(shielded(s)){notice('광휘의 방패 · 피해 방어');events.push('blocked');s.guardianVisual='guard';}
-            else{if(s.bossHp>0&&s.elliotPendingDamage>0)s.elliotNextInactivity=s.elliotClock+INACTIVITY_MS;s.bossHp=Math.max(0,s.bossHp-s.elliotPendingDamage);events.push('hit');s.guardianVisual='hit';}
+            else{if(s.bossHp>0&&s.elliotPendingDamage>0){s.elliotNextInactivity=s.elliotClock+INACTIVITY_MS;s.elliotInactivityWarning=false;}s.bossHp=Math.max(0,s.bossHp-s.elliotPendingDamage);events.push('hit');s.guardianVisual='hit';}
             s.elliotPendingDamage=0;s.guardianPhase='hit';s.guardianRemaining=300*m;
           }else{s.attack=false;s.stunned=false;s.locked=false;s.guardianPhase='idle';s.guardianVisual='idle';events.push(s.matchBoard&&s.matched.size===s.matchBoard.length?'board-ready':'ready');}
         }
@@ -110,12 +111,14 @@
       }
       if(action!=='idle'&&s.elliotAction===action&&!s.elliotActionMs){s.elliotAction='idle';events.push('action-end');}
       if(rate>0&&s.elliotClock>=s.elliotNextAura&&s.elliotClock<TIME_MS){s.elliotNextAura+=AURA_INTERVAL_MS;s.elliotAuraPending++;}
-      if(rate>0&&s.elliotClock>=s.elliotNextInactivity&&s.elliotClock<TIME_MS){s.elliotNextInactivity+=INACTIVITY_MS;s.elliotAuraPending+=2;events.push('inactivity-punish');}
+      if(rate>0&&s.elliotClock>=s.elliotNextInactivity&&s.elliotClock<TIME_MS){s.elliotNextInactivity+=INACTIVITY_MS;s.elliotInactivityWarning=false;s.elliotAuraPending+=2;events.push('inactivity-punish');}
+      if(rate>0&&!s.elliotInactivityWarning&&s.elliotClock>=s.elliotNextInactivity-WARNING_MS&&s.elliotClock<TIME_MS){s.elliotInactivityWarning=true;events.push('inactivity-warning');}
       if(s.elliotAction==='idle'&&s.elliotAuraPending>0){s.elliotAuraPending--;s.elliotAction='attack';s.elliotActionMs=580*m;s.elliotContact=false;notice('오러 소드!');events.push('aura-start');}
       if(s.elliotShieldUntil>0&&s.elliotClock>=s.elliotShieldUntil){s.elliotShieldUntil=0;events.push('shield-end');}
       if(s.elliotClock>=TIME_MS){events.push(won(s)?'victory':'trial-failed');return events;}
     }
     return events;
   }
-  window.WORDORIA_ELLIOT={HP,TIME_MS,REWARD,INACTIVITY_MS,AURA_INTERVAL_MS,SHIELD_INTERVAL_MS,SHIELD_MS,SPRITE_ROOT,ART,ANIMATIONS,INFO,reset,clear,deck,board,pick,answer,advance,visual,motion,shielded,won};
+  const warning=s=>s.elliotInactivityWarning?`⚠ ${Math.max(1,Math.ceil((s.elliotNextInactivity-s.elliotClock)/1000))}초 후 오러소드 2연속 공격!`:'';
+  window.WORDORIA_ELLIOT={HP,TIME_MS,REWARD,INACTIVITY_MS,WARNING_MS,AURA_INTERVAL_MS,SHIELD_INTERVAL_MS,SHIELD_MS,SPRITE_ROOT,ART,ANIMATIONS,INFO,reset,clear,deck,board,pick,answer,advance,visual,motion,shielded,won,warning};
 })();

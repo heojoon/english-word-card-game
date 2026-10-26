@@ -110,16 +110,28 @@ test('capital story leads to trial introduction, then battle; success dialogue r
 });
 
 // Keep the existing periodic-skill tests isolated; exercise the real inactivity clock here.
-test('three seconds without damage triggers two consecutive swords and repeats',()=>{
+test('ten seconds without damage triggers two consecutive swords and repeats',()=>{
  const s={...fresh(),elliotNextInactivity:rules.INACTIVITY_MS};
- assert.ok(!rules.advance(s,2999).includes('aura-start'));
+ assert.ok(!rules.advance(s,9999).includes('aura-start'));
  assert.ok(rules.advance(s,1).includes('inactivity-punish'));assert.equal(s.elliotAction,'attack');
  const events=rules.advance(s,1160);assert.equal(events.filter(x=>x==='aura-hit').length,2);assert.equal(s.hp,98);
- assert.ok(rules.advance(s,1840).includes('inactivity-punish'));
+ assert.ok(rules.advance(s,8840).includes('inactivity-punish'));
 });
 test('only actual damage resets inactivity; frozen clocks do not advance it',()=>{
- const s={...fresh(),elliotNextInactivity:3000};rules.advance(s,2000);hit(s,7);assert.equal(s.elliotNextInactivity,5200);
+ const s={...fresh(),elliotNextInactivity:10000};rules.advance(s,2000);hit(s,7);assert.equal(s.elliotNextInactivity,12200);
  s.paused=true;rules.advance(s,10000);s.paused=false;s.iceTimeActive=true;rules.advance(s,10000);s.iceTimeActive=false;rules.advance(s,10000,Math.random,0);assert.equal(s.elliotClock,2500);
- s.elliotShieldUntil=10000;hit(s);assert.equal(s.elliotNextInactivity,5200);
- assert.ok(rules.advance(s,2200).includes('inactivity-punish'));
+ s.elliotShieldUntil=10000;hit(s);assert.equal(s.elliotNextInactivity,12200);
+ assert.ok(rules.advance(s,9200).includes('inactivity-punish'));
+});
+
+test('warning starts three seconds before punishment, counts down and cancels on damage',()=>{
+ const s={...fresh(),elliotNextInactivity:rules.INACTIVITY_MS};
+ assert.ok(!rules.advance(s,6999).includes('inactivity-warning'));assert.equal(rules.warning(s),'');
+ assert.ok(rules.advance(s,1).includes('inactivity-warning'));assert.ok(rules.warning(s).includes('3'));
+ rules.advance(s,1000);assert.ok(rules.warning(s).includes('2'));
+ s.iceTimeActive=true;rules.advance(s,5000);assert.equal(s.elliotClock,8000);assert.ok(rules.warning(s).includes('2'));s.iceTimeActive=false;
+ hit(s);assert.equal(rules.warning(s),'');assert.equal(s.elliotNextInactivity,18200);
+ assert.ok(rules.advance(s,6700).includes('inactivity-warning'));
+ assert.ok(rules.advance(s,3000).includes('inactivity-punish'));assert.equal(rules.warning(s),'');
+ rules.clear(s);assert.equal(rules.warning(s),'');
 });
