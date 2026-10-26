@@ -27,3 +27,7 @@ character-skill-description.csv
 debug.log
 playwright-dev-check.png
 playwright-guest-check.png
+
+# Local deployment checkouts
+/output/bandit-background-deploy/
+/output/sorcerus-deployment/
