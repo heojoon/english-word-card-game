@@ -11,9 +11,9 @@
     ['pet_blue_ribbon_owl','파란리본 올빼미',2000,16,'야간비행','shield',.10],
     ['pet_bookbud_squirrel','책송이 다람쥐',2500,18,'도토리나누기','mp',.10],
     ['pet_mist_horn_deer','안개뿔 사슴',3000,21,'나무의축복','hp',.10],
-    ['pet_prism_guardian_dragon','프리즘 수호룡',4000,25,'드래곤하트','revive',.10]
+    ['pet_prism_guardian_dragon','프리즘 수호룡',4000,25,'드래곤하트','revive',1]
   ];
-  const effectText = {shield:'다음 피격 피해 1회 방어',time:'제한시간 3초 정지',mp:'MP 1 회복',hp:'HP 1 회복',revive:'HP 0일 때 HP 1로 부활 · 전투당 부활 1회'};
+  const effectText = {shield:'다음 피격 피해 1회 방어',time:'제한시간 3초 정지',mp:'MP 1 회복',hp:'HP 1 회복',revive:'HP 0일 때 HP 1 · MP 1로 부활 · 전투당 부활 1회'};
   const catalog = definitions.map(([code,name,price,luck,skill,effect,chance]) => ({
     code,name,price,skill,effect,chance,category:'avatar',slot:'pet',stat_key:'luk',stat_value:luck,
     rarity:['pet_mist_horn_deer','pet_prism_guardian_dragon'].includes(code)?'legendary':'unique',
@@ -59,8 +59,8 @@
         if(state.petShield){state.petShield=false;announce('피해 방어!');return 0;}
         const before=state.hp;
         state.hp=Math.max(0,state.hp-Math.max(0,amount));
-        if(!state.hp&&pet.effect==='revive'&&!state.petRevived&&random()<pet.chance){
-          state.hp=1;state.petRevived=true;announce('HP 1로 부활!');
+        if(!state.hp&&pet.effect==='revive'&&!state.petRevived){
+          state.hp=1;state.mp=1;state.petRevived=true;announce('HP 1 · MP 1로 부활!');
         }
         return before-state.hp;
       },

@@ -81,9 +81,21 @@ test('time freezes exactly three seconds, resumes with overflow, cannot stack, a
   for(const index of [1,4]){const {state,effect}=battle(index);effect.onCorrect();assert.equal(effect.onCorrect(),false);assert.equal(effect.advance(1200),0);state.paused=true;assert.equal(effect.advance(10000),0);assert.equal(state.petTimeMs,1800);state.paused=false;assert.equal(effect.advance(2000),200);assert.equal(state.petTimeMs,0);assert.equal(effect.advance(33),33);assert.equal(effect.onCorrect(),true);}
 });
 
-test('dragon heart checks only lethal damage and permits one successful revival per battle',()=>{
-  const {state,effect,rolls}=battle(9);assert.equal(effect.onCorrect(),false);assert.equal(rolls(),0);effect.damage(1);assert.equal(rolls(),0);effect.damage(1);assert.equal(state.hp,1);assert.equal(state.petRevived,true);effect.damage(1);assert.equal(state.hp,0);assert.equal(rolls(),1);
-  const miss=battle(9,.10);miss.effect.damage(20);assert.equal(miss.state.hp,0);assert.equal(miss.state.petRevived,false);
+test('dragon heart guarantees HP 1 and MP 1 revival exactly once per battle',()=>{
+  assert.equal(catalog[9].chance,1);
+  assert.match(catalog[9].description,/100% 확률.*HP 1 · MP 1/);
+  for(const roll of [0,.10,.99999])for(const mp of [0,1,2]){
+    const {state,effect,rolls}=battle(9,roll);state.mp=mp;
+    assert.equal(effect.onCorrect(),false);effect.damage(1);
+    assert.equal(state.hp,1);assert.equal(state.mp,mp);assert.equal(state.petRevived,false);
+    effect.damage(20);
+    assert.equal(state.hp,1);assert.equal(state.mp,1);assert.equal(state.petRevived,true);
+    assert.match(state.petNotice,/HP 1 · MP 1/);
+    effect.clear();effect.damage(1);
+    assert.equal(state.hp,0);assert.equal(state.mp,1);assert.equal(rolls(),0);
+    state.hp=2;state.petEffects=attach(state,catalog[9]);state.petEffects.damage(20);
+    assert.equal(state.hp,1);assert.equal(state.mp,1);assert.equal(state.petRevived,true);
+  }
 });
 
 test('Survival, fever, completed battles and unrelated or legacy pets do not receive skills',()=>{
@@ -94,7 +106,7 @@ test('Survival, fever, completed battles and unrelated or legacy pets do not rec
 test('guardian and dragon wrong answers use pet shield and revival before defeat is decided',()=>{
   for(const rules of [c.window.WORDORIA_GUARDIAN,c.window.WORDORIA_BLACK_DRAGON]){
     const shield=battle(6);Object.assign(shield.state,rules.reset(),{correct:0,index:0});shield.effect.onCorrect();rules.answer(shield.state,false,100);assert.equal(shield.state.hp,2);assert.ok(!rules.advance(shield.state,500).includes('defeat-player'));
-    const dragon=battle(9);Object.assign(dragon.state,rules.reset(),{hp:1,correct:0,index:0});rules.answer(dragon.state,false,100);assert.equal(dragon.state.hp,1);assert.ok(!rules.advance(dragon.state,500).includes('defeat-player'));
+    const dragon=battle(9,.99999);Object.assign(dragon.state,rules.reset(),{hp:1,mp:0,correct:0,index:0});rules.answer(dragon.state,false,100);assert.equal(dragon.state.hp,1);assert.equal(dragon.state.mp,1);assert.ok(!rules.advance(dragon.state,500).includes('defeat-player'));
   }
 });
 

@@ -5,6 +5,26 @@ import vm from 'node:vm';
 
 const code = await readFile(new URL('../sound-manager.js', import.meta.url), 'utf8');
 
+test('game audio events reach the SFX and BGM buses with their options', () => {
+  let handler;
+  const calls = [];
+  const root = {
+    wordoriaSound: {
+      playSFX: (...args) => calls.push(['sfx', ...args]),
+      playBGM: (...args) => calls.push(['bgm', ...args])
+    },
+    document: { addEventListener: (type, fn) => { if (type === 'wordoria:audio') handler = fn; } }
+  };
+  vm.runInNewContext(code, root);
+  const options = { volume: 0.6 };
+  handler({ detail: { id: 'CHEST_TAP', type: 'sfx', options } });
+  handler({ detail: { id: 'CHEST_OPEN', type: 'sfx' } });
+  handler({ detail: { id: 'ENDING_BGM', type: 'bgm' } });
+  assert.deepEqual(calls, [
+    ['sfx', 'CHEST_TAP', options], ['sfx', 'CHEST_OPEN', undefined], ['bgm', 'ENDING_BGM', undefined]
+  ]);
+});
+
 class AudioParamMock {
   constructor(value = 1) { this.value = value; }
   setValueAtTime(value) { this.value = value; }
