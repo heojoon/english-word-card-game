@@ -26,3 +26,28 @@ The bright steel notes begin with the open-art CSS transition at 280 ms.
 Every accepted tap plays CHEST_TAP; the third also plays CHEST_OPEN as an
 intentional latch/hinge/reward layer. Both crystal and item chests use it.
 Muted settings and the SFX/master buses apply through SoundManager.
+
+## Reward reveal effects (2026-10-28)
+
+Source: the same official CC0 Music Jingles pack and included license above.
+These are edits of recorded assets, not AI-generated audio.
+
+- `sfx_reward_crystal_01.wav`: `jingles_STEEL00.ogg`, leading silence below
+  -50 dB removed, playback rate 1.1, high-pass 250 Hz, soft echoes at 80/160 ms
+  (decay 0.22/0.12), fade out 1.15-1.60 s, duration 1.60 s.
+- `sfx_reward_item_01.wav`: `jingles_PIZZI00.ogg` (gain 0.6) layered with
+  `jingles_STEEL00.ogg` (gain 0.35, playback rate 1.1, delay 90 ms). Leading
+  silence below -50 dB removed from both, mix without normalization, high-pass
+  150 Hz, soft echoes at 95/190 ms (decay 0.18/0.10), fade out 1.25-1.80 s,
+  duration 1.80 s.
+
+Both are mono 48 kHz PCM 16-bit WAV, limited to 0.6 with no makeup gain and
+compensated limiter latency. Echo input/output gains are 0.8/0.45 for crystal
+and 0.8/0.4 for item. The manifest applies event volume 0.8 before SFX/master
+settings. Files are preloaded on entry to the first chest, including the next
+Story item chest.
+
+REWARD_CRYSTAL / REWARD_ITEM fire only after the reward claim succeeds and
+the reveal screen renders, following the minimum 900 ms chest-opening motion.
+Zero-crystal repeat claims and failed claims do not play a reward cue.
+Rendering the screen again and pressing Continue do not replay the sound.

@@ -5,6 +5,8 @@
   "events": {
     "CHEST_TAP": {"category": "sfx", "volume": 0.75, "pitchVariation": 0.025, "sources": ["assets/audio/sfx/chest/sfx_chest_tap_01.wav", "assets/audio/sfx/chest/sfx_chest_tap_02.wav"]},
     "CHEST_OPEN": {"category": "sfx", "volume": 0.85, "sources": ["assets/audio/sfx/chest/sfx_chest_open_01.wav"]},
+    "REWARD_CRYSTAL": {"category": "sfx", "volume": 0.8, "sources": ["assets/audio/sfx/chest/sfx_reward_crystal_01.wav"]},
+    "REWARD_ITEM": {"category": "sfx", "volume": 0.8, "sources": ["assets/audio/sfx/chest/sfx_reward_item_01.wav"]},
     "FOREST_BGM": {"category": "bgm", "volume": 0.42, "loop": true, "sources": ["assets/audio/bgm/forest/bgm_whispering_woods_sunny_side_up.mp3"]},
     "MENU_BGM": {"category": "bgm", "volume": 0.5, "loop": true, "sources": ["assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3"]},
     "BATTLE_BGM": {"category": "bgm", "volume": 0.5, "loop": true, "sources": ["assets/audio/bgm/battle/bgm_battle_word_crystal_loop.ogg", "assets/audio/bgm/battle/bgm_battle_word_crystal_loop.mp3"]},
