@@ -1167,3 +1167,14 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 /* World 7C: royal artificial abyss guardian. Frame selection follows the battle clock. */
 .arkaon-arena .arkaon-enemy{width:48%;height:auto;aspect-ratio:1;right:1%;top:auto;bottom:10%}
 .arkaon-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;image-rendering:auto}
+.story-map-node.hidden-stage-glow{box-shadow:0 0 0 4px #60d9cf99,0 0 22px 9px #7868efaa;animation:hidden-crystal-glow 1.8s ease-in-out infinite alternate}
+.hidden-stage-badge{position:absolute;left:50%;top:-19px;transform:translateX(-50%);padding:2px 7px;border-radius:12px;background:#5751d8;color:#fff;font-size:10px;white-space:nowrap}
+@keyframes hidden-crystal-glow{to{box-shadow:0 0 0 7px #60d9cf44,0 0 32px 14px #7868efcc}}
+.hidden-crystal-king{width:150px;height:170px;right:9%;bottom:24px;display:grid;place-items:center;color:#60d9cf;filter:drop-shadow(0 0 12px #7868ef)}
+.hidden-king-body{font-size:145px;line-height:1;color:#60d9cf;text-shadow:8px 4px #5751d8,-7px -4px #b9f8ef}
+.hidden-king-crown{position:absolute;top:-28px;font-size:64px;color:#ffcf67}
+.hidden-king-face{position:absolute;top:73px;color:#24214c;font-size:24px;font-weight:900}
+.hidden-king-sleep{position:absolute;right:-10px;top:15px;color:#f7f7ff;font-weight:900}
+.hidden-king-arena.hidden-king-contact .hidden-king-body{filter:brightness(1.4)}
+.hidden-pet-reward{display:block;width:160px;max-width:70%;margin:12px auto}
+@media(prefers-reduced-motion:reduce){.story-map-node.hidden-stage-glow{animation:none}}
