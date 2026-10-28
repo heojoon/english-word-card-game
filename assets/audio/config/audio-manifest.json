@@ -3,6 +3,9 @@
   "settingsKey": "wordoria.audio.settings.v1",
   "defaults": {"masterVolume": 0.8, "bgmVolume": 0.5, "sfxVolume": 0.75, "muted": false},
   "events": {
+    "FEVER_BGM": {"category": "bgm", "volume": 0.48, "loop": true, "sources": ["assets/audio/bgm/fever/bgm_fever_crystal_bonus_loop.ogg", "assets/audio/bgm/fever/bgm_fever_crystal_bonus_loop.mp3"]},
+    "FEVER_CRYSTAL_TAP": {"category": "sfx", "volume": 0.5, "pitchVariation": 0.025, "sources": ["assets/audio/sfx/fever/sfx_fever_crystal_tap_01.wav"]},
+    "FEVER_CRYSTAL_POP": {"category": "sfx", "volume": 0.65, "pitchVariation": 0.04, "sources": ["assets/audio/sfx/fever/sfx_fever_crystal_pop_01.wav"]},
     "CHEST_TAP": {"category": "sfx", "volume": 0.75, "pitchVariation": 0.025, "sources": ["assets/audio/sfx/chest/sfx_chest_tap_01.wav", "assets/audio/sfx/chest/sfx_chest_tap_02.wav"]},
     "CHEST_OPEN": {"category": "sfx", "volume": 0.85, "sources": ["assets/audio/sfx/chest/sfx_chest_open_01.wav"]},
     "REWARD_CRYSTAL": {"category": "sfx", "volume": 0.8, "sources": ["assets/audio/sfx/chest/sfx_reward_crystal_01.wav"]},

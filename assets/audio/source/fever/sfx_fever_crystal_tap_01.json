@@ -1,0 +1,14 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "sound-generation",
+  "request": {
+    "text": "One single short magical crystal tap for a bright friendly fantasy mobile game. Immediate clean delicate glass plink, soft round attack, tiny rising shimmer, warm sparkling reward anticipation. Dry close sound, no harsh frequencies, no voice, no music, no background noise, only one tap, quick decay within half a second.",
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7,
+    "model_id": "eleven_text_to_sound_v2",
+    "loop": false
+  },
+  "source": "sfx_fever_crystal_tap_01.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; requires audio processing and listening review"
+}

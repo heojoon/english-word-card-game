@@ -204,33 +204,42 @@
     }
 
     async playBGM(id, options = {}) {
+      if (this.bgmLoadingId === id && !options.restart) return null;
       const requestId = (this.bgmRequestId || 0) + 1;
       this.bgmRequestId = requestId;
-      await this.ready;
-      if (this.bgm?.id === id && !options.restart) return this.bgm;
-      const entry = this.event(id);
-      if (!entry || entry.category !== 'bgm') return null;
-      const context = this.ensureContext();
-      if (!context || context.state !== 'running') {
-        this.pendingBGM = { id, options };
-        return null;
+      this.bgmLoadingId = id;
+      try {
+        await this.ready;
+        if (this.bgm?.id === id && !options.restart) return this.bgm;
+        const entry = this.event(id);
+        if (!entry || entry.category !== 'bgm') return null;
+        const context = this.ensureContext();
+        if (!context || context.state !== 'running') {
+          this.pendingBGM = { id, options };
+          return null;
+        }
+        let buffer = null;
+        for (const source of entry.sources || []) {
+          buffer = await this.loadBuffer(source);
+          if (buffer) break;
+        }
+        if (!buffer || requestId !== this.bgmRequestId) return null;
+        if (this.bgm) await this.fadeOut(options.crossfadeMs ?? 350, true);
+        if (requestId !== this.bgmRequestId) return null;
+        const source = context.createBufferSource(), gain = context.createGain();
+        source.buffer = buffer; source.loop = options.loop ?? entry.loop ?? true;
+        gain.gain.value = 0; source.connect(gain); gain.connect(this.bgmGain); source.start(0);
+        this.bgm = { id, source, gain, pausedAt: 0, startedAt: now(context), entry };
+        await this.fadeIn(options.fadeMs ?? 450, entry.volume ?? 1);
+        return this.bgm;
+      } finally {
+        if (requestId === this.bgmRequestId) this.bgmLoadingId = null;
       }
-      let buffer = null;
-      for (const source of entry.sources || []) {
-        buffer = await this.loadBuffer(source);
-        if (buffer) break;
-      }
-      if (!buffer || requestId !== this.bgmRequestId) return null;
-      if (this.bgm) await this.fadeOut(options.crossfadeMs ?? 350);
-      const source = context.createBufferSource(), gain = context.createGain();
-      source.buffer = buffer; source.loop = options.loop ?? entry.loop ?? true;
-      gain.gain.value = 0; source.connect(gain); gain.connect(this.bgmGain); source.start(0);
-      this.bgm = { id, source, gain, pausedAt: 0, startedAt: now(context), entry };
-      await this.fadeIn(options.fadeMs ?? 450, entry.volume ?? 1);
-      return this.bgm;
     }
 
     stopBGM() {
+      this.bgmRequestId = (this.bgmRequestId || 0) + 1;
+      this.bgmLoadingId = null; this.pendingBGM = null;
       if (!this.bgm) return;
       try { this.bgm.source.stop(); } catch {}
       this.bgm.source.disconnect(); this.bgm.gain.disconnect(); this.bgm = null;
@@ -254,7 +263,11 @@
     }
 
     fadeIn(durationMs = 450, target = 1) { return this.fade(this.bgm?.gain, target, durationMs); }
-    fadeOut(durationMs = 350) {
+    fadeOut(durationMs = 350, keepRequest = false) {
+      if (!keepRequest) {
+        this.bgmRequestId = (this.bgmRequestId || 0) + 1;
+        this.bgmLoadingId = null; this.pendingBGM = null;
+      }
       const voice = this.bgm;
       if (!voice) return Promise.resolve();
       return this.fade(voice.gain, 0, durationMs).then(() => {

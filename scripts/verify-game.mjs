@@ -1,0 +1,104 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
+// One process, one source read, isolated VM state, and simulated timers.
+// Browser and remote SQL checks are explicit, never part of the default suite.
+function setup(){
+  const entries=Array.from({length:10},(_,i)=>({entry:[`word${i}`,'n',`뜻${i}`],mode:'en-ko'}));
+  const c=vm.createContext({run:{story:true,mp:1,mpMax:1,index:0,correct:0,hp:2,deck:entries,matchBoard:entries.slice(0,5),matched:new Set(),matchEn:entries.slice(0,5).map((x,id)=>({...x,id})),selectedKo:null,selectedEn:null,slashExpiresAt:0,elapsed:0,storyTimeLimit:30000,mobs:[]},selectedCharacter:{class:'mage'},performance:{now:()=>1000},render(){},emitAudio(){},speak(){},equippedMap:()=>({}),itemById(){},battleContactDelay:()=>100,reducedMotion:()=>true,document:{dispatchEvent(){},querySelector(){return null;}},CustomEvent:class{},$:()=>null,setTimeout:(fn)=>{c.pending.push(fn);return 1;},clearTimeout(){},clearInterval(){},setInterval:(fn)=>{c.tickCallback=fn;return 1;},pending:[],STORY_QUESTIONS_PER_TURN:5});
+  vm.runInContext(source.slice(source.indexOf('  function canActivateMageIceTime()'),source.indexOf('  function updateWarriorSlash(')),c);
+  vm.runInContext(source.slice(source.indexOf('  function refreshStorySelections('),source.indexOf('  function syncBGM(')),c);
+  vm.runInContext(source.slice(source.indexOf('  function storyPick('),source.indexOf('  async function finishBattle(')),c);
+  return c;
+}
+const pick=(c,side,id)=>c.storyPick({dataset:{side,id:String(id)}});
+test('ice time consumes one MP and rejects repeated or unavailable activation',()=>{
+  const c=setup();c.activateMageIceTime();assert.equal(c.run.mp,0);assert.equal(c.run.iceTimeActive,true);
+  c.run.mp=1;c.activateMageIceTime();assert.equal(c.run.mp,1);
+  c.run.iceTimeActive=false;c.activateMageIceTime();assert.equal(c.run.mp,0);assert.equal(c.run.iceTimeActive,true);
+  for(const key of ['paused','locked','stunned','done','fever','feverTransition','timeoutPending']){const x=setup();x.run[key]=true;x.activateMageIceTime();assert.equal(x.run.mp,1);assert.equal(Boolean(x.run.iceTimeActive),false);}
+  const x=setup();x.selectedCharacter.class='warrior';x.activateMageIceTime();assert.equal(x.run.mp,1);
+});
+test('partial correct matches keep ice active; an incorrect pair releases both time stops',()=>{
+  const c=setup();c.activateMageIceTime();c.run.timeStopped=true;pick(c,'ko',0);pick(c,'en',0);
+  assert.equal(c.run.iceTimeActive,true);assert.equal(c.run.timeStopped,false);assert.equal(c.run.correct,1);
+  c.pending.splice(0).forEach(fn=>fn());pick(c,'ko',1);pick(c,'en',2);
+  assert.equal(c.run.iceTimeActive,false);assert.equal(c.run.mp,0);
+});
+test('ice pauses the actual battle clock and the clock resumes after release',()=>{
+  const c=setup();Object.assign(c,{timerId:0,updateEnemyApproach(){},updateWarriorSlash(){}});
+  vm.runInContext(source.slice(source.indexOf('  function tick()'),source.indexOf('  function pause()')),c);
+  c.activateMageIceTime();c.tick();c.performance.now=()=>2000;c.tickCallback();assert.equal(c.run.elapsed,0);
+  c.run.iceTimeActive=false;c.performance.now=()=>2500;c.tickCallback();assert.equal(c.run.elapsed,500);
+});
+test('a new wave resets ice while retaining consumed MP',()=>{
+  const c=setup();Object.assign(c,{selectedStage:'test',stages:{test:{words:[]}},makeQuestion:()=>({}),activatePassive(){},shuffle:x=>x});
+  vm.runInContext(source.slice(source.indexOf('  function prepareQuestion()'),source.indexOf('  function battleHeroMarkup()')),c);
+  c.activateMageIceTime();c.run.index=5;c.prepareQuestion();assert.equal(c.run.iceTimeActive,false);assert.equal(c.run.mp,0);
+});
+test('last wave releases ice before the fever transition',()=>{
+  const c=setup();c.run.index=9;c.run.matched=new Set([0,1,2,3]);c.enterFeverTime=()=>{};
+  const intro=source.indexOf('  function beginFeverIntro(');vm.runInContext(source.slice(intro,source.indexOf('\n',intro)),c);
+  c.activateMageIceTime();pick(c,'ko',4);pick(c,'en',4);assert.equal(c.run.iceTimeActive,true);assert.equal(Boolean(c.run.feverTransition),false);
+  c.pending.at(-1)();assert.equal(c.run.iceTimeActive,false);assert.equal(c.run.feverTransition,true);
+});
+
+test('battle recovery respects final bosses, level-ups, ownership and preview mode',()=>{
+  let level=3, saved;
+  const battle={story:true,storyCharacterId:'hero',hp:1,mp:0};
+  const c=vm.createContext({selectedCharacter:{id:'hero'},selectedStage:'final',
+    stages:{final:{storyChapter:7,storyNumber:20}},run:battle,
+    stats:()=>({level}),storyVitals:()=>({hpMax:9,mpMax:4}),saveStoryVitals:v=>{saved=v;}});
+  const start=source.indexOf('  function recoverAfterBattle(');
+  const end=source.indexOf('  function storyPotionCount(',start);
+  assert.ok(start>=0&&end>start);
+  vm.runInContext(source.slice(start,end),c);
+  c.recoverAfterBattle(battle,false);assert.equal(saved,undefined);
+  c.recoverAfterBattle(battle,true);assert.equal(saved.hp,9);assert.equal(battle.mp,4);
+  for(const patch of [{hiddenKind:'king'},{localBossSkipped:true},{storyCharacterId:'other'}]){
+    saved=undefined;c.recoverAfterBattle({...battle,...patch},true);assert.equal(saved,undefined);
+  }
+  c.stages.final.storyNumber=1;level=4;
+  c.recoverAfterBattle(battle,false,3);assert.equal(saved.hp,9);
+});
+
+test('fever crystals emit one tap and one collection event and reject duplicate input',()=>{
+  const events=[];
+  const c=vm.createContext({run:{fever:true,elapsed:0,storyTimeLimit:1000,feverWords:[{id:'gem',state:'word'}]},
+    emitAudio:(...args)=>events.push(args),render(){},document:{dispatchEvent(){}},CustomEvent:class{}});
+  const start=source.indexOf('  function collectFeverCrystal(');
+  vm.runInContext(source.slice(start,source.indexOf('  function renderFeverBattle(',start)),c);
+  c.collectFeverCrystal('gem');assert.equal(c.run.feverWords[0].state,'meaning');
+  c.collectFeverCrystal('gem');c.collectFeverCrystal('gem');
+  assert.equal(c.run.feverCollected,1);
+  assert.deepEqual(events,[['FEVER_CRYSTAL_TAP','sfx'],['FEVER_CRYSTAL_POP','sfx']]);
+});
+
+test('new fever audio references real runtime assets',()=>{
+  const manifest=JSON.parse(readFileSync(new URL('../assets/audio/config/audio-manifest.json',import.meta.url),'utf8'));
+  for(const id of ['FEVER_BGM','FEVER_CRYSTAL_TAP','FEVER_CRYSTAL_POP'])for(const asset of manifest.events[id].sources){
+    assert.ok(readFileSync(new URL('../'+asset,import.meta.url)).length>0,asset);
+  }
+});
+
+test('BGM loading deduplicates renders and cancellation prevents stale playback',async()=>{
+  const c=vm.createContext({wordoriaSound:{}});
+  vm.runInContext(readFileSync(new URL('../sound-manager.js',import.meta.url),'utf8'),c);
+  const manager=new c.SoundManager();
+  await manager.ready;
+  manager.manifest={events:{FEVER:{category:'bgm',sources:['fever.mp3']}}};
+  let resolveBuffer,loads=0,starts=0;
+  manager.loadBuffer=()=>{loads++;return new Promise(resolve=>{resolveBuffer=resolve;});};
+  manager.ensureContext=()=>({state:'running',currentTime:0,
+    createBufferSource:()=>({connect(){},start(){starts++;}}),
+    createGain:()=>({gain:{value:0},connect(){}})});
+  manager.fadeIn=async()=>{};
+  const loading=manager.playBGM('FEVER');await Promise.resolve();
+  await manager.playBGM('FEVER');assert.equal(loads,1);
+  manager.stopBGM();resolveBuffer({});await loading;assert.equal(starts,0);
+  const retry=manager.playBGM('FEVER');await Promise.resolve();
+  resolveBuffer({});await retry;
+  assert.equal(starts,1);assert.equal(manager.bgm.id,'FEVER');
+});

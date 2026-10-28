@@ -1,5 +1,0 @@
-[    5525ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
-[   34893ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg:0
-[   34893ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg (HTTP 404) @ http://localhost:3000/sound-manager.js?v=20260921-1:294
-[   34957ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3:0
-[   34957ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3 (HTTP 404) @ http://localhost:3000/sound-manager.js?v=20260921-1:294

@@ -1,0 +1,14 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "sound-generation",
+  "request": {
+    "text": "One single satisfying magical crystal reward pop for a cheerful fantasy mobile game. Immediate soft juicy pop with a tiny bright glass burst, ascending glittering gem chimes as treasure is collected, playful and rewarding. Compact clean isolated sound, soft friendly impact, no real glass breaking, no violence, no voice, no music, no ambience. Fast attack and short sparkling tail, one event only.",
+    "duration_seconds": 0.7,
+    "prompt_influence": 0.7,
+    "model_id": "eleven_text_to_sound_v2",
+    "loop": false
+  },
+  "source": "sfx_fever_crystal_pop_01.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; requires audio processing and listening review"
+}

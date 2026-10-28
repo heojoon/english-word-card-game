@@ -31,3 +31,22 @@ playwright-guest-check.png
 # Local deployment checkouts
 /output/bandit-background-deploy/
 /output/sorcerus-deployment/
+
+# Local tests, browser verification artifacts, and logs
+test/
+tests/
+__tests__/
+*.test.*
+*.spec.*
+*Test.java
+/android/app/src/androidTest/
+playtest.cjs
+.playwright-cli/
+/output/playwright/
+/output/
+test-results/
+playwright-report/
+coverage/
+logs/
+*.log
+*.log.*

@@ -223,7 +223,8 @@
     return Math.max(contact+((run.crystalSpider||run.banditMob||run.golemMob||run.skeletonMob||(run.lizardMob||run.sentryMob))?(reducedMotion()?170:260):120),...ends,reducedMotion()?300:900);
   }
   function syncBGM(target=page){
-    if(target==='battle'){emitAudio(run?.boss||run?.guardian?'BOSS_BGM':run?.story?'FOREST_BGM':run?.index===run?.deck?.length-1?'BOSS_BGM':'BATTLE_BGM','bgm',{crossfadeMs:350});return;}
+    if(target==='battle'&&run?.story&&!run.feverAudioPreloaded&&window.wordoriaSound){run.feverAudioPreloaded=true;window.wordoriaSound.preloadAudio(['FEVER_CRYSTAL_TAP','FEVER_CRYSTAL_POP','FEVER_BGM']);}
+    if(target==='battle'){emitAudio(run?.fever&&!run.done?'FEVER_BGM':run?.boss||run?.guardian?'BOSS_BGM':run?.story?'FOREST_BGM':run?.index===run?.deck?.length-1?'BOSS_BGM':'BATTLE_BGM','bgm',{crossfadeMs:350});return;}
     if(target==='result'&&run?.clear){emitAudio('ENDING_BGM','bgm',{crossfadeMs:420});return;}
     if(target==='result'){window.wordoriaSound?.fadeOut(300);return;}
     if(target.startsWith('storyChapterSeven')||target.startsWith('storyChapterSix')||['storyChapterFiveIntro','storyChapterFiveMidbossStart','storyChapterFiveMidbossEnd','storyChapterFiveBossStart','storyChapterFiveBossEnd','story','storyIntro','storyEpilogue','storyBossVictory','storyChapterTwoIntro','storyChapterTwoBossStart','storyChapterTwoBossEnd','storyPotionEvent','storyChapterFourIntro','storyChapterFourBossStart','storyChapterFourBossEnd','storyChapterFourMidbossStart','storyChapterFourMidbossEnd','storyChapterThreeIntro','storyChapterThreeBossStart','storyChapterThreeBossEnd'].includes(target)){emitAudio('FOREST_BGM','bgm',{crossfadeMs:350});return;}
@@ -1209,6 +1210,17 @@
   }
   function persistStoryBattleVitals(){
     if(run?.story&&run.storyCharacterId===selectedCharacter?.id)saveStoryVitals(run);
+  }
+  function recoverAfterBattle(battle,clear,previousLevel=stats().level){
+    if(!selectedCharacter||battle.localBossSkipped||(battle.storyCharacterId&&battle.storyCharacterId!==selectedCharacter.id))return;
+    const stage=stages[selectedStage],chapter=stage?.storyChapter||1;
+    const finalStage=chapter<=3?7:chapter<=7?20:30;
+    const finalBossCleared=clear&&battle.story&&!battle.hiddenKind&&stage?.storyNumber===finalStage;
+    if(!finalBossCleared&&stats().level<=previousLevel)return;
+    const {hpMax,mpMax}=storyVitals(),vitals={hp:hpMax,mp:mpMax,hpMax,mpMax};
+    saveStoryVitals(vitals);
+    if(battle.story)Object.assign(battle,vitals);
+    if(run?.story&&run.storyCharacterId===selectedCharacter.id)Object.assign(run,vitals);
   }
   function storyPotionCount(type){return potionCount(type)+equippedPotions().filter(value=>value===type).length;}
   function storyHealingCount(){return storyPotionCount('red');}
@@ -2441,6 +2453,7 @@
     },contact);
   }
   function finishRoyalSlimeBattle(clear,reason){
+    if(run?.boss&&!run.done)recoverAfterBattle(run,clear);
     if(!run?.boss||run.done)return;persistStoryBattleVitals();run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;clearInterval(timerId);clearTimeout(nextTimer);cancelSpeech();
     if(run.crystalGhost){run.timeStopped=false;run.ghostFalling=false;run.ghostFallNotice='';go('bossResult');if(clear&&!run.localBossSkipped)claimCrystalGhostReward();return;}
     if(clear){storyDialogueIndex=0;go('storyBossVictory');}
@@ -2463,6 +2476,7 @@
 
   async function claimRoyalSlimeReward(){
     if(!run?.boss||run.localBossSkipped||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
+    const previousLevel=stats().level;
     const battle=run; battle.rewardPending=true;battle.rewardError=false;
     if(page==='bossResult')render();
     try{
@@ -2483,11 +2497,12 @@
         accountCrystals=Number(result.balance);battle.bossReward=Number(result.reward);
       }
     }catch(error){battle.rewardError=true;toast('보상을 저장하지 못했어요. 다시 시도해 주세요.');}
-    finally{battle.rewardPending=false;if(run===battle&&page==='bossResult')render();}
+    finally{recoverAfterBattle(battle,battle.clear,previousLevel);battle.rewardPending=false;if(run===battle&&page==='bossResult')render();}
   }
 
   async function claimCrystalGhostReward(){
     if(!run?.crystalGhost||run.localBossSkipped||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
+    const previousLevel=stats().level;
     const battle=run;battle.rewardPending=true;battle.rewardError=false;render();
     try{
       if(battle.correct!==CRYSTAL_GHOST_HP||battle.bossHp!==0)throw new Error('boss not cleared');
@@ -2511,7 +2526,7 @@
         await loadCharacterExtras();
       }
     }catch(error){battle.rewardError=true;toast('보상을 저장하지 못했어요. 다시 시도해 주세요.');}
-    finally{battle.rewardPending=false;if(run===battle&&page==='bossResult')render();}
+    finally{recoverAfterBattle(battle,battle.clear,previousLevel);battle.rewardPending=false;if(run===battle&&page==='bossResult')render();}
   }
   function renderCrystalGhostResult(){
     const reward=run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??CRYSTAL_GHOST_REWARD)} 크리스탈 · 마나포션 +${run.bossPotionReward??5}개`;
@@ -2699,7 +2714,7 @@
   function advanceFeverCrystals(){let changed=false;const now=run.elapsed;const live=run.feverWords.filter(crystal=>!crystal.removeAt||now<crystal.removeAt);if(live.length!==run.feverWords.length){run.feverWords=live;changed=true;}if(now>=run.feverNextSpawnAt&&now<run.storyTimeLimit&&(run.hiddenKind==='fever'||run.feverWordSequence<Math.ceil(run.deck.length*3000/550))){const entry=run.deck[Math.floor(Math.random()*run.deck.length)].entry;run.feverWords.push({id:`fever-${++run.feverWordSequence}`,entry,createdAt:now,state:'word',x:26+Math.random()*48,y:12+Math.random()*72});run.feverNextSpawnAt=now+(run.hiddenKind==='fever'?400+Math.random()*80:550+Math.random()*400);changed=true;}if(changed)render();}
   function enterFeverTime(){if(selectedStage==='story-ch5-7'&&run.storyReplay&&stageCleared('story-ch5-20'))run.storyTimeLimit=Math.max(run.storyTimeLimit,run.elapsed+90000);run.fever=true;run.feverTransition=false;run.attack=false;run.locked=false;run.matchFeedback='';run.feverWords=[];run.feverCollected=run.feverCollected||0;run.feverNextSpawnAt=run.elapsed;advanceFeverCrystals();render();}
   function beginFeverIntro(){if(!run||run.done||run.keurus)return;run.feverTransition=true;run.petEffects?.clear();run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;run.attack=false;run.timeStopped=false;run.skill='';speak('Fever Time!');render();nextTimer=setTimeout(enterFeverTime,reducedMotion()?700:1650);}
-  function collectFeverCrystal(id){if(!run?.fever||run.done||run.paused||run.elapsed>=run.storyTimeLimit)return;const word=run.feverWords.find(item=>item.id===id);if(!word||word.state==='pop')return;if(word.state==='word'){word.state='meaning';render();return;}word.state='pop';word.removeAt=run.elapsed+240;run.feverCollected=(run.feverCollected||0)+1;document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));render();}
+  function collectFeverCrystal(id){if(!run?.fever||run.done||run.paused||run.elapsed>=run.storyTimeLimit)return;const word=run.feverWords.find(item=>item.id===id);if(!word||word.state==='pop')return;if(word.state==='word'){word.state='meaning';emitAudio('FEVER_CRYSTAL_TAP','sfx');render();return;}word.state='pop';word.removeAt=run.elapsed+240;run.feverCollected=(run.feverCollected||0)+1;emitAudio('FEVER_CRYSTAL_POP','sfx');document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));render();}
   function renderFeverBattle(){const left=Math.max(0,run.storyTimeLimit-run.elapsed);return `<div class="fever-screen"><div class="battle-top row"><div class="stage-copy"><div class="eyebrow">${run.hiddenKind==='fever'?`HIDDEN FEVER · ${run.hiddenRound+1}/5단계 · 목표 ${60+run.hiddenRound*10}개`:"BONUS FEVER TIME"}</div><b>영어 단어를 눌러 뜻을 확인하고, 한 번 더 눌러 터뜨리세요!</b></div></div><div class="fever-hud"><span>${run.hiddenKind==='fever'?`이번 단계 ${run.feverCollected-run.hiddenRoundStartCount} / ${60+run.hiddenRound*10}개 · 누적`: '남은 시간 · 수집'} ${run.feverCollected||0}개</span><strong><span id="timer">${run.hiddenKind?royalSlimeTime(left):(left/1000).toFixed(1)}</span>${run.hiddenKind?'':'초'}</strong></div><section class="fever-field" aria-label="단어 크리스털">${run.feverWords.map(word=>`<button type="button" class="fever-crystal phase-${word.state}" data-action="fever-pick" data-id="${word.id}" style="--x:${word.x}%;--y:${word.y}%" aria-label="${word.state==='meaning'?`${esc(word.entry[0])}, ${esc(word.entry[2])}. 한 번 더 눌러 터뜨리기`:`${esc(word.entry[0])} 뜻 보기`}" ${word.state==='pop'?'disabled':''}><b>${esc(word.entry[0])}</b>${word.state==='meaning'?`<span>${esc(word.entry[2])}</span>`:''}</button>`).join('')}</section></div>`;}
   function canActivateMageIceTime(){return Boolean(run?.story&&selectedCharacter?.class==='mage'&&!run.done&&!run.paused&&!run.locked&&!run.stunned&&!run.timeoutPending&&!run.fever&&!run.feverTransition&&!run.iceTimeActive&&run.mp>=1&&(run.guardian||run.matchBoard?.length>run.matched?.size));}
   function activateMageIceTime(){if(!canActivateMageIceTime())return;run.mp--;run.iceTimeActive=true;run.last=performance.now();run.iceTimePopUntil=run.last+1200;render();const activeRun=run,popUntil=run.iceTimePopUntil;setTimeout(()=>{if(run===activeRun&&run.iceTimePopUntil===popUntil){run.iceTimePopUntil=0;document.querySelector('.ice-time-announcement')?.remove();}},1200);}
@@ -2753,6 +2768,7 @@
   }
   function finishGuardianBattle(clear,reason){
     if(!run?.guardian||run.done)return;
+    recoverAfterBattle(run,clear);
     persistStoryBattleVitals();
     run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;if(run.redReaper)window.WORDORIA_RED_REAPER.clear(run);run.shadowFreezeMs=0;run.shadowCastMs=0;run.sorcerusHealMs=0;run.sorcerusHealElapsed=0;run.sorcerusQueue=[];run.sorcerusContact=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;
     clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();
@@ -2762,6 +2778,7 @@
   }
   async function claimGuardianReward(){
     if(!run?.guardian||run.localBossSkipped||!run.clear||run.rewardPending||run.bossReward!==undefined)return;
+    const previousLevel=stats().level;
     const battle=run; battle.rewardPending=true;battle.rewardError=false;render();
     try{
       if(battle.correct!==(battle.bossMaxHp||60)||battle.bossHp!==0)throw new Error('boss not cleared');
@@ -2780,7 +2797,7 @@
         records=[{id:result.game_score_id,player,stage:stageRecordName(selectedStage),character_id:selectedCharacter.id,correct:battle.bossMaxHp||60,total:battle.bossMaxHp||60,cleared:true},...records];
       }
     }catch(error){battle.rewardError=true;toast('보상을 저장하지 못했어요. 다시 시도해 주세요.');}
-    finally{battle.rewardPending=false;if(run===battle&&page==='bossResult'){render();if(battle.lichDragon&&!battle.rewardError)showStoryBranchChoice();}}
+    finally{recoverAfterBattle(battle,battle.clear,previousLevel);battle.rewardPending=false;if(run===battle&&page==='bossResult'){render();if(battle.lichDragon&&!battle.rewardError)showStoryBranchChoice();}}
   }
   function renderGuardianResult(){
     if(run?.localBossSkipped)return localBossPreviewResult();
@@ -2788,6 +2805,7 @@
     return `<section class="result"><div class="eyebrow">${run.lichDragon?'AMETHYST CAVERN · FINAL BOSS':run.redReaper?'ILLUSION LAND · FINAL BOSS':run.shadowSorceress?'ILLUSION LAND · MID BOSS':'CRYSTAL TEMPLE · FINAL BOSS'}</div><img class="royal-boss-result-art" src="${esc(deployedAssetUrl(art))}" alt="${bossName}"><h1>${run.clear?`${bossName}을 물리쳤어요!`:run.reason==='timeout'?'시간이 다 되었어요':'다시 힘을 모아 도전해요'}</h1>${run.clear?`<p class="royal-boss-reward" role="status">${run.rewardPending?'보상 저장 중…':run.rewardError?'보상 저장에 실패했어요':run.bossReward===0?'보상을 이미 받았어요':`◆ +${num(run.bossReward??(run.lichDragon?window.WORDORIA_LICH_DRAGON.reward(run.elapsed):run.redReaper?500:run.shadowSorceress?200:run.blackDragon?600:500))} 크리스털`}</p>`:''}${run.lichDragon&&run.clear&&run.bossReward>700?'<p>4분 이내 처치 보너스 +300 크리스털 포함</p>':''}<div class="actions">${run.rewardError?'<button class="primary" data-action="guardian-reward-retry">보상 저장 다시 시도</button>':''}${run.clear?'':`<button class="primary" data-action="${run.lichDragon?'lich-dragon-retry':run.redReaper?'red-reaper-retry':run.shadowSorceress?'shadow-sorceress-retry':run.blackDragon?'black-dragon-retry':'guardian-retry'}">다시 도전하기</button>`}<button class="${run.clear?'primary':'secondary'}" data-action="guardian-leave" ${run.rewardPending||run.clear&&run.rewardError?'disabled':''}>${run.clear?'월드맵으로':'떠나기'}</button></div></section>`;
   }
   async function finishBattle(clear,reason){
+    if(run&&!run.done)recoverAfterBattle(run,clear);
     if(run.done)return;if(run.hiddenKind){run.done=true;run.clear=clear;run.reason=reason;run.iceTimeActive=false;persistStoryBattleVitals();clearInterval(timerId);clearTimeout(nextTimer);cancelSpeech();await saveBattleResult(run,clear);selectedStoryWorld=5;selectedStoryStage=selectedStage;go('result');return;}if(run.guardian&&!run.sorcerus&&!run.redSkullKnight&&!run.banditChief&&!run.abyssGolem&&!run.morgana&&!run.elliot&&!run.darkTriton&&!run.arkaon&&!run.nereus){finishGuardianBattle(clear,reason);return;}if(run.boss){finishRoyalSlimeBattle(clear,reason);return;}persistStoryBattleVitals();run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;run.feedbackPending=false;clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();
     if(run.redSkullKnight){window.WORDORIA_RED_SKULL_KNIGHT.clear(run);if(clear)run.deck=run.deck.slice(0,run.correct);}
     if(run.darkTriton){window.WORDORIA_DARK_TRITON.clear(run);if(clear)run.deck=run.deck.slice(0,run.correct);}
@@ -2812,6 +2830,11 @@
     if(clear){document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));}
   }
   async function saveBattleResult(run,clear){
+    const previousLevel=stats().level;
+    try{await storeBattleResult(run,clear);}
+    finally{recoverAfterBattle(run,clear,previousLevel);}
+  }
+  async function storeBattleResult(run,clear){
     if(run.localBossSkipped||run.result?.game_score_id)return;
     if(run.hiddenKind){await saveWorldFiveHidden(run);return;}
     if(selectedStage==='story-ch5-7'&&localMode&&clear&&run.storyReplay&&stageCleared('story-ch5-20')&&Number(run.feverCollected)>=100){demoState.worldFiveHiddenUnlocked=true;saveDemo();worldFiveHiddenUnlocked=true;run.hiddenJustUnlocked=true;}

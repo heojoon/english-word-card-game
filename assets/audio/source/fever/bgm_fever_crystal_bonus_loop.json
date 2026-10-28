@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "music",
+  "request": {
+    "prompt": "Instrumental seamless looping bonus fever-time background music for Crystal Quest, a bright polished fantasy learning game for children. Joyful treasure shower, collecting magical crystals and winning bonus after bonus. 144 BPM, buoyant four-on-the-floor groove, bouncy warm bass, sparkling celesta and marimba runs, playful pizzicato strings, bright piano hooks, light handclaps and crisp soft drums. Catchy uplifting major-key melody, energetic and lighthearted, polished modern game soundtrack, not retro chiptune. Start the full groove immediately, maintain consistent excitement and tempo throughout, no slow intro, no cinematic build-up, no breakdown, no final cadence, no fade out. Compose a sixteen-bar repeatable musical loop with an ending that flows naturally back to its opening. Leave room for frequent crystal tap and reward sound effects, no piercing treble, no vocals or speech. Duration 26.667 seconds.",
+    "music_length_ms": 26667,
+    "force_instrumental": true,
+    "model_id": "music_v2_5"
+  },
+  "source": "bgm_fever_crystal_bonus_loop.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; requires audio processing and listening review"
+}

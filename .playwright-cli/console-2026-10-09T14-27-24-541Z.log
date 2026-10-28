@@ -1,9 +1,0 @@
-[    4310ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
-[   31214ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg:0
-[   31214ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg (HTTP 404) @ http://localhost:3000/sound-manager.js?v=20260921-1:295
-[   31334ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3:0
-[   31334ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3 (HTTP 404) @ http://localhost:3000/sound-manager.js?v=20260921-1:295
-[   49230ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/assets/audio/sfx/ui/click/sfx_ui_click_01.wav:0
-[   49230ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/ui/click/sfx_ui_click_01.wav (HTTP 404) @ http://localhost:3000/sound-manager.js?v=20260921-1:295
-[   49231ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.ogg:0
-[   49238ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/assets/audio/bgm/menu/bgm_menu_crystal_gateway_loop.mp3:0

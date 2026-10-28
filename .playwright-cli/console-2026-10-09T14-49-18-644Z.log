@@ -1,3 +1,0 @@
-[    6813ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/favicon.ico:0
-[    7312ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:3000/assets/audio/sfx/ui/click/sfx_ui_click_02.wav:0
-[    7312ms] [WARNING] [SoundManager] Audio asset unavailable; skipping assets/audio/sfx/ui/click/sfx_ui_click_02.wav (HTTP 404) @ http://127.0.0.1:3000/sound-manager.js?v=20260921-1:295
