@@ -224,7 +224,7 @@
   }
   function syncBGM(target=page){
     if(target==='battle'&&run?.story&&!run.feverAudioPreloaded&&window.wordoriaSound){run.feverAudioPreloaded=true;window.wordoriaSound.preloadAudio(['FEVER_CRYSTAL_TAP','FEVER_CRYSTAL_POP','FEVER_BGM']);}
-    if(target==='battle'){emitAudio(run?.fever&&!run.done?'FEVER_BGM':run?.boss||run?.guardian?'BOSS_BGM':run?.story?'FOREST_BGM':run?.index===run?.deck?.length-1?'BOSS_BGM':'BATTLE_BGM','bgm',{crossfadeMs:350});return;}
+    if(target==='battle'){emitAudio(run?.fever&&!run.done?'FEVER_BGM':run?.boss||run?.guardian||run?.keurus||run?.hiddenKind==='king'?'BOSS_BGM':!run?.story&&run?.index===run?.deck?.length-1?'BOSS_BGM':'BATTLE_BGM','bgm',{crossfadeMs:350});return;}
     if(target==='result'&&run?.clear){emitAudio('ENDING_BGM','bgm',{crossfadeMs:420});return;}
     if(target==='result'){window.wordoriaSound?.fadeOut(300);return;}
     if(target.startsWith('storyChapterSeven')||target.startsWith('storyChapterSix')||['storyChapterFiveIntro','storyChapterFiveMidbossStart','storyChapterFiveMidbossEnd','storyChapterFiveBossStart','storyChapterFiveBossEnd','story','storyIntro','storyEpilogue','storyBossVictory','storyChapterTwoIntro','storyChapterTwoBossStart','storyChapterTwoBossEnd','storyPotionEvent','storyChapterFourIntro','storyChapterFourBossStart','storyChapterFourBossEnd','storyChapterFourMidbossStart','storyChapterFourMidbossEnd','storyChapterThreeIntro','storyChapterThreeBossStart','storyChapterThreeBossEnd'].includes(target)){emitAudio('FOREST_BGM','bgm',{crossfadeMs:350});return;}

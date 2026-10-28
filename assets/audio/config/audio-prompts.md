@@ -1,6 +1,6 @@
 # Wordoria Crystal Quest audio generation prompts
 
-No audio-generation API is connected to this repository. The prompts below are production specifications for manual use in ElevenLabs Sound Effects or Stable Audio; no audio file has been generated or claimed as generated.
+The prompts below describe the audio direction. Fever, normal-battle and boss-battle music have been generated with ElevenLabs; complete requests and original responses are stored under `assets/audio/source/`. Runtime processing and review status are recorded in each shipped family's `SOURCES.md`. Other entries remain specifications unless a source record says otherwise. Credentials are never included in these records.
 
 ## BGM
 
@@ -10,11 +10,11 @@ Sound description: A welcoming crystal-fantasy main-menu theme with celesta, sof
 
 ### Normal battle
 
-Sound description: Energetic vocabulary-battle music with light hand percussion, pizzicato strings, marimba pulse, crystal bells, and a confident youthful adventure motif; leave space for UI and impact effects. Style: bright polished casual fantasy RPG, playful rather than threatening, instrumental. Duration: 90 seconds. Intensity: medium-high with steady momentum. Audio quality: clean stereo, 48 kHz, restrained bass for phone speakers, -16 LUFS target, no clipping. Loop: yes, sample-clean loop at a four-bar boundary.
+Generated direction: urgent normal-monster combat with driving spiccato strings, agile woodwinds, tight toms/snare, warm bass, celesta and crystal bells. Bright modern fantasy RPG, instrumental, tense but hopeful, with space for speech and combat effects. Requested tempo: 144 BPM; duration: 53.333 seconds / 32 bars. Target: stereo 48 kHz, approximately -16 LUFS, controlled peaks, immediate groove and repeatable endpoints. Complete prompt: `assets/audio/source/battle/bgm_battle_word_crystal_loop.json`.
 
 ### Boss battle
 
-Sound description: A heroic crystal-guardian boss theme with driving toms, rhythmic strings, brass-like synth accents, shimmering arpeggios, and magical choir textures without words; exciting but child-friendly. Style: premium mobile fantasy RPG, dramatic and clear, no horror, no vocals or copyrighted melody. Duration: 90 seconds. Intensity: high but not harsh. Audio quality: clean stereo, 48 kHz, strong midrange, controlled sub-bass, -15 LUFS target. Loop: yes, seamless eight-bar loop.
+Generated direction: majestic, intensely urgent boss combat with layered orchestral brass, string ostinatos, powerful timpani/toms and bright crystal arpeggios. Heroic premium fantasy RPG, instrumental, high sustained intensity with room for speech and skill effects. Requested tempo: 150 BPM; duration: 51.2 seconds / 32 bars. Target: stereo 48 kHz, approximately -16 LUFS, controlled peaks, immediate full arrangement and repeatable endpoints. Complete prompt: `assets/audio/source/boss/bgm_boss_crystal_guardian_loop.json`.
 
 ### Victory
 

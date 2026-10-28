@@ -76,11 +76,31 @@ test('fever crystals emit one tap and one collection event and reject duplicate 
   assert.deepEqual(events,[['FEVER_CRYSTAL_TAP','sfx'],['FEVER_CRYSTAL_POP','sfx']]);
 });
 
-test('new fever audio references real runtime assets',()=>{
+test('generated fever and battle audio references real runtime assets',()=>{
   const manifest=JSON.parse(readFileSync(new URL('../assets/audio/config/audio-manifest.json',import.meta.url),'utf8'));
-  for(const id of ['FEVER_BGM','FEVER_CRYSTAL_TAP','FEVER_CRYSTAL_POP'])for(const asset of manifest.events[id].sources){
+  for(const id of ['BATTLE_BGM','BOSS_BGM','FEVER_BGM','FEVER_CRYSTAL_TAP','FEVER_CRYSTAL_POP'])for(const asset of manifest.events[id].sources){
     assert.ok(readFileSync(new URL('../'+asset,import.meta.url)).length>0,asset);
   }
+});
+
+test('battle music distinguishes normal story, bosses, hidden king and fever',()=>{
+  const events=[];
+  const c=vm.createContext({page:'battle',run:null,emitAudio:id=>events.push(id),window:{}});
+  const start=source.indexOf('  function syncBGM(');
+  vm.runInContext(source.slice(start,source.indexOf('  const API_TIMEOUT_MS',start)),c);
+  for(const [state,expected] of [
+    [{story:true,index:0,deck:[1]},'BATTLE_BGM'],
+    [{story:true,index:19,deck:Array(20)},'BATTLE_BGM'],
+    [{story:true,boss:true},'BOSS_BGM'],
+    [{story:true,guardian:true},'BOSS_BGM'],
+    [{story:true,keurus:true},'BOSS_BGM'],
+    [{story:true,hiddenKind:'king'},'BOSS_BGM'],
+    [{story:true,fever:true},'FEVER_BGM'],
+    [{story:true,boss:true,fever:true},'FEVER_BGM'],
+    [{index:0,deck:[1,2]},'BATTLE_BGM'],
+    [{index:1,deck:[1,2]},'BOSS_BGM'],
+  ]){c.run=state;c.syncBGM();assert.equal(events.at(-1),expected);}
+  c.syncBGM('story');assert.equal(events.at(-1),'FOREST_BGM');
 });
 
 test('BGM loading deduplicates renders and cancellation prevents stale playback',async()=>{

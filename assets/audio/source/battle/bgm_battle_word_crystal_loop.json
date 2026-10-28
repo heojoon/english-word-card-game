@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "music",
+  "request": {
+    "prompt": "Original instrumental normal-monster battle background music for Crystal Quest, a polished bright fantasy RPG for upper-elementary and middle-school learners. Urgent, fast and exciting combat momentum at 144 BPM in 4/4. Driving spiccato string ostinatos, agile woodwind phrases, tight toms and snare, warm rhythmic bass, sparkling celesta and crystal bell accents, a confident memorable adventure motif. Tense minor-key pulse with heroic hopeful lifts. Medium-high intensity, clearly more urgent than exploration music, but lighter and smaller in scale than a boss battle. Clean modern orchestral game soundtrack, no chiptune, no horror, no harsh treble, no vocals or speech. Leave space for vocabulary pronunciation and attack effects; controlled percussion and bass, mobile-speaker readable stereo mix. Begin immediately with the full combat groove, no slow introduction, no silence, no breakdown, no final cadence and no fade-out. Sustain the energy through a repeatable 32-bar phrase lasting 53.333 seconds. End on the same harmonic turnaround and rhythmic pulse that leads directly into the opening bar, designed for continuous looping.",
+    "music_length_ms": 53333,
+    "force_instrumental": true,
+    "model_id": "music_v2_5"
+  },
+  "source": "bgm_battle_word_crystal_loop.mp3",
+  "output_format": "mp3_48000_192",
+  "review": "Generated, processed and technically validated: stereo 48 kHz OGG/MP3, sample duration, headroom and waveform endpoints. Listening and browser review not performed; no user musical approval claimed."
+}

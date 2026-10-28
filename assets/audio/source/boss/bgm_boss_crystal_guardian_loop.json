@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "music",
+  "request": {
+    "prompt": "Original instrumental boss-stage battle background music for Crystal Quest, a polished magical fantasy RPG for upper-elementary and middle-school learners. Majestic, grand and intensely urgent heroic confrontation at 150 BPM in 4/4. Massive layered orchestral brass fanfares, driving low-string and violin ostinatos, powerful tight timpani and concert toms, confident bass, bright crystal arpeggios and shimmering celesta. A bold memorable heroic motif over tense minor-key harmony with soaring hopeful chord lifts. Larger and more imposing than ordinary monster combat, high sustained intensity and forward motion, epic scale without horror or frightening sounds. Clean premium modern orchestral game soundtrack, no chiptune, no vocals, no speech, no distorted guitars, controlled low end and smooth upper frequencies. Leave room for spoken vocabulary and combat effects, clear midrange on phone speakers. Begin with the full urgent battle arrangement immediately, no cinematic slow build, no silence, no breakdown, no victory ending or final cadence, no fade-out. Compose a repeatable 32-bar combat phrase lasting 51.2 seconds. The last bar must flow rhythmically and harmonically into the opening bar for continuous looping.",
+    "music_length_ms": 51200,
+    "force_instrumental": true,
+    "model_id": "music_v2_5"
+  },
+  "source": "bgm_boss_crystal_guardian_loop.mp3",
+  "output_format": "mp3_48000_192",
+  "review": "Generated, processed and technically validated: stereo 48 kHz OGG/MP3, sample duration, headroom and waveform endpoints. Listening and browser review not performed; no user musical approval claimed."
+}
