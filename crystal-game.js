@@ -1412,7 +1412,7 @@
     if(!stage||!storyStageUnlocked(index)||!levelReady(stages[stage.key]))return;
     if(!storyEntryAllowed(stage.key))return;
     const hiddenKind=stage.chapter===5&&[9,19].includes(stage.number)?worldFiveHiddenKind(stage.key):null;
-    if(hiddenKind){selectedStoryStage=stage.key;selectedStoryWorld=5;render();modal(`<div class="eyebrow">WORLD 5 · HIDDEN</div><h2>${hiddenStageIntro(hiddenKind)}</h2><p>${hiddenKind==='fever'?'매 단계 1분 · 목표 60 → 70 → 80 → 90 → 100개. 목표에 미달하면 종료되며, 모은 크리스털은 모두 지급됩니다.':'잠자는 대왕 HP 999 · 5분 동안 도전 · 오답 HP 피해 없음. 종료 시 누적 피해 × 1.5 크리스털을 지급합니다.'}</p><button class="primary" data-action="story-enter-confirm" data-stage="${stage.key}">히든 입장하기</button><button class="secondary" data-action="story-enter-cancel">지도 보기</button>`);return;}
+    if(hiddenKind){selectedStoryStage=stage.key;selectedStoryWorld=5;render();modal(`<div class="eyebrow">WORLD 5 · HIDDEN</div><h2>${hiddenStageIntro(hiddenKind)}</h2><p>${hiddenKind==='fever'?'매 단계 1분 · 목표 60 → 70 → 80 → 90 → 100개. 목표에 미달하면 종료되며, 모은 크리스털은 모두 지급됩니다.':'잠자는 대왕 HP 999 · 5분 동안 도전 · 오답 HP 피해 없음. 재도전할 수 있으며 최초 5분 완료 시에만 누적 피해 × 1.5 크리스털과 조건에 맞는 펫을 지급합니다.'}</p><button class="primary" data-action="story-enter-confirm" data-stage="${stage.key}">히든 입장하기</button><button class="secondary" data-action="story-enter-cancel">지도 보기</button>`);return;}
     const alreadyCleared=stageCleared(stage.key);
     selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;render();
     const world=storyWorlds[(stage.chapter||1)-1];
@@ -1530,27 +1530,31 @@
   }
   function prepareQuestion(){run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;if(!run.boss){if(selectedCharacter?.class==='sniper')prepareSniperInsight();else run.sniperInsight=false;}if(run.redSkullKnight){window.WORDORIA_RED_SKULL_KNIGHT.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.darkTriton){window.WORDORIA_DARK_TRITON.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.arkaon){window.WORDORIA_ARKAON.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.nereus){window.WORDORIA_NEREUS.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.elliot){window.WORDORIA_ELLIOT.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.morgana){window.WORDORIA_MORGANA.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.lichDragon){window.WORDORIA_LICH_DRAGON.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.redReaper){window.WORDORIA_RED_REAPER.board(run,shuffle);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.guardian){if((run.elliot||run.sorcerus||run.banditChief||run.abyssGolem)&&run.index+Math.max(1,run.bossAttackSteps||1)>=run.deck.length){const extra=buildQuestionDeck(stages[selectedStage]);if(extra[0].entry[0]===run.deck.at(-1).entry[0])[extra[0],extra[1]]=[extra[1],extra[0]];run.deck.push(...extra);}const item=run.deck[run.index];run.guardianQuestionNumber=run.index+1;run.question=makeQuestion(item.entry,stages[selectedStage].words,item.mode);run.last=performance.now();run.petEffects?.onQuestion();return;}if(run.boss){prepareRoyalSlimeBoard();return;}const item=run.deck[run.index];run.question=makeQuestion(item.entry,stages[selectedStage].words,item.mode);activatePassive();run.last=performance.now();run.locked=false;if(run.story){run.fever=false;const start=Math.floor(run.index/STORY_QUESTIONS_PER_TURN)*STORY_QUESTIONS_PER_TURN;run.matchBoard=run.deck.slice(start,start+STORY_QUESTIONS_PER_TURN);run.matched=new Set();run.queuedStoryPairs=[];run.pendingDefeat=false;run.selectedKo=null;run.selectedEn=null;run.matchFeedback='';run.matchKo=shuffle(run.matchBoard.map((x,i)=>({entry:x.entry,id:start+i})));run.matchEn=shuffle(run.matchBoard.map((x,i)=>({entry:x.entry,id:start+i})));run.mobs=[];run.petEffects?.onQuestion();}}
   // Hidden access is durable and independent of vocabulary level and map records.
-  let worldFiveHiddenUnlocked=false,hiddenStarting=false;
+  let worldFiveHiddenUnlocked=false,hiddenStarting=false,worldFiveHiddenUsed=[];
   async function loadWorldFiveHidden(){
     worldFiveHiddenUnlocked=localMode?Boolean(demoState.worldFiveHiddenUnlocked):false;
-    if(!localMode&&selectedCharacter&&dbOnline){try{worldFiveHiddenUnlocked=Boolean(await rpc('world_five_hidden_access',{p_character_id:selectedCharacter.id}));}catch{worldFiveHiddenUnlocked=false;}}
+    worldFiveHiddenUsed=localMode?localWorldFiveHiddenUsed():[];
+    if(!localMode&&selectedCharacter&&dbOnline){try{const state=await rpc('world_five_hidden_status',{p_character_id:selectedCharacter.id});worldFiveHiddenUnlocked=Boolean(state?.unlocked);worldFiveHiddenUsed=state?.used||[];}catch{worldFiveHiddenUnlocked=false;}}
   }
-  function worldFiveHiddenKind(key){return worldFiveHiddenUnlocked&&key==='story-ch5-9'?'fever':worldFiveHiddenUnlocked&&key==='story-ch5-19'?'king':null;}
+  function localWorldFiveHiddenUsed(){return [...new Set([...(demoState.worldFiveHiddenEntries?.[player]||[]),...demoState.records.filter(row=>row.player===player&&row.hiddenSession).map(row=>row.stage==='히든 5 · fever'?'fever':row.stage==='히든 5 · king'?'king':null).filter(Boolean)])];}
+  function worldFiveHiddenKind(key){const kind=key==='story-ch5-9'?'fever':key==='story-ch5-19'?'king':null;return worldFiveHiddenUnlocked&&kind&&(kind==='king'||!worldFiveHiddenUsed.includes(kind))?kind:null;}
   function hiddenStageIntro(kind){return kind==='fever'?'히든 · 크리스털 피버 도전':'히든 · 잠자는 크리스탈 대왕';}
   async function startWorldFiveHidden(kind){
-    if(hiddenStarting||!selectedCharacter||!worldFiveHiddenUnlocked)return;
+    if(hiddenStarting||!selectedCharacter||!worldFiveHiddenUnlocked||!['fever','king'].includes(kind)||(kind==='fever'&&worldFiveHiddenUsed.includes(kind)))return;
     hiddenStarting=true;
     try{
       const characterId=selectedCharacter.id,stageKey=selectedStage;
       const session=localMode?crypto.randomUUID():await rpc('begin_world_five_hidden',{p_character_id:characterId,p_kind:kind});
       if(!session)throw Error('입장 기록을 만들지 못했어요');
+      if(localMode){const previous=demoState.worldFiveHiddenEntries;demoState.worldFiveHiddenEntries={...previous,[player]:[...localWorldFiveHiddenUsed(),kind]};try{saveDemo();}catch(error){demoState.worldFiveHiddenEntries=previous;throw error;}}
+      worldFiveHiddenUsed=[...new Set([...worldFiveHiddenUsed,kind])];
       if(selectedCharacter?.id!==characterId||selectedStage!==stageKey||page!=='story')return;
       clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();
       const source=stages[stageKey];
       run={story:true,hiddenKind:kind,hiddenSession:session,storyCharacterId:characterId,deck:buildQuestionDeck(source),index:0,correct:0,elapsed:0,last:performance.now(),done:false,paused:false,locked:false,clear:false,result:null,resultStep:'summary',mobs:[],hp:storyVitals().hp,hpMax:storyVitals().hpMax,mp:storyVitals().mp,mpMax:storyVitals().mpMax,storyReplay:false,storyTimeLimit:kind==='king'?300000:60000,fever:kind==='fever',feverWords:[],feverWordSequence:0,feverNextSpawnAt:0,feverCollected:0,hiddenRound:0,hiddenRoundCounts:[],hiddenRoundStartCount:0,bossHp:999,bossDamage:0,bossAttackSteps:bossAttackSteps(),slashCombo:0,slashBonus:0,slashExpiresAt:0,eagleEyeRemoved:[],matched:new Set(),selectedKo:null,selectedEn:null};
       if(kind==='king')prepareHiddenKingBoard();else advanceFeverCrystals();
       closeDialog();go('battle');tick();
-    }catch(error){toast('히든 스테이지에 입장하지 못했어요. 다시 시도해 주세요.');}finally{hiddenStarting=false;}
+    }catch(error){if(!localMode)await loadWorldFiveHidden();toast('히든 스테이지에 입장하지 못했어요. 입장 가능 여부를 확인해 주세요.');}finally{hiddenStarting=false;}
   }
   function prepareHiddenKingBoard(){
     if(run.index+5>run.deck.length)run.deck.push(...buildQuestionDeck(stages[selectedStage]));
@@ -1602,8 +1606,9 @@
         if(existing)result={game_score_id:existing.id,coins_earned:existing.coins_earned,balance:selectedCharacter.coins,pet_granted:existing.petGranted};
         else{
           const character=demoState.characters.find(c=>c.id===battle.storyCharacterId),beforeCoins=character.coins,beforeInventory=demoState.inventory.slice();
-          const coins=battle.hiddenKind==='king'?(completed?Math.floor(battle.bossDamage*1.5):0):battle.feverCollected,pet=shopItems.find(item=>item.code==='pet_prism_guardian_dragon');
-          const grant=Boolean(completed&&battle.hiddenKind==='king'&&battle.bossDamage>=500&&pet&&!demoState.inventory.some(row=>row.character_id===character.id&&String(row.item_id)===String(pet.id)));
+          const kingReward=completed&&!demoState.records.some(row=>row.player===player&&row.hiddenSession&&row.stage==='히든 5 · king'&&row.cleared);
+          const coins=battle.hiddenKind==='king'?(kingReward?Math.floor(battle.bossDamage*1.5):0):battle.feverCollected,pet=shopItems.find(item=>item.code==='pet_prism_guardian_dragon');
+          const grant=Boolean(kingReward&&battle.hiddenKind==='king'&&battle.bossDamage>=500&&pet&&!demoState.inventory.some(row=>row.character_id===character.id&&String(row.item_id)===String(pet.id)));
           const row={id:`hidden-${battle.hiddenSession}`,hiddenSession:battle.hiddenSession,character_id:character.id,player,stage:`히든 5 · ${battle.hiddenKind}`,correct:battle.correct,total:Math.max(1,battle.correct),cleared:completed,coins_earned:coins,duration_ms:Math.round(battle.elapsed),created_at:new Date().toISOString(),petGranted:grant};
           try{character.coins+=coins;if(grant)demoState.inventory.push({character_id:character.id,item_id:pet.id});demoState.records.unshift(row);saveDemo();}catch(error){character.coins=beforeCoins;demoState.inventory=beforeInventory;demoState.records=demoState.records.filter(item=>item!==row);throw error;}
           records=demoState.records;result={game_score_id:row.id,coins_earned:coins,balance:character.coins,pet_granted:grant};
@@ -1618,7 +1623,7 @@
     }catch(error){battle.saveError=true;battle.saveRetryable=true;}finally{battle.hiddenSaving=false;}
   }
   function renderHiddenResult(){
-    const r=run,earned=Number(r.result?.coins_earned||0),pet=r.hiddenKind==='king'&&r.bossDamage>=500&&r.reason!=='leave';
+    const r=run,earned=Number(r.result?.coins_earned||0),pet=r.hiddenKind==='king'&&r.bossDamage>=500&&r.hiddenPetGranted;
     return `<section class="result"><div class="eyebrow">WORLD 5 · HIDDEN</div><h1>${r.reason==='hidden-target-missed'?'이번 도전은 여기까지!':'히든 탐험 종료'}</h1><p>${r.hiddenKind==='fever'?`${Math.min(r.hiddenRound+1,5)}단계 · 수집한 크리스털 전부 지급`:`누적 피해 ${r.bossDamage} × 1.5 (소수점 버림)`}</p><div class="reward-number">◆ +${num(earned)}</div>${pet?(r.hiddenChestOpened?`<img class="hidden-pet-reward" src="${esc(deployedAssetUrl('assets/items/concepts/pet_prism_guardian_dragon.png'))}" alt="프리즘 수호룡"><h2>프리즘 수호룡</h2><p>${r.hiddenPetGranted?'새로운 펫이 장비함에 도착했어요!':'이미 보유한 펫이에요.'}</p>`:'<button class="primary" data-action="hidden-chest">보상 상자 열기 →</button>'):''}<button class="secondary" data-action="nav" data-page="story">월드맵으로</button></section>`;
   }
   function initializeBattlePet(){

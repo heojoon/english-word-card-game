@@ -14,6 +14,7 @@ test('5-9 hidden entry renders fever and starts its timer without an ordinary ba
     const calls=[],toasts=[],screens=[];
     const context=vm.createContext({
       localMode,selectedCharacter:{id:'hero'},selectedStage:'story-ch5-9',page:'story',
+      player:'learner',demoState:{records:[]},localWorldFiveHiddenUsed:()=>[],saveDemo(){},
       stages:{'story-ch5-9':{storyChapter:5}},run:null,timerId:null,nextTimer:null,
       performance:{now:()=>0},crypto:{randomUUID:()=> 'local-session'},
       rpc:async(name,args)=>{calls.push({name,args});return 'remote-session';},
@@ -25,7 +26,7 @@ test('5-9 hidden entry renders fever and starts its timer without an ordinary ba
     });
     context.render=()=>{if(context.page==='battle')screens.push(context.renderBattle());};
     context.go=page=>{context.page=page;context.render();};
-    vm.runInContext('let worldFiveHiddenUnlocked=true,hiddenStarting=false;',context);
+    vm.runInContext('let worldFiveHiddenUnlocked=true,hiddenStarting=false,worldFiveHiddenUsed=[];',context);
     const start=source.indexOf('  async function startWorldFiveHidden(');
     vm.runInContext(source.slice(start,source.indexOf('  function prepareHiddenKingBoard(',start)),context);
     for(const name of ['renderBattle','renderFeverBattle','advanceFeverCrystals'])loadFunction(context,name);
