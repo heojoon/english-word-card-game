@@ -37,8 +37,8 @@
       onQuestion() {
         state.petHint=null;
         if(!allowed()||state.hp<=0||pet.effect!=='hint')return false;
-        const pair=(state.guardian&&!state.elliot&&!state.redReaper&&!state.lichDragon&&!state.morgana)?null:state.matchEn?.find(row=>!state.matched?.has(row.id));
-        const question=state.guardian&&!state.elliot&&!state.redReaper&&!state.lichDragon&&!state.morgana?state.question:null;
+        const pair=(state.spelling||state.guardian&&!state.elliot&&!state.redReaper&&!state.lichDragon&&!state.morgana)?null:state.matchEn?.find(row=>!state.matched?.has(row.id));
+        const question=state.spelling||(state.guardian&&!state.elliot&&!state.redReaper&&!state.lichDragon&&!state.morgana)?state.question:null;
         if(!pair&&!question||random()>=pet.chance)return false;
         state.petHint=pair?{pairId:pair.id}:{question};
         announce('정답 하나 공개!');

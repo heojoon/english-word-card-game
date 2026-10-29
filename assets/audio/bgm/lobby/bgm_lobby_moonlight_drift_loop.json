@@ -1,0 +1,33 @@
+{
+  "title": "문라이트 드리프트",
+  "provider": "ElevenLabs Music",
+  "model": "music_v2_5",
+  "prompt": "Original instrumental phonk background music for Crystal Quest, a bright crystal-fantasy vocabulary RPG for young learners. Recognizable melodic cowbell hook, syncopated tight 808 bass, punchy kicks, crisp claps and rolling hi-hats, with sparkling crystal bells and warm atmospheric synth chords. Polished stereo mix, moderate intensity, controlled bass and smooth treble, readable on mobile speakers, leave room for UI sounds. No vocals, rap, speech, vocal samples, profanity, horror, harsh clipping or sirens. Begin immediately with the groove. Maintain a repeatable 32-bar phrase, no silent intro, no final cadence or fade-out. Last bar leads harmonically and rhythmically into the first bar for continuous looping. Dreamy chill phonk at 120 BPM for relaxed world-map exploration. Floating lavender pads, mellow cowbell motifs, warm rounded 808 slides, spacious moonlit adventure mood. Target duration 64.000 seconds.",
+  "bpm": 120,
+  "requestedDurationMs": 64000,
+  "source": "bgm_lobby_moonlight_drift_loop.mp3",
+  "format": "mp3_48000_192",
+  "review": "Generated original; loudness normalized and 8 ms loop edge fades applied. Listening and musical seam approval pending. No lossless generation master supplied.",
+  "processing": {
+    "tool": "FFmpeg",
+    "filters": "highpass=f=25,atrim=duration=64.0,asetpts=PTS-STARTPTS,loudnorm=I=-16:TP=-1.5:LRA=9:linear=true:measured_I=-12.10:measured_TP=0.33:measured_LRA=0.90:measured_thresh=-22.10:offset=0.01,afade=t=in:d=0.008,afade=t=out:st=63.992:d=0.008",
+    "sourceLoudness": {
+      "input_i": "-12.10",
+      "input_tp": "0.33",
+      "input_lra": "0.90",
+      "input_thresh": "-22.10",
+      "output_i": "-16.01",
+      "output_tp": "-3.62",
+      "output_lra": "0.80",
+      "output_thresh": "-26.01",
+      "normalization_type": "dynamic",
+      "target_offset": "0.01"
+    },
+    "runtimeFormats": [
+      "Vorbis quality 4",
+      "MP3 128 kbps"
+    ],
+    "sampleRate": 48000,
+    "channels": 2
+  }
+}

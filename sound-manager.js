@@ -25,6 +25,12 @@
       this.settings = { masterVolume: 0.8, bgmVolume: 0.5, sfxVolume: 0.75, muted: false, bgmMuted: false };
       this.ready = this.loadManifest();
       this.installUnlockHandlers();
+      this.visibilityHandler = () => {
+        if (!this.context || !this.unlocked) return;
+        if (root.document.hidden) this.context.suspend().catch(() => {});
+        else void this.unlock();
+      };
+      root.document?.addEventListener?.('visibilitychange', this.visibilityHandler);
     }
 
     async loadManifest() {
@@ -213,6 +219,7 @@
         if (this.bgm?.id === id && !options.restart) return this.bgm;
         const entry = this.event(id);
         if (!entry || entry.category !== 'bgm') return null;
+        if (root.document?.hidden) { this.pendingBGM = { id, options }; return null; }
         const context = this.ensureContext();
         if (!context || context.state !== 'running') {
           this.pendingBGM = { id, options };
@@ -288,6 +295,18 @@
     setMasterVolume(value) { this.settings.masterVolume = clamp(value); this.saveSettings(); }
     setBGMVolume(value) { this.settings.bgmVolume = clamp(value); this.saveSettings(); }
     setBGMMuted(value) { this.settings.bgmMuted = Boolean(value); this.saveSettings(); }
+    lobbyTracks() {
+      return (this.manifest.lobbyTracks || []).filter(track => this.event(track.id)?.category === 'bgm');
+    }
+    lobbyBGM(fallback = 'MENU_BGM') {
+      return this.lobbyTracks().some(track => track.id === this.settings.lobbyTrack) ? this.settings.lobbyTrack : fallback;
+    }
+    setLobbyTrack(id) {
+      if (id !== 'auto' && !this.lobbyTracks().some(track => track.id === id)) return false;
+      this.settings.lobbyTrack = id;
+      this.saveSettings();
+      return true;
+    }
     setSFXVolume(value) { this.settings.sfxVolume = clamp(value); this.saveSettings(); }
     mute() { this.settings.muted = true; this.saveSettings(); }
     unmute() { this.settings.muted = false; this.saveSettings(); }
@@ -298,6 +317,7 @@
     }
 
     destroy() {
+      root.document?.removeEventListener?.('visibilitychange', this.visibilityHandler);
       this.stopSFX(); this.stopBGM(); this.buffers.clear(); this.loading.clear();
       if (this.context && this.context.state !== 'closed') this.context.close().catch(() => {});
       this.context = null;

@@ -14529,6 +14529,2780 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-7b-black-lake-map.webp"
     }
   ],
+  "world8Prologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 저택 앞에서 검집의 끈을 고쳐 매고 있다. 파이터는 계단에 앉아 있고, 바이올렛은 펼친 지도를 살핀다. 길 끝에서 익숙한 목소리가 들린다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "다들 여기 있었네.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 손을 멈춘다. 먼지 묻은 망토를 걸친 소서러스가 문 앞에 서 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "소서러스…?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "소서러스다!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 벌떡 일어나 뛰어간다. 바이올렛도 지도를 접을 새 없이 따라간다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "어디 다친 데는 없어? 얼굴 좀 봐.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잠깐, 한 명씩 물어봐. 나 이제 막 도착했어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "돌아왔구나.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 늦었지?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아니. 돌아와서 다행이야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 웃으려다 눈가를 문지른다. 아서는 더 묻지 않고 가방을 받아 든다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "일단 들어가자! 네 자리 비워 뒀어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "네가 의자에 짐을 쌓아 둬서 내가 치웠잖아.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그러니까 비워 뒀다고!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "왕국 수도 · 엘리엇의 저택 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(식탁에 네 사람 몫의 잔이 놓인다. 소서러스가 반전세계에 떨어진 뒤의 일을 천천히 이야기한다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "혼자라고 생각했는데, 내 안에서 다크 소서러스가 말을 걸었어. 길을 찾을 때도, 싸울 때도 도와줬고.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "네가 앞뒤 안 보고 뛰어들 때 붙잡느라 바빴지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스의 눈빛이 잠시 달라진다. 파이터가 들고 있던 빵을 내려놓는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "지금 말한 게…?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 돌아온 것도 함께야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "소서러스를 도와줘서 고마워.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "고맙다는 말은 저 애가 좀 덜 무모해지면 듣겠어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모르가나를 쓰러뜨린 뒤에도 끝이 아니었어. 저주 때문에 힘들었고… 불타는 탑 꼭대기까지 올라가야 했어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7a"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "저주는 이제 괜찮아?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7a"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아직 흔적이 남아 있대. 무리하지 않을게. 탑에 있던 차원 포털 미러를 통과해서 풀밭으로 나왔고, 거기서 왕국으로 오는 길을 물었어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7a"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "주교님께도 상태를 보여 드리자. 혼자 참지 말고.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7a"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "모르가나를 살려 준 뒤에는 구슬을 받아서 검은 호수에 들어갔어. 거기서 지팡이를 얻고, 신의 호수에서 이상한 기억을 봤어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 천사의 목걸이 문양을 옮긴 종이를 펼친다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "천사가 타락하기 전에 모르가나와 싸우는 모습이었어. 사람들을 지키려고 했고, 자기 스승을 부르더라.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그 천사가… 사람들을 지켰다고?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나도 놀랐어. 하지만 왜 달라졌는지는 못 봤어. 이 문양을 아는 사람을 찾으면 뭔가 알 수 있을 것 같아.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "호수에서는 어떻게 돌아온 거야?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "호수 밖 유적들을 더 찾아다녔어. 그중 하나에 차원 포털 미러가 있었고. 너희 얼굴을 하나씩 떠올리면서 돌아갈 곳을 찾았어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "마지막까지 수도 없이 확인했지. 또 엉뚱한 세계로 갈 수는 없으니까.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이번에는 아서가 천으로 감싼 성흔의 파편을 꺼낸다. 바이올렛은 지하 던전에서 옮겨 온 기록을 그 옆에 펼친다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "우리도 천사를 막을 방법을 찾았어. 이걸로 핵을 감싼 보호막에 잠깐 틈을 낼 수 있대.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "하지만 그 안의 핵은 우리가 직접 공격해야 해. 전에 싸웠던 사람들도 거기까지는 해내지 못했대.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "다리도 무너지고 갑옷도 움직이고… 너한테 할 말이 엄청 많아.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "천천히 말해 줘. 이번에는 듣다가 사라지지 않을 테니까.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 지하에서 바닥이 꺼졌을 때의 일을 손짓까지 섞어 설명한다. 바이올렛이 다리의 마력 회로를 찾은 이야기와, 수호기사가 세 사람을 통과시킨 이야기가 이어진다. 소서러스는 식어 버린 차도 잊고 듣는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "무서웠겠다. 다리가 무너질 때.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "무서웠지. 그런데 아서가 내 손을 잡고 바이올렛이 길을 찾고 있으니까, 일단 버티면 되겠더라고.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "사실 나도 어떻게 끝날지는 몰랐어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "알아. 검 쥔 손이 떨리고 있었으니까.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나도 미러 앞에서 그랬어. 너희가 아직 날 기다릴까 싶어서.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그건 걱정 안 해도 됐잖아!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "돌아올 거라고 생각했어. 그래도… 직접 보니까 이제야 안심돼.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "봉인도 저절로 풀린 게 아니었어. 누가 밖에서 해제 명령을 보냈다는 기록이 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "천사 말고도 움직이는 자가 있다는 거네.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아직 누구인지는 몰라. 주교님과 스승님이 기록을 찾고 계셔.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(식탁의 촛불이 짧아진다. 네 사람은 서로가 지나온 길을 밤늦도록 듣는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "엘리엇의 저택 식당",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(휴식과 준비를 마친 일행이 동문에 모인다. 엘리엇이 지도의 갈림길을 짚는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "엘리엇",
+      "className": "elliot",
+      "text": "동쪽 길의 역참에서 검은 날개를 보았다는 여행자의 증언이 들어왔다. 천사인지 다른 존재인지부터 확인해야 한다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "역참을 따라가면서 목격한 사람들을 찾아볼게요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "엘리엇",
+      "className": "elliot",
+      "text": "파편을 다루는 연습은 계속하거라. 연습 때 흐름을 맞추는 것과 실제 천사에게 쓰는 것은 다를 테니.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_elliot_world6b_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네. 행방을 알게 되더라도 준비 없이 덤비지는 않을게요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이번에는 나도 같이야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "드디어 넷이네. 가는 길에 또 흩어지면 안 된다!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그러려면 앞에서 혼자 뛰지 마.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 이미 한 발 나갔던 자리에서 멈춘다. 소서러스가 웃으며 세 사람 옆에 선다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "가자. 천사가 어디 있는지부터 알아보자.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "며칠 뒤 · 왕국 동문",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 역참에 도착한다. 바이올렛이 검은 날개를 보았다는 상인에게 지도를 펴 보이는 순간, 흙투성이 말 한 마리가 마당으로 들어온다. 전령이 안장에서 미끄러지듯 내려온다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "전령",
+      "className": "scene",
+      "text": "은종 마을에서 왔습니다! 경비대에 전할 말이…!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 쓰러지려는 전령을 붙잡는다. 소서러스가 물통을 열어 건넨다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "숨부터 고르세요. 무슨 일이에요?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "전령",
+      "className": "scene",
+      "text": "새벽에 괴물들이 들이닥쳤어요. 숲에서 나무가 걸어 나와 길을 막고… 검은 날개를 단 자가 종루에 내려앉았습니다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "검은 날개?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "전령",
+      "className": "scene",
+      "text": "멀리서 봤지만 분명히 하나였어요. 한쪽에만 커다란 날개가… 사람들은 아직 마을에 갇혀 있어요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 서로를 바라본다. 바이올렛이 상인에게 묻는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아저씨가 보신 것도 한쪽 날개였나요?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "상인",
+      "className": "scene",
+      "text": "거기까지는 못 봤어. 저 마을 방향으로 검은 게 내려가는 것만 봤지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 가서 보면 되겠네. 사람들도 구하고!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "전령",
+      "className": "scene",
+      "text": "도와주시겠습니까? 다리가 막혀서… 북쪽 과수원 샛길밖에는….",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "샛길을 알려 주세요. 저희가 먼저 갈게요. 경비대에도 계속 소식을 전해 주세요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "천사를 찾아가는 길이었지만, 지금 당장 우리가 필요한 곳은 저기네.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "걸어서 들어온 괴물이라면 숲 쪽에도 적이 있을 거야. 샛길에서도 조심하자.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "동쪽 길 · 역참",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(길가의 뿌리들이 땅 위로 드러나 있다. 나무마다 껍질이 뜯겨 나간 자국이 있고, 흙에는 검은 수액이 흘러 있다. 나뭇가지가 흔들릴 때마다 숨어 있던 새들이 멀리 날아간다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "바람도 없는데 가지가 움직여. 가까이 가지 마.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(무너진 수레 밑에서 아이의 울음소리가 난다. 파이터와 아서가 수레를 들어 올리고, 소서러스가 그 안의 아이와 어머니를 꺼낸다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아이",
+      "className": "scene",
+      "text": "종… 종을 울려야 하는데….",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "무슨 종?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "어머니",
+      "className": "scene",
+      "text": "종루의 종이요. 위험할 때 세 번 울리면 다들 들판으로 대피해요. 그런데 그자가 줄을 끊어 버렸어요. 멀리 있는 사람들은 무슨 일이 생겼는지도 몰랐을 거예요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다른 분들은 어디 계세요?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "어머니",
+      "className": "scene",
+      "text": "외곽 창고에 모인 사람들도 있어요. 하지만 강 건너에는 아직….",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 창고 쪽으로 난 길을 살핀다. 뒤따라 나온 주민 두 명이 아이의 어머니를 부축한다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "우리가 온 샛길은 아직 지나갈 수 있어요. 창고에 모여 계세요. 경비대가 그쪽으로 올 거예요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아이",
+      "className": "scene",
+      "text": "할아버지는요? 푸른 목도리를 했어요. 다리로 사람들을 데리러 갔는데….",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다리 쪽에서 거대한 나무가 뒤틀리는 소리가 들린다. 이어 돌이 무너지는 소리와 비명이 난다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "아서, 저쪽이야!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "할아버지도 찾아볼게. 엄마랑 같이 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 아이 손에 물통을 쥐여 준다. 네 사람은 소리가 난 강가로 달린다. 종루 꼭대기에는 검은 깃털 하나가 걸려 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "은종 마을 북쪽 과수원",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    }
+  ],
+  "world8MidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다리 앞에 거대한 나무가 서 있다. 땅속에 있어야 할 뿌리들이 돌바닥을 짚고 움직이고, 줄기의 갈라진 틈에서는 붉은빛이 번진다. 가지에는 장터의 천막과 부서진 수레바퀴가 매달려 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "sceneArt": "assets/novel/characters/char_blackroot_elder_world8_standing.webp",
+      "sceneArtName": "검은뿌리 거목",
+      "sceneArtClass": "blackroot-elder"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저게… 걸어 나왔다는 나무야?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "오른쪽 가지 아래 봐. 사람들이 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(굵은 뿌리 여러 개가 반원처럼 엉켜 주민들을 가두고 있다. 푸른 목도리를 한 노인이 아이 둘을 뒤로 숨긴다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "물러서게! 가까이 오면 저 뿌리가…!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가는 뿌리가 아서의 발목을 향해 뻗는다. 아서가 뒤로 피하며 검으로 쳐 낸다. 잘린 단면에서 검은 수액이 튄다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다들 벽 쪽으로 붙으세요! 우리가 길을 열게요!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "불로 가지를 걷어 내면….",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주민의 소매를 휘감은 잔뿌리가 조여든다. 소서러스가 들려던 지팡이를 멈춘다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "안 돼. 사람들까지 번지겠어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 내가 뽑아 버리지!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 주민들을 가둔 뿌리를 붙잡는다. 뿌리 하나가 들리자 뒤쪽에서 두 개가 더 솟는다. 그는 끼어들려던 아이를 밀어내고 뒤로 구른다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "윽… 하나를 들면 다른 게 나와!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 강가의 돌다리",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(나무 괴물이 몸을 돌린다. 줄기의 낮은 곳에 오래된 나무판이 달려 있다. 희미한 글씨 아래로 주민들의 이름이 빼곡하다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "저건 마을 사람들이 소원을 적어 걸어 놓는 판이야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "원래는 광장의 나무였네! 장터에 그늘을 만들어 주던 나무가… 저 검은 자가 뭔가 박고 나서 이렇게 됐어!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "원래부터 괴물이었던 게 아니야?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 눈을 가늘게 뜬다. 줄기 뒤편에 금속 쐐기 하나가 박혀 있다. 쐐기가 빛날 때마다 가지들이 같은 방향으로 움직인다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저기야. 나무 안쪽으로 이상한 마력이 계속 들어가.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "뿌리를 움직이는 힘도 거기서 번지고 있어. 다만 아무렇게나 뽑으면 마력이 터질 수 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "가지가 흔들릴 때 뒤쪽이 보여. 아서가 시선을 끌면 내가 위치를 잡을 수 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그동안 난 사람들 나갈 틈을 만들게.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "뿌리가 다시 닫히지 못하게 내가 막아 볼게.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "좋아. 한 번에 다 하려고 하지 말자. 먼저 사람 한 명이 지나갈 만큼만 열자.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "돌다리 아래의 얕은 강가",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 빈 광장 쪽으로 돌을 던진다. 쐐기에서 붉은빛이 터지며 나무 괴물이 팔처럼 굵은 가지를 들어 올린다. 나무 그늘이 네 사람을 덮는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "아서, 온다!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "보고 있어! 할아버지, 우리가 부르면 아이들부터 보내 주세요!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "알겠네. 얘들아, 고개 숙이고 내 뒤에 붙어라.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가지가 내려찍힌다. 아서가 옆으로 피하고, 돌바닥을 때린 가지 끝이 갈라진다. 바이올렛이 그 틈으로 달린다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "파이터, 지금이야!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 뿌리를 들어 올린다. 첫 아이가 바닥을 기어 빠져나온다. 하지만 나무 괴물은 뿌리째 몸을 일으키며 다리를 향해 크게 기울어진다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "무너지게 두면 안 돼! 다들 자리 지켜!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "돌다리 진입로",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    }
+  ],
+  "world8MidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(전투의 마지막 타격에 검은 쐐기가 부서진다. 나무 괴물이 크게 뒤틀리고, 붉던 줄기 안쪽의 빛이 꺼진다. 주민들을 죄던 뿌리가 느슨해진다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "풀렸어! 이제 나올 수 있어요!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 가지를 받쳐 든다. 아서는 마지막 주민을 부축한다. 기록 관리인은 발이 걸려 넘어졌다가 젊은 주민의 도움을 받아 나온다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "다 나온 거 맞지? 나 이제 이거 놓는다!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잠깐, 아서가 아직…!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 다친 주민을 데리고 빠져나온다. 파이터가 손을 놓자 큰 가지가 돌바닥에 떨어진다. 나무는 강가 쪽으로 천천히 기울어 멈춘다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "괜찮아. 전부 나왔어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 주저앉아 두 손을 턴다. 소서러스도 지팡이를 짚고 긴 숨을 내쉰다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "다시 모이자마자 이렇게 힘쓸 줄은 몰랐는데.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그래도 아까보다 잘 맞았지?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "네가 신호 보내기 전에 뿌리를 놓을 뻔한 건 빼고.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "안 놓았잖아!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 돌다리 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기록 관리인이 나무에 다가간다. 줄기의 검은 수액은 더 흐르지 않는다. 높은 가지 끝에 작은 초록 잎이 몇 장 남아 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "내가 어릴 때도 여기 있던 나무야. 큰 홍수가 났을 때는 이 뿌리 덕분에 둑이 버텼지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아직 살아 있어요. 움직이게 하던 마력은 사라졌고요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(관리인이 줄기에서 떨어진 소원판을 줍는다. 젖은 나무판을 소매로 닦는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "우리를 지켜 주던 나무를… 우리를 가두는 데 쓰다니.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다시 심을 수 있을까요?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "뿌리를 살펴봐야겠네. 마을 사람들이 돌아오면 함께 해 보지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 부서진 쐐기를 천으로 감싼다. 안쪽에서 접힌 금속 띠가 드러난다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "여기에 글이 있어. ‘길잡이 기록을 확보하라. 수련의 계승을 허락하지 마라.’ 마지막에 검은 날개 표식도.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이 마력의 흔적… 타락한 천사의 것과 닮았어. 저 날개 달린 자에게 힘을 나눠 준 모양이네.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "우연히 마을을 습격한 게 아니었구나.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "강가에 멈춘 거목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "길잡이 기록이 뭔지 아세요?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(관리인이 천으로 싼 열쇠를 꺼낸다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "옛 새벽의 수련원에서 맡긴 기록이네. 대대로 종지기가 보관했지. 그 검은 천사가 오자마자 내놓으라고 했어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "수련원? 싸우는 법을 배우는 곳이야?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "전해지는 말로는 그렇네. 더 나아갈 길을 잃은 이들이 찾아가 새 기술을 배웠다고 하지. 나는 가 본 적 없어. 가는 길도 기록에만 남아 있고.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그래서 마을을 뒤진 거군요. 누가 거길 찾아가는 걸 막으려고.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "길잡이는 종루 기단의 보관함에 있네. 열쇠 없이 억지로 열면 기록이 상할 수 있어. 그래서 아직 가져가지 못했을 거야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그자는 지금도 종루에 있나요?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "그렇네. 오른쪽에 검은 날개가 하나 있고 긴 창을 들었어. 부하들은 바르가스 님이라고 불렀지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(종루 쪽에서 낮은 충격음이 들린다. 먼지가 지붕 너머로 솟는다. 관리인이 몸을 일으키려다가 무릎을 짚는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "여기서 쉬세요. 저희가 갈게요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "저자는 아까 저 나무보다 훨씬 위험해. 기록 때문에 무리하지는 말게.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "기록만 찾으러 가는 게 아니에요. 저자를 그대로 두면 마을이 다시 공격받을 거예요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(관리인이 바이올렛에게 열쇠를 건넨다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "광장 서쪽 담을 따라가면 종루 뒤로 들어갈 수 있네. 부디 넷 다 돌아오게.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네. 다 같이 올게요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "대피소로 갈라지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 앞서 가다 뒤를 돌아본다. 소서러스는 물을 한 모금 마신 뒤 지팡이를 다시 쥔다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "종루로 이어지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "조금 더 쉬어야 해?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "종루로 이어지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잠깐 쉬었어. 괜찮아. 대신 저 나무 때처럼 혼자 다 막으려고 하진 않을게.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "종루로 이어지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그건 나한테도 한 말이지?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "종루로 이어지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "셋 다 들어 둬. 나도 위험하면 바로 말할 테니까.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "종루로 이어지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그래. 천사라고 해도 우리가 할 일은 같아. 움직임을 보고, 서로 신호를 듣는 거야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "종루로 이어지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(광장 가까이에서 날카로운 바람 소리가 난다. 검은 깃털 하나가 담 너머로 날아와 바이올렛의 발치에 떨어진다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "종루로 이어지는 골목",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    }
+  ],
+  "world8BossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(광장의 돌바닥에는 깊은 창 자국이 나 있다. 종줄기는 끊겨 계단에 떨어져 있고, 종루의 기단은 여러 군데 깨져 있다. 검은 창을 든 천사가 그 앞에 서 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그의 오른쪽 등에서 단 하나의 검은 날개가 넓게 펼쳐진다. 왼쪽에는 날개가 없다. 가슴의 검은 결정이 빛나자, 광장 곳곳에 꽂힌 쐐기들도 같은 빛을 낸다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저자가….",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "타락한 천사인가?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "아니. 우리가 만난 천사는 저 얼굴이 아니었어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "하지만 나무에 흘려보낸 힘은 저자에게서 나오고 있어. 주인과 연결돼 있겠지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 고개를 돌린다. 날개가 한 차례 움직이자 광장의 먼지가 낮게 밀려난다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "거목을 멈춘 것이 너희냐.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네가 마을을 공격했어?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "주인께서 맡기신 기록을 거두러 왔다. 종지기가 협조했다면 이렇게 오래 머물지도 않았을 것이다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그 기록은 이 마을이 지키던 거야. 네 주인 것이 아니야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "힘을 거스를 길을 남겨 두는 것은 주인의 뜻이 아니다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그 주인이… 봉인에서 풀려난 타락한 천사구나.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "그분을 그런 이름으로 부르지 마라.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 한 걸음 앞으로 나온다. 검끝은 바닥을 향한다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그자는 어디 있지? 왜 이런 일을 시키는 거야?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "너희가 알 필요는 없다. 길을 막지 않는다면 너희까지 붙잡을 이유도 없고.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "사람들을 나무에 가둬 놓고 그 말을 해?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "도망치는 자들 사이에 종지기가 숨어 있었다. 놓쳤다면 기록을 찾는 데 더 오래 걸렸겠지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "사람들을 붙잡을 도구로 썼구나. 나무까지도.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 창을 세운다. 가슴의 결정에서 흘러나온 마력이 창날을 검게 덮는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "주인께서는 내게 힘을 주셨다. 그 명을 이루는 것이 나의 몫이다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그 힘을 받았으니까 시키는 대로 다 한다는 거야?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "그분이 아니었다면 나는 여기 서 있지도 못했을 것이다. 너희의 말 몇 마디로 내 충성이 바뀔 것이라 생각하지 마라.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그럼 우린 네가 더는 사람들을 해치지 못하게 할 거야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(골목에서 약탈병들이 몰려나온다. 바르가스가 손을 들자 그들이 일제히 멈춘다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "서로의 뒤에 기대 선 아이들이군. 하나가 무너지면 나머지도 무너질 텐데.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "하나가 힘들면 다른 셋이 버틸 수 있거든.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "우린 네 명 다 돌아가기로 했어. 너도 무기를 내려놓으면 여기서 멈출 수 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 창을 가로눕힌다. 날개 안쪽에서 날카로운 바람이 감긴다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "그렇다면 어디까지 버티는지 보겠다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 계단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 바람이 계단을 훑는다. 네 사람은 양옆으로 몸을 피한다. 바르가스의 뒤편에서 병사들이 종루의 기단에 다시 도구를 들이댄다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "계속 보관함을 부수고 있어. 오래 두면 기록이 망가질 거야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 앞에서 막을게. 바로 뒤로 가지 말고 기회를 봐.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "광장에 꽂힌 쐐기들이 병사들한테 힘을 보내고 있어. 먼저 그 연결을 끊어야겠어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "좋아. 내가 길을 열 테니까 신호 줘.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 열쇠를 안쪽 주머니에 넣는다. 관리인의 목소리를 떠올리듯 매듭을 단단히 누른다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "주민들은 서쪽 길로 대피했어. 저자가 그쪽으로 가지 못하게 하자.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "준비됐지?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세 사람이 고개를 끄덕인다. 바르가스가 창끝을 낮추고 돌진한다. 아서가 검을 들어 맞선다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "광장 서쪽 담 아래",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    }
+  ],
+  "world8BossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스의 창이 아서의 검을 밀어낸다. 아서가 무릎을 낮추며 피하자 창날이 종루 기단에 박힌다. 이미 금이 간 겉돌이 크게 무너진다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아서, 뒤로!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(먼지 속에서 푸른 금속함이 드러난다. 바르가스가 창을 뽑아 함을 낚아채려 한다. 바이올렛의 화살이 손앞에 박힌다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "그 열쇠… 종지기가 너희에게 맡겼군!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 바이올렛에게 돌아선다. 파이터가 옆에서 창대를 쳐 밀고, 아서가 다시 앞을 가로막는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "바이올렛, 지금!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 보관함에 열쇠를 꽂는다. 잠금쇠가 열리며 안에 있던 얇은 기록판 몇 장이 바닥으로 미끄러진다. 하나에는 검과 주먹, 활과 지팡이를 든 사람들의 자세가 새겨져 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "‘공명 각성’… 새벽의 수련원으로 가는 기록이야!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "새 기술을 배운다는 그곳?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "너희 손에는 남기지 않겠다!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가슴의 결정이 빛난다. 광장 쐐기들에서 검은 줄기가 뻗어 보관함으로 모인다. 기록판의 가장자리가 갈라지기 시작한다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 1,
+      "location": "은종 마을 · 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 지팡이를 기단에 짚는다. 기록판 위에 얇은 마력의 막이 생긴다. 검은 줄기가 부딪칠 때마다 막이 흔들린다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "오래는 못 막아! 쐐기부터 끊어 줘!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 광장 가장자리의 쐐기를 돌바닥에서 뽑아 부순다. 첫 줄기가 끊긴다. 바이올렛은 기록판을 천으로 덮은 뒤 반대쪽 쐐기에 화살을 쏜다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이터, 네 뒤에도 하나!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "봤어!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 소서러스를 향해 날개를 휘두른다. 아서가 옆으로 달려들어 창의 진로를 막는다. 충격에 아서의 발이 밀려난다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아직… 안 돼!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "언제까지 남을 지키며 싸울 수 있을 것 같으냐!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 못 버티면… 다른 애들이 잡아 줄 거야!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(마지막 쐐기가 깨진다. 소서러스를 누르던 검은 줄기가 끊어진다. 바이올렛이 아서의 옆으로 달려와 가슴 결정의 고정부를 겨눈다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "한 발만 왼쪽으로!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 몸을 비튼다. 화살이 그 어깨 옆을 지나 고정부에 박힌다. 파이터가 바르가스의 창을 밀어 올리고, 소서러스의 마법이 금이 간 결정을 때린다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(결정이 깨진다. 광장에 남은 검은빛이 흩어진다. 하지만 바르가스는 물러서지 않는다. 검은 날개를 펼쳐 네 사람을 밀어낸 뒤 창을 다시 쥔다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "주인께 받은 것을 부쉈다고… 나까지 무너질 줄 알았느냐!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "아직이야. 다들 조심해!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 지면을 박차고 돌진한다. 아서가 창을 흘려받고, 바이올렛의 화살이 그가 발을 디딜 돌을 깨뜨린다. 자세가 흔들린 순간 파이터가 창대를 쳐낸다. 소서러스가 짧은 마법으로 반격할 길을 막는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "지금 끝내자!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검의 마지막 일격으로 검은 창을 꺾는다. 바르가스가 한쪽 무릎을 꿇는다. 펼쳐져 있던 날개가 천천히 내려온다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 2,
+      "location": "종루 기단 앞",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 부러진 창을 멀리 치운다. 바이올렛은 바르가스의 손이 닿지 않는 곳으로 기록을 옮긴다. 아서는 검을 거두지 않은 채 한 걸음 떨어져 선다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이제 끝났어. 더 싸우지 마.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "왜 마지막까지… 그 기록을 놓지 않았지? 버렸다면 더 쉽게 싸울 수 있었을 텐데.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "우리가 지키던 걸 네가 없애게 둘 수는 없었으니까. 사람들이 살던 마을도, 저 나무도 마찬가지야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "네 주인은 우리가 이걸 배우는 게 두려운 거야?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "그분의 뜻을 너희가 다 안다고 생각하지 마라.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그럼 직접 묻겠어. 어디로 가면 만날 수 있지?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 고개를 든다. 입술이 조금 움직이지만 아무 말도 하지 않는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "끝까지 말 안 하네.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(광장 입구에서 갑옷 소리가 들린다. 전령과 함께 도착한 왕국 경비대가 남은 병사들을 무장 해제한다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "경비대장",
+      "className": "scene",
+      "text": "다리와 대피소를 확보했다. 다친 사람은 치료 중이다. 여기 지휘관은 이자인가?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네. 창과 가슴의 마력 장치는 부쉈지만 아직 위험해요. 날개도 조심해 주세요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(경비대가 결박구로 바르가스의 움직임을 막는다. 한 대원이 기록 확보 명령이 새겨진 금속 띠를 건네받는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바르가스",
+      "className": "vargas",
+      "text": "너희가 그곳에 닿는다 해도… 배운 것을 감당하지 못하면 아무 소용 없다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_vargas_world8_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그래서 배우러 가는 거야. 제대로 쓰는 법까지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바르가스가 시선을 돌린다. 아서는 그가 호송되는 모습을 지켜보다 검을 집어넣는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 3,
+      "location": "조용해진 종루 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(기록 관리인이 회수한 판들을 순서대로 놓는다. 네 사람도 탁자 주위에 앉는다. 부러진 부분은 있지만 별자리 지도와 도해는 읽을 수 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "남아 있군. 잘 지켜 줬네.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "‘공명 각성. 배운 힘이 한계에 이르면 새벽의 문을 찾으라.’ 다음 판에는 수련하는 자세가 있어요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이거 봐. 주먹을 이렇게 내는데 발은 반대쪽으로 딛네? 그냥 세게 치는 게 아닌가 봐.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "마법도 있어. 마력을 모으는 모양이 내가 배운 것하고 달라.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검을 든 사람의 도해를 오래 살핀다. 그림 옆에는 서로 다른 네 줄기가 가운데에서 만나는 표시가 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "각자의 기술을 더 발전시키고… 함께 쓰는 법도 배우는 걸까?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "전해 들은 말과는 맞네. 다만 나는 기록을 지키는 사람이지, 그 수련을 가르칠 수 있는 사람은 아니야.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그림 몇 장으로 흉내 낼 일도 아니겠어. 힘을 흘리는 순서가 빠져 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 진짜 수련원을 찾아가야겠네.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 지도를 펼친다. 기록판의 산 능선과 왕국 지도의 동쪽 산줄기를 나란히 놓는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "두 봉우리는 여기야. 별자리는 옛길이 어느 쪽인지 알려 주는 것 같고. ‘첫빛이 닿는 문’이라는 말도 있어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "가는 길을 찾을 단서는 충분하겠어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "파편으로 보호막을 열어도 그다음은 우리 힘으로 해내야 한다고 했지?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 오늘도 넷이 겨우 이겼어. 천사와 싸우기 전에는 더 배워야 해.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 신의 호수에서 옮긴 문양을 꺼낸다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "수련원에 천사의 스승을 아는 사람도 있을까?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "이 문양은 나도 처음 보네. 수련원의 기록에 있는 표식과는 다르지만… 오래된 가르침을 아는 사람이라면 물어볼 만하겠지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "고맙습니다. 이것도 함께 찾아볼게요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "길잡이 사본을 가져가게. 이걸 지키던 이유도 결국은 배울 사람에게 길을 알려 주기 위해서였으니까.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "원본은 다시 안전하게 보관할 수 있도록 도와드릴게요.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 4,
+      "location": "그날 저녁 · 대피소의 긴 탁자",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서와 파이터가 주민들과 함께 새 종줄기를 올린다. 소서러스는 다친 사람들이 있는 창고에 물을 나르고, 바이올렛은 경비대의 보고서에 지도의 사본을 첨부한다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "주교님과 엘리엇 님께 보낼 편지까지 됐어. 천사의 행방은 경비대가 계속 조사해 주기로 했대.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "쐐기와 결정 조각도 함께 보내면 마력을 조사하는 데 도움이 되겠지.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 강가 쪽을 본다. 주민들이 거목의 뿌리에 젖은 흙과 천을 덮어 주고 있다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저 나무도 살 수 있대?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "상처가 커서 더 지켜봐야 한대. 그래도 남아 있는 뿌리는 마르지 않았어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아이가 푸른 목도리를 한 할아버지의 손을 잡고 다가온다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아이",
+      "className": "scene",
+      "text": "이제 종 울려도 돼요?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "기록 관리인",
+      "className": "scene",
+      "text": "그래. 오늘은 위험하다는 신호가 아니야. 모두 돌아와도 된다는 소리란다.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아이가 새 줄을 당긴다. 맑은 종소리가 광장과 강가로 퍼진다. 창고 문이 열리고, 일을 하던 주민들이 고개를 든다. 소서러스는 잠시 눈을 감고 그 소리를 듣는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "무슨 생각 해?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "반전세계에서는 돌아가면 무슨 소리가 먼저 들릴까 생각했어. 너희 목소리일까, 장터 소리일까.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "결국 내 목소리였지?",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "네가 제일 크게 소리쳤으니까.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 웃는다. 멀리서 아이가 한 번 더 종을 울린다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 그게 좋았어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 5,
+      "location": "다음 날 아침 · 은종 마을 광장",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(마을에서 건네준 빵과 물을 챙긴 네 사람이 길을 나선다. 바이올렛은 새벽의 수련원으로 이어지는 산길을 짚는다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이번엔 진짜 새 기술을 배우러 가는 거네. 벌써 궁금한데!",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "먼저 무사히 찾아가야지. 길 잃고 돌아오면 무슨 기술부터 배우겠어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "지도 읽기.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그것도 기술은 기술이네….",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 웃다가 뒤를 돌아본다. 주민들이 손을 흔든다. 강가에는 큰 나무가 남아 있고, 종루에는 더 이상 검은 그림자가 없다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "천사가 어디 있는지는 아직 모르지만, 오늘 여기로 온 건 잘한 일이었어.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 다음에 만날 때는 오늘보다 더 잘 싸울 수 있도록 하자.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그래. 넷이 함께 배워 보자.",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 산길로 향한다. 멀어지는 종소리 사이로, 다시 시작된 마을의 소음이 들린다.)",
+      "scene": "silver-bell-village",
+      "sceneNumber": 6,
+      "location": "은종 마을 동쪽 갈림길",
+      "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
+    }
+  ],
   "world4Potion4": [
     {
       "speaker": "내레이션",

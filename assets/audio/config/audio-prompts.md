@@ -65,3 +65,12 @@ Sound description: A tiny polished crystal tap with a soft rounded tick, quick a
 ### Item acquired
 
 Sound description: A sparkling three-note crystal pickup with a warm coin-like accent and a short upward shimmer. Style: rewarding collectible fantasy RPG. Duration: 0.9 seconds. Intensity: medium-high and cheerful. Audio quality: stereo, 48 kHz, crisp and clean with headroom. Loop: no.
+
+## Home/world phonk playlist (2026-10-29)
+
+Three original instrumental phonk tracks are available in the music-button
+playlist: Crystal Drive (melodic, 128 BPM requested), Moonlight Drift (chill,
+120 BPM requested), and Mint Horizon (atmospheric, 112 BPM requested).
+Full English prompts and original responses: `assets/audio/source/lobby/`.
+Processing metadata, runtime formats and review status:
+`assets/audio/bgm/lobby/`. See that directory's `SOURCES.md` for reproduction.

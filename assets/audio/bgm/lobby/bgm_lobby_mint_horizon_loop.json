@@ -1,0 +1,33 @@
+{
+  "title": "민트 호라이즌",
+  "provider": "ElevenLabs Music",
+  "model": "music_v2_5",
+  "prompt": "Original instrumental phonk background music for Crystal Quest, a bright crystal-fantasy vocabulary RPG for young learners. Recognizable melodic cowbell hook, syncopated tight 808 bass, punchy kicks, crisp claps and rolling hi-hats, with sparkling crystal bells and warm atmospheric synth chords. Polished stereo mix, moderate intensity, controlled bass and smooth treble, readable on mobile speakers, leave room for UI sounds. No vocals, rap, speech, vocal samples, profanity, horror, harsh clipping or sirens. Begin immediately with the groove. Maintain a repeatable 32-bar phrase, no silent intro, no final cadence or fade-out. Last bar leads harmonically and rhythmically into the first bar for continuous looping. Bouncy atmospheric phonk at 112 BPM for a sunny fantasy journey. Mint crystal chimes, syncopated cowbell call and response, warm airy chords, laid-back adventurous groove. Target duration 68.571 seconds.",
+  "bpm": 112,
+  "requestedDurationMs": 68571,
+  "source": "bgm_lobby_mint_horizon_loop.mp3",
+  "format": "mp3_48000_192",
+  "review": "Generated original; loudness normalized and 8 ms loop edge fades applied. Listening and musical seam approval pending. No lossless generation master supplied.",
+  "processing": {
+    "tool": "FFmpeg",
+    "filters": "highpass=f=25,atrim=duration=68.571,asetpts=PTS-STARTPTS,loudnorm=I=-16:TP=-1.5:LRA=9:linear=true:measured_I=-11.68:measured_TP=0.46:measured_LRA=1.40:measured_thresh=-21.68:offset=-0.36,afade=t=in:d=0.008,afade=t=out:st=68.563:d=0.008",
+    "sourceLoudness": {
+      "input_i": "-11.68",
+      "input_tp": "0.46",
+      "input_lra": "1.40",
+      "input_thresh": "-21.68",
+      "output_i": "-15.64",
+      "output_tp": "-3.38",
+      "output_lra": "0.80",
+      "output_thresh": "-25.64",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.36"
+    },
+    "runtimeFormats": [
+      "Vorbis quality 4",
+      "MP3 128 kbps"
+    ],
+    "sampleRate": 48000,
+    "channels": 2
+  }
+}

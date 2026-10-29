@@ -1,0 +1,19 @@
+{
+  "name": "바르가스",
+  "role": "final boss",
+  "image": "char_vargas_world8_standing.webp",
+  "source": "assets/novel/characters/source/world-8/vargas-generated.png",
+  "width": 1254,
+  "height": 1254,
+  "alpha": true,
+  "visibleAlphaBounds": [
+    52,
+    8,
+    1200,
+    1246
+  ],
+  "visibleAlphaThreshold": 32,
+  "userApproved": false,
+  "technicalReview": "Story identity, full visible silhouette and real alpha checked; faint generated alpha fringe preserved. No runtime integration or browser review.",
+  "generation": "source/world-8/generation.json"
+}

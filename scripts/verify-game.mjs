@@ -122,3 +122,63 @@ test('BGM loading deduplicates renders and cancellation prevents stale playback'
   resolveBuffer({});await retry;
   assert.equal(starts,1);assert.equal(manager.bgm.id,'FEVER');
 });
+
+test('lobby music persists selection and mute independently and rejects invalid tracks',async()=>{
+  const manifest=JSON.parse(readFileSync(new URL('../assets/audio/config/audio-manifest.json',import.meta.url),'utf8'));
+  let saved;
+  const c=vm.createContext({wordoriaSound:{}});
+  vm.runInContext(readFileSync(new URL('../sound-manager.js',import.meta.url),'utf8'),c);
+  const options={fetch:async()=>({ok:true,json:async()=>manifest}),storage:{getItem:()=>saved,setItem:(key,value)=>{saved=value;}}};
+  const manager=new c.SoundManager(options);await manager.ready;
+  assert.equal(manager.lobbyBGM(),'PHONK_CRYSTAL_BGM');
+  assert.equal(manager.setLobbyTrack('PHONK_MOONLIGHT_BGM'),true);
+  manager.setBGMMuted(true);manager.setBGMVolume(0.27);
+  assert.equal(manager.setLobbyTrack('BOSS_BGM'),false);
+  const restored=new c.SoundManager(options);await restored.ready;
+  assert.equal(restored.lobbyBGM('FOREST_BGM'),'PHONK_MOONLIGHT_BGM');
+  assert.equal(restored.settings.bgmMuted,true);assert.equal(restored.settings.bgmVolume,0.27);
+  restored.setLobbyTrack('auto');
+  assert.equal(restored.lobbyBGM('MENU_BGM'),'MENU_BGM');
+  assert.equal(restored.lobbyBGM('FOREST_BGM'),'FOREST_BGM');
+  restored.settings.lobbyTrack='removed-track';assert.equal(restored.lobbyBGM(),'MENU_BGM');
+});
+
+test('chosen lobby music follows home and world while combat keeps its dedicated soundtrack',()=>{
+  const events=[];
+  const c=vm.createContext({page:'home',run:null,emitAudio:id=>events.push(id),window:{wordoriaSound:{lobbyBGM:()=> 'PHONK_MINT_BGM',preloadAudio(){}}}});
+  const start=source.indexOf('  function syncBGM(');
+  vm.runInContext(source.slice(start,source.indexOf('  const API_TIMEOUT_MS',start)),c);
+  for(const page of ['home','dungeon','world','survival','story','storyIntro']){
+    c.syncBGM(page);assert.equal(events.at(-1),'PHONK_MINT_BGM');
+  }
+  for(const [state,id] of [[{story:true},'BATTLE_BGM'],[{story:true,boss:true},'BOSS_BGM'],[{story:true,fever:true},'FEVER_BGM']]){
+    c.run=state;c.syncBGM('battle');assert.equal(events.at(-1),id);
+  }
+});
+
+test('every lobby selection has real audio and both browser formats for phonk tracks',()=>{
+  const manifest=JSON.parse(readFileSync(new URL('../assets/audio/config/audio-manifest.json',import.meta.url),'utf8'));
+  assert.equal(manifest.lobbyTracks.filter(track=>track.id.startsWith('PHONK_')).length,3);
+  for(const track of manifest.lobbyTracks){
+    const entry=manifest.events[track.id];assert.equal(entry.loop,true);
+    for(const asset of entry.sources)assert.ok(readFileSync(new URL('../'+asset,import.meta.url)).length>10000,asset);
+    if(track.id.startsWith('PHONK_'))assert.deepEqual(entry.sources.map(path=>path.split('.').at(-1)),['ogg','mp3']);
+  }
+});
+
+test('hidden-page music defers playback and resumes only after prior audio unlock',async()=>{
+  const listeners=new Map();
+  const document={hidden:true,addEventListener:(id,fn)=>listeners.set(id,fn),removeEventListener:(id)=>listeners.delete(id)};
+  const c=vm.createContext({wordoriaSound:{},document});
+  vm.runInContext(readFileSync(new URL('../sound-manager.js',import.meta.url),'utf8'),c);
+  const manager=new c.SoundManager();await manager.ready;
+  manager.manifest={events:{LOBBY:{category:'bgm',sources:['lobby.ogg']}}};
+  await manager.playBGM('LOBBY');assert.equal(manager.pendingBGM.id,'LOBBY');assert.equal(manager.context,null);
+  let suspended=0,resumed=0;
+  manager.context={suspend:async()=>{suspended++;}};
+  manager.unlock=async()=>{resumed++;};
+  const visibility=listeners.get('visibilitychange');
+  visibility();assert.equal(suspended,0);
+  manager.unlocked=true;visibility();assert.equal(suspended,1);
+  document.hidden=false;visibility();assert.equal(resumed,1);
+});

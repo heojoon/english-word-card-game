@@ -1,0 +1,11 @@
+{
+  "title": "크리스털 드라이브",
+  "provider": "ElevenLabs Music",
+  "model": "music_v2_5",
+  "prompt": "Original instrumental phonk background music for Crystal Quest, a bright crystal-fantasy vocabulary RPG for young learners. Recognizable melodic cowbell hook, syncopated tight 808 bass, punchy kicks, crisp claps and rolling hi-hats, with sparkling crystal bells and warm atmospheric synth chords. Polished stereo mix, moderate intensity, controlled bass and smooth treble, readable on mobile speakers, leave room for UI sounds. No vocals, rap, speech, vocal samples, profanity, horror, harsh clipping or sirens. Begin immediately with the groove. Maintain a repeatable 32-bar phrase, no silent intro, no final cadence or fade-out. Last bar leads harmonically and rhythmically into the first bar for continuous looping. Uplifting melodic drift phonk at 128 BPM, confident playful home-menu energy, violet neon sparkle, catchy cowbell melody over hopeful minor-to-major chord lifts. Target duration 60.000 seconds.",
+  "bpm": 128,
+  "requestedDurationMs": 60000,
+  "source": "bgm_lobby_crystal_drive_loop.mp3",
+  "format": "mp3_48000_192",
+  "review": "Generated original; technical processing and listening review pending."
+}

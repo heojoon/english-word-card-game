@@ -1,0 +1,222 @@
+{
+  "date": "2026-10-29",
+  "tool": "image_gen.imagegen",
+  "model": "undisclosed",
+  "world": "8",
+  "title": "잿빛 종이 울리는 마을",
+  "storyReference": "assets/novel/world-8-scenario.md",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": null,
+  "targetDimensions": {
+    "width": 1024,
+    "height": 3072,
+    "aspectRatio": "1:3"
+  },
+  "actualDimensions": {
+    "width": 724,
+    "height": 2171
+  },
+  "source": "assets/story/source/world-8/silver-bell-village-final-generated.png",
+  "runtime": "assets/story/chapter-8-silver-bell-village-map.webp",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, World 8: village of the ash-gray bell.\nScene: Silver Bell Village, a riverside village along the eastern road. Follow a continuous winding golden path down from the TOP eastern roadside coaching inn and meadows, into cream-stone village homes with slate-lavender roofs, through a turquoise riverside stone bridge at the CENTER beside a great ancient living tree with sweeping roots and a small dark iron wedge (stage 15), then quiet village lanes and archive garden, ending at a cream-stone bell tower square at the BOTTOM (stage 30). The bell tower has one silent silver bell and a cut bell rope, subtle damage to its plinth, no horror or burning buildings. The old tree remains alive, green and dignified. Scattered dark iron wedges are small narrative accents, not extra crystals. No characters or monsters. Gentle adventure mood, hopeful warm afternoon light. No unrelated library or palace.\nReference roles: Image 1 = authoritative chapter-1 style reference; there is no existing target layout.\nComposition: very tall portrait 1:3, target 1024 x 3072. Top-to-bottom progression with every successive stage at a strictly greater y coordinate, one winding connected route, never a route going back up. Landmarks at side of path must not cover waypoint pedestals. Provide generous clear space around each crystal.\nGameplay contract: exactly 30 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals, NO additional waypoint pedestals. Stage order and normalized centers: 1: (20%, 5%); 2: (40%, 8.04%); 3: (64%, 11.08%); 4: (80%, 14.12%); 5: (62%, 17.16%); 6: (40%, 20.2%); 7: (20%, 23.24%); 8: (40%, 26.28%); 9: (64%, 29.32%); 10: (80%, 32.36%); 11: (62%, 35.4%); 12: (40%, 38.44%); 13: (20%, 41.48%); 14: (40%, 44.52%); 15: (64%, 47.56%); 16: (80%, 50.6%); 17: (62%, 53.64%); 18: (40%, 56.68%); 19: (20%, 59.72%); 20: (40%, 62.76%); 21: (64%, 65.8%); 22: (80%, 68.84%); 23: (62%, 71.88%); 24: (40%, 74.92%); 25: (20%, 77.96%); 26: (40%, 81%); 27: (64%, 84.04%); 28: (80%, 87.08%); 29: (62%, 90.12%); 30: (40%, 93.16%). Build route and landings around these centers. All 30 are separate, unobscured and inside frame. Small enough crystals to be separated vertically, high clarity. Starting waypoint at top and final waypoint beside bell tower at bottom.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nSURGICAL EDIT OVERRIDE FOR IMAGE 2: Image 2 has 31 violet crystals. REMOVE ONLY the uppermost crystal and its gold pedestal located at x=63.3%, y=4.3% (just left of the inn at the very top). Replace that one pedestal with a small ordinary patch of golden path. Keep ALL other 30 crystals, buildings, routes and pixel composition unchanged. Especially keep the new crystals near x=33%,y=5.1% and x=47.7%,y=6.1%, they form the start in that order, followed by x=77%,y=6.7%. Do not add ANY new crystal. The old top waypoint must be fully gone, including gold base. Exactly 30 remain, numbered in strictly increasing y order without painted numbers. Preserve portrait 1:3 at current dimensions. Image 1 authoritative STYLE, Image 2 target edit.",
+  "generationHistory": [
+    {
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, World 8: village of the ash-gray bell.\nScene: Silver Bell Village, a riverside village along the eastern road. Follow a continuous winding golden path down from the TOP eastern roadside coaching inn and meadows, into cream-stone village homes with slate-lavender roofs, through a turquoise riverside stone bridge at the CENTER beside a great ancient living tree with sweeping roots and a small dark iron wedge (stage 15), then quiet village lanes and archive garden, ending at a cream-stone bell tower square at the BOTTOM (stage 30). The bell tower has one silent silver bell and a cut bell rope, subtle damage to its plinth, no horror or burning buildings. The old tree remains alive, green and dignified. Scattered dark iron wedges are small narrative accents, not extra crystals. No characters or monsters. Gentle adventure mood, hopeful warm afternoon light. No unrelated library or palace.\nReference roles: Image 1 = authoritative chapter-1 style reference; there is no existing target layout.\nComposition: very tall portrait 1:3, target 1024 x 3072. Top-to-bottom progression with every successive stage at a strictly greater y coordinate, one winding connected route, never a route going back up. Landmarks at side of path must not cover waypoint pedestals. Provide generous clear space around each crystal.\nGameplay contract: exactly 30 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals, NO additional waypoint pedestals. Stage order and normalized centers: 1: (20%, 5%); 2: (40%, 8.04%); 3: (64%, 11.08%); 4: (80%, 14.12%); 5: (62%, 17.16%); 6: (40%, 20.2%); 7: (20%, 23.24%); 8: (40%, 26.28%); 9: (64%, 29.32%); 10: (80%, 32.36%); 11: (62%, 35.4%); 12: (40%, 38.44%); 13: (20%, 41.48%); 14: (40%, 44.52%); 15: (64%, 47.56%); 16: (80%, 50.6%); 17: (62%, 53.64%); 18: (40%, 56.68%); 19: (20%, 59.72%); 20: (40%, 62.76%); 21: (64%, 65.8%); 22: (80%, 68.84%); 23: (62%, 71.88%); 24: (40%, 74.92%); 25: (20%, 77.96%); 26: (40%, 81%); 27: (64%, 84.04%); 28: (80%, 87.08%); 29: (62%, 90.12%); 30: (40%, 93.16%). Build route and landings around these centers. All 30 are separate, unobscured and inside frame. Small enough crystals to be separated vertically, high clarity. Starting waypoint at top and final waypoint beside bell tower at bottom.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+      "references": [
+        "assets/story/chapter-1-library-map.webp"
+      ],
+      "source": "assets/story/source/world-8/silver-bell-village-generated.png",
+      "review": "29 waypoints: corrected"
+    },
+    {
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, World 8: village of the ash-gray bell.\nScene: Silver Bell Village, a riverside village along the eastern road. Follow a continuous winding golden path down from the TOP eastern roadside coaching inn and meadows, into cream-stone village homes with slate-lavender roofs, through a turquoise riverside stone bridge at the CENTER beside a great ancient living tree with sweeping roots and a small dark iron wedge (stage 15), then quiet village lanes and archive garden, ending at a cream-stone bell tower square at the BOTTOM (stage 30). The bell tower has one silent silver bell and a cut bell rope, subtle damage to its plinth, no horror or burning buildings. The old tree remains alive, green and dignified. Scattered dark iron wedges are small narrative accents, not extra crystals. No characters or monsters. Gentle adventure mood, hopeful warm afternoon light. No unrelated library or palace.\nReference roles: Image 1 = authoritative chapter-1 style reference; there is no existing target layout.\nComposition: very tall portrait 1:3, target 1024 x 3072. Top-to-bottom progression with every successive stage at a strictly greater y coordinate, one winding connected route, never a route going back up. Landmarks at side of path must not cover waypoint pedestals. Provide generous clear space around each crystal.\nGameplay contract: exactly 30 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals, NO additional waypoint pedestals. Stage order and normalized centers: 1: (20%, 5%); 2: (40%, 8.04%); 3: (64%, 11.08%); 4: (80%, 14.12%); 5: (62%, 17.16%); 6: (40%, 20.2%); 7: (20%, 23.24%); 8: (40%, 26.28%); 9: (64%, 29.32%); 10: (80%, 32.36%); 11: (62%, 35.4%); 12: (40%, 38.44%); 13: (20%, 41.48%); 14: (40%, 44.52%); 15: (64%, 47.56%); 16: (80%, 50.6%); 17: (62%, 53.64%); 18: (40%, 56.68%); 19: (20%, 59.72%); 20: (40%, 62.76%); 21: (64%, 65.8%); 22: (80%, 68.84%); 23: (62%, 71.88%); 24: (40%, 74.92%); 25: (20%, 77.96%); 26: (40%, 81%); 27: (64%, 84.04%); 28: (80%, 87.08%); 29: (62%, 90.12%); 30: (40%, 93.16%). Build route and landings around these centers. All 30 are separate, unobscured and inside frame. Small enough crystals to be separated vertically, high clarity. Starting waypoint at top and final waypoint beside bell tower at bottom.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nTARGETED CORRECTION: Image 2 is the first generated TARGET MAP and is the layout reference. Preserve its complete scene, rendering, all existing 29 waypoint crystals and their positions. It currently has 29 crystals, not 30. ADD EXACTLY ONE new violet-blue crystal on its own gold circular pedestal near normalized x=27%, y=3.1%, on the upper left grassy roadside. Extend the existing top path leftward to this new starting crystal. The existing first crystal near x=63%,y=4.3% then becomes stage 2. Keep every other crystal unchanged; final remains near x=38%,y=89.4% beside bell tower. Output must now have exactly 30 violet crystal waypoints. Do not duplicate buildings or add other objects. Image 1 remains STYLE AUTHORITY, Image 2 is the image to edit. Preserve target 724x2172 portrait 1:3.",
+      "references": [
+        "assets/story/chapter-1-library-map.webp",
+        "assets/story/source/world-8/silver-bell-village-generated.png"
+      ],
+      "source": "assets/story/source/world-8/silver-bell-village-30-generated.png",
+      "review": "31 waypoints: corrected"
+    },
+    {
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, World 8: village of the ash-gray bell.\nScene: Silver Bell Village, a riverside village along the eastern road. Follow a continuous winding golden path down from the TOP eastern roadside coaching inn and meadows, into cream-stone village homes with slate-lavender roofs, through a turquoise riverside stone bridge at the CENTER beside a great ancient living tree with sweeping roots and a small dark iron wedge (stage 15), then quiet village lanes and archive garden, ending at a cream-stone bell tower square at the BOTTOM (stage 30). The bell tower has one silent silver bell and a cut bell rope, subtle damage to its plinth, no horror or burning buildings. The old tree remains alive, green and dignified. Scattered dark iron wedges are small narrative accents, not extra crystals. No characters or monsters. Gentle adventure mood, hopeful warm afternoon light. No unrelated library or palace.\nReference roles: Image 1 = authoritative chapter-1 style reference; there is no existing target layout.\nComposition: very tall portrait 1:3, target 1024 x 3072. Top-to-bottom progression with every successive stage at a strictly greater y coordinate, one winding connected route, never a route going back up. Landmarks at side of path must not cover waypoint pedestals. Provide generous clear space around each crystal.\nGameplay contract: exactly 30 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals, NO additional waypoint pedestals. Stage order and normalized centers: 1: (20%, 5%); 2: (40%, 8.04%); 3: (64%, 11.08%); 4: (80%, 14.12%); 5: (62%, 17.16%); 6: (40%, 20.2%); 7: (20%, 23.24%); 8: (40%, 26.28%); 9: (64%, 29.32%); 10: (80%, 32.36%); 11: (62%, 35.4%); 12: (40%, 38.44%); 13: (20%, 41.48%); 14: (40%, 44.52%); 15: (64%, 47.56%); 16: (80%, 50.6%); 17: (62%, 53.64%); 18: (40%, 56.68%); 19: (20%, 59.72%); 20: (40%, 62.76%); 21: (64%, 65.8%); 22: (80%, 68.84%); 23: (62%, 71.88%); 24: (40%, 74.92%); 25: (20%, 77.96%); 26: (40%, 81%); 27: (64%, 84.04%); 28: (80%, 87.08%); 29: (62%, 90.12%); 30: (40%, 93.16%). Build route and landings around these centers. All 30 are separate, unobscured and inside frame. Small enough crystals to be separated vertically, high clarity. Starting waypoint at top and final waypoint beside bell tower at bottom.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nSURGICAL EDIT OVERRIDE FOR IMAGE 2: Image 2 has 31 violet crystals. REMOVE ONLY the uppermost crystal and its gold pedestal located at x=63.3%, y=4.3% (just left of the inn at the very top). Replace that one pedestal with a small ordinary patch of golden path. Keep ALL other 30 crystals, buildings, routes and pixel composition unchanged. Especially keep the new crystals near x=33%,y=5.1% and x=47.7%,y=6.1%, they form the start in that order, followed by x=77%,y=6.7%. Do not add ANY new crystal. The old top waypoint must be fully gone, including gold base. Exactly 30 remain, numbered in strictly increasing y order without painted numbers. Preserve portrait 1:3 at current dimensions. Image 1 authoritative STYLE, Image 2 target edit.",
+      "references": [
+        "assets/story/chapter-1-library-map.webp",
+        "assets/story/source/world-8/silver-bell-village-30-generated.png"
+      ],
+      "source": "assets/story/source/world-8/silver-bell-village-final-generated.png",
+      "review": "30 waypoints verified"
+    }
+  ],
+  "waypoints": [
+    {
+      "stage": 1,
+      "xPercent": 33.115,
+      "yPercent": 5.066
+    },
+    {
+      "stage": 2,
+      "xPercent": 47.594,
+      "yPercent": 5.875
+    },
+    {
+      "stage": 3,
+      "xPercent": 77.288,
+      "yPercent": 6.683
+    },
+    {
+      "stage": 4,
+      "xPercent": 60.666,
+      "yPercent": 8.23
+    },
+    {
+      "stage": 5,
+      "xPercent": 41.761,
+      "yPercent": 9.671
+    },
+    {
+      "stage": 6,
+      "xPercent": 25.792,
+      "yPercent": 11.837
+    },
+    {
+      "stage": 7,
+      "xPercent": 41.827,
+      "yPercent": 14.086
+    },
+    {
+      "stage": 8,
+      "xPercent": 60.652,
+      "yPercent": 15.696
+    },
+    {
+      "stage": 9,
+      "xPercent": 77.251,
+      "yPercent": 17.419
+    },
+    {
+      "stage": 10,
+      "xPercent": 60.715,
+      "yPercent": 20.215
+    },
+    {
+      "stage": 11,
+      "xPercent": 41.802,
+      "yPercent": 22.285
+    },
+    {
+      "stage": 12,
+      "xPercent": 25.734,
+      "yPercent": 24.629
+    },
+    {
+      "stage": 13,
+      "xPercent": 41.752,
+      "yPercent": 27.193
+    },
+    {
+      "stage": 14,
+      "xPercent": 60.661,
+      "yPercent": 29.238
+    },
+    {
+      "stage": 15,
+      "xPercent": 77.225,
+      "yPercent": 32.266
+    },
+    {
+      "stage": 16,
+      "xPercent": 60.649,
+      "yPercent": 35.426
+    },
+    {
+      "stage": 17,
+      "xPercent": 41.784,
+      "yPercent": 37.998
+    },
+    {
+      "stage": 18,
+      "xPercent": 25.701,
+      "yPercent": 41.053
+    },
+    {
+      "stage": 19,
+      "xPercent": 41.807,
+      "yPercent": 44.14
+    },
+    {
+      "stage": 20,
+      "xPercent": 60.694,
+      "yPercent": 46.576
+    },
+    {
+      "stage": 21,
+      "xPercent": 77.172,
+      "yPercent": 49.694
+    },
+    {
+      "stage": 22,
+      "xPercent": 60.704,
+      "yPercent": 52.831
+    },
+    {
+      "stage": 23,
+      "xPercent": 41.819,
+      "yPercent": 55.519
+    },
+    {
+      "stage": 24,
+      "xPercent": 25.652,
+      "yPercent": 58.367
+    },
+    {
+      "stage": 25,
+      "xPercent": 41.881,
+      "yPercent": 61.389
+    },
+    {
+      "stage": 26,
+      "xPercent": 60.689,
+      "yPercent": 63.822
+    },
+    {
+      "stage": 27,
+      "xPercent": 77.216,
+      "yPercent": 66.418
+    },
+    {
+      "stage": 28,
+      "xPercent": 60.657,
+      "yPercent": 69.836
+    },
+    {
+      "stage": 29,
+      "xPercent": 41.845,
+      "yPercent": 72.476
+    },
+    {
+      "stage": 30,
+      "xPercent": 37.718,
+      "yPercent": 89.03
+    }
+  ],
+  "measurement": "Visual waypoint identification followed by violet-facet connected components and local area-weighted centers. Reviewed with labeled overlay.",
+  "gameplay": {
+    "stages": 30,
+    "questionsPerStage": 40,
+    "type": "C",
+    "choices": 4,
+    "questionMs": 3000,
+    "baseStageMs": 120000,
+    "dayAllocation": "Day 1–30 shuffled without replacement per content configuration",
+    "midbossStage": 15,
+    "finalStage": 30
+  },
+  "review": {
+    "styleComparison": "pass: original chapter-1 reference inspected; painterly foliage, cream stone, warm light and depth preserved",
+    "waypointCount": 30,
+    "topToBottom": true,
+    "alignmentOverlay": "assets/story/source/world-8/waypoint-alignment-review.jpg",
+    "browser": "pass: Playwright Chromium, 390x844; 30 nodes aligned to measured crystal centers within 1 CSS pixel, touch targets at least 44px, bottom stage reachable by scroll; four-choice spelling screen loads 40 questions and base 120-second clock; no page errors or missing local assets. Evidence: assets/story/source/world-8/browser-review.json",
+    "userApproval": "not requested; technical integration review is not user approval"
+  }
+}

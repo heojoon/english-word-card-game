@@ -1,0 +1,11 @@
+{
+  "title": "민트 호라이즌",
+  "provider": "ElevenLabs Music",
+  "model": "music_v2_5",
+  "prompt": "Original instrumental phonk background music for Crystal Quest, a bright crystal-fantasy vocabulary RPG for young learners. Recognizable melodic cowbell hook, syncopated tight 808 bass, punchy kicks, crisp claps and rolling hi-hats, with sparkling crystal bells and warm atmospheric synth chords. Polished stereo mix, moderate intensity, controlled bass and smooth treble, readable on mobile speakers, leave room for UI sounds. No vocals, rap, speech, vocal samples, profanity, horror, harsh clipping or sirens. Begin immediately with the groove. Maintain a repeatable 32-bar phrase, no silent intro, no final cadence or fade-out. Last bar leads harmonically and rhythmically into the first bar for continuous looping. Bouncy atmospheric phonk at 112 BPM for a sunny fantasy journey. Mint crystal chimes, syncopated cowbell call and response, warm airy chords, laid-back adventurous groove. Target duration 68.571 seconds.",
+  "bpm": 112,
+  "requestedDurationMs": 68571,
+  "source": "bgm_lobby_mint_horizon_loop.mp3",
+  "format": "mp3_48000_192",
+  "review": "Generated original; technical processing and listening review pending."
+}

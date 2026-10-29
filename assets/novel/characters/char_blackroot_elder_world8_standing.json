@@ -1,0 +1,19 @@
+{
+  "name": "검은뿌리 거목",
+  "role": "midboss",
+  "image": "char_blackroot_elder_world8_standing.webp",
+  "source": "assets/novel/characters/source/world-8/blackroot-elder-generated.png",
+  "width": 1254,
+  "height": 1254,
+  "alpha": true,
+  "visibleAlphaBounds": [
+    15,
+    14,
+    1239,
+    1239
+  ],
+  "visibleAlphaThreshold": 32,
+  "userApproved": false,
+  "technicalReview": "Story identity, full visible silhouette and real alpha checked; faint generated alpha fringe preserved. No runtime integration or browser review.",
+  "generation": "source/world-8/generation.json"
+}

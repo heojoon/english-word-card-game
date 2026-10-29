@@ -1,0 +1,52 @@
+{
+  "world": 8,
+  "tool": "built-in image_gen",
+  "purpose": "Transparent standing CG assets for the World 8 story; visual creation only",
+  "storySource": "assets/novel/world-8-scenario.md",
+  "userApproved": false,
+  "characters": [
+    {
+      "name": "바르가스",
+      "role": "final boss",
+      "image": "char_vargas_world8_standing.webp",
+      "source": "source/world-8/vargas-generated.png",
+      "references": [
+        "assets/novel/characters/char_nereus_world7b_standing.webp"
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nLighting: soft key light from upper left, cool violet ambient shadow, crystal or magic may cast a subtle cyan-mint secondary light. Keep the face, hands and main class prop unobstructed. Use one dominant focal point, two to four supporting forms, and sparse tiny details.\nUse case: stylized-concept. Asset type: World 8 final-boss visual novel standing CG for Wordoria Crystal Quest. Use the attached Nereus CG ONLY as rendering/linework/finish reference, not identity or armor design.\nCreate VARGAS (바르가스), an original male angel commander, young-adult anime face, pale skin, swept-back silver ash hair, focused amber eyes and stern loyal expression. He is a subordinate of a fallen angel, NOT that fallen angel himself. About 6.5-head-tall stylized full-body proportions, face uncovered. Strong broad dark graphite-violet enamel plate armor with restrained pale silver edge accents, layered ash-white waist cloth and long midnight-violet coat panels, sturdy armored boots and readable gauntlets. A BLACK FACETED COMMAND CRYSTAL centered in the breastplate has restrained violet/coral light within it, clearly separate from the armor.\nCRITICAL anatomy: EXACTLY ONE large feathered BLACK WING grows from HIS ANATOMICAL RIGHT upper back, visible on VIEWER LEFT in this near-frontal 3/4 pose. This single wing spreads upward and outward on viewer left with clear layered charcoal-violet feather groups and soft lavender edge light. HIS LEFT BACK on viewer right has NO WING, no wing stump, no injury, no bandage. This is natural asymmetry, no wound or disability symbolism. Both arms and both legs intact.\nHe holds ONE long BLACK SPEAR in his LEFT hand at VIEWER RIGHT, nearly upright with slight outward tilt, full spear blade and butt visible. Original angular obsidian spearhead, thin silver facets, small restrained violet core. Right gauntlet relaxed at his side, both hands readable. Poised grounded standing confrontation, calm authority, body slightly turned but stern gaze toward viewer. Asymmetric composition balanced by wing on left and spear on right. No crown, horns, halo, shield, or second weapon. No black fog.\nOutput: single isolated full-body subject, true transparent alpha background, no scenery, no floor or cast shadow, no frame, no text. Square high-resolution 2048x2048 master; entire wing, spear, hair and both boots inside frame with 7% transparent safe margins. Do not crop. Small amount of crisp selective magic only inside chest stone.\nDO NOT use pixel art, retro arcade styling, parchment or storybook texture, photorealism, realistic 3D rendering, painterly oil or watercolor brushwork, flat corporate vector art, gritty or muddy dark fantasy, horror, gore, dirty weathering, excessive bloom, gray fog, neon overload, full-gold surfaces, black comic outlines, sketch lines, visual noise, over-detailed background, text, letters, logo, watermark, UI frame, fake checkerboard, painted background on a transparent asset, cropped hair, cropped hands, cropped feet, cropped weapon, hidden face, extra fingers, fused hands, broken anatomy, sexualized body, revealing armor, adult glamour makeup, or imitation of any existing artist, anime, game, or copyrighted character.",
+      "actualDimensions": [
+        1254,
+        1254
+      ],
+      "visibleAlphaBounds": [
+        52,
+        8,
+        1200,
+        1246
+      ],
+      "reviewStatus": "Story identity, full visible silhouette and real alpha checked; faint generated alpha fringe preserved. No runtime integration or browser review."
+    },
+    {
+      "name": "검은뿌리 거목",
+      "role": "midboss",
+      "image": "char_blackroot_elder_world8_standing.webp",
+      "source": "source/world-8/blackroot-elder-generated.png",
+      "references": [
+        "assets/novel/characters/char_arkaon_world7c_standing.webp"
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nLighting: soft key light from upper left, cool violet ambient shadow, crystal or magic may cast a subtle cyan-mint secondary light. Keep the face, hands and main class prop unobstructed. Use one dominant focal point, two to four supporting forms, and sparse tiny details.\nUse case: stylized-concept. Asset type: World 8 midboss visual novel standing CG for Wordoria Crystal Quest. Attached Arkaon illustration is ONLY for rendering/line quality/crystal highlights; do NOT copy its humanoid body, armor, gems or mechanical design.\nCreate a SINGLE original enchanted TREE MONSTER called BLACKROOT ELDER TREE (검은뿌리 거목). This is the village's ancient living shade tree forcibly controlled by an inserted black magical wedge, not an inherently evil creature. Broad upright thick silvery brown trunk, stylized bark made of large clean rounded layered planes with cool lavender shadows. Heavy twisting root legs spread into 4 grounded readable supports, two sweeping thick branch arms extend asymmetrically. Full spread of silhouette including every root and uppermost branch visible. Sparse leaf canopy in desaturated jade/teal green grouped into large simple clusters so main trunk and gestures stay visible, aged branches but NOT rotten or burned. Two narrow reddish coral-lit eye cavities and a simple jagged bark furrow suggesting a troubled strained expression, no teeth or mouth full of spikes. Red glow narrowly visible within a few trunk cracks. Heroic collectible boss scale, about twice as broad as a human, NOT cute SD, not a humanoid wearing tree armor.\nStory-specific key design: an externally manufactured OBSIDIAN BLACK METAL WEDGE is driven into the upper side/back edge of the trunk at VIEWER RIGHT; pose tree 3/4 so the prominent wedge and its flared iron head are clearly visible. Wedge is the source of thin restrained red-violet magical veins down to the roots. It must look like an object inserted into wood, not a natural chest crystal, not an axe. Old small blank wooden wish plaque attached at lower front with two thin cords, no writing. One faded market-awning fabric scrap caught on a high branch and a small broken wooden cart-wheel hoop caught at the opposite side, subordinate sparse details. Root arms form a readable partially open cage-like arc at waist level, with negative space inside, no trapped people drawn.\nPose: imposing but strained standing 3/4, branching arms raised with a clear gap from the trunk, branches and root feet deliberately composed for readable mobile silhouette. Quiet effects, no wide aura. Keep warm wood distinguishable from dark-violet shadow and black wedge. Same polished clean anime cel shading and crisp contours as reference.\nOutput: one isolated subject centered, true transparent alpha background, 2048x2048 square high-resolution master, no floor, no environment, no rubble piles, no scenery, no text, no frame. 7% transparent safe margins around complete crown, branch hands, roots and accessories. No clipped twigs.\nDO NOT use pixel art, retro arcade styling, parchment or storybook texture, photorealism, realistic 3D rendering, painterly oil or watercolor brushwork, flat corporate vector art, gritty or muddy dark fantasy, horror, gore, dirty weathering, excessive bloom, gray fog, neon overload, full-gold surfaces, black comic outlines, sketch lines, visual noise, over-detailed background, text, letters, logo, watermark, UI frame, fake checkerboard, painted background on a transparent asset, cropped hair, cropped hands, cropped feet, cropped weapon, hidden face, extra fingers, fused hands, broken anatomy, sexualized body, revealing armor, adult glamour makeup, or imitation of any existing artist, anime, game, or copyrighted character.",
+      "actualDimensions": [
+        1254,
+        1254
+      ],
+      "visibleAlphaBounds": [
+        15,
+        14,
+        1239,
+        1239
+      ],
+      "reviewStatus": "Story identity, full visible silhouette and real alpha checked; faint generated alpha fringe preserved. No runtime integration or browser review."
+    }
+  ],
+  "reviewStatus": "Technical visual and alpha review only; user approval pending"
+}
