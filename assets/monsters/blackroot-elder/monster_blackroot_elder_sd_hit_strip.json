@@ -1,0 +1,114 @@
+{
+  "image": "monster_blackroot_elder_sd_hit_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": true,
+  "frameIndexBase": 0,
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 140
+    },
+    {
+      "name": "strongest-recoil",
+      "durationMs": 180
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 700,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "file": "hit.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        33,
+        70,
+        681,
+        675
+      ],
+      "scale": 0.49586776859504134,
+      "runtimeBounds": [
+        31,
+        74,
+        352,
+        374
+      ]
+    },
+    {
+      "file": "hit.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "foregroundBounds": [
+        29,
+        97,
+        681,
+        675
+      ],
+      "scale": 0.49586776859504134,
+      "runtimeBounds": [
+        30,
+        87,
+        353,
+        374
+      ]
+    },
+    {
+      "file": "hit.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        29,
+        282,
+        703,
+        671
+      ],
+      "scale": 0.49586776859504134,
+      "runtimeBounds": [
+        25,
+        181,
+        359,
+        374
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false,
+  "normalHitEndFrameIndex": 1
+}

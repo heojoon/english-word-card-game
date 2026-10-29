@@ -1,0 +1,113 @@
+{
+  "image": "monster_blackroot_elder_sd_guard_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": true,
+  "frameIndexBase": 0,
+  "frames": [
+    {
+      "name": "gather-branches",
+      "durationMs": 250
+    },
+    {
+      "name": "bark-shield",
+      "durationMs": 250
+    },
+    {
+      "name": "shield-hold",
+      "durationMs": 500,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "file": "guard.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        37,
+        16,
+        707,
+        712
+      ],
+      "scale": 0.4316546762589928,
+      "runtimeBounds": [
+        47,
+        74,
+        336,
+        374
+      ]
+    },
+    {
+      "file": "guard.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "foregroundBounds": [
+        26,
+        16,
+        718,
+        711
+      ],
+      "scale": 0.4316546762589928,
+      "runtimeBounds": [
+        42,
+        74,
+        341,
+        374
+      ]
+    },
+    {
+      "file": "guard.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        34,
+        16,
+        712,
+        712
+      ],
+      "scale": 0.4316546762589928,
+      "runtimeBounds": [
+        45,
+        74,
+        338,
+        374
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false
+}

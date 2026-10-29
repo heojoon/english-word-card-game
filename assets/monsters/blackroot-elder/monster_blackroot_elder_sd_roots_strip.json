@@ -1,0 +1,115 @@
+{
+  "image": "monster_blackroot_elder_sd_roots_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "frameIndexBase": 0,
+  "frames": [
+    {
+      "name": "wedge-charge",
+      "durationMs": 300
+    },
+    {
+      "name": "roots-rise",
+      "durationMs": 300
+    },
+    {
+      "name": "roots-contact",
+      "durationMs": 400,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "file": "roots.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        53,
+        66,
+        684,
+        696
+      ],
+      "scale": 0.47619047619047616,
+      "runtimeBounds": [
+        42,
+        74,
+        342,
+        374
+      ]
+    },
+    {
+      "file": "roots.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "foregroundBounds": [
+        8,
+        77,
+        716,
+        697
+      ],
+      "scale": 0.47619047619047616,
+      "runtimeBounds": [
+        23,
+        79,
+        360,
+        374
+      ]
+    },
+    {
+      "file": "roots.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "foregroundBounds": [
+        16,
+        80,
+        711,
+        697
+      ],
+      "scale": 0.47619047619047616,
+      "runtimeBounds": [
+        26,
+        80,
+        357,
+        374
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false,
+  "contactFrameIndex": 2,
+  "contactMs": 600
+}

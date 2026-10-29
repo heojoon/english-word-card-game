@@ -1,0 +1,115 @@
+{
+  "image": "monster_blackroot_elder_sd_attack_strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "frameIndexBase": 0,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 250
+    },
+    {
+      "name": "branch-windup",
+      "durationMs": 300
+    },
+    {
+      "name": "branch-contact",
+      "durationMs": 350,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "file": "attack.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceBox": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "foregroundBounds": [
+        31,
+        109,
+        694,
+        677
+      ],
+      "scale": 0.528169014084507,
+      "runtimeBounds": [
+        49,
+        74,
+        399,
+        374
+      ]
+    },
+    {
+      "file": "attack-revision.png",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "sourceBox": [
+        0,
+        0,
+        887,
+        887
+      ],
+      "foregroundBounds": [
+        83,
+        37,
+        838,
+        851
+      ],
+      "scale": 0.410958904109589,
+      "runtimeBounds": [
+        69,
+        39,
+        379,
+        374
+      ]
+    },
+    {
+      "file": "attack-revision.png",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "sourceBox": [
+        887,
+        0,
+        1774,
+        887
+      ],
+      "foregroundBounds": [
+        2,
+        148,
+        872,
+        847
+      ],
+      "scale": 0.42857142857142855,
+      "runtimeBounds": [
+        37,
+        74,
+        410,
+        374
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false,
+  "contactFrameIndex": 2,
+  "contactMs": 550
+}

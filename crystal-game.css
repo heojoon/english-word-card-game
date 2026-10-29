@@ -1182,6 +1182,13 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 .story-spelling-question p{margin:4px 0;font-size:15px;color:var(--ink)}
 .world-eight-arena .enemy{border:0;border-radius:0;background:linear-gradient(130deg,#e6dcff 5%,#9b80fb 30%,#5751d8 52%,#60d9cf);clip-path:polygon(50% 0,88% 28%,75% 77%,50% 100%,19% 76%,10% 30%);box-shadow:none}
 .world-eight-arena .enemy::before,.world-eight-arena .enemy::after{display:none}
+.blackroot-arena .blackroot-enemy{right:2%;bottom:12px;width:52%;max-width:210px;aspect-ratio:1;z-index:4}
+.blackroot-sprite{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;background-repeat:no-repeat;filter:drop-shadow(0 5px 3px #24214c22)}
+.blackroot-arena .blackroot-notice{position:absolute;inset:8px 8px auto;text-align:center;z-index:8;color:#24214c;font-size:12px;font-weight:800;pointer-events:none;text-shadow:0 1px 3px white}
+.blackroot-arena .blackroot-notice:not(:empty){background:#f7f7ffed;border:1px solid #d7d3fa;border-radius:12px;padding:7px}
+.blackroot-arena.ice-time-active .blackroot-sprite{filter:drop-shadow(0 0 7px var(--ice-edge))}
+.blackroot-arena .arena-feedback{bottom:3px}
+@media(max-width:360px){.blackroot-arena .blackroot-enemy{right:1%;width:51%}.blackroot-arena .blackroot-notice{font-size:11px}}
 body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('assets/environments/world-7c/01-royal-dungeon-battle.webp');background-size:cover;background-position:center}
 .arena .enemy.story-mob.arcane-sentry-mob{width:142.8px;height:102px;margin-right:-20.4px}
 .arcane-sentry-mob .spider-idle-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-idle-strip.png')}

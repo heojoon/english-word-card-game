@@ -21,6 +21,7 @@ const files = [
   'character-select-concepts.js',
   'crystal-game.css',
   'crystal-game.js',
+  'blackroot-elder-boss.js',
   'story-novel.js', 'red-skull-knight-boss.js', 'dark-triton-boss.js', 'nereus-boss.js', 'arkaon-boss.js', 'morgana-boss.js', 'abyss-golem-boss.js', 'bandit-chief-boss.js', 'elliot-boss.js', 'lich-dragon-boss.js', 'sorcerus-boss.js', 'guardian-boss.js', 'red-reaper-boss.js', 'shadow-sorceress-boss.js', 'black-dragon-boss.js', 'pet-system.js',
   'sound-manager.js',
   'native-bridge.js',
@@ -38,6 +39,10 @@ const files = [
 await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 await Promise.all(files.map(file => cp(new URL(file, root), new URL(file, dist))));
-await cp(new URL('assets/', root), new URL('assets/', dist), { recursive: true });
+await cp(new URL('assets/', root), new URL('assets/', dist), { recursive: true, filter: source => {
+  // Keep this boss's generation originals and review composites out of the APK.
+  const path=source.replaceAll('\\','/');
+  return !/\/monsters\/blackroot-elder\/(?:source|source-frames|review)(?:\/|\.html$|$)/.test(path);
+} });
 await cp(new URL('content/', root), new URL('content/', dist), { recursive: true });
 console.log(`Prepared ${join('dist', '/')} for Capacitor.`);

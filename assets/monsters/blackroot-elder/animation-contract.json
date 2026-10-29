@@ -1,0 +1,27 @@
+{
+  "name": "검은뿌리 거목",
+  "world": 8,
+  "stage": 15,
+  "role": "midboss",
+  "scope": "Integrated into World 8 stage 15; existing 40-question challenge and rewards preserved",
+  "identityReference": "assets/novel/characters/char_blackroot_elder_world8_standing.webp",
+  "storyStart": "assets/novel/world-8-midboss-start.md",
+  "storyEnd": "assets/novel/world-8-midboss-end.md",
+  "facing": "left",
+  "frameWidth": 384,
+  "frameHeight": 384,
+  "cellReason": "Preserve broad tree canopy, roots and branch attack silhouette without shrinking the body",
+  "anchor": { "x": 0.5, "y": 0.975 },
+  "sourceFrameGapPx": 50,
+  "actions": {
+    "idle": { "names": ["ready", "sway", "settle"], "durationsMs": [400, 400, 400], "loop": true },
+    "attack": { "frameWidth": 448, "frameHeight": 384, "cellReason": "Preserve branch reach and contact effect at the same body scale", "names": ["ready", "branch-windup", "branch-contact"], "durationsMs": [250, 300, 350], "contactFrameIndex": 2, "contactMs": 550 },
+    "hit": { "names": ["notice", "strongest-recoil", "complete-knockdown"], "durationsMs": [140, 180, 700], "holdLastFrame": true, "normalHitEndFrameIndex": 1 },
+    "roots": { "names": ["wedge-charge", "roots-rise", "roots-contact"], "durationsMs": [300, 300, 400], "contactFrameIndex": 2, "contactMs": 600 },
+    "guard": { "names": ["gather-branches", "bark-shield", "shield-hold"], "durationsMs": [250, 250, 500], "holdLastFrame": true }
+  },
+  "effectBounds": "All branches, roots, foliage, wedge and magic remain inside their cell with transparent safety margins",
+  "gameplayContract": "Type C 40 correct answers / 120 seconds. Wrong branch contact deals 1 HP. Roots every 20 seconds, independent 30% chance of 1 HP at contact. Guard every 30 seconds rearranges choices at contact. Shared active/pet damage, story rewards and narrative paths preserved; no separate boss HP.",
+  "userApproved": false,
+  "reviewStatus": "Offline alpha, bounds, repacked gutters and 128px visual review passed. Node runtime regressions and web build passed; browser and user visual review not performed"
+}
