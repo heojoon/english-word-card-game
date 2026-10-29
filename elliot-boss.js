@@ -45,8 +45,8 @@
     if(s.done||s.paused||s.locked||s.hp<=0||s.elliotClock>=TIME_MS||s.guardianPhase!=='idle')return false;
     s.locked=true;s.guardianPhase=correct?'player-attack':'wrong';s.guardianVisual='idle';
     s.guardianRemaining=correct?Math.max(1,contactMs):500*scale(s);
-    if(correct){s.answeredCorrect=(s.answeredCorrect||0)+1;s.attack=true;s.elliotPendingDamage=Math.max(1,s.bossAttackSteps||1);}
-    else{if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.stunned=true;}
+    if(correct){s.answeredCorrect=(s.answeredCorrect||0)+1;s.attack=true;s.elliotPendingDamage=(s.activeSkills?.attackDamage(Math.max(1,s.bossAttackSteps||1))??Math.max(1,s.bossAttackSteps||1));}
+    else{if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.stunned=true;}
     return true;
   }
   function visual(s){
@@ -105,7 +105,7 @@
         }
       }
       if(action==='attack'&&!s.elliotContact&&s.elliotActionMs<=180*m){
-        s.elliotContact=true;if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);
+        s.elliotContact=true;if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);
         notice('오러 소드 · HP −1');s.elliotPlayerHit=true;events.push('aura-hit');
         if(s.hp<=0){events.push('defeat-player');return events;}
       }

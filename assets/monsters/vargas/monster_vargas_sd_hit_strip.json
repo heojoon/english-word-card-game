@@ -1,0 +1,108 @@
+{
+  "image": "monster_vargas_sd_hit_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "frameIndexBase": 0,
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 140
+    },
+    {
+      "name": "strongest-recoil",
+      "durationMs": 180
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 700,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "hit.png",
+      "sourceBox": [
+        0,
+        0,
+        707,
+        724
+      ],
+      "alphaNoiseComponentsRemoved": 1,
+      "foregroundBounds": [
+        9,
+        128,
+        695,
+        630
+      ],
+      "scale": 0.55,
+      "sourceFootAnchorX": 380,
+      "runtimeBounds": [
+        36,
+        36,
+        413,
+        312
+      ]
+    },
+    {
+      "source": "hit.png",
+      "sourceBox": [
+        707,
+        0,
+        1448,
+        724
+      ],
+      "alphaNoiseComponentsRemoved": 1,
+      "foregroundBounds": [
+        13,
+        150,
+        731,
+        634
+      ],
+      "scale": 0.55,
+      "sourceFootAnchorX": 410,
+      "runtimeBounds": [
+        22,
+        46,
+        417,
+        312
+      ]
+    },
+    {
+      "source": "hit.png",
+      "sourceBox": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "alphaNoiseComponentsRemoved": 1,
+      "foregroundBounds": [
+        11,
+        403,
+        711,
+        659
+      ],
+      "scale": 0.55,
+      "sourceFootAnchorX": 362,
+      "runtimeBounds": [
+        47,
+        171,
+        432,
+        312
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false,
+  "normalHitEndFrameIndex": 1
+}

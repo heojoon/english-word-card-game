@@ -1,0 +1,577 @@
+{
+  "idle": {
+    "stripSize": [
+      1152,
+      384
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "frameBounds": [
+      [
+        17,
+        74,
+        367,
+        374
+      ],
+      [
+        32,
+        74,
+        352,
+        374
+      ],
+      [
+        31,
+        74,
+        352,
+        374
+      ]
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      2761,
+      887
+    ],
+    "normalization": [
+      {
+        "file": "attack.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "foregroundBounds": [
+          31,
+          109,
+          694,
+          677
+        ],
+        "scale": 0.528169014084507,
+        "runtimeBounds": [
+          17,
+          74,
+          367,
+          374
+        ]
+      },
+      {
+        "file": "idle-revision.png",
+        "sourceSize": [
+          1774,
+          887
+        ],
+        "sourceBox": [
+          0,
+          0,
+          887,
+          887
+        ],
+        "foregroundBounds": [
+          24,
+          52,
+          866,
+          843
+        ],
+        "scale": 0.379746835443038,
+        "runtimeBounds": [
+          32,
+          74,
+          352,
+          374
+        ]
+      },
+      {
+        "file": "idle-revision.png",
+        "sourceSize": [
+          1774,
+          887
+        ],
+        "sourceBox": [
+          887,
+          0,
+          1774,
+          887
+        ],
+        "foregroundBounds": [
+          71,
+          119,
+          845,
+          843
+        ],
+        "scale": 0.4143646408839779,
+        "runtimeBounds": [
+          31,
+          74,
+          352,
+          374
+        ]
+      }
+    ]
+  },
+  "attack": {
+    "stripSize": [
+      1344,
+      384
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "frameBounds": [
+      [
+        49,
+        74,
+        399,
+        374
+      ],
+      [
+        69,
+        39,
+        379,
+        374
+      ],
+      [
+        37,
+        74,
+        410,
+        374
+      ]
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      2761,
+      887
+    ],
+    "normalization": [
+      {
+        "file": "attack.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "foregroundBounds": [
+          31,
+          109,
+          694,
+          677
+        ],
+        "scale": 0.528169014084507,
+        "runtimeBounds": [
+          49,
+          74,
+          399,
+          374
+        ]
+      },
+      {
+        "file": "attack-revision.png",
+        "sourceSize": [
+          1774,
+          887
+        ],
+        "sourceBox": [
+          0,
+          0,
+          887,
+          887
+        ],
+        "foregroundBounds": [
+          83,
+          37,
+          838,
+          851
+        ],
+        "scale": 0.410958904109589,
+        "runtimeBounds": [
+          69,
+          39,
+          379,
+          374
+        ]
+      },
+      {
+        "file": "attack-revision.png",
+        "sourceSize": [
+          1774,
+          887
+        ],
+        "sourceBox": [
+          887,
+          0,
+          1774,
+          887
+        ],
+        "foregroundBounds": [
+          2,
+          148,
+          872,
+          847
+        ],
+        "scale": 0.42857142857142855,
+        "runtimeBounds": [
+          37,
+          74,
+          410,
+          374
+        ]
+      }
+    ]
+  },
+  "hit": {
+    "stripSize": [
+      1152,
+      384
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "frameBounds": [
+      [
+        31,
+        74,
+        352,
+        374
+      ],
+      [
+        30,
+        87,
+        353,
+        374
+      ],
+      [
+        25,
+        181,
+        359,
+        374
+      ]
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      2272,
+      724
+    ],
+    "normalization": [
+      {
+        "file": "hit.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "foregroundBounds": [
+          33,
+          70,
+          681,
+          675
+        ],
+        "scale": 0.49586776859504134,
+        "runtimeBounds": [
+          31,
+          74,
+          352,
+          374
+        ]
+      },
+      {
+        "file": "hit.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          724,
+          0,
+          1448,
+          724
+        ],
+        "foregroundBounds": [
+          29,
+          97,
+          681,
+          675
+        ],
+        "scale": 0.49586776859504134,
+        "runtimeBounds": [
+          30,
+          87,
+          353,
+          374
+        ]
+      },
+      {
+        "file": "hit.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          1448,
+          0,
+          2172,
+          724
+        ],
+        "foregroundBounds": [
+          29,
+          282,
+          703,
+          671
+        ],
+        "scale": 0.49586776859504134,
+        "runtimeBounds": [
+          25,
+          181,
+          359,
+          374
+        ]
+      }
+    ]
+  },
+  "roots": {
+    "stripSize": [
+      1152,
+      384
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "frameBounds": [
+      [
+        42,
+        74,
+        342,
+        374
+      ],
+      [
+        23,
+        79,
+        360,
+        374
+      ],
+      [
+        26,
+        80,
+        357,
+        374
+      ]
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      2272,
+      724
+    ],
+    "normalization": [
+      {
+        "file": "roots.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "foregroundBounds": [
+          53,
+          66,
+          684,
+          696
+        ],
+        "scale": 0.47619047619047616,
+        "runtimeBounds": [
+          42,
+          74,
+          342,
+          374
+        ]
+      },
+      {
+        "file": "roots.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          724,
+          0,
+          1448,
+          724
+        ],
+        "foregroundBounds": [
+          8,
+          77,
+          716,
+          697
+        ],
+        "scale": 0.47619047619047616,
+        "runtimeBounds": [
+          23,
+          79,
+          360,
+          374
+        ]
+      },
+      {
+        "file": "roots.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          1448,
+          0,
+          2172,
+          724
+        ],
+        "foregroundBounds": [
+          16,
+          80,
+          711,
+          697
+        ],
+        "scale": 0.47619047619047616,
+        "runtimeBounds": [
+          26,
+          80,
+          357,
+          374
+        ]
+      }
+    ]
+  },
+  "guard": {
+    "stripSize": [
+      1152,
+      384
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "frameBounds": [
+      [
+        47,
+        74,
+        336,
+        374
+      ],
+      [
+        42,
+        74,
+        341,
+        374
+      ],
+      [
+        45,
+        74,
+        338,
+        374
+      ]
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      2272,
+      724
+    ],
+    "normalization": [
+      {
+        "file": "guard.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "foregroundBounds": [
+          37,
+          16,
+          707,
+          712
+        ],
+        "scale": 0.4316546762589928,
+        "runtimeBounds": [
+          47,
+          74,
+          336,
+          374
+        ]
+      },
+      {
+        "file": "guard.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          724,
+          0,
+          1448,
+          724
+        ],
+        "foregroundBounds": [
+          26,
+          16,
+          718,
+          711
+        ],
+        "scale": 0.4316546762589928,
+        "runtimeBounds": [
+          42,
+          74,
+          341,
+          374
+        ]
+      },
+      {
+        "file": "guard.png",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceBox": [
+          1448,
+          0,
+          2172,
+          724
+        ],
+        "foregroundBounds": [
+          34,
+          16,
+          712,
+          712
+        ],
+        "scale": 0.4316546762589928,
+        "runtimeBounds": [
+          45,
+          74,
+          338,
+          374
+        ]
+      }
+    ]
+  }
+}

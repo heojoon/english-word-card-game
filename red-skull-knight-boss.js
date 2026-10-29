@@ -31,7 +31,7 @@
     s[side==='ko'?'selectedKo':'selectedEn']=id;if(s.selectedKo===null||s.selectedEn===null)return 'selected';
     const correct=s.selectedKo===s.selectedEn;s.pendingPair=correct?id:null;s.selectedKo=null;s.selectedEn=null;s.locked=true;s.guardianPhase=correct?'player-attack':'wrong';s.guardianRemaining=correct?Math.max(1,contactMs):500*scale(s);
     if(correct){s.attack=true;s.answeredCorrect=(s.answeredCorrect||0)+1;}
-    else{s.iceTimeActive=false;s.timeStopped=false;s.slashCombo=0;s.stunned=true;if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);}
+    else{s.iceTimeActive=false;s.timeStopped=false;s.slashCombo=0;s.stunned=true;if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);}
     return correct?'correct':'wrong';
   }
   function visual(s){
@@ -72,7 +72,7 @@
         if(!s.knightContact&&s.knightSkillMs>=CONTACT_MS*m){
           s.knightContact=true;
           if(s.knightSkill==='flame-wave'){shuffleBoard(s,shuffle);s.knightNotice='화염 파동 · 카드가 섞였어요!';events.push('shuffle');}
-          else{if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.knightPlayerHit=true;s.knightNotice='홍염 참격 · HP −1';events.push('trident-hit');}
+          else{if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.knightPlayerHit=true;s.knightNotice='홍염 참격 · HP −1';events.push('trident-hit');}
           s.knightNoticeMs=900;
           if(s.hp<=0){clear(s);events.push('defeat-player');return events;}
         }
@@ -82,7 +82,7 @@
         if(!s.guardianRemaining){
           if(phase==='player-attack'){
             s.matched.add(s.pendingPair);s.pendingPair=null;s.correct++;s.index++;
-            const old=s.bossHp;s.bossHp=Math.max(0,old-Math.max(1,s.bossAttackSteps||1));
+            const old=s.bossHp;s.bossHp=Math.max(0,old-(s.activeSkills?.attackDamage(Math.max(1,s.bossAttackSteps||1))??Math.max(1,s.bossAttackSteps||1)));
             if(s.matched.size===s.matchBoard.length)s.iceTimeActive=false;
             if(!s.bossHp)clear(s);
             else for(const hp of THRESHOLDS)if(old>hp&&s.bossHp<=hp&&!s.knightThresholds.includes(hp)){s.knightThresholds.push(hp);s.knightQueue.push('flame-slash');}

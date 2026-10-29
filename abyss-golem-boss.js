@@ -22,7 +22,7 @@
     if(s.done||s.paused||s.locked||s.hp<=0||s.bossHp<=0||s.guardianPhase!=='idle')return false;
     s.locked=true;s.guardianPhase=correct?'player-attack':'wrong';s.guardianVisual='idle';
     s.guardianRemaining=correct?Math.max(1,contactMs):580*motionScale(s);s.golemWrongContact=false;
-    if(correct){s.answeredCorrect=(s.answeredCorrect||0)+1;s.attack=true;s.golemPendingDamage=Math.max(1,s.bossAttackSteps||1);}
+    if(correct){s.answeredCorrect=(s.answeredCorrect||0)+1;s.attack=true;s.golemPendingDamage=(s.activeSkills?.attackDamage(Math.max(1,s.bossAttackSteps||1))??Math.max(1,s.bossAttackSteps||1));}
     else s.stunned=true;
     return true;
   }
@@ -75,7 +75,7 @@
       if(phase!=='idle'){
         s.guardianRemaining-=step;
         if(phase==='wrong'&&!s.golemWrongContact&&s.guardianRemaining<=180*scale){
-          s.golemWrongContact=true;if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);
+          s.golemWrongContact=true;if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);
           s.golemPlayerHit=true;events.push('smash-hit');
           if(s.hp<=0){fatalPose('attack',180);continue;}
         }
@@ -95,7 +95,7 @@
       }
       if(s.bossHp<=0)continue;
       if(stomping&&!s.golemStompContact&&s.golemStompMs<=220*scale){
-        s.golemStompContact=true;s.hp=Math.floor(s.hp/2);notice('그라운드 스탬핑 · HP 절반 감소');s.golemPlayerHit=true;events.push('stomp-hit');
+        s.golemStompContact=true;if(s.activeSkills)s.activeSkills.damage(Math.ceil(s.hp/2));else s.hp=Math.floor(s.hp/2);notice('그라운드 스탬핑 · HP 절반 감소');s.golemPlayerHit=true;events.push('stomp-hit');
         if(s.hp<=0){fatalPose('ground-stamping',220);continue;}
       }
       if(stomping&&!s.golemStompMs)events.push('stomp-end');

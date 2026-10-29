@@ -1,0 +1,104 @@
+{
+  "image": "monster_vargas_sd_wing_strip.png",
+  "frameWidth": 576,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "frameIndexBase": 0,
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "gather",
+      "durationMs": 300
+    },
+    {
+      "name": "windup",
+      "durationMs": 300
+    },
+    {
+      "name": "wing-gust-contact",
+      "durationMs": 400,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "wing-draft.png",
+      "sourceBox": [
+        0,
+        0,
+        695,
+        724
+      ],
+      "alphaNoiseComponentsRemoved": 2,
+      "foregroundBounds": [
+        6,
+        124,
+        682,
+        690
+      ],
+      "scale": 0.5,
+      "sourceFootAnchorX": 370,
+      "runtimeBounds": [
+        106,
+        91,
+        444,
+        374
+      ]
+    },
+    {
+      "source": "wing-draft.png",
+      "sourceBox": [
+        710,
+        0,
+        1435,
+        724
+      ],
+      "alphaNoiseComponentsRemoved": 0,
+      "foregroundBounds": [
+        0,
+        26,
+        710,
+        690
+      ],
+      "scale": 0.52,
+      "sourceFootAnchorX": 360,
+      "runtimeBounds": [
+        101,
+        29,
+        470,
+        374
+      ]
+    },
+    {
+      "source": "wing-contact.png",
+      "sourceBox": null,
+      "alphaNoiseComponentsRemoved": 0,
+      "foregroundBounds": [
+        149,
+        153,
+        1492,
+        914
+      ],
+      "scale": 0.38,
+      "sourceFootAnchorX": 840,
+      "runtimeBounds": [
+        25,
+        85,
+        535,
+        374
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false,
+  "contactFrameIndex": 2,
+  "contactMs": 600
+}

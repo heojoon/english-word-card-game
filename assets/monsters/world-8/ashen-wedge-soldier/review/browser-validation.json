@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Ice Time freezes countdown and idle sprite",
+    "Contact-aligned hit reaches final knockdown, holds during pause, resets next question",
+    "Wrong-answer thrust pauses before contact and retries the same question after damage",
+    "320px/768px layout and reduced-motion first-to-last playback"
+  ],
+  "geometry": {
+    "width": 196,
+    "height": 140,
+    "clip": "none",
+    "inside": true
+  },
+  "errors": []
+}

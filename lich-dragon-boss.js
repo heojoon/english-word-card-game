@@ -40,7 +40,7 @@
     state.selectedCard=null;state.selectedKo=null;state.selectedEn=null;state.locked=true;state.pendingPair=correct?id:null;
     state.guardianPhase=correct?'player-attack':'wrong';state.guardianRemaining=correct?Math.max(1,contactMs):500;
     if(correct)state.attack=true;
-    else{state.iceTimeActive=false;state.slashCombo=0;if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
+    else{state.iceTimeActive=false;state.slashCombo=0;if(state.activeSkills)state.activeSkills.damage(1);else if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
     return correct?'correct':'wrong';
   }
   function clear(state){state.tornadoMs=0;state.tornadoContactMs=0;state.tornadoNoticeMs=0;state.drainQueue=[];state.drainNotice='';state.drainSuccess=false;state.selectedCard=null;state.selectedKo=null;state.selectedEn=null;state.pendingPair=null;state.iceTimeActive=false;}
@@ -67,7 +67,7 @@
           case 'player-attack':{
             state.matched.add(state.pendingPair);state.pendingPair=null;state.correct++;state.index++;state.answeredCorrect=(state.answeredCorrect||0)+1;
             if(state.matched.size===state.matchBoard.length){const extra=Math.min(HP-state.correct,5*(Math.max(1,state.bossAttackSteps||1)-1));state.correct+=extra;state.index+=extra;state.iceTimeActive=false;}
-            const before=state.bossHp;state.bossHp=Math.max(0,HP-state.correct);
+            const before=state.bossHp;if(state.activeSkills){const base=state.bossHp-Math.max(0,HP-state.correct);state.activeSkills.creditDamage(state.activeSkills.attackDamage(base)-base);}state.bossHp=Math.max(0,HP-state.correct);
             for(const value of THRESHOLDS)if(before>value&&state.bossHp<=value&&!state.drainThresholds.includes(value)){state.drainThresholds.push(value);state.drainQueue.push(value);}
             if(!state.bossHp){state.lichClearElapsed=state.elapsed-budget*rate;clear(state);}
             state.guardianVisual=state.bossHp?'hit':'defeat';state.guardianPhase=state.guardianVisual;state.guardianRemaining=(state.bossHp?300:1000)*scale;events.push('hit');break;
@@ -77,7 +77,7 @@
             if(state.drainQueue.length){state.drainQueue.shift();state.guardianPhase='drain-charge';state.guardianVisual='attack';state.guardianRemaining=600*scale;state.drainNotice='에너지 드레인';events.push('drain-start');}else ready();break;
           case 'drain-charge':{
             const before=state.hp;state.drainSuccess=random()<SUCCESS_RATE;
-            if(state.drainSuccess){if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);}
+            if(state.drainSuccess){if(state.activeSkills)state.activeSkills.damage(1);else if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);}
             state.drainSuccess=state.hp<before;state.stunned=state.drainSuccess;state.drainNotice=state.drainSuccess?'에너지 드레인 · HP −1':'에너지 드레인을 막았어요!';state.guardianPhase='drain-hold';state.guardianRemaining=700;events.push(state.drainSuccess?'drain-hit':'drain-miss');break;
           }
           case 'drain-hold':state.stunned=false;state.drainNotice='';state.drainSuccess=false;if(!state.hp){clear(state);events.push('defeat-player');return events;}if(state.drainQueue.length){state.guardianPhase='hit';state.guardianRemaining=1;}else ready();break;

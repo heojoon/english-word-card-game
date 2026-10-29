@@ -1,0 +1,62 @@
+{
+  "name": "잿빛 쐐기병",
+  "world": 8,
+  "internalChapter": 11,
+  "excludedBossStages": [
+    15,
+    30
+  ],
+  "identity": "monster_ashen_wedge_soldier_sd_identity.png",
+  "facing": "left",
+  "frameWidth": 448,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "effectBounds": "Entire spear, helmet crest and horizontal knockdown within cell; no detached projectile",
+  "actions": {
+    "idle": {
+      "names": [
+        "ready",
+        "breath"
+      ],
+      "durations": [
+        600,
+        600
+      ],
+      "beats": "1 ready: exactly the reference planted guard stance, spear angled upper-left. 2 breath: tiny shoulder/helmet lift, hands/spear settle slightly, both boots planted, no stepping.",
+      "prompt": "Use case: stylized-concept. Attached image is the sole approved identity authority for Ashen Wedge Soldier, World 8 common monster of Wordoria Crystal Quest. Preserve the EXACT large rounded closed helmet, backward purple metal feather crest, coral eye slit, graphite-purple armor, silver edges, ash-white waist tabard, coral-violet black chest crystal and single short spear. Same compact 2.5-head proportions, dark violet clean linework and polished three-step soft cel shading. One fully complete soldier per slot, facing LEFT, same character scale and stable foot ground line, no costume redesign. Create ONE horizontal sprite source sheet with generous equal wide slots and exactly 50px fully transparent space between adjacent slots; no part overlaps slots or gaps. Entire spear/crest/feet visible with safe margins. Transparent RGBA alpha, no background, floor, cast shadow, text, labels, borders, grid, other characters, cropped body, extra limbs, gore, 3D or pixel art. Action idle, EXACTLY 2 poses ordered left to right. 1 ready: exactly the reference planted guard stance, spear angled upper-left. 2 breath: tiny shoulder/helmet lift, hands/spear settle slightly, both boots planted, no stepping. Use very wide enough slots for spear and complete knockdown, not shrinking the character to fit."
+    },
+    "attack": {
+      "names": [
+        "ready",
+        "anticipation",
+        "spear-contact"
+      ],
+      "durations": [
+        120,
+        120,
+        260
+      ],
+      "beats": "1 ready: reference spear guard angled up-left. 2 anticipation: compact crouch, spear draws back to viewer right while still pointing left, both hands grip. 3 spear-contact: strong short thrust toward LEFT, spear almost horizontal, front arm extended, back boot braces. This frame is the active strongest contact, not recovery. No detached projectile or magical burst.",
+      "prompt": "Use case: stylized-concept. Attached image is the sole approved identity authority for Ashen Wedge Soldier, World 8 common monster of Wordoria Crystal Quest. Preserve the EXACT large rounded closed helmet, backward purple metal feather crest, coral eye slit, graphite-purple armor, silver edges, ash-white waist tabard, coral-violet black chest crystal and single short spear. Same compact 2.5-head proportions, dark violet clean linework and polished three-step soft cel shading. One fully complete soldier per slot, facing LEFT, same character scale and stable foot ground line, no costume redesign. Create ONE horizontal sprite source sheet with generous equal wide slots and exactly 50px fully transparent space between adjacent slots; no part overlaps slots or gaps. Entire spear/crest/feet visible with safe margins. Transparent RGBA alpha, no background, floor, cast shadow, text, labels, borders, grid, other characters, cropped body, extra limbs, gore, 3D or pixel art. Action attack, EXACTLY 3 poses ordered left to right. 1 ready: reference spear guard angled up-left. 2 anticipation: compact crouch, spear draws back to viewer right while still pointing left, both hands grip. 3 spear-contact: strong short thrust toward LEFT, spear almost horizontal, front arm extended, back boot braces. This frame is the active strongest contact, not recovery. No detached projectile or magical burst. Use very wide enough slots for spear and complete knockdown, not shrinking the character to fit."
+    },
+    "hit": {
+      "names": [
+        "notice",
+        "impact",
+        "knockdown"
+      ],
+      "durations": [
+        100,
+        100,
+        300
+      ],
+      "beats": "1 notice: guard stance with helmet tilted in surprise. 2 impact: strongest recoil to RIGHT, torso leans back, gauntlets still grasp spear, bent knees. 3 complete knockdown: whole armored soldier completely lying on back/side on the ground, helmet on RIGHT, boots toward LEFT, unable to stand; spear rests alongside body in hands. Definitely fully horizontal, not kneeling or crouching. No recovery. Body scale identical, no attacker.",
+      "prompt": "Use case: stylized-concept. Attached image is the sole approved identity authority for Ashen Wedge Soldier, World 8 common monster of Wordoria Crystal Quest. Preserve the EXACT large rounded closed helmet, backward purple metal feather crest, coral eye slit, graphite-purple armor, silver edges, ash-white waist tabard, coral-violet black chest crystal and single short spear. Same compact 2.5-head proportions, dark violet clean linework and polished three-step soft cel shading. One fully complete soldier per slot, facing LEFT, same character scale and stable foot ground line, no costume redesign. Create ONE horizontal sprite source sheet with generous equal wide slots and exactly 50px fully transparent space between adjacent slots; no part overlaps slots or gaps. Entire spear/crest/feet visible with safe margins. Transparent RGBA alpha, no background, floor, cast shadow, text, labels, borders, grid, other characters, cropped body, extra limbs, gore, 3D or pixel art. Action hit, EXACTLY 3 poses ordered left to right. 1 notice: guard stance with helmet tilted in surprise. 2 impact: strongest recoil to RIGHT, torso leans back, gauntlets still grasp spear, bent knees. 3 complete knockdown: whole armored soldier completely lying on back/side on the ground, helmet on RIGHT, boots toward LEFT, unable to stand; spear rests alongside body in hands. Definitely fully horizontal, not kneeling or crouching. No recovery. Body scale identical, no attacker. Use very wide enough slots for spear and complete knockdown, not shrinking the character to fit."
+    }
+  }
+}

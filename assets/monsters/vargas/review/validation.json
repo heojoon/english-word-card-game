@@ -1,0 +1,532 @@
+{
+  "idle": {
+    "stripSize": [
+      1440,
+      320
+    ],
+    "frameBounds": [
+      [
+        43,
+        46,
+        408,
+        312
+      ],
+      [
+        29,
+        38,
+        458,
+        312
+      ],
+      [
+        42,
+        48,
+        436,
+        312
+      ]
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "normalization": [
+      {
+        "source": "attack.png",
+        "sourceBox": [
+          0,
+          0,
+          746,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 3,
+        "foregroundBounds": [
+          21,
+          168,
+          684,
+          652
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 380,
+        "runtimeBounds": [
+          43,
+          46,
+          408,
+          312
+        ]
+      },
+      {
+        "source": "idle-revision.png",
+        "sourceBox": [
+          0,
+          0,
+          1074,
+          732
+        ],
+        "alphaNoiseComponentsRemoved": 1,
+        "foregroundBounds": [
+          71,
+          66,
+          1046,
+          688
+        ],
+        "scale": 0.44,
+        "sourceFootAnchorX": 550,
+        "runtimeBounds": [
+          29,
+          38,
+          458,
+          312
+        ]
+      },
+      {
+        "source": "idle-revision.png",
+        "sourceBox": [
+          1074,
+          0,
+          2149,
+          732
+        ],
+        "alphaNoiseComponentsRemoved": 2,
+        "foregroundBounds": [
+          100,
+          92,
+          995,
+          692
+        ],
+        "scale": 0.44,
+        "sourceFootAnchorX": 550,
+        "runtimeBounds": [
+          42,
+          48,
+          436,
+          312
+        ]
+      }
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      3325,
+      732
+    ]
+  },
+  "attack": {
+    "stripSize": [
+      1920,
+      320
+    ],
+    "frameBounds": [
+      [
+        123,
+        46,
+        488,
+        312
+      ],
+      [
+        211,
+        26,
+        486,
+        312
+      ],
+      [
+        28,
+        60,
+        455,
+        312
+      ]
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "normalization": [
+      {
+        "source": "attack.png",
+        "sourceBox": [
+          0,
+          0,
+          746,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 3,
+        "foregroundBounds": [
+          21,
+          168,
+          684,
+          652
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 380,
+        "runtimeBounds": [
+          123,
+          46,
+          488,
+          312
+        ]
+      },
+      {
+        "source": "attack.png",
+        "sourceBox": [
+          746,
+          0,
+          1370,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 0,
+        "foregroundBounds": [
+          87,
+          137,
+          587,
+          657
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 285,
+        "runtimeBounds": [
+          211,
+          26,
+          486,
+          312
+        ]
+      },
+      {
+        "source": "attack.png",
+        "sourceBox": [
+          1370,
+          0,
+          2172,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 3,
+        "foregroundBounds": [
+          10,
+          197,
+          786,
+          655
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 540,
+        "runtimeBounds": [
+          28,
+          60,
+          455,
+          312
+        ]
+      }
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      2506,
+      724
+    ]
+  },
+  "hit": {
+    "stripSize": [
+      1440,
+      320
+    ],
+    "frameBounds": [
+      [
+        36,
+        36,
+        413,
+        312
+      ],
+      [
+        22,
+        46,
+        417,
+        312
+      ],
+      [
+        47,
+        171,
+        432,
+        312
+      ]
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "normalization": [
+      {
+        "source": "hit.png",
+        "sourceBox": [
+          0,
+          0,
+          707,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 1,
+        "foregroundBounds": [
+          9,
+          128,
+          695,
+          630
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 380,
+        "runtimeBounds": [
+          36,
+          36,
+          413,
+          312
+        ]
+      },
+      {
+        "source": "hit.png",
+        "sourceBox": [
+          707,
+          0,
+          1448,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 1,
+        "foregroundBounds": [
+          13,
+          150,
+          731,
+          634
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 410,
+        "runtimeBounds": [
+          22,
+          46,
+          417,
+          312
+        ]
+      },
+      {
+        "source": "hit.png",
+        "sourceBox": [
+          1448,
+          0,
+          2172,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 1,
+        "foregroundBounds": [
+          11,
+          403,
+          711,
+          659
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 362,
+        "runtimeBounds": [
+          47,
+          171,
+          432,
+          312
+        ]
+      }
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      2323,
+      724
+    ]
+  },
+  "wing": {
+    "stripSize": [
+      1728,
+      384
+    ],
+    "frameBounds": [
+      [
+        106,
+        91,
+        444,
+        374
+      ],
+      [
+        101,
+        29,
+        470,
+        374
+      ],
+      [
+        25,
+        85,
+        535,
+        374
+      ]
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "normalization": [
+      {
+        "source": "wing-draft.png",
+        "sourceBox": [
+          0,
+          0,
+          695,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 2,
+        "foregroundBounds": [
+          6,
+          124,
+          682,
+          690
+        ],
+        "scale": 0.5,
+        "sourceFootAnchorX": 370,
+        "runtimeBounds": [
+          106,
+          91,
+          444,
+          374
+        ]
+      },
+      {
+        "source": "wing-draft.png",
+        "sourceBox": [
+          710,
+          0,
+          1435,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 0,
+        "foregroundBounds": [
+          0,
+          26,
+          710,
+          690
+        ],
+        "scale": 0.52,
+        "sourceFootAnchorX": 360,
+        "runtimeBounds": [
+          101,
+          29,
+          470,
+          374
+        ]
+      },
+      {
+        "source": "wing-contact.png",
+        "sourceBox": null,
+        "alphaNoiseComponentsRemoved": 0,
+        "foregroundBounds": [
+          149,
+          153,
+          1492,
+          914
+        ],
+        "scale": 0.38,
+        "sourceFootAnchorX": 840,
+        "runtimeBounds": [
+          25,
+          85,
+          535,
+          374
+        ]
+      }
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      4708,
+      1024
+    ]
+  },
+  "guard": {
+    "stripSize": [
+      1440,
+      352
+    ],
+    "frameBounds": [
+      [
+        43,
+        77,
+        408,
+        343
+      ],
+      [
+        112,
+        26,
+        446,
+        343
+      ],
+      [
+        95,
+        27,
+        449,
+        343
+      ]
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "normalization": [
+      {
+        "source": "attack.png",
+        "sourceBox": [
+          0,
+          0,
+          746,
+          724
+        ],
+        "alphaNoiseComponentsRemoved": 3,
+        "foregroundBounds": [
+          21,
+          168,
+          684,
+          652
+        ],
+        "scale": 0.55,
+        "sourceFootAnchorX": 380,
+        "runtimeBounds": [
+          43,
+          77,
+          408,
+          343
+        ]
+      },
+      {
+        "source": "guard-charge.png",
+        "sourceBox": null,
+        "alphaNoiseComponentsRemoved": 0,
+        "foregroundBounds": [
+          340,
+          11,
+          1384,
+          1001
+        ],
+        "scale": 0.32,
+        "sourceFootAnchorX": 740,
+        "runtimeBounds": [
+          112,
+          26,
+          446,
+          343
+        ]
+      },
+      {
+        "source": "guard-contact.png",
+        "sourceBox": null,
+        "alphaNoiseComponentsRemoved": 2,
+        "foregroundBounds": [
+          277,
+          12,
+          1382,
+          999
+        ],
+        "scale": 0.32,
+        "sourceFootAnchorX": 730,
+        "runtimeBounds": [
+          95,
+          27,
+          449,
+          343
+        ]
+      }
+    ],
+    "reviewGapPx": 50,
+    "sourceMasterSize": [
+      4708,
+      1024
+    ]
+  }
+}

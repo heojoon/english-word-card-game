@@ -46,7 +46,7 @@
     s.selectedCard=null;s.selectedKo=null;s.selectedEn=null;s.locked=true;s.pendingPair=correct?id:null;
     s.guardianPhase=correct?'player-attack':'wrong';s.guardianRemaining=correct?Math.max(1,contactMs):500;
     if(correct)s.attack=true;
-    else{s.iceTimeActive=false;s.slashCombo=0;if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.stunned=true;}
+    else{s.iceTimeActive=false;s.slashCombo=0;if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.stunned=true;}
     return correct?'correct':'wrong';
   }
   function clear(s){s.chaosMs=0;s.chaosShiftMs=0;s.chaosAngle=0;s.morganaHealMs=0;s.selectedCard=null;s.selectedKo=null;s.selectedEn=null;s.pendingPair=null;s.queuedStoryPairs=[];s.iceTimeActive=false;}
@@ -86,7 +86,7 @@
             s.matched.add(s.pendingPair);s.pendingPair=null;s.correct++;s.index++;s.answeredCorrect=(s.answeredCorrect||0)+1;
             let damage=1;
             if(s.matched.size===s.matchBoard.length){damage+=5*(Math.max(1,s.bossAttackSteps||1)-1);s.iceTimeActive=false;}
-            s.bossHp=Math.max(0,s.bossHp-damage);
+            s.bossHp=Math.max(0,s.bossHp-(s.activeSkills?.attackDamage(damage)??damage));
             // The single refresh triggers even if a large hit crosses zero at the threshold.
             if(!s.morganaHealUsed&&s.bossHp<=HEAL_THRESHOLD){s.morganaHealUsed=true;s.morganaHealMs=HEAL_MS;s.bossHp=HP;events.push('heal-start');}
             if(!s.bossHp)clear(s);

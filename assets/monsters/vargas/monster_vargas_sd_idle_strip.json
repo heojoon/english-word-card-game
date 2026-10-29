@@ -1,0 +1,106 @@
+{
+  "image": "monster_vargas_sd_idle_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "frameIndexBase": 0,
+  "loop": true,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 400
+    },
+    {
+      "name": "inhale",
+      "durationMs": 400
+    },
+    {
+      "name": "settle",
+      "durationMs": 400
+    }
+  ],
+  "normalization": [
+    {
+      "source": "attack.png",
+      "sourceBox": [
+        0,
+        0,
+        746,
+        724
+      ],
+      "alphaNoiseComponentsRemoved": 3,
+      "foregroundBounds": [
+        21,
+        168,
+        684,
+        652
+      ],
+      "scale": 0.55,
+      "sourceFootAnchorX": 380,
+      "runtimeBounds": [
+        43,
+        46,
+        408,
+        312
+      ]
+    },
+    {
+      "source": "idle-revision.png",
+      "sourceBox": [
+        0,
+        0,
+        1074,
+        732
+      ],
+      "alphaNoiseComponentsRemoved": 1,
+      "foregroundBounds": [
+        71,
+        66,
+        1046,
+        688
+      ],
+      "scale": 0.44,
+      "sourceFootAnchorX": 550,
+      "runtimeBounds": [
+        29,
+        38,
+        458,
+        312
+      ]
+    },
+    {
+      "source": "idle-revision.png",
+      "sourceBox": [
+        1074,
+        0,
+        2149,
+        732
+      ],
+      "alphaNoiseComponentsRemoved": 2,
+      "foregroundBounds": [
+        100,
+        92,
+        995,
+        692
+      ],
+      "scale": 0.44,
+      "sourceFootAnchorX": 550,
+      "runtimeBounds": [
+        42,
+        48,
+        436,
+        312
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false
+}

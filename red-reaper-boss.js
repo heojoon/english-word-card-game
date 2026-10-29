@@ -37,7 +37,7 @@
     state.pendingPair=correct?id:null;state.selectedKo=null;state.selectedEn=null;state.locked=true;
     state.guardianPhase=correct?'player-attack':'wrong';state.guardianRemaining=correct?contactMs:500;
     if(correct)state.attack=true;
-    else{state.iceTimeActive=false;state.slashCombo=0;if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
+    else{state.iceTimeActive=false;state.slashCombo=0;if(state.activeSkills)state.activeSkills.damage(1);else if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
     return correct?'correct':'wrong';
   }
   function clear(state){state.hallucinationMs=0;state.reaperCastMs=0;state.reaperCastContactMs=0;state.reaperCastSuccess=false;state.leftShiftMs=0;state.rightShiftMs=0;state.iceTimeActive=false;state.selectedKo=null;state.selectedEn=null;state.pendingPair=null;state.queuedStoryPairs=[];}
@@ -72,7 +72,7 @@
             case 'player-attack':{
               state.matched.add(state.pendingPair);state.pendingPair=null;state.correct++;state.index++;state.answeredCorrect=(state.answeredCorrect||0)+1;
               if(state.matched.size===state.matchBoard.length){const extra=Math.min(HP-state.correct,5*((state.bossAttackSteps||1)-1));state.correct+=extra;state.index+=extra;state.iceTimeActive=false;}
-              state.bossHp=Math.max(0,HP-state.correct);if(!state.bossHp)clear(state);state.guardianVisual=state.bossHp?'hit':'defeat';state.guardianPhase=state.guardianVisual;
+              if(state.activeSkills){const base=state.bossHp-Math.max(0,HP-state.correct);state.activeSkills.creditDamage(state.activeSkills.attackDamage(base)-base);}state.bossHp=Math.max(0,HP-state.correct);if(!state.bossHp)clear(state);state.guardianVisual=state.bossHp?'hit':'defeat';state.guardianPhase=state.guardianVisual;
               state.guardianRemaining=(state.bossHp?300:1000)*scale;events.push('hit');break;
             }
             case 'hit':state.attack=false;state.guardianVisual='idle';state.guardianPhase='idle';state.locked=false;events.push(state.matched.size===state.matchBoard.length?'board-ready':'ready');break;

@@ -1,0 +1,84 @@
+{
+  "name": "잿빛 쐐기병",
+  "englishName": "Ashen Wedge Soldier",
+  "world": 8,
+  "internalChapter": 11,
+  "purpose": "Common enemy SD identity design",
+  "status": "Integrated into World 8 common battles at user request; offline and browser technical review passed",
+  "tool": "built-in image_gen",
+  "date": "2026-10-29",
+  "source": "source/identity-generated.png",
+  "identity": "monster_ashen_wedge_soldier_sd_identity.png",
+  "facing": "left",
+  "pose": "Single full-body ready stance",
+  "frameCount": 1,
+  "plannedRuntime": {
+    "frameWidth": 320,
+    "frameHeight": 320,
+    "anchor": {
+      "x": 0.5,
+      "y": 0.975
+    },
+    "effectBounds": "Complete helmet crest, spear, hands and boots inside cell; no detached effects",
+    "actions": "Idle, attack, hit/knockdown strips are not part of this identity-design deliverable"
+  },
+  "references": [
+    {
+      "path": "assets/novel/characters/char_vargas_world8_standing.webp",
+      "role": "Faction palette and materials only"
+    },
+    {
+      "path": "assets/monsters/world-7c/source/identity.png",
+      "role": "SD proportions and production rendering only"
+    }
+  ],
+  "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nLighting: soft key light from upper left, cool violet ambient shadow, crystal or magic may cast a subtle cyan-mint secondary light. Keep the face, hands and main class prop unobstructed. Use one dominant focal point, two to four supporting forms, and sparse tiny details.\n\nUse case: stylized-concept. Asset type: ONE full-body SD identity design master for World 8 common enemy of Wordoria, called ASHEN WEDGE SOLDIER (잿빛 쐐기병), a compact enchanted armor foot soldier under Vargas's command in Silver Bell Village.\nReference image 1 Vargas: ONLY faction palette and smooth dark metal materials, pale silver edges, restrained violet/coral command stone; do NOT copy boss anatomy, wing, ornate silhouette or long weapon. Reference image 2 World 7C sentry: ONLY production finish, SD proportions and clean readable battle pose; do NOT copy ivory/gold palette, sword or shield.\nDesign: approximately 2.5 heads tall, big rounded closed helmet occupying 40% of body height, squat compact torso, chunky separated gauntlets and boots. Helm has one simple short backward-swept feather-shaped metal crest, not horns, and a narrow warm coral glowing eye slit with stern focused expression, no visible human face. Main armor is graphite purple with broad soft silver/lavender edge highlights so it remains readable, simple rounded pauldrons, ash-white short split waist tabard with pale lavender shadows. ONE highly readable small BLACK faceted wedge-shaped command crystal on the breastplate with restrained coral-violet inner light. Ornament kept sparse, clearly a low-rank common troop. Holds ONE compact black short spear in BOTH hands in a defensive ready stance, spear points diagonally upper-left toward the opponent. Spear is only about character body height, silver clean lance tip, no branching blades, no extra props. Whole spear visible, hands grip actual shaft. No wings, shield, crown, cape, trailing feathers, halo or boss regalia.\nComposition: single complete character, three-quarter side battle stance facing LEFT, looking LEFT, both feet firmly planted on the same baseline. Entire subject centered in square 2048x2048 canvas with at least 10% transparent safety margin around crest, lance tip, elbows and boots. Deliberate separations of arms and torso, silhouette readable at 128px. Isolated single subject, true transparent alpha background, no floor, no cast shadow, no frame, no text. This is ONE identity pose, not an animation sheet or design board.\n\nDO NOT use pixel art, retro arcade styling, parchment or storybook texture, photorealism, realistic 3D rendering, painterly oil or watercolor brushwork, flat corporate vector art, gritty or muddy dark fantasy, horror, gore, dirty weathering, excessive bloom, gray fog, neon overload, full-gold surfaces, black comic outlines, sketch lines, visual noise, over-detailed background, text, letters, logo, watermark, UI frame, fake checkerboard, painted background on a transparent asset, cropped hair, cropped hands, cropped feet, cropped weapon, hidden face, extra fingers, fused hands, broken anatomy, sexualized body, revealing armor, adult glamour makeup, or imitation of any existing artist, anime, game, or copyrighted character.",
+  "actualOutput": {
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "transparentPixels": 983369,
+    "visibleBoundsAlphaAbove128": [
+      39,
+      59,
+      1225,
+      1217
+    ]
+  },
+  "review": {
+    "status": "Identity accepted for integration by user request; generated animation poses technically reviewed",
+    "notes": [
+      "Single complete left-facing character; both hands grip spear; boots and spear tip visible.",
+      "True transparent alpha verified. Source is 1254 square although prompt requested 2048.",
+      "Visible safe margins are smaller than requested 10%; normalize with added padding before future runtime animation production.",
+      "Very faint low-alpha edge pixels remain outside the visible silhouette. Preserve original for design review.",
+      "Runtime uses alpha geometry extraction with safe padding and 448x320 cells; source originals preserved. Exact 50px review gaps are established during packing."
+    ],
+    "backgroundReview": "Light and Crystal Violet composites inspected; browser mobile 320/390 and desktop 768 reviewed",
+    "runtimeIntegrated": true
+  },
+  "runtime": {
+    "frameWidth": 448,
+    "frameHeight": 320,
+    "anchor": {
+      "x": 0.5,
+      "y": 0.975
+    },
+    "actions": {
+      "idle": 2,
+      "attack": 3,
+      "hit": 3
+    },
+    "contract": "animation-contract.json",
+    "validation": "review/validation.json",
+    "browserValidation": "review/browser-validation.json",
+    "excludedBossStages": [
+      15,
+      30
+    ]
+  }
+}

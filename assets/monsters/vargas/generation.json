@@ -1,0 +1,37 @@
+{
+  "name": "바르가스",
+  "world": 8,
+  "stage": 30,
+  "tool": "built-in image_gen",
+  "identityReference": "assets/novel/characters/char_vargas_world8_standing.webp",
+  "prompt": "Use case: stylized-concept. Create ONE isolated full-body SD/chibi battle identity master of VARGAS, World 8 final boss for Wordoria Crystal Quest. Attached image is the canonical identity authority, preserve face, swept silver ash hair, amber eyes, stern youthful male anime expression, graphite-violet armor with silver edges, ash-white waist cloth, dark violet coat panels, purple chest command crystal, black long spear in anatomical LEFT hand and EXACTLY ONE black feathered wing on anatomical RIGHT upper back. No second wing or wing stump, no wound symbolism. Adapt into compact 3-head-tall SD proportions with large readable head and gloves, broad armor silhouette and sturdy boots. Face and torso oriented three-quarter toward SCREEN LEFT (enemy faces player on left), do not simply mirror the canonical reference or swap anatomical wing/weapon sides. Spear held diagonally down-left in a ready stance, whole blade and shaft visible, one right wing arcs upward behind him. Both boots planted on same bottom ground line, arms and face clearly readable. This is an idle-ready identity pose, no attack or effect. Clean anime colored linework, dark violet outer contours, polished three-step soft cel shading, lavender shadows, small violet crystal highlights, clean enamel armor, simplify tiny details for readability at 128px. Youthful nonsexualized SD fantasy, no pixel art, no realistic 3D, no painterly texture, no horror. Transparent background with TRUE alpha, no floor, no shadow, no text or UI or watermark or grid. Landscape canvas 1536x1024. Full silhouette including spear and wing safely inside middle 80% of image with generous transparent margins; body centered, stable bottom-center anchor. Reference is for identity not its tall adult proportions. Keep one complete character only.",
+  "alphaEditPrompt": "Edit the attached SD Vargas identity image. Preserve the entire exact character pose, scale, armor, face, eyes, hair, single wing, spear and all white fabric. Remove ONLY the diffuse purple background haze / vignette completely and give a clean isolated sprite with actual transparent alpha. The empty area around the silhouette must have alpha zero, no ambient glow, no shadow, no floor, no gray/purple rectangle, no painted checkerboard. Keep fine feathers and weapon edges crisp. Do NOT erase purple armor, white cloth, silver highlights or wing feathers. No redesign, no mirroring, no new objects. Increase canvas padding if needed so complete spear blade, wing tips and boots have ample empty margin. Output transparent PNG cutout.",
+  "original": "source/identity-generated.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "status": "15 frames across 5 integrated animation states; offline technical review passed; browser not requested",
+  "userApproved": false,
+  "runtimeIntegrated": true,
+  "browserReviewed": false,
+  "final": "monster_vargas_sd_identity.png",
+  "alphaEdit": "source/identity-alpha-edit.png",
+  "technicalReview": {
+    "alpha": "Real RGBA, no costume color-keying. Alpha<=16 dust and disconnected narrow guide fragments removed during normalization.",
+    "geometry": "Complete wing, spear and effects inside each expanded cell; common body scale and bottom-center anchor; exact 50px source/review gaps.",
+    "normalization": "Each actual crop, scale and source foot anchor recorded beside runtime strips. Original generation sources unchanged.",
+    "backgrounds": [
+      "#f7f7ff",
+      "#5751d8"
+    ],
+    "browserReviewed": false,
+    "userApproved": false
+  },
+  "actionPrompts": "source/action-prompts.json",
+  "animationContract": "animation-contract.json",
+  "assemblyScript": "scripts/assemble-vargas.py",
+  "validation": "review/validation.json",
+  "mobileReview": "review/mobile-frame-grid.png",
+  "runtimeBattle": "HP 180, contact-timed DMG, 120000ms base time, actual answer count recorded; animation artwork unchanged"
+}

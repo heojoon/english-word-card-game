@@ -51,11 +51,11 @@
     if(state.done||state.paused||state.locked||state.guardianPhase!=='idle'||state.hp<=0||state.bossHp<=0)return false;
     state.locked=true;state.guardianPhase=correct?'player-attack':'wrong';
     state.guardianRemaining=correct?Math.max(1,contactMs):500;state.guardianVisual='idle';
-    if(correct){state.answeredCorrect=(state.answeredCorrect||0)+1;state.attack=true;state.banditPendingDamage=Math.max(1,state.bossAttackSteps||1);}
+    if(correct){state.answeredCorrect=(state.answeredCorrect||0)+1;state.attack=true;state.banditPendingDamage=(state.activeSkills?.attackDamage(Math.max(1,state.bossAttackSteps||1))??Math.max(1,state.bossAttackSteps||1));}
     else{damagePlayer(state);state.stunned=true;}
     return true;
   }
-  function damagePlayer(state){if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);}
+  function damagePlayer(state){if(state.activeSkills)state.activeSkills.damage(1);else if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);}
   function advance(state,delta,random=Math.random,clockDelta=delta){
     if(state.done||state.paused)return [];
     const events=[],scale=state.guardianReducedMotion?.5:1,rate=delta>0&&!state.iceTimeActive?Math.max(0,clockDelta)/delta:0;

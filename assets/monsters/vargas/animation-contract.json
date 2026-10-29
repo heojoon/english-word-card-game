@@ -1,0 +1,128 @@
+{
+  "name": "바르가스",
+  "world": 8,
+  "stage": 30,
+  "kind": "final-boss",
+  "identityReference": "assets/novel/characters/char_vargas_world8_standing.webp",
+  "narrativeStart": "assets/novel/world-8-boss-start.md",
+  "narrativeEnd": "assets/novel/world-8-boss-end.md",
+  "victory": "Boss HP reaches 0; correct contact deals player DMG, not a fixed question count",
+  "baseTimeLimitMs": 120000,
+  "facing": "left",
+  "frameWidth": 480,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "effectBounds": "Complete single right wing, left-hand spear and effects within each cell; widen cell rather than shrink body",
+  "actions": {
+    "idle": {
+      "names": [
+        "ready",
+        "inhale",
+        "settle"
+      ],
+      "durationsMs": [
+        400,
+        400,
+        400
+      ],
+      "loop": true
+    },
+    "attack": {
+      "names": [
+        "ready",
+        "anticipation",
+        "spear-contact"
+      ],
+      "durationsMs": [
+        250,
+        300,
+        350
+      ],
+      "contactFrameIndex": 2,
+      "contactMs": 550,
+      "frameWidth": 640,
+      "frameHeight": 320
+    },
+    "hit": {
+      "names": [
+        "notice",
+        "strongest-recoil",
+        "complete-knockdown"
+      ],
+      "durationsMs": [
+        140,
+        180,
+        700
+      ],
+      "holdLastFrame": true,
+      "normalHitEndFrameIndex": 1
+    },
+    "wing": {
+      "names": [
+        "gather",
+        "windup",
+        "wing-gust-contact"
+      ],
+      "durationsMs": [
+        300,
+        300,
+        400
+      ],
+      "contactFrameIndex": 2,
+      "contactMs": 600,
+      "frameWidth": 576,
+      "frameHeight": 384
+    },
+    "guard": {
+      "names": [
+        "raise-spear",
+        "command-crystal-charge",
+        "ward-contact"
+      ],
+      "durationsMs": [
+        250,
+        250,
+        500
+      ],
+      "contactFrameIndex": 2,
+      "contactMs": 500,
+      "frameWidth": 480,
+      "frameHeight": 352
+    }
+  },
+  "userApproved": false,
+  "runtimeIntegrated": true,
+  "browserReviewed": false,
+  "status": "Integrated World 8-30 Type C boss; offline frame review and automated regressions passed; browser review not requested",
+  "mechanics": {
+    "wrong": {
+      "damage": 1,
+      "contactMs": 550
+    },
+    "wing": {
+      "intervalMs": 15000,
+      "chancePerContact": 0.35,
+      "damage": 1,
+      "contactMs": 600
+    },
+    "guard": {
+      "intervalMs": 25000,
+      "contactMs": 500,
+      "effect": "Shuffle only current four choices; preserve answer and learning record"
+    },
+    "reducedMotionScale": 0.5,
+    "iceTime": "Stop countdown, idle and periodic skills; finish player contact/recoil; release on each Type C answer",
+    "firstRewardAndCharacterUnlock": "claim_vargas_reward validates HP 0 and actual answer count; one payout per account and one active unlock per character",
+    "playerAttack": {
+      "damage": "bossAttackSteps() via activeSkills.attackDamage()",
+      "timing": "once at player contact",
+      "example": "DMG 4: HP 180 -> 176 on contact; 45 unmodified correct attacks defeat the boss"
+    }
+  },
+  "maxHp": 180,
+  "questionPoolSize": 180
+}

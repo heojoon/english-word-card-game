@@ -30,7 +30,7 @@
     s[side==='ko'?'selectedKo':'selectedEn']=id;if(s.selectedKo===null||s.selectedEn===null)return 'selected';
     const correct=s.selectedKo===s.selectedEn;s.pendingPair=correct?id:null;s.selectedKo=null;s.selectedEn=null;s.locked=true;s.guardianPhase=correct?'player-attack':'wrong';s.guardianRemaining=correct?Math.max(1,contactMs):500*scale(s);
     if(correct){s.attack=true;s.answeredCorrect=(s.answeredCorrect||0)+1;}
-    else{s.iceTimeActive=false;s.slashCombo=0;s.stunned=true;if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);}
+    else{s.iceTimeActive=false;s.slashCombo=0;s.stunned=true;if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);}
     return correct?'correct':'wrong';
   }
   function hidden(s){return s.nereusSpeedMs>0&&s.nereusSpeedMs<=SPEED_MS-480*scale(s)&&s.guardianPhase!=='defeat';}
@@ -70,7 +70,7 @@
         if(s.guardianRemaining<=0){
           if(phase==='player-attack'){
             s.matched.add(s.pendingPair);s.pendingPair=null;s.correct++;s.index++;
-            const old=s.bossHp;s.bossHp=Math.max(0,s.bossHp-Math.max(1,s.bossAttackSteps||1));
+            const old=s.bossHp;s.bossHp=Math.max(0,s.bossHp-(s.activeSkills?.attackDamage(Math.max(1,s.bossAttackSteps||1))??Math.max(1,s.bossAttackSteps||1)));
             if(s.matched.size===s.matchBoard.length)s.iceTimeActive=false;
             if(!s.bossHp)clear(s);
             else for(const hp of THRESHOLDS)if(old>hp&&s.bossHp<=hp&&!s.nereusThresholds.includes(hp)){s.nereusThresholds.push(hp);s.nereusSpeedPending++;}
@@ -81,7 +81,7 @@
       }
       if(s.bossHp>0&&volley&&s.nereusContacts<3&&s.nereusVolleyMs<=(VOLLEY_MS-contactAt(s.nereusContacts))*m){
         s.nereusContacts++;const hit=random()<HIT_CHANCE;
-        if(hit){if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.nereusPlayerHit=true;}
+        if(hit){if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.nereusPlayerHit=true;}
         s.nereusNotice=hit?'삼연창 · HP −1':'삼연창 · 창을 피했어요!';s.nereusNoticeMs=500;events.push(hit?'spear-hit':'spear-miss');
         if(s.hp<=0){clear(s);events.push('defeat-player');return events;}
       }

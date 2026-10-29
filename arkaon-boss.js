@@ -43,7 +43,7 @@
         s.guardianRemaining-=step;
         if(s.guardianRemaining<=0){
           if(phase==='player-attack'){
-            s.matched.add(s.pendingPair);s.pendingPair=null;s.correct++;s.index++;s.bossHp=Math.max(0,s.bossHp-Math.max(1,s.bossAttackSteps||1));
+            s.matched.add(s.pendingPair);s.pendingPair=null;s.correct++;s.index++;s.bossHp=Math.max(0,s.bossHp-(s.activeSkills?.attackDamage(Math.max(1,s.bossAttackSteps||1))??Math.max(1,s.bossAttackSteps||1)));
             if(s.matched.size===s.matchBoard.length)s.iceTimeActive=false;
             if(!s.bossHp)clear(s);
             s.guardianPhase=s.bossHp?'hit':'defeat';s.guardianVisual=s.guardianPhase;s.guardianRemaining=(s.bossHp?300:920)*m;events.push('hit');
@@ -53,7 +53,7 @@
       }
       if(s.bossHp>0&&casting&&!s.arkaonContact&&s.arkaonCastMs<=300*m){
         s.arkaonContact=true;const hit=random()<.35;
-        if(hit){if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.arkaonPlayerHit=true;}
+        if(hit){if(s.activeSkills)s.activeSkills.damage(1);else if(s.petEffects)s.petEffects.damage(1);else s.hp=Math.max(0,s.hp-1);s.arkaonPlayerHit=true;}
         s.arkaonNotice=hit?'봉인 충격파 · HP −1':'봉인 충격파 · 충격을 피했어요!';s.arkaonNoticeMs=1000;events.push(hit?'wave-hit':'wave-miss');
         if(s.hp<=0){clear(s);events.push('defeat-player');return events;}
       }

@@ -19,8 +19,8 @@
     state.locked=true;state.iceTimeActive=false;state.drainNotice='';state.drainSuccess=false;
     state.guardianPhase=correct?'player-attack':'wrong';state.guardianRemaining=correct?contactMs:500;
     state.guardianVisual='idle';
-    if(correct){state.answeredCorrect=(state.answeredCorrect||0)+1;const damage=Math.min(HP-state.correct,Math.max(1,state.bossAttackSteps||1));state.correct+=damage;state.index+=damage;state.attack=true;}
-    else{if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
+    if(correct){state.answeredCorrect=(state.answeredCorrect||0)+1;const damage=Math.min(HP-state.correct,(state.activeSkills?.attackDamage(Math.max(1,state.bossAttackSteps||1))??Math.max(1,state.bossAttackSteps||1)));state.correct+=damage;state.index+=damage;state.attack=true;}
+    else{if(state.activeSkills)state.activeSkills.damage(1);else if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.stunned=true;}
     return true;
   }
   function advance(state,delta,random=Math.random){
@@ -46,7 +46,7 @@
           else ready();break;
         case 'drain-charge':
           state.drainSuccess=random()<SUCCESS_RATE;
-          if(state.drainSuccess){const before=state.hp;if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.drainSuccess=state.hp<before;state.stunned=state.drainSuccess;}
+          if(state.drainSuccess){const before=state.hp;if(state.activeSkills)state.activeSkills.damage(1);else if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);state.drainSuccess=state.hp<before;state.stunned=state.drainSuccess;}
           state.drainNotice=state.drainSuccess?'에너지 흡수 · HP −1':'에너지 흡수를 막았어요!';
           state.guardianPhase='drain-hold';state.guardianRemaining=700;events.push(state.drainSuccess?'drain-hit':'drain-miss');break;
         case 'drain-hold':

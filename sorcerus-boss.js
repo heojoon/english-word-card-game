@@ -27,10 +27,10 @@
     state.locked=true;state.iceTimeActive=false;state.guardianVisual='idle';state.sorcerusPhaseMs=0;
     state.guardianPhase=correct?'player-attack':'wrong';state.guardianRemaining=correct?Math.max(1,contactMs):500;
     if(correct){
-      state.sorcerusPendingDamage=Math.min(state.bossHp,Math.max(1,state.bossAttackSteps||1));
+      state.sorcerusPendingDamage=Math.min(state.bossHp,(state.activeSkills?.attackDamage(Math.max(1,state.bossAttackSteps||1))??Math.max(1,state.bossAttackSteps||1)));
       state.answeredCorrect=(state.answeredCorrect||0)+1;state.correct+=state.sorcerusPendingDamage;state.index+=state.sorcerusPendingDamage;state.attack=true;
     }else{
-      if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);
+      if(state.activeSkills)state.activeSkills.damage(1);else if(state.petEffects)state.petEffects.damage(1);else state.hp=Math.max(0,state.hp-1);
       state.stunned=true;
     }
     return true;

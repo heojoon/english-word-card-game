@@ -1168,6 +1168,24 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 
 .hall-of-fame-story-clear{margin:4px 0 0;font-size:10px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}
 .hall-of-fame-story-clear b{display:block;color:var(--violet);font-size:12px;font-variant-numeric:tabular-nums}
+.hall-weekly-rewards{margin-top:16px;padding:16px 12px;border:1px solid #ded9f6;border-radius:18px;text-align:center;background:linear-gradient(145deg,var(--surface),#efecff);color:var(--ink)}
+.hall-weekly-rewards>.eyebrow{font-size:9px;letter-spacing:.12em}
+.hall-weekly-rewards>strong{display:block;margin:6px 0 12px;font-size:14px}
+.hall-reward-places{display:flex;justify-content:center;gap:8px}
+.hall-reward-places>span{flex:1;max-width:100px;padding:8px 3px;border:1px solid #ded9f6;border-radius:12px;background:#ffffffc9;font-size:11px}
+.hall-reward-places b{display:block;margin-top:4px;color:var(--violet);font-size:14px}
+.hall-reward-places>span:first-child{border-color:#efcf82;background:#fff5d9}
+.hall-weekly-rewards p{margin:10px 0 7px;font-size:11px;line-height:1.6}
+.hall-weekly-rewards>small{font-size:10px;line-height:1.7;color:var(--muted)}
+.hall-award-banner{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:18px;padding:22px 10px;border:1px solid #dcd5f8;border-radius:22px;background:radial-gradient(ellipse at 50% 15%,#fff1c9,transparent 70%),linear-gradient(145deg,var(--surface),#eae5ff);text-align:center;color:var(--ink)}
+.hall-award-banner .eyebrow{font-size:9px;letter-spacing:.12em}
+.hall-award-medal{display:grid;place-items:center;width:68px;height:68px;border:2px solid #efcf82;border-radius:50%;background:linear-gradient(145deg,#fff9e6,#ffdf8d);color:#805614;font-size:40px;box-shadow:0 5px 18px #5751d81a}
+.hall-award-banner>strong{font-size:18px}
+.hall-award-total{font-size:28px;font-weight:900;color:var(--violet);font-variant-numeric:tabular-nums}
+.hall-award-total small{font-size:12px;font-weight:700}
+.hall-award-bonus{padding:5px 10px;border-radius:20px;background:#60d9cf30;color:#285d58;font-size:11px}
+.hall-award-notice h2{font-size:19px;line-height:1.5;overflow-wrap:anywhere}
+.hall-award-notice .notice-body{line-height:1.85;font-size:13px}
 
 /* World 7C: thirty measured waypoints and shared matching battles. */
 .story-world-map-10{aspect-ratio:1/3}
@@ -1194,6 +1212,14 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .arcane-sentry-mob .spider-idle-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-idle-strip.png')}
 .arcane-sentry-mob .spider-attack-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-attack-strip.png')}
 .arcane-sentry-mob .spider-hit-strip{background-image:url('assets/monsters/world-7c/arcane-sentry-sd-hit-strip.png')}
+/* World 8 common troop: wide cells preserve spear thrust and full knockdown. */
+.world-eight-arena:has(.ashen-wedge-soldier-mob) .enemy-label{top:12px;right:12px}
+.arena.world-eight-arena .enemy.story-mob.ashen-wedge-soldier-mob{width:196px;height:140px;right:0;bottom:20px;clip-path:none;background:none;box-shadow:none;animation:none;transform:none}
+.ashen-wedge-soldier-mob .spider-idle-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-idle-strip.png')}
+.ashen-wedge-soldier-mob .spider-attack-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-attack-strip.png')}
+.ashen-wedge-soldier-mob .spider-hit-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-hit-strip.png')}
+.world-eight-arena.hit .ashen-wedge-soldier-mob{animation:none!important;opacity:1;transform:none}
+@media(max-width:360px){.arena.world-eight-arena .enemy.story-mob.ashen-wedge-soldier-mob{width:179.2px;height:128px;right:-4px}}
 
 /* World 7C: royal artificial abyss guardian. Frame selection follows the battle clock. */
 .arkaon-arena .arkaon-enemy{width:48%;height:auto;aspect-ratio:1;right:1%;top:auto;bottom:10%}
@@ -1209,3 +1235,34 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .hidden-king-arena.hidden-king-contact .hidden-king-body{filter:brightness(1.4)}
 .hidden-pet-reward{display:block;width:160px;max-width:70%;margin:12px auto}
 @media(prefers-reduced-motion:reduce){.story-map-node.hidden-stage-glow{animation:none}}
+.story-action-bar:has(.story-new-skill){display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;align-items:start}
+.story-action-bar:has(.story-new-skill) .story-item-group{grid-column:span 2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.story-action-bar:has(.story-new-skill) .story-item-slot{width:100%;min-width:0}
+.story-action-bar:has(.story-new-skill) .story-skill-slot{width:100%;margin-left:0;min-height:64px;touch-action:manipulation}
+.story-action-bar:has(.story-new-skill) .story-skill-slot b{font-size:10px}
+.story-action-bar:has(.story-new-skill) .story-skill-slot small{font-size:9px;white-space:normal;line-height:1.3}
+.story-new-skill .story-action-icon{--skill-gem:#e4e1ff;--skill-ring:#b6adf2;--skill-ink:#5751d8}
+.story-new-skill.activated .story-action-icon{border-color:#5751d8;box-shadow:0 0 0 3px #7868ef26,0 3px 10px #5751d82b}
+.story-new-skill:disabled:not(.activated){opacity:.55}
+.new-skill-status{position:absolute;z-index:12;left:50%;bottom:6px;translate:-50% 0;max-width:94%;padding:5px 9px;border:1px solid #d4cef8;border-radius:12px;background:#f7f7fff2;color:#3b348b;font-size:10px;font-weight:800;white-space:nowrap;pointer-events:none}
+.deadeye-target{outline:2px solid #5751d8;outline-offset:-2px}
+.deadeye-hint{display:block;margin-top:4px;color:#3b348b;font-size:10px;font-weight:850}
+.new-skill-callout{margin-top:8px;padding:9px 12px;border:1px solid #dedbf8;border-radius:14px;background:#f7f7ff;color:#49447f}
+.new-skill-callout b,.new-skill-callout small{display:block;line-height:1.5}
+.new-skill-callout small{font-size:11px}
+.new-skill-reward{width:100%;margin:0 0 14px;padding:12px;border:1px solid #b6adf2;border-radius:16px;background:linear-gradient(135deg,#f7f7ff,#e7faf6);color:#3b348b;text-align:center}
+.new-skill-reward b,.new-skill-reward small{display:block;line-height:1.5}
+.new-skill-reward b{font-size:13px}
+.new-skill-reward small{margin-top:4px;font-size:11px}
+
+
+/* World 8 final boss: wide spear/wing cells retain full silhouette. */
+.vargas-arena:not(.vargas-contact) .crystal-strike,.vargas-arena:not(.vargas-contact) .crystal-shards i{animation:none!important;opacity:0}
+.vargas-arena.vargas-contact .crystal-strike,.vargas-arena.vargas-contact .crystal-shards i{animation-delay:0s!important}
+.vargas-arena .vargas-enemy{right:1%;bottom:12px;width:65%;max-width:260px;aspect-ratio:1.5;z-index:4}
+.vargas-sprite{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;background-repeat:no-repeat;filter:drop-shadow(0 5px 3px #24214c22)}
+.vargas-arena .vargas-notice{position:absolute;inset:8px 8px auto;text-align:center;z-index:8;color:#24214c;font-size:12px;font-weight:800;pointer-events:none;text-shadow:0 1px 3px white}
+.vargas-arena .vargas-notice:not(:empty){background:#f7f7ffed;border:1px solid #d7d3fa;border-radius:12px;padding:7px}
+.vargas-arena.ice-time-active .vargas-sprite{filter:drop-shadow(0 0 7px var(--ice-edge))}
+.vargas-arena .arena-feedback{bottom:3px}
+@media(max-width:360px){.vargas-arena .vargas-enemy{right:1%;width:64%}.vargas-arena .vargas-notice{font-size:11px}}

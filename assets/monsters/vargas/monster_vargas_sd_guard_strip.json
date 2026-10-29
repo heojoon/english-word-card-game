@@ -1,0 +1,99 @@
+{
+  "image": "monster_vargas_sd_guard_strip.png",
+  "frameWidth": 480,
+  "frameHeight": 352,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "frameIndexBase": 0,
+  "loop": false,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "raise-spear",
+      "durationMs": 250
+    },
+    {
+      "name": "command-crystal-charge",
+      "durationMs": 250
+    },
+    {
+      "name": "ward-contact",
+      "durationMs": 500,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "source": "attack.png",
+      "sourceBox": [
+        0,
+        0,
+        746,
+        724
+      ],
+      "alphaNoiseComponentsRemoved": 3,
+      "foregroundBounds": [
+        21,
+        168,
+        684,
+        652
+      ],
+      "scale": 0.55,
+      "sourceFootAnchorX": 380,
+      "runtimeBounds": [
+        43,
+        77,
+        408,
+        343
+      ]
+    },
+    {
+      "source": "guard-charge.png",
+      "sourceBox": null,
+      "alphaNoiseComponentsRemoved": 0,
+      "foregroundBounds": [
+        340,
+        11,
+        1384,
+        1001
+      ],
+      "scale": 0.32,
+      "sourceFootAnchorX": 740,
+      "runtimeBounds": [
+        112,
+        26,
+        446,
+        343
+      ]
+    },
+    {
+      "source": "guard-contact.png",
+      "sourceBox": null,
+      "alphaNoiseComponentsRemoved": 2,
+      "foregroundBounds": [
+        277,
+        12,
+        1382,
+        999
+      ],
+      "scale": 0.32,
+      "sourceFootAnchorX": 730,
+      "runtimeBounds": [
+        95,
+        27,
+        449,
+        343
+      ]
+    }
+  ],
+  "userApproved": false,
+  "browserReviewed": false,
+  "contactFrameIndex": 2,
+  "contactMs": 500
+}
