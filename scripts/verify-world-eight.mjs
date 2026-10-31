@@ -10,6 +10,8 @@ const shuffle=input=>{const a=input.slice();for(let i=a.length-1;i>0;i--){const 
 function content(level='middle'){
   const c=vm.createContext({window:{},document:{createElement:()=>({}),head:{appendChild(){}},currentScript:null,documentElement:{classList:{contains:()=>false}}},learningLevel:()=>level,stageLevel:s=>s.learningLevel||'middle',shuffle,chosenStoryBranch:()=> '6A'});
   for(const file of ['stages.js','elementary-stages.js','stage6.js','stage7.js','stage8.js','stage15.js','stage35.js'])vm.runInContext(readFileSync(new URL('../'+file,import.meta.url),'utf8'),c);
+  // Published elementary Survival maps are loaded from Supabase at runtime.
+  c.window.QUIZ_STAGES['creator:elementary-survival']={name:'day.1',learningLevel:'elementary',creator:true,mapId:'elementary-survival',words:[['apple','n','사과'],['book','n','책'],['cat','n','고양이'],['dog','n','개'],['egg','n','달걀'],['fish','n','물고기']]};
   vm.runInContext('const stages=window.QUIZ_STAGES;'+extract('  const storyStages = [','  const storyStageKey=')+'\nconfigureStoryContent();globalThis.catalog=stages;globalThis.worlds=storyWorlds;globalThis.story=storyStages;',c);
   vm.runInContext(extract('  function buildQuestionDeck(','  async function loadAll('),c);
   vm.runInContext(extract('  function makeSpellingQuestion(','  function formScore('),c);
@@ -32,10 +34,27 @@ test('World 8 shares 30 Days and records; ordinary Type C has 40 questions and V
       for(let i=1;i<deck.length;i++)assert.notEqual(deck[i].entry[0],deck[i-1].entry[0]);
       if(level==='middle')records.push(config.recordName);else assert.equal(config.recordName,records[stage.number-1]);
     }
-    assert.equal(days.size,30);assert.ok([...days].every(day=>day>=1&&day<=30));
+    if(level==='middle'){assert.equal(days.size,30);assert.ok([...days].every(day=>day>=1&&day<=30));}
+    else assert.deepEqual([...days],[null]);
     const positions=c.worlds.at(-1).positions;assert.equal(positions.length,30);
     positions.forEach((p,i)=>{assert.ok(parseFloat(p[0])>0&&parseFloat(p[0])<100);if(i)assert.ok(parseFloat(p[1])>parseFloat(positions[i-1][1]));});
   }
+});
+test('World 7 branches and World 8 use elementary Survival words and preserve records across level changes',()=>{
+  const c=content('elementary'),middle=content('middle');
+  const expected=c.catalog['creator:elementary-survival'].words;
+  for(const stage of c.story.filter(s=>[8,9,10,11].includes(s.chapter))){
+    const config=c.catalog[stage.key];
+    assert.deepEqual(Array.from(config.words),expected);
+    assert.equal(config.recordName,middle.catalog[stage.key].recordName);
+    assert.equal(config.vocabularyDay,null);
+    assert.doesNotMatch(config.desc,/WordMax|Day \d+/);
+  }
+  vm.runInContext('configureStoryContent();',c);
+  assert.deepEqual(Array.from(c.catalog['story-ch7a-1'].words),expected);
+  delete c.catalog['creator:elementary-survival'];
+  vm.runInContext('configureStoryContent();',c);
+  for(const stage of c.story.filter(s=>[8,9,10,11].includes(s.chapter)))assert.equal(c.catalog[stage.key].words.length,0);
 });
 test('Type C hides one or two internal letters and always has four unique choices and one answer',()=>{
   const c=content();
