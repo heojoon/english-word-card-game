@@ -1,0 +1,73 @@
+{
+  "image": "monster_seal_knight_sd_shield_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": true,
+  "hitFrameIndexBase": 0,
+  "frames": [
+    {
+      "name": "charge",
+      "durationMs": 200
+    },
+    {
+      "name": "raise",
+      "durationMs": 250
+    },
+    {
+      "name": "hold",
+      "durationMs": 350,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "sourceBoundsSize": [
+        751,
+        673
+      ],
+      "scale": 0.35661218424962854,
+      "runtimeBounds": [
+        58,
+        72,
+        326,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        703,
+        661
+      ],
+      "scale": 0.35661218424962854,
+      "runtimeBounds": [
+        66,
+        76,
+        317,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        676,
+        648
+      ],
+      "scale": 0.35661218424962854,
+      "runtimeBounds": [
+        71,
+        81,
+        312,
+        312
+      ]
+    }
+  ],
+  "userApproved": false
+}

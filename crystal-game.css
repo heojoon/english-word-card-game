@@ -1224,6 +1224,13 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 /* World 7C: royal artificial abyss guardian. Frame selection follows the battle clock. */
 .arkaon-arena .arkaon-enemy{width:48%;height:auto;aspect-ratio:1;right:1%;top:auto;bottom:10%}
 .arkaon-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;image-rendering:auto}
+/* World 7C final guardian. The simulation selects frames, including reduced motion. */
+.seal-knight-arena .seal-knight-enemy{width:57.6%;max-width:270px;height:auto;aspect-ratio:1.2;right:1%;top:auto;bottom:10%}
+.seal-knight-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;image-rendering:auto}
+.seal-shield-active .seal-knight-enemy::after{content:'';position:absolute;inset:12% 5% 2%;border:2px solid var(--crystal-mint,#60d9cf);border-radius:48%;box-shadow:inset 0 0 14px #60d9cf55,0 0 16px #7868ef88;pointer-events:none}
+.seal-shield-status{position:absolute;right:8px;top:35px;z-index:6;max-width:58%;padding:4px 8px;border-radius:12px;background:var(--night-violet,#24214c);color:var(--moon-white,#f7f7ff);font-size:10px;font-weight:800}
+.seal-sword-active .seal-knight-effects{position:absolute;left:5%;bottom:22%;width:38%;height:4px;border-radius:50%;background:#60d9cf;box-shadow:0 0 12px #7868ef;opacity:.7;pointer-events:none}
+@media(max-width:360px){.royal-boss-heading:has(+.seal-knight-arena) h1{font-size:20px}.seal-shield-status{font-size:9px}}
 .story-map-node.hidden-stage-glow{box-shadow:0 0 0 4px #60d9cf99,0 0 22px 9px #7868efaa;animation:hidden-crystal-glow 1.8s ease-in-out infinite alternate}
 .hidden-stage-badge{position:absolute;left:50%;top:-19px;transform:translateX(-50%);padding:2px 7px;border-radius:12px;background:#5751d8;color:#fff;font-size:10px;white-space:nowrap}
 @keyframes hidden-crystal-glow{to{box-shadow:0 0 0 7px #60d9cf44,0 0 32px 14px #7868efcc}}

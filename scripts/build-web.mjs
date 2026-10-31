@@ -23,7 +23,7 @@ const files = [
   'crystal-game.js',
   'blackroot-elder-boss.js',
   'vargas-boss.js',
-  'story-novel.js', 'red-skull-knight-boss.js', 'dark-triton-boss.js', 'nereus-boss.js', 'arkaon-boss.js', 'morgana-boss.js', 'abyss-golem-boss.js', 'bandit-chief-boss.js', 'elliot-boss.js', 'lich-dragon-boss.js', 'sorcerus-boss.js', 'guardian-boss.js', 'red-reaper-boss.js', 'shadow-sorceress-boss.js', 'black-dragon-boss.js', 'pet-system.js', 'active-skills.js',
+  'story-novel.js', 'red-skull-knight-boss.js', 'dark-triton-boss.js', 'nereus-boss.js', 'arkaon-boss.js', 'seal-knight-boss.js', 'morgana-boss.js', 'abyss-golem-boss.js', 'bandit-chief-boss.js', 'elliot-boss.js', 'lich-dragon-boss.js', 'sorcerus-boss.js', 'guardian-boss.js', 'red-reaper-boss.js', 'shadow-sorceress-boss.js', 'black-dragon-boss.js', 'pet-system.js', 'active-skills.js',
   'sound-manager.js',
   'native-bridge.js',
   'stages.js',

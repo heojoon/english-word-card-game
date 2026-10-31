@@ -1,0 +1,73 @@
+{
+  "image": "monster_seal_knight_sd_attack_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": false,
+  "hitFrameIndexBase": 0,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 300
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 300
+    },
+    {
+      "name": "contact",
+      "durationMs": 300,
+      "hit": true
+    }
+  ],
+  "normalization": [
+    {
+      "sourceBoundsSize": [
+        699,
+        616
+      ],
+      "scale": 0.38961038961038963,
+      "runtimeBounds": [
+        56,
+        72,
+        328,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        602,
+        675
+      ],
+      "scale": 0.38961038961038963,
+      "runtimeBounds": [
+        74,
+        49,
+        309,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        920,
+        576
+      ],
+      "scale": 0.38961038961038963,
+      "runtimeBounds": [
+        13,
+        88,
+        371,
+        312
+      ]
+    }
+  ],
+  "userApproved": false
+}

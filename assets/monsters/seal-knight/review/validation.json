@@ -1,0 +1,230 @@
+{
+  "idle": {
+    "sourceSize": [
+      2172,
+      724
+    ],
+    "runtimeSize": [
+      1152,
+      320
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "frames": [
+      {
+        "sourceBoundsSize": [
+          731,
+          696
+        ],
+        "scale": 0.3448275862068966,
+        "runtimeBounds": [
+          66,
+          72,
+          318,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          682,
+          695
+        ],
+        "scale": 0.3448275862068966,
+        "runtimeBounds": [
+          74,
+          72,
+          309,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          695,
+          695
+        ],
+        "scale": 0.3448275862068966,
+        "runtimeBounds": [
+          72,
+          72,
+          312,
+          312
+        ]
+      }
+    ],
+    "spacedWidth": 1252,
+    "extraction": "alpha connected components; no vertical cuts or color keys"
+  },
+  "attack": {
+    "sourceSize": [
+      2172,
+      724
+    ],
+    "runtimeSize": [
+      1152,
+      320
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "frames": [
+      {
+        "sourceBoundsSize": [
+          699,
+          616
+        ],
+        "scale": 0.38961038961038963,
+        "runtimeBounds": [
+          56,
+          72,
+          328,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          602,
+          675
+        ],
+        "scale": 0.38961038961038963,
+        "runtimeBounds": [
+          74,
+          49,
+          309,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          920,
+          576
+        ],
+        "scale": 0.38961038961038963,
+        "runtimeBounds": [
+          13,
+          88,
+          371,
+          312
+        ]
+      }
+    ],
+    "spacedWidth": 1252,
+    "extraction": "alpha connected components; no vertical cuts or color keys"
+  },
+  "shield": {
+    "sourceSize": [
+      2172,
+      724
+    ],
+    "runtimeSize": [
+      1152,
+      320
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "frames": [
+      {
+        "sourceBoundsSize": [
+          751,
+          673
+        ],
+        "scale": 0.35661218424962854,
+        "runtimeBounds": [
+          58,
+          72,
+          326,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          703,
+          661
+        ],
+        "scale": 0.35661218424962854,
+        "runtimeBounds": [
+          66,
+          76,
+          317,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          676,
+          648
+        ],
+        "scale": 0.35661218424962854,
+        "runtimeBounds": [
+          71,
+          81,
+          312,
+          312
+        ]
+      }
+    ],
+    "spacedWidth": 1252,
+    "extraction": "alpha connected components; no vertical cuts or color keys"
+  },
+  "hit": {
+    "sourceSize": [
+      2200,
+      715
+    ],
+    "runtimeSize": [
+      1152,
+      320
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "frames": [
+      {
+        "sourceBoundsSize": [
+          717,
+          662
+        ],
+        "scale": 0.36253776435045315,
+        "runtimeBounds": [
+          62,
+          72,
+          322,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          719,
+          611
+        ],
+        "scale": 0.36253776435045315,
+        "runtimeBounds": [
+          61,
+          90,
+          322,
+          312
+        ]
+      },
+      {
+        "sourceBoundsSize": [
+          758,
+          242
+        ],
+        "scale": 0.36253776435045315,
+        "runtimeBounds": [
+          54,
+          224,
+          329,
+          312
+        ]
+      }
+    ],
+    "spacedWidth": 1252,
+    "extraction": "alpha connected components; no vertical cuts or color keys"
+  }
+}

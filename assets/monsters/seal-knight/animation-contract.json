@@ -1,0 +1,73 @@
+{
+  "name": "봉인의 수호기사",
+  "world": "7C",
+  "stage": 30,
+  "facing": "left",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "contactMs": 600,
+  "hitFrameIndexBase": 0,
+  "runtimeGapPx": 0,
+  "actions": {
+    "idle": {
+      "frameNames": [
+        "guard",
+        "inhale",
+        "settle"
+      ],
+      "durationsMs": [
+        350,
+        350,
+        350
+      ]
+    },
+    "attack": {
+      "frameNames": [
+        "ready",
+        "anticipation",
+        "contact"
+      ],
+      "durationsMs": [
+        300,
+        300,
+        300
+      ]
+    },
+    "shield": {
+      "frameNames": [
+        "charge",
+        "raise",
+        "hold"
+      ],
+      "durationsMs": [
+        200,
+        250,
+        350
+      ]
+    },
+    "hit": {
+      "frameNames": [
+        "notice",
+        "strongest-recoil",
+        "complete-knockdown"
+      ],
+      "durationsMs": [
+        140,
+        180,
+        600
+      ]
+    }
+  },
+  "cellWidthReason": "Sword anticipation and contact arc require 384px; preserve 240px helmet-to-foot character scale.",
+  "review": {
+    "offlineAlpha": true,
+    "mobile128px": true,
+    "browser": false,
+    "userApproved": false
+  }
+}

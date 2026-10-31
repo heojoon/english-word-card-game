@@ -1,0 +1,12 @@
+{
+  "image": "char_seal_knight_world7c_standing.webp",
+  "name": "봉인의 수호기사",
+  "role": "World 7C-30 standing CG; full-body empty armor knight with sword and shield",
+  "source": "assets/monsters/seal-knight/source/standing.png",
+  "generation": "assets/monsters/seal-knight/generation.json",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "userApproved": false
+}

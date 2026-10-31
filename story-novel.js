@@ -10374,11 +10374,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "성흔 보관실에 도달한 자들이여. 목적을 밝혀라.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "아서",
@@ -10390,11 +10391,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "봉인의 해제는 감지했다. 그러나 외부의 소식만으로 유물을 내줄 수는 없다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -10406,11 +10408,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "이 파편을 빼앗아 봉인된 자에게 바치려는 이들도 있었다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "바이올렛",
@@ -10422,11 +10425,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "그렇다. 문을 여는 권한과 파편을 맡는 자격은 다르다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "아서",
@@ -10438,11 +10442,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "검을 들어라. 너희가 위험 앞에서 어떻게 행동하는지 확인하겠다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -10478,11 +10483,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "마지막으로 묻겠다. 이 유물을 위해 무엇을 내놓을 수 있느냐?",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "아서",
@@ -10502,11 +10508,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "그 대답을 끝까지 지켜라. 심판을 시작한다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     }
   ],
   "world7cBossEnd": [
@@ -10520,11 +10527,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "전투… 종료…",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -10576,11 +10584,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "유물을 향해 달려갈 수도 있었다. 어째서 멈추었느냐?",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "아서",
@@ -10592,11 +10601,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "너희는 전투 중에도 서로의 목소리를 놓치지 않았다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -10608,11 +10618,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "인정한다. 성흔의 파편을 너희에게 맡기겠다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -10632,11 +10643,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "파편은 신성력을 흔들어 핵을 감싼 보호막에 틈을 낸다. 핵에 닿을 길을 열어 주는 것이다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "바이올렛",
@@ -10648,11 +10660,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "그렇다. 틈은 오래 유지되지 않는다. 서로의 움직임을 맞춰야 한다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -10672,11 +10685,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "그들은 파편으로 보호막을 열었다. 그러나 핵에 이르기 전에 힘을 소진했다. 살아남은 이들은 남은 힘을 모아 천사를 봉인했다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "바이올렛",
@@ -10688,11 +10702,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "파편을 가졌다는 이유로 승리를 확신하지 마라. 준비 없이 쓰면 같은 일을 되풀이하게 된다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -10736,11 +10751,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "해제 명령은 외부에서 들어왔다. 명령을 보낸 자의 신원은 남아 있지 않다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -10768,11 +10784,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "기록의 사본을 가져가도 좋다.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -10784,11 +10801,12 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "봉인의 수호기사",
-      "className": "scene",
+      "className": "seal-knight",
       "text": "지상으로 향하는 길을 열었다. 파편과 함께 돌아가라.",
       "scene": "world-7c",
       "location": "왕국 지하 던전 · 성흔 보관실 · 승리",
-      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp"
+      "backgroundPath": "assets/story/chapter-7c-royal-dungeon-map.webp",
+      "artPath": "assets/novel/characters/char_seal_knight_world7c_standing.webp"
     },
     {
       "speaker": "아서",

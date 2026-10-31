@@ -1,0 +1,108 @@
+{
+  "tool": "image_gen.imagegen",
+  "date": "2026-10-31",
+  "boss": "봉인의 수호기사",
+  "world": "7C",
+  "stage": 30,
+  "identityAuthority": "source/standing.png; selected for implementation under user delegation; no separate explicit visual approval",
+  "assets": [
+    {
+      "action": "standing",
+      "file": "source/standing.png",
+      "runtime": "assets/novel/characters/char_seal_knight_world7c_standing.webp",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nCreate a production full-body standing CG of the Seal Guardian Knight, a living EMPTY suit of armor guarding a sacred shard in a royal underground vault. Full body upright dignified 5.5-head-tall proportions, three-quarter facing LEFT. No human face, no skin, no hair. Closed elegant wing-crested helmet with a narrow cyan glowing visor; polished moon-white/silver plate armor with pale lavender shadows; sparse violet-blue crystals, restrained fine gold trim, short deep violet cape. One straight broad crystalline sword held low pointing down-left, other arm holds a kite shield with a large cyan crystal and simple wing emblem. Clear shield vs sword silhouette. Friendly solemn fantasy protector, no skulls, no horns, no horror. The reference is rendering/material style only; do not copy the golem anatomy or bulky spikes. One isolated single subject, true transparent alpha background, no floor, no frame, no text. All helmet, sword, cape, boots and shield fully inside image with generous clear margins. High-resolution portrait composition.",
+      "references": [
+        "assets/novel/characters/char_arkaon_world7c_standing.webp"
+      ],
+      "referenceRoles": [
+        "rendering and crystal material style only"
+      ],
+      "original": "exec-89076bde-d0ae-4108-bd99-891552318595.png"
+    },
+    {
+      "action": "idle",
+      "file": "source/idle.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nReference image 1 is the canonical full-body standing identity. Create a THREE FRAME horizontal idle sprite source sheet, one complete SD/chibi Seal Guardian Knight in each of three equally wide slots. Face LEFT in 3/4 battle view. Preserve the EMPTY armor identity: cyan glowing narrow visor, moon-white silver plate with pale lavender shadows, wing-crested closed helmet, violet-blue crystals, gold edge trim, short violet cape, one crystalline sword pointing diagonally down-left and one kite shield with wing emblem. Adapt to 2.5-head-tall SD proportions, large helmet and hands, compact body. Fixed scale, fixed planted feet baseline and camera. Frame 1 poised guard, frame 2 subtle inhale/raised shield, frame 3 subtle exhale/settled guard. NO walking, NO turning. All three figures same size. Three 600x600 logical content slots, EXACTLY 50 pixels fully transparent empty gutter between adjacent slots, generous transparent margins all around each character and weapon. Entire helmet sword boots cape shield inside its slot, no scenery, no lettering, no ground. True transparent RGBA alpha. Crisp polished 2D game sprite, no pixel art, no 3D. Wide horizontal 3:1 overall composition.",
+      "references": [
+        "assets/monsters/seal-knight/source/standing.png"
+      ],
+      "original": "exec-77b176fe-6141-4750-90c8-42c841091bab.png"
+    },
+    {
+      "action": "attack",
+      "file": "source/attack.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nImage 1 is the authoritative full-body identity. Image 2 shows its established SD proportions and battle direction. Preserve this exact EMPTY armor knight: cyan narrow visor, closed silver wing-crested helmet, white silver plate with lavender shadows and gold edging, violet crystals, violet cape, blue crystalline sword, kite shield with cyan-violet crystal and white wing emblem. Compact 2.5-head SD proportions. THREE equally sized full-body figures facing LEFT, in one horizontal source sheet. Same character scale and feet baseline, ample space for the full sword cape shield and all effects. Each logical slot 600x600, exactly 50px fully transparent empty gap between adjacent slots. Nothing crosses slot bounds. True transparent alpha background, no scenery floor letters labels UI or guides, no human face, no redesign. Polished 2D, no 3D or pixel art. Action is sword judgement. Frame 1 READY: guard with sword lowered diagonally left. Frame 2 ANTICIPATION: raise sword behind helmet in visible wind-up, shield braced. Frame 3 CONTACT/STRIKE PEAK: a clear powerful horizontal slash toward LEFT, sword held extended left, small short cyan arc near blade, both boots remain planted, NOT returning to idle. Every frame full knight, preserve sword size.",
+      "references": [
+        "assets/monsters/seal-knight/source/standing.png",
+        "assets/monsters/seal-knight/source/idle.png"
+      ],
+      "referenceRoles": [
+        "identity",
+        "SD proportions, palette and facing"
+      ],
+      "original": "exec-177816e8-a994-4c5c-a2bb-ae3db253a835.png"
+    },
+    {
+      "action": "shield",
+      "file": "source/shield.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nImage 1 is the authoritative full-body identity. Image 2 shows its established SD proportions and battle direction. Preserve this exact EMPTY armor knight: cyan narrow visor, closed silver wing-crested helmet, white silver plate with lavender shadows and gold edging, violet crystals, violet cape, blue crystalline sword, kite shield with cyan-violet crystal and white wing emblem. Compact 2.5-head SD proportions. THREE equally sized full-body figures facing LEFT, in one horizontal source sheet. Same character scale and feet baseline, ample space for the full sword cape shield and all effects. Each logical slot 600x600, exactly 50px fully transparent empty gap between adjacent slots. Nothing crosses slot bounds. True transparent alpha background, no scenery floor letters labels UI or guides, no human face, no redesign. Polished 2D, no 3D or pixel art. Action is seal shield cast. Frame 1 CHARGE: knight holds shield in front, crystal begins cyan glow. Frame 2 RAISE: shield lifted forward-left, small violet runes orbit close around shield only. Frame 3 HOLD: fully raised shield guarded stance, a compact cyan-violet curved barrier just in front of shield facing LEFT, bright but face and sword remain readable. Every frame contains complete character and weapon; no large background aura or full screen glow.",
+      "references": [
+        "assets/monsters/seal-knight/source/standing.png",
+        "assets/monsters/seal-knight/source/idle.png"
+      ],
+      "referenceRoles": [
+        "identity",
+        "SD proportions, palette and facing"
+      ],
+      "original": "exec-368185d8-f28c-4bf3-bf1a-b0423d8ac263.png"
+    },
+    {
+      "action": "hit",
+      "file": "source/hit.png",
+      "dimensions": [
+        2200,
+        715
+      ],
+      "prompt": "WORDORIA CRYSTAL QUEST STYLE — a bright premium 2D anime fantasy illustration for a polished mobile RPG, clean colored linework with dark violet outer contours, crisp three-step soft cel shading, selective smooth gradients only on hair, crystal light and magical glow, large readable silhouette, youthful heroic expression, elegant rounded shapes contrasted with a few clean crystal facets, luminous violet and blue crystal glass, restrained mint magical rim light, small refined gold accents, moon-white resting areas, clean enamel-like equipment, vivid but controlled color, friendly adventurous mood, highly readable at mobile size, original IP design, consistent production-game asset quality.\nImage 1 is the authoritative full-body identity. Image 2 shows its established SD proportions and battle direction. Preserve this exact EMPTY armor knight: cyan narrow visor, closed silver wing-crested helmet, white silver plate with lavender shadows and gold edging, violet crystals, violet cape, blue crystalline sword, kite shield with cyan-violet crystal and white wing emblem. Compact 2.5-head SD proportions. THREE equally sized full-body figures facing LEFT, in one horizontal source sheet. Same character scale and feet baseline, ample space for the full sword cape shield and all effects. Each logical slot 600x600, exactly 50px fully transparent empty gap between adjacent slots. Nothing crosses slot bounds. True transparent alpha background, no scenery floor letters labels UI or guides, no human face, no redesign. Polished 2D, no 3D or pixel art. Action is hit/defeat, EXACTLY THREE poses. Frame 1 NOTICE/GUARD: upright helmet turned left with shield braced. Frame 2 STRONGEST RECOIL: body tilts backward right, arms flinch, clear impact reaction without violence. Frame 3 COMPLETE KNOCKDOWN: the entire EMPTY armor knight lying fully down horizontally on the ground line, helmet to RIGHT and boots to LEFT, shield and sword still visibly together beside the body. This third pose is defeated and cannot stand; NOT kneeling, crouching or getting up. No attacker, blood or injury. Same helmet/body SIZE as standing frames; allow wide slot for fallen body.",
+      "references": [
+        "assets/monsters/seal-knight/source/standing.png",
+        "assets/monsters/seal-knight/source/idle.png"
+      ],
+      "referenceRoles": [
+        "identity",
+        "SD proportions, palette and facing"
+      ],
+      "original": "exec-ebe65d03-9a2a-4d5a-906e-37e8cb32f69c.png"
+    }
+  ],
+  "normalization": "scripts/assemble-seal-knight.py; alpha component masks isolate complete non-touching characters without vertical crop or color keys; 240px standing height, shared scale per action; 384x320 cells to retain sword arc.",
+  "sourceGapReview": "Requested exact 50px source gutters, but raw generator output varies and silhouette x bounds interleave. Preserved raw outputs untouched. Extracted complete non-touching alpha components; independently extracted frame masters and review composites are packed with exact 50px gutters. Runtime strips have zero gap.",
+  "technicalReview": {
+    "realAlpha": true,
+    "twoBackgrounds": [
+      "#f7f7ff",
+      "#5751d8"
+    ],
+    "mobileSizePx": 128,
+    "finalKnockdownHold": true,
+    "offlineReviewed": true,
+    "browserReviewed": false,
+    "userApproved": false
+  }
+}

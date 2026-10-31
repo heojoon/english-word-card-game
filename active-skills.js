@@ -59,6 +59,8 @@
         const max=s.bossMaxHp||(s.boss?50:s.shadowSorceress?100:s.blackDragon?60:s.redReaper?120:s.lichDragon?200:60);
         s.correct=Math.max(0,Math.min(max,(s.correct||0)+amount));
       },
+      // Exact next effect boundary lets HP bosses interleave burns with their clock.
+      nextEventIn(){return Math.min(oathMs>0?oathMs:Infinity,deadeyeMs>0?deadeyeMs:Infinity,burnMs>0?Math.min(burnMs,1000-burnTick):Infinity);},
       advance(delta){
         if(!allowed()){this.clear();return false;}
         if(s.paused)return false;

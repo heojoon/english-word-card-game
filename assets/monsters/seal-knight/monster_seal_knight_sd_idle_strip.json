@@ -1,0 +1,72 @@
+{
+  "image": "monster_seal_knight_sd_idle_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": true,
+  "holdLastFrame": false,
+  "hitFrameIndexBase": 0,
+  "frames": [
+    {
+      "name": "guard",
+      "durationMs": 350
+    },
+    {
+      "name": "inhale",
+      "durationMs": 350
+    },
+    {
+      "name": "settle",
+      "durationMs": 350
+    }
+  ],
+  "normalization": [
+    {
+      "sourceBoundsSize": [
+        731,
+        696
+      ],
+      "scale": 0.3448275862068966,
+      "runtimeBounds": [
+        66,
+        72,
+        318,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        682,
+        695
+      ],
+      "scale": 0.3448275862068966,
+      "runtimeBounds": [
+        74,
+        72,
+        309,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        695,
+        695
+      ],
+      "scale": 0.3448275862068966,
+      "runtimeBounds": [
+        72,
+        72,
+        312,
+        312
+      ]
+    }
+  ],
+  "userApproved": false
+}

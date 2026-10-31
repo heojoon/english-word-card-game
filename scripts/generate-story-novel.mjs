@@ -307,6 +307,7 @@ export function parseWorldSevenNarrative(markdown,{world,location}={}){
       line.artPath='assets/novel/characters/char_nereus_world7b_standing.webp';
     }
     if(world==='7c'&&speaker==='인공 심연의 골렘'){line.speaker='아르카온';line.className='arkaon';line.artPath='assets/novel/characters/char_arkaon_world7c_standing.webp';}
+    if(world==='7c'&&speaker==='봉인의 수호기사'){line.className='seal-knight';line.artPath='assets/novel/characters/char_seal_knight_world7c_standing.webp';}
     lines.push(line);
   }
   if(!lines.length)throw new Error(`World ${world} narrative is incomplete`);

@@ -1,0 +1,73 @@
+{
+  "image": "monster_seal_knight_sd_hit_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "loop": false,
+  "holdLastFrame": true,
+  "hitFrameIndexBase": 0,
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 140
+    },
+    {
+      "name": "strongest-recoil",
+      "durationMs": 180
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 600,
+      "hold": true
+    }
+  ],
+  "normalization": [
+    {
+      "sourceBoundsSize": [
+        717,
+        662
+      ],
+      "scale": 0.36253776435045315,
+      "runtimeBounds": [
+        62,
+        72,
+        322,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        719,
+        611
+      ],
+      "scale": 0.36253776435045315,
+      "runtimeBounds": [
+        61,
+        90,
+        322,
+        312
+      ]
+    },
+    {
+      "sourceBoundsSize": [
+        758,
+        242
+      ],
+      "scale": 0.36253776435045315,
+      "runtimeBounds": [
+        54,
+        224,
+        329,
+        312
+      ]
+    }
+  ],
+  "userApproved": false
+}
