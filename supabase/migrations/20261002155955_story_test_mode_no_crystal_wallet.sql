@@ -88,4 +88,4 @@ $function$;
 revoke all on function public.record_game_result_without_reward(uuid, text, integer, integer, boolean, integer) from public;
 revoke all on function public.claim_stage_treasure_without_reward(uuid, bigint) from public;
 grant execute on function public.record_game_result_without_reward(uuid, text, integer, integer, boolean, integer) to anon, authenticated;
-grant execute on function public.claim_stage_treasure_without_reward(uuid, bigint) to anon, authenticated;
+grant execute on function public.claim_stage_treasure_without_reward(uuid, bigint) to anon, authenticated;;
