@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "sound-generation",
+  "request": {
+    "text": "One crisp tactile wooden and metallic prize wheel pointer tick, a soft mechanical ratchet click with a tiny crystal sparkle. Friendly fantasy game UI. Single isolated click, immediate onset, very short decay, no music, no ambience, no voices.",
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7,
+    "model_id": "eleven_text_to_sound_v2"
+  },
+  "source": "sfx_roulette_wheel_tick_01.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; runtime processing validated, listening review pending"
+}

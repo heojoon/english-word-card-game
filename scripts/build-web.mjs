@@ -43,7 +43,8 @@ await Promise.all(files.map(file => cp(new URL(file, root), new URL(file, dist))
 await cp(new URL('assets/', root), new URL('assets/', dist), { recursive: true, filter: source => {
   // Keep this boss's generation originals and review composites out of the APK.
   const path=source.replaceAll('\\','/');
-  return !/\/monsters\/(?:blackroot-elder|vargas)\/(?:source|source-frames|review)(?:\/|\.html$|$)/.test(path);
+  return !/\/monsters\/(?:blackroot-elder|vargas)\/(?:source|source-frames|review)(?:\/|\.html$|$)/.test(path)
+    && !/\/audio\/source\/roulette(?:\/|$)/.test(path);
 } });
 await cp(new URL('content/', root), new URL('content/', dist), { recursive: true });
 console.log(`Prepared ${join('dist', '/')} for Capacitor.`);

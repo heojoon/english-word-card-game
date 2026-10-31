@@ -133,33 +133,73 @@
         "assets/audio/bgm/lobby/bgm_lobby_mint_horizon_loop.ogg",
         "assets/audio/bgm/lobby/bgm_lobby_mint_horizon_loop.mp3"
       ]
+    },
+    "ROULETTE_BGM": {
+      "category": "bgm",
+      "volume": 0.48,
+      "loop": true,
+      "sources": [
+        "assets/audio/bgm/roulette/bgm_fever_roulette_loop.ogg",
+        "assets/audio/bgm/roulette/bgm_fever_roulette_loop.mp3"
+      ]
+    },
+    "ROULETTE_CHEER": {
+      "category": "bgm",
+      "volume": 0.65,
+      "loop": false,
+      "sources": [
+        "assets/audio/bgm/roulette/bgm_roulette_cheer_fanfare.ogg",
+        "assets/audio/bgm/roulette/bgm_roulette_cheer_fanfare.mp3"
+      ]
+    },
+    "ROULETTE_WHEEL_TICK": {
+      "category": "sfx",
+      "volume": 0.45,
+      "pitchVariation": 0.025,
+      "sources": [
+        "assets/audio/sfx/roulette/sfx_roulette_wheel_tick_01.wav"
+      ]
+    },
+    "ROULETTE_BUTTON": {
+      "category": "sfx",
+      "volume": 0.7,
+      "sources": [
+        "assets/audio/sfx/roulette/sfx_roulette_red_button_01.wav"
+      ]
+    },
+    "ROULETTE_BLANK": {
+      "category": "sfx",
+      "volume": 0.5,
+      "sources": [
+        "assets/audio/sfx/roulette/sfx_roulette_blank_01.wav"
+      ]
     }
   },
   "lobbyTracks": [
     {
       "id": "PHONK_CRYSTAL_BGM",
-      "title": "???? ????",
-      "description": "??? ?? ? 128 BPM"
+      "title": "크리스털 드라이브",
+      "description": "반짝이는 모험의 비트 · 128 BPM"
     },
     {
       "id": "PHONK_MOONLIGHT_BGM",
-      "title": "???? ????",
-      "description": "? ?? ? 120 BPM"
+      "title": "달빛 산책",
+      "description": "달빛을 따라 흐르는 리듬 · 120 BPM"
     },
     {
       "id": "PHONK_MINT_BGM",
-      "title": "?? ????",
-      "description": "?????? ?? ? 112 BPM"
+      "title": "민트빛 지평선",
+      "description": "산뜻하게 펼쳐지는 멜로디 · 112 BPM"
     },
     {
       "id": "MENU_BGM",
-      "title": "???? ?????",
-      "description": "?? ? BGM ? ???"
+      "title": "모험의 첫 페이지",
+      "description": "새로운 여정을 여는 홈 테마"
     },
     {
       "id": "FOREST_BGM",
-      "title": "???? ?",
-      "description": "?? ?? BGM ? ??? ??"
+      "title": "숲의 속삭임",
+      "description": "햇살 가득한 숲의 월드 테마"
     }
   ]
 }

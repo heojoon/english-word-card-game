@@ -3,6 +3,41 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
+function survivalFeedbackSetup(fast,correct=0){
+  const c=vm.createContext({run:{fast,correct,index:correct,deck:Array(6).fill({}),question:{choices:['word'],answer:'word',entry:['word','n','뜻']}},
+    selectedCharacter:{class:'warrior'},timerId:0,nextTimer:0,pending:[],popups:0,cleared:false,
+    document:{querySelector:()=>null,querySelectorAll:()=>[],dispatchEvent(){}},CustomEvent:class{},
+    $:()=>({classList:{add(){}},textContent:''}),earnedCoins:n=>n+Math.floor(n/5),battleContactDelay:()=>100,
+    itemById:()=>null,equippedMap:()=>({}),setHeroAttackTravel(){},speak(){},clearInterval(){},clearTimeout(){},
+    setTimeout(fn,delay){c.pending.push({fn,delay});return c.pending.length;},
+    showBattleReward(){c.popups++;return 1700;},removeBattleReward(){},prepareQuestion(){},render(){},tick(){},
+    finishBattle(clear){c.cleared=clear;c.run.done=true;},reducedMotion:()=>false});
+  vm.runInContext(source.slice(source.indexOf('  function answer(index)'),source.indexOf('  function advanceFeverCrystals(')),c);
+  vm.runInContext(source.slice(source.indexOf('  function continueAfterFeedback()'),source.indexOf('  function updateEnemyApproach(')),c);
+  return c;
+}
+test('survival FAST skips reward popups and their wait, including milestones and the final answer',()=>{
+  for(const correct of [0,4,5]){
+    const c=survivalFeedbackSetup(true,correct);c.answer(0);
+    assert.equal(c.run.correct,correct+1);
+    assert.equal(c.run.index,correct);
+    assert.equal(c.run.feedbackPending,true);
+    while(c.pending.length)c.pending.shift().fn();
+    assert.equal(c.popups,0);
+    assert.equal(c.run.index,correct+1);
+    assert.equal(c.run.feedbackPending,false);
+    assert.equal(c.cleared,correct===5);
+  }
+});
+test('survival with FAST off retains the reward popup before the next question',()=>{
+  const c=survivalFeedbackSetup(false,4);c.answer(0);
+  while(c.popups===0&&c.pending.length)c.pending.shift().fn();
+  assert.equal(c.popups,1);
+  assert.equal(c.run.index,4);
+  assert.equal(c.run.feedbackPending,true);
+  assert.equal(c.pending.at(-1).delay,1700);
+  c.pending.shift().fn();assert.equal(c.run.index,5);
+});
 function storyMapSetup(){
   const storyStages=Array.from({length:3},(_,i)=>({key:`stage-${i+1}`,number:i+1,chapter:1}));
   const saved=new Map(),cleared=new Set(),records=[];
@@ -76,6 +111,9 @@ test('a new wave resets ice while retaining consumed MP',()=>{
 });
 test('last wave releases ice before the fever transition',()=>{
   const c=setup();c.run.index=9;c.run.matched=new Set([0,1,2,3]);c.enterFeverTime=()=>{};
+  c.selectedStage='earlier-world';c.stages={'earlier-world':{storyChapter:1}};
+  const eligibility=source.indexOf('  function storyRouletteEligible(');
+  vm.runInContext(source.slice(eligibility,source.indexOf('  function createStoryRoulette(',eligibility)),c);
   const intro=source.indexOf('  function beginFeverIntro(');vm.runInContext(source.slice(intro,source.indexOf('\n',intro)),c);
   c.activateMageIceTime();pick(c,'ko',4);pick(c,'en',4);assert.equal(c.run.iceTimeActive,true);assert.equal(Boolean(c.run.feverTransition),false);
   c.pending.at(-1)();assert.equal(c.run.iceTimeActive,false);assert.equal(c.run.feverTransition,true);

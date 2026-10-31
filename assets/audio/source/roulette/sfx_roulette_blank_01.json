@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "sound-generation",
+  "request": {
+    "text": "A gentle playful oops game-show prize wheel miss cue, soft descending marimba bloop and tiny wooden plop, sympathetic and humorous for children, not sad or alarming, immediate onset, clean short ending. No voices, no background ambience.",
+    "duration_seconds": 1.2,
+    "prompt_influence": 0.7,
+    "model_id": "eleven_text_to_sound_v2"
+  },
+  "source": "sfx_roulette_blank_01.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; runtime processing validated, listening review pending"
+}

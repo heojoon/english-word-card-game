@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "sound-generation",
+  "request": {
+    "text": "Single satisfying press of a big red arcade game button: rounded spring-loaded plastic clack, soft low mechanical thump and short spring return. Tactile, punchy but gentle, isolated clean studio sound, immediate onset, no music, no voices, no repeated presses.",
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7,
+    "model_id": "eleven_text_to_sound_v2"
+  },
+  "source": "sfx_roulette_red_button_01.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; runtime processing validated, listening review pending"
+}

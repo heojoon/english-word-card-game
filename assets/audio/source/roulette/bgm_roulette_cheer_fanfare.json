@@ -1,0 +1,12 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "music",
+  "request": {
+    "prompt": "A short triumphant prize reveal fanfare for a bright crystal fantasy children's game, 6 seconds. Immediate sparkling magical reveal, celebratory brass and strings, glistening crystal chimes, punchy warm drums and a joyful crowd cheering wordlessly 'yay' in the background. An exciting winning moment, friendly and uplifting, polished game soundtrack. Strong opening, clear resolving ending, natural short reverb tail. No lyrics or spoken words, no harsh sounds, no chiptune.",
+    "music_length_ms": 6000,
+    "model_id": "music_v2_5"
+  },
+  "source": "bgm_roulette_cheer_fanfare.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; runtime processing validated, listening review pending"
+}

@@ -1,0 +1,54 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-31",
+  "references": [
+    "assets/environments/world-7b/02-nereus-bridge-battle.webp",
+    "assets/story/chapter-8-silver-bell-village-map.webp"
+  ],
+  "review": {
+    "visual": "All three generated images inspected: cohesive village scenery, clear continuous combat floor, no characters or UI. Final tower roof extends beyond the upper frame; bell remains clearly visible.",
+    "browser": "Not requested; not run.",
+    "userApproved": false
+  },
+  "runtime": {
+    "format": "WebP",
+    "quality": 90,
+    "position": "center bottom",
+    "size": "cover"
+  },
+  "images": [
+    {
+      "file": "01-silver-bell-village-battle.webp",
+      "original": "source/01-silver-bell-village-battle.png",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1922d-f81f-7dd3-95ea-292f0ace6ec2\\exec-800290f5-270b-4110-b85f-8623f2ff816d.png",
+      "stages": "1–14, 16–29",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest World 8 production battle backdrop, single full bleed 16:9 landscape illustration, around 1672x941. Reference 1 is authoritative painterly battle environment finish and eye-level combat composition, not its underwater setting. Reference 2 supplies Silver Bell Village architecture, purple slate roofs, pale cream stone, green foliage, turquoise river and bell tower identity ONLY; do not copy map camera or markers. Rich finely hand-painted fantasy RPG scenery, dimensional natural materials, nuanced lavender shadows, soft cinematic lighting, atmospheric depth, friendly adventurous tone suitable for children. Eye-level side battle camera, wide continuous level stone combat floor occupying bottom 32%, ground contact around y82%. Hero at x24%, enemy at x76% are separate sprites: keep entire lower combat lane open and both silhouette regions quiet. Large readable shapes, detail concentrated in upper background and extreme edges. NO characters, people, monsters, anthropomorphic trees, human statues, weapons, text, numbers, UI, map paths, markers, pedestals, logos, watermarks, panel frames. No pixel art, low-poly, toy plastic, harsh cel shading, gritty horror, excessive bloom, crowded foreground. This is a battle stage, not a world map. Scene: ordinary encounters on the riverside village road of Silver Bell Village after an attack. Broad pale cream cobblestone foreground, timber-and-cream houses with violet slate roofs set behind the combat lane, a turquoise river glimpsed between low stone parapets, a modest stone bridge and distant silver bell tower, green trees and lavender flowers at outer edges. A few damaged roof tiles and an overturned empty wooden cart far in background, very faint gray ash drifting in late-afternoon pearly sunlight, subdued violet shadows. Keep village beautiful and recoverable, no fire or devastation. Calm brighter scene of the three-background set.",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "02-blackroot-bridge-battle.webp",
+      "original": "source/02-blackroot-bridge-battle.png",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1922d-f81f-7dd3-95ea-292f0ace6ec2\\exec-381a4b70-7733-4590-87d0-9f55d23d9cf3.png",
+      "stages": "15",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest World 8 production battle backdrop, single full bleed 16:9 landscape illustration, around 1672x941. Reference 1 is authoritative painterly battle environment finish and eye-level combat composition, not its underwater setting. Reference 2 supplies Silver Bell Village architecture, purple slate roofs, pale cream stone, green foliage, turquoise river and bell tower identity ONLY; do not copy map camera or markers. Rich finely hand-painted fantasy RPG scenery, dimensional natural materials, nuanced lavender shadows, soft cinematic lighting, atmospheric depth, friendly adventurous tone suitable for children. Eye-level side battle camera, wide continuous level stone combat floor occupying bottom 32%, ground contact around y82%. Hero at x24%, enemy at x76% are separate sprites: keep entire lower combat lane open and both silhouette regions quiet. Large readable shapes, detail concentrated in upper background and extreme edges. NO characters, people, monsters, anthropomorphic trees, human statues, weapons, text, numbers, UI, map paths, markers, pedestals, logos, watermarks, panel frames. No pixel art, low-poly, toy plastic, harsh cel shading, gritty horror, excessive bloom, crowded foreground. This is a battle stage, not a world map. Scene: midboss Blackroot Elder encounter at the old river stone bridge in Silver Bell Village. NO boss or tree creature painted into background: the living boss is a separate animated sprite. A broad level cream stone bridge approach and bridge deck in foreground with sparse fine cracks, uninterrupted combat floor. Thick twisted dark roots with subtle violet-red corruption veins grip the outer edges of the stone parapets BEHIND the combat lane, curling over distant bridge arches; non-anthropomorphic ancient tree canopy and trunk placed far left background only, no face or eyes. Turquoise flowing river below, violet-roof village buildings beyond, a damaged empty market awning set far back. Dappled afternoon rays through dense green foliage, cool silver-lavender shadow, restrained sinister violet glow only in roots, readable and adventurous. Keep center-right open for large animated tree boss, no central giant trunk, no roots crossing where sprites stand.",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "03-vargas-bell-tower-battle.webp",
+      "original": "source/03-vargas-bell-tower-battle.png",
+      "generatedPath": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1922d-f81f-7dd3-95ea-292f0ace6ec2\\exec-e30f1a18-b2cb-4466-b57b-44a3ee6ba06f.png",
+      "stages": "30",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest World 8 production battle backdrop, single full bleed 16:9 landscape illustration, around 1672x941. Reference 1 is authoritative painterly battle environment finish and eye-level combat composition, not its underwater setting. Reference 2 supplies Silver Bell Village architecture, purple slate roofs, pale cream stone, green foliage, turquoise river and bell tower identity ONLY; do not copy map camera or markers. Rich finely hand-painted fantasy RPG scenery, dimensional natural materials, nuanced lavender shadows, soft cinematic lighting, atmospheric depth, friendly adventurous tone suitable for children. Eye-level side battle camera, wide continuous level stone combat floor occupying bottom 32%, ground contact around y82%. Hero at x24%, enemy at x76% are separate sprites: keep entire lower combat lane open and both silhouette regions quiet. Large readable shapes, detail concentrated in upper background and extreme edges. NO characters, people, monsters, anthropomorphic trees, human statues, weapons, text, numbers, UI, map paths, markers, pedestals, logos, watermarks, panel frames. No pixel art, low-poly, toy plastic, harsh cel shading, gritty horror, excessive bloom, crowded foreground. This is a battle stage, not a world map. Scene: final boss Vargas encounter at the damaged bell tower plaza of Silver Bell Village. NO boss, angel, feathers, weapons or character baked into the image. Spacious pale cream stone plaza foreground, shallow engraved gouges and a few cracks kept flat and walkable. A beautiful tall square cream stone bell tower in upper center-left background, its large bronze-silver bell clearly visible in the open arch, severed bell rope hanging loosely, violet slate cupola with restrained gold trim. Cracked tower base with small broken masonry at its foot BEHIND combat lane, several tiny dark-violet corruption crystals set in distant masonry at outer edges only. Violet-roof village houses, river valley and stone balustrades recede behind the plaza. Pearly late-afternoon light filtered through dramatic silver-gray clouds, cool lavender shadows and gentle warm gold rim light. Slightly more solemn and tense than the ordinary village backdrop while still luminous and colorful, not nighttime or horror. Ground open across full foreground for animated battle and sweeping black wing effects. Keep tower top within frame and clear center-right sprite silhouette zone.",
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ]
+}

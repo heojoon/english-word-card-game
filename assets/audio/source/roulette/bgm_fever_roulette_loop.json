@@ -1,0 +1,13 @@
+{
+  "provider": "ElevenLabs",
+  "endpoint": "music",
+  "request": {
+    "prompt": "Instrumental seamless 16-bar loop for a colorful crystal fantasy prize wheel in a children's learning game. 120 BPM, 32 seconds. Playful suspense and joyful anticipation, sparkling celesta arpeggios, pizzicato strings, bouncy soft bass, light modern drums, bright warm brass accents. Catchy polished casual fantasy game music, full groove from the first beat, consistent energy. End flows into the opening without cadence or fade. Leave space for wheel clicks and button sound effects. No vocals, no speech, no chiptune, no harsh treble.",
+    "music_length_ms": 32000,
+    "force_instrumental": true,
+    "model_id": "music_v2_5"
+  },
+  "source": "bgm_fever_roulette_loop.mp3",
+  "output_format": "mp3_44100_128",
+  "review": "Generated; runtime processing validated, listening review pending"
+}
