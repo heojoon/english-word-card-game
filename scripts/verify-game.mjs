@@ -3,6 +3,42 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8');
+function storyMapSetup(){
+  const storyStages=Array.from({length:3},(_,i)=>({key:`stage-${i+1}`,number:i+1,chapter:1}));
+  const saved=new Map(),cleared=new Set(),records=[];
+  let now=1000;
+  const c=vm.createContext({storyStages,stages:Object.fromEntries(storyStages.map(stage=>[stage.key,stage])),
+    selectedStoryStage:'stage-1',selectedStoryWorld:1,storyStageArmedKey:null,storyMapMoveUntil:0,
+    accountUserId:'account',selectedCharacter:{id:'hero'},player:'guest',
+    localStateStorage:{getItem:key=>saved.get(key),setItem:(key,value)=>saved.set(key,value)},
+    Date:class extends Date{static now(){return now;}},matchMedia:()=>({matches:false}),
+    storyStageUnlocked:index=>index>=0&&index<2,storyStagePlayable:()=>true,levelReady:()=>true,
+    storyBranchAllowed:()=>true,stageCleared:key=>cleared.has(key),stageRecordName:key=>key,
+    selectedRecords:()=>records,render(){c.renders++;},toast(){},confirmStoryStage:key=>c.entries.push(key),
+    renders:0,entries:[],records,cleared,advance:ms=>{now+=ms;}});
+  vm.runInContext(source.slice(source.indexOf('  function storyResumeStorageKey('),source.indexOf('  function go(')),c);
+  vm.runInContext(source.slice(source.indexOf('  function selectStoryStage('),source.indexOf('  function bossIntroductionMarkup(')),c);
+  return c;
+}
+test('story map moves first, ignores taps during travel, and opens entry on a later tap',()=>{
+  const c=storyMapSetup();c.selectStoryStage('stage-2');
+  assert.equal(c.selectedStoryStage,'stage-2');assert.equal(c.renders,1);assert.equal(c.entries.length,0);
+  c.selectStoryStage('stage-2');assert.equal(c.entries.length,0);
+  c.advance(700);c.selectStoryStage('stage-2');assert.equal(c.entries[0],'stage-2');
+  c.selectStoryStage('stage-1');assert.equal(c.selectedStoryStage,'stage-1');assert.equal(c.entries.length,1);
+  c.selectStoryStage('stage-3');assert.equal(c.selectedStoryStage,'stage-1');
+});
+test('story resume advances after a clear but preserves manually selected replay positions',()=>{
+  const c=storyMapSetup();
+  c.localStateStorage.setItem(c.storyResumeStorageKey(),JSON.stringify({key:'stage-1',playedAt:500}));
+  c.cleared.add('stage-1');c.records.push({stage:'stage-1',created_at:new Date(900).toISOString()});
+  c.restoreLastStoryStage();assert.equal(c.selectedStoryStage,'stage-2');
+  c.selectStoryStage('stage-1');c.restoreLastStoryStage();assert.equal(c.selectedStoryStage,'stage-1');
+  c.advance(1000);c.records.push({stage:'stage-1',created_at:new Date(1500).toISOString()});
+  c.restoreLastStoryStage();assert.equal(c.selectedStoryStage,'stage-2');
+  c.cleared.add('stage-2');c.records.push({stage:'stage-2',created_at:new Date(1600).toISOString()});
+  c.restoreLastStoryStage();assert.equal(c.selectedStoryStage,'stage-2');
+});
 // One process, one source read, isolated VM state, and simulated timers.
 // Browser and remote SQL checks are explicit, never part of the default suite.
 function setup(){

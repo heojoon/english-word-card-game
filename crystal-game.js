@@ -1081,7 +1081,12 @@
     let stage=storyStages.find(stage=>stage.key===saved?.key);
     if(!available(stage))stage=null;
     const latest=selectedRecords().slice().sort((a,b)=>new Date(b.created_at)-new Date(a.created_at)).find(record=>storyStages.some(stage=>stageRecordName(stage.key)===record.stage&&available(stage)));
-    if(latest&&(!stage||new Date(latest.created_at).getTime()>Number(saved?.playedAt||0)))stage=storyStages.find(stage=>stageRecordName(stage.key)===latest.stage&&available(stage));
+    const useLatest=latest&&(!stage||new Date(latest.created_at).getTime()>Number(saved?.playedAt||0));
+    if(useLatest)stage=storyStages.find(stage=>stageRecordName(stage.key)===latest.stage&&available(stage));
+    if(stage&&stageCleared(stage.key)&&(useLatest||!saved?.position)){
+      const next=storyStages.find(next=>(next.chapter||1)===(stage.chapter||1)&&next.number===stage.number+1);
+      if(available(next))stage=next;
+    }
     if(!stage)stage=storyStages.find(available);
     if(stage){selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;}
   }
@@ -1479,9 +1484,16 @@
   function selectStoryStage(stageKey){
     const index=storyStages.findIndex(stage=>stage.key===stageKey),stage=storyStages[index];
     if(!stage||!storyStageUnlocked(index)||!levelReady(stages[stage.key]))return;
-    if(!storyEntryAllowed(stage.key))return;
+    if(!storyBranchAllowed(stage.chapter||1)||!storyStagePlayable(stage.key))return;
+    if(storyStageArmedKey===stage.key&&selectedStoryStage===stage.key){
+      if(Date.now()<storyMapMoveUntil)return;
+      confirmStoryStage(stage.key);return;
+    }
     selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;storyStageArmedKey=stage.key;
-    confirmStoryStage(stage.key);
+    storyMapMoveUntil=Date.now()+(matchMedia('(prefers-reduced-motion: reduce)').matches?0:620);
+    try{localStateStorage.setItem(storyResumeStorageKey(),JSON.stringify({key:stage.key,playedAt:Date.now(),position:true}));}catch{}
+    render();
+    toast('같은 스테이지를 한 번 더 누르면 입장할 수 있어요.');
   }
   function bossIntroductionMarkup(stage){
     if(stage.chapter===11&&[15,30].includes(stage.number)){
