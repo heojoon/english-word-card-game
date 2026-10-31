@@ -51,7 +51,7 @@
   ];
   storyStages.push(...storyStages.filter(stage=>stage.chapter===8).map(base=>({...base,chapter:9,key:`story-ch7b-${base.number}`,name:base.number===15?'흑조의 창기사 네레우스':base.number===30?'다크 트라이튼':`심연의 검은 호수 · ${base.number}단계`})));
   storyStages.push(...storyStages.filter(stage=>stage.chapter===8).map(base=>({...base,chapter:10,key:`story-ch7c-${base.number}`,name:base.number===10?'봉인 병기 아르카온':base.number===30?'봉인의 수호기사':`왕국 지하 던전 · ${base.number}단계`,desc:`WordMax Level 3 · Day ${base.number} · 연결형 30문제 · 문제당 2초`})));
-  storyStages.push(...Array.from({length:30},(_,index)=>({number:index+1,chapter:11,key:`story-ch8-${index+1}`,name:index===14?'검은뿌리 거목':index===29?'바르가스':`${index<8?'동쪽 길과 은종 마을':index<15?'돌다리와 뿌리 감옥':index<24?'기록을 지키는 마을길':'종루 광장'} · ${index+1}단계`,desc:index===29?'HP 180 / Type C / DMG / 120s':'Day 무작위 · Type C 스펠링 4지선다 · 40문제 · 문제당 3초 · 총 120초'})));
+  storyStages.push(...Array.from({length:30},(_,index)=>({number:index+1,chapter:11,key:`story-ch8-${index+1}`,name:index===14?'검은뿌리 거목':index===29?'바르가스':`${index<8?'동쪽 길과 은종 마을':index<15?'돌다리와 뿌리 감옥':index<24?'기록을 지키는 마을길':'종루 광장'} · ${index+1}단계`,desc:index===29?'HP 180 / Type C / DMG / 문제당 6초':'Day 무작위 · Type C 스펠링 4지선다 · 40문제 · 문제당 6초 · 총 240초'})));
   const storyWorlds=[
     {number:1,name:'속삭이는 숲',region:'WHISPERING WOODS',art:'assets/story/chapter-1-library-map.webp',positions:[['31%','59.6%'],['38.8%','69.2%'],['56.2%','75%'],['69.4%','66.4%'],['86%','54.7%'],['78.7%','43.6%'],['72.1%','31.3%']]},
     {number:2,name:'크리스탈 사원 입구',region:'CRYSTAL TEMPLE ENTRANCE',art:'assets/story/chapter-2-crystal-temple-map.webp',positions:[['14.7%','46.4%'],['34.7%','40.5%'],['54.7%','53.2%'],['77.4%','55.6%'],['93.9%','64.4%'],['36.9%','25.8%'],['56.7%','21.5%']]},
@@ -98,7 +98,7 @@
           if(seen.has(key)||row[0].length<3||!/[a-z]/i.test(row[0].slice(1,-1)))return false;
           seen.add(key);return true;
         }):[];
-        stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName:`스토리 8장 ${stage.number} · ${title}`,desc:`${level==='elementary'?'초등 서바이벌 · 전체 단어 혼합':`Day ${day} (무작위 배정)`} · Type C 스펠링 4지선다 · ${stage.number===30?'보스 HP 180 · 정답마다 DMG 피해 · 문제당 4초':'40문제 · 문제당 4초 · 총 160초'}`,questionCount:stage.number===30?180:40,questionTimeMs:4000,questionType:'C',vocabularyDay:level==='elementary'?null:day,source:source?.source,story:true,storyChapter:11,storyNumber:stage.number,learningLevel:level,words,encounterName:[15,30].includes(stage.number)?stage.name:null};
+        stages[stage.key]={name:`${title} · ${stage.number}단계`,recordName:`스토리 8장 ${stage.number} · ${title}`,desc:`${level==='elementary'?'초등 서바이벌 · 전체 단어 혼합':`Day ${day} (무작위 배정)`} · Type C 스펠링 4지선다 · ${stage.number===30?'보스 HP 180 · 정답마다 DMG 피해 · 문제당 6초':'40문제 · 문제당 6초 · 총 240초'}`,questionCount:stage.number===30?180:40,questionTimeMs:6000,questionType:'C',vocabularyDay:level==='elementary'?null:day,source:source?.source,story:true,storyChapter:11,storyNumber:stage.number,learningLevel:level,words,encounterName:[15,30].includes(stage.number)?stage.name:null};
         return;
       }
       const desc=[8,9,10].includes(chapter)&&level==='elementary'?stage.desc.replace(/WordMax Level 3 · Day \d+/,'초등 서바이벌 · 전체 단어 혼합'):[6,7].includes(chapter)&&level==='elementary'?stage.desc.replace(/WordMax Level 3 · Day \d+ · 30단어/,'속삭이는 숲 · day.2~7 혼합'):stage.desc;
@@ -523,7 +523,7 @@
   }
   function hasNewActiveSkill(character=selectedCharacter){
     if(!character)return false;
-    if(localMode)return demoState.characterActiveSkillUnlocks?.[character.id]===character.class||demoState.records.some(row=>row.character_id===character.id&&row.stage===WORLD_EIGHT_FINAL_RECORD&&row.cleared&&((row.correct===40&&row.total===40)||(row.vargasHpDefeated&&row.correct===row.total&&row.correct>=1&&row.correct<=180))&&row.duration_ms>=1&&row.duration_ms<=720000);
+    if(localMode)return demoState.characterActiveSkillUnlocks?.[character.id]===character.class||demoState.records.some(row=>row.character_id===character.id&&row.stage===WORLD_EIGHT_FINAL_RECORD&&row.cleared&&((row.correct===40&&row.total===40)||(row.vargasHpDefeated&&row.correct===row.total&&row.correct>=1&&row.correct<=180))&&row.duration_ms>=1&&row.duration_ms<=1080000);
     return characterActiveSkillUnlocks.some(row=>row.character_id===character.id&&row.class_code===character.class);
   }
   async function loadCharacterActiveSkillUnlocks(){
@@ -533,7 +533,7 @@
     catch{toast('신규 스킬 해금 정보를 불러오지 못했어요. 다시 접속해 주세요.');}
   }
   function isWorldEightFinalClear(battle,clear){
-    return Boolean(clear&&battle.storyStageKey==='story-ch8-30'&&!battle.localBossSkipped&&battle.elapsed>=1&&battle.elapsed<=(battle.vargas?720000:120000)&&(battle.vargas?battle.bossHp===0&&battle.correct>=1&&battle.correct<=180:battle.correct===40&&battle.deck.length===40));
+    return Boolean(clear&&battle.storyStageKey==='story-ch8-30'&&!battle.localBossSkipped&&battle.elapsed>=1&&battle.elapsed<=(battle.vargas?1080000:120000)&&(battle.vargas?battle.bossHp===0&&battle.correct>=1&&battle.correct<=180:battle.correct===40&&battle.deck.length===40));
   }
   async function updateWorldEightSkillUnlock(battle,wasUnlocked){
     const character=allCharacters.find(row=>row.id===battle.storyCharacterId);
@@ -1499,7 +1499,7 @@
   function bossIntroductionMarkup(stage){
     if(stage.chapter===11&&[15,30].includes(stage.number)){
       const tree=stage.number===15,art=tree?'char_blackroot_elder_world8_standing.webp':'char_vargas_world8_standing.webp';
-      return `<div class="boss-introduction"><img src="${esc(deployedAssetUrl('assets/novel/characters/'+art))}" alt="${esc(stage.name)}"><h3>${esc(stage.name)}</h3><p>${tree?'검은 쐐기에 조종당하는 거목의 뿌리 감옥에서 주민들을 구해요.':'종루 광장에서 마을의 길잡이 기록을 지켜요.'}</p><div class="boss-introduction-stats"><span>${tree?'Type C 40문제':'HP 180 · Type C'}</span><span>제한시간 ${tree?160:window.WORDORIA_VARGAS.timeLimit(bossAttackSteps())/1000}초</span></div>${tree?'<div class="boss-introduction-skill"><b>뿌리 솟구치기</b><p>20초마다 뿌리가 솟아올라 접촉 시 30% 확률로 HP 1 피해를 줘요.</p><b>나무껍질 방벽</b><p>30초마다 보기 위치를 섞어요. 정답과 문제는 유지돼요.</p><p>오답 시 가지 내려찍기의 접촉 순간 HP 1 피해를 받아요. 정답 40개를 완료하면 주민을 구해요.</p></div>':''}</div>`;
+      return `<div class="boss-introduction"><img src="${esc(deployedAssetUrl('assets/novel/characters/'+art))}" alt="${esc(stage.name)}"><h3>${esc(stage.name)}</h3><p>${tree?'검은 쐐기에 조종당하는 거목의 뿌리 감옥에서 주민들을 구해요.':'종루 광장에서 마을의 길잡이 기록을 지켜요.'}</p><div class="boss-introduction-stats"><span>${tree?'Type C 40문제':'HP 180 · Type C'}</span><span>제한시간 ${tree?240:window.WORDORIA_VARGAS.timeLimit(bossAttackSteps())/1000}초</span></div>${tree?'<div class="boss-introduction-skill"><b>뿌리 솟구치기</b><p>20초마다 뿌리가 솟아올라 접촉 시 30% 확률로 HP 1 피해를 줘요.</p><b>나무껍질 방벽</b><p>30초마다 보기 위치를 섞어요. 정답과 문제는 유지돼요.</p><p>오답 시 가지 내려찍기의 접촉 순간 HP 1 피해를 받아요. 정답 40개를 완료하면 주민을 구해요.</p></div>':''}</div>`;
     }
     const chapter=stage.chapter||1;
     const info=chapter===10&&stage.number===30?window.WORDORIA_SEAL_KNIGHT.INFO:chapter===10&&stage.number===10?window.WORDORIA_ARKAON.INFO:chapter===8&&stage.number===15?{name:'케우르스',description:'불타는 고대 탑으로 가는 길을 막아선 두 머리의 고대 괴수',hp:KEURUS_BOSS.hp,rewardDescription:'최초 처치 보상 400 크리스탈 · 피버타임 없음',time:'5분',skill:'쌍두 교란',skillDescription:'20초마다 아직 맞히지 않은 카드의 위치를 섞어요.',skill2:'거암 내려찍기',skill2Description:'30초마다 공격을 예고한 뒤 HP 1을 깎아요.',art:'assets/monsters/world-7a/keurus/idle/01.png'}:chapter===8&&stage.number===30?window.WORDORIA_RED_SKULL_KNIGHT.INFO:chapter===9&&stage.number===30?window.WORDORIA_DARK_TRITON.INFO:chapter===9&&stage.number===15?window.WORDORIA_NEREUS.INFO:chapter===6&&stage.number===20?window.WORDORIA_ELLIOT.INFO:chapter===7&&stage.number===20?window.WORDORIA_MORGANA.INFO:chapter===7&&stage.number===10?window.WORDORIA_ABYSS_GOLEM.INFO:chapter===6&&stage.number===10?window.WORDORIA_BANDIT_CHIEF.INFO:chapter===5&&stage.number===20?{...window.WORDORIA_LICH_DRAGON.INFO,art:'assets/novel/characters/char_lich_dragon_world5_standing.webp'}

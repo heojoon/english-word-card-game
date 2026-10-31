@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const SPRITE_ROOT='assets/monsters/vargas/';
-  const HP=180,QUESTION_TIME_MS=4000,TIME_MS=HP*QUESTION_TIME_MS;
+  const HP=180,QUESTION_TIME_MS=6000,TIME_MS=HP*QUESTION_TIME_MS;
   const timeLimit=(damage=1,questionTimeMs=QUESTION_TIME_MS)=>Math.ceil(HP/Math.max(1,damage))*questionTimeMs;
   const ANIMATIONS={idle:[400,400,400],attack:[250,300,350],hit:[140,180,700],wing:[300,300,400],guard:[250,250,500]};
   const CELLS={idle:[480,320],attack:[640,320],hit:[480,320],wing:[576,384],guard:[480,352]};
