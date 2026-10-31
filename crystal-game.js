@@ -1096,7 +1096,9 @@
       ranger:{name:'매의 눈',image:'active-ranger-eagle-eye.png',description:'MP 1을 소모해 정답을 표시해요. 객관식은 정답 보기에, 연결하기는 선택한 영어의 한글 정답 카드에 정답 표시가 나타나요. 정답·오답 시 해제돼요.'},
       pugilist:{name:'위빙 스텝',image:'active-pugilist-weaving-step.png',description:'MP 1을 소모해 다음 오답 한 번의 HP 감소와 콤보 초기화를 막아요. 틀린 문제는 다시 풀어야 해요.'}
     };
-    const skill=skills[classCode],extra=window.WORDORIA_ACTIVE_SKILLS?.definitions[classCode],preview=characters.find(row=>row.id===characterPreviewId)||selectedCharacter;const extraMarkup=extra?`<div class="skill-callout new-skill-callout"><b>ACTIVE SKILL · ${extra.name}</b><small>${context!=='create'&&hasNewActiveSkill(preview)?'해금 완료':'월드 8 최종보스 클리어 시 해금'}</small><small>${extra.description}</small></div>`:'';if(!skill)return extraMarkup;
+    const skill=skills[classCode],extra=window.WORDORIA_ACTIVE_SKILLS?.definitions[classCode],preview=characters.find(row=>row.id===characterPreviewId)||selectedCharacter;
+    const unlocked=context!=='create'&&preview?.class===classCode&&hasNewActiveSkill(preview);
+    const extraMarkup=extra?`<div class="new-skill-callout" data-skill-class="${esc(classCode)}"><img src="${esc(deployedAssetUrl(`assets/ui/skills/active-${classCode}-advanced.svg`))}" alt="${esc(extra.name)} 스킬 아이콘"><div><small class="new-skill-label">신규 액티브 · 스토리 모드${extra.bossOnly?' · 보스 전용':''}</small><strong>${esc(extra.name)}</strong><p>${esc(extra.description)}</p><small class="new-skill-unlock ${unlocked?'unlocked':''}">${unlocked?'✓ 습득 완료':'미습득'} · 이 캐릭터로 월드 8 최종보스 바르가스 처치</small></div></div>`:'';if(!skill)return extraMarkup;
     const image=`<img src="${esc(deployedAssetUrl(`assets/ui/skills/${skill.image}`))}" alt="${skill.name} 스킬 아이콘">`;
     if(context==='create')return `<div class="skill-callout active-skill-callout">${image}<div><b>ACTIVE SKILL · ${skill.name}</b><small>${skill.description}</small></div></div>${extraMarkup}`;
     return `<div class="selected-hero-skill selected-hero-active-skill">${image}<div><small>ACTIVE SKILL · 스토리 모드</small><strong>${skill.name}</strong><p>${skill.description}</p></div></div>${extraMarkup}`;
