@@ -65,5 +65,5 @@
 - 기존 중간보스전 시작 원고의 ‘왕국 수도로 가는 길’ 표기는 6B의 지역명이다. 7C 연결 시 ‘왕국 지하 던전’으로 맞춘다.
 - 사용자 확정(2026-10-25): 총 30단계, 중간보스는 10단계, 최종보스는 30단계다. 대성당 입구에서 성흔 보관실까지 위에서 아래로 진행한다.
 - 지도는 `assets/story/chapter-7c-royal-dungeon-map.webp`(724 × 2172), 실측 좌표는 `assets/story/chapter-7c-map-layout.json`에 보관한다. 6B 분기와 6B 최종 단계 완료 후 입장한다. 초등·중등 각각 같은 번호 7A·7B의 단어를 사용하며 다섯 쌍씩 여섯 판, 30문제·60초로 진행한다. 진행 기록은 학습 수준과 독립적인 `스토리 7C장 <번호> · 왕국 지하 던전`이다.
-- 일반 적은 고대 마도 파수병이며 `assets/monsters/world-7c/`의 대기·공격·피격/쓰러짐 SD 스트립을 사용한다. 배경은 `assets/environments/world-7c/01-royal-dungeon-battle.webp`다. 10단계는 인공 심연의 골렘 ‘봉인 병기 아르카온’으로 구현했다. HP 200·5분·다섯 쌍 연결형이며 봉인 충격파와 마력 재배열을 사용한다. 스탠딩 CG는 `assets/novel/characters/char_arkaon_world7c_standing.webp`, SD 동작은 `assets/monsters/arkaon/`에 있다. 30단계는 전용 보스전 구현 전까지 파수병과 30문제 연결형 전투를 사용한다. 신규 일회성 보상은 추가하지 않는다.
+- 일반 적은 고대 마도 파수병이며 `assets/monsters/world-7c/`의 대기·공격·피격/쓰러짐 SD 스트립을 사용한다. 배경은 `assets/environments/world-7c/01-royal-dungeon-battle.webp`다. 10단계는 인공 심연의 골렘 ‘봉인 병기 아르카온’으로 구현했다. HP 200·5분·다섯 쌍 연결형이며 봉인 충격파와 마력 재배열을 사용한다. 스탠딩 CG는 `assets/novel/characters/char_arkaon_world7c_standing.webp`, SD 동작은 `assets/monsters/arkaon/`에 있다. 30단계는 전용 보스전 구현 전까지 파수병과 30문제 연결형 전투를 사용한다. 10단계 아르카온 최초 처치 시 계정당 크리스탈 400개를 지급하며, 재클리어 보상은 없다.
 - 편지 수령 장면의 표시 방식, 대사 분할, 배경·음악·보스 자산과 전투 방식은 별도 구현한다. 본문의 배경과 BGM은 연출 제안이다.

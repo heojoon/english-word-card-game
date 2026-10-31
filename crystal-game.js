@@ -3175,6 +3175,8 @@
     if(run.hiddenKind){await saveWorldFiveHidden(run);return;}
     if(selectedStage==='story-ch5-7'&&localMode&&clear&&run.storyReplay&&stageCleared('story-ch5-20')&&Number(run.feverCollected)>=100){demoState.worldFiveHiddenUnlocked=true;saveDemo();worldFiveHiddenUnlocked=true;run.hiddenJustUnlocked=true;}
 
+    if(run.arkaon&&clear){await saveArkaonReward(run);return;}
+    if(run.arkaon){run.result={coins_earned:0};return;}
     if(run.keurus&&clear){await saveKeurusReward(run);return;}
     if(run.keurus){run.result={coins_earned:0};return;}
     if(run.redSkullKnight&&clear){await saveRedSkullKnightReward(run);return;}
@@ -3212,6 +3214,33 @@
       battle.storyReplay=Number(battle.result.coins_earned)===0;
     }catch{battle.saveError=true;battle.saveRetryable=true;}
     finally{battle.savingVargasReward=false;}
+  }
+  async function saveArkaonReward(battle){
+    if(battle.savingArkaonReward||battle.result?.game_score_id)return;
+    battle.savingArkaonReward=true;battle.saveError=false;battle.saveRetryable=false;
+    const characterId=battle.storyCharacterId||selectedCharacter.id,stage=stageRecordName('story-ch7c-10');
+    try{
+      if(battle.bossHp!==0||battle.correct<1||battle.elapsed>window.WORDORIA_ARKAON.TIME_MS)throw Error('boss not cleared');
+      let result;
+      if(localMode){
+        const character=demoState.characters.find(c=>c.id===characterId);if(!character)throw Error('character not found');
+        const claimed=demoState.records.some(r=>r.player===player&&r.stage===stage&&r.arkaonRewardClaimed);
+        const reward=claimed?0:400,oldCoins=character.coins,oldRecords=demoState.records;
+        const row={id:`demo-arkaon-${Date.now()}-${Math.random()}`,player,stage,correct:battle.correct,total:battle.correct,cleared:true,character_id:characterId,duration_ms:Math.max(1,Math.round(battle.elapsed)),coins_earned:reward,treasure_claimed:true,arkaonRewardClaimed:reward>0,created_at:new Date().toISOString()};
+        character.coins+=reward;demoState.records=[row,...oldRecords];
+        try{saveDemo();}catch(error){character.coins=oldCoins;demoState.records=oldRecords;throw error;}
+        records=demoState.records;result={game_score_id:row.id,reward,balance:character.coins};
+      }else{
+        if(!dbOnline)throw Error('database unavailable');
+        const rows=await rpc('claim_arkaon_reward',{p_character_id:characterId,p_correct:battle.correct,p_duration_ms:Math.max(1,Math.round(battle.elapsed)),p_boss_hp:battle.bossHp});
+        result=rows?.[0];if(!result?.game_score_id)throw Error('boss reward unavailable');
+        accountCrystals=Number(result.balance);
+        const row={id:result.game_score_id,player,stage,character_id:characterId,correct:battle.correct,total:battle.correct,cleared:true};
+        records=[row,...records.filter(r=>r.id!==row.id)];
+      }
+      battle.result={...result,coins_earned:Number(result.reward)};battle.storyReplay=Number(result.reward)===0;
+    }catch(error){console.error(error);battle.saveError=true;battle.saveRetryable=true;}
+    finally{battle.savingArkaonReward=false;}
   }
   async function saveKeurusReward(battle){
     if(battle.savingKeurusReward||battle.result?.game_score_id)return;
@@ -3702,7 +3731,7 @@
     const rows=await rpc('claim_story_item_treasure',{p_character_id:selectedCharacter.id,p_game_score_id:run.result.game_score_id});
     await loadCharacterExtras();return rows?.[0];
   }
-  function resultNext(){if(!run?.clear)return;if(run.keurus||run.redSkullKnight||run.elliot||run.sorcerus||run.abyssGolem||run.morgana){if(!run.result?.game_score_id)return;go('story');return;}if(run.storyReplay){go(selectedStage===storyStages[storyStages.length-1].key?'home':'story');toast('이미 완료한 스테이지예요. 재플레이 보상은 없어요.');return;}window.wordoriaSound?.preloadAudio(['CHEST_TAP','CHEST_OPEN','REWARD_CRYSTAL','REWARD_ITEM']);run.resultStep='chest';render();requestAnimationFrame(()=>$('screen')?.focus());}
+  function resultNext(){if(!run?.clear)return;if(run.arkaon||run.keurus||run.redSkullKnight||run.elliot||run.sorcerus||run.abyssGolem||run.morgana){if(!run.result?.game_score_id)return;go('story');return;}if(run.storyReplay){go(selectedStage===storyStages[storyStages.length-1].key?'home':'story');toast('이미 완료한 스테이지예요. 재플레이 보상은 없어요.');return;}window.wordoriaSound?.preloadAudio(['CHEST_TAP','CHEST_OPEN','REWARD_CRYSTAL','REWARD_ITEM']);run.resultStep='chest';render();requestAnimationFrame(()=>$('screen')?.focus());}
   async function tapChest(button){if(!run?.clear||run.chest||!run.result?.game_score_id||button.classList.contains('opening'))return;run.chestClicks=Math.min(3,(run.chestClicks||0)+1);emitAudio('CHEST_TAP','sfx');if(run.chestClicks===3)emitAudio('CHEST_OPEN','sfx');button.style.setProperty('--chest-progress',`${run.chestClicks/3*100}%`);button.setAttribute('aria-label',`보상 상자 ${run.chestClicks}/3회 열기`);button.classList.remove('shake-one','shake-two');void button.offsetWidth;button.classList.add(run.chestClicks===1?'shake-one':run.chestClicks===2?'shake-two':'opening');document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:run.chestClicks===3?'success':'light'}}));if(run.chestClicks<3){button.parentElement.querySelector('.chest-progress-copy strong').textContent=`${run.chestClicks} / 3`;button.parentElement.querySelector('.chest-progress-copy span').textContent=run.chestClicks===1?'좋아요! 한 번 더!':'마지막 한 번!';button.parentElement.querySelectorAll('.chest-pips i')[run.chestClicks-1]?.classList.add('filled');return;}button.disabled=true;try{const [reward]=await Promise.all([run.chestKind==='item'?claimStoryItemReward():claimChestReward(),new Promise(resolve=>setTimeout(resolve,900))]);run.chest=true;if(run.chestKind==='item')run.itemReward=reward;else run.treasure=reward;run.resultStep='reward';render();if(run.chestKind==='item')emitAudio('REWARD_ITEM','sfx');else if(Number(run.treasure)>0)emitAudio('REWARD_CRYSTAL','sfx');}catch(error){console.error(error);run.chestClicks=2;render();toast('보물상자를 열지 못했어요. 다시 시도해 주세요');}}
   function receiveReward(){if(!run?.chest)return;if(run.story&&run.chestKind!=='item'){run.chestKind='item';run.chest=false;run.chestClicks=0;run.resultStep='chest';render();return;}if(run.story){go(selectedStage===storyStages[storyStages.length-1].key?'home':'story');toast('스토리 보상을 받았어요!');return;}go('stages');toast(`크리스털 ${num(run.treasure)}개를 받았어요!`);}
   document.addEventListener('pointerdown',event=>{

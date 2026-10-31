@@ -3,7 +3,7 @@
   'use strict';
   const HP=200,TIME_MS=300000,INTERVAL_MS=20000,SHUFFLE_MS=30000,CONTACT_MS=600;
   const SPRITE_ROOT='assets/monsters/arkaon/',ART='assets/novel/characters/char_arkaon_world7c_standing.webp';
-  const INFO={name:'봉인 병기 아르카온',description:'인공 심연의 골렘. 왕국 지하 던전의 마력 회로와 연결되어 돌다리와 봉인을 지키는 고대 수호 병기예요.',hp:HP,time:'5분',art:ART,skill:'봉인 충격파',skillDescription:'20초마다 두 주먹을 들어 공격을 예고해요. 지면에 닿는 순간 35% 확률로 HP 1을 깎아요.',skill2:'마력 재배열',skill2Description:'30초마다 마력 회로를 돌려 아직 맞히지 않은 한글·영어 카드 위치를 섞어요. 맞힌 카드는 유지돼요.'};
+  const INFO={name:'봉인 병기 아르카온',description:'인공 심연의 골렘. 왕국 지하 던전의 마력 회로와 연결되어 돌다리와 봉인을 지키는 고대 수호 병기예요.',hp:HP,rewardDescription:'최초 처치 보상 400 크리스탈',time:'5분',art:ART,skill:'봉인 충격파',skillDescription:'20초마다 두 주먹을 들어 공격을 예고해요. 지면에 닿는 순간 35% 확률로 HP 1을 깎아요.',skill2:'마력 재배열',skill2Description:'30초마다 마력 회로를 돌려 아직 맞히지 않은 한글·영어 카드 위치를 섞어요. 맞힌 카드는 유지돼요.'};
   const ANIMATIONS={idle:[350,350,350],attack:[300,300,300],reorder:[200,250,350],hit:[140,180,600]};
   const scale=s=>s.guardianReducedMotion?.5:1;
   function reset(){return {guardian:true,arkaon:true,sentryMob:false,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,guardianPhase:'idle',guardianVisual:'idle',guardianRemaining:0,arkaonClock:0,arkaonNextWave:INTERVAL_MS,arkaonNextShuffle:SHUFFLE_MS,arkaonCastMs:0,arkaonContact:false,arkaonReorderMs:0,arkaonShufflePending:false,arkaonNotice:'',arkaonNoticeMs:0,arkaonPlayerHit:false,selectedKo:null,selectedEn:null,pendingPair:null};}
