@@ -130,3 +130,9 @@ test('burst is consumed at contact and fire-arrow defeat preserves learning coun
   s.bossHp=2;s.correct=17;b.damage(s,2);assert.equal(s.bossHp,0);assert.equal(s.correct,17);
   assert.equal(s.vargasPendingContact,null);assert.ok(b.advance(s,2000,0).includes('victory'));assert.equal(b.visual(s).frame,2);
 });
+
+test('Vargas budgets four seconds per required base-DMG answer',()=>{
+ const b=context();
+ for(const damage of [1,3,4,7,180,200])assert.equal(b.reset(damage).storyTimeLimit,Math.ceil(180/damage)*4000);
+ assert.equal(b.reset(0).storyTimeLimit,720000);
+});

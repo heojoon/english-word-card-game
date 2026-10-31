@@ -26,7 +26,7 @@ test('World 8 shares 30 Days and records; ordinary Type C has 40 questions and V
     for(const stage of stages){
       const config=c.catalog[stage.key];days.add(config.vocabularyDay);
       const count=stage.number===30?180:40;
-      assert.equal(config.questionType,'C');assert.equal(config.questionCount,count);assert.equal(config.questionTimeMs,3000);assert.equal(config.learningLevel,level);
+      assert.equal(config.questionType,'C');assert.equal(config.questionCount,count);assert.equal(config.questionTimeMs,4000);assert.equal(config.learningLevel,level);
       assert.ok(config.words.length>=4);assert.equal(new Set(config.words.map(w=>w[0].toLowerCase())).size,config.words.length);
       const deck=c.buildQuestionDeck(config);
       assert.equal(deck.length,count);assert.ok(deck.every(q=>q.mode==='spelling'));
@@ -209,4 +209,13 @@ test('old local character clears backfill independently of shared progress and s
   assert.equal(c.hasNewActiveSkill(hero),true);assert.equal(c.hasNewActiveSkill(c.allCharacters[2]),false);
   const battle=finalBattle(hero);battle.result={game_score_id:'saved'};await c.updateWorldEightSkillUnlock(battle,true);
   c.demoState.records=[];assert.equal(c.hasNewActiveSkill(hero),true);assert.equal(battle.newActiveSkillUnlocked,undefined);
+});
+
+test('Vargas clears after 120 seconds still save and unlock',async()=>{
+ const c=unlockState(),hero=c.allCharacters[0];
+ const battle={...finalBattle(hero),vargas:true,bossHp:0,correct:45,elapsed:179000};c.run=battle;
+ assert.equal(c.isWorldEightFinalClear(battle,true),true);
+ await c.saveBattleResult(battle,true);
+ assert.equal(c.hasNewActiveSkill(hero),true);
+ assert.equal(c.isWorldEightFinalClear({...battle,elapsed:720001},true),false);
 });

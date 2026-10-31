@@ -2,11 +2,12 @@
 (() => {
   'use strict';
   const SPRITE_ROOT='assets/monsters/vargas/';
-  const HP=180,TIME_MS=120000;
+  const HP=180,QUESTION_TIME_MS=4000,TIME_MS=HP*QUESTION_TIME_MS;
+  const timeLimit=(damage=1,questionTimeMs=QUESTION_TIME_MS)=>Math.ceil(HP/Math.max(1,damage))*questionTimeMs;
   const ANIMATIONS={idle:[400,400,400],attack:[250,300,350],hit:[140,180,700],wing:[300,300,400],guard:[250,250,500]};
   const CELLS={idle:[480,320],attack:[640,320],hit:[480,320],wing:[576,384],guard:[480,352]};
   const scale=s=>s.guardianReducedMotion?.5:1;
-  function reset(){return {vargas:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:TIME_MS,vargasClock:0,vargasIdleMs:0,vargasAction:'idle',vargasActionMs:0,vargasContact:false,vargasPendingContact:null,vargasQueue:[],vargasNextWing:15000,vargasNextGuard:25000,vargasNotice:'',vargasDefeated:false};}
+  function reset(damage=1,questionTimeMs=QUESTION_TIME_MS){return {vargas:true,bossHp:HP,bossMaxHp:HP,storyTimeLimit:timeLimit(damage,questionTimeMs),vargasClock:0,vargasIdleMs:0,vargasAction:'idle',vargasActionMs:0,vargasContact:false,vargasPendingContact:null,vargasQueue:[],vargasNextWing:15000,vargasNextGuard:25000,vargasNotice:'',vargasDefeated:false};}
   function clear(s){s.vargasQueue=[];s.vargasPendingContact=null;s.vargasAction=s.vargasDefeated?'down':'idle';s.vargasActionMs=0;s.vargasContact=false;s.vargasNotice='';s.vargasPlayerHitMs=0;s.iceTimeActive=false;s.timeStopped=false;}
   function correct(s,contactMs){s.vargasPendingContact=Math.max(0,contactMs);}
   function damage(s,amount){
@@ -77,5 +78,5 @@
     while(frame<2&&t>=times[frame]*scale(s)){t-=times[frame]*scale(s);frame++;}
     return {action,frame,width:CELLS[action][0],height:CELLS[action][1]};
   }
-  window.WORDORIA_VARGAS={HP,TIME_MS,SPRITE_ROOT,ANIMATIONS,reset,clear,correct,wrong,damage,advance,visual};
+  window.WORDORIA_VARGAS={HP,TIME_MS,QUESTION_TIME_MS,timeLimit,SPRITE_ROOT,ANIMATIONS,reset,clear,correct,wrong,damage,advance,visual};
 })();
