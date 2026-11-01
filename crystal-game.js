@@ -1107,7 +1107,7 @@
     };
     const skill=skills[classCode],extra=window.WORDORIA_ACTIVE_SKILLS?.definitions[classCode],preview=characters.find(row=>row.id===characterPreviewId)||selectedCharacter;
     const unlocked=context!=='create'&&preview?.class===classCode&&hasNewActiveSkill(preview);
-    const extraMarkup=extra?`<div class="new-skill-callout" data-skill-class="${esc(classCode)}"><img src="${esc(deployedAssetUrl(`assets/ui/skills/active-${classCode}-advanced.svg`))}" alt="${esc(extra.name)} 스킬 아이콘"><div><small class="new-skill-label">신규 액티브 · 스토리 모드${extra.bossOnly?' · 보스 전용':''}</small><strong>${esc(extra.name)}</strong><p>${esc(extra.description)}</p><small class="new-skill-unlock ${unlocked?'unlocked':''}">${unlocked?'✓ 습득 완료':'미습득'} · 이 캐릭터로 월드 8 최종보스 바르가스 처치</small></div></div>`:'';if(!skill)return extraMarkup;
+    const extraMarkup=extra?`<div class="new-skill-callout" data-skill-class="${esc(classCode)}"><img src="${esc(deployedAssetUrl(`assets/ui/skills/${extra.image}`))}" alt="${esc(extra.name)} 스킬 아이콘"><div><small class="new-skill-label">신규 액티브 · 스토리 모드${extra.bossOnly?' · 보스 전용':''}</small><strong>${esc(extra.name)}</strong><p>${esc(extra.description)}</p><small class="new-skill-unlock ${unlocked?'unlocked':''}">${unlocked?'✓ 습득 완료':'미습득'} · 이 캐릭터로 월드 8 최종보스 바르가스 처치</small></div></div>`:'';if(!skill)return extraMarkup;
     const image=`<img src="${esc(deployedAssetUrl(`assets/ui/skills/${skill.image}`))}" alt="${skill.name} 스킬 아이콘">`;
     if(context==='create')return `<div class="skill-callout active-skill-callout">${image}<div><b>ACTIVE SKILL · ${skill.name}</b><small>${skill.description}</small></div></div>${extraMarkup}`;
     return `<div class="selected-hero-skill selected-hero-active-skill">${image}<div><small>ACTIVE SKILL · 스토리 모드</small><strong>${skill.name}</strong><p>${skill.description}</p></div></div>${extraMarkup}`;
@@ -1822,7 +1822,7 @@
     const effect=run.activeSkills;if(!effect?.definition)return '';
     const def=effect.definition,status=effect.status(),ready=effect.ready();
     const detail=!effect.unlocked?'월드 8 클리어 시 해금':status||(!effect.ready()&&def.bossOnly&&!window.WORDORIA_ACTIVE_SKILLS.isBoss(run)?'보스전 전용':selectedCharacter?.class==='mage'?'켜기 무료 · 피격 시 MP':run.mp<1?'MP 1 필요':'MP 1 소모');
-    return `<button type="button" class="story-action-slot story-skill-slot story-new-skill ${effect.active()?'activated':''}" data-action="activate-new-skill" ${ready?'':'disabled'} ${selectedCharacter?.class==='mage'?`aria-pressed="${effect.active()}"`:''} title="${esc(def.description)}" aria-label="${def.name}, ${esc(detail)}"><span class="story-action-icon" aria-hidden="true">${icon(def.icon)}</span><b>${def.name}</b><small>${esc(detail)}</small></button>`;
+    return `<button type="button" class="story-action-slot story-skill-slot story-new-skill ${effect.active()?'activated':''}" data-action="activate-new-skill" ${ready?'':'disabled'} ${selectedCharacter?.class==='mage'?`aria-pressed="${effect.active()}"`:''} title="${esc(def.description)}" aria-label="${def.name}, ${esc(detail)}"><span class="story-action-icon" aria-hidden="true"><img src="${esc(deployedAssetUrl(`assets/ui/skills/${def.image}`))}" alt="" aria-hidden="true"></span><b>${def.name}</b><small>${esc(detail)}</small></button>`;
   }
   function refreshNewSkillFeedback(){
     const effect=run?.activeSkills;if(!effect)return;
