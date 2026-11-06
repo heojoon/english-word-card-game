@@ -1,0 +1,361 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-05",
+  "references": [
+    {
+      "path": "assets/items/equipment/item_gale_boots_normal.webp",
+      "role": "primary material and softly blended shading authority; attached to every call"
+    },
+    {
+      "path": "assets/items/equipment/item_starlight_crown_legendary.webp",
+      "role": "crystal refraction and collectible finish authority; attached to every call"
+    }
+  ],
+  "runtime": {
+    "size": [
+      512,
+      512
+    ],
+    "format": "WebP",
+    "transparent": true,
+    "normalization": "Fit the visible alpha>8/255 content bounds plus 4px fringe proportionally within 410x410 using Lanczos, centered on transparent 512x512. Scattered alpha=1 edge noise does not indicate clipping. No color-key removal; preserve white materials and retained alpha."
+  },
+  "review": {
+    "status": "technical visual review passed; not user approval",
+    "user_approved": false,
+    "backgrounds": [
+      "#F7F7FF",
+      "#5751D8"
+    ],
+    "thumbnail_sizes": [
+      64,
+      128
+    ],
+    "composite": "output/imagegen/infinity-equipment/review-light-violet.jpg",
+    "findings": "All seven runtime images inspected together over #F7F7FF and #5751D8 at 128px and 64px. Complete silhouettes remain distinct and consistent; ring opening is transparent; silver highlights and lavender lining remain opaque; no visible background residue or clipping. Source canvas edge alpha=1 noise was distinguished from visible content (alpha>8)."
+  },
+  "items": {
+    "sword": {
+      "id": 106,
+      "code": "infinity_sword",
+      "name": "무한의 검",
+      "category": "avatar",
+      "price": 500,
+      "icon": "◆",
+      "description": "무한의 고리와 청보라 수정이 공격을 강화하는 희귀 검입니다.",
+      "slot": "weapon",
+      "rarity": "rare",
+      "stars": 3,
+      "stat_key": "atk",
+      "stat_value": 20,
+      "art_path": "assets/items/equipment/item_infinity_sword_rare.webp",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile fantasy equipment inventory icon. Match the TWO attached inventory reference images closely: Gale Boots is the primary authority for softly rounded silver metal, pale lavender shadows and lining, beveled seams and smoothly blended hand-painted volumetric shading. Starlight Crown is the authority for faceted violet-blue/cyan crystal refraction and polished collectible finish; do not copy its legendary gold excess. Gentle three-quarter view, fine restrained highlights, subtle thin violet contour edges, clean enamel finish, readable at 64-128 px. INFINITY COLLECTION: polished platinum silver over deep midnight-indigo details, luminous cyan and violet prismatic crystal, elegant interlocking infinity-loop metalwork, small restrained champagne-gold fasteners. Rarity RARE (3 stars in game but draw NO stars, text or labels), a powerful attack-oriented successor to the Corrupted set, moderate ornament and controlled glow clearly below legendary excess. Subject: one complete Infinity Sword, a long elegant platinum-silver longsword, full blade pointing lower-left and hilt upper-right, luminous cyan central channel, compact infinity-loop crossguard surrounding one faceted violet-cyan crystal, midnight-indigo wrapped grip. Whole blade, guard, grip and pommel visible. One object centered on square canvas, ten percent clear padding, true transparent alpha. No person, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, watermark, thick black comic outlines, hard flat cel shading, pixel art, low-poly, photorealism, horror, skulls, excessive particles or clipped edges.",
+      "source": "output/imagegen/infinity-equipment/sword-original.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        31,
+        9,
+        1216,
+        1254
+      ],
+      "source_visible_alpha_bbox": [
+        117,
+        72,
+        1136,
+        1188
+      ],
+      "normalization_crop": [
+        113,
+        68,
+        1140,
+        1192
+      ],
+      "runtime_alpha_bbox": [
+        68,
+        51,
+        443,
+        461
+      ],
+      "runtime_bytes": 28428
+    },
+    "boots": {
+      "id": 107,
+      "code": "infinity_boots",
+      "name": "무한의 장화",
+      "category": "avatar",
+      "price": 500,
+      "icon": "◆",
+      "description": "무한의 고리와 청보라 수정이 공격을 강화하는 희귀 장화입니다.",
+      "slot": "feet",
+      "rarity": "rare",
+      "stars": 3,
+      "stat_key": "atk",
+      "stat_value": 18,
+      "art_path": "assets/items/equipment/item_infinity_boots_rare.webp",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile fantasy equipment inventory icon. Match the TWO attached inventory reference images closely: Gale Boots is the primary authority for softly rounded silver metal, pale lavender shadows and lining, beveled seams and smoothly blended hand-painted volumetric shading. Starlight Crown is the authority for faceted violet-blue/cyan crystal refraction and polished collectible finish; do not copy its legendary gold excess. Gentle three-quarter view, fine restrained highlights, subtle thin violet contour edges, clean enamel finish, readable at 64-128 px. INFINITY COLLECTION: polished platinum silver over deep midnight-indigo details, luminous cyan and violet prismatic crystal, elegant interlocking infinity-loop metalwork, small restrained champagne-gold fasteners. Rarity RARE (3 stars in game but draw NO stars, text or labels), a powerful attack-oriented successor to the Corrupted set, moderate ornament and controlled glow clearly below legendary excess. Subject: one pair of Infinity Boots, wearable sturdy flat-heeled ankle boots with rounded platinum-silver armored toes and shins over midnight-indigo leather, lavender lining, elegant intertwined infinity-loop silver straps, modest cyan-violet prismatic crystals and tiny champagne-gold fasteners. Both boots complete, clear distinct footwear silhouette, no floating ornaments. One object centered on square canvas, ten percent clear padding, true transparent alpha. No person, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, watermark, thick black comic outlines, hard flat cel shading, pixel art, low-poly, photorealism, horror, skulls, excessive particles or clipped edges.",
+      "source": "output/imagegen/infinity-equipment/boots-original.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        0,
+        0,
+        1234,
+        1222
+      ],
+      "source_visible_alpha_bbox": [
+        169,
+        129,
+        1137,
+        1113
+      ],
+      "normalization_crop": [
+        165,
+        125,
+        1141,
+        1117
+      ],
+      "runtime_alpha_bbox": [
+        54,
+        51,
+        457,
+        461
+      ],
+      "runtime_bytes": 49620
+    },
+    "helmet": {
+      "id": 108,
+      "code": "infinity_helmet",
+      "name": "무한의 투구",
+      "category": "avatar",
+      "price": 500,
+      "icon": "◆",
+      "description": "무한의 고리와 청보라 수정이 공격을 강화하는 희귀 투구입니다.",
+      "slot": "head",
+      "rarity": "rare",
+      "stars": 3,
+      "stat_key": "atk",
+      "stat_value": 16,
+      "art_path": "assets/items/equipment/item_infinity_helmet_rare.webp",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile fantasy equipment inventory icon. Match the TWO attached inventory reference images closely: Gale Boots is the primary authority for softly rounded silver metal, pale lavender shadows and lining, beveled seams and smoothly blended hand-painted volumetric shading. Starlight Crown is the authority for faceted violet-blue/cyan crystal refraction and polished collectible finish; do not copy its legendary gold excess. Gentle three-quarter view, fine restrained highlights, subtle thin violet contour edges, clean enamel finish, readable at 64-128 px. INFINITY COLLECTION: polished platinum silver over deep midnight-indigo details, luminous cyan and violet prismatic crystal, elegant interlocking infinity-loop metalwork, small restrained champagne-gold fasteners. Rarity RARE (3 stars in game but draw NO stars, text or labels), a powerful attack-oriented successor to the Corrupted set, moderate ornament and controlled glow clearly below legendary excess. Subject: one complete empty Infinity Helmet, youthful open-face wearable platinum-silver helmet with a rounded dome, midnight-indigo padded lining, compact swept-back side fins, elegant intertwined infinity-loop brow ornament surrounding one cyan-violet faceted crystal. Clearly a helmet, not a crown; no face, head, giant horns or excessive spikes. One object centered on square canvas, ten percent clear padding, true transparent alpha. No person, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, watermark, thick black comic outlines, hard flat cel shading, pixel art, low-poly, photorealism, horror, skulls, excessive particles or clipped edges.",
+      "source": "output/imagegen/infinity-equipment/helmet-original.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        0,
+        41,
+        1134,
+        1254
+      ],
+      "source_visible_alpha_bbox": [
+        186,
+        119,
+        1037,
+        1103
+      ],
+      "normalization_crop": [
+        182,
+        115,
+        1041,
+        1107
+      ],
+      "runtime_alpha_bbox": [
+        78,
+        51,
+        433,
+        461
+      ],
+      "runtime_bytes": 41772
+    },
+    "cape": {
+      "id": 109,
+      "code": "infinity_cape",
+      "name": "무한의 망토",
+      "category": "avatar",
+      "price": 500,
+      "icon": "◆",
+      "description": "무한의 고리와 청보라 수정이 공격을 강화하는 희귀 망토입니다.",
+      "slot": "back",
+      "rarity": "rare",
+      "stars": 3,
+      "stat_key": "atk",
+      "stat_value": 16,
+      "art_path": "assets/items/equipment/item_infinity_cape_rare.webp",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile fantasy equipment inventory icon. Match the TWO attached inventory reference images closely: Gale Boots is the primary authority for softly rounded silver metal, pale lavender shadows and lining, beveled seams and smoothly blended hand-painted volumetric shading. Starlight Crown is the authority for faceted violet-blue/cyan crystal refraction and polished collectible finish; do not copy its legendary gold excess. Gentle three-quarter view, fine restrained highlights, subtle thin violet contour edges, clean enamel finish, readable at 64-128 px. INFINITY COLLECTION: polished platinum silver over deep midnight-indigo details, luminous cyan and violet prismatic crystal, elegant interlocking infinity-loop metalwork, small restrained champagne-gold fasteners. Rarity RARE (3 stars in game but draw NO stars, text or labels), a powerful attack-oriented successor to the Corrupted set, moderate ornament and controlled glow clearly below legendary excess. Subject: one complete Infinity Cape without wearer, flowing midnight-indigo fabric with softly blended lavender inner folds, elegant thin platinum-silver edge piping, subtle woven interlocking infinity-loop border motif, one silver infinity-loop clasp holding a luminous cyan-violet prismatic crystal, tiny champagne-gold fastener. Whole shoulder collar and flowing hem visible, a balanced compact collectible garment silhouette, no hood, no armor, no mannequin. One object centered on square canvas, ten percent clear padding, true transparent alpha. No person, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, watermark, thick black comic outlines, hard flat cel shading, pixel art, low-poly, photorealism, horror, skulls, excessive particles or clipped edges.",
+      "source": "output/imagegen/infinity-equipment/cape-original.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        0,
+        23,
+        1241,
+        1254
+      ],
+      "source_visible_alpha_bbox": [
+        96,
+        121,
+        1158,
+        1133
+      ],
+      "normalization_crop": [
+        92,
+        117,
+        1162,
+        1137
+      ],
+      "runtime_alpha_bbox": [
+        51,
+        60,
+        461,
+        451
+      ],
+      "runtime_bytes": 41666
+    },
+    "ring": {
+      "id": 110,
+      "code": "infinity_ring",
+      "name": "무한의 반지",
+      "category": "avatar",
+      "price": 500,
+      "icon": "◆",
+      "description": "무한의 고리와 청보라 수정이 공격을 강화하는 희귀 반지입니다. 오라 슬롯에 장착합니다.",
+      "slot": "aura",
+      "rarity": "rare",
+      "stars": 3,
+      "stat_key": "atk",
+      "stat_value": 16,
+      "art_path": "assets/items/equipment/item_infinity_ring_rare.webp",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile fantasy equipment inventory icon. Match the TWO attached inventory reference images closely: Gale Boots is the primary authority for softly rounded silver metal, pale lavender shadows and lining, beveled seams and smoothly blended hand-painted volumetric shading. Starlight Crown is the authority for faceted violet-blue/cyan crystal refraction and polished collectible finish; do not copy its legendary gold excess. Gentle three-quarter view, fine restrained highlights, subtle thin violet contour edges, clean enamel finish, readable at 64-128 px. INFINITY COLLECTION: polished platinum silver over deep midnight-indigo details, luminous cyan and violet prismatic crystal, elegant interlocking infinity-loop metalwork, small restrained champagne-gold fasteners. Rarity RARE (3 stars in game but draw NO stars, text or labels), a powerful attack-oriented successor to the Corrupted set, moderate ornament and controlled glow clearly below legendary excess. Subject: one Infinity Ring, thick elegant wearable platinum-silver band, polished intertwined infinity-loop shoulders, a single large cyan-violet faceted prismatic gemstone in a fine silver setting with tiny champagne-gold fasteners, midnight-indigo inset enamel. Gentle three-quarter view with the hollow center clearly visible and truly transparent, no hand. Whole ring centered, graceful readable wearable silhouette. One object centered on square canvas, ten percent clear padding, true transparent alpha. No person, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, watermark, thick black comic outlines, hard flat cel shading, pixel art, low-poly, photorealism, horror, skulls, excessive particles or clipped edges.",
+      "source": "output/imagegen/infinity-equipment/ring-original.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        57,
+        77,
+        1230,
+        1254
+      ],
+      "source_visible_alpha_bbox": [
+        185,
+        156,
+        1046,
+        1080
+      ],
+      "normalization_crop": [
+        181,
+        152,
+        1050,
+        1084
+      ],
+      "runtime_alpha_bbox": [
+        65,
+        51,
+        447,
+        461
+      ],
+      "runtime_bytes": 45050
+    },
+    "armor": {
+      "id": 111,
+      "code": "infinity_armor",
+      "name": "무한의 갑옷",
+      "category": "avatar",
+      "price": 500,
+      "icon": "◆",
+      "description": "무한의 고리와 청보라 수정이 공격을 강화하는 희귀 갑옷입니다.",
+      "slot": "body",
+      "rarity": "rare",
+      "stars": 3,
+      "stat_key": "atk",
+      "stat_value": 16,
+      "art_path": "assets/items/equipment/item_infinity_armor_rare.webp",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile fantasy equipment inventory icon. Match the TWO attached inventory reference images closely: Gale Boots is the primary authority for softly rounded silver metal, pale lavender shadows and lining, beveled seams and smoothly blended hand-painted volumetric shading. Starlight Crown is the authority for faceted violet-blue/cyan crystal refraction and polished collectible finish; do not copy its legendary gold excess. Gentle three-quarter view, fine restrained highlights, subtle thin violet contour edges, clean enamel finish, readable at 64-128 px. INFINITY COLLECTION: polished platinum silver over deep midnight-indigo details, luminous cyan and violet prismatic crystal, elegant interlocking infinity-loop metalwork, small restrained champagne-gold fasteners. Rarity RARE (3 stars in game but draw NO stars, text or labels), a powerful attack-oriented successor to the Corrupted set, moderate ornament and controlled glow clearly below legendary excess. Subject: one complete empty Infinity Armor breastplate, wearable platinum-silver layered torso plates and compact balanced rounded shoulder guards over midnight-indigo padded lining, elegant interlocking infinity-loop chest metalwork framing one faceted cyan-violet prismatic crystal, tiny champagne-gold fasteners, clearly visible empty neck and arm openings without body inside. Whole torso and shoulder armor visible; no helmet, weapons or wearer. One object centered on square canvas, ten percent clear padding, true transparent alpha. No person, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, watermark, thick black comic outlines, hard flat cel shading, pixel art, low-poly, photorealism, horror, skulls, excessive particles or clipped edges.",
+      "source": "output/imagegen/infinity-equipment/armor-original.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        57,
+        0,
+        1234,
+        1190
+      ],
+      "source_visible_alpha_bbox": [
+        150,
+        99,
+        1085,
+        1168
+      ],
+      "normalization_crop": [
+        146,
+        95,
+        1089,
+        1172
+      ],
+      "runtime_alpha_bbox": [
+        76,
+        51,
+        435,
+        461
+      ],
+      "runtime_bytes": 45464
+    },
+    "staff": {
+      "id": 112,
+      "code": "infinity_staff",
+      "name": "무한의 지팡이",
+      "category": "avatar",
+      "price": 800,
+      "icon": "◆",
+      "description": "무한의 고리와 청보라 수정이 공격을 강화하는 희귀 지팡이입니다.",
+      "slot": "weapon",
+      "rarity": "rare",
+      "stars": 3,
+      "stat_key": "atk",
+      "stat_value": 24,
+      "art_path": "assets/items/equipment/item_infinity_staff_rare.webp",
+      "prompt": "Use case: stylized-concept. Asset type: Wordoria Crystal Quest mobile fantasy equipment inventory icon. Match the TWO attached inventory reference images closely: Gale Boots is the primary authority for softly rounded silver metal, pale lavender shadows and lining, beveled seams and smoothly blended hand-painted volumetric shading. Starlight Crown is the authority for faceted violet-blue/cyan crystal refraction and polished collectible finish; do not copy its legendary gold excess. Gentle three-quarter view, fine restrained highlights, subtle thin violet contour edges, clean enamel finish, readable at 64-128 px. INFINITY COLLECTION: polished platinum silver over deep midnight-indigo details, luminous cyan and violet prismatic crystal, elegant interlocking infinity-loop metalwork, small restrained champagne-gold fasteners. Rarity RARE (3 stars in game but draw NO stars, text or labels), a powerful attack-oriented successor to the Corrupted set, moderate ornament and controlled glow clearly below legendary excess. Subject: one complete Infinity Staff, unmistakably a long magical staff rather than spear, sword or short scepter. A slender platinum-silver shaft with midnight-indigo wrapped grip and thin intertwined silver trim; staff head is a graceful silver infinity-loop cage surrounding one large luminous faceted cyan-violet crystal, tiny champagne-gold fasteners and a smaller crystal at the butt cap. Whole head, long shaft and butt cap visible diagonally from bottom left to upper right, compact readable silhouette, all effects within clear canvas margins. One object centered on square canvas, ten percent clear padding, true transparent alpha. No person, hands, mannequin, floor, cast shadow, pedestal, frame, rarity badge, text, price, watermark, thick black comic outlines, hard flat cel shading, pixel art, low-poly, photorealism, horror, skulls, excessive particles or clipped edges.",
+      "source": "output/imagegen/infinity-equipment/staff-original.png",
+      "source_dimensions": [
+        1254,
+        1254
+      ],
+      "source_alpha_bbox": [
+        0,
+        51,
+        1226,
+        1254
+      ],
+      "source_visible_alpha_bbox": [
+        192,
+        55,
+        1118,
+        1192
+      ],
+      "normalization_crop": [
+        188,
+        51,
+        1122,
+        1196
+      ],
+      "runtime_alpha_bbox": [
+        89,
+        51,
+        423,
+        461
+      ],
+      "runtime_bytes": 26600
+    }
+  }
+}
