@@ -1,0 +1,382 @@
+{
+  "date": "2026-11-05",
+  "tool": "image_gen.imagegen",
+  "model": "undisclosed",
+  "world": "9",
+  "title": "새벽의 수련원",
+  "storyReference": "assets/novel/world-9-scenario.md",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": "assets/story/source/world-9/dawn-training-generated.png",
+  "targetDimensions": {
+    "width": 1024,
+    "height": 3072,
+    "aspectRatio": "1:3"
+  },
+  "actualDimensions": {
+    "width": 724,
+    "height": 2172
+  },
+  "source": "assets/story/source/world-9/dawn-training-final-generated.png",
+  "runtime": "assets/story/chapter-9-dawn-training-map.webp",
+  "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, World 9, Dawn Training Retreat.\nScene: A peaceful old training retreat between two mountain peaks. Start at a sunlit natural stone gate at the TOP, descend through a wind corridor with elegant cream-stone arches and mountain gardens, reach a wind vent gate and empty rocky griffin nesting ledge at the CENTER (stage 15), continue past modest lavender-roof residential lodges and practice terraces, finish at the circular CENTRAL TRAINING COURT at the BOTTOM, with a small golden dawn lantern apparatus (stage 30). No characters or creatures, no battle. Mountain peaks border the sides, bright cloud sea, first warm sunlight, lush painterly greenery, maintained old buildings, no ruins. Do not copy the library.\nReference roles: Image 1 = authoritative chapter-1-library-map.webp STYLE reference. No existing World 9 layout exists.\nComposition: very tall portrait 1:3, target 1024 x 3072. A single connected gold route descends from TOP to BOTTOM. All 30 crystal centers have strictly increasing y coordinates; avoid horizontal rows. Place buildings beside route, never hide waypoints.\nGameplay contract: EXACTLY 30 distinct violet-blue crystal waypoints, each on its own gold-rimmed round pedestal, exactly one pedestal per stage. No decorative purple crystals or extra gold pedestals. Keep each small crystal clearly separated. Stage 15 is at wind gate; stage 30 beside lantern at bottom court. Normalized centers (x%,y%): 1:(28%,5%); 2:(48%,8.08%); 3:(72%,11.16%); 4:(60%,14.24%); 5:(38%,17.32%); 6:(22%,20.4%); 7:(28%,23.48%); 8:(48%,26.56%); 9:(72%,29.64%); 10:(60%,32.72%); 11:(38%,35.8%); 12:(22%,38.88%); 13:(28%,41.96%); 14:(48%,45.04%); 15:(72%,48.12%); 16:(60%,51.2%); 17:(38%,54.28%); 18:(22%,57.36%); 19:(28%,60.44%); 20:(48%,63.52%); 21:(72%,66.6%); 22:(60%,69.68%); 23:(38%,72.76%); 24:(22%,75.84%); 25:(28%,78.92%); 26:(48%,82%); 27:(72%,85.08%); 28:(60%,88.16%); 29:(38%,91.24%); 30:(22%,94.32%). Build paths and landings around these centers. Count all thirty before finishing.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nSURGICAL CORRECTION: Image 1 is authoritative STYLE reference. Image 2 is the generated TARGET MAP to edit. It currently has 31 purple crystal waypoints. REMOVE EXACTLY ONE crystal AND its gold-rimmed pedestal at pixel center (142,1840) in the 724x2172 image, normalized (19.61%,84.71%). This is the crystal immediately above the large bottom lantern courtyard, on the left bend of the path next to the stone arch. Replace ONLY that crystal and its pedestal with ordinary continuous golden path. Preserve all other 30 crystals in precisely the same positions, especially the final crystal at (178,2025) in the bottom courtyard. Preserve every building, lantern, cliff, tree, path and composition. No new crystals. Final exactly 30. Preserve 724x2172 dimensions.",
+  "generationHistory": [
+    {
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, World 9, Dawn Training Retreat.\nScene: A peaceful old training retreat between two mountain peaks. Start at a sunlit natural stone gate at the TOP, descend through a wind corridor with elegant cream-stone arches and mountain gardens, reach a wind vent gate and empty rocky griffin nesting ledge at the CENTER (stage 15), continue past modest lavender-roof residential lodges and practice terraces, finish at the circular CENTRAL TRAINING COURT at the BOTTOM, with a small golden dawn lantern apparatus (stage 30). No characters or creatures, no battle. Mountain peaks border the sides, bright cloud sea, first warm sunlight, lush painterly greenery, maintained old buildings, no ruins. Do not copy the library.\nReference roles: Image 1 = authoritative chapter-1-library-map.webp STYLE reference. No existing World 9 layout exists.\nComposition: very tall portrait 1:3, target 1024 x 3072. A single connected gold route descends from TOP to BOTTOM. All 30 crystal centers have strictly increasing y coordinates; avoid horizontal rows. Place buildings beside route, never hide waypoints.\nGameplay contract: EXACTLY 30 distinct violet-blue crystal waypoints, each on its own gold-rimmed round pedestal, exactly one pedestal per stage. No decorative purple crystals or extra gold pedestals. Keep each small crystal clearly separated. Stage 15 is at wind gate; stage 30 beside lantern at bottom court. Normalized centers (x%,y%): 1:(28%,5%); 2:(48%,8.08%); 3:(72%,11.16%); 4:(60%,14.24%); 5:(38%,17.32%); 6:(22%,20.4%); 7:(28%,23.48%); 8:(48%,26.56%); 9:(72%,29.64%); 10:(60%,32.72%); 11:(38%,35.8%); 12:(22%,38.88%); 13:(28%,41.96%); 14:(48%,45.04%); 15:(72%,48.12%); 16:(60%,51.2%); 17:(38%,54.28%); 18:(22%,57.36%); 19:(28%,60.44%); 20:(48%,63.52%); 21:(72%,66.6%); 22:(60%,69.68%); 23:(38%,72.76%); 24:(22%,75.84%); 25:(28%,78.92%); 26:(48%,82%); 27:(72%,85.08%); 28:(60%,88.16%); 29:(38%,91.24%); 30:(22%,94.32%). Build paths and landings around these centers. Count all thirty before finishing.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+      "references": [
+        "assets/story/chapter-1-library-map.webp"
+      ],
+      "source": "assets/story/source/world-9/dawn-training-generated.png",
+      "review": "31 waypoints, corrected"
+    },
+    {
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, World 9, Dawn Training Retreat.\nScene: A peaceful old training retreat between two mountain peaks. Start at a sunlit natural stone gate at the TOP, descend through a wind corridor with elegant cream-stone arches and mountain gardens, reach a wind vent gate and empty rocky griffin nesting ledge at the CENTER (stage 15), continue past modest lavender-roof residential lodges and practice terraces, finish at the circular CENTRAL TRAINING COURT at the BOTTOM, with a small golden dawn lantern apparatus (stage 30). No characters or creatures, no battle. Mountain peaks border the sides, bright cloud sea, first warm sunlight, lush painterly greenery, maintained old buildings, no ruins. Do not copy the library.\nReference roles: Image 1 = authoritative chapter-1-library-map.webp STYLE reference. No existing World 9 layout exists.\nComposition: very tall portrait 1:3, target 1024 x 3072. A single connected gold route descends from TOP to BOTTOM. All 30 crystal centers have strictly increasing y coordinates; avoid horizontal rows. Place buildings beside route, never hide waypoints.\nGameplay contract: EXACTLY 30 distinct violet-blue crystal waypoints, each on its own gold-rimmed round pedestal, exactly one pedestal per stage. No decorative purple crystals or extra gold pedestals. Keep each small crystal clearly separated. Stage 15 is at wind gate; stage 30 beside lantern at bottom court. Normalized centers (x%,y%): 1:(28%,5%); 2:(48%,8.08%); 3:(72%,11.16%); 4:(60%,14.24%); 5:(38%,17.32%); 6:(22%,20.4%); 7:(28%,23.48%); 8:(48%,26.56%); 9:(72%,29.64%); 10:(60%,32.72%); 11:(38%,35.8%); 12:(22%,38.88%); 13:(28%,41.96%); 14:(48%,45.04%); 15:(72%,48.12%); 16:(60%,51.2%); 17:(38%,54.28%); 18:(22%,57.36%); 19:(28%,60.44%); 20:(48%,63.52%); 21:(72%,66.6%); 22:(60%,69.68%); 23:(38%,72.76%); 24:(22%,75.84%); 25:(28%,78.92%); 26:(48%,82%); 27:(72%,85.08%); 28:(60%,88.16%); 29:(38%,91.24%); 30:(22%,94.32%). Build paths and landings around these centers. Count all thirty before finishing.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nSURGICAL CORRECTION: Image 1 is authoritative STYLE reference. Image 2 is the generated TARGET MAP to edit. It currently has 31 purple crystal waypoints. REMOVE EXACTLY ONE crystal AND its gold-rimmed pedestal at pixel center (142,1840) in the 724x2172 image, normalized (19.61%,84.71%). This is the crystal immediately above the large bottom lantern courtyard, on the left bend of the path next to the stone arch. Replace ONLY that crystal and its pedestal with ordinary continuous golden path. Preserve all other 30 crystals in precisely the same positions, especially the final crystal at (178,2025) in the bottom courtyard. Preserve every building, lantern, cliff, tree, path and composition. No new crystals. Final exactly 30. Preserve 724x2172 dimensions.",
+      "references": [
+        "assets/story/chapter-1-library-map.webp",
+        "assets/story/source/world-9/dawn-training-generated.png"
+      ],
+      "source": "assets/story/source/world-9/dawn-training-final-generated.png",
+      "review": "30 waypoints, visually counted in three sections and centers measured"
+    }
+  ],
+  "waypoints": [
+    {
+      "stage": 1,
+      "centerPx": [
+        191.29,
+        139.1
+      ],
+      "position": [
+        "26.421%",
+        "6.404%"
+      ]
+    },
+    {
+      "stage": 2,
+      "centerPx": [
+        342.49,
+        183.29
+      ],
+      "position": [
+        "47.305%",
+        "8.439%"
+      ]
+    },
+    {
+      "stage": 3,
+      "centerPx": [
+        511.77,
+        217.42
+      ],
+      "position": [
+        "70.686%",
+        "10.010%"
+      ]
+    },
+    {
+      "stage": 4,
+      "centerPx": [
+        417.26,
+        265.5
+      ],
+      "position": [
+        "57.633%",
+        "12.224%"
+      ]
+    },
+    {
+      "stage": 5,
+      "centerPx": [
+        266.3,
+        313.37
+      ],
+      "position": [
+        "36.782%",
+        "14.428%"
+      ]
+    },
+    {
+      "stage": 6,
+      "centerPx": [
+        141.99,
+        368.33
+      ],
+      "position": [
+        "19.612%",
+        "16.958%"
+      ]
+    },
+    {
+      "stage": 7,
+      "centerPx": [
+        196.03,
+        427.11
+      ],
+      "position": [
+        "27.076%",
+        "19.664%"
+      ]
+    },
+    {
+      "stage": 8,
+      "centerPx": [
+        344.19,
+        482.77
+      ],
+      "position": [
+        "47.540%",
+        "22.227%"
+      ]
+    },
+    {
+      "stage": 9,
+      "centerPx": [
+        513.38,
+        521.05
+      ],
+      "position": [
+        "70.909%",
+        "23.989%"
+      ]
+    },
+    {
+      "stage": 10,
+      "centerPx": [
+        427.09,
+        580.51
+      ],
+      "position": [
+        "58.990%",
+        "26.727%"
+      ]
+    },
+    {
+      "stage": 11,
+      "centerPx": [
+        267.35,
+        636.25
+      ],
+      "position": [
+        "36.927%",
+        "29.293%"
+      ]
+    },
+    {
+      "stage": 12,
+      "centerPx": [
+        142.19,
+        703.43
+      ],
+      "position": [
+        "19.640%",
+        "32.386%"
+      ]
+    },
+    {
+      "stage": 13,
+      "centerPx": [
+        197.26,
+        767.16
+      ],
+      "position": [
+        "27.246%",
+        "35.320%"
+      ]
+    },
+    {
+      "stage": 14,
+      "centerPx": [
+        344.67,
+        815.38
+      ],
+      "position": [
+        "47.606%",
+        "37.541%"
+      ]
+    },
+    {
+      "stage": 15,
+      "centerPx": [
+        463.3,
+        954.97
+      ],
+      "position": [
+        "63.992%",
+        "43.967%"
+      ]
+    },
+    {
+      "stage": 16,
+      "centerPx": [
+        424.05,
+        1045.41
+      ],
+      "position": [
+        "58.570%",
+        "48.131%"
+      ]
+    },
+    {
+      "stage": 17,
+      "centerPx": [
+        267.12,
+        1096.34
+      ],
+      "position": [
+        "36.895%",
+        "50.476%"
+      ]
+    },
+    {
+      "stage": 18,
+      "centerPx": [
+        142.52,
+        1163.14
+      ],
+      "position": [
+        "19.685%",
+        "53.552%"
+      ]
+    },
+    {
+      "stage": 19,
+      "centerPx": [
+        196.64,
+        1223.96
+      ],
+      "position": [
+        "27.160%",
+        "56.352%"
+      ]
+    },
+    {
+      "stage": 20,
+      "centerPx": [
+        346.14,
+        1271.53
+      ],
+      "position": [
+        "47.809%",
+        "58.542%"
+      ]
+    },
+    {
+      "stage": 21,
+      "centerPx": [
+        513.41,
+        1318.13
+      ],
+      "position": [
+        "70.913%",
+        "60.687%"
+      ]
+    },
+    {
+      "stage": 22,
+      "centerPx": [
+        429,
+        1379.71
+      ],
+      "position": [
+        "59.254%",
+        "63.523%"
+      ]
+    },
+    {
+      "stage": 23,
+      "centerPx": [
+        265.81,
+        1452.03
+      ],
+      "position": [
+        "36.714%",
+        "66.852%"
+      ]
+    },
+    {
+      "stage": 24,
+      "centerPx": [
+        140.72,
+        1514.66
+      ],
+      "position": [
+        "19.436%",
+        "69.736%"
+      ]
+    },
+    {
+      "stage": 25,
+      "centerPx": [
+        197.99,
+        1569.52
+      ],
+      "position": [
+        "27.347%",
+        "72.262%"
+      ]
+    },
+    {
+      "stage": 26,
+      "centerPx": [
+        345.72,
+        1615.42
+      ],
+      "position": [
+        "47.751%",
+        "74.375%"
+      ]
+    },
+    {
+      "stage": 27,
+      "centerPx": [
+        511.39,
+        1661.57
+      ],
+      "position": [
+        "70.634%",
+        "76.500%"
+      ]
+    },
+    {
+      "stage": 28,
+      "centerPx": [
+        425.95,
+        1716.01
+      ],
+      "position": [
+        "58.833%",
+        "79.006%"
+      ]
+    },
+    {
+      "stage": 29,
+      "centerPx": [
+        267.61,
+        1767.15
+      ],
+      "position": [
+        "36.963%",
+        "81.360%"
+      ]
+    },
+    {
+      "stage": 30,
+      "centerPx": [
+        174.9,
+        2025.97
+      ],
+      "position": [
+        "24.157%",
+        "93.277%"
+      ]
+    }
+  ],
+  "review": {
+    "style": "Matches original painterly foliage, cream stone, clouds and warm sunlight; original style reference inspected",
+    "count": 30,
+    "topToBottom": true,
+    "coordinates": "Measured purple crystal bodies within visually identified 37x37px windows; runtime coordinates match measured centers",
+    "route": "Connected; removed penultimate left-bend pedestal; destination is bottom lantern court",
+    "mobile": "Playwright 390x844: image loaded at 724x2172, 30 actual map nodes, no horizontal overflow; inspected upper map and scrolled final stage 30 into view. Button centers use measured crystal coordinates. Screenshots in source/world-9/.",
+    "userApproved": false
+  }
+}

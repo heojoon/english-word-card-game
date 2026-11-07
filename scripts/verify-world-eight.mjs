@@ -36,7 +36,7 @@ test('World 8 shares 30 Days and records; ordinary Type C has 40 questions and V
     }
     if(level==='middle'){assert.equal(days.size,30);assert.ok([...days].every(day=>day>=1&&day<=30));}
     else assert.deepEqual([...days],[null]);
-    const positions=c.worlds.at(-1).positions;assert.equal(positions.length,30);
+    const positions=c.worlds.find(world=>world.number===11).positions;assert.equal(positions.length,30);
     positions.forEach((p,i)=>{assert.ok(parseFloat(p[0])>0&&parseFloat(p[0])<100);if(i)assert.ok(parseFloat(p[1])>parseFloat(positions[i-1][1]));});
   }
 });

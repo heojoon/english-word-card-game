@@ -8,7 +8,7 @@
     ranger:{image:'active-ranger-fire-arrow.webp',name:'파이어 애로우',icon:'arrow',description:'MP 1 · 보스에게 1초마다 피해 2, 10초간 총 20 피해를 줘요.',bossOnly:true},
     sniper:{image:'active-sniper-deadeyes.webp',name:'데드아이즈',icon:'sword',description:'MP 1 · 첫 정답부터 10초간 다음 정답의 힌트를 계속 보여줘요.'}
   };
-  const isBoss=s=>Boolean(s.guardian||s.boss||s.keurus||s.vargas||s.hiddenKind==='king');
+  const isBoss=s=>Boolean(s.guardian||s.boss||s.keurus||s.vargas||s.trainingBoss||s.hiddenKind==='king');
   function attach(s,classCode,{burn=()=>{},unlocked=false}={}){
     const definition=definitions[classCode];
     let oathMs=0,shield=false,burst=false,burnMs=0,burnTick=0,deadeyeArmed=false,deadeyeMs=0;

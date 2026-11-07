@@ -23,7 +23,7 @@ test('only World 8+ ordinary Story clears are eligible; branches and bosses reta
   const c=context();assert.equal(c.storyRouletteEligible(),true);
   for(const chapter of [1,5,8,9,10]){c.stages[c.selectedStage].storyChapter=chapter;assert.equal(c.storyRouletteEligible(),false);}
   c.stages[c.selectedStage].storyChapter=12;assert.equal(c.storyRouletteEligible(),true);
-  for(const key of ['hiddenKind','boss','guardian','vargas','blackroot','keurus']){c.run[key]=true;assert.equal(c.storyRouletteEligible(),false);delete c.run[key];}
+  for(const key of ['hiddenKind','boss','guardian','vargas','blackroot','keurus','trainingBoss']){c.run[key]=true;assert.equal(c.storyRouletteEligible(),false);delete c.run[key];}
   c.run.story=false;assert.equal(c.storyRouletteEligible(),false);
 });
 test('real finish routing opens roulette before recovery or saving and real tick freezes the clear clock',async()=>{

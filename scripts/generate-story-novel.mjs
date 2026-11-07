@@ -313,9 +313,9 @@ export function parseWorldSevenNarrative(markdown,{world,location}={}){
   if(!lines.length)throw new Error(`World ${world} narrative is incomplete`);
   return lines;
 }
-export function parseWorldEightNarrative(markdown){
+export function parseWorldEightNarrative(markdown,{world='8',title='은종 마을',sceneName='silver-bell-village',backgroundPath='assets/story/chapter-8-silver-bell-village-map.webp'}={}){
   const lines=[];
-  let branch=null,location='은종 마을',sceneNumber=1;
+  let branch=null,location=title,sceneNumber=1;
   const speakerClasses={...classes,'다크 소서러스':'mage','엘리엇':'elliot','바르가스':'vargas','검은뿌리 거목':'blackroot-elder'};
   const artPaths={'엘리엇':'assets/novel/characters/char_elliot_world6b_standing.webp','바르가스':'assets/novel/characters/char_vargas_world8_standing.webp','검은뿌리 거목':'assets/novel/characters/char_blackroot_elder_world8_standing.webp','다크 소서러스':'assets/novel/characters/char_dark_sorcerus_world5_standing.webp'};
   for(const raw of markdown.replace(/\r\n/g,'\n').split(/\n\s*\n/)){
@@ -329,9 +329,9 @@ export function parseWorldEightNarrative(markdown){
     if(!block||block.startsWith('#')||block==='---'||block.startsWith('[')||block.startsWith('이야기 연결:'))continue;
     const dialogue=block.startsWith('(')?null:block.match(/^([^:\n]+?):\s*([\s\S]+)$/);
     const speaker=dialogue?.[1]||'내레이션';
-    lines.push({speaker,className:speakerClasses[speaker]||'scene',text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:'silver-bell-village',sceneNumber,location,backgroundPath:'assets/story/chapter-8-silver-bell-village-map.webp',...(branch?{branch}:{}),...(artPaths[speaker]?{artPath:artPaths[speaker]}:{})});
+    lines.push({speaker,className:speakerClasses[speaker]||'scene',text:(dialogue?.[2]||block).replace(/\s*\n\s*/g,' '),scene:sceneName,sceneNumber,location,backgroundPath,...(branch?{branch}:{}),...(artPaths[speaker]?{artPath:artPaths[speaker]}:{})});
   }
-  if(!lines.length)throw new Error('World 8 narrative is incomplete');
+  if(!lines.length)throw new Error(`World ${world} narrative is incomplete`);
   if(/^# 월드 8 — 중간보스 만남:/m.test(markdown)){
     Object.assign(lines[0],{sceneArt:artPaths['검은뿌리 거목'],sceneArtName:'검은뿌리 거목',sceneArtClass:'blackroot-elder'});
   }
@@ -381,6 +381,9 @@ export async function generateStoryNovel(){
   }
   for(const [phase,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end']]){
     novels[`world8${phase}`]=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-8-${file}.md`,import.meta.url),'utf8'));
+  }
+  for(const [phase,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end']]){
+    novels[`world9${phase}`]=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-9-${file}.md`,import.meta.url),'utf8'),{world:'9',title:'새벽의 수련원',sceneName:'dawn-training',backgroundPath:'assets/story/chapter-9-dawn-training-map.webp'});
   }
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');

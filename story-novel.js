@@ -17321,6 +17321,2390 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-8-silver-bell-village-map.webp"
     }
   ],
+  "world9Prologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 바닥의 작은 돌을 세워 놓고 자세를 잡는다. 주먹 가까이 모인 빛이 갑자기 커진다. 파이터가 급히 팔을 들어 올리자 머리 위 나뭇잎이 우수수 떨어진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "돌은 그대로네.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "나무를 칠 생각은 없었어.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나무도 알고 싶었을 거야. 왜 갑자기 맞았는지.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 파이터의 장갑에 붙은 잎을 떼어 준다. 손등을 살피자 파이터가 손가락을 접었다 편다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아프진 않아?",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "응. 그런데 힘을 모을 때하고 내보낼 때가 따로 노는 느낌이야. 바르가스하고 싸울 땐 정신이 없어서 몰랐는데.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나도 실드를 켜 놓고 걸어 봤어. 얼마 안 갔는데 머리가 어지럽더라.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "필요하지 않은 순간에도 잔뜩 힘을 넣었으니까.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그래서 지금은 껐잖아.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 길잡이 사본을 접는다. 먼 산 위로 두 봉우리가 나란히 보인다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "가서 물어볼 게 늘었네. 오늘은 저 두 봉우리 아래까지 갈 수 있겠어.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "잠깐 쉬었다 가자. 손에 힘 풀고.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 돌을 원래 있던 자리에 내려놓는다. 이번에는 천천히 손을 편다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "은종 마을 동쪽 · 산기슭의 쉼터",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(밤사이 별자리를 확인한 일행이 좁은 산길을 오른다. 길은 거대한 바위 앞에서 끊긴다. 파이터가 바위 옆을 기웃거린다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "옆으로도 못 가. 여기가 맞아?",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "산 모양은 맞아. 기록에는 ‘첫빛이 닿는 문’이라고 되어 있어.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "열라는 주문은 없어?",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "없어. 깨라는 말도 없고.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 들던 손을 내린다. 아서가 바위 밑의 작은 돌계단을 가리킨다. 흙과 풀이 덮였지만 사람이 오간 흔적이 남아 있다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "문이 있었다면 이 앞이겠지. 밝아질 때까지 기다려 보자.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(해가 능선 위로 올라온다. 바위의 얕은 홈에 빛이 고이며 네 사람이 선 자리에서만 가는 문틈이 드러난다. 틈 안쪽에서 걸쇠 풀리는 소리가 난다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "???",
+      "className": "scene",
+      "text": "조금만 물러서거라. 오래된 문이라 열릴 때 돌가루가 떨어진다.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 뒤로 물러난다. 바위문 안쪽에 은빛 머리를 묶은 여인이 서 있다. 한 손에는 빗자루를 들고 있다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "사람이 있었어!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "???",
+      "className": "scene",
+      "text": "그래서 문을 두드리길 기다리고 있었지.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "…저희는 해가 열어 주는 문인 줄 알았어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "???",
+      "className": "scene",
+      "text": "햇빛은 손잡이를 보여 줄 뿐이다. 들어오렴.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "다음 날 새벽 · 두 봉우리 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갈라진 돌길 사이로 풀이 자라 있다. 마당 한쪽에는 말끔하게 정리된 훈련 도구가 놓여 있다. 여인이 네 잔에 따뜻한 물을 따른다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "나는 이리스. 이곳을 관리하고, 찾아오는 사람을 가르치고 있다.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아서예요. 은종 마을에서 이 기록을 받았어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 사본을 펼치고 마을에서 있었던 일을 설명한다. 이리스는 종루가 공격받았다는 대목에서 잔을 내려놓는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "종지기는 무사한가?",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "네. 주민들도 구했어요. 원본은 마을에 남겨 두었고요.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "잘했다. 이 길을 누군가에게 넘기지 않겠다고 지킨 사람들이 있었구나.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저희는 타락한 천사를 막으려고 해요. 보호막에 틈을 낼 방법은 찾았지만, 그다음 공격을 해낼 수 있을지 모르겠어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "천사의 힘을 내가 대신 꺾어 줄 수는 없다. 하지만 네 검이 어디에서 멈추는지는 함께 볼 수 있지.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저희도 여기서 공명 각성을 배울 수 있어요?",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "먼저 지금 쓰는 힘부터 보여 다오.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 파이터에게 작은 모래주머니를 건넨다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "터뜨리지 말고 저 선까지 밀어 보거라.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터의 주먹이 닿자 주머니가 선을 훌쩍 넘어간다. 실밥 사이로 모래가 샌다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "…새 걸로 물어드릴게요.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "꿰매는 법부터 알려 주마.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 웃음을 참는다. 이리스가 이번에는 아서의 검 쥔 손을 살핀다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "검을 놓아도 된다. 여기서는 계속 버티고 있지 않아도 돼.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 그제야 굳어 있던 손가락을 편다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "새벽의 수련원 · 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아침 식사를 마친 일행이 이리스를 따라 돌기둥 사이로 간다. 기둥에 매달린 훈련용 천들이 한쪽으로 세차게 당겨진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "원래 이 시간에는 바깥으로 불어야 하는데….",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "반대쪽에서 들어오고 있어요?",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(멀리서 금속이 부딪치는 소리와 짐승의 울음이 들린다. 이리스가 걸음을 재촉한다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "며칠 전 산사태가 있었다. 배풍문을 다시 확인해야겠구나.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저 소리는 훈련 장치예요?",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "아니. 저쪽은 그리핀의 둥지가 있는 곳이다.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(돌가루가 흩날린다. 무너진 기둥 너머로 거대한 날개가 펼쳐진다. 바람이 회랑의 천을 뜯어 간다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다들 낮춰!",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 몸을 숙인다. 이리스가 벽의 안전 걸쇠를 내린다. 회랑 뒤쪽의 훈련 날개들이 움직임을 멈추지만 바람은 계속 분다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "장치는 멈췄다. 그래도 역류가 멎지 않아. 배풍문까지 가야 한다.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검을 뽑는다. 그리핀의 발밑으로 작은 깃털 하나가 굴러 나온다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련원 뒤편 · 바람 회랑 입구",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    }
+  ],
+  "world9MidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(거대한 그리핀이 앞발로 돌바닥을 긁는다. 황갈색 깃털 사이로 푸른 날개 끝이 드러난다. 왼쪽 날개에는 긴 상처가 나 있다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저 날개, 다쳤어.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "뒤에 뭔가 있어. 낮은 돌턱 안쪽.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그리핀이 날개를 더욱 넓게 펼친다. 그 뒤에서 작은 부리 두 개가 잠깐 보였다가 사라진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "새끼들이야.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "해마다 높은 바위에 둥지를 틀던 녀석이다. 아래까지 내려온 건 처음이구나.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(배풍문 위쪽에서 돌이 떨어진다. 좁아진 틈으로 바람이 쏟아져 둥지의 마른 풀을 날려 버린다. 그리핀이 몸을 낮춰 새끼들을 가린다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "우리 때문에만 화난 게 아니에요. 저 바람을 막고 있어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "바람 회랑 끝 · 배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 활을 내리고 빈 손을 보인다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "가까이 안 갈게. 다친 곳만….",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그리핀이 짧게 울며 달려든다. 아서가 검의 옆면으로 발톱을 흘려받는다. 돌바닥에 긴 자국이 남는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "물러서! 말로는 안 되겠어!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 아서의 팔을 잡아당긴다. 그리핀의 부리가 둘 사이의 바닥을 찍는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그런데 저 뒤로 가야 문을 열 수 있잖아!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "오른쪽 벽에 수동 고리가 있다. 문에 낀 돌을 빼고 둘이 함께 당겨야 한다.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "저 상태로 옆을 지나가면 둥지를 건드리는 줄 알 거예요.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "내가 마법으로 들어 올리면….",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "날개를 봐. 공중에서 버둥거리면 상처부터 벌어진다.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 지팡이를 내린다. 그리핀은 네 사람과 둥지 사이에서 한 발짝도 물러서지 않는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "배풍문 아래 · 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 앞에서 시선을 잡을게. 문 쪽으로 가는 동안만 버티면 돼.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "혼자 계속 막으면 안 돼. 힘 풀리기 전에 말해 줘.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "알았어. 파이터, 내 옆을 맡아 줘.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "응. 이번엔 모으기만 하지 않을게. 어느 쪽으로 치면 되는지 봐 가면서 할게.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "날개에는 공격하지 말자. 바람이 틀어지는 순간에 옆으로 빠질 길을 만들게.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "나는 둥지 위로 돌이 떨어지지 않게 받치겠다. 너희가 길을 열면 고리를 당기마. 무리해서 돌파하지 마라.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그리핀이 몸을 돌려 바람을 일으킨다. 새끼들이 돌턱 밑으로 더 깊이 숨는다. 아서가 한 걸음 나서자 파이터도 나란히 선다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저 녀석도 지킬 게 있어. 끝낼 때를 놓치지 말자.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 사람 없는 벽의 낡은 천 고리를 겨눈다. 소서러스는 그리핀의 발보다 회랑으로 흘러드는 바람을 먼저 살핀다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "연출 메모",
+      "className": "scene",
+      "text": "전투의 목표는 그리핀의 전투 불능이나 처치가 아니라 돌진을 저지하며 배풍문에 접근하는 것이다. 구체적인 승리 조건과 수치는 게임 연결 단계에서 별도로 정한다.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "돌기둥 사이 · 바람길",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    }
+  ],
+  "world9MidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그리핀이 다시 앞발을 든다. 아서의 검이 발톱을 받아 내지만, 발이 뒤로 미끄러진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "파이터! 이제 바꿔 줘!",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 아서의 어깨 옆으로 들어온다. 힘이 모인 주먹을 그리핀의 앞발 옆, 돌바닥을 향해 내지른다. 충격에 돌가루가 솟고 그리핀이 짧게 물러선다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "지금이야!",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛의 화살이 낡은 고리를 끊는다. 늘어진 훈련용 천이 그리핀의 옆으로 떨어진다. 천을 피해 고개를 돌린 틈에 소서러스와 이리스가 오른쪽 벽으로 달린다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "문에 돌이 꽉 끼었어요!",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "틈 아래 작은 것부터 빼라. 위쪽은 내가 받치겠다!",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 지팡이 끝으로 작은 돌들을 밀어낸다. 이리스가 문을 조금 들어 올리자 마지막 돌이 빠진다. 둘이 함께 수동 고리를 당긴다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(무거운 문이 열린다. 회랑을 누르던 바람이 옆 배풍로로 빠져나간다. 귀를 때리던 소리가 잦아든다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "배풍문 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그리핀이 천을 떨치고 돌아선다. 파이터가 다시 주먹을 들지만, 그리핀은 달려오지 않는다. 고개를 둥지 쪽으로 돌리고 냄새를 맡는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "파이터, 잠깐.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 발을 멈춘다. 주먹에 남은 빛이 흔들린다. 손을 편 채 길게 숨을 내쉬자 빛이 조금씩 흩어진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "…안 쳐도 되겠다.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(작은 그리핀 두 마리가 돌턱 밖으로 기어 나온다. 어미가 날개를 낮춰 새끼들 앞을 가린다. 이번에는 위협하는 울음이 없다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "다들 뒤로 가자. 우리가 길을 비켜 주면 되겠어.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 천천히 물러난다. 이리스가 둥지에서 떨어진 마른 풀을 바위 옆에 모아 둔다. 그리핀은 한동안 일행을 바라보다가 새끼들을 높은 경사로로 이끈다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "날 수 있을까요?",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "저 길은 걸어서 위쪽 둥지까지 이어진다. 먹이를 두고 멀리서 지켜보마. 가까이 붙잡아 두는 게 더 위험할 수도 있어.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "바람이 잦아든 돌턱 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 터진 모래주머니를 꿰맨다. 몇 번이나 실을 잘못 넣어 뺐다. 옆에서는 아서가 검을 들었다 내리는 동작을 반복한다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "아까 그냥 한 번 더 쳤으면 큰일 날 뻔했어.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "멈췄잖아.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "네가 말해 줘서. 난 아직 다음 주먹 생각만 하고 있었어.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "다음에는 네가 먼저 알아차릴 수도 있겠지. 오늘 멈춘 감각을 기억해 둬라.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 아서 앞의 작은 모래시계를 뒤집는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "너는 힘이 끝나기 전에 말해 보거라. 마지막까지 참았다가 무너지는 연습은 이미 충분히 했겠지.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서는 잠시 검을 유지하다가 파이터를 본다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이제 바꿔 줘.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 주머니를 내려놓고 옆에 선다. 아서가 물러나고 파이터가 같은 자리를 맡는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "그거다. 둘이 번갈아 서면 한 명이 쓰러질 때까지 버틸 필요가 없다.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련원 안뜰 · 그날 오후",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 훈련 표적을 향해 불붙은 화살을 쏜다. 표적에 불이 남아 있는 동안 파이터가 뛰어들려다 멈춘다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "여기로 들어가기로 했잖아!",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "미안. 내가 서 있는 자리에서만 봤어. 다음에는 오른쪽을 비워 둘게.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다음 화살은 표적 왼쪽에 박힌다. 파이터가 오른쪽으로 접근한다. 바이올렛이 그의 발을 확인한 뒤 활을 내린다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(다른 날, 소서러스의 실드가 훈련봉을 받아 낸다. 이어 공격 마법까지 준비하던 손끝이 떨린다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "남은 마력은?",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "부족해. 그런데 지금 끄면….",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 앞에 있어. 꺼도 돼.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 실드를 거둔다. 아서가 훈련봉의 진로를 막는 동안 소서러스는 뒤로 물러나 호흡을 고른다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "혼자 있을 때는 끄는 순간이 제일 무서웠어.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "지금은 그 앞에 누가 있는지 봐.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 고개를 든다. 아서 옆으로 파이터가 교대해 들어간다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(수련 뒤 이리스가 소서러스의 손목에 남은 저주 흔적을 살핀다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7a"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "이건 내 수련으로 없앨 수 있는 상처가 아니다. 오늘은 여기까지 하자. 진료받던 곳에도 상태를 계속 전하거라.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7a"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "주교님께 편지 쓸게요. 예전보다 나아졌다고 무리하지는 않을게요.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7a"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(해가 질 무렵, 네 사람이 회랑의 천을 함께 정리한다. 천이 고르게 바깥으로 펄럭인다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "내일 새벽에 중앙 수련장으로 오너라. 마지막 시험을 하겠다.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "또 뭔가 나타나요?",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "이번에는 내가 기다리고 있겠다.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "며칠 동안의 수련 · 회랑과 안뜰",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    }
+  ],
+  "world9BossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(둥근 수련장 중앙에 낮은 등이 놓여 있다. 주위를 두른 네 개의 결정판에서 가는 홈이 등까지 이어진다. 이리스가 긴 결정봉을 든 채 반대편에 선다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저기에 불을 붙이면 돼요? 바이올렛이 한 발 쏘면….",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아무 데나 불붙이는 담당은 아니거든.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "화살의 불로는 켜지지 않는다. 이건 네 사람이 보낸 힘을 차례로 받아 기억하는 새벽등이다.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 결정판 하나를 봉으로 건드린다. 빛이 홈을 따라 흐르다가 다음 판 앞에서 멈춘다. 곧 흐려진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "첫 빛이 머무는 동안 다음 사람이 이어야 한다. 넷이 모두 이으면 가운데 등이 켜진다.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "동시에 세게 공격하면 안 되나요?",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "먼저 온 힘이 다음 길을 막는다. 순서를 보고, 받아 주는 판이 열릴 때 보내야 한다.",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 봉 끝을 돌바닥에 짚는다. 낮은 돌기둥과 훈련용 결정 날개가 올라온다. 결정판으로 곧장 가던 길이 좁아진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "나는 너희가 원하는 자리에 그대로 서 있도록 두지 않을 것이다. 다가오는 것도 막고, 힘이 모이면 흩어 놓겠다.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "넷이 사범님 한 분을 상대해도 돼요?",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "내 뒤에 있는 장치들도 세어 주렴.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(머리 위의 결정 날개가 회전한다. 파이터가 고개를 젖혀 세어 보다가 그만둔다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "실제로 부딪치는 시험이다. 아프거나 더는 버티기 어렵다면 즉시 말해라. 이 고리를 당기면 장치도 멈춘다.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 붉은 끈을 가리킨다. 끈은 수련장 벽을 따라 네 곳에 내려와 있다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "멈춰 달라고 해도 되는 거죠?",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "물론이다. 다친 걸 숨기는지 보려고 하는 시험이 아니다. 몸을 추스르고 다시 도전하면 된다.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 동료들을 돌아본다. 세 사람이 차례로 고개를 끄덕인다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "준비됐어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "네 개의 결정판 사이",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 앞장서고 바이올렛이 첫 결정판을 겨눈다. 화살이 닿자 빛이 생긴다. 파이터가 다음 판으로 달려가지만 이리스의 봉이 길을 막는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "잠깐만 비키면…!",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 봉을 밀어낸다. 그 순간 회전하던 결정 날개가 두 번째 판을 가린다. 주먹이 날개를 때리는 동안 첫 빛이 꺼진다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "끊겼어!",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "내가 먼저 열게!",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 지팡이를 든다. 이리스가 봉으로 발치의 고리를 누르자 돌기둥이 올라와 시야를 가린다. 아서가 돌아서 동료를 지키는 사이 이리스는 중앙으로 자리를 옮긴다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "지금 누구의 차례였지?",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 대답하려다가 입을 다문다. 네 사람 모두 다른 결정판을 보고 있다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "뒤로 모이자. 다시 맞춰야겠어.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "수련장 중앙",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 올라온 돌기둥 뒤에 모인다. 이리스의 봉이 바닥을 두드린다. 결정 날개가 천천히 다른 길을 연다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "난 판만 보고 뛰었어. 먼저 갈 길을 열었어야 했는데.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "나도 네가 갈 수 있는지 확인 안 하고 쐈어. 첫 빛을 너무 일찍 보냈어.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "사범님이 판을 가리는 걸 보고, 내 쪽 길만 뚫으려고 했어.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 사범님을 바깥으로 끌게. 바이올렛이 돌아갈 길을 보고, 소서러스가 다음 판이 열리는 걸 알려 줘.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "마지막은 내가 맡을게. 이번엔 기다릴 수 있어.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "기다리기만 하다가 놓치지는 말고. 발 디딜 자리도 봐 둬.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 바닥을 내려다보고 파이터의 팔을 두드린다. 두 사람이 마지막 판으로 향하는 낮은 홈을 확인한다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "힘이 풀리면 바로 말할게. 그때는 자리 바꾸자.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서는 검을 세우고, 바이올렛은 화살을 얹는다. 이리스가 봉을 들어 올린다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "그래. 어디 한번 이어 보거라.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 가장자리",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    }
+  ],
+  "world9BossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스의 봉이 아서의 검을 연달아 두드린다. 아서가 밀려나면서도 중앙으로 돌아가는 길을 막는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "더 버틸 수 있겠느냐?",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "조금은요. 하지만 계속은 아니에요!",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검을 쥔 손에 빛이 감긴다. 불굴의 맹세가 다음 일격을 받아 낸다. 아서는 그 힘에 기대어 앞으로만 밀지 않고, 이리스의 발을 보며 옆으로 움직인다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "바이올렛, 왼쪽이 열렸어!",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 낮게 달려 돌기둥 옆으로 나온다. 화살이 첫 결정판을 맞힌다. 푸른빛이 다음 판을 향해 흐른다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "하나! 소서러스, 네 앞에 있어!",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 두 번째 판에 지팡이 끝을 댄다. 빛이 돌아 나오려는 순간, 머리 위의 결정 날개가 내려온다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 1,
+      "location": "새벽의 수련원 · 중앙 수련장",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스의 마나 실드가 결정 날개의 일격을 막는다. 실드에 가는 금이 생긴다. 소서러스가 남은 마력을 가늠하며 숨을 들이쉰다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "한 번 더 막으면 다음 판에 보낼 힘이 없어!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "내가 받칠게. 실드 꺼!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 결정 날개 아래의 지지대를 붙잡아 밀어낸다. 소서러스가 실드를 거두고, 지팡이 끝에서 두 번째 빛을 보낸다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "둘! 아서, 지금!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서는 이리스의 봉을 흘려내며 세 번째 판으로 물러난다. 검에 감겼던 빛이 약해지고 있다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내 방어가 곧 끝나! 바이올렛, 돌아올 길 부탁해!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 돌아 움직이며 이리스를 겨눈다. 이리스가 봉으로 화살을 쳐내는 동안 아서의 검끝이 판에 닿는다. 세 번째 빛이 마지막 판을 향한다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이터, 오른쪽은 비워 뒀어!",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 지지대를 놓고 뛰어든다. 하지만 이리스가 회전축을 밟는다. 마지막 판 앞에 결정 날개가 가로눕는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 2,
+      "location": "두 번째 결정판 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 주먹을 당긴다. 아직 판이 보이지 않는다. 팔에 힘이 모이지만 발은 앞으로 내딛지 않는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "지금 치면 가로막은 날개에 맞을 텐데?",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "알아요!",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 회전축을 향해 짧은 마법을 보낸다. 이리스가 봉을 돌려 마법을 걷어 낸다. 그 순간 아서가 봉의 옆을 검으로 받아 진로를 틀고, 바이올렛의 화살이 드러난 축의 해제 고리를 누른다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(결정 날개가 반 바퀴 돌아간다. 판이 드러난다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "지금, 파이터!",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 내딛는다. 한곳에 모인 빛이 주먹을 따라 뻗는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "폭렬권!",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주먹이 결정판의 가운데에 닿는다. 판이 충격을 받아 뒤로 밀렸다가 제자리로 돌아온다. 네 번째 빛이 홈을 따라 달려 중앙의 등으로 들어간다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(새벽등이 켜진다. 네 갈래의 빛이 등 안에서 천천히 돌아간다. 이리스가 봉을 내려 장치를 멈춘다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "통과다.",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 멈춘 주먹을 바라본다. 손가락을 편다. 이번에는 남은 힘이 크게 튀지 않는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 3,
+      "location": "마지막 결정판 · 새벽등 앞",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 계단에 주저앉는다. 아서는 검을 집어넣다 손을 멈추고, 다른 손으로 검집을 붙잡는다. 소서러스는 물을 조금씩 마신다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "통과하면 덜 힘들 줄 알았는데.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아까보다 더 오래 뛰었잖아.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "마지막에 안 기다렸으면 또 놓쳤겠지?",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 나도 처음부터 실드를 계속 켜 뒀으면 못 이었을 거야.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "나는 끝나기 전에 말할 수 있었어. 그 뒤에 누가 오는지도 보였고.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 새벽등 안의 빛을 끈다. 결정판이 바닥 아래로 천천히 내려간다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저게 공명 각성인가요? 넷이 힘을 합치는….",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "너희 힘은 각자의 손에 남아 있다. 오늘도 검과 화살과 마법과 주먹이 서로 다른 일을 했지.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "누가 비켜 줘야 다음 사람이 들어갈 수 있는지는 더 잘 알겠어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "그래. 네가 버틸 수 있는 만큼을 알고, 그다음은 동료에게 내어 주는 것. 그걸 전투 속에서도 할 수 있도록 익히는 수련이다.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그러면 늘 이렇게 넷이 있어야 쓸 수 있어요?",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "혼자일 때에도 네 힘이 어디서 끝나는지는 알아야지. 함께라면 그 너머를 맡길 사람이 있고.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "오늘은 내 말을 기다리지 않고 실드를 껐더군.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "파이터가 온 걸 봤으니까.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 고개를 끄덕이다가 기운 없이 손을 든다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그런데 지금은 아무도 나한테 맡기지 마. 다리가 안 움직여.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "식당까지는 움직여야 해.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "…거기까지는 해 볼게.",
+      "scene": "dawn-training",
+      "sceneNumber": 4,
+      "location": "수련장 계단",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 길잡이 도해의 빈 곳에 수련 순서와 호흡 표시를 적는다. 아서는 수련 중 따로 보관했던 성흔의 파편을 다시 단단히 감싼다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "이 파편이 틈을 내더라도, 틈이 얼마나 갈지는 상대의 힘에 따라 다를 것이다. 등이 켜질 때처럼 너희를 기다려 주지는 않겠지.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네. 오늘처럼 한 번 실패하고 바로 다시 할 수 있다는 생각은 안 할게요.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "급할수록 신호를 짧게 정해 두거라. 큰 소리로 설명할 시간은 없을 테니.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 신의 호수에서 옮긴 문양을 펼친다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "혹시 이 문양을 아세요? 천사가 예전에 자기 스승을 부르면서 쥐고 있던 거예요.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 문양을 창가의 빛에 비추어 본다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "미안하지만 내가 배운 계보의 표식은 아니다. 이곳 기록에서도 본 적이 없어.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "수련원까지 오면 알 수 있을까 했는데….",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "아는 사람을 만나면 네 허락을 받고 사본을 보여 주마. 모르는 걸 안다고 할 수는 없구나.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 부탁드릴게요. 그 천사가 사람들을 지키던 때가 있었거든요. 왜 달라졌는지 알고 싶어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "branch": "7b"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(밖에서 문 두드리는 소리가 들린다. 여행용 망토를 입은 전령이 입구에 서 있다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "전령",
+      "className": "scene",
+      "text": "은종 마을에서 오셨다는 네 분이 여기 계십니까? 종지기께 길을 물어 왔습니다. 주교님이 맡기신 편지입니다.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 봉인을 확인하고 편지를 편다. 바이올렛이 옆에서 지도를 펼친다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "동쪽 옛 관측로에서 검은 날개가 지나가는 걸 봤대. 서로 다른 두 보고가 같은 길을 가리킨다고 하셔.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "위치는?",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "무너진 관측교 근처. 경비대는 아래쪽 역참에서 기다리고 있어. 저 너머가 천사의 거점인지는 아직 모른대.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "흔적이 남아 있을 때 가 봐야겠네.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "지도 가져오거라. 수련원에서 그 길로 내려가는 옛 계단이 있다.",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(이리스가 지도에 길을 그린다. 네 사람은 식어 가는 등불 아래서 거리와 쉴 곳을 하나씩 확인한다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 5,
+      "location": "그날 저녁 · 수련원 기록실",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 꿰맨 모래주머니를 훈련대에 놓는다. 실밥은 비뚤지만 모래는 새지 않는다. 이리스가 손바닥으로 가볍게 눌러 본다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "잘 고쳤구나.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "다음 사람이 쓸 때 안 터졌으면 좋겠어요.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그건 다음 사람이 얼마나 세게 치느냐에 달렸지.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(회랑 위 먼 바위에 그리핀이 서 있다. 날개는 아직 접혀 있지만, 곁에서 작은 두 마리가 서로를 쫓는다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "올라갔네.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "아침에 먹이를 가져갔더니 저기까지 나와 있더구나. 당분간 더 지켜보겠다.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 허리를 숙인다. 나머지 세 사람도 인사한다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "가르쳐 주셔서 감사합니다.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "다음에 오면 배운 걸 어디에 썼는지 들려주렴.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그때는 시험 없이요?",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "이리스",
+      "className": "scene",
+      "text": "이야기를 들어 보고 정하마.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 웃으며 산길을 내려간다. 좁은 계단 앞에서 아서가 멈춰 뒤를 확인한다. 소서러스가 가방끈을 고쳐 메고, 바이올렛이 파이터에게 지도의 한쪽을 맡긴다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다 준비됐어?",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 이번엔 내 발도 보고, 너희 발도 볼게.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 앞에서 내가 넘어지면 잡아 줘.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "일단 지도를 보고 걸어.",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 같은 속도로 계단을 내려간다. 바위문 너머에서 이리스가 새로 올 손님을 위해 마당을 쓴다. 멀리 산 아래, 옛 관측로를 향한 갈림길이 보인다.)",
+      "scene": "dawn-training",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 수련원 바위문",
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+    }
+  ],
   "world4Potion4": [
     {
       "speaker": "내레이션",
