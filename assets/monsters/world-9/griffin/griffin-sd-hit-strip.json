@@ -1,0 +1,62 @@
+{
+  "image": "griffin-sd-hit-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceBounds": [
+    [
+      43,
+      755,
+      342,
+      1034
+    ],
+    [
+      405,
+      750,
+      685,
+      1035
+    ],
+    [
+      735,
+      871,
+      1063,
+      1032
+    ]
+  ],
+  "source": "source/generated-sheet.png",
+  "sourceScale": 0.9545454545454546,
+  "frameNames": [
+    "guard-notice",
+    "impact-recoil",
+    "complete-knockdown"
+  ],
+  "durationsMs": [
+    100,
+    120,
+    500
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "name": "impact-recoil",
+      "durationMs": 120
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 500,
+      "hold": true
+    }
+  ]
+}

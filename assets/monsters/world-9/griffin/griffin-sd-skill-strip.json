@@ -1,0 +1,62 @@
+{
+  "image": "griffin-sd-skill-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceBounds": [
+    [
+      36,
+      1168,
+      349,
+      1402
+    ],
+    [
+      394,
+      1100,
+      686,
+      1408
+    ],
+    [
+      717,
+      1125,
+      1079,
+      1403
+    ]
+  ],
+  "source": "source/generated-sheet.png",
+  "sourceScale": 0.9545454545454546,
+  "frameNames": [
+    "prepare",
+    "aim",
+    "contact"
+  ],
+  "durationsMs": [
+    600,
+    600,
+    300
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "prepare",
+      "durationMs": 600
+    },
+    {
+      "name": "aim",
+      "durationMs": 600
+    },
+    {
+      "name": "contact",
+      "durationMs": 300,
+      "hit": true
+    }
+  ]
+}

@@ -383,7 +383,12 @@ export async function generateStoryNovel(){
     novels[`world8${phase}`]=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-8-${file}.md`,import.meta.url),'utf8'));
   }
   for(const [phase,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end']]){
-    novels[`world9${phase}`]=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-9-${file}.md`,import.meta.url),'utf8'),{world:'9',title:'새벽의 수련원',sceneName:'dawn-training',backgroundPath:'assets/story/chapter-9-dawn-training-map.webp'});
+    const lines=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-9-${file}.md`,import.meta.url),'utf8'),{world:'9',title:'새벽의 수련원',sceneName:'dawn-training',backgroundPath:'assets/story/chapter-9-dawn-training-map.webp'});
+    const irisArt='assets/novel/characters/char_iris_world9_standing.webp',griffinArt='assets/novel/characters/char_griffin_world9_standing.webp';
+    for(const line of lines)if(line.speaker==='이리스'){line.artPath=irisArt;line.className='iris';}
+    if(phase==='MidbossStart')Object.assign(lines[0],{sceneArt:griffinArt,sceneArtName:'돌개바람 그리핀',sceneArtClass:'griffin'});
+    if(phase==='BossStart')Object.assign(lines[0],{sceneArt:irisArt,sceneArtName:'새벽의 사범 이리스',sceneArtClass:'iris'});
+    novels[`world9${phase}`]=lines;
   }
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');

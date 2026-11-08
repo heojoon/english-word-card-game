@@ -1,0 +1,62 @@
+{
+  "image": "griffin-sd-attack-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceBounds": [
+    [
+      27,
+      441,
+      341,
+      684
+    ],
+    [
+      385,
+      495,
+      708,
+      684
+    ],
+    [
+      718,
+      428,
+      1077,
+      642
+    ]
+  ],
+  "source": "source/generated-sheet.png",
+  "sourceScale": 0.9545454545454546,
+  "frameNames": [
+    "ready",
+    "anticipation",
+    "contact"
+  ],
+  "durationsMs": [
+    200,
+    350,
+    430
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 200
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 350
+    },
+    {
+      "name": "contact",
+      "durationMs": 430,
+      "hit": true
+    }
+  ]
+}

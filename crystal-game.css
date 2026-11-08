@@ -1343,3 +1343,14 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 @keyframes roulette-confetti{to{transform:translate(18px,520px) rotate(390deg)}}
 @media(max-width:350px){.roulette-screen{padding:12px}.roulette-title{margin:16px 0 12px}.roulette-sector-label b{font-size:min(var(--sector-label-size,26px),21px)}.roulette-time strong{font-size:21px}.roulette-fever-tag{font-size:9px}.roulette-result h2{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.roulette-result,.roulette-result-gem,.roulette-confetti i{animation:none}.roulette-confetti i{top:calc(16px + var(--i)*22px);transform:rotate(calc(var(--i)*29deg))}.roulette-button{transition:none}}
+
+/* World 9: state-selected sprite cells preserve contact timing across renders. */
+.guardian-enemy.world-nine-boss{right:0;bottom:12px;width:55%;max-width:250px;aspect-ratio:384/320}
+.guardian-enemy.world-nine-boss[data-kind="iris"]{aspect-ratio:448/384}
+.world-nine-boss-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;filter:drop-shadow(0 6px 3px #30295b26)}
+.world-nine-boss-notice{position:absolute;bottom:7px;left:5%;right:5%;z-index:8;text-align:center;font-size:11px;font-weight:800;color:#38345d;pointer-events:none}
+.world-nine-boss-notice:not(:empty){padding:5px 8px;background:#f7f7fff0;border:1px solid #bcb4f0;border-radius:12px}
+.dawn-training-lights{position:absolute;top:42px;right:12px;z-index:5;font-size:10px;color:#5751d8;text-align:right;pointer-events:none}
+.dawn-training-lights span{display:block}.dawn-training-lights i{font-style:normal;color:#c8c3dd;margin-left:4px}.dawn-training-lights i.lit{color:#5751d8;text-shadow:0 0 7px #60d9cf}
+.world-nine-boss.training-skill .world-nine-boss-sprite{filter:drop-shadow(0 0 6px #60d9cf99)}
+@media(prefers-reduced-motion:reduce){.world-nine-boss-sprite{filter:none}.world-nine-boss.training-skill .world-nine-boss-sprite{filter:none}}

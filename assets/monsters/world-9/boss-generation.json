@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-08",
+  "identityReferences": {
+    "iris": "assets/novel/characters/source/world-9/iris-generated.png",
+    "griffin": "assets/novel/characters/source/world-9/griffin-generated.png"
+  },
+  "standingPrompts": {
+    "iris": "Create production full-body standing character illustration for Wordoria Crystal Quest, a polished bright 2D casual fantasy RPG for children. Single character only: Iris, female adult training master of the Dawn Training Retreat, calm kind confident expression, silver hair tied in a short ponytail, white and pale lavender practical modest training tunic with violet sash, mint crystal accents, soft silver details, dark violet leggings and boots. Holds a long training staff tipped with a small polished lavender crystal, not a wizard wand; martial instructor posture. Full body, three-quarter facing LEFT, both feet visible, staff entirely visible, no wings, no crown, no weapons other than staff. Clean refined anime fantasy game illustration, soft silver highlights and lavender shadows, crisp readable silhouette, professional collectible quality. Genuine transparent RGBA background, no text, no labels, no scenery, no shadow plane. This is the canonical standing identity, not a sprite sheet. Save generated output as a local PNG and report local path.",
+    "griffin": "Production full body standing identity illustration of a single majestic friendly fantasy griffin, Wordoria Crystal Quest polished bright anime 2D game art. Golden tawny eagle head, large readable amber eyes, ivory beak, golden-brown lion body with four paws, two large folded wings whose feather tips are bright crystal blue/cyan, left wing slightly drooping with a small bandage (no wound or blood). Protective alert posture, facing LEFT, complete head, wings, feet and tail with generous safe margins. No rider, no armor, no nest or babies in image. Youthful adventure tone not horror, softly shaded lavender shadows, luminous silver edge highlights, clean silhouette. True transparent RGBA background with absolutely no black backdrop or colored halo, no ground shadow or scenery. Vertical or square canvas, entire creature within frame. Canonical standing portrait, not a sprite sheet."
+  },
+  "spritePrompts": [
+    "irisSheetPrompt.txt",
+    "irisAttackPrompt.txt",
+    "irisHitPrompt.txt",
+    "irisSkillPrompt.txt",
+    "griffinSheetPrompt.txt"
+  ],
+  "review": {
+    "status": "Technical offline frame review passed; user visual approval not claimed.",
+    "browser": "Not run: user did not request browser checks.",
+    "originals": "Preserved unchanged. Initial Iris sheet only supplies idle. Its attack/hit/skill extraction had neighbor fragments and was replaced by regenerated three-frame groups.",
+    "sourceSpacing": "Generation requested exact 50px source gaps; raw generators returned variable spacing. Independent extracted source frames and approved packed review masters have exact 50px gaps. Raw outputs remain archived.",
+    "alpha": "RGBA alpha preserved without color-keying; light and #5751D8 composites inspected.",
+    "runtime": "Contiguous horizontal strips; Iris 448x384 to preserve long staff and down pose, Griffin 384x320. Adjacent JSONs hold scale, source bounds, timing and events."
+  }
+}

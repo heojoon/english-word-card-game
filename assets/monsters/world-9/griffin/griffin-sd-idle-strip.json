@@ -1,0 +1,61 @@
+{
+  "image": "griffin-sd-idle-strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceBounds": [
+    [
+      52,
+      54,
+      336,
+      340
+    ],
+    [
+      416,
+      51,
+      699,
+      340
+    ],
+    [
+      748,
+      70,
+      1062,
+      340
+    ]
+  ],
+  "source": "source/generated-sheet.png",
+  "sourceScale": 0.9545454545454546,
+  "frameNames": [
+    "ready",
+    "breathe",
+    "alert"
+  ],
+  "durationsMs": [
+    650,
+    650,
+    650
+  ],
+  "loop": true,
+  "holdLastFrame": false,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 650
+    },
+    {
+      "name": "breathe",
+      "durationMs": 650
+    },
+    {
+      "name": "alert",
+      "durationMs": 650
+    }
+  ]
+}

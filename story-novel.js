@@ -17586,12 +17586,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "나는 이리스. 이곳을 관리하고, 찾아오는 사람을 가르치고 있다.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "아서",
@@ -17613,12 +17614,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "종지기는 무사한가?",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "바이올렛",
@@ -17631,12 +17633,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "잘했다. 이 길을 누군가에게 넘기지 않겠다고 지킨 사람들이 있었구나.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "아서",
@@ -17649,12 +17652,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "천사의 힘을 내가 대신 꺾어 줄 수는 없다. 하지만 네 검이 어디에서 멈추는지는 함께 볼 수 있지.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -17667,12 +17671,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "먼저 지금 쓰는 힘부터 보여 다오.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -17685,12 +17690,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "터뜨리지 말고 저 선까지 밀어 보거라.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -17712,12 +17718,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "꿰매는 법부터 알려 주마.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -17730,12 +17737,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "검을 놓아도 된다. 여기서는 계속 버티고 있지 않아도 돼.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "새벽의 수련원 · 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -17757,12 +17765,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "원래 이 시간에는 바깥으로 불어야 하는데….",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련원 뒤편 · 바람 회랑 입구",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "바이올렛",
@@ -17784,12 +17793,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "며칠 전 산사태가 있었다. 배풍문을 다시 확인해야겠구나.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련원 뒤편 · 바람 회랑 입구",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -17802,12 +17812,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "아니. 저쪽은 그리핀의 둥지가 있는 곳이다.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련원 뒤편 · 바람 회랑 입구",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -17838,12 +17849,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "장치는 멈췄다. 그래도 역류가 멎지 않아. 배풍문까지 가야 한다.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련원 뒤편 · 바람 회랑 입구",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -17863,7 +17875,10 @@ window.WORDORIA_NOVELS = {
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "바람 회랑 끝 · 배풍문 앞",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "sceneArt": "assets/novel/characters/char_griffin_world9_standing.webp",
+      "sceneArtName": "돌개바람 그리핀",
+      "sceneArtClass": "griffin"
     },
     {
       "speaker": "파이터",
@@ -17903,12 +17918,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "해마다 높은 바위에 둥지를 틀던 녀석이다. 아래까지 내려온 건 처음이구나.",
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "바람 회랑 끝 · 배풍문 앞",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -17984,12 +18000,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "오른쪽 벽에 수동 고리가 있다. 문에 낀 돌을 빼고 둘이 함께 당겨야 한다.",
       "scene": "dawn-training",
       "sceneNumber": 2,
       "location": "배풍문 아래 · 돌턱 앞",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "바이올렛",
@@ -18075,12 +18092,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "나는 둥지 위로 돌이 떨어지지 않게 받치겠다. 너희가 길을 열면 고리를 당기마. 무리해서 돌파하지 마라.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "돌기둥 사이 · 바람길",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18176,12 +18194,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "틈 아래 작은 것부터 빼라. 위쪽은 내가 받치겠다!",
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "배풍문 앞",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18275,12 +18294,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "저 길은 걸어서 위쪽 둥지까지 이어진다. 먹이를 두고 멀리서 지켜보마. 가까이 붙잡아 두는 게 더 위험할 수도 있어.",
       "scene": "dawn-training",
       "sceneNumber": 2,
       "location": "바람이 잦아든 돌턱 앞",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18320,12 +18340,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "다음에는 네가 먼저 알아차릴 수도 있겠지. 오늘 멈춘 감각을 기억해 둬라.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "수련원 안뜰 · 그날 오후",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18338,12 +18359,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "너는 힘이 끝나기 전에 말해 보거라. 마지막까지 참았다가 무너지는 연습은 이미 충분히 했겠지.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "수련원 안뜰 · 그날 오후",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18374,12 +18396,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "그거다. 둘이 번갈아 서면 한 명이 쓰러질 때까지 버틸 필요가 없다.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "수련원 안뜰 · 그날 오후",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18503,13 +18526,14 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "이건 내 수련으로 없앨 수 있는 상처가 아니다. 오늘은 여기까지 하자. 진료받던 곳에도 상태를 계속 전하거라.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "며칠 동안의 수련 · 회랑과 안뜰",
       "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
-      "branch": "7a"
+      "branch": "7a",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -18532,12 +18556,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "내일 새벽에 중앙 수련장으로 오너라. 마지막 시험을 하겠다.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "며칠 동안의 수련 · 회랑과 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -18550,12 +18575,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "이번에는 내가 기다리고 있겠다.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "며칠 동안의 수련 · 회랑과 안뜰",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     }
   ],
   "world9BossStart": [
@@ -18566,7 +18592,10 @@ window.WORDORIA_NOVELS = {
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "새벽의 수련원 · 중앙 수련장",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "sceneArt": "assets/novel/characters/char_iris_world9_standing.webp",
+      "sceneArtName": "새벽의 사범 이리스",
+      "sceneArtClass": "iris"
     },
     {
       "speaker": "파이터",
@@ -18588,12 +18617,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "화살의 불로는 켜지지 않는다. 이건 네 사람이 보낸 힘을 차례로 받아 기억하는 새벽등이다.",
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "새벽의 수련원 · 중앙 수련장",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18606,12 +18636,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "첫 빛이 머무는 동안 다음 사람이 이어야 한다. 넷이 모두 이으면 가운데 등이 켜진다.",
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "새벽의 수련원 · 중앙 수련장",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "아서",
@@ -18624,12 +18655,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "먼저 온 힘이 다음 길을 막는다. 순서를 보고, 받아 주는 판이 열릴 때 보내야 한다.",
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "새벽의 수련원 · 중앙 수련장",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18642,12 +18674,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "나는 너희가 원하는 자리에 그대로 서 있도록 두지 않을 것이다. 다가오는 것도 막고, 힘이 모이면 흩어 놓겠다.",
       "scene": "dawn-training",
       "sceneNumber": 2,
       "location": "네 개의 결정판 사이",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -18660,12 +18693,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "내 뒤에 있는 장치들도 세어 주렴.",
       "scene": "dawn-training",
       "sceneNumber": 2,
       "location": "네 개의 결정판 사이",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18678,12 +18712,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "실제로 부딪치는 시험이다. 아프거나 더는 버티기 어렵다면 즉시 말해라. 이 고리를 당기면 장치도 멈춘다.",
       "scene": "dawn-training",
       "sceneNumber": 2,
       "location": "네 개의 결정판 사이",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18705,12 +18740,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "물론이다. 다친 걸 숨기는지 보려고 하는 시험이 아니다. 몸을 추스르고 다시 도전하면 된다.",
       "scene": "dawn-training",
       "sceneNumber": 2,
       "location": "네 개의 결정판 사이",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18786,12 +18822,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "지금 누구의 차례였지?",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "수련장 중앙",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -18904,12 +18941,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "그래. 어디 한번 이어 보거라.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련장 가장자리",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     }
   ],
   "world9BossEnd": [
@@ -18924,12 +18962,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "더 버틸 수 있겠느냐?",
       "scene": "dawn-training",
       "sceneNumber": 1,
       "location": "새벽의 수련원 · 중앙 수련장",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "아서",
@@ -19086,12 +19125,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "지금 치면 가로막은 날개에 맞을 텐데?",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "마지막 결정판 · 새벽등 앞",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -19167,12 +19207,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "통과다.",
       "scene": "dawn-training",
       "sceneNumber": 3,
       "location": "마지막 결정판 · 새벽등 앞",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -19257,12 +19298,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "너희 힘은 각자의 손에 남아 있다. 오늘도 검과 화살과 마법과 주먹이 서로 다른 일을 했지.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련장 계단",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "바이올렛",
@@ -19275,12 +19317,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "그래. 네가 버틸 수 있는 만큼을 알고, 그다음은 동료에게 내어 주는 것. 그걸 전투 속에서도 할 수 있도록 익히는 수련이다.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련장 계단",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -19293,12 +19336,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "혼자일 때에도 네 힘이 어디서 끝나는지는 알아야지. 함께라면 그 너머를 맡길 사람이 있고.",
       "scene": "dawn-training",
       "sceneNumber": 4,
       "location": "수련장 계단",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "다크 소서러스",
@@ -19366,12 +19410,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "이 파편이 틈을 내더라도, 틈이 얼마나 갈지는 상대의 힘에 따라 다를 것이다. 등이 켜질 때처럼 너희를 기다려 주지는 않겠지.",
       "scene": "dawn-training",
       "sceneNumber": 5,
       "location": "그날 저녁 · 수련원 기록실",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "아서",
@@ -19384,12 +19429,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "급할수록 신호를 짧게 정해 두거라. 큰 소리로 설명할 시간은 없을 테니.",
       "scene": "dawn-training",
       "sceneNumber": 5,
       "location": "그날 저녁 · 수련원 기록실",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -19423,13 +19469,14 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "미안하지만 내가 배운 계보의 표식은 아니다. 이곳 기록에서도 본 적이 없어.",
       "scene": "dawn-training",
       "sceneNumber": 5,
       "location": "그날 저녁 · 수련원 기록실",
       "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
-      "branch": "7b"
+      "branch": "7b",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -19443,13 +19490,14 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "아는 사람을 만나면 네 허락을 받고 사본을 보여 주마. 모르는 걸 안다고 할 수는 없구나.",
       "scene": "dawn-training",
       "sceneNumber": 5,
       "location": "그날 저녁 · 수련원 기록실",
       "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
-      "branch": "7b"
+      "branch": "7b",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "소서러스",
@@ -19526,12 +19574,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "지도 가져오거라. 수련원에서 그 길로 내려가는 옛 계단이 있다.",
       "scene": "dawn-training",
       "sceneNumber": 5,
       "location": "그날 저녁 · 수련원 기록실",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -19553,12 +19602,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "잘 고쳤구나.",
       "scene": "dawn-training",
       "sceneNumber": 6,
       "location": "다음 날 아침 · 수련원 바위문",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -19598,12 +19648,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "아침에 먹이를 가져갔더니 저기까지 나와 있더구나. 당분간 더 지켜보겠다.",
       "scene": "dawn-training",
       "sceneNumber": 6,
       "location": "다음 날 아침 · 수련원 바위문",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",
@@ -19625,12 +19676,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "다음에 오면 배운 걸 어디에 썼는지 들려주렴.",
       "scene": "dawn-training",
       "sceneNumber": 6,
       "location": "다음 날 아침 · 수련원 바위문",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "파이터",
@@ -19643,12 +19695,13 @@ window.WORDORIA_NOVELS = {
     },
     {
       "speaker": "이리스",
-      "className": "scene",
+      "className": "iris",
       "text": "이야기를 들어 보고 정하마.",
       "scene": "dawn-training",
       "sceneNumber": 6,
       "location": "다음 날 아침 · 수련원 바위문",
-      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
+      "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp",
+      "artPath": "assets/novel/characters/char_iris_world9_standing.webp"
     },
     {
       "speaker": "내레이션",

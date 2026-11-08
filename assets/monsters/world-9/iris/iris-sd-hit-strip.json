@@ -1,0 +1,62 @@
+{
+  "image": "iris-sd-hit-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "sourceBounds": [
+    [
+      116,
+      29,
+      547,
+      731
+    ],
+    [
+      658,
+      17,
+      1295,
+      738
+    ],
+    [
+      1295,
+      368,
+      2028,
+      724
+    ]
+  ],
+  "source": "source/hit-generated.png",
+  "sourceScale": 0.4345665610576053,
+  "frameNames": [
+    "guard-notice",
+    "impact-recoil",
+    "complete-knockdown"
+  ],
+  "durationsMs": [
+    100,
+    120,
+    500
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "name": "impact-recoil",
+      "durationMs": 120
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 500,
+      "hold": true
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "iris": {
+    "scale": 0.7837918853183683,
+    "actions": {
+      "idle": {
+        "sourceBounds": [
+          [
+            27,
+            37,
+            262,
+            428
+          ],
+          [
+            313,
+            37,
+            564,
+            427
+          ],
+          [
+            612,
+            37,
+            857,
+            428
+          ]
+        ],
+        "stripSize": [
+          1344,
+          384
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      "attack": {
+        "sourceBounds": [
+          [
+            187,
+            26,
+            563,
+            721
+          ],
+          [
+            794,
+            10,
+            1243,
+            721
+          ],
+          [
+            1333,
+            88,
+            2017,
+            712
+          ]
+        ],
+        "stripSize": [
+          1344,
+          384
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      "hit": {
+        "sourceBounds": [
+          [
+            116,
+            29,
+            547,
+            731
+          ],
+          [
+            658,
+            17,
+            1295,
+            738
+          ],
+          [
+            1295,
+            368,
+            2028,
+            724
+          ]
+        ],
+        "stripSize": [
+          1344,
+          384
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      "skill": {
+        "sourceBounds": [
+          [
+            124,
+            44,
+            551,
+            725
+          ],
+          [
+            659,
+            130,
+            1243,
+            725
+          ],
+          [
+            1346,
+            129,
+            2003,
+            725
+          ]
+        ],
+        "stripSize": [
+          1344,
+          384
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    },
+    "review": "Offline full-frame light/violet composites inspected; alpha, safety bounds, complete props and exact packed 50px review gaps verified. Browser not requested. No user visual approval claimed."
+  },
+  "griffin": {
+    "scale": 0.9545454545454546,
+    "actions": {
+      "idle": {
+        "sourceBounds": [
+          [
+            52,
+            54,
+            336,
+            340
+          ],
+          [
+            416,
+            51,
+            699,
+            340
+          ],
+          [
+            748,
+            70,
+            1062,
+            340
+          ]
+        ],
+        "stripSize": [
+          1152,
+          320
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      "attack": {
+        "sourceBounds": [
+          [
+            27,
+            441,
+            341,
+            684
+          ],
+          [
+            385,
+            495,
+            708,
+            684
+          ],
+          [
+            718,
+            428,
+            1077,
+            642
+          ]
+        ],
+        "stripSize": [
+          1152,
+          320
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      "hit": {
+        "sourceBounds": [
+          [
+            43,
+            755,
+            342,
+            1034
+          ],
+          [
+            405,
+            750,
+            685,
+            1035
+          ],
+          [
+            735,
+            871,
+            1063,
+            1032
+          ]
+        ],
+        "stripSize": [
+          1152,
+          320
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      "skill": {
+        "sourceBounds": [
+          [
+            36,
+            1168,
+            349,
+            1402
+          ],
+          [
+            394,
+            1100,
+            686,
+            1408
+          ],
+          [
+            717,
+            1125,
+            1079,
+            1403
+          ]
+        ],
+        "stripSize": [
+          1152,
+          320
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    },
+    "review": "Offline full-frame light/violet composites inspected; alpha, safety bounds, complete props and exact packed 50px review gaps verified. Browser not requested. No user visual approval claimed."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "facing": "left", "frameWidth": 384, "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975}, "sourceFrameGapPx": 50,
+  "variants": {"griffin": {"frameWidth":384,"frameHeight":320},"iris": {"frameWidth":448,"frameHeight":384,"reason":"Raised staff and complete sideways down pose; preserve body scale."}},
+  "actions": {
+    "idle": {"frames": ["ready", "breathe", "alert"], "durationsMs": [650, 650, 650], "loop": true},
+    "attack": {"frames": ["ready", "anticipation", "contact"], "durationsMs": [200, 350, 430], "hitFrame": 2},
+    "hit": {"frames": ["guard-notice", "impact-recoil", "complete-knockdown"], "durationsMs": [100, 120, 500], "holdLastFrame": true},
+    "skill": {"frames": ["prepare", "aim", "contact"], "durationsMs": [600, 600, 300], "hitFrame": 2}
+  },
+  "bounds": "Whole character, wings, staff and contained effects within cell, at least 8px horizontal safety margin.",
+  "victory": "Nonlethal: Griffin stops charging; Iris defense breached, dawn lamp lit. Final down pose held until result."
+}
