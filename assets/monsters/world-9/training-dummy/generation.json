@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-07",
+  "tool": "built-in image_gen",
+  "basic": "Use case: stylized-concept. Production 2D sprite animation sheet for Wordoria Crystal Quest World 9 Dawn Training Retreat. A friendly but determined magical WOODEN TRAINING DUMMY boxer: large round light honey wood head with simple expressive dark-violet eyes and focused thick eyebrows, compact rounded wooden torso and ball-joint limbs, short white martial arts vest with pale lavender shadows and violet belt, ONE prominent faceted violet chest crystal, oversized lavender padded training boxing gloves, broad rounded wooden feet. 2.5 heads tall SD/chibi, youthful nonhuman construct. Clean anime linework in dark violet, polished soft cel painting with three-step shading, soft upper-left light, crisp silhouettes. Not pixel art, not 3D, no gritty damage. All figures facing LEFT, feet at consistent row baseline, SAME BODY SCALE in every pose. Full bodies, no clipping. Create an exact 3-column by 3-row contact sheet, each slot 480px square with exactly 50px transparent gaps between columns and between rows, transparent canvas 1540x1540 if possible. No labels, text, grid, floor or cast shadows. Row 1: [idle ready boxing guard, idle small knee bend and gloves adjusting, EMPTY transparent slot]. Row 2: [attack ready guard, anticipation with fist pulled toward right and knees bent, strongest active straight punch LEFT with front glove extended and one foot forward]. Row 3: [notice with surprised face, strongest backward recoil to RIGHT with arms thrown up, COMPLETE POWERED-OFF DOWN fully collapsed on side with folded limp arms and legs, head close to ground, eyes shut and chest crystal dim with NO glow; unable to stand, NOT kneeling, no recovery]. This is exactly EIGHT complete figures, one per occupied slot. Maintain each pose safely inside its slot with large transparent margins. Real transparent alpha everywhere between silhouettes, preserve opaque white vest. No humans or other subjects, no detached effects, no blood. This first sheet is the BASIC variant with simple lavender padded gloves and NO metal wrist guards.",
+  "advanced": "Use case: stylized-concept. Production 2D sprite animation sheet for Wordoria Crystal Quest World 9 Dawn Training Retreat. A friendly but determined magical WOODEN TRAINING DUMMY boxer: large round light honey wood head with simple expressive dark-violet eyes and focused thick eyebrows, compact rounded wooden torso and ball-joint limbs, short white martial arts vest with pale lavender shadows and violet belt, ONE prominent faceted violet chest crystal, oversized lavender padded training boxing gloves, broad rounded wooden feet. 2.5 heads tall SD/chibi, youthful nonhuman construct. Clean anime linework in dark violet, polished soft cel painting with three-step shading, soft upper-left light, crisp silhouettes. Not pixel art, not 3D, no gritty damage. All figures facing LEFT, feet at consistent row baseline, SAME BODY SCALE in every pose. Full bodies, no clipping. Create an exact 3-column by 3-row contact sheet, each slot 480px square with exactly 50px transparent gaps between columns and between rows, transparent canvas 1540x1540 if possible. No labels, text, grid, floor or cast shadows. Row 1: [idle ready boxing guard, idle small knee bend and gloves adjusting, EMPTY transparent slot]. Row 2: [attack ready guard, anticipation with fist pulled toward right and knees bent, strongest active straight punch LEFT with front glove extended and one foot forward]. Row 3: [notice with surprised face, strongest backward recoil to RIGHT with arms thrown up, COMPLETE POWERED-OFF DOWN fully collapsed on side with folded limp arms and legs, head close to ground, eyes shut and chest crystal dim with NO glow; unable to stand, NOT kneeling, no recovery]. This is exactly EIGHT complete figures, one per occupied slot. Maintain each pose safely inside its slot with large transparent margins. Real transparent alpha everywhere between silhouettes, preserve opaque white vest. No humans or other subjects, no detached effects, no blood. EDIT the attached BASIC training dummy sheet into the ADVANCED variant. Preserve EXACT face, wood color, white vest, belt, proportions, pose order, frame positions, 8 poses, and transparency. Change ONLY the wrist/glove equipment: add broad polished SILVER wrist guards with pale lavender shadows, each with one small violet inset crystal; reinforce lavender gloves with a small silver back plate. Keep the head and chest crystal the same size. Do not add helmets, shoulder armor or capes. This sheet is the same character with upgraded training equipment. Gaps must be transparent and character outlines clean, no colored halos.",
+  "references": {
+    "basic": [],
+    "advanced": [
+      "source/basic-generated.png"
+    ]
+  },
+  "status": "Integrated into World 9 common stages; alpha/frame review, regression tests and build passed; browser checks not requested; user art approval not claimed.",
+  "sourceLayout": {
+    "actualWidth": 1254,
+    "actualHeight": 1254,
+    "columns": 3,
+    "rows": 3,
+    "occupiedSlots": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "note": "Generator did not honor requested 1540px/50px source gaps. Source grid has separate silhouettes; runtime frames are extracted individually; exact 50px gaps reconstructed in review masters."
+  }
+}

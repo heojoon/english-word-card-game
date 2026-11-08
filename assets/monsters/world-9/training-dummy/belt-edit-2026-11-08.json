@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-08",
+  "tool": "built-in image_gen",
+  "request": "기본형은 흰띠, 상급형은 빨간띠",
+  "edits": [
+    {
+      "variant": "basic",
+      "beltColor": "white",
+      "prompt": "Use case: precise-object-edit. Edit target: attached BASIC wooden training dummy animation sheet. Change ONLY the purple martial arts WAIST BELT, including wrap, knot and both hanging belt tails, to WHITE in all EIGHT poses. White belt uses opaque moon white #F7F7FF lit areas and cool light gray/lavender shadows so knot and folds stay readable against the white vest. Preserve EXACT shape, position and folds of belt. Preserve all other pixels as closely as possible: lavender boxing gloves, violet chest crystal, white vest, wood, face, eyes, eight poses, all frame positions, same 3x3 layout with top right empty, identical character size and ground lines. Final pose remains fully collapsed on side with eyes shut. No other recolors, no redesign. Preserve original canvas dimensions and true transparent alpha; no background, checkerboard, floor, shadows, text or labels. Entire subjects safely inside cells. This is a surgical belt-color correction of existing approved sprite art.",
+      "reference": "source/basic-purple-belt-original.png",
+      "output": "source/basic-generated.png"
+    },
+    {
+      "variant": "advanced",
+      "beltColor": "red",
+      "prompt": "Use case: precise-object-edit. Edit target: attached ADVANCED wooden training dummy animation sheet with silver wrist guards and silver glove plates. Change ONLY the purple martial arts WAIST BELT, including waist wrap, knot and both hanging tails, to a saturated RED belt in all EIGHT poses. Use red #D93643 lit fabric, deep crimson shadows and soft coral highlights. Preserve EXACT belt shape, knot, position and folds. Preserve all other art as closely as possible: lavender gloves, silver wrist guards and metal glove plates with violet inset crystals, violet chest crystal, WHITE martial arts vest, honey wood, eyes, expressions, all eight poses in same 3x3 positions and empty top-right slot. Keep original canvas dimensions, scale and ground line. Last pose remains fully collapsed on side with eyes shut. Do not recolor the vest or gloves or crystals. No additional equipment or effects, no redesign. True transparent alpha background, no floor/shadows/text/labels/checkerboard. Surgical belt-color correction only.",
+      "reference": "source/advanced-purple-belt-original.png",
+      "output": "source/advanced-generated.png"
+    }
+  ],
+  "review": "All eight poses per variant reviewed on light and Crystal Violet backgrounds. Runtime cells remain 320x320; action counts 2/3/3; original purple belt sheets archived. Browser not requested."
+}

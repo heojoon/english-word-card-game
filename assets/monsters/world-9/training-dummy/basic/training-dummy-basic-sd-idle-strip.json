@@ -1,0 +1,48 @@
+{
+  "image": "training-dummy-basic-sd-idle-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "source": "../source/basic-generated.png",
+  "sourceBounds": [
+    [
+      85,
+      20,
+      323,
+      408
+    ],
+    [
+      491,
+      32,
+      736,
+      408
+    ]
+  ],
+  "frameNames": [
+    "ready",
+    "adjust-gloves"
+  ],
+  "durationsMs": [
+    600,
+    600
+  ],
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 600
+    },
+    {
+      "name": "adjust-gloves",
+      "durationMs": 600
+    }
+  ],
+  "loop": true,
+  "holdLastFrame": false
+}

@@ -1,0 +1,61 @@
+{
+  "image": "training-dummy-basic-sd-attack-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "source": "../source/basic-generated.png",
+  "sourceBounds": [
+    [
+      79,
+      440,
+      342,
+      813
+    ],
+    [
+      459,
+      447,
+      759,
+      814
+    ],
+    [
+      832,
+      441,
+      1222,
+      816
+    ]
+  ],
+  "frameNames": [
+    "ready",
+    "anticipation",
+    "punch-contact"
+  ],
+  "durationsMs": [
+    120,
+    120,
+    260
+  ],
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 120
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 120
+    },
+    {
+      "name": "punch-contact",
+      "durationMs": 260,
+      "hit": true
+    }
+  ],
+  "loop": false,
+  "holdLastFrame": true
+}

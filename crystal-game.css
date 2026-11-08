@@ -1236,6 +1236,17 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .ashen-wedge-soldier-mob .spider-idle-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-idle-strip.png')}
 .ashen-wedge-soldier-mob .spider-attack-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-attack-strip.png')}
 .ashen-wedge-soldier-mob .spider-hit-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-hit-strip.png')}
+/* World 9: training constructs use the shared contact, pause and Ice Time player. */
+.world-eight-arena:has(.training-dummy-mob) .enemy-label{top:12px;right:12px}
+.arena.world-eight-arena .enemy.story-mob.training-dummy-mob{width:144px;height:144px;right:10px;bottom:20px;clip-path:none;background:none;box-shadow:none;animation:none;transform:none}
+.training-dummy-basic .spider-idle-strip{background-image:url('assets/monsters/world-9/training-dummy/basic/training-dummy-basic-sd-idle-strip.png')}
+.training-dummy-basic .spider-attack-strip{background-image:url('assets/monsters/world-9/training-dummy/basic/training-dummy-basic-sd-attack-strip.png')}
+.training-dummy-basic .spider-hit-strip{background-image:url('assets/monsters/world-9/training-dummy/basic/training-dummy-basic-sd-hit-strip.png')}
+.training-dummy-advanced .spider-idle-strip{background-image:url('assets/monsters/world-9/training-dummy/advanced/training-dummy-advanced-sd-idle-strip.png')}
+.training-dummy-advanced .spider-attack-strip{background-image:url('assets/monsters/world-9/training-dummy/advanced/training-dummy-advanced-sd-attack-strip.png')}
+.training-dummy-advanced .spider-hit-strip{background-image:url('assets/monsters/world-9/training-dummy/advanced/training-dummy-advanced-sd-hit-strip.png')}
+.world-eight-arena.hit .training-dummy-mob{animation:none!important;opacity:1;transform:none}
+@media(max-width:360px){.arena.world-eight-arena .enemy.story-mob.training-dummy-mob{width:132px;height:132px;right:2px}}
 .world-eight-arena.hit .ashen-wedge-soldier-mob{animation:none!important;opacity:1;transform:none}
 @media(max-width:360px){.arena.world-eight-arena .enemy.story-mob.ashen-wedge-soldier-mob{width:179.2px;height:128px;right:-4px}}
 

@@ -1,0 +1,61 @@
+{
+  "image": "training-dummy-basic-sd-hit-strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "sourceFrameGapPx": 50,
+  "source": "../source/basic-generated.png",
+  "sourceBounds": [
+    [
+      79,
+      853,
+      342,
+      1233
+    ],
+    [
+      443,
+      864,
+      795,
+      1234
+    ],
+    [
+      836,
+      1045,
+      1235,
+      1233
+    ]
+  ],
+  "frameNames": [
+    "notice",
+    "impact",
+    "complete-down"
+  ],
+  "durationsMs": [
+    100,
+    100,
+    300
+  ],
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 100
+    },
+    {
+      "name": "impact",
+      "durationMs": 100
+    },
+    {
+      "name": "complete-down",
+      "durationMs": 300,
+      "hold": true
+    }
+  ],
+  "loop": false,
+  "holdLastFrame": true
+}

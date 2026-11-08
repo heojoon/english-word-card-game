@@ -1,0 +1,20 @@
+{
+  "name": "수련 목각병",
+  "world": 9,
+  "internalChapter": 12,
+  "variants": {"basic": [1, 14], "advanced": [16, 29]},
+  "beltColors": {"basic": "white", "advanced": "red"},
+  "excludedBossStages": [15, 30],
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "sourceGapNote": "Generated originals used a separate 3x3 layout with variable gaps; the extracted source frames and exact 50px-gapped review masters are preserved separately. Runtime strips have no gaps.",
+  "effectBounds": "Entire construct and both gloves inside each cell, no projectile or detached effect",
+  "idle": {"frameCount": 2, "frameNames": ["ready", "adjust-gloves"], "durationsMs": [600, 600], "loop": true},
+  "attack": {"frameCount": 3, "frameNames": ["ready", "anticipation", "punch-contact"], "durationsMs": [120, 120, 260], "hitFrame": 2, "contactMs": 240, "reducedContactMs": 90},
+  "hit": {"frameCount": 3, "frameNames": ["notice", "impact", "complete-down"], "durationsMs": [100, 100, 300], "holdLastFrameUntil": "next question or battle result"},
+  "review": {"alphaAndAllFrames": "passed over light and Crystal Violet at mobile size", "runtimeRegressionTests": "passed", "browser": "not run: user did not request browser checks", "userArtApproval": "not claimed"}
+}
