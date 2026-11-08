@@ -24,7 +24,7 @@
   function question(s,entry,base){
     const wind=s.trainingKind==='griffin'&&s.windRemaining>0;
     const exam=s.trainingKind==='iris'&&s.examPending>0;
-    if(exam)s.examPending--;
+    if(exam){s.examPending--;s.trainingExamStartedAt=s.elapsed;}
     if(!wind&&s.trainingKind==='griffin')return {...base,trainingExam:false};
     const word=entry[0],indices=Array.from({length:Math.max(0,word.length-2)},(_,i)=>i+1).filter(i=>/[a-z]/i.test(word[i]));
     const count=Math.min(indices.length,s.trainingKind==='iris'?(Math.floor((s.index||0)/5)%2?2:1):Math.max(1,base.hidden?.length||1));
@@ -40,8 +40,9 @@
   function answer(s,correct,contactMs,reduced=false){
     if(s.done||s.paused||s.locked||s.trainingAction||s.bossHp<=0)return;
     s.locked=true;s.iceTimeActive=false;s.timeStopped=false;s.eagleEyeActive=false;
-    if(correct){s.correct++;s.attack=true;}else{s.stunned=true;s.slashCombo=0;}
-    s.trainingAction={correct,elapsed:0,contactMs:correct?contactMs:reduced?275:550,contact:false,duration:Math.max(correct?contactMs+150:reduced?350:700,reduced?490:980)};
+    if(correct){s.correct++;s.attack=true;}else{s.slashCombo=0;}
+    const exam=!correct&&s.trainingKind==='iris'&&s.question?.trainingExam;
+    s.trainingAction={correct,exam,elapsed:0,contactMs:correct?contactMs:exam?(reduced?600:1200):reduced?275:550,contact:false,duration:exam?(reduced?750:1500):Math.max(correct?contactMs+150:reduced?350:700,reduced?490:980)};
   }
   function advance(s,delta,clockDelta=delta){
     if(s.done||s.paused)return [];
@@ -64,7 +65,7 @@
       if(a&&!a.contact&&a.elapsed>=a.contactMs-1e-7){
         a.contact=true;
         if(a.correct){damage(s,s.activeSkills?.attackDamage(s.bossAttackSteps)??s.bossAttackSteps);events.push('correct-contact');}
-        else events.push('wrong-contact');
+        else {s.stunned=true;s.trainingPlayerHitMs=350;events.push('wrong-contact');}
         if(s.trainingVictoryMs!==null)return events;
       }
       if(skill&&!skill.contact&&skill.elapsed>=1200-1e-7){skill.contact=true;s.trainingPlayerHitMs=350;events.push('skill-contact');s.trainingNotice='회랑 돌진!';}
@@ -81,7 +82,8 @@
     if(s.trainingVictoryMs!==null){const elapsed=500-s.trainingVictoryMs;return {action:'hit',frame:elapsed<100?0:elapsed<220?1:2};}
     if(s.trainingHitMs>0)return {action:'hit',frame:s.trainingHitMs>120?0:1};
     if(s.trainingSkill)return {action:'skill',frame:s.trainingSkill.elapsed<600?0:s.trainingSkill.elapsed<1200?1:2};
-    if(s.trainingAction&&!s.trainingAction.correct){const a=s.trainingAction;return {action:'attack',frame:a.elapsed<a.contactMs*200/550?0:a.elapsed<a.contactMs?1:2};}
+    if(s.trainingAction&&!s.trainingAction.correct){const a=s.trainingAction;return {action:a.exam?'skill':'attack',frame:a.elapsed<a.contactMs*(a.exam ? 0.5 : 200/550)?0:a.elapsed<a.contactMs?1:2};}
+    if(s.trainingKind==='iris'&&s.question?.trainingExam)return {action:'skill',frame:s.elapsed-(s.trainingExamStartedAt||0)<600?0:1};
     return {action:'idle',frame:Math.floor(s.elapsed/650)%3};
   }
   window.WORDORIA_WORLD_NINE_BOSS={hpForStage,timeLimit,reset,damage,answer,advance,question,visual};

@@ -55,6 +55,16 @@ test('skill contact shows a timed player reaction and boss hits remain readable 
 test('final hit plays notice and recoil before the held nonlethal down frame',()=>{
   const s=state();boss.damage(s,200);assert.equal(boss.visual(s).frame,0);boss.advance(s,100);assert.equal(boss.visual(s).frame,1);boss.advance(s,120);assert.equal(boss.visual(s).frame,2);
 });
+test('Iris exam uses its dedicated preparation and contact sprite states',()=>{
+  const s=state(30);s.examPending=1;s.question=boss.question(s,['training','n','훈련'],{});
+  assert.equal(boss.visual(s).action,'skill');assert.equal(boss.visual(s).frame,0);
+  boss.advance(s,600);assert.equal(boss.visual(s).frame,1);
+  boss.answer(s,false,200);assert.ok(!boss.advance(s,1199).includes('wrong-contact'));
+  assert.ok(boss.advance(s,1).includes('wrong-contact'));assert.equal(boss.visual(s).action,'skill');assert.equal(boss.visual(s).frame,2);
+});
+test('wrong-answer player recoil starts at actual boss contact',()=>{
+  const s=state();boss.answer(s,false,200);assert.ok(!s.stunned);boss.advance(s,549);assert.ok(!s.stunned);boss.advance(s,1);assert.equal(s.stunned,true);
+});
 test('runtime skill and exam contacts each route exactly HP 1 through shared defense',()=>{
   const source=readFileSync(new URL('../crystal-game.js',import.meta.url),'utf8'),start=source.indexOf('  function advanceWorldNineBossBattle(');
   for(const kind of ['skill','exam']){
@@ -63,7 +73,7 @@ test('runtime skill and exam contacts each route exactly HP 1 through shared def
     if(kind==='skill')s.trainingSkill={kind:'charge',elapsed:1199,contact:false};else{s.question={trainingExam:true};boss.answer(s,false,200);}
     const node={style:{},setAttribute(){}};
     const c=vm.createContext({window:{WORDORIA_WORLD_NINE_BOSS:boss},run:s,$:()=>node,finishBattle(){assert.fail('defense should prevent HP loss');},render(){},refreshNewSkillFeedback(){},refreshWorldNineBossSprite(){},document:{querySelector:()=>null,dispatchEvent(){}},CustomEvent:class{}});
-    vm.runInContext(source.slice(start,source.indexOf('  function answerStorySpelling(',start)),c);c.advanceWorldNineBossBattle(kind==='skill'?1:550);
+    vm.runInContext(source.slice(start,source.indexOf('  function answerStorySpelling(',start)),c);c.advanceWorldNineBossBattle(kind==='skill'?1:1200);
     assert.deepEqual(calls,[1]);assert.equal(s.hp,3);
   }
 });
