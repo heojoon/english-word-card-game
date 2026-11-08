@@ -1238,7 +1238,8 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .ashen-wedge-soldier-mob .spider-hit-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-hit-strip.png')}
 /* World 9: training constructs use the shared contact, pause and Ice Time player. */
 .world-eight-arena:has(.training-dummy-mob) .enemy-label{top:12px;right:12px}
-.arena.world-eight-arena .enemy.story-mob.training-dummy-mob{width:144px;height:144px;right:10px;bottom:20px;clip-path:none;background:none;box-shadow:none;animation:none;transform:none}
+.arena.world-eight-arena .enemy.story-mob.training-dummy-mob{width:132px;height:132px;right:10px;bottom:20px;clip-path:none;background:none;box-shadow:none;animation:none;transform:none}
+.training-dummy-mob .spider-idle-strip{animation-duration:.3s}
 .training-dummy-basic .spider-idle-strip{background-image:url('assets/monsters/world-9/training-dummy/basic/training-dummy-basic-sd-idle-strip.png')}
 .training-dummy-basic .spider-attack-strip{background-image:url('assets/monsters/world-9/training-dummy/basic/training-dummy-basic-sd-attack-strip.png')}
 .training-dummy-basic .spider-hit-strip{background-image:url('assets/monsters/world-9/training-dummy/basic/training-dummy-basic-sd-hit-strip.png')}
@@ -1246,7 +1247,7 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .training-dummy-advanced .spider-attack-strip{background-image:url('assets/monsters/world-9/training-dummy/advanced/training-dummy-advanced-sd-attack-strip.png')}
 .training-dummy-advanced .spider-hit-strip{background-image:url('assets/monsters/world-9/training-dummy/advanced/training-dummy-advanced-sd-hit-strip.png')}
 .world-eight-arena.hit .training-dummy-mob{animation:none!important;opacity:1;transform:none}
-@media(max-width:360px){.arena.world-eight-arena .enemy.story-mob.training-dummy-mob{width:132px;height:132px;right:2px}}
+@media(max-width:360px){.arena.world-eight-arena .enemy.story-mob.training-dummy-mob{width:120px;height:120px;right:2px}}
 .world-eight-arena.hit .ashen-wedge-soldier-mob{animation:none!important;opacity:1;transform:none}
 @media(max-width:360px){.arena.world-eight-arena .enemy.story-mob.ashen-wedge-soldier-mob{width:179.2px;height:128px;right:-4px}}
 
@@ -1345,8 +1346,8 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 @media(prefers-reduced-motion:reduce){.roulette-result,.roulette-result-gem,.roulette-confetti i{animation:none}.roulette-confetti i{top:calc(16px + var(--i)*22px);transform:rotate(calc(var(--i)*29deg))}.roulette-button{transition:none}}
 
 /* World 9: state-selected sprite cells preserve contact timing across renders. */
-.guardian-enemy.world-nine-boss{right:0;bottom:12px;width:55%;max-width:250px;aspect-ratio:384/320}
-.guardian-enemy.world-nine-boss[data-kind="iris"]{aspect-ratio:448/384}
+.guardian-enemy.world-nine-boss{right:0;bottom:12px;width:44%;max-width:200px;aspect-ratio:384/320}
+.guardian-enemy.world-nine-boss[data-kind="iris"]{width:172.667px;max-width:44%;aspect-ratio:448/384}
 .world-nine-boss-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;filter:drop-shadow(0 6px 3px #30295b26)}
 .world-nine-boss-notice{position:absolute;bottom:7px;left:5%;right:5%;z-index:8;text-align:center;font-size:11px;font-weight:800;color:#38345d;pointer-events:none}
 .world-nine-boss-notice:not(:empty){padding:5px 8px;background:#f7f7fff0;border:1px solid #bcb4f0;border-radius:12px}

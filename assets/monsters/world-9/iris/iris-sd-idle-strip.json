@@ -38,24 +38,24 @@
     "alert"
   ],
   "durationsMs": [
-    650,
-    650,
-    650
+    325,
+    325,
+    325
   ],
   "loop": true,
   "holdLastFrame": false,
   "frames": [
     {
       "name": "ready",
-      "durationMs": 650
+      "durationMs": 325
     },
     {
       "name": "breathe",
-      "durationMs": 650
+      "durationMs": 325
     },
     {
       "name": "alert",
-      "durationMs": 650
+      "durationMs": 325
     }
   ]
 }

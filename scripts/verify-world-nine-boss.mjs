@@ -53,7 +53,25 @@ test('skill contact shows a timed player reaction and boss hits remain readable 
   boss.damage(s,4);assert.equal(boss.visual(s).action,'hit');
 });
 test('final hit plays notice and recoil before the held nonlethal down frame',()=>{
-  const s=state();boss.damage(s,200);assert.equal(boss.visual(s).frame,0);boss.advance(s,100);assert.equal(boss.visual(s).frame,1);boss.advance(s,120);assert.equal(boss.visual(s).frame,2);
+  for(const number of [15,30]){
+    const s=state(number);boss.damage(s,s.bossHp);assert.equal(boss.visual(s).frame,0);
+    boss.advance(s,49);assert.equal(boss.visual(s).frame,0);
+    boss.advance(s,1);assert.equal(boss.visual(s).frame,1);
+    boss.advance(s,60);assert.equal(boss.visual(s).frame,2);
+    boss.advance(s,389);assert.equal(boss.visual(s).frame,2);
+  }
+});
+test('both bosses run idle and nonlethal recoil twice as fast without advancing damage',()=>{
+  for(const number of [15,30]){
+    const s=state(number);
+    boss.advance(s,324);assert.equal(boss.visual(s).frame,0);
+    boss.advance(s,1);assert.equal(boss.visual(s).frame,1);
+    boss.advance(s,325);assert.equal(boss.visual(s).frame,2);
+    boss.damage(s,4);const hp=s.bossHp;
+    boss.advance(s,49);assert.equal(boss.visual(s).frame,0);
+    boss.advance(s,1);assert.equal(boss.visual(s).frame,1);
+    boss.advance(s,60);assert.equal(boss.visual(s).action,'idle');assert.equal(s.bossHp,hp);
+  }
 });
 test('Iris exam uses its dedicated preparation and contact sprite states',()=>{
   const s=state(30);s.examPending=1;s.question=boss.question(s,['training','n','훈련'],{});

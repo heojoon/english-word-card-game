@@ -2829,7 +2829,7 @@
   }
   function trainingDummyName(){return run.trainingDummyVariant==='advanced'?'상급 수련 목각병':'수련 목각병';}
   function trainingDummyMarkup(){
-    const step=reducedMotion()?50:100,started=run.attack?run.spiderHitStartedAt:run.spiderAttackStartedAt;
+    const step=reducedMotion()?25:50,started=run.attack?run.spiderHitStartedAt:run.spiderAttackStartedAt;
     const elapsed=started===undefined?0:Math.max(0,(run.paused?run.pausedAt:performance.now())-(run.spiderPausedMs||0)-started);
     const phase=run.attack?'spider-is-hit':run.spiderAttacking&&!run.timeoutPending?'spider-is-attacking':'';
     const variant=run.trainingDummyVariant==='advanced'?'advanced':'basic';

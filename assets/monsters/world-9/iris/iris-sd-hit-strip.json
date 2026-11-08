@@ -38,8 +38,8 @@
     "complete-knockdown"
   ],
   "durationsMs": [
-    100,
-    120,
+    50,
+    60,
     500
   ],
   "loop": false,
@@ -47,11 +47,11 @@
   "frames": [
     {
       "name": "guard-notice",
-      "durationMs": 100
+      "durationMs": 50
     },
     {
       "name": "impact-recoil",
-      "durationMs": 120
+      "durationMs": 60
     },
     {
       "name": "complete-knockdown",

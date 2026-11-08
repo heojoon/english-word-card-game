@@ -30,17 +30,17 @@
     "adjust-gloves"
   ],
   "durationsMs": [
-    600,
-    600
+    300,
+    300
   ],
   "frames": [
     {
       "name": "ready",
-      "durationMs": 600
+      "durationMs": 300
     },
     {
       "name": "adjust-gloves",
-      "durationMs": 600
+      "durationMs": 300
     }
   ],
   "loop": true,

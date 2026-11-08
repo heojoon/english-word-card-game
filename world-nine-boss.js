@@ -10,7 +10,7 @@
   function damage(s,amount){
     if(s.done||s.paused||s.bossHp<=0)return;
     const before=s.bossHp;s.bossHp=Math.max(0,s.bossHp-Math.max(0,amount));
-    if(s.bossHp<before)s.trainingHitMs=220;
+    if(s.bossHp<before)s.trainingHitMs=110;
     if(s.bossHp>0){
       for(const threshold of s.trainingKind==='griffin'?[.5]:[.75,.5,.25]){
         if(before>s.bossMaxHp*threshold&&s.bossHp<=s.bossMaxHp*threshold&&!s.examThresholds.includes(threshold)){
@@ -79,12 +79,12 @@
     return events;
   }
   function visual(s){
-    if(s.trainingVictoryMs!==null){const elapsed=500-s.trainingVictoryMs;return {action:'hit',frame:elapsed<100?0:elapsed<220?1:2};}
-    if(s.trainingHitMs>0)return {action:'hit',frame:s.trainingHitMs>120?0:1};
+    if(s.trainingVictoryMs!==null){const elapsed=500-s.trainingVictoryMs;return {action:'hit',frame:elapsed<50?0:elapsed<110?1:2};}
+    if(s.trainingHitMs>0)return {action:'hit',frame:s.trainingHitMs>60?0:1};
     if(s.trainingSkill)return {action:'skill',frame:s.trainingSkill.elapsed<600?0:s.trainingSkill.elapsed<1200?1:2};
     if(s.trainingAction&&!s.trainingAction.correct){const a=s.trainingAction;return {action:a.exam?'skill':'attack',frame:a.elapsed<a.contactMs*(a.exam ? 0.5 : 200/550)?0:a.elapsed<a.contactMs?1:2};}
     if(s.trainingKind==='iris'&&s.question?.trainingExam)return {action:'skill',frame:s.elapsed-(s.trainingExamStartedAt||0)<600?0:1};
-    return {action:'idle',frame:Math.floor(s.elapsed/650)%3};
+    return {action:'idle',frame:Math.floor(s.elapsed/325)%3};
   }
   window.WORDORIA_WORLD_NINE_BOSS={hpForStage,timeLimit,reset,damage,answer,advance,question,visual};
 })();
