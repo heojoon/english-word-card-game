@@ -1,0 +1,24 @@
+{
+  "method": "Offline composite, not browser or in-engine verification",
+  "arenaHeight": 160,
+  "heroCellHeight": 120.5,
+  "heroGroundBottom": 13,
+  "castOriginNormalized": [
+    0.64,
+    0.47
+  ],
+  "projectileBox": [
+    72,
+    72
+  ],
+  "releaseMs": 400,
+  "contactMs": 640,
+  "finalBurstMs": 700,
+  "resetMs": 760,
+  "reducedMotionScale": 0.4,
+  "viewports": [
+    320,
+    390
+  ],
+  "visualReview": "Reviewed all four variant/viewport composites: launch at harp, visible travel, target-local contact/burst, reset, normal/reduced sequence preserved. Offline only; no in-engine or user approval claimed."
+}

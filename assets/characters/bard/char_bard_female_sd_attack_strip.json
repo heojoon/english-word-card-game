@@ -1,0 +1,219 @@
+{
+  "image": "char_bard_female_sd_attack_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "anticipation",
+      "durationMs": 100
+    },
+    {
+      "index": 2,
+      "name": "charge",
+      "durationMs": 100
+    },
+    {
+      "index": 3,
+      "name": "aim",
+      "durationMs": 100
+    },
+    {
+      "index": 4,
+      "name": "release",
+      "durationMs": 100,
+      "release": true
+    },
+    {
+      "index": 5,
+      "name": "attack-peak",
+      "durationMs": 260
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/attack-female-01-03.png",
+      "sourceFrame": 1,
+      "bounds": [
+        182,
+        52,
+        563,
+        682
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        714,
+        728
+      ],
+      "sourceReferenceHeightPx": 630,
+      "scale": 0.4444444444444444,
+      "anchorXPx": 382.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        71,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-female-01-03.png",
+      "sourceFrame": 2,
+      "bounds": [
+        150,
+        52,
+        546,
+        682
+      ],
+      "sourceCropBox": [
+        714,
+        0,
+        1412,
+        728
+      ],
+      "sourceReferenceHeightPx": 630,
+      "scale": 0.4444444444444444,
+      "anchorXPx": 366.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        64,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-female-01-03.png",
+      "sourceFrame": 3,
+      "bounds": [
+        152,
+        52,
+        547,
+        682
+      ],
+      "sourceCropBox": [
+        1412,
+        0,
+        2161,
+        728
+      ],
+      "sourceReferenceHeightPx": 630,
+      "scale": 0.4444444444444444,
+      "anchorXPx": 366.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        65,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-female-04-06.png",
+      "sourceFrame": 1,
+      "bounds": [
+        150,
+        47,
+        565,
+        687
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        691,
+        729
+      ],
+      "sourceReferenceHeightPx": 641,
+      "scale": 0.43681747269890797,
+      "anchorXPx": 377.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        61,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-female-04-06.png",
+      "sourceFrame": 2,
+      "bounds": [
+        126,
+        46,
+        578,
+        687
+      ],
+      "sourceCropBox": [
+        691,
+        0,
+        1382,
+        729
+      ],
+      "sourceReferenceHeightPx": 641,
+      "scale": 0.43681747269890797,
+      "anchorXPx": 382.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        48,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-female-04-06.png",
+      "sourceFrame": 3,
+      "bounds": [
+        114,
+        51,
+        610,
+        687
+      ],
+      "sourceCropBox": [
+        1382,
+        0,
+        2157,
+        729
+      ],
+      "sourceReferenceHeightPx": 641,
+      "scale": 0.43681747269890797,
+      "anchorXPx": 411.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        30,
+        34
+      ],
+      "rawSourcePreserved": true
+    }
+  ],
+  "canonicalIllustration": "concept/char_bard_male_female_harp_concept_v1.png",
+  "identityMaster": "source/identity-female.png",
+  "sourceMaster": "source-frames/attack-female/source-master-50px.png",
+  "sourceFrameWidth": 512,
+  "sourceFrameHeight": 657,
+  "rawGenerationSheets": [
+    "source/attack-female-01-03.png",
+    "source/attack-female-04-06.png"
+  ],
+  "rawGenerationSpacing": "Preserved raw; extracted source master repacked with exact 50px transparent gaps.",
+  "reviewMaster": "review/attack-female-source-50px.png",
+  "reviewStatus": "Technical and offline visual review passed. Chromium local demo Survival male/female and production CSS previews at320/390px normal/reduced passed; contact, down hold, idle reset, pause styling and paused/running/finished redraw continuity verified. Dedicated boss browser playtest not run; user visual approval not claimed.",
+  "releaseMs": 400,
+  "contactMs": 640,
+  "reducedContactMs": 256,
+  "finalActive": true,
+  "frame01MatchesIdle": false,
+  "effectBounds": "Harp charge glow stays with hero; detached notes use separate centered projectile layer.",
+  "browserReview": "review/browser-review.json"
+}

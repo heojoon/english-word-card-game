@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-08",
+  "tool": "image_gen",
+  "identityAuthority": "../concept/char_bard_male_female_harp_concept_v1.png",
+  "review": "Technical offline review only; no browser check or user approval claimed.",
+  "notes": [
+    "Raw model output dimensions and gutters may differ from requested contract. Extracted source and review masters are repacked with exact50px transparent gutters; originals retained.",
+    "Projectile ornament note count is visual decoration; gameplay is one attack and one contact."
+  ],
+  "generations": [
+    {
+      "file": "identity-male.png",
+      "prompt": "Create ONE full body RIGHT-facing battle SD identity master for Wordoria Crystal Quest. Use the LEFT MALE character in attached image as sole identity authority. Preserve silver-lavender tousled short hair, teal eyes, violet feathered beret, white long sleeve high collar tunic, short violet cape with silver trim, violet trousers, flat silver-violet boots, small quill notebook at hip, mint brooch. Exactly the same portable triangular silver harp with blue-violet crystal soundbox. MALE only, one character. Convert to 2.5-head-tall SD chibi proportions, head 40 percent height, big readable hands, youthful nonsexualized, clean crisp anime linework dark violet contour, three-step cel shadows soft lavender, premium bright mobile RPG. Entire character with harp at chest, left hand stabilizes harp column, right hand relaxed by strings, calm ready smile, planted feet on same baseline, three-quarter faces RIGHT with both eyes visible. All hat feather, harp, cape, hands and feet completely visible and isolated. 15% clear padding. No flying notes for idle identity. NO background whatsoever, no dark glow, no gradient, no black rectangle, no background haze, no floor, no shadows behind character, no cast shadow. Genuine transparent RGBA with all canvas outside subject alpha zero. NO text or labels, no extra person. Square source. Do not use pixel art, 3D, photorealism, adult glamour, blood or violence.",
+      "references": [
+        "concept/char_bard_male_female_harp_concept_v1.png"
+      ]
+    },
+    {
+      "file": "identity-female.png",
+      "prompt": "Create ONE FULL BODY female SD chibi bard battle identity. Attached image 1 RIGHT FEMALE is canonical costume/face identity; image 2 MALE SD is the matching class rendering reference. Same compact proportions as male SD or slightly more compact, exactly 2.5 heads tall excluding hat feather, large head about40%body height, short legs. One youthful nonsexualized FEMALE only, silver lavender shoulder-length hair with short side braid and mint tie, teal eyes, friendly focused face. Purple beret with white mint feather and cyan crystal clasp, moon-white long sleeve high collar tunic, short violet silver-trimmed cape, violet trousers covering legs, flat silver-violet boots, quill notebook at hip, mint brooch. Same PORTABLE TRIANGULAR HARP as approved concept, silver frame blue-violet crystal soundbox parallel glowing strings. Three-quarter facing RIGHT, planted feet, full body complete harp and hands. Left hand stabilizes harp column, right hand by strings neutral ready. Clean dark violet anime linework, crisp three-step cel shadow, smooth hair highlights, bright premium Crystal Quest 2D style. Center entire silhouette on square source with 12% padding all sides, feet visible not cropped. TRUE transparent RGBA, alpha zero outside character; absolutely no black/white/gradient background or haze, no floor shadow, NO notes or detached effects, no text. No extra people, no 3D, no pixel art, no duplicate limbs or hands.",
+      "references": [
+        "concept/char_bard_male_female_harp_concept_v1.png",
+        "source/identity-male.png"
+      ]
+    },
+    {
+      "file": "attack-male-01-03.png",
+      "prompt": "Image is canonical RIGHT-facing male SD bard. Create THREE full-body animation poses in one horizontal source strip, left to right, exactly same identity, head/body scale, face, hair, hat, costume and triangular crystal harp. Production mobile RPG battle sprites, clean anime chibi Crystal Quest rendering, not pixel art.\nGeometry: exactly3 equal square slots 640x640 with exactly50px completely transparent gutter between adjacent slots, total2020x640. Each slot holds one complete SAME-SCALE character, standing boots on y615, centered feet at x320 within its slot. Foreground never crosses a boundary or enters gutter. All hat, harp, cape, feet fit with margin. Background true RGBA alpha zero, NO floor, shadows, glow haze, borders, labels or text.\nAttack frames1-3:\n1 READY: copy attached idle posture exactly, harp stable at chest, playing hand resting in front of strings, confident eyes.\n2 ANTICIPATION: both feet same place, torso slightly leans back, plucking hand pulls back to left just away from strings, elbow opens, focused face.\n3 CHARGE: plucking hand raised near upper strings, small mint-white glints ONLY along harp strings, cape responds subtly. Still full body and entire harp.\nNo detached projectiles; harp remains carried in every pose. One person per slot, only3 people total. No return or recovery. Preserve same youthful compact proportions, white sleeves, lavender shadows, silver harp, crystal blue details. No cropping, extra limbs, painted background or ground.",
+      "references": [
+        "source/identity-male.png"
+      ],
+      "repairPrompt": "Repair this exact male bard THREE-pose strip for production. Preserve the exact3 poses, identity, harp, clothing, scale consistency, pose order, all colors. Current feather tips touch/crop the TOP edge. Recompose all3 characters SMALLER at equal scale inside three square 640x640 slots so each complete head, hat and feather has AT LEAST80px fully TRANSPARENT empty margin above, boots AT LEAST60px transparent below and 60px side margins. Redraw any missing feather tips into their complete rounded pointed shape. Equal stable ground line. Exact50px fully transparent separator between adjacent square slots. Canvas2020x640 wide. No new poses, no labels. TRUE alpha zero background; no colored artifacts, no white fringe, no black matte, no haze, no floor. Do not zoom in; entire FULL BODY all3 poses fit with spacious empty margins. Crisp dark-violet colored linework and polished soft cel shading same as input.",
+      "repairReason": "Initial strip cropped feather tips; corrected complete subjects with safe margins."
+    },
+    {
+      "file": "attack-male-04-06.png",
+      "prompt": "Continue male bard attack animation using attached canonical male SD and attached first3 poses. Create exactly THREE full-body RIGHT-facing same-scale poses arranged horizontally, one per square640px slot, EXACT50px alpha-zero gap between slots, total2020x640. Every character occupies ONLY middle75% slot height; at least60px empty margin above hat feather and below boots,60px side margins. No cropping. All3 SAME head size and stable boots baseline. Maintain exact identity/costume/silver triangular harp, clean dark violet anime lines soft cel shading. White sleeves lavender hair purple feather beret and cape, youthful compact SD proportions.\nThese are attack frames4-6:\n4 AIM: gaze to RIGHT, raised playing hand on upper strings, brighter mint glints hugging strings, body leans slightly into performance, harp fully carried.\n5 RELEASE: fingers sweep DOWN and outward across strings, palm open just beyond lower strings, lively face, one small mint spark still ATTACHED to harp strings. Detached flying notes NOT in character layer.\n6 ATTACK PEAK: big emphatic final plucking gesture, extended playing hand to RIGHT, confident singing open mouth, cape gently swings to left, harp supported by other hand at chest. This is ACTIVE attack pose, NOT neutral/recovery/idle. Both feet remain planted.\nFull character and full harp in every slot. No projectile or enemy. Background TRUE TRANSPARENT alpha zero, no haze, no matte, no cast shadow, no floor, no text, no borders. Preserve costume and equipment from references exactly.",
+      "references": [
+        "source/identity-male.png",
+        "source/attack-male-01-03.png"
+      ]
+    },
+    {
+      "file": "attack-female-01-03.png",
+      "prompt": "Production Wordoria Crystal Quest FEMALE SD bard attack first THREE poses. Attached1 female SD is SOLE identity authority. Attached2 male attack is only pose rhythm reference, NOT gender/face. Preserve female lavender shoulder-length hair side braid mint tie, teal eyes, feather purple beret, white tunic violet trousers and cape, mint brooch notebook, ornate silver triangular crystal harp. Youthful compact chibi large head and short legs. Faces RIGHT. Clean polished anime linework dark violet, 3step soft cel shadows.\nGeometry: THREE equal square640px slots in ONE horizontal row. Exactly50px fully transparent gap between adjacent slots. Each FULL body at SAME SCALE occupies middle75% slot height, at least60px empty transparent padding above feather and below feet,60px side margins. Stable boots groundline; no cropping. TRUE alpha-zero background no floor or shadow, no haze, no rectangle, no border or text.\nFrame1 READY: reproduce female identity neutral harp at chest posture, hand relaxed in front of strings.\nFrame2 ANTICIPATION: plucking hand draws back left away from strings, elbow bends, focused face, both feet planted.\nFrame3 CHARGE: plucking fingers raised near upper strings, tiny mint glints only along harp strings. Harp and full body remain present.\nONE complete female per slot exactly3 total. No male, detached projectile, enemies, duplicate limbs, missing fingers, sexualized proportions, pixel art or 3D.",
+      "references": [
+        "source/identity-female.png",
+        "source/attack-male-01-03.png"
+      ]
+    },
+    {
+      "file": "attack-female-04-06.png",
+      "prompt": "Continue FEMALE SD bard attack from attached female identity and first3 poses. Exactly THREE RIGHT-facing full-body poses in a horizontal source strip. Same lavender side-braid hair, mint tie, teal eyes, feathered violet beret, white tunic, violet cape and trousers, flat boots, quill notebook and ornate silver triangular blue-crystal harp. Same character scale and boots baseline in all3.\nThree equal square640 slots, EXACT50px alpha-zero transparent gutter between slots. Each character occupies only middle75% slot height,60px transparent margin above all feathers and below boots and sides. No clipping. True RGBA background alpha zero, no floor or shadow, no matte, no labels or text, no neighbors' pixels in slots.\nFrame4 AIM: hand high at strings, focused RIGHT gaze, tiny mint glints hugging strings, ready to play emphatically.\nFrame5 RELEASE: playing fingers sweep DOWN across strings and open near lower edge of harp, bright strings, excited face. Other hand keeps harp secure.\nFrame6 ATTACK PEAK: animated confident singing open mouth, broad final playing gesture open palm outward, cape swings gently behind, both boots planted. ACTIVE final attack pose, never neutral or recovery.\nNo detached flying notes; separate projectile sheet owns those. Each slot contains the complete same female and harp, no gender changes. Clean colored anime linework, crisp3-step soft cel shading, large readable SD head, compact body, bright Crystal Quest polished rendering, no pixel art/3D.",
+      "references": [
+        "source/identity-female.png",
+        "source/attack-female-01-03.png"
+      ]
+    },
+    {
+      "file": "hit-male-01-03.png",
+      "prompt": "Create THREE-frame child-friendly HIT/KNOCKDOWN animation for the exact MALE SD harp bard in attached reference. Preserve face, silver lavender tousled short hair, feather beret, violet-white costume, trousers boots quill notebook and exact silver triangular blue-crystal harp. Same compact2.5-head chibi rendering, RIGHT-facing body even when recoiling. ONE complete bard and his carried harp PER slot.\nHorizontal strip of THREE equal640x640 slots with EXACT50px fully transparent gap between each, total2020x640. Characters occupy only middle75%height; at least60px transparent padding above hat and below boots,60px sides. Keep same HEAD size across all3, don't enlarge prone character just to fill height. Ground y580 for all; frame3 prone uses lower quarter of same slot. Full head, feathers, boots, cape, hands, harp always complete.\n1 GUARD/NOTICE: still upright, eyes wide concerned, pulls harp close protectively, knees slight bend.\n2 IMPACT/STRONGEST RECOIL: strong backward lean to LEFT, eyes squeezed shut, body recoils, cape flares to left, both hands still hold harp securely. No attacker or impact object.\n3 COMPLETE KNOCKDOWN: bard FULLY LYING on left side on ground, entire torso and head horizontal, legs stretched sideways, eyes closed dazed, cannot stand; holds harp beside chest, instrument remains visible intact. NOT crouching, kneeling, sitting or recovering. This frame will HOLD after defeat.\nTRUE alpha zero background, no floor or cast shadow, no black/white matte, no haze, no labels/borders/text, no injuries blood gore attacker or enemy. Polished clean colored anime linework soft3step cel shading, youthful nonsexualized, not pixel art or3D.",
+      "references": [
+        "source/identity-male.png",
+        "source/attack-male-01-03.png"
+      ]
+    },
+    {
+      "file": "hit-female-01-03.png",
+      "prompt": "Create THREE-frame child-friendly HIT/KNOCKDOWN animation for exact FEMALE SD harp bard attached1. Attached2 male sequence is pose reference only. Preserve female shoulder-length silver-lavender hair SIDE BRAID MINT TIE, teal eyes, feather beret, violet-white costume, trousers boots notebook and exact silver ornate triangular crystal harp. SAME head size in all3, compact youthful chibi, clean Crystal Quest soft cel art, face/body generally RIGHT.\nONE complete female and her carried harp per slot. Horizontal strip3 equal640x640square slots separated by EXACT50px fully transparent gap. Characters occupy only middle75%height,60px transparent margin above feathers and below boots and sides, SAME baseline y580. Do not enlarge prone pose.\n1 GUARD/NOTICE: upright, eyes widen concerned, knees bend a little, pulls harp close protectively.\n2 STRONGEST RECOIL: expressive backward lean LEFT, eyes squeezed shut, cape flares, hands keep harp secure. No attack object.\n3 COMPLETE KNOCKDOWN: fully LYING HORIZONTALLY on her left side, head and torso sideways parallel to ground, legs extended sideways, closed dazed eyes, entire body down unable to stand, still holding harp lying beside chest. NOT sitting/kneeling/crouching/recovering. This is final held defeat frame.\nAll feather, hair, harp, limbs and boots fully visible and intact, same scale. Alpha-zero background, no floor, shadows, matte, haze, no labels/borders/text, attacker, enemy, injury or blood. Clean colored dark violet anime linework and3step cel shading, no pixel art, no3D, no sexualization.",
+      "references": [
+        "source/identity-female.png",
+        "source/hit-male-01-03.png"
+      ]
+    },
+    {
+      "file": "idle-male-02.png",
+      "prompt": "Edit this exact MALE SD bard identity to produce idle animation frame02. Preserve exact same canvas, full body pose, silhouette size, feet positions, ground line, head tilt, hat feather, hair, costume, complete triangular harp, hands and colors. Make ONLY a calm brief blink: both eyelids gently closed, small relaxed smile; fingers relax slightly against harp strings. No change to body size or proportions. This should alternate with input as subtle breathing/blinking idle. One full male bard only, no extra poses. Genuine transparent alpha-zero background, no floor/shadow/glow/haze, keep entire subject and safe margin. Same clean crisp Crystal Quest anime cel art, youthful compact chibi. Do not crop or zoom.",
+      "references": [
+        "source/identity-male.png"
+      ]
+    },
+    {
+      "file": "idle-female-02.png",
+      "prompt": "Edit this EXACT FEMALE SD bard identity into idle frame02. Keep the same full body position, silhouette, scale, boots and groundline, same hat feather, side braid and mint hair tie, same triangular silver harp, white/violet costume and hands. Change ONLY eyes into a gentle brief BLINK, both eyelids closed, relaxed tiny smile, playing fingers a little relaxed. One female only, no new pose, no resizing/reproportion/zoom, no motion blur. It alternates with the original as calm idle. True transparent alpha zero background, no floor/shadow/black matte/gradient/haze, all hair feathers boots harp complete. Same polished Crystal Quest SD cel art.",
+      "references": [
+        "source/identity-female.png"
+      ]
+    },
+    {
+      "file": "projectile-01-03.png",
+      "prompt": "Create THREE isolated MAGIC MUSIC-NOTE PROJECTILE VFX frames for a portable crystal harp bard in a polished mobile2D RPG. Attached bard concept is palette/material reference ONLY, do NOT draw any character or harp. Effect identity: a compact cluster of THREE unmistakable musical eighth notes (solid notehead, stem, flag or paired beam), violet-blue translucent crystal bodies, clean pale silver-white edge highlights and mint rim glow. They fly LEFT to RIGHT, a small horizontal stream, not orb/arrow/beam. Crisp readable at72px display size.\nGeometry THREE equal640x640 square slots horizontally, EXACT50px alpha-zero transparent space between slots. Each compact effect CENTERED at x320,y320 in own slot, only middle45% width/height, generous empty margins. Background TRUE alpha zero, no black/white/gradient matte, no floor/haze.\nFrame1 CHARGE: one small crystalline eighth note forming, tiny mint spark on its left, subdued.\nFrame2 LAUNCH: full compact cluster of3 glowing eighth notes, leading note on RIGHT, short mint ribbon behind to LEFT; effect center stays fixed, screen-space movement is handled in code.\nFrame3 NEAR TRAVEL: exact same3-note cluster same shape, orientation and size, slight sparkle variation, short trailing mint dash LEFT. No motion blur.\nOne effect per cell,3 effects total. Preserve same note silhouette and scale launch/travel, clean violet colored anime linework and polished cel-crystal shading consistent with Crystal Quest. No character, harp, hands, staff, enemy, text, letters, UI, borders, pixel art or3D.",
+      "references": [
+        "concept/char_bard_male_female_harp_concept_v1.png"
+      ]
+    },
+    {
+      "file": "projectile-04-06.png",
+      "prompt": "Continue attached magic music-note PROJECTILE source sheet: THREE additional effect frames4-6 for Wordoria Crystal Quest bard. NO characters or instruments. Preserve exact violet-blue glass eighth notes and paired music notes with silver-white edges and mint glow, a small readable left-to-right cluster, same note body scale. Crisp polished2D anime crystal VFX not3D or pixel art.\nGeometry: three equal640x640square slots in horizontal row, EXACT50px alpha-zero transparent gap between slots. Every effect CENTERED at x320,y320 own cell, generous empty margins, true alpha-zero background (soft transparent edge glow allowed, no matte/backdrop/floor). All sparks contained. No text labels borders UI.\nFrame4 FAR TRAVEL: reproduce reference frame3 same compact music-note cluster, leading note on RIGHT, short mint trail LEFT, same orientation, shape and note count, only spark position slightly changes. No beam/arrow/orb.\nFrame5 CONTACT: same music-note cluster at center visibly strikes, small bright white/mint starburst at leading RIGHT note, a few large violet crystal facets radiate, note shapes still readable. No enemy.\nFrame6 BURST/FADE: music notes dissolve into5-7 violet/blue crystal fragments and mint star-shaped sparkles, center transparent with soft small mint expanding ring, fading outward. Keep effect compact and bounded. No smoke, fire, gore or background haze.\nEach complete effect fits safely in own square with at least80px transparent margin on every side. Exactly3 isolated effects.",
+      "references": [
+        "source/projectile-01-03.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>은유시인 SD 전투 애니메이션 검수</title>
+  <link rel="stylesheet" href="../../../../playable-preview.css">
+  <link rel="stylesheet" href="../../../../crystal-game.css">
+  <style>
+    body{margin:0;padding:12px 0;background:#f7f7ff;color:#24214c}
+    main{width:min(100%,430px);margin:auto}
+    h1{font-size:20px;margin:12px 12px 8px}
+    .note{font-size:12px;line-height:1.6;margin:10px 12px}
+    .controls{display:flex;flex-wrap:wrap;gap:8px;margin:12px}
+    .controls button,.controls select{min-height:40px;padding:8px 12px;border:1px solid #dcd8ff;border-radius:10px;background:#fff;color:#24214c;font:inherit;font-size:12px}
+    .controls button[aria-pressed=true]{background:#5751d8;color:#fff}
+    .controls label{display:flex;align-items:center;gap:5px;font-size:12px}
+    #arena{height:190px;margin:0;width:100%;max-width:100%;box-sizing:border-box}
+    #arena[data-surface=light]{background:#f7f7ff}
+    #arena[data-surface=violet]{background:#5751d8}
+    #arena .enemy{right:24px;bottom:18px;width:80px;height:80px;background:none;border:0;box-shadow:none}
+    #arena .enemy::before,#arena .enemy::after{display:none}
+    #arena .enemy img{width:100%;height:100%;object-fit:contain}
+    #arena .arena-floor{pointer-events:none}
+    #state{font-weight:800}
+  </style>
+</head>
+<body>
+<main>
+  <h1>은유시인 SD 검수</h1>
+  <p class="note">프로덕션 CSS로 대기 → 연주 → 음표 발사 → 적중 → 초기화와 피격 마지막 자세 유지를 확인합니다.</p>
+  <div class="controls" aria-label="성별 및 검수 배경">
+    <button type="button" data-variant="male" aria-pressed="true">남성</button>
+    <button type="button" data-variant="female" aria-pressed="false">여성</button>
+    <select id="surface" aria-label="배경"><option value="light">Moon White</option><option value="violet">Crystal Violet</option><option value="scene">전투 배경</option></select>
+  </div>
+  <div class="arena" id="arena" data-surface="light">
+    <div class="arena-floor"></div>
+    <div class="battle-hero battle-hero-bard battle-hero-male" role="img" aria-label="남성 은유시인">
+      <span class="battle-sprite" aria-hidden="true"></span>
+      <span class="battle-projectile" aria-hidden="true"></span>
+    </div>
+    <div class="enemy story-mob" aria-label="검수용 왕관 슬라임"><img src="../../../monsters/royal-slime/royal-slime-sd.png" alt=""></div>
+    <div class="crystal-strike" aria-hidden="true"></div>
+    <div class="crystal-shards" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="controls" aria-label="전투 상태">
+    <button type="button" data-state="idle" aria-pressed="true">대기 / 초기화</button>
+    <button type="button" data-state="attack" aria-pressed="false">연주 공격</button>
+    <button type="button" data-state="wrong" aria-pressed="false">피격 / 완전 다운</button>
+    <label><input id="paused" type="checkbox">일시정지</label>
+    <label><input id="ice-time" type="checkbox">아이스 타임</label>
+  </div>
+  <p class="note" id="state" role="status" aria-live="polite">남성 · 대기</p>
+  <p class="note">공격은 자동으로 초기화하지 않습니다. 발사 400ms, 적중 640ms, 버스트 700ms. 동작 감소 환경에서는 각각 160ms, 256ms, 280ms입니다. 피격 3번째 완전 다운 자세는 상태를 바꿀 때까지 유지합니다.</p>
+</main>
+<script>
+(() => {
+  const arena=document.querySelector('#arena');
+  const hero=arena.querySelector('.battle-hero');
+  let variant='male',state='idle';
+  function positionImpact(){
+    const a=arena.getBoundingClientRect(),h=hero.getBoundingClientRect(),e=arena.querySelector('.enemy').getBoundingClientRect();
+    const originX=h.left+h.width*.64,originY=h.top+h.height*.47;
+    const impactX=e.left+e.width*.5,impactY=e.top+e.height*.5;
+    arena.style.setProperty('--bard-flight-x',(impactX-originX)+'px');
+    arena.style.setProperty('--bard-flight-y',(impactY-originY)+'px');
+    arena.style.setProperty('--bard-impact-x',(impactX-a.left)+'px');
+    arena.style.setProperty('--bard-impact-y',(impactY-a.top)+'px');
+  }
+  function flags(){
+    arena.classList.toggle('paused',document.querySelector('#paused').checked);
+    arena.classList.toggle('ice-time-active',document.querySelector('#ice-time').checked);
+  }
+  function setState(next){
+    if(!['idle','attack','wrong'].includes(next))throw Error('Unknown preview state');
+    state=next;
+    arena.className='arena';
+    void arena.offsetWidth;
+    if(state==='attack')arena.classList.add('hit');
+    if(state==='wrong')arena.classList.add('wrong','story-stunned');
+    flags();positionImpact();
+    document.querySelectorAll('[data-state]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.state===state)));
+    document.querySelector('#state').textContent=(variant==='female'?'여성':'남성')+' · '+({idle:'대기',attack:'연주 공격',wrong:'피격 / 완전 다운'}[state]);
+  }
+  function setVariant(next){
+    if(!['male','female'].includes(next))throw Error('Unknown preview variant');
+    variant=next;
+    hero.className='battle-hero battle-hero-bard battle-hero-'+variant;
+    hero.setAttribute('aria-label',(variant==='female'?'여성':'남성')+' 은유시인');
+    for(const action of ['idle','attack','hit'])hero.style.setProperty('--bard-'+action,'url("'+new URL('../char_bard_'+variant+'_sd_'+action+'_strip.png',location.href).href+'")');
+    document.querySelectorAll('[data-variant]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.variant===variant)));
+    setState('idle');
+  }
+  document.querySelectorAll('[data-state]').forEach(button=>button.addEventListener('click',()=>setState(button.dataset.state)));
+  document.querySelectorAll('[data-variant]').forEach(button=>button.addEventListener('click',()=>setVariant(button.dataset.variant)));
+  document.querySelector('#surface').addEventListener('change',event=>{arena.dataset.surface=event.target.value;});
+  document.querySelector('#paused').addEventListener('change',flags);
+  document.querySelector('#ice-time').addEventListener('change',flags);
+  window.addEventListener('resize',positionImpact);
+  window.bardPreview={setState,setVariant,positionImpact,get state(){return state;},get variant(){return variant;}};
+  setVariant('male');
+})();
+</script>
+</body>
+</html>

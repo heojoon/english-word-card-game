@@ -1,0 +1,7 @@
+{
+  "hit-male-01-03": {
+    "frameWidth": 384,
+    "referenceHeightPx": 566,
+    "reviewNote": "Shared upright scale across all three poses. Widen to preserve complete recoil and prone harp silhouette; no per-frame shrink."
+  }
+}

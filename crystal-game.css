@@ -1355,3 +1355,39 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .dawn-training-lights span{display:block}.dawn-training-lights i{font-style:normal;color:#c8c3dd;margin-left:4px}.dawn-training-lights i.lit{color:#5751d8;text-shadow:0 0 7px #60d9cf}
 .world-nine-boss.training-skill .world-nine-boss-sprite{filter:drop-shadow(0 0 6px #60d9cf99)}
 @media(prefers-reduced-motion:reduce){.world-nine-boss-sprite{filter:none}.world-nine-boss.training-skill .world-nine-boss-sprite{filter:none}}
+
+/* Bard: planted harp player, independently travelling music notes and contact feedback. */
+.battle-hero-bard{--bard-idle:url('assets/characters/bard/char_bard_male_sd_idle_strip.png');--bard-attack:url('assets/characters/bard/char_bard_male_sd_attack_strip.png');--bard-hit:url('assets/characters/bard/char_bard_male_sd_hit_strip.png')}
+.battle-hero-bard.battle-hero-female{--bard-idle:url('assets/characters/bard/char_bard_female_sd_idle_strip.png');--bard-attack:url('assets/characters/bard/char_bard_female_sd_attack_strip.png');--bard-hit:url('assets/characters/bard/char_bard_female_sd_hit_strip.png')}
+.arena .battle-hero-bard{--battle-cell-height:120.5px;--battle-ground-bottom:13px;--battle-cell-aspect:1;animation:none!important;transform:none!important;bottom:var(--battle-ground-bottom)!important}
+.arena:is(.hit,.wrong,.story-stunned) .battle-hero-bard{animation:none!important;transform:none!important}
+.arena:is(.wrong,.story-stunned) .battle-hero-bard{--battle-cell-aspect:1.2}
+.battle-hero-bard .battle-sprite{background-image:var(--bard-idle);background-size:200% 100%;background-position:0 0;animation:bard-idle-frames .7s steps(1,end) infinite alternate}
+.arena.hit .battle-hero-bard .battle-sprite{background-image:var(--bard-attack);background-size:600% 100%;animation:bard-attack-frames .5s steps(5,end) both}
+.arena:is(.wrong,.story-stunned) .battle-hero-bard.battle-hero-bard .battle-sprite{background-image:var(--bard-hit);background-size:300% 100%;animation:bard-hit-frames .2s steps(2,end) both!important}
+.arena .battle-hero-bard .battle-projectile{left:calc(64% - 36px);top:calc(47% - 36px);bottom:auto;width:72px;height:72px;background-image:url('assets/characters/bard/char_bard_sd_projectile_strip.png');background-size:600% 100%;filter:drop-shadow(0 0 4px #60d9cf88);transform-origin:center center}
+.arena.hit .battle-hero-bard .battle-projectile{display:block;animation:bard-projectile-frames .3s steps(5,end) .4s both,bard-projectile-flight .24s linear .4s both}
+.arena:has(.battle-hero-bard){--bard-contact:.64s}
+.arena:has(.battle-hero-bard) .crystal-strike{left:var(--bard-impact-x,75%);top:var(--bard-impact-y,50%);right:auto;bottom:auto}
+.arena:has(.battle-hero-bard) .crystal-shards{left:calc(var(--bard-impact-x,75%) - 18px);top:calc(var(--bard-impact-y,50%) - 18px);right:auto;bottom:auto}
+.arena.hit:has(.battle-hero-bard) :is(.crystal-strike,.crystal-shards i,.enemy,.enemy-label){animation-delay:var(--bard-contact)!important}
+.arena.hit:has(.battle-hero-bard) .enemy.story-mob:not(.crystal-spider-mob){animation:bard-mob-recoil .28s ease-out var(--bard-contact) both!important}
+.arena.hit:has(.battle-hero-bard) .enemy.crystal-spider-mob{animation:none!important}
+.arena.ice-time-active:not(.hit):not(.wrong):not(.story-stunned) .battle-hero-bard .battle-sprite{animation-play-state:paused!important}
+.arena.paused:has(.battle-hero-bard) *,.arena.paused:has(.battle-hero-bard) *::before,.arena.paused:has(.battle-hero-bard) *::after{animation-play-state:paused!important}
+@keyframes bard-idle-frames{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes bard-attack-frames{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes bard-hit-frames{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes bard-projectile-frames{from{background-position:0 0}to{background-position:100% 0}}
+@keyframes bard-projectile-flight{0%{opacity:0;transform:translate(0,0)}.01%{opacity:1}100%{opacity:1;transform:translate(var(--bard-flight-x,140px),var(--bard-flight-y,0px))}}
+@keyframes bard-mob-recoil{0%{transform:translateX(0)}45%{transform:translateX(8px)}100%{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){
+  .battle-hero-bard .battle-sprite{animation:none}
+  .arena:has(.battle-hero-bard){--bard-contact:.256s}
+  .arena.hit .battle-hero-bard .battle-sprite{animation:bard-attack-frames .2s steps(5,end) both!important}
+  .arena.hit .battle-hero-bard .battle-projectile{animation:bard-projectile-frames .12s steps(5,end) .16s both,bard-projectile-flight .096s linear .16s both!important}
+  .arena:is(.wrong,.story-stunned) .battle-hero-bard.battle-hero-bard .battle-sprite{animation:bard-hit-frames .08s steps(2,end) both!important}
+  .arena.hit:has(.battle-hero-bard) .enemy:not(.story-mob):not(.royal-slime-enemy){animation:enemy-knockout .22s ease var(--bard-contact) both!important}
+  .arena.hit:has(.battle-hero-bard) .enemy-label{animation:enemy-label-out .18s ease var(--bard-contact) both!important}
+  .arena.hit:has(.battle-hero-bard) .crystal-shards i{animation:crystal-shard .18s ease-out var(--bard-contact) both!important}
+}

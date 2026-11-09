@@ -8,7 +8,7 @@ function extract(start,end){const i=source.indexOf(start);assert.ok(i>=0);return
 function battle(reduced=false){
   let now=0;const pending=[],events=[],node={textContent:'',classList:{add(){}}};
   const c=vm.createContext({run:{story:true,spelling:true,wedgeMob:true,index:0,correct:0,hp:3,mp:1,iceTimeActive:true,timeStopped:true,question:{entry:['apple','n','사과'],answer:'p',choices:['a','p','c','d']},deck:Array(40).fill({})},
-    performance:{now:()=>now},reducedMotion:()=>reduced,battleContactDelay:()=>reduced?150:420,
+    selectedCharacter:{class:'warrior'},performance:{now:()=>now},reducedMotion:()=>reduced,battleContactDelay:()=>reduced?150:420,
     setTimeout(fn,delay){pending.push({fn,at:now+delay});return pending.length;},
     document:{querySelectorAll:()=>[],dispatchEvent:event=>events.push({kind:event.detail.kind,at:now})},CustomEvent:class{constructor(name,data){Object.assign(this,data);}},$:()=>node,
     render(){c.renders=(c.renders||0)+1;},persistStoryBattleVitals(){},setHeroAttackTravel(){},speak(){},consumePugilistWeavingStep:()=>false,

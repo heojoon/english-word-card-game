@@ -1,0 +1,102 @@
+{
+  "class": "bard",
+  "canonicalIllustration": "concept/char_bard_male_female_harp_concept_v1.png",
+  "variants": [
+    "male",
+    "female"
+  ],
+  "facing": "right",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "groundLinePx": 312,
+  "standingHeightPx": 280,
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "projectileAnchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "sourceFrameGapPx": 50,
+  "alphaNoiseThreshold": 16,
+  "releaseMs": 400,
+  "contactMs": 640,
+  "reducedMotionScale": 0.4,
+  "reducedContactMs": 256,
+  "attackDurationMs": 760,
+  "actions": {
+    "idle": {
+      "frameCount": 2,
+      "names": [
+        "ready",
+        "breathe"
+      ],
+      "durationsMs": [
+        700,
+        700
+      ]
+    },
+    "attack": {
+      "frameCount": 6,
+      "names": [
+        "ready",
+        "anticipation",
+        "charge",
+        "aim",
+        "release",
+        "attack-peak"
+      ],
+      "durationsMs": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        260
+      ],
+      "releaseFrame": 4,
+      "finalActive": true
+    },
+    "hit": {
+      "frameCount": 3,
+      "frameWidth": 384,
+      "names": [
+        "guard-notice",
+        "impact-recoil",
+        "complete-knockdown"
+      ],
+      "durationsMs": [
+        100,
+        100,
+        1000
+      ],
+      "hitFrame": 1,
+      "finalHold": true,
+      "widthReason": "Recoil and fully prone harp silhouette retain the standing scale."
+    },
+    "projectile": {
+      "frameCount": 6,
+      "names": [
+        "charge",
+        "launch",
+        "near-travel",
+        "far-travel",
+        "contact",
+        "crystal-burst"
+      ],
+      "durationsMs": [
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "releaseFrame": 0,
+      "hitFrame": 4
+    }
+  },
+  "reviewStatus": "Technical and offline visual review passed. Chromium local demo Survival male/female and production CSS previews at320/390px normal/reduced passed; contact, down hold, idle reset, pause styling and paused/running/finished redraw continuity verified. Dedicated boss browser playtest not run; user visual approval not claimed.",
+  "browserReview": "review/browser-review.json"
+}

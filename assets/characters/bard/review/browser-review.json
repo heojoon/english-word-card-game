@@ -1,0 +1,164 @@
+{
+  "scope": "Local demo Survival and production CSS preview; no account/backend writes",
+  "checks": [
+    {
+      "actualDemoSurvival": true,
+      "variant": "male",
+      "idle": true,
+      "attack": true,
+      "projectileContact": true,
+      "frame": {
+        "image": "url(\"http://127.0.0.1:3000/assets/characters/bard/char_bard_male_sd_attack_strip.png\")",
+        "frame": "100% 0px",
+        "projectile": "url(\"http://127.0.0.1:3000/assets/characters/bard/char_bard_sd_projectile_strip.png\")",
+        "travel": "170.12738311767578px",
+        "visible": "block",
+        "opacity": "1"
+      }
+    },
+    {
+      "actualDemoSurvival": true,
+      "variant": "female",
+      "idle": true,
+      "attack": true,
+      "projectileContact": true,
+      "frame": {
+        "image": "url(\"http://127.0.0.1:3000/assets/characters/bard/char_bard_female_sd_attack_strip.png\")",
+        "frame": "100% 0px",
+        "projectile": "url(\"http://127.0.0.1:3000/assets/characters/bard/char_bard_sd_projectile_strip.png\")",
+        "travel": "170.13076293945312px",
+        "visible": "block",
+        "opacity": "1"
+      }
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "male",
+      "width": 320,
+      "reducedMotion": "no-preference",
+      "contact": 640,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "male",
+      "width": 320,
+      "reducedMotion": "reduce",
+      "contact": 256,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "male",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "contact": 640,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "male",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "contact": 256,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "female",
+      "width": 320,
+      "reducedMotion": "no-preference",
+      "contact": 640,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "female",
+      "width": 320,
+      "reducedMotion": "reduce",
+      "contact": 256,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "female",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "contact": 640,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "productionCSSPreview": true,
+      "variant": "female",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "contact": 256,
+      "anticipationHidden": true,
+      "contactFrame": true,
+      "downHold": true,
+      "idleReset": true,
+      "pause": true
+    },
+    {
+      "actualCSSRedrawContinuity": true,
+      "result": [
+        {
+          "state": "paused",
+          "before": {
+            "currentTime": 650,
+            "playState": "paused"
+          },
+          "currentTime": 650,
+          "playState": "paused"
+        },
+        {
+          "state": "running",
+          "before": {
+            "currentTime": 300,
+            "playState": "running"
+          },
+          "currentTime": 300,
+          "playState": "running"
+        },
+        {
+          "state": "finished",
+          "before": {
+            "currentTime": 650,
+            "playState": "finished"
+          },
+          "currentTime": 650,
+          "playState": "finished"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

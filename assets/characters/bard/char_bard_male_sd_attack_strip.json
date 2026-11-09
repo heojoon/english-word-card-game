@@ -1,0 +1,219 @@
+{
+  "image": "char_bard_male_sd_attack_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "anticipation",
+      "durationMs": 100
+    },
+    {
+      "index": 2,
+      "name": "charge",
+      "durationMs": 100
+    },
+    {
+      "index": 3,
+      "name": "aim",
+      "durationMs": 100
+    },
+    {
+      "index": 4,
+      "name": "release",
+      "durationMs": 100,
+      "release": true
+    },
+    {
+      "index": 5,
+      "name": "attack-peak",
+      "durationMs": 260
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/attack-male-01-03.png",
+      "sourceFrame": 1,
+      "bounds": [
+        190,
+        93,
+        527,
+        644
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        709,
+        727
+      ],
+      "sourceReferenceHeightPx": 551,
+      "scale": 0.5081669691470054,
+      "anchorXPx": 364.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        71,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-male-01-03.png",
+      "sourceFrame": 2,
+      "bounds": [
+        182,
+        93,
+        539,
+        644
+      ],
+      "sourceCropBox": [
+        709,
+        0,
+        1426,
+        727
+      ],
+      "sourceReferenceHeightPx": 551,
+      "scale": 0.5081669691470054,
+      "anchorXPx": 386.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        56,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-male-01-03.png",
+      "sourceFrame": 3,
+      "bounds": [
+        179,
+        93,
+        546,
+        644
+      ],
+      "sourceCropBox": [
+        1426,
+        0,
+        2164,
+        727
+      ],
+      "sourceReferenceHeightPx": 551,
+      "scale": 0.5081669691470054,
+      "anchorXPx": 397.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        49,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-male-04-06.png",
+      "sourceFrame": 1,
+      "bounds": [
+        210,
+        87,
+        565,
+        662
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        710,
+        727
+      ],
+      "sourceReferenceHeightPx": 576,
+      "scale": 0.4861111111111111,
+      "anchorXPx": 394.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        71,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-male-04-06.png",
+      "sourceFrame": 2,
+      "bounds": [
+        146,
+        87,
+        534,
+        662
+      ],
+      "sourceCropBox": [
+        710,
+        0,
+        1374,
+        727
+      ],
+      "sourceReferenceHeightPx": 576,
+      "scale": 0.4861111111111111,
+      "anchorXPx": 366.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        53,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/attack-male-04-06.png",
+      "sourceFrame": 3,
+      "bounds": [
+        130,
+        86,
+        560,
+        662
+      ],
+      "sourceCropBox": [
+        1374,
+        0,
+        2163,
+        727
+      ],
+      "sourceReferenceHeightPx": 576,
+      "scale": 0.4861111111111111,
+      "anchorXPx": 387.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        35,
+        32
+      ],
+      "rawSourcePreserved": true
+    }
+  ],
+  "canonicalIllustration": "concept/char_bard_male_female_harp_concept_v1.png",
+  "identityMaster": "source/identity-male.png",
+  "sourceMaster": "source-frames/attack-male/source-master-50px.png",
+  "sourceFrameWidth": 446,
+  "sourceFrameHeight": 592,
+  "rawGenerationSheets": [
+    "source/attack-male-01-03.png",
+    "source/attack-male-04-06.png"
+  ],
+  "rawGenerationSpacing": "Preserved raw; extracted source master repacked with exact 50px transparent gaps.",
+  "reviewMaster": "review/attack-male-source-50px.png",
+  "reviewStatus": "Technical and offline visual review passed. Chromium local demo Survival male/female and production CSS previews at320/390px normal/reduced passed; contact, down hold, idle reset, pause styling and paused/running/finished redraw continuity verified. Dedicated boss browser playtest not run; user visual approval not claimed.",
+  "releaseMs": 400,
+  "contactMs": 640,
+  "reducedContactMs": 256,
+  "finalActive": true,
+  "frame01MatchesIdle": false,
+  "effectBounds": "Harp charge glow stays with hero; detached notes use separate centered projectile layer.",
+  "browserReview": "review/browser-review.json"
+}

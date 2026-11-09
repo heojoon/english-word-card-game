@@ -10,8 +10,8 @@ const skills=context.window.WORDORIA_ACTIVE_SKILLS;
 function state(overrides={}){return {story:true,hp:5,hpMax:5,mp:3,mpMax:3,correct:0,index:0,bossAttackSteps:2,...overrides};}
 function attach(s,cls,options){return s.activeSkills=skills.attach(s,cls,{unlocked:true,...options});}
 
-test('new actives are locked by default and cannot be activated by bypassing the button',()=>{
-  for(const cls of Object.keys(skills.definitions)){
+test('World 8 reward actives are locked by default and cannot be activated by bypassing the button',()=>{
+  for(const cls of Object.keys(skills.definitions).filter(cls=>!skills.definitions[cls].availableFromStart)){
     const s=state({guardian:true}),e=skills.attach(s,cls);
     assert.equal(e.unlocked,false);assert.equal(e.ready(),false);assert.equal(e.activate(),false);assert.equal(s.mp,3);
     e.damage(1);assert.equal(s.hp,4);assert.equal(e.attackDamage(2),2);assert.equal(e.hint(),false);
@@ -137,7 +137,7 @@ test('fire damage cannot heal a defeated boss or affect a paused battle',()=>{
 function royalBattle(overrides={}){
   const entries=Array.from({length:5},(_,id)=>({id,entry:[`word${id}`,'n',`meaning${id}`]}));
   const s=state({boss:true,bossHp:50,bossMaxHp:50,matchBoard:entries,matchEn:entries,matchKo:entries,matched:new Set(),selectedKo:null,selectedEn:null,...overrides});
-  const callbacks=[],c=vm.createContext({run:s,callbacks,performance:{now:()=>0},render(){},speak(){},battleContactDelay:()=>100,setTimeout:fn=>{callbacks.push(fn);return callbacks.length;},reducedMotion:()=>true,document:{dispatchEvent(){},querySelector(){return null;}},CustomEvent:class{},$:()=>null,ROYAL_SLIME_ABSORB:30000});
+  const callbacks=[],c=vm.createContext({run:s,selectedCharacter:{},callbacks,performance:{now:()=>0},render(){},speak(){},battleContactDelay:()=>100,setTimeout:fn=>{callbacks.push(fn);return callbacks.length;},reducedMotion:()=>true,document:{dispatchEvent(){},querySelector(){return null;}},CustomEvent:class{},$:()=>null,ROYAL_SLIME_ABSORB:30000});
   vm.runInContext(extract('  function royalSlimePick(','  function crystalGhostFall('),c);
   return {s,c,callbacks};
 }
@@ -159,7 +159,7 @@ test('World 1 damage goes through oath and mana shield',()=>{
 test('World 8 spelling wrong answers also respect both defensive actives',()=>{
   for(const cls of ['warrior','mage']){
     const s=state({spelling:true,question:{answer:'p',choices:['a','p','c','d']}}),node={classList:{add(){}},textContent:''};attach(s,cls).activate();
-    const c=vm.createContext({run:s,document:{querySelectorAll:()=>[],dispatchEvent(){}},CustomEvent:class{},$:()=>node,setTimeout:()=>1});
+    const c=vm.createContext({run:s,selectedCharacter:{class:cls},document:{querySelectorAll:()=>[],dispatchEvent(){}},CustomEvent:class{},$:()=>node,setTimeout:()=>1});
     vm.runInContext(extract('  function answerStorySpelling(','  function renderBattle('),c);c.answerStorySpelling(0);
     assert.equal(s.hp,5);assert.equal(s.mp,2);assert.equal(s.correct,0);
   }

@@ -85,6 +85,7 @@ test('World 8 unlocks from the correct branch ending and later stages require th
 function battle(){
   const node={classList:{add(){},toggle(){}},textContent:''},pending=[];
   const c=vm.createContext({run:{spelling:true,story:true,question:{entry:['apple','n','사과'],answer:'p',choices:['a','p','c','d']},correct:0,index:0,hp:3,mp:2,iceTimeActive:true,timeStopped:true,deck:Array(40).fill({}),slashExpiresAt:0},pending,document:{querySelectorAll:()=>[],dispatchEvent(){}},CustomEvent:class{},$:()=>node,battleContactDelay:()=>100,reducedMotion:()=>true,setHeroAttackTravel(){},speak(){},performance:{now:()=>0},render(){},setTimeout:fn=>{pending.push(fn);return pending.length;},continueAfterFeedback:()=>{c.run.index++;c.run.locked=false;},finishBattle:(clear,reason)=>{c.run.done=true;c.reason=reason;},consumePugilistWeavingStep:()=>false});
+  c.selectedCharacter={class:'warrior'};
   vm.runInContext(extract('  function answerStorySpelling(','  function renderBattle('),c);return c;
 }
 test('spelling answers advance once, release ice, reject locked/paused input, and preserve HP on correct answers',()=>{

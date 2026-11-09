@@ -1,0 +1,218 @@
+{
+  "image": "char_bard_sd_projectile_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 6,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "groundLinePx": null,
+  "sourceFrameGapPx": 50,
+  "frames": [
+    {
+      "index": 0,
+      "name": "charge",
+      "durationMs": 60,
+      "release": true
+    },
+    {
+      "index": 1,
+      "name": "launch",
+      "durationMs": 60
+    },
+    {
+      "index": 2,
+      "name": "near-travel",
+      "durationMs": 60
+    },
+    {
+      "index": 3,
+      "name": "far-travel",
+      "durationMs": 60
+    },
+    {
+      "index": 4,
+      "name": "contact",
+      "durationMs": 60,
+      "hit": true
+    },
+    {
+      "index": 5,
+      "name": "crystal-burst",
+      "durationMs": 60
+    }
+  ],
+  "projectile": true,
+  "normalization": [
+    {
+      "source": "source/projectile-01-03.png",
+      "sourceFrame": 1,
+      "bounds": [
+        240,
+        362,
+        412,
+        535
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        532,
+        882
+      ],
+      "sourceReferenceHeightPx": 281,
+      "scale": 0.5551601423487544,
+      "anchorXPx": 326.0,
+      "anchorMethod": "effect-center",
+      "destination": [
+        112,
+        112
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/projectile-01-03.png",
+      "sourceFrame": 2,
+      "bounds": [
+        120,
+        273,
+        576,
+        551
+      ],
+      "sourceCropBox": [
+        532,
+        0,
+        1180,
+        882
+      ],
+      "sourceReferenceHeightPx": 281,
+      "scale": 0.5551601423487544,
+      "anchorXPx": 348.0,
+      "anchorMethod": "effect-center",
+      "destination": [
+        33,
+        83
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/projectile-01-03.png",
+      "sourceFrame": 3,
+      "bounds": [
+        73,
+        272,
+        503,
+        553
+      ],
+      "sourceCropBox": [
+        1180,
+        0,
+        1783,
+        882
+      ],
+      "sourceReferenceHeightPx": 281,
+      "scale": 0.5551601423487544,
+      "anchorXPx": 288.0,
+      "anchorMethod": "effect-center",
+      "destination": [
+        41,
+        82
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/projectile-04-06.png",
+      "sourceFrame": 1,
+      "bounds": [
+        146,
+        271,
+        578,
+        556
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        615,
+        872
+      ],
+      "sourceReferenceHeightPx": 299,
+      "scale": 0.5217391304347826,
+      "anchorXPx": 362.0,
+      "anchorMethod": "effect-center",
+      "destination": [
+        47,
+        86
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/projectile-04-06.png",
+      "sourceFrame": 2,
+      "bounds": [
+        37,
+        254,
+        529,
+        553
+      ],
+      "sourceCropBox": [
+        615,
+        0,
+        1220,
+        872
+      ],
+      "sourceReferenceHeightPx": 299,
+      "scale": 0.5217391304347826,
+      "anchorXPx": 283.0,
+      "anchorMethod": "effect-center",
+      "destination": [
+        32,
+        82
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/projectile-04-06.png",
+      "sourceFrame": 3,
+      "bounds": [
+        76,
+        255,
+        431,
+        545
+      ],
+      "sourceCropBox": [
+        1220,
+        0,
+        1804,
+        872
+      ],
+      "sourceReferenceHeightPx": 299,
+      "scale": 0.5217391304347826,
+      "anchorXPx": 253.5,
+      "anchorMethod": "effect-center",
+      "destination": [
+        67,
+        84
+      ],
+      "rawSourcePreserved": true
+    }
+  ],
+  "canonicalIllustration": "concept/char_bard_male_female_harp_concept_v1.png",
+  "identityMaster": null,
+  "sourceMaster": "source-frames/projectile/source-master-50px.png",
+  "sourceFrameWidth": 508,
+  "sourceFrameHeight": 315,
+  "rawGenerationSheets": [
+    "source/projectile-01-03.png",
+    "source/projectile-04-06.png"
+  ],
+  "rawGenerationSpacing": "Preserved raw; extracted source master repacked with exact 50px transparent gaps.",
+  "reviewMaster": "review/projectile-source-50px.png",
+  "reviewStatus": "Technical and offline visual review passed. Chromium local demo Survival male/female and production CSS previews at320/390px normal/reduced passed; contact, down hold, idle reset, pause styling and paused/running/finished redraw continuity verified. Dedicated boss browser playtest not run; user visual approval not claimed.",
+  "releaseMs": 400,
+  "contactMs": 640,
+  "reducedContactMs": 256,
+  "finalActive": false,
+  "browserReview": "review/browser-review.json"
+}

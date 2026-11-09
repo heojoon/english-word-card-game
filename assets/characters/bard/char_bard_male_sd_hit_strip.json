@@ -1,0 +1,123 @@
+{
+  "image": "char_bard_male_sd_hit_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "frames": [
+    {
+      "index": 0,
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "impact-recoil",
+      "durationMs": 100,
+      "hit": true
+    },
+    {
+      "index": 2,
+      "name": "complete-knockdown",
+      "durationMs": 1000,
+      "finalHold": true
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/hit-male-01-03.png",
+      "sourceFrame": 1,
+      "bounds": [
+        167,
+        79,
+        529,
+        645
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        654,
+        724
+      ],
+      "sourceReferenceHeightPx": 566,
+      "scale": 0.49469964664310956,
+      "anchorXPx": 341.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        106,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/hit-male-01-03.png",
+      "sourceFrame": 2,
+      "bounds": [
+        126,
+        108,
+        592,
+        645
+      ],
+      "sourceCropBox": [
+        654,
+        0,
+        1332,
+        724
+      ],
+      "sourceReferenceHeightPx": 566,
+      "scale": 0.49469964664310956,
+      "anchorXPx": 446.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        33,
+        46
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/hit-male-01-03.png",
+      "sourceFrame": 3,
+      "bounds": [
+        85,
+        384,
+        693,
+        643
+      ],
+      "sourceCropBox": [
+        1332,
+        0,
+        2172,
+        724
+      ],
+      "sourceReferenceHeightPx": 566,
+      "scale": 0.49469964664310956,
+      "anchorXPx": 418.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        27,
+        184
+      ],
+      "rawSourcePreserved": true
+    }
+  ],
+  "canonicalIllustration": "concept/char_bard_male_female_harp_concept_v1.png",
+  "identityMaster": "source/identity-male.png",
+  "sourceMaster": "source-frames/hit-male/source-master-50px.png",
+  "sourceFrameWidth": 624,
+  "sourceFrameHeight": 582,
+  "rawGenerationSheets": [
+    "source/hit-male-01-03.png"
+  ],
+  "rawGenerationSpacing": "Preserved raw; extracted source master repacked with exact 50px transparent gaps.",
+  "reviewMaster": "review/hit-male-source-50px.png",
+  "reviewStatus": "Technical and offline visual review passed. Chromium local demo Survival male/female and production CSS previews at320/390px normal/reduced passed; contact, down hold, idle reset, pause styling and paused/running/finished redraw continuity verified. Dedicated boss browser playtest not run; user visual approval not claimed.",
+  "browserReview": "review/browser-review.json"
+}

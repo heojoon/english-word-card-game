@@ -6,20 +6,25 @@
     mage:{image:'active-mage-mana-shield.webp',name:'마나 실드',icon:'shield',description:'켜기 무료 · 피격 시 HP 대신 같은 양의 MP를 소모해요. 다시 누르면 꺼져요.'},
     pugilist:{image:'active-pugilist-explosive-fist.webp',name:'폭렬권',icon:'combo',description:'MP 1 · 다음 보스 공격의 피해량이 3배가 돼요.',bossOnly:true},
     ranger:{image:'active-ranger-fire-arrow.webp',name:'파이어 애로우',icon:'arrow',description:'MP 1 · 보스에게 1초마다 피해 2, 10초간 총 20 피해를 줘요.',bossOnly:true},
-    sniper:{image:'active-sniper-deadeyes.webp',name:'데드아이즈',icon:'sword',description:'MP 1 · 첫 정답부터 10초간 다음 정답의 힌트를 계속 보여줘요.'}
+    sniper:{image:'active-sniper-deadeyes.webp',name:'데드아이즈',icon:'sword',description:'MP 1 · 첫 정답부터 10초간 다음 정답의 힌트를 계속 보여줘요.'},
+    bard:{name:'치유의 아리아',icon:'aura',description:'MP 1 · 하프의 선율로 HP를 2 회복해요. 최대 HP를 넘지 않아요.',availableFromStart:true}
   };
   const isBoss=s=>Boolean(s.guardian||s.boss||s.keurus||s.vargas||s.trainingBoss||s.hiddenKind==='king');
   function attach(s,classCode,{burn=()=>{},unlocked=false}={}){
     const definition=definitions[classCode];
+    unlocked=Boolean(unlocked||definition?.availableFromStart);
     let oathMs=0,shield=false,burst=false,burnMs=0,burnTick=0,deadeyeArmed=false,deadeyeMs=0;
     let lastCorrect=s.correct||0,dirty=false;
+    // Older bosses use `correct` for damage credits; only real answers fuel melody.
+    const answerCount=()=>Math.max(0,Number(s.answeredCorrect??s.correct)||0);
+    let melodyAnswers=answerCount(),bardNotice='',bardNoticeMs=0;
     const allowed=()=>s.story&&!s.done&&!s.fever&&!s.feverTransition;
     const busy=()=>s.paused||s.locked||s.attack||s.stunned||s.timeoutPending||s.potionUsePending||s.weavingStepDodging||s.shadowFreezeMs>0||s.hp<=0;
-    const active=()=>classCode==='warrior'?oathMs>0:classCode==='mage'?shield:classCode==='pugilist'?burst:classCode==='ranger'?burnMs>0:deadeyeArmed||deadeyeMs>0;
+    const active=()=>classCode==='warrior'?oathMs>0:classCode==='mage'?shield:classCode==='pugilist'?burst:classCode==='ranger'?burnMs>0:classCode==='sniper'&&(deadeyeArmed||deadeyeMs>0);
     const effects={
       definition,
       unlocked,
-      ready(){return Boolean(unlocked&&definition&&allowed()&&!busy()&&(!definition.bossOnly||isBoss(s))&&(classCode==='mage'?shield||s.mp>0:!active()&&s.mp>=1));},
+      ready(){return Boolean(unlocked&&definition&&allowed()&&!busy()&&(!definition.bossOnly||isBoss(s))&&(classCode!=='bard'||s.hp<s.hpMax)&&(classCode==='mage'?shield||s.mp>0:!active()&&s.mp>=1));},
       activate(){
         if(!this.ready())return false;
         dirty=true;
@@ -29,10 +34,16 @@
         if(classCode==='pugilist')burst=true;
         if(classCode==='ranger'){burnMs=10000;burnTick=0;}
         if(classCode==='sniper'){deadeyeArmed=true;lastCorrect=s.correct||0;}
+        if(classCode==='bard'){const before=s.hp;s.hp=Math.min(s.hpMax,s.hp+2);bardNotice=`치유의 아리아 · HP +${s.hp-before}`;bardNoticeMs=1200;s.bardVitalsDirty=true;}
         return true;
       },
       observeCorrect(){
         const correct=s.correct||0;
+        if(classCode==='bard'&&allowed()&&!s.paused&&s.hp>0){
+          const answers=answerCount(),awards=Math.max(0,Math.floor(answers/5)-Math.floor(melodyAnswers/5));
+          melodyAnswers=Math.max(melodyAnswers,answers);
+          if(awards){const before=s.mp;s.mp=Math.min(s.mpMax,s.mp+awards);dirty=true;if(s.mp>before){bardNotice=`이어지는 선율 · MP +${s.mp-before}`;bardNoticeMs=1200;s.bardVitalsDirty=true;}}
+        }
         if(deadeyeArmed&&correct>lastCorrect){deadeyeArmed=false;deadeyeMs=10000;}
         lastCorrect=correct;
       },
@@ -67,6 +78,7 @@
         const before=this.status(),correctChanged=lastCorrect!==(s.correct||0),wasDirty=dirty;dirty=false;
         this.observeCorrect();
         const step=Math.max(0,delta);
+        bardNoticeMs=Math.max(0,bardNoticeMs-step);
         oathMs=Math.max(0,oathMs-step);deadeyeMs=Math.max(0,deadeyeMs-step);
         const burning=Math.min(step,burnMs);burnMs=Math.max(0,burnMs-step);burnTick+=burning;
         while(burnTick>=1000){burnTick-=1000;if(s.bossHp>0)burn(2);}
@@ -74,6 +86,7 @@
       },
       status(){
         if(!allowed())return '';
+        if(bardNoticeMs>0)return bardNotice;
         if(oathMs>0)return `HP 보호 · ${Math.ceil(oathMs/1000)}초`;
         if(shield)return '켜짐 · 피격 시 MP 소모';
         if(burst)return '다음 공격 ×3';
@@ -83,7 +96,7 @@
         return '';
       },
       active,
-      clear(){oathMs=0;shield=false;burst=false;burnMs=0;burnTick=0;deadeyeArmed=false;deadeyeMs=0;}
+      clear(){oathMs=0;shield=false;burst=false;burnMs=0;burnTick=0;deadeyeArmed=false;deadeyeMs=0;bardNotice='';bardNoticeMs=0;}
     };
     return effects;
   }

@@ -1,0 +1,34 @@
+{
+  "male": {
+    "source": "concept/char_bard_male_female_harp_concept_v1.png",
+    "cropBox": [
+      0,
+      0,
+      740,
+      740
+    ],
+    "export": "assets/avatars/variants/bard-male.webp",
+    "size": [
+      512,
+      512
+    ],
+    "background": "Preserved from concept; no background removal or redesign.",
+    "battleArt": false
+  },
+  "female": {
+    "source": "concept/char_bard_male_female_harp_concept_v1.png",
+    "cropBox": [
+      750,
+      0,
+      1536,
+      786
+    ],
+    "export": "assets/avatars/variants/bard-female.webp",
+    "size": [
+      512,
+      512
+    ],
+    "background": "Preserved from concept; no background removal or redesign.",
+    "battleArt": false
+  }
+}

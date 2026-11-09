@@ -1,0 +1,93 @@
+{
+  "image": "char_bard_female_sd_idle_strip.png",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frameCount": 2,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "frames": [
+    {
+      "index": 0,
+      "name": "ready",
+      "durationMs": 700
+    },
+    {
+      "index": 1,
+      "name": "breathe",
+      "durationMs": 700
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/identity-female.png",
+      "sourceFrame": 1,
+      "bounds": [
+        260,
+        29,
+        1025,
+        1230
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sourceReferenceHeightPx": 1201,
+      "scale": 0.2331390507910075,
+      "anchorXPx": 646.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        70,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/idle-female-02.png",
+      "sourceFrame": 1,
+      "bounds": [
+        259,
+        25,
+        1026,
+        1231
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sourceReferenceHeightPx": 1206,
+      "scale": 0.23217247097844113,
+      "anchorXPx": 646.5,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        70,
+        32
+      ],
+      "rawSourcePreserved": true
+    }
+  ],
+  "canonicalIllustration": "concept/char_bard_male_female_harp_concept_v1.png",
+  "identityMaster": "source/identity-female.png",
+  "sourceMaster": "source-frames/idle-female/source-master-50px.png",
+  "sourceFrameWidth": 783,
+  "sourceFrameHeight": 1222,
+  "rawGenerationSheets": [
+    "source/identity-female.png",
+    "source/idle-female-02.png"
+  ],
+  "rawGenerationSpacing": "Preserved raw; extracted source master repacked with exact 50px transparent gaps.",
+  "reviewMaster": "review/idle-female-source-50px.png",
+  "reviewStatus": "Technical and offline visual review passed. Chromium local demo Survival male/female and production CSS previews at320/390px normal/reduced passed; contact, down hold, idle reset, pause styling and paused/running/finished redraw continuity verified. Dedicated boss browser playtest not run; user visual approval not claimed.",
+  "loop": true,
+  "browserReview": "review/browser-review.json"
+}

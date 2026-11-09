@@ -1,0 +1,123 @@
+{
+  "image": "char_bard_female_sd_hit_strip.png",
+  "frameWidth": 384,
+  "frameHeight": 320,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "right",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "frames": [
+    {
+      "index": 0,
+      "name": "guard-notice",
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "name": "impact-recoil",
+      "durationMs": 100,
+      "hit": true
+    },
+    {
+      "index": 2,
+      "name": "complete-knockdown",
+      "durationMs": 1000,
+      "finalHold": true
+    }
+  ],
+  "projectile": false,
+  "normalization": [
+    {
+      "source": "source/hit-female-01-03.png",
+      "sourceFrame": 1,
+      "bounds": [
+        111,
+        68,
+        520,
+        674
+      ],
+      "sourceCropBox": [
+        0,
+        0,
+        614,
+        724
+      ],
+      "sourceReferenceHeightPx": 606,
+      "scale": 0.46204620462046203,
+      "anchorXPx": 321.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        95,
+        32
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/hit-female-01-03.png",
+      "sourceFrame": 2,
+      "bounds": [
+        95,
+        80,
+        648,
+        671
+      ],
+      "sourceCropBox": [
+        614,
+        0,
+        1316,
+        724
+      ],
+      "sourceReferenceHeightPx": 606,
+      "scale": 0.46204620462046203,
+      "anchorXPx": 476.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        16,
+        39
+      ],
+      "rawSourcePreserved": true
+    },
+    {
+      "source": "source/hit-female-01-03.png",
+      "sourceFrame": 3,
+      "bounds": [
+        54,
+        368,
+        775,
+        667
+      ],
+      "sourceCropBox": [
+        1316,
+        0,
+        2171,
+        724
+      ],
+      "sourceReferenceHeightPx": 606,
+      "scale": 0.46204620462046203,
+      "anchorXPx": 441.0,
+      "anchorMethod": "lower-12-percent-ground-contact",
+      "destination": [
+        13,
+        174
+      ],
+      "rawSourcePreserved": true
+    }
+  ],
+  "canonicalIllustration": "concept/char_bard_male_female_harp_concept_v1.png",
+  "identityMaster": "source/identity-female.png",
+  "sourceMaster": "source-frames/hit-female/source-master-50px.png",
+  "sourceFrameWidth": 737,
+  "sourceFrameHeight": 622,
+  "rawGenerationSheets": [
+    "source/hit-female-01-03.png"
+  ],
+  "rawGenerationSpacing": "Preserved raw; extracted source master repacked with exact 50px transparent gaps.",
+  "reviewMaster": "review/hit-female-source-50px.png",
+  "reviewStatus": "Technical and offline visual review passed. Chromium local demo Survival male/female and production CSS previews at320/390px normal/reduced passed; contact, down hold, idle reset, pause styling and paused/running/finished redraw continuity verified. Dedicated boss browser playtest not run; user visual approval not claimed.",
+  "browserReview": "review/browser-review.json"
+}
