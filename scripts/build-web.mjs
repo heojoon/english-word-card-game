@@ -44,7 +44,8 @@ await Promise.all(files.map(file => cp(new URL(file, root), new URL(file, dist))
 await cp(new URL('assets/', root), new URL('assets/', dist), { recursive: true, filter: source => {
   // Keep this boss's generation originals and review composites out of the APK.
   const path=source.replaceAll('\\','/');
-  return !/\/monsters\/(?:blackroot-elder|vargas)\/(?:source|source-frames|review)(?:\/|\.html$|$)/.test(path)
+  // Keep production delivery limited to runtime art. Generation inputs and review boards stay in the repository.
+  return !/\/(?:source|source-frames|review|concept)(?:\/|$)/.test(path)
     && !/\/characters\/bard\/(?:source|source-frames|review|concept|(?:idle|attack|hit)-(?:male|female)|projectile)(?:\/|$)/.test(path)
     && !/\/monsters\/world-9\/training-dummy\/(?:source(?:\/|$)|(?:basic|advanced)\/(?:source-frames|review|idle|attack|hit)(?:\/|$))/.test(path)
     && !/\/monsters\/world-9\/(?:griffin|iris)\/(?:source|source-frames|review|idle|attack|hit|skill)(?:\/|$)/.test(path)
