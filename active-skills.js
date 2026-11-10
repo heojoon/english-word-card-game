@@ -7,7 +7,7 @@
     pugilist:{image:'active-pugilist-explosive-fist.webp',name:'폭렬권',icon:'combo',description:'MP 1 · 다음 보스 공격의 피해량이 3배가 돼요.',bossOnly:true},
     ranger:{image:'active-ranger-fire-arrow.webp',name:'파이어 애로우',icon:'arrow',description:'MP 1 · 보스에게 1초마다 피해 2, 10초간 총 20 피해를 줘요.',bossOnly:true},
     sniper:{image:'active-sniper-deadeyes.webp',name:'데드아이즈',icon:'sword',description:'MP 1 · 첫 정답부터 10초간 다음 정답의 힌트를 계속 보여줘요.'},
-    bard:{name:'치유의 아리아',icon:'aura',description:'MP 1 · 하프의 선율로 HP를 2 회복해요. 최대 HP를 넘지 않아요.',availableFromStart:true}
+    bard:{image:'active-bard-healing-aria.png',name:'치유의 아리아',icon:'aura',description:'MP 1 · 하프의 선율로 HP를 2 회복해요. 최대 HP를 넘지 않아요.',availableFromStart:true}
   };
   const isBoss=s=>Boolean(s.guardian||s.boss||s.keurus||s.vargas||s.trainingBoss||s.hiddenKind==='king');
   function attach(s,classCode,{burn=()=>{},unlocked=false}={}){

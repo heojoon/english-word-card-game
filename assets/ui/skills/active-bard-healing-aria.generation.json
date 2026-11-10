@@ -1,0 +1,41 @@
+{
+  "asset": "active-bard-healing-aria.png",
+  "skill": "치유의 아리아",
+  "prompt": "Create ONE polished fantasy RPG active skill icon for Crystal Quest: Healing Aria, harp music restores HP. One small elegant silver and lavender fantasy harp with pale gold strings, a luminous mint-green crystal heart suspended inside its opening, and two flowing mint musical ribbons. Isolated emblem on true transparent background, no tile or frame, no text, no numbers, no character or hands. Friendly youthful premium mobile fantasy collectible art, softly painted glossy dimensional materials, soft silver highlights and lavender shadows, dominant restorative mint #60D9CF with violet #5751D8 accents. Strong clean harp-and-heart silhouette readable at 48px, single centered square composition, safe padding. The attached reference is the authority for crystal polish, violet/cyan material and finish, but do NOT draw a crosshair or enclosing circle. Clearly depict music healing with an unmistakable heart.",
+  "source": "C:/Users/Administrator/.codex/generated_images/01a1c445-a9cb-7342-a9ef-0cad84a50723/exec-e289c586-6a27-428f-b00b-a71f36edb226.png",
+  "usedIn": [
+    "character creation and selection active skill",
+    "Story active skill slot"
+  ],
+  "class": "bard",
+  "tool": "image_gen built-in",
+  "references": [
+    "assets/ui/skills/passive-sniper-insight.png"
+  ],
+  "sourceDimensions": [
+    1254,
+    1254
+  ],
+  "runtimeDimensions": [
+    256,
+    256
+  ],
+  "processing": "RGBA conversion and Lanczos downsampling only; generated alpha preserved",
+  "review": {
+    "alphaRange": [
+      0,
+      255
+    ],
+    "thumbnailSizes": [
+      38,
+      48,
+      80
+    ],
+    "backgrounds": [
+      "#F7F7FF",
+      "#5751D8"
+    ],
+    "composite": "review/bard-icons-light-violet.png",
+    "status": "Technical visual review; not user approval"
+  }
+}

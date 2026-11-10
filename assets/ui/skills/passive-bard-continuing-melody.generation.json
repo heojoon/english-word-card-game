@@ -1,0 +1,41 @@
+{
+  "asset": "passive-bard-continuing-melody.png",
+  "skill": "이어지는 선율",
+  "prompt": "Create ONE polished fantasy RPG passive skill icon for Crystal Quest: Continuing Melody, restores mana. A bold flowing silver-lavender musical eighth note and a smaller companion note orbit one luminous faceted violet-blue mana crystal, curved cyan musical staff suggesting a continuing cycle. Isolated emblem, true transparent background, no tile, no border, no lettering or numbers, no character. Youthful friendly premium mobile fantasy collectible art, softly painted glossy crystal, silver highlights, violet #5751D8 and cyan #60D9CF, restrained small gold accents, clear simple silhouette readable at 48px, centered square composition with generous safe padding. Match the attached reference's polished violet and cyan crystal material and dimensional emblem treatment but depict music and mana rather than a crosshair. Output one square icon.",
+  "source": "C:/Users/Administrator/.codex/generated_images/01a1c445-a9cb-7342-a9ef-0cad84a50723/exec-fd6ce499-40ed-435f-9866-9edcb66300ee.png",
+  "usedIn": [
+    "character selection passive skill",
+    "Story passive skill slot"
+  ],
+  "class": "bard",
+  "tool": "image_gen built-in",
+  "references": [
+    "assets/ui/skills/passive-sniper-insight.png"
+  ],
+  "sourceDimensions": [
+    1254,
+    1254
+  ],
+  "runtimeDimensions": [
+    256,
+    256
+  ],
+  "processing": "RGBA conversion and Lanczos downsampling only; generated alpha preserved",
+  "review": {
+    "alphaRange": [
+      0,
+      255
+    ],
+    "thumbnailSizes": [
+      38,
+      48,
+      80
+    ],
+    "backgrounds": [
+      "#F7F7FF",
+      "#5751D8"
+    ],
+    "composite": "review/bard-icons-light-violet.png",
+    "status": "Technical visual review; not user approval"
+  }
+}
