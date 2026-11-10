@@ -77,7 +77,7 @@ test('creation and battle UI show bard healing without a World 8 gate or missing
   const creation=c.characterActiveSkillMarkup('bard','create');
   assert.match(creation,/치유의 아리아/);assert.match(creation,/처음부터 사용 가능/);assert.doesNotMatch(creation,/바르가스|미습득|undefined/);
   vm.runInContext(source.slice(source.indexOf('  function newActiveSkillButton('),source.indexOf('  function refreshNewSkillFeedback(')),c);
-  const button=c.newActiveSkillButton();assert.match(button,/data-action="activate-new-skill"/);assert.match(button,/MP 1.*HP 2/);assert.doesNotMatch(button,/undefined|월드 8/);
+  const button=c.newActiveSkillButton();assert.match(button,/data-action="activate-new-skill"/);assert.match(button,/MP 1.*HP 1/);assert.doesNotMatch(button,/undefined|월드 8/);
 });
 
 test('real guardian answers award melody by answers rather than damage',()=>{

@@ -1869,7 +1869,7 @@
   function newActiveSkillButton(){
     const effect=run.activeSkills;if(!effect?.definition)return '';
     const def=effect.definition,status=effect.status(),ready=effect.ready();
-    const detail=!effect.unlocked?'월드 8 클리어 시 해금':status||(!effect.ready()&&def.bossOnly&&!window.WORDORIA_ACTIVE_SKILLS.isBoss(run)?'보스전 전용':selectedCharacter?.class==='bard'?(run.hp>=run.hpMax?'HP 가득 참':run.mp<1?'MP 1 필요':'MP 1 · HP 2 회복'):selectedCharacter?.class==='mage'?'켜기 무료 · 피격 시 MP':run.mp<1?'MP 1 필요':'MP 1 소모');
+    const detail=!effect.unlocked?'월드 8 클리어 시 해금':status||(!effect.ready()&&def.bossOnly&&!window.WORDORIA_ACTIVE_SKILLS.isBoss(run)?'보스전 전용':selectedCharacter?.class==='bard'?(run.hp>=run.hpMax?'HP 가득 참':run.mp<1?'MP 1 필요':'MP 1 · HP 1 회복'):selectedCharacter?.class==='mage'?'켜기 무료 · 피격 시 MP':run.mp<1?'MP 1 필요':'MP 1 소모');
     const art=def.image?`<img src="${esc(deployedAssetUrl(`assets/ui/skills/${def.image}`))}" alt="" aria-hidden="true">`:icon(def.icon);
     return `<button type="button" class="story-action-slot story-skill-slot story-new-skill ${effect.active()?'activated':''}" data-action="activate-new-skill" ${ready?'':'disabled'} ${selectedCharacter?.class==='mage'?`aria-pressed="${effect.active()}"`:''} title="${esc(def.description)}" aria-label="${def.name}, ${esc(detail)}"><span class="story-action-icon" aria-hidden="true">${art}</span><b>${def.name}</b><small>${esc(detail)}</small></button>`;
   }
