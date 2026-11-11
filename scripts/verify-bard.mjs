@@ -28,12 +28,15 @@ test('bard male and female share sniper base stats, growth and experience curve 
   }
 });
 
-test('healing aria is available from creation, costs one MP and heals one capped HP',()=>{
-  const s=state(),e=attach(s);
-  assert.equal(e.unlocked,true);assert.equal(e.ready(),true);
-  assert.equal(e.activate(),true);assert.equal(s.hp,2);assert.equal(s.mp,1);
-  s.hp=4;assert.equal(e.activate(),true);assert.equal(s.hp,5);assert.equal(s.mp,0);
-  s.mp=2;assert.equal(e.ready(),false);assert.equal(e.activate(),false);assert.equal(s.mp,2);
+test('healing aria stays disabled without changing HP or MP even after unlock and potion refill',()=>{
+  for(const unlocked of [false,true]){
+    const s=state(),e=skills.attach(s,'bard',{unlocked});
+    assert.equal(e.ready(),false);assert.equal(e.activate(),false);
+    assert.equal(s.hp,1);assert.equal(s.mp,2);
+    s.mp=s.mpMax;e.advance(33);
+    assert.equal(e.ready(),false);assert.equal(e.activate(),false);
+    assert.equal(s.hp,1);assert.equal(s.mp,s.mpMax);
+  }
 });
 
 test('healing aria cannot bypass combat input guards or revive a defeated character',()=>{
@@ -45,13 +48,13 @@ test('healing aria cannot bypass combat input guards or revive a defeated charac
   }
 });
 
-test('bard readiness changes notify the battle UI when input unlocks without a new answer',()=>{
+test('bard healing stays disabled when combat input unlocks',()=>{
   for(const flag of ['locked','attack','stunned','potionUsePending','shadowFreezeMs']){
     const s=state({[flag]:1}),e=attach(s);
     e.advance(33);assert.equal(e.ready(),false,flag);
-    s[flag]=0;
-    assert.equal(e.advance(33),true,`${flag}: refresh the disabled healing button`);
-    assert.equal(e.activate(),true);assert.equal(s.hp,2);assert.equal(s.mp,1);
+    s[flag]=0;e.advance(33);
+    assert.equal(e.ready(),false);assert.equal(e.activate(),false);
+    assert.equal(s.hp,1);assert.equal(s.mp,2);
   }
 });
 
@@ -81,13 +84,13 @@ test('melody stops during pause, fever and battle completion and can resume safe
   const s=state({mp:0}),e=attach(s);s.correct=4;e.observeCorrect();s.paused=true;e.advance(10);s.paused=false;s.correct=5;e.advance(1);assert.equal(s.mp,1);
 });
 
-test('creation and battle UI show bard healing without a World 8 gate or missing icon',()=>{
+test('creation and battle UI clearly mark bard healing as disabled',()=>{
   const s=state(),effect=attach(s),c=vm.createContext({window:context.window,characters:[],characterPreviewId:null,selectedCharacter:{class:'bard'},run:{...s,activeSkills:effect},esc:String,icon:name=>`<svg data-icon="${name}"></svg>`,deployedAssetUrl:String,hasNewActiveSkill:()=>true});
   vm.runInContext(source.slice(source.indexOf('  function characterActiveSkillMarkup('),source.indexOf('  function characterSelectMarkup(')),c);
   const creation=c.characterActiveSkillMarkup('bard','create');
-  assert.match(creation,/치유의 아리아/);assert.match(creation,/처음부터 사용 가능/);assert.doesNotMatch(creation,/바르가스|미습득|undefined/);
+  assert.match(creation,/치유의 아리아/);assert.match(creation,/사용 중지/);assert.doesNotMatch(creation,/바르가스|미습득|undefined/);
   vm.runInContext(source.slice(source.indexOf('  function newActiveSkillButton('),source.indexOf('  function refreshNewSkillFeedback(')),c);
-  const button=c.newActiveSkillButton();assert.match(button,/data-action="activate-new-skill"/);assert.match(button,/MP 1.*HP 1/);assert.doesNotMatch(button,/undefined|월드 8/);
+  const button=c.newActiveSkillButton();assert.match(button,/data-action="activate-new-skill"/);assert.match(button,/사용 중지/);assert.match(button,/ disabled/);assert.doesNotMatch(button,/undefined|월드 8/);
 });
 
 test('real guardian answers award melody by answers rather than damage',()=>{

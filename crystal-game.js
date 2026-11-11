@@ -1144,7 +1144,7 @@
       pugilist:{name:'위빙 스텝',image:'active-pugilist-weaving-step.png',description:'MP 1을 소모해 다음 오답 한 번의 HP 감소와 콤보 초기화를 막아요. 틀린 문제는 다시 풀어야 해요.'}
     };
     const skill=skills[classCode],extra=window.WORDORIA_ACTIVE_SKILLS?.definitions[classCode],preview=characters.find(row=>row.id===characterPreviewId)||selectedCharacter;
-    if(extra?.availableFromStart)return `<div class="selected-hero-skill selected-hero-active-skill"><span class="story-action-icon" aria-hidden="true">${extra.image?`<img src="${esc(deployedAssetUrl(`assets/ui/skills/${extra.image}`))}" alt="" aria-hidden="true">`:icon(extra.icon)}</span><div><small>ACTIVE SKILL · 스토리 모드</small><strong>${esc(extra.name)}</strong><p>${esc(extra.description)}</p><small>처음부터 사용 가능</small></div></div>`;
+    if(extra?.availableFromStart)return `<div class="selected-hero-skill selected-hero-active-skill"><span class="story-action-icon" aria-hidden="true">${extra.image?`<img src="${esc(deployedAssetUrl(`assets/ui/skills/${extra.image}`))}" alt="" aria-hidden="true">`:icon(extra.icon)}</span><div><small>ACTIVE SKILL · 스토리 모드</small><strong>${esc(extra.name)}</strong><p>${esc(extra.description)}</p><small>${extra.disabled?'사용 중지':'처음부터 사용 가능'}</small></div></div>`;
     const unlocked=context!=='create'&&preview?.class===classCode&&hasNewActiveSkill(preview);
     const extraMarkup=extra?`<div class="new-skill-callout" data-skill-class="${esc(classCode)}"><img src="${esc(deployedAssetUrl(`assets/ui/skills/${extra.image}`))}" alt="${esc(extra.name)} 스킬 아이콘"><div><small class="new-skill-label">신규 액티브 · 스토리 모드${extra.bossOnly?' · 보스 전용':''}</small><strong>${esc(extra.name)}</strong><p>${esc(extra.description)}</p><small class="new-skill-unlock ${unlocked?'unlocked':''}">${unlocked?'✓ 습득 완료':'미습득'} · 이 캐릭터로 월드 8 최종보스 바르가스 처치</small></div></div>`:'';if(!skill)return extraMarkup;
     const image=`<img src="${esc(deployedAssetUrl(`assets/ui/skills/${skill.image}`))}" alt="${skill.name} 스킬 아이콘">`;
@@ -1869,7 +1869,7 @@
   function newActiveSkillButton(){
     const effect=run.activeSkills;if(!effect?.definition)return '';
     const def=effect.definition,status=effect.status(),ready=effect.ready();
-    const detail=!effect.unlocked?'월드 8 클리어 시 해금':status||(!effect.ready()&&def.bossOnly&&!window.WORDORIA_ACTIVE_SKILLS.isBoss(run)?'보스전 전용':selectedCharacter?.class==='bard'?(run.hp>=run.hpMax?'HP 가득 참':run.mp<1?'MP 1 필요':'MP 1 · HP 1 회복'):selectedCharacter?.class==='mage'?'켜기 무료 · 피격 시 MP':run.mp<1?'MP 1 필요':'MP 1 소모');
+    const detail=def.disabled?'사용 중지':!effect.unlocked?'월드 8 클리어 시 해금':status||(!effect.ready()&&def.bossOnly&&!window.WORDORIA_ACTIVE_SKILLS.isBoss(run)?'보스전 전용':selectedCharacter?.class==='bard'?(run.hp>=run.hpMax?'HP 가득 참':run.mp<1?'MP 1 필요':'MP 1 · HP 1 회복'):selectedCharacter?.class==='mage'?'켜기 무료 · 피격 시 MP':run.mp<1?'MP 1 필요':'MP 1 소모');
     const art=def.image?`<img src="${esc(deployedAssetUrl(`assets/ui/skills/${def.image}`))}" alt="" aria-hidden="true">`:icon(def.icon);
     return `<button type="button" class="story-action-slot story-skill-slot story-new-skill ${effect.active()?'activated':''}" data-action="activate-new-skill" ${ready?'':'disabled'} ${selectedCharacter?.class==='mage'?`aria-pressed="${effect.active()}"`:''} title="${esc(def.description)}" aria-label="${def.name}, ${esc(detail)}"><span class="story-action-icon" aria-hidden="true">${art}</span><b>${def.name}</b><small>${esc(detail)}</small></button>`;
   }
