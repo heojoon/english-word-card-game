@@ -1875,13 +1875,21 @@
   }
   function refreshNewSkillFeedback(){
     const effect=run?.activeSkills;if(!effect)return;
+    // Keep unchanged controls attached so timer feedback cannot cancel a tap.
+    const updateMarkup=(selector,markup)=>{
+      const node=document.querySelector(selector);
+      if(!node||node.skillFeedbackMarkup===markup)return;
+      node.outerHTML=markup;
+      const replacement=document.querySelector(selector);
+      if(replacement)replacement.skillFeedbackMarkup=markup;
+    };
     effect.observeCorrect();
     if(effect.definition?.availableFromStart){
       if(run.bardVitalsDirty){run.bardVitalsDirty=false;persistStoryBattleVitals();}
-      const vitals=document.querySelector('.story-vitals');if(vitals)vitals.outerHTML=storyVitalsMarkup();
-      const actions=document.querySelector('.story-action-bar');if(actions)actions.outerHTML=storyBattleActions();
+      updateMarkup('.story-vitals',storyVitalsMarkup());
+      updateMarkup('.story-action-bar',storyBattleActions());
     }
-    const button=document.querySelector('.story-new-skill');if(button)button.outerHTML=newActiveSkillButton();
+    if(document.querySelector('.story-new-skill'))updateMarkup('.story-new-skill',newActiveSkillButton());
     const arena=$('arena');
     arena?.classList.toggle('new-skill-active',effect.active()&&!run.done);
     let status=arena?.querySelector('.new-skill-status');

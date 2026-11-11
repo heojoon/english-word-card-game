@@ -14,7 +14,7 @@
     const definition=definitions[classCode];
     unlocked=Boolean(unlocked||definition?.availableFromStart);
     let oathMs=0,shield=false,burst=false,burnMs=0,burnTick=0,deadeyeArmed=false,deadeyeMs=0;
-    let lastCorrect=s.correct||0,dirty=false;
+    let lastCorrect=s.correct||0,dirty=false,lastReady=false;
     // Older bosses use `correct` for damage credits; only real answers fuel melody.
     const answerCount=()=>Math.max(0,Number(s.answeredCorrect??s.correct)||0);
     let melodyAnswers=answerCount(),bardNotice='',bardNoticeMs=0;
@@ -82,7 +82,8 @@
         oathMs=Math.max(0,oathMs-step);deadeyeMs=Math.max(0,deadeyeMs-step);
         const burning=Math.min(step,burnMs);burnMs=Math.max(0,burnMs-step);burnTick+=burning;
         while(burnTick>=1000){burnTick-=1000;if(s.bossHp>0)burn(2);}
-        return wasDirty||correctChanged||before!==this.status();
+        const ready=this.ready(),readinessChanged=ready!==lastReady;lastReady=ready;
+        return wasDirty||correctChanged||readinessChanged||before!==this.status();
       },
       status(){
         if(!allowed())return '';
@@ -98,6 +99,7 @@
       active,
       clear(){oathMs=0;shield=false;burst=false;burnMs=0;burnTick=0;deadeyeArmed=false;deadeyeMs=0;bardNotice='';bardNoticeMs=0;}
     };
+    lastReady=effects.ready();
     return effects;
   }
   window.WORDORIA_ACTIVE_SKILLS={definitions,isBoss,attach};

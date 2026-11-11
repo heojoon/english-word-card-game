@@ -28,10 +28,10 @@ test('bard male and female share sniper base stats, growth and experience curve 
   }
 });
 
-test('healing aria is available from creation, costs one MP and heals two capped HP',()=>{
+test('healing aria is available from creation, costs one MP and heals one capped HP',()=>{
   const s=state(),e=attach(s);
   assert.equal(e.unlocked,true);assert.equal(e.ready(),true);
-  assert.equal(e.activate(),true);assert.equal(s.hp,3);assert.equal(s.mp,1);
+  assert.equal(e.activate(),true);assert.equal(s.hp,2);assert.equal(s.mp,1);
   s.hp=4;assert.equal(e.activate(),true);assert.equal(s.hp,5);assert.equal(s.mp,0);
   s.mp=2;assert.equal(e.ready(),false);assert.equal(e.activate(),false);assert.equal(s.mp,2);
 });
@@ -42,6 +42,16 @@ test('healing aria cannot bypass combat input guards or revive a defeated charac
   }
   for(const changes of [{hp:0},{mp:0},{story:false}]){
     const s=state(changes),e=attach(s);assert.equal(e.activate(),false);assert.equal(s.hp,changes.hp??1);
+  }
+});
+
+test('bard readiness changes notify the battle UI when input unlocks without a new answer',()=>{
+  for(const flag of ['locked','attack','stunned','potionUsePending','shadowFreezeMs']){
+    const s=state({[flag]:1}),e=attach(s);
+    e.advance(33);assert.equal(e.ready(),false,flag);
+    s[flag]=0;
+    assert.equal(e.advance(33),true,`${flag}: refresh the disabled healing button`);
+    assert.equal(e.activate(),true);assert.equal(s.hp,2);assert.equal(s.mp,1);
   }
 });
 
@@ -97,4 +107,20 @@ test('passive MP recovery refreshes visible vitals and persists only once',()=>{
   vm.runInContext(source.slice(source.indexOf('  function refreshNewSkillFeedback('),source.indexOf('  function storyBattleActions(')),c);
   s.correct=5;c.refreshNewSkillFeedback();assert.equal(s.mp,1);assert.equal(vitals.outerHTML,'MP 1');assert.equal(actions.outerHTML,'HP 3 MP 1');assert.equal(saves,1);
   c.refreshNewSkillFeedback();assert.equal(s.mp,1);assert.equal(saves,1);
+});
+
+test('unchanged bard feedback preserves action controls between pointer press and click',()=>{
+  const s=state(),effect=attach(s);s.activeSkills=effect;
+  const writes=[];
+  const nodes=new Map();
+  const createNode=selector=>({set outerHTML(value){writes.push(selector);nodes.set(selector,createNode(selector));}});
+  for(const selector of ['.story-vitals','.story-action-bar','.story-new-skill'])nodes.set(selector,createNode(selector));
+  const c=vm.createContext({run:s,document:{querySelector:selector=>nodes.get(selector),querySelectorAll:()=>[]},$:()=>null,
+    persistStoryBattleVitals(){},storyVitalsMarkup:()=>`HP ${s.hp} MP ${s.mp}`,storyBattleActions:()=>`actions ${s.hp} ${s.mp}`,
+    newActiveSkillButton:()=>`heal ${effect.ready()}`});
+  vm.runInContext(source.slice(source.indexOf('  function refreshNewSkillFeedback('),source.indexOf('  function storyBattleActions(')),c);
+  c.refreshNewSkillFeedback();writes.length=0;
+  c.refreshNewSkillFeedback();assert.deepEqual(writes,[],'timer feedback must not detach a pressed button when nothing changed');
+  s.correct=5;s.mp=0;c.refreshNewSkillFeedback();
+  assert.ok(writes.includes('.story-action-bar'),'MP recovery still updates the item and skill controls');
 });
