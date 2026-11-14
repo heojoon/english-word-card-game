@@ -1,0 +1,30 @@
+{
+  "status": "design approved; offline technical review passed; browser not requested; no user artwork approval claimed",
+  "facing": "left",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "sourceFrameGapPx": 50,
+  "geometryReason": "Wide orbital shoulder rings, cape, short sword and complete prone silhouette; preserve body scale and safe margins.",
+  "identities": {
+    "lumen": "../../novel/characters/char_lumen_world10_standing.webp",
+    "seiran": "../../novel/characters/char_seiran_world10_standing.webp"
+  },
+  "actions": {
+    "idle": {"frames": ["ready", "breathe", "settle"], "durationsMs": [325, 325, 325], "loop": true},
+    "attack": {"frames": ["ready", "anticipation", "contact"], "durationsMs": [200, 350, 430], "contactMs": 550},
+    "hit": {"frames": ["guard-notice", "impact-recoil", "complete-knockdown"], "durationsMs": [50, 60, 390], "holdLastFrame": true},
+    "skill": {"frames": ["prepare", "aim", "contact"], "durationsMs": [600, 600, 300], "contactMs": 1200},
+    "shield": {"identities": ["lumen"], "frames": ["raise-rings", "align-rings", "guard"], "durationsMs": [500, 500, 300], "contactMs": 1000}
+  },
+  "effects": {
+    "lumen": "Shield ring and arm sweep remain contained in sprite cell; screen-space shockwave is a separate runtime overlay at contact.",
+    "seiran": "Baton charge remains attached to hand. Separate runtime beam overlay joins caster tip toward hero at contact; mirror silhouettes are decorative copies and never replace the target."
+  },
+  "timingOverrides": {
+    "seiran-mirror": {"action": "skill", "durationsMs": [500, 500, 300], "contactMs": 1000},
+    "reducedMotion": "Attack and skill animation/contact durations are multiplied by 0.5; shield duration stays 4000 active ms."
+  },
+  "generation": "imagegen, real transparent alpha, compact 3-frame action groups, no pixel art",
+  "review": "Offline light/violet composites and frame/alpha checks required; browser only on user request."
+}

@@ -390,6 +390,14 @@ export async function generateStoryNovel(){
     if(phase==='BossStart')Object.assign(lines[0],{sceneArt:irisArt,sceneArtName:'새벽의 사범 이리스',sceneArtClass:'iris'});
     novels[`world9${phase}`]=lines;
   }
+  for(const [phase,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end'],['ExtraStart','extra-start'],['ExtraEnd','extra-end']]){
+    const lines=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-10-${file}.md`,import.meta.url),'utf8'),{world:'10',title:'별빛이 끊긴 관측탑',sceneName:'observatory',backgroundPath:'assets/story/chapter-10-observatory-map.webp'});
+    const lumenArt='assets/novel/characters/char_lumen_world10_standing.webp',seiranArt='assets/novel/characters/char_seiran_world10_standing.webp';
+    for(const line of lines)if(line.speaker==='세이런'){line.artPath=seiranArt;line.className='seiran';}
+    if(phase==='MidbossStart')Object.assign(lines[0],{sceneArt:lumenArt,sceneArtName:'관측교 수호병기 루멘',sceneArtClass:'lumen'});
+    if(phase==='BossStart')Object.assign(lines[0],{sceneArt:seiranArt,sceneArtName:'거짓 별의 지휘관 세이런',sceneArtClass:'seiran'});
+    novels[`world10${phase}`]=lines;
+  }
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');
   for(const milestone of [4,8,12,16]){

@@ -1,0 +1,259 @@
+{
+  "date": "2026-11-14",
+  "tool": "image_gen.imagegen",
+  "model": "미공개",
+  "prompts": [
+    "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map.\nScene: World 10, The Observatory Where Starlight Stopped. A sunlit deep mountain canyon with old signal outposts, a broken observation bridge with visible lower maintenance passages and a small refuge, maintenance ladders, cream-stone signal terraces and a final observatory with a large crystal beacon and mirror arrays. NOT a library or castle. Narrative geography is viewed from elevated map perspective, but stage progression MUST run TOP TO BOTTOM: start with a small roadside guard post at the TOP, pass the broken bridge around the MIDDLE, reach the observatory at the BOTTOM. The destination observatory must be completely inside the frame. No figures or bosses drawn.\nReference roles: Image 1 = authoritative chapter-1-library-map.webp STYLE reference only.\nComposition: very tall portrait 1024 x 3072, 1:3 aspect ratio, suitable for vertical scrolling, several staggered canyon terraces with a continuous golden downward winding road. Reserve right-middle canyon spur for a single optional branch. Every stage is visually separated and accessible along clearly connected paths.\nGameplay contract: exactly 43 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals: 40 main-route stages plus three OPTIONAL branch waypoints. Main stage numbered order and normalized centers (numbers are instructions only, do NOT draw text): 1=(25%,4%); 2=(45%,6.2%); 3=(65%,8.4%); 4=(78%,10.6%); 5=(60%,12.8%); 6=(40%,15%); 7=(22%,17.2%); 8=(42%,19.4%); 9=(25%,21.6%); 10=(45%,23.8%); 11=(65%,26%); 12=(78%,28.2%); 13=(60%,30.4%); 14=(40%,32.6%); 15=(22%,34.8%); 16=(42%,37%); 17=(25%,39.2%); 18=(45%,41.4%); 19=(65%,43.6%); 20=(56%,45.8%); 21=(60%,48%); 22=(40%,50.2%); 23=(22%,52.4%); 24=(42%,54.6%); 25=(25%,56.8%); 26=(45%,59%); 27=(65%,61.2%); 28=(78%,63.4%); 29=(60%,65.6%); 30=(40%,67.8%); 31=(22%,70%); 32=(42%,72.2%); 33=(25%,74.4%); 34=(45%,76.6%); 35=(65%,78.8%); 36=(78%,81%); 37=(60%,83.2%); 38=(40%,85.4%); 39=(22%,87.6%); 40=(52%,91%).\nStage 20 at broken bridge maintenance landing is the Lumen boss arena; stage 40 at the observatory entrance is the Seiran boss arena. Show these two as somewhat larger landing spaces. After stage 20, create ONE fork: main road continues downward toward stage 21; a separate short spur leads DOWN and RIGHT across exactly three extra crystal pedestals at (82%,48%),(88%,52%),(84%,57%), ending at a little isolated disused signal relay pavilion as optional side-story boss arena. The spur is a dead end and must not merge into or cross main route later. These 3 pedestals are additional to the 40 main pedestals. Build the paths and landings around all centers. Keep every waypoint separate and unobscured. No extra waypoint pedestals.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.",
+    "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map.\nScene: World 10, The Observatory Where Starlight Stopped. A sunlit deep mountain canyon with old signal outposts, a broken observation bridge with visible lower maintenance passages and a small refuge, maintenance ladders, cream-stone signal terraces and a final observatory with a large crystal beacon and mirror arrays. NOT a library or castle. Narrative geography is viewed from elevated map perspective, but stage progression MUST run TOP TO BOTTOM: start with a small roadside guard post at the TOP, pass the broken bridge around the MIDDLE, reach the observatory at the BOTTOM. The destination observatory must be completely inside the frame. No figures or bosses drawn.\nReference roles: Image 1 = authoritative chapter-1-library-map.webp STYLE reference only.\nComposition: very tall portrait 1024 x 3072, 1:3 aspect ratio, suitable for vertical scrolling, several staggered canyon terraces with a continuous golden downward winding road. Reserve right-middle canyon spur for a single optional branch. Every stage is visually separated and accessible along clearly connected paths.\nGameplay contract: exactly 43 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals: 40 main-route stages plus three OPTIONAL branch waypoints. Main stage numbered order and normalized centers (numbers are instructions only, do NOT draw text): 1=(25%,4%); 2=(45%,6.2%); 3=(65%,8.4%); 4=(78%,10.6%); 5=(60%,12.8%); 6=(40%,15%); 7=(22%,17.2%); 8=(42%,19.4%); 9=(25%,21.6%); 10=(45%,23.8%); 11=(65%,26%); 12=(78%,28.2%); 13=(60%,30.4%); 14=(40%,32.6%); 15=(22%,34.8%); 16=(42%,37%); 17=(25%,39.2%); 18=(45%,41.4%); 19=(65%,43.6%); 20=(56%,45.8%); 21=(60%,48%); 22=(40%,50.2%); 23=(22%,52.4%); 24=(42%,54.6%); 25=(25%,56.8%); 26=(45%,59%); 27=(65%,61.2%); 28=(78%,63.4%); 29=(60%,65.6%); 30=(40%,67.8%); 31=(22%,70%); 32=(42%,72.2%); 33=(25%,74.4%); 34=(45%,76.6%); 35=(65%,78.8%); 36=(78%,81%); 37=(60%,83.2%); 38=(40%,85.4%); 39=(22%,87.6%); 40=(52%,91%).\nStage 20 at broken bridge maintenance landing is the Lumen boss arena; stage 40 at the observatory entrance is the Seiran boss arena. Show these two as somewhat larger landing spaces. After stage 20, create ONE fork: main road continues downward toward stage 21; a separate short spur leads DOWN and RIGHT across exactly three extra crystal pedestals at (82%,48%),(88%,52%),(84%,57%), ending at a little isolated disused signal relay pavilion as optional side-story boss arena. The spur is a dead end and must not merge into or cross main route later. These 3 pedestals are additional to the 40 main pedestals. Build the paths and landings around all centers. Keep every waypoint separate and unobscured. No extra waypoint pedestals.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n\nEDIT THE SECOND IMAGE ONLY. Image 1 is the authoritative style reference as above. Image 2 is the generated target map. Preserve its exact dimensions, geography, paths, all architecture, single 3-waypoint right-side branch, lighting and painting. It currently has too many main-road pedestals: 21 before-and-including the large middle bridge pedestal and 24 after it (including final observatory pedestal). Remove exactly FIVE SMALL MAIN ROAD CRYSTALS AND THEIR GOLD PEDESTALS, replacing each with uninterrupted golden road. Remove the following normalized coordinates (measured relative image width/height): (35.1%,33.6%) just above the large bridge boss; (35.8%,51.3%), (55.0%,56.4%), (34.1%,60.5%), (49.3%,64.9%) on the lower main route. Leave all other crystal waypoints unchanged. NEVER remove the big middle bridge pedestal or final observatory pedestal, and leave all 3 right-side branch pedestals unchanged. Thus exactly 40 main-road waypoints (19 small + middle boss +19 small +final boss) and 3 optional branch waypoints remain. NO new waypoints. NO text. Do not add any crystals. This is a targeted five-pedestal removal edit.",
+    "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nEDIT IMAGE 2 only; image 1 style authority. Preserve every existing pixel, architecture, ALL current crystal pedestals, single three-crystal optional right branch, paths and dimensions except four tiny insertion regions. The image currently has exactly 36 main-road waypoint pedestals, and 3 branch pedestals. ADD EXACTLY FOUR SMALL VIOLET-BLUE CRYSTALS ON GOLD-RIMMED CIRCULAR PEDESTALS on existing empty golden road at these normalized centers: (36.4%,25.7%), (36.4%,30.2%), (45.0%,45.8%), (31.7%,47.4%). First two fill clear gaps ABOVE the large central broken-bridge boss landing; last two fill the long winding road immediately BELOW the bridge. Match adjacent small waypoint size. No other additions, deletions, movements, repainting or layout changes. Do not remove any existing crystals. Do not place new pedestals on the right optional fork. Exactly 40 main-road waypoints and 3 optional fork waypoints after these four insertions. NO text, numbers, figures or UI.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world."
+  ],
+  "references": {
+    "style": "assets/story/chapter-1-library-map.webp",
+    "layout": "assets/story/source/world-10/observatory-edited.png"
+  },
+  "originals": [
+    "assets/story/source/world-10/observatory-generated.png",
+    "assets/story/source/world-10/observatory-edited.png",
+    "assets/story/source/world-10/observatory-final.png"
+  ],
+  "runtime": "assets/story/chapter-10-observatory-map.webp",
+  "targetDimensions": [
+    1024,
+    3072
+  ],
+  "actualDimensions": [
+    724,
+    2172
+  ],
+  "mainStageCount": 40,
+  "optionalStageCount": 3,
+  "branchAfter": 20,
+  "actualWaypointCenters": [
+    {
+      "stage": 1,
+      "xPercent": 23.64,
+      "yPercent": 6.55
+    },
+    {
+      "stage": 2,
+      "xPercent": 41.54,
+      "yPercent": 7.65
+    },
+    {
+      "stage": 3,
+      "xPercent": 58.56,
+      "yPercent": 9.03
+    },
+    {
+      "stage": 4,
+      "xPercent": 70.45,
+      "yPercent": 10.34
+    },
+    {
+      "stage": 5,
+      "xPercent": 54.27,
+      "yPercent": 11.7
+    },
+    {
+      "stage": 6,
+      "xPercent": 36.21,
+      "yPercent": 12.79
+    },
+    {
+      "stage": 7,
+      "xPercent": 19.86,
+      "yPercent": 14.51
+    },
+    {
+      "stage": 8,
+      "xPercent": 37.58,
+      "yPercent": 16.2
+    },
+    {
+      "stage": 9,
+      "xPercent": 55.65,
+      "yPercent": 17.62
+    },
+    {
+      "stage": 10,
+      "xPercent": 69.46,
+      "yPercent": 19.36
+    },
+    {
+      "stage": 11,
+      "xPercent": 54.5,
+      "yPercent": 20.7
+    },
+    {
+      "stage": 12,
+      "xPercent": 37.83,
+      "yPercent": 21.92
+    },
+    {
+      "stage": 13,
+      "xPercent": 19.77,
+      "yPercent": 23.61
+    },
+    {
+      "stage": 14,
+      "xPercent": 36.8,
+      "yPercent": 25.3
+    },
+    {
+      "stage": 15,
+      "xPercent": 54.43,
+      "yPercent": 26.4
+    },
+    {
+      "stage": 16,
+      "xPercent": 69.31,
+      "yPercent": 27.75
+    },
+    {
+      "stage": 17,
+      "xPercent": 52.67,
+      "yPercent": 28.77
+    },
+    {
+      "stage": 18,
+      "xPercent": 36.75,
+      "yPercent": 29.62
+    },
+    {
+      "stage": 19,
+      "xPercent": 19.8,
+      "yPercent": 31.27
+    },
+    {
+      "stage": 20,
+      "xPercent": 35.75,
+      "yPercent": 36.96
+    },
+    {
+      "stage": 21,
+      "xPercent": 44.98,
+      "yPercent": 41.88
+    },
+    {
+      "stage": 22,
+      "xPercent": 47.21,
+      "yPercent": 44.68
+    },
+    {
+      "stage": 23,
+      "xPercent": 30.89,
+      "yPercent": 46.78
+    },
+    {
+      "stage": 24,
+      "xPercent": 18,
+      "yPercent": 49.06
+    },
+    {
+      "stage": 25,
+      "xPercent": 48.05,
+      "yPercent": 51.69
+    },
+    {
+      "stage": 26,
+      "xPercent": 69.32,
+      "yPercent": 54.25
+    },
+    {
+      "stage": 27,
+      "xPercent": 56.78,
+      "yPercent": 57.02
+    },
+    {
+      "stage": 28,
+      "xPercent": 19.71,
+      "yPercent": 58.22
+    },
+    {
+      "stage": 29,
+      "xPercent": 33.73,
+      "yPercent": 59.91
+    },
+    {
+      "stage": 30,
+      "xPercent": 65.37,
+      "yPercent": 62.86
+    },
+    {
+      "stage": 31,
+      "xPercent": 48.81,
+      "yPercent": 63.96
+    },
+    {
+      "stage": 32,
+      "xPercent": 35.63,
+      "yPercent": 64.93
+    },
+    {
+      "stage": 33,
+      "xPercent": 19.69,
+      "yPercent": 66.67
+    },
+    {
+      "stage": 34,
+      "xPercent": 37.75,
+      "yPercent": 68.54
+    },
+    {
+      "stage": 35,
+      "xPercent": 69.43,
+      "yPercent": 71.64
+    },
+    {
+      "stage": 36,
+      "xPercent": 52.95,
+      "yPercent": 73.01
+    },
+    {
+      "stage": 37,
+      "xPercent": 36.12,
+      "yPercent": 74.12
+    },
+    {
+      "stage": 38,
+      "xPercent": 19.74,
+      "yPercent": 76.15
+    },
+    {
+      "stage": 39,
+      "xPercent": 37.7,
+      "yPercent": 78.3
+    },
+    {
+      "stage": 40,
+      "xPercent": 50.39,
+      "yPercent": 89.4
+    },
+    {
+      "stage": "extra-1",
+      "xPercent": 59.48,
+      "yPercent": 40.77
+    },
+    {
+      "stage": "extra-2",
+      "xPercent": 69.91,
+      "yPercent": 42.73
+    },
+    {
+      "stage": "extra-3",
+      "xPercent": 77.38,
+      "yPercent": 45.25
+    }
+  ],
+  "review": {
+    "style": "Inspected against chapter 1; painterly canyon, broken bridge and final observatory retained.",
+    "waypointCount": "40 main + 3 optional; final four-point insertion checked visually and with violet component measurements.",
+    "coordinates": "Violet crystal component centers measured in generated PNG; not assumed from prompt.",
+    "branch": "Single dead-end spur from middle bridge landing; main and branch order each progress downward.",
+    "browser": "Not run; user did not request browser checks.",
+    "userApproval": "pending"
+  },
+  "limitations": [
+    "Boss-specific SD assets are not part of this map generation; battles use temporary crystal visuals."
+  ]
+}

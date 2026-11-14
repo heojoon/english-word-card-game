@@ -1,0 +1,98 @@
+{
+  "image": "lumen-sd-shield-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "source": "source/shield-generated.png",
+  "sourceBounds": [
+    [
+      121,
+      44,
+      630,
+      678
+    ],
+    [
+      851,
+      44,
+      1280,
+      678
+    ],
+    [
+      1525,
+      48,
+      2029,
+      679
+    ]
+  ],
+  "sourceDimensions": [
+    2172,
+    724
+  ],
+  "sourceScale": 0.4862657204497482,
+  "sourceFrameGapPx": 50,
+  "sourceFrameGapScope": "Normalized source-frames and review masters; generator originals retain their measured variable gutters.",
+  "frameNames": [
+    "raise-rings",
+    "align-rings",
+    "guard"
+  ],
+  "durationsMs": [
+    500,
+    500,
+    300
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "contactMs": 1000,
+  "frames": [
+    {
+      "name": "raise-rings",
+      "durationMs": 500
+    },
+    {
+      "name": "align-rings",
+      "durationMs": 500
+    },
+    {
+      "name": "guard",
+      "durationMs": 300,
+      "hit": true
+    }
+  ],
+  "review": {
+    "alpha": "preserved generated RGBA; no color-key removal",
+    "runtimeBounds": [
+      [
+        99,
+        65,
+        349,
+        375
+      ],
+      [
+        118,
+        65,
+        329,
+        375
+      ],
+      [
+        100,
+        66,
+        347,
+        375
+      ]
+    ],
+    "sourceGutterForegroundCounts": [
+      0,
+      0
+    ],
+    "browser": "not run; only on user request",
+    "artApproval": "user approval not claimed"
+  },
+  "reducedMotionMultiplier": 0.5
+}

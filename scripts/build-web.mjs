@@ -24,6 +24,7 @@ const files = [
   'blackroot-elder-boss.js',
   'vargas-boss.js',
   'world-nine-boss.js',
+  'world-ten-boss.js',
   'story-novel.js', 'red-skull-knight-boss.js', 'dark-triton-boss.js', 'nereus-boss.js', 'arkaon-boss.js', 'seal-knight-boss.js', 'morgana-boss.js', 'abyss-golem-boss.js', 'bandit-chief-boss.js', 'elliot-boss.js', 'lich-dragon-boss.js', 'sorcerus-boss.js', 'guardian-boss.js', 'red-reaper-boss.js', 'shadow-sorceress-boss.js', 'black-dragon-boss.js', 'pet-system.js', 'active-skills.js',
   'sound-manager.js',
   'native-bridge.js',
@@ -49,6 +50,7 @@ await cp(new URL('assets/', root), new URL('assets/', dist), { recursive: true, 
     && !/\/characters\/bard\/(?:source|source-frames|review|concept|(?:idle|attack|hit)-(?:male|female)|projectile)(?:\/|$)/.test(path)
     && !/\/monsters\/world-9\/training-dummy\/(?:source(?:\/|$)|(?:basic|advanced)\/(?:source-frames|review|idle|attack|hit)(?:\/|$))/.test(path)
     && !/\/monsters\/world-9\/(?:griffin|iris)\/(?:source|source-frames|review|idle|attack|hit|skill)(?:\/|$)/.test(path)
+    && !/\/monsters\/world-10\/(?:lumen|seiran)\/(?:source|source-frames|review|idle|attack|hit|skill|shield)(?:\/|$)/.test(path)
     && !/\/novel\/characters\/source\/world-9(?:\/|$)/.test(path)
     && !/\/audio\/source\/roulette(?:\/|$)/.test(path)
     && !/\/story\/source\/world-9(?:\/|$)/.test(path);

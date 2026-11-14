@@ -11,7 +11,7 @@
     if(s.done||s.paused||s.bossHp<=0)return;
     const before=s.bossHp;s.bossHp=Math.max(0,s.bossHp-Math.max(0,amount));
     if(s.bossHp<before)s.trainingHitMs=110;
-    if(s.bossHp>0){
+    if(s.bossHp>0&&!s.observatoryBoss){
       for(const threshold of s.trainingKind==='griffin'?[.5]:[.75,.5,.25]){
         if(before>s.bossMaxHp*threshold&&s.bossHp<=s.bossMaxHp*threshold&&!s.examThresholds.includes(threshold)){
           s.examThresholds.push(threshold);
@@ -22,6 +22,7 @@
     if(s.bossHp===0){s.trainingAction=null;s.trainingSkill=null;s.skillQueue=[];s.trainingVictoryMs=500;s.locked=true;s.attack=false;s.stunned=false;s.iceTimeActive=false;s.timeStopped=false;}
   }
   function question(s,entry,base){
+    if(s.observatoryBoss)return base;
     const wind=s.trainingKind==='griffin'&&s.windRemaining>0;
     const exam=s.trainingKind==='iris'&&s.examPending>0;
     if(exam){s.examPending--;s.trainingExamStartedAt=s.elapsed;}

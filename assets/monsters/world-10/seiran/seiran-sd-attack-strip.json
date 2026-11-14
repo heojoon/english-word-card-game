@@ -1,0 +1,98 @@
+{
+  "image": "seiran-sd-attack-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "source": "source/attack-generated.png",
+  "sourceBounds": [
+    [
+      93,
+      24,
+      586,
+      687
+    ],
+    [
+      748,
+      65,
+      1390,
+      688
+    ],
+    [
+      1390,
+      75,
+      2123,
+      688
+    ]
+  ],
+  "sourceDimensions": [
+    2153,
+    730
+  ],
+  "sourceScale": 0.5384358288770054,
+  "sourceFrameGapPx": 50,
+  "sourceFrameGapScope": "Normalized source-frames and review masters; generator originals retain their measured variable gutters.",
+  "frameNames": [
+    "ready",
+    "anticipation",
+    "contact"
+  ],
+  "durationsMs": [
+    200,
+    350,
+    430
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "contactMs": 550,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 200
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 350
+    },
+    {
+      "name": "contact",
+      "durationMs": 430,
+      "hit": true
+    }
+  ],
+  "review": {
+    "alpha": "preserved generated RGBA; no color-key removal",
+    "runtimeBounds": [
+      [
+        90,
+        16,
+        357,
+        375
+      ],
+      [
+        50,
+        38,
+        378,
+        375
+      ],
+      [
+        24,
+        43,
+        422,
+        375
+      ]
+    ],
+    "sourceGutterForegroundCounts": [
+      0,
+      0
+    ],
+    "browser": "not run; only on user request",
+    "artApproval": "user approval not claimed"
+  },
+  "reducedMotionMultiplier": 0.5
+}

@@ -1204,6 +1204,25 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 .story-world-map-11 .story-map-node{height:2.025%;min-height:44px}
 .story-world-map-11 .story-map-hero{left:calc(var(--story-x) - 26px);top:calc(var(--story-y) - 12px)}
 .story-world-map-12{aspect-ratio:1/3}
+.story-world-map-13{aspect-ratio:1/3}
+.story-world-map-13 .story-map-node{height:2%;min-height:44px}
+.story-world-map-13 .story-map-node-number{font-size:12px}
+.story-world-map-13 .story-map-hero{left:calc(var(--story-x) - 26px);top:calc(var(--story-y) - 12px)}
+.observatory-boss-placeholder{filter:hue-rotate(25deg);transform:scale(1.2)}
+.guardian-enemy.world-ten-boss{right:0;bottom:12px;width:48%;max-width:220px;aspect-ratio:448/384}
+.world-ten-boss-sprite,.world-ten-mirror{position:absolute;inset:0;display:block;background-repeat:no-repeat;filter:drop-shadow(0 5px 3px #24214c24)}
+.world-ten-mirror{display:none;opacity:.28;filter:drop-shadow(0 0 3px #60d9cf)}
+.world-ten-boss[data-skill="mirror"] .world-ten-mirror{display:block}
+.world-ten-mirror.mirror-left{transform:translate(-25%,-5%) scale(.85)}
+.world-ten-mirror.mirror-right{transform:translate(12%,-10%) scale(.8)}
+.world-ten-shield{position:absolute;inset:12% 8% 5%;border:3px solid #60d9cf;border-radius:50%;box-shadow:0 0 12px #60d9cf88,inset 0 0 10px #7868ef66;display:none}
+.world-ten-boss.shielded .world-ten-shield{display:block}
+.world-ten-boss.shielded .world-ten-boss-sprite{filter:drop-shadow(0 0 5px #60d9cf99)}
+.world-ten-beam,.world-ten-shockwave{position:absolute;display:none;pointer-events:none}
+.world-ten-boss[data-skill="beam"][data-contact="true"] .world-ten-beam{display:block;right:76%;top:43%;width:100%;height:9px;border-radius:50%;background:linear-gradient(0deg,#7868ef00,#60d9cf,#f7f7ff,#60d9cf,#7868ef00);box-shadow:0 0 9px #7868ef99;transform:rotate(-6deg);transform-origin:right center}
+.world-ten-boss[data-skill="shockwave"][data-contact="true"] .world-ten-shockwave{display:block;right:70%;bottom:3%;width:90%;height:26px;border:3px solid #60d9cf;border-top-color:transparent;border-radius:50%;box-shadow:0 3px 5px #7868ef88}
+.arena.paused .world-ten-boss *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.world-ten-boss-sprite,.world-ten-mirror,.world-ten-boss.shielded .world-ten-boss-sprite{filter:none}.world-ten-shield{box-shadow:none}.world-ten-beam{box-shadow:none}}
 .story-world-map-12 .story-map-node{height:2.025%;min-height:44px}
 .story-world-map-12 .story-map-hero{left:calc(var(--story-x) - 26px);top:calc(var(--story-y) - 12px)}
 .story-spelling-question{padding:12px 16px}
@@ -1292,6 +1311,11 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .new-skill-callout p{margin:5px 0 8px;color:#494467;font-size:12px;line-height:1.6}
 .new-skill-callout .new-skill-unlock{display:block;padding-top:7px;border-top:1px solid #dcd6f3;color:#655b85;font-size:11px;font-weight:700;line-height:1.6}
 .new-skill-callout .new-skill-unlock.unlocked{color:#247368}
+.selected-hero-detail .new-skill-callout{grid-template-columns:39px minmax(0,1fr);align-items:center;gap:9px;margin-top:9px;padding:9px;border-radius:14px}
+.selected-hero-detail .new-skill-callout>img{width:38px;height:38px;border-radius:12px}
+.selected-hero-detail .new-skill-callout .new-skill-label,.selected-hero-detail .new-skill-callout .new-skill-unlock{font-size:7px}
+.selected-hero-detail .new-skill-callout strong{margin-top:3px;font-size:12px;line-height:1.35}
+.selected-hero-detail .new-skill-callout p{margin:4px 0 0;font-size:10px;line-height:1.5}
 .class-preview-copy{min-width:0}
 .class-preview .new-skill-callout{grid-template-columns:1fr;gap:7px;padding:10px}
 .class-preview .new-skill-callout>img{width:44px;height:44px}

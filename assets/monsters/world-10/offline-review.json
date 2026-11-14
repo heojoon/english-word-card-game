@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-14",
+  "status": "offline technical review passed",
+  "runtime": {"identities": ["lumen", "seiran"], "actions": 9, "frames": 27, "cell": [448, 384], "anchor": [0.5, 0.975]},
+  "checks": [
+    "Inspected all 27 normalized frames on Moon White and Crystal Violet review boards at mobile display scale.",
+    "Checked left facing, identity/props, shared body scale, stable baseline, complete arms/weapons/rings, and transparent safety margins.",
+    "Checked notice, strongest recoil and fully prone knockdown, held as final runtime frame; no recovery inside hit strip.",
+    "Verified RGBA PNG dimensions and exactly 50px zero-alpha gaps in normalized source/review masters; runtime slots are contiguous.",
+    "Verified white armor/highlights retain solid alpha; no color-key background removal used.",
+    "Inspected both standing exports on actual light/violet alpha composites. Hidden RGB haze in alpha-zero pixels does not appear in the rendered image; original canonical standing selected.",
+    "Recorded generator originals' measured dimensions/bounds separately from normalized 50px-gapped masters; originals did not honor requested dimensions/gutters exactly."
+  ],
+  "sourcePolicy": "Generated originals, unused alpha-edit alternatives, raw crops, normalized frames, strips, metadata, review boards and preview animations are retained separately. Source/frame/review directories are excluded from dist.",
+  "userArtworkApproval": "not claimed",
+  "browser": "not run; user did not request browser checks",
+  "remainingReview": "In-browser mobile layout, first-to-last playback and contact overlay alignment when requested."
+}

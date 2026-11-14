@@ -19758,6 +19758,2614 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-9-dawn-training-map.webp"
     }
   ],
+  "world10Prologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(수레 한 대가 역참 마당에 비스듬히 세워져 있다. 바퀴 옆에는 새 밧줄과 들것이 놓여 있다. 파이터가 열린 문으로 고개를 내민다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "계세요? 주교님 편지를 받고 왔는데요!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(책상 앞에 앉아 있던 경비대장이 일어나려다 멈춘다. 오른쪽 다리에 부목을 댔다. 아서가 가까이 가 편지를 내민다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "아서 일행이군. 나는 이곳 경비대를 맡은 로엔이다. 먼 길을 왔는데 쉬라는 말부터 못 하겠구나.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "무슨 일이 있었어요?",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "관측교 쪽으로 나간 세 사람이 돌아오지 않았다. 어젯밤 탑에서 안전 신호를 보고 출발했는데, 약속한 시간이 지나도 소식이 없어.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "탑에서는 연락이 왔나요?",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "길이 안전하다는 빛만 계속 온다. 우리가 응답을 보내도 바뀌지 않아. 내가 뒤따라갔다가 낙석에 길이 끊겼다. 다리도 그때 다쳤지.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(로엔이 창가의 작은 신호등을 가리킨다. 빛을 가렸다 열 수 있도록 금속 덮개가 달려 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "관측관 네라는 반드시 답을 확인하는 사람이다. 빛이 온다고 해서 탑이 무사하다고 믿을 수는 없어.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "직접 어디까지 확인하셨어요?",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(로엔이 지도 위에 손가락을 댄다. 관측교를 가로지르던 선 가운데에 굵은 표시가 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "여기까지다. 다리 아래에 보수용 통로가 있다. 위쪽에서 돌이 떨어져 내려가지는 못했어.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "동쪽 옛 관측로 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 지도에 보수용 계단을 옮겨 적는다. 파이터는 밧줄을 풀어 해진 부분이 없는지 살핀다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "남은 병사 하나는 우회로로 지원을 부르러 보냈다. 다른 하나는 여기서 신호를 지킨다. 너희가 먼저 간다면 위에서 보이는 길만 믿고 들어가지는 마라.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "아래 통로에서 사람부터 찾아볼게요. 길이 더 무너졌으면 돌아와서 다른 방법을 찾고요.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "무언가 확인하면 세 번 짧게 빛을 보내 다오. 이쪽도 똑같이 세 번 답하겠다. 답이 없으면 우리가 받았다고 생각하지 말고.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "말로 전해야 하는 내용은요?",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "신호로 전할 수 없는 건 사람을 보내야지. 저 빛으로 모든 말을 할 수는 없다.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 출발할 시각과 살펴볼 길을 종이에 적는다. 로엔은 옆에 우회 구조대의 집결 지점을 표시한다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "전에는 일단 가면 어떻게든 될 것 같았는데.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이제는 돌아오는 길도 적는 거지?",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 우리가 어디 있는지 기다리는 사람도 알아야 하니까.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 밧줄과 휴대등을 챙겨 역참을 나선다. 로엔이 창가로 의자를 옮겨 신호등의 덮개를 연다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "역참 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(계단 아래로 협곡이 열린다. 맞은편 관측탑에서 빛이 길게 두 번, 짧게 한 번 깜박인다. 잠시 뒤 같은 순서가 반복된다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저게 안전하다는 신호야?",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "로엔 대장님이 보여 준 순서랑 같아.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 휴대등을 높이 들어 세 번 짧게 빛을 보낸다. 탑은 긴 두 번, 짧은 한 번을 그대로 되풀이한다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "우리 쪽은 보지도 않네.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "사람이 아니라 장치가 보내고 있을 수도 있겠어.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "누가 그 장치를 켜 놓았는지는 아직 모르지.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 부서진 다리 끝에서 멈춘다. 건너편 난간에는 경비대의 푸른 천 조각이 걸려 있다. 탑의 빛이 비추는 길은 그 뒤로 이어진다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저쪽으로 갔다는 표시일까?",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "일부러 묶은 건지 찢겨 걸린 건지부터 봐야 해. 여기서는 모르겠어.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(돌아보던 소서러스가 손을 든다. 네 사람이 조용해진다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "잠깐. 아래에서….",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바람 소리 사이로 금속을 세 번 두드리는 소리가 들린다. 긴 침묵 뒤 다시 세 번.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저건 반복하는 간격이 달라.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "우리가 왔다는 소리를 들었나 봐.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교로 내려가는 돌계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 계단의 오래된 고리를 당겨 본다. 고리가 버틴다. 밧줄을 걸고 한 사람씩 아래로 내려간다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(무너진 보수 통로 끝에서 장갑 낀 손이 보인다. 경비병 하나가 돌조각으로 난간을 두드리고 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "위로 가지 마세요! 탑의 신호가…!",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(큰 발이 통로를 밟는다. 경비병이 급히 몸을 낮춘다. 사람 키보다 큰 결정 병기가 다리 기둥 뒤에서 걸어 나온다. 어깨를 둘러싼 고리 사이로 검은 빛이 맥박친다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "들었어요! 거기 몇 명이에요?",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "셋! 한 명은 걸을 수 없어요!",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘의 고리가 돌아간다. 팔에 붙은 결정판이 일행을 향해 기울어진다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아서, 오른쪽 기둥 뒤!",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 몸을 피한다. 조금 전 서 있던 계단 끝이 깨진다. 아서는 파편이 가라앉는 것을 기다렸다가 검을 든다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "셋 다 데리고 올라가자.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측교 아래 · 보수 계단",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    }
+  ],
+  "world10MidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(결정 병기가 팔을 들어 기둥 사이를 가로막는다. 가슴에 새겨진 오래된 글자 아래, 새로 난 균열이 검게 물들어 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "sceneArt": "assets/novel/characters/char_lumen_world10_standing.webp",
+      "sceneArtName": "관측교 수호병기 루멘",
+      "sceneArtClass": "lumen"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "‘관측교 방호기, 루멘.’ 원래 다리를 지키던 장치야.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "네라 관측관이 점검할 때 늘 데리고 나왔어요. 그런데 어제는 우리를 보자마자….",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘의 어깨 고리가 반 바퀴 돈다. 등 쪽 틈에 박힌 검은 쐐기가 드러났다가 다시 가려진다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저 쐐기. 은종 마을에서 본 것과 비슷해.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "안쪽으로 힘을 밀어 넣고 있어. 원래 명령보다 저게 앞서는 모양이군.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "뒤로 가서 뽑으면 되겠네.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 옆길로 한 걸음 옮긴다. 루멘의 팔은 아서를 향한 채지만 방어 고리 하나가 뒤로 돌아 파이터의 길을 막는다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "…뒤도 보고 있네.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "쐐기부터 잡으려다 끼겠어. 저 고리가 먼저야.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘이 주먹을 내리친다. 아서가 검을 비스듬히 세워 충격을 흘린다. 발밑의 돌이 한 조각 떨어져 협곡 아래로 사라진다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "여기서는 오래 못 막아!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 아서의 옆에서 루멘의 팔을 밀친다. 둘이 기둥 뒤로 물러난다. 바이올렛은 경비병들이 있는 쪽의 바닥을 살핀다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "난간 밑에 좁은 길이 있어. 저쪽 대피실로 이어져!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "맞아요. 하지만 들것을 들면 저 팔 아래를 지나야 해요.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "몇 걸음 정도예요?",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "여섯, 아니… 다친 동료를 들면 더 걸려요.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 들던 지팡이를 낮추고 길의 폭을 눈으로 잰다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그 길 전부를 실드로 덮을 수는 없어. 제일 드러나는 구간만 막을게요. 기둥 뒤에서는 멈춰 주세요.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "알겠습니다. 신호를 기다릴게요.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 밧줄 한쪽을 기둥에 묶어 난간 아래로 보낸다. 경비병이 그것을 받아 다친 동료를 고정한다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "무너진 통로의 돌기둥 뒤",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛의 화살이 루멘의 어깨를 향한다. 회전하던 고리가 화살을 튕겨 낸다. 두 번째 화살도 같은 곳에서 꺾인다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "같은 고리가 정면이랑 등 뒤를 오가고 있어. 팔을 크게 뻗을 때만 연결축이 보여.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "아서가 받고, 내가 축을 치면?",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "한 번 받아 볼게. 놓치면 바로 비켜.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "경비병들이 기둥을 옮길 때는 내가 말할게. 그때는 공격보다 길부터.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘의 가슴에서 낮은 진동이 난다. 두 팔이 좌우로 벌어지고 어깨의 고리가 빨라진다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "조심하세요! 저 자세 다음에는 양쪽을 같이 쓸어요!",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서는 벌어지는 팔을 보고 발을 뒤로 옮긴다. 파이터도 따라 물러난다. 두 팔이 둘 앞을 스치며 돌난간을 쳐 낸다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "고마워요! 다음 동작도 보이면 알려 주세요!",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "왼팔 돌아온다!",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검을 세운다. 파이터는 바로 달려들지 않고 그 옆에 자세를 낮춘다. 소서러스의 지팡이 끝에 작은 방어막이 맺힌다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "루멘의 정면 · 갈라진 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    }
+  ],
+  "world10MidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘의 한쪽 팔은 바닥에 처져 있다. 금이 간 방어 고리가 등 뒤를 가리며 천천히 돈다. 남은 팔이 경비병들의 이동을 따라 기울어진다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "지금 옮겨요! 다음 기둥까지!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(두 경비병이 다친 동료를 들어 움직인다. 소서러스의 마나 실드가 날아온 결정 조각을 받아 낸다. 막 표면이 흔들리자 소서러스가 이를 악문다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "한 번 더는 못 막아!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 앞에 있어!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서의 검에 불굴의 맹세의 빛이 감긴다. 루멘의 팔이 검을 누른다. 아서가 무릎을 굽혀 버티는 동안 경비병들이 마지막 기둥 뒤로 들어간다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "셋 다 건넜어요!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "파이터, 바꿔!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 옆에서 병기의 팔꿈치를 쳐 낸다. 아서가 충격에서 벗어나 옆으로 구른다. 검에 남았던 빛이 꺼진다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 아래 · 마지막 방어 고리 앞",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘이 팔을 거두며 몸을 돌린다. 바이올렛의 화살이 드러난 연결축에 박힌다. 회전하던 고리가 잠깐 걸린다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "걸렸어! 길게는 못 버텨!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 실드를 거둔다. 지팡이 끝에서 짧은 마법이 날아가 갈라진 축을 때린다. 고리가 비뚤게 내려앉는다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "폭렬권!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터의 주먹이 루멘의 가슴 장갑에 닿는다. 이미 벌어진 금이 등까지 이어지고, 고리를 붙잡던 지지대가 부러진다. 병기가 무릎을 꿇는다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서는 곧바로 다가가지 않는다. 바닥을 긁던 손이 멈추고 가슴의 빛이 낮아지는 것을 확인한다. 바이올렛이 고개를 끄덕인다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "이제 고리가 안 돌아.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검끝을 쐐기의 밑에 대고 비튼다. 소서러스가 지팡이로 쐐기를 받아 돌바닥에 내려놓는다. 검은 빛이 한 번 튀고 사라진다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘은 움직이지 않는다. 부서진 어깨에서 작은 결정 조각이 떨어진다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "빼냈는데도 안 일어나네.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "우리가 멈추게 했으니까. 고쳐야 다시 움직일 수 있을 거야.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "지금은 더 다치게 하지 말자. 사람들한테 가자.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "루멘의 어깨 아래",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(대피실 문이 열린다. 다친 경비병이 벽에 기대 앉는다. 바이올렛이 물통을 건네고 파이터는 문밖의 발판을 확인한다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "탑에서는 무슨 일이 있었어요?",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "안전 신호를 보고 다리를 건너려 했어요. 그런데 탑에서 섬광이 터지고 적들이 나왔어요. 네라 관측관이 소리쳤어요. 아래로 피하라고.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그분도 내려오셨나요?",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "아니요. 탑 안으로 끌려갔어요. 우린 이쪽으로 피했고, 루멘이 따라 내려왔어요.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(경비병이 작은 금속판을 내민다. 순찰 시각과 돌아올 예정 시각이 긁혀 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "어젯밤부터 탑이 같은 신호만 보내고 있어요. 지원대가 보고 오면 우리처럼 당할 거예요.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 밖으로 나가 역참 쪽을 본다. 낮게 깔린 안개 사이로 역참의 창문이 보인다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "여기서는 아래가 보여. 먼저 돌아오지 말라는 뜻을 전해야 해.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측교 보수용 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 휴대등의 덮개를 세 번 연다. 기다린다. 협곡 아래에서 빛이 세 번 돌아온다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "받았어!",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "우리가 여기 있다는 건. 탑이 위험하다는 건 아직 몰라.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가볍게 다친 경비병이 일어난다. 팔에는 붕대를 감았지만 혼자 걸을 수 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "역참까지는 제가 가겠습니다. 아래쪽 계단은 압니다. 탑의 신호를 믿지 말라고 전할게요.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "혼자 갈 수 있겠어요?",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "여기 갇혀 있을 때보다 훨씬 낫습니다. 힘들면 중간 신호대에서 멈춰 연락하겠습니다.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 밧줄을 잡아 경비병의 계단 진입을 돕는다. 남은 두 사람은 문이 닫히는 대피실에서 구조대를 기다리기로 한다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네라 관측관을 데려오자. 저 빛도 꺼야 해.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "탑 아래 보수 사다리가 있어. 경비병 말대로라면 위층 옆문까지 이어져.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 밧줄의 매듭을 다시 확인한다. 파이터가 부서진 루멘 쪽을 돌아본다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "내려올 때는 수리할 사람도 같이 왔으면 좋겠다.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 여기 지키던 자리로 돌아올 수 있게.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 탑을 향해 좁은 통로를 오른다. 위쪽에서는 긴 두 번, 짧은 한 번의 빛이 여전히 같은 간격으로 반복된다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "대피실 바깥 · 역참이 보이는 발판",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    }
+  ],
+  "world10BossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 옆문의 틈을 민다. 문은 안쪽에서 걸려 있다. 파이터가 손을 내밀자 바이올렛이 문 위의 작은 창을 가리킨다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "sceneArt": "assets/novel/characters/char_seiran_world10_standing.webp",
+      "sceneArtName": "거짓 별의 지휘관 세이런",
+      "sceneArtClass": "seiran"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "잠깐. 안에 사람이 있을지도 몰라.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 창 가까이에서 낮게 부른다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네라 관측관님? 아래에 있던 경비병들은 구했어요.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(안에서 의자가 밀리는 소리가 난다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "정말이니? 셋 모두?",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네. 한 분은 역참으로 가고 있고, 두 분은 대피실에 있어요.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "다행이다…. 내 두 손이 의자에 묶여 있어. 문도 안쪽에서 쇠막대로 걸어 놨고.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 창으로 복도를 살핀다. 맞은편 의자에 네라가 묶여 있다. 문을 막은 쇠막대의 끝이 벽의 고리에 걸려 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이터, 문을 조금만 당겨. 고리에서 빼 볼게.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 힘을 주어 문틈을 벌린다. 바이올렛이 밧줄 고리를 창으로 내려 쇠막대 끝에 건다. 두 사람이 함께 당기자 막대가 비스듬히 빠진다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 문을 열고 들어가 네라의 손을 풀어 준다. 손목에 밧줄 자국이 남아 있다. 소서러스가 부축하자 네라는 먼저 복도 끝을 본다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "신호실에 아직 그자가 있어. 아래에서 지원대가 오는 걸 기다리는 중이야.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 위층 · 보수 사다리 끝",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(신호실 한가운데 커다란 수정등이 돌고 있다. 등을 둘러싼 반사판마다 같은 남자의 모습이 비친다. 짙은 남색 망토를 두른 남자가 결정 지휘봉으로 금속 덮개를 건드린다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "관측관을 데리고 왔군. 보관함도 열 생각이 생겼나?",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "네가 볼 기록은 없어.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "순찰대가 늦게 돌아오면 구조대를 보내지. 구조대가 돌아오지 않으면 더 큰 병력이 오고. 이 탑은 꽤 쓸모 있는 곳이야.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그래서 안전하다는 신호를 계속 보낸 거구나.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "경비대를 한곳에 붙잡아 두면 동쪽 길을 뒤지는 눈이 줄어든다. 주인께서 지나신 길도 조용해지겠지.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "네 주인이 타락한 천사야?",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "나는 그분의 명을 받는 세이런이다. 너희가 쫓아온 발자국도 여기서 끝난다.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 창밖으로 이어진 빛을 본다. 신호등이 다시 긴 두 번, 짧은 한 번을 보낸다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "저걸 보고 사람을 구하러 올 텐데.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "그러니 오는 것이지. 길을 막아 두기만 하면 다른 길을 찾잖나.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "역참에는 경고를 보냈어. 네가 기다리는 사람들은 안 올 거야.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세이런이 처음으로 지휘봉을 멈춘다. 곧 짧은 검을 뽑는다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "그럼 너희부터 조용히 시켜야겠군.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "관측탑 · 신호실 입구",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 뒤쪽 점검실로 물러난다. 아서가 입구를 막아 서는 순간 신호등이 강하게 번쩍인다. 좌우 반사판에 세이런의 모습이 나타난다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 오른쪽으로 몸을 돌린다. 아서가 검을 들어 왼쪽에서 날아든 실제 칼날을 막는다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "파이터, 이쪽!",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 고개를 돌리자 오른쪽의 세이런은 빛 속으로 접힌다. 진짜 세이런은 아서의 검을 밀어내고 반사판 뒤로 물러난다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "방금 오른쪽에서 뛰어왔는데!",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "모습만 비친 거야. 바닥에는 발이 닿지 않았어.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 화살을 쏜다. 세이런이 몸을 피하자 화살이 반사판 아래의 테두리에 박힌다. 옆에 비쳤던 형상이 크게 흔들린다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저 판들이 만드는 거구나.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "빛을 쫓다간 등을 내주겠어. 발소리도 들어.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 짧게 숨을 고른다. 지팡이를 높이 들지 않고 반사판 아래쪽의 통로를 살핀다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "들었어. 내 앞 통로는 비어 있어.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "수정등 둘레 · 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(점검실 안에서 네라의 목소리가 들린다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "중앙 덮개를 내리면 밖으로 나가는 빛이 꺼져! 하지만 저 지휘봉으로 다시 열 수 있어!",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 손잡이로 다가가려 하자 결정 지휘봉에서 빛줄기가 뻗는다. 바닥이 그을리고, 세이런이 손잡이 앞을 막는다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "그쪽만 보고 달려오면 편하지.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "먼저 저자를 막아야 해.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "반사판 밑에 고정 고리가 있어. 내가 끊을게. 뒤로 피할 자리 남겨 줘.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "내가 판을 밀어 둘게. 세이런까지 한꺼번에 치려고는 안 할게.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나는 진짜 공격이 오는 쪽만 막을게. 계속 켜 놓으면 금방 지쳐.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세이런이 지휘봉을 돌린다. 네 개의 형상이 각기 다른 방향으로 검을 든다. 아서는 동료들이 선 위치를 짧게 확인한다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "누가 움직이면 한마디씩. 안 보이면 안 보인다고 말해 줘.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "오른쪽에서 시작할게.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "네 뒤, 두 걸음.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "가운데 기둥 옆.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검을 고쳐 쥔다. 빛 사이에서 실제 발걸음 하나가 돌바닥을 누른다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "신호실 중앙",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    }
+  ],
+  "world10BossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바닥에 반사판 조각이 흩어져 있다. 세이런이 남은 판을 향해 지휘봉을 들자 두 개의 형상이 겹쳐 움직인다. 아서가 먼저 다가온 검을 받아 낸다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "앞에 있어! 오래는 못 버텨!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(불굴의 맹세의 빛이 아서의 검을 감싼다. 세이런의 검이 튕겨 나가지만, 지휘봉 끝의 결정은 소서러스를 향한다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "내가 받을게. 바이올렛, 고리!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(마나 실드가 빛줄기를 받는다. 소서러스는 실드 너머를 보며 한 발 옆으로 옮긴다. 바이올렛의 활 앞이 열린다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이어 애로우!",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(불꽃을 두른 화살이 마지막 반사판의 금속 고정 고리에 박힌다. 달아오른 고리가 벌어지고, 파이터가 판의 옆을 밀어 눕힌다. 두 개였던 형상이 하나로 줄어든다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(반사판이 쓰러진 쪽으로 세이런이 검을 휘두른다. 파이터는 물러난다. 빈 곳을 벤 칼날이 돌바닥을 긁는다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이제 어디 있는지 보이네.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측탑 신호실 · 깨진 반사판 사이",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세이런이 지휘봉을 수정등 쪽으로 뻗는다. 등이 빠르게 밝아진다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "눈 가려! 가까이서 터뜨릴 거야!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 얼굴을 돌리지만 섬광이 시야를 채운다. 파이터가 팔로 눈을 가린 채 멈춘다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "안 보여!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "나도. 지금 들어가지 마!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스의 실드가 마지막 빛줄기를 막고 흩어진다. 소서러스가 한쪽 무릎을 짚는다. 발소리가 그쪽으로 향한다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "내 앞! 왼쪽에서 와!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 두 사람 사이로 들어가 세이런의 검을 받는다. 이번에는 검에 빛이 없다. 아서는 밀려나면서 검날을 바깥으로 흘린다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "잡아 뒀어! 바로 앞!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 눈을 가늘게 뜬다. 세이런의 지휘봉 끝이 먼저 보인다. 화살이 그의 손잡이를 때려 지휘봉을 옆으로 꺾는다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이터, 아서 오른쪽!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 아서의 어깨를 확인한다. 그 너머 세이런의 몸이 드러난다. 모아 둔 힘을 내보낸다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "폭렬권!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(주먹이 세이런의 몸통 장갑에 닿는다. 세이런이 뒤로 밀려 수정등 받침에 부딪힌다. 검과 지휘봉이 손에서 떨어진다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 검을 멀리 밀어낸다. 바이올렛이 지휘봉을 집어 네라에게 넘긴다. 세이런이 몸을 일으키려 하지만 팔이 꺾이며 다시 주저앉는다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그만해. 더는 못 싸워.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 밧줄을 꺼낸다. 세이런의 손을 묶는 동안 소서러스는 벽에 기대 숨을 고른다. 깨진 판에는 수정등의 흔들리는 빛만 남아 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "수정등 앞 · 드러난 세이런",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 중앙 덮개를 내린다. 협곡으로 뻗던 안전 신호가 끊긴다. 바깥이 갑자기 어둡게 느껴진다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "꺼졌어.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "이제 우리가 보내야지.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 보조등을 꺼내 받침에 올린다. 바이올렛이 옆에서 등불을 잡아 준다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "탑 확보, 구조 지원 요청. 짧게 두 번 다음에 길게 한 번이야. 한 묶음 보내고 답을 기다려.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 덮개를 움직인다. 네 사람은 창밖을 본다. 한동안 아무 빛도 오지 않는다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "안 보이는 걸까?",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "안개가 지나갈 때가 있어. 조금 기다려 보자.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 덮개에 손을 대려다 멈춘다. 협곡 아래의 안개가 느리게 흐른다. 그 틈으로 역참의 창문이 드러난다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(빛이 짧게 세 번 돌아온다. 잠깐 뒤 같은 응답이 한 번 더 온다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "받았어.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이번에는 정말 전해졌네.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 창틀에 기대 앉는다. 손목을 쓸어내리다 고개를 숙인다.)",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "루멘은… 많이 망가졌니?",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "움직이지 못해요. 어깨도 부러졌고요. 쐐기는 뺐어요.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "고맙다. 아래를 확인하고 수리할 사람을 부를게. 저 다리 위에서 오래 일했거든.",
+      "scene": "observatory",
+      "sceneNumber": 3,
+      "location": "관측탑 · 신호등 창가",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(세이런을 신호실 기둥에 묶어 두고 파이터가 곁을 지킨다. 네라는 나머지 세 사람과 복도 끝의 작은 방으로 간다. 자신의 목걸이에서 열쇠를 꺼내 보관함을 연다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "이 열쇠는 신호실 열쇠와 달라. 빼앗기기 전에 옷 안에 숨겼어. 저자는 내가 이 잠금까지 바꾸지 않으면 탑을 부수겠다고 했지.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "기록을 찾고 있었군요.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "정확히 무엇을 지우려 했는지는 봐야 알아. 이 수정은 탑에서 바라본 빛과 움직임을 남겨. 탑 뒤편이나 산 너머까지 보지는 못하고.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 어젯밤 날짜가 새겨진 수정을 받침에 넣는다. 벽에 협곡과 먼 능선이 흐릿하게 비친다. 아서는 눈을 비빈다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저기. 능선 위로 지나가는 것.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(검은 날개의 형체가 화면 끝을 가로지른다. 북동쪽 바위 능선 앞에서 낮아지더니 무너진 성벽 안으로 사라진다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "한 번 더 볼 수 있어요?",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 같은 부분을 다시 비춘다. 날개는 멀고 얼굴은 보이지 않는다. 소서러스는 앞으로 나갔다가 멈춘다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이 모습만으로 그 천사라고 단정할 수는 없겠어요. 하지만 보고된 방향은 맞네요.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "저 성벽이 어디인지 알 수 있을까요?",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 방향 눈금과 기록 시각을 적는다. 옆 관측창에서 남긴 두 번째 수정을 꺼낸다. 같은 형체가 다른 쪽 능선 너머로 내려가는 모습이 보인다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "두 창의 방향이 겹치는 곳은 이쪽이야.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 옛 지형도를 펼친다. 손가락 두 개로 관측 방향을 짚어 따라가다가 한 지점에서 멈춘다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "낙성 요새.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이 탑이 아니라 저기로 내려갔구나.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "어젯밤에는. 오늘도 그곳에 있는지는 여기서 알 수 없어.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 지도를 바로 접지 않고 거리를 살핀다. 성벽 아래로 가느다란 길 하나가 그려져 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "정문으로 올라가기 전에 이 길부터 확인해 보자.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "옛 보급로네. 지금도 이어져 있는지는 가서 봐야겠어.",
+      "scene": "observatory",
+      "sceneNumber": 4,
+      "location": "관측탑 · 기록 보관실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(신호를 받은 구조대가 우회로를 돌아 도착한다. 들것을 든 경비병들이 대피실로 들어간다. 먼저 역참에 내려갔던 경비병도 길잡이로 함께 왔다.)",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "로엔 대장님이 보내셨습니다. 탑 신호는 전부 확인했어요. 다른 초소에도 접근하지 말라고 전했습니다.",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 세이런의 무기와 묶인 손을 경비병에게 확인시킨다. 네라는 신호 조작과 루멘의 쐐기에 대해 증언한다.)",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "세이런",
+      "className": "seiran",
+      "text": "요새 이름 하나를 알았다고 길이 열린 줄 아느냐.",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_seiran_world10_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그래서 확인하면서 갈 거야. 네가 켜 놓은 빛만 따라가지는 않고.",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(경비병들이 세이런을 데리고 계단을 내려간다. 파이터는 벽에 기대었다가 그대로 주저앉는다.)",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "나 지금 여기서 잠들어도 돼?",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "들것이 모자라. 역참까지만 걸어.",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "나도 중간에 쉴 거야. 먼저 가면 안 돼.",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "같이 쉬자. 이제 기다릴 수 있으니까.",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네라가 대피실 문을 활짝 고정한다. 구조된 경비병이 들것 위에서 손을 든다. 네라가 그 손을 마주 잡는다.)",
+      "scene": "observatory",
+      "sceneNumber": 5,
+      "location": "늦은 오후 · 관측탑 아래 대피실",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(역참 식탁에 지도와 편지 두 통이 놓여 있다. 네라는 주교에게 보낼 관측 기록 사본을 봉한다. 로엔은 초소 지원을 요청하는 보고서를 전령에게 건넨다.)",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "요새에 접근하는 일은 다른 초소에도 알리겠다. 지원 소식이 오면 옛 보급로 입구로 보내마.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저희도 길을 확인하면 표식을 남길게요. 안쪽까지 무작정 들어가지는 않을게요.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "네라",
+      "className": "scene",
+      "text": "기록의 시각과 방향도 지도 뒤에 적어 두었어. 누가 물으면 그대로 보여 줘. 내가 관측한 것과 추측한 것을 나눠 적었으니까.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 지도 뒷면을 확인하고 접는다. 소서러스는 창가에서 어깨를 천천히 돌린다.)",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "팔은 좀 돌아오나?",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응. 어제보다는. 실드가 깨지기 전에 껐어야 했는데.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "다음에는 더 일찍 말하면 되겠지.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(전령이 떠난 뒤 네라는 수리 인부들과 먼저 탑으로 돌아간다. 네 사람은 남은 식사를 마친다. 파이터가 식탁의 빵 하나를 집었다가 로엔을 본다. 로엔이 작은 보자기를 밀어 준다.)",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "로엔",
+      "className": "scene",
+      "text": "가져가거라. 네 사람 몫이다.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 지금 먹으면 세 사람 몫이 되겠네요.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "네 몫은 줄어들겠지.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 빵을 보자기에 넣는다. 아서가 웃으며 가방을 멘다. 안쪽에서 성흔의 파편을 감싼 천이 흔들리지 않도록 끈을 한 번 더 조인다.)",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "다 됐어?",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "응.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이번에는 지도 안 보고 걷다가 넘어지진 않을게.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "지도 보다가 넘어져도 안 돼.",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 역참을 나선다. 관측탑 위에서 짧은 빛이 돌아간다. 바이올렛이 멈춰 서서 휴대등으로 답한다. 답이 닿은 것을 확인한 뒤에야 다시 걷는다.)",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(북동쪽 먼 능선에 오래된 성벽의 끝이 보인다. 일행은 정문으로 이어진 큰길 대신, 그 아래로 굽이치는 옛 보급로를 향한다.)",
+      "scene": "observatory",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 아래쪽 역참",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    }
+  ],
+  "world10ExtraStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(루멘이 멈춘 뒤, 바이올렛이 대피실 옆으로 이어지는 가느다란 신호선을 발견한다. 주 통로에서 벗어나 아래쪽 폐신호소로 내려가는 길이다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 보수 통로 · 보조 신호선",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "옛 보조 신호소예요. 저쪽 수호기가 고장 난 뒤로 쓰지 않았어요. 탑으로 가는 길은 왼쪽입니다.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 보수 통로 · 보조 신호선",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "들렀다 와도 탑으로 가는 길은 그대로야. 아래에 위험이 남아 있는지만 확인하자.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "관측교 보수 통로 · 보조 신호선",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(끊어진 선을 따라 내려가자, 세 개의 렌즈를 단 작은 수호기가 문을 가로막는다. 받침의 명판에 ‘아스트라 — 보조 신호 점검기’라고 적혀 있다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "쐐기는 없어. 부서진 신호선을 계속 점검하다가 멈춘 모양이야.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "전원이 살아 있다. 가까이 가면 방호 장치가 작동하겠어.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "뒤쪽에 수동 정지 손잡이가 있지만, 렌즈가 돌아가는 동안은 접근할 수 없어.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "먼저 움직임을 멈추고 손잡이를 내리자. 기록함은 건드리지 말고.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아스트라의 방호판이 펼쳐진다. 아서는 일행이 물러날 길을 확인하고 검을 세운다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    }
+  ],
+  "world10ExtraEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아스트라의 방호판이 내려앉는다. 파이터가 수동 손잡이를 내리자 렌즈의 빛이 꺼진다. 소서러스는 남은 마력이 빠지는 것을 확인한 뒤에야 가까이 간다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "이제 선을 밟아도 움직이지 않아. 수리가 필요하다는 표시를 남겨 둘게.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "기록함은 네라 관측관님께 맡기자. 지금 우리가 열어 볼 이유는 없어.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 · 점검 마당",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행은 들어온 길로 돌아와 대피실 경비병에게 점검기의 정지를 알린다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "대피실로 돌아오는 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "고맙습니다. 구조대가 도착하면 신호선 수리도 부탁하겠습니다.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "대피실로 돌아오는 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그럼 이제 탑으로?",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "대피실로 돌아오는 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "왼쪽 보수 사다리. 이번에는 제대로 표시해 뒀어.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "대피실로 돌아오는 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람은 관측탑으로 이어지는 본편 길로 돌아간다. 번외 길에서 새 유물이나 천사의 비밀을 얻지는 않는다.)",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "대피실로 돌아오는 보수 통로",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    }
+  ],
   "world4Potion4": [
     {
       "speaker": "내레이션",

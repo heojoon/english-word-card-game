@@ -1,0 +1,19 @@
+{
+  "name": "오염된 별빛 정찰병",
+  "world": 10,
+  "internalChapter": 13,
+  "role": "ordinary-monster",
+  "createdAt": "2026-11-14",
+  "tool": "image_gen",
+  "image": "monster_starlight_scout_sd_identity.png",
+  "source": "source/identity-generated.png",
+  "facing": "left",
+  "references": [
+    "assets/monsters/world-9/training-dummy/basic/identity.png",
+    "assets/monsters/world-8/ashen-wedge-soldier/source/identity-generated.png"
+  ],
+  "prompt": "Create ONE production-quality SD/chibi ordinary monster identity illustration for Wordoria Crystal Quest World 10, The Silent Star Observatory. Name: Corrupted Starlight Scout (오염된 별빛 정찰병). This is a small mass-produced observatory patrol automaton, NOT a boss. Full body, three-quarter SIDE VIEW FACING LEFT, in a readable neutral combat-ready standing pose, feet on a consistent horizontal ground line. One single large circular telescope lens as its face inside a rounded silver-white helmet, glowing violet iris and a small mint glint, slightly tilted brow armor expressing alertness. Oversized head about 40 percent height, compact stocky body, short jointed legs and big readable rounded hands. Soft pearl silver enamel armor with pale lavender shadows, deep violet joint sleeves, small cyan and violet crystal power core in chest. A small telescope-like barrel around the single face lens, with a recognizable unobstructed round glass face. On the RIGHT shoulder/back a single clearly visible black-violet corruption wedge, tiny restrained violet cracks nearby. One small brass four-point star insignia. Hands are empty chunky armored gauntlets, one forward and one guarding chest; no weapon, no spear, no wings, no halo, no orbiting ring, no three-lens array, no crown, no floating objects. Ordinary compact scout with a clear simple silhouette distinct from large guardian bosses. Material and rendering match the attached Crystal Quest monster references: polished hand-drawn 2D fantasy mobile game asset, clean dark violet contour lines, soft cel shading with refined painted specular highlights, rounded faceted glass crystals, charming adventurous age-appropriate enemy. Borrow STYLE ONLY from reference images, NOT their identity, wooden body, clothing, spear or dark armor. Palette #F7F7FF, #5751D8, #7868EF, #60D9CF, tiny gold #FFCF67. Character occupies about 80 percent canvas height with generous transparent margins on ALL sides, antenna if any fully inside canvas, entire hands and feet visible. One character only, no variations, no frames, no text, no typography, no labels, no scenery, no ground plane, no baked shadow, NO white or checkerboard background, genuine transparent alpha background. High resolution square PNG. Save this generated image for the current project; return the local output file path if available.",
+  "status": "identity-art-created; not integrated; user art approval pending",
+  "animations": [],
+  "notes": "월드 10 관측탑의 소형 순찰 자동병기. 단안 관측 렌즈, 은백색 장갑, 가슴 수정, 어깨의 오염 쐐기. 루멘의 방어 고리와 아스트라의 세 렌즈는 사용하지 않음."
+}

@@ -1,0 +1,98 @@
+{
+  "image": "lumen-sd-attack-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "source": "source/attack-generated.png",
+  "sourceBounds": [
+    [
+      81,
+      30,
+      625,
+      689
+    ],
+    [
+      766,
+      35,
+      1370,
+      689
+    ],
+    [
+      1440,
+      47,
+      2147,
+      688
+    ]
+  ],
+  "sourceDimensions": [
+    2164,
+    727
+  ],
+  "sourceScale": 0.46781861421113863,
+  "sourceFrameGapPx": 50,
+  "sourceFrameGapScope": "Normalized source-frames and review masters; generator originals retain their measured variable gutters.",
+  "frameNames": [
+    "ready",
+    "anticipation",
+    "contact"
+  ],
+  "durationsMs": [
+    200,
+    350,
+    430
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "contactMs": 550,
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 200
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 350
+    },
+    {
+      "name": "contact",
+      "durationMs": 430,
+      "hit": true
+    }
+  ],
+  "review": {
+    "alpha": "preserved generated RGBA; no color-key removal",
+    "runtimeBounds": [
+      [
+        96,
+        65,
+        352,
+        375
+      ],
+      [
+        81,
+        67,
+        366,
+        375
+      ],
+      [
+        56,
+        73,
+        390,
+        375
+      ]
+    ],
+    "sourceGutterForegroundCounts": [
+      0,
+      0
+    ],
+    "browser": "not run; only on user request",
+    "artApproval": "user approval not claimed"
+  },
+  "reducedMotionMultiplier": 0.5
+}

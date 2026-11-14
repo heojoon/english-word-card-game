@@ -1,0 +1,96 @@
+{
+  "image": "seiran-sd-hit-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "source": "source/hit-generated.png",
+  "sourceBounds": [
+    [
+      106,
+      34,
+      602,
+      679
+    ],
+    [
+      771,
+      50,
+      1348,
+      676
+    ],
+    [
+      1450,
+      401,
+      2133,
+      673
+    ]
+  ],
+  "sourceDimensions": [
+    2167,
+    725
+  ],
+  "sourceScale": 0.5534619450317125,
+  "sourceFrameGapPx": 50,
+  "sourceFrameGapScope": "Normalized source-frames and review masters; generator originals retain their measured variable gutters.",
+  "frameNames": [
+    "guard-notice",
+    "impact-recoil",
+    "complete-knockdown"
+  ],
+  "durationsMs": [
+    50,
+    60,
+    390
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "frames": [
+    {
+      "name": "guard-notice",
+      "durationMs": 50
+    },
+    {
+      "name": "impact-recoil",
+      "durationMs": 60
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 390,
+      "hold": true
+    }
+  ],
+  "review": {
+    "alpha": "preserved generated RGBA; no color-key removal",
+    "runtimeBounds": [
+      [
+        86,
+        17,
+        362,
+        375
+      ],
+      [
+        63,
+        28,
+        384,
+        375
+      ],
+      [
+        34,
+        222,
+        413,
+        375
+      ]
+    ],
+    "sourceGutterForegroundCounts": [
+      0,
+      0
+    ],
+    "browser": "not run; only on user request",
+    "artApproval": "user approval not claimed"
+  }
+}

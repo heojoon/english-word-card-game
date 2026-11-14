@@ -53,6 +53,9 @@
   storyStages.push(...storyStages.filter(stage=>stage.chapter===8).map(base=>({...base,chapter:10,key:`story-ch7c-${base.number}`,name:base.number===10?'봉인 병기 아르카온':base.number===30?'봉인의 수호기사':`왕국 지하 던전 · ${base.number}단계`,desc:`WordMax Level 3 · Day ${base.number} · 연결형 30문제 · 문제당 2초`})));
   storyStages.push(...Array.from({length:30},(_,index)=>({number:index+1,chapter:11,key:`story-ch8-${index+1}`,name:index===14?'검은뿌리 거목':index===29?'바르가스':`${index<8?'동쪽 길과 은종 마을':index<15?'돌다리와 뿌리 감옥':index<24?'기록을 지키는 마을길':'종루 광장'} · ${index+1}단계`,desc:index===29?'HP 180 / Type C / DMG / 문제당 6초':'Day 무작위 · Type C 스펠링 4지선다 · 40문제 · 문제당 6초 · 총 240초'})));
   storyStages.push(...Array.from({length:30},(_,index)=>({number:index+1,chapter:12,key:`story-ch9-${index+1}`,name:index===14?'돌개바람 그리핀':index===29?'새벽의 사범 이리스':`${index<8?'첫빛이 닿는 바위문':index<15?'바람 회랑과 배풍문':index<24?'수련원의 생활관':'중앙 수련장'} · ${index+1}단계`,desc:'Day 무작위 · Type C 스펠링 4지선다 · 40문제 · 문제당 6초'})));
+  // Display World 10 uses chapter 13; chapter 10 already belongs to World 7C.
+  storyStages.push(...Array.from({length:40},(_,i)=>({number:i+1,chapter:13,key:`story-ch10-${i+1}`,name:i===19?'관측교 수호병기 루멘':i===39?'거짓 별의 지휘관 세이런':`${i<10?'역참과 옛 관측로':i<20?'무너진 관측교':i<30?'대피실과 보수 사다리':'관측탑의 반사 회랑'} · ${i+1}단계`,desc:'Type C 빈칸 스펠링 · 30문제 · 문제당 6초',prerequisite:i?`story-ch10-${i}`:'story-ch9-30',observatoryBoss:i===19?'lumen':i===39?'seiran':null})));
+  storyStages.push(...Array.from({length:3},(_,i)=>({number:i+41,chapter:13,key:`story-ch10-extra-${i+1}`,sideStory:true,displayStage:`번외 ${i+1}`,name:['끊어진 보조 신호선','폐신호소의 기록','폐신호소 수호기 아스트라'][i],desc:'선택 경로 · Type C 빈칸 스펠링 · 30문제',prerequisite:i?`story-ch10-extra-${i}`:'story-ch10-20',observatoryBoss:i===2?'astra':null})));
   const storyWorlds=[
     {number:1,name:'속삭이는 숲',region:'WHISPERING WOODS',art:'assets/story/chapter-1-library-map.webp',positions:[['31%','59.6%'],['38.8%','69.2%'],['56.2%','75%'],['69.4%','66.4%'],['86%','54.7%'],['78.7%','43.6%'],['72.1%','31.3%']]},
     {number:2,name:'크리스탈 사원 입구',region:'CRYSTAL TEMPLE ENTRANCE',art:'assets/story/chapter-2-crystal-temple-map.webp',positions:[['14.7%','46.4%'],['34.7%','40.5%'],['54.7%','53.2%'],['77.4%','55.6%'],['93.9%','64.4%'],['36.9%','25.8%'],['56.7%','21.5%']]},
@@ -70,6 +73,7 @@
   storyWorlds.push({number:11,displayNumber:'8',unlockAfter:10,name:'잿빛 종이 울리는 마을',region:'SILVER BELL VILLAGE',art:'assets/story/chapter-8-silver-bell-village-map.webp',positions:[["33.115%","5.066%"],["47.594%","5.875%"],["77.288%","6.683%"],["60.666%","8.23%"],["41.761%","9.671%"],["25.792%","11.837%"],["41.827%","14.086%"],["60.652%","15.696%"],["77.251%","17.419%"],["60.715%","20.215%"],["41.802%","22.285%"],["25.734%","24.629%"],["41.752%","27.193%"],["60.661%","29.238%"],["77.225%","32.266%"],["60.649%","35.426%"],["41.784%","37.998%"],["25.701%","41.053%"],["41.807%","44.14%"],["60.694%","46.576%"],["77.172%","49.694%"],["60.704%","52.831%"],["41.819%","55.519%"],["25.652%","58.367%"],["41.881%","61.389%"],["60.689%","63.822%"],["77.216%","66.418%"],["60.657%","69.836%"],["41.845%","72.476%"],["37.718%","89.03%"]]});
   function worldEightPrerequisite(){return chosenStoryBranch()==='6A'?'story-ch7a-30':stageCleared('story-ch7c-30')?'story-ch7c-30':stageCleared('story-ch7b-30')?'story-ch7b-30':'story-ch7c-30';}
   storyWorlds.push({number:12,displayNumber:'9',unlockAfter:11,name:'새벽의 수련원',region:'DAWN TRAINING RETREAT',art:'assets/story/chapter-9-dawn-training-map.webp',positions:[["26.421%","6.404%"],["47.305%","8.439%"],["70.686%","10.010%"],["57.633%","12.224%"],["36.782%","14.428%"],["19.612%","16.958%"],["27.076%","19.664%"],["47.540%","22.227%"],["70.909%","23.989%"],["58.990%","26.727%"],["36.927%","29.293%"],["19.640%","32.386%"],["27.246%","35.320%"],["47.606%","37.541%"],["63.992%","43.967%"],["58.570%","48.131%"],["36.895%","50.476%"],["19.685%","53.552%"],["27.160%","56.352%"],["47.809%","58.542%"],["70.913%","60.687%"],["59.254%","63.523%"],["36.714%","66.852%"],["19.436%","69.736%"],["27.347%","72.262%"],["47.751%","74.375%"],["70.634%","76.500%"],["58.833%","79.006%"],["36.963%","81.360%"],["24.157%","93.277%"]]});
+  storyWorlds.push({number:13,displayNumber:'10',unlockAfter:12,name:'별빛이 끊긴 관측탑',region:'THE SILENT STAR OBSERVATORY',art:'assets/story/chapter-10-observatory-map.webp',positions:[["23.64%","6.55%"],["41.54%","7.65%"],["58.56%","9.03%"],["70.45%","10.34%"],["54.27%","11.7%"],["36.21%","12.79%"],["19.86%","14.51%"],["37.58%","16.2%"],["55.65%","17.62%"],["69.46%","19.36%"],["54.5%","20.7%"],["37.83%","21.92%"],["19.77%","23.61%"],["36.8%","25.3%"],["54.43%","26.4%"],["69.31%","27.75%"],["52.67%","28.77%"],["36.75%","29.62%"],["19.8%","31.27%"],["35.75%","36.96%"],["44.98%","41.88%"],["47.21%","44.68%"],["30.89%","46.78%"],["18%","49.06%"],["48.05%","51.69%"],["69.32%","54.25%"],["56.78%","57.02%"],["19.71%","58.22%"],["33.73%","59.91%"],["65.37%","62.86%"],["48.81%","63.96%"],["35.63%","64.93%"],["19.69%","66.67%"],["37.75%","68.54%"],["69.43%","71.64%"],["52.95%","73.01%"],["36.12%","74.12%"],["19.74%","76.15%"],["37.7%","78.3%"],["50.39%","89.4%"],["59.48%","40.77%"],["69.91%","42.73%"],["77.38%","45.25%"]]});
   function configureStoryContent(world=null){
     const level=learningLevel();
     // Use the same available elementary maps as Survival, never story-only WordMax catalogs.
@@ -93,6 +97,13 @@
     const worldEightDays=shuffle(Array.from({length:30},(_,i)=>i+1));
     storyStages.forEach((stage,index)=>{
       const chapter=stage.chapter||1,title=storyWorlds[chapter-1].name;
+      if(chapter===13){
+        const day=worldEightDays[(stage.number-1)%30],source=level==='elementary'?elementarySurvivalSource:stages[`s${day<=10?day+34:day+4}`];
+        const seen=new Set(),words=source&&stageLevel(source)===level?source.words.filter(row=>{const key=row[0].trim().toLowerCase();if(seen.has(key)||row[0].length<3||!/[a-z]/i.test(row[0].slice(1,-1)))return false;seen.add(key);return true;}):[];
+        const hp={lumen:200,seiran:240,astra:180}[stage.observatoryBoss]||0;
+        stages[stage.key]={name:`${title} · ${stage.displayStage||`${stage.number}단계`}`,recordName:`스토리 10장 ${stage.sideStory?`번외 ${stage.number-40}`:stage.number} · ${title}`,desc:`${stage.desc}${hp?` · 보스 HP ${hp} · HP 0까지 문제 순환`:' · 총 180초'}`,questionCount:30,questionTimeMs:6000,questionType:'C',vocabularyDay:level==='elementary'?null:day,source:source?.source,story:true,storyChapter:13,storyNumber:stage.number,sideStory:Boolean(stage.sideStory),observatoryBoss:stage.observatoryBoss,trainingBossHp:hp,learningLevel:level,words,encounterName:hp?stage.name:'관측로의 신호 크리스털'};
+        return;
+      }
       if([11,12].includes(chapter)){
         const displayWorld=chapter===12?'9':'8',trainingHp=chapter===12?(stage.number===15?200:stage.number===30?220:0):0;
         const day=worldEightDays[stage.number-1],source=level==='elementary'?elementarySurvivalSource:stages[`s${day<=10?day+34:day+4}`];
@@ -358,7 +369,7 @@
   }
   function isAdministrator(){return Boolean(accountMode&&accountProfile?.role==='admin');}
   function chosenStoryBranch(){if(localHost&&!nativeApp&&storyBranchPreview)return storyBranchPreview;return accountMode?accountStoryBranch:demoState.storyBranch||null;}
-  function storyBranchAllowed(chapter){return [11,12].includes(chapter)||chapter<6||isAdministrator()||chosenStoryBranch()===([7,8].includes(chapter)?'6A':'6B');}
+  function storyBranchAllowed(chapter){return [11,12,13].includes(chapter)||chapter<6||isAdministrator()||chosenStoryBranch()===([7,8].includes(chapter)?'6A':'6B');}
   function isStoryBranchPreview(){return Boolean(localHost&&!nativeApp&&run?.lichDragon&&run.localBossSkipped&&run.done&&run.clear);}
   function needsStoryBranchChoice(){if(isStoryBranchPreview())return !storyBranchPreview;return !isAdministrator()&&!chosenStoryBranch()&&stageCleared('story-ch5-20');}
   function showStoryBranchChoice(){
@@ -382,7 +393,7 @@
       else{$('dialog-content').querySelectorAll('button').forEach(button=>button.disabled=false);$('dialog-content').querySelector('[role="status"]').textContent='선택을 저장하지 못했어요. 다시 시도해 주세요.';}
     }finally{storyBranchSaving=false;}
   }
-  function storyStageUnlocked(index){const stage=storyStages[index];if(!stage)return false;if(!storyBranchAllowed(stage.chapter||1))return false;if(isAdministrator()||(localHost&&!nativeApp))return true;if(stage.chapter===12&&stage.number===1)return stageCleared('story-ch8-30');if(stage.chapter===11&&stage.number===1)return stageCleared(worldEightPrerequisite());if([8,9,10].includes(stage.chapter)&&stage.number===1)return stageCleared(stage.chapter===8?'story-ch6a-20':'story-ch6-20');if((stage.chapter===7||stage.chapter===6)&&stage.number===1)return stageCleared('story-ch5-20');if(stage.chapter===6&&stageCleared(stage.key))return true;return index===0||stageCleared(storyStages[index-1].key);}
+  function storyStageUnlocked(index){const stage=storyStages[index];if(!stage)return false;if(!storyBranchAllowed(stage.chapter||1))return false;if(isAdministrator()||(localHost&&!nativeApp))return true;if(stage.chapter===13)return stageCleared(stage.prerequisite);if(stage.chapter===12&&stage.number===1)return stageCleared('story-ch8-30');if(stage.chapter===11&&stage.number===1)return stageCleared(worldEightPrerequisite());if([8,9,10].includes(stage.chapter)&&stage.number===1)return stageCleared(stage.chapter===8?'story-ch6a-20':'story-ch6-20');if((stage.chapter===7||stage.chapter===6)&&stage.number===1)return stageCleared('story-ch5-20');if(stage.chapter===6&&stageCleared(stage.key))return true;return index===0||stageCleared(storyStages[index-1].key);}
   function earnedCoins(count,clear=false){const interval=selectedCharacter?.class==='pugilist'?3:5;return count+Math.floor(count/interval)+(clear?10:0);}
 
   function resetCreatorContent(){
@@ -939,9 +950,9 @@
   let pendingStoryRun=null;
   function bossEncounter(){return page==='storyEpilogue'&&(stages[selectedStage]?.storyChapter||1)===1&&stages[selectedStage]?.storyNumber===7;}
   function worldSevenNovelKey(){
-    const world=stages[selectedStage]?.storyChapter===12?'9':stages[selectedStage]?.storyChapter===11?'8':stages[selectedStage]?.storyChapter===10?'7c':stages[selectedStage]?.storyChapter===8?'7a':'7b';
+    const world=stages[selectedStage]?.storyChapter===13?'10':stages[selectedStage]?.storyChapter===12?'9':stages[selectedStage]?.storyChapter===11?'8':stages[selectedStage]?.storyChapter===10?'7c':stages[selectedStage]?.storyChapter===8?'7a':'7b';
     const phase=page.slice('storyChapterSeven'.length);
-    return `world${world}${phase==='Intro'?'Prologue':phase}`;
+    return `world${world}${world==='10'&&stages[selectedStage]?.sideStory?(phase==='BossStart'?'ExtraStart':'ExtraEnd'):phase==='Intro'?'Prologue':phase}`;
   }
   function renderStoryChapterSeven(){
     const ending=['MidbossEnd','BossEnd','Epilogue'].some(phase=>page===`storyChapterSeven${phase}`);
@@ -1132,7 +1143,9 @@
     if(!stage)stage=storyStages.find(available);
     if(stage){selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;}
   }
-  function go(target){if(page==='battle'&&target!=='battle'&&run?.sealKnight&&!run.done){persistStoryBattleVitals();window.WORDORIA_SEAL_KNIGHT.clear(run);run.activeSkills?.clear();run.petEffects?.clear();run.done=true;clearInterval(timerId);clearTimeout(nextTimer);}if(target==='story')restoreLastStoryStage();if(target==='story'&&beginWorldFourPotionEvent())target='storyPotionEvent';if(target==='story'){storyStageArmedKey=null;storyMapMoveUntil=0;}if(guestMode&&!selectedCharacter)target='characters';if(target==='characters'){characterArmedId=null;characterPreviewId=selectedCharacter?.id||null;}page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});if(target==='story')requestAnimationFrame(()=>{if(page==='story')$('screen').querySelector('.story-map-node.selected')?.scrollIntoView({block:'center',behavior:'instant'});});}
+  function go(target){
+    if(page==='battle'&&target!=='battle'&&run?.worldTenBoss&&!run.done){persistStoryBattleVitals();window.WORDORIA_WORLD_TEN_BOSS.clear(run);run.activeSkills?.clear();run.petEffects?.clear();run.done=true;clearInterval(timerId);clearTimeout(nextTimer);cancelSpeech();}
+    if(page==='battle'&&target!=='battle'&&run?.sealKnight&&!run.done){persistStoryBattleVitals();window.WORDORIA_SEAL_KNIGHT.clear(run);run.activeSkills?.clear();run.petEffects?.clear();run.done=true;clearInterval(timerId);clearTimeout(nextTimer);}if(target==='story')restoreLastStoryStage();if(target==='story'&&beginWorldFourPotionEvent())target='storyPotionEvent';if(target==='story'){storyStageArmedKey=null;storyMapMoveUntil=0;}if(guestMode&&!selectedCharacter)target='characters';if(target==='characters'){characterArmedId=null;characterPreviewId=selectedCharacter?.id||null;}page=target;render();$('screen').focus({preventScroll:true});$('screen').scrollTo({top:0,behavior:'instant'});window.scrollTo({top:0,behavior:'instant'});if(target==='story')requestAnimationFrame(()=>{if(page==='story')$('screen').querySelector('.story-map-node.selected')?.scrollIntoView({block:'center',behavior:'instant'});});}
   function navigate(target){if(page==='battle'&&run&&!run.done){pause();modal(`<div class="eyebrow">PAUSED</div><h2>이번 도전을 마칠까요?</h2><p>지금까지 맞힌 문제의 보상과 기록은 저장됩니다.</p><div class="actions"><button class="secondary" data-action="resume">계속하기</button><button class="primary" data-action="leave" data-page="${target}">저장하고 이동</button></div>`);return;}go(target);}
   function profileBar(){if(accountMode||guestMode)return '';return `<div class="profile-switch">${players.map(name=>`<button class="profile-chip ${name===player?'active':''}" data-action="player" data-player="${esc(name)}">${esc(name)}</button>`).join('')}<button class="profile-chip add" data-action="add-player">＋ 유저</button></div>`;}
   function classStatsMarkup(d){return `<div class="class-stat-grid" aria-label="${esc(d.label)} 기본 능력치">${Object.entries({hp:'체력',mp:'정신',atk:'공격',luk:'행운'}).map(([key,label])=>`<span><small>${label}</small><i>${'<b></b>'.repeat(d.stats[key])}</i></span>`).join('')}</div>`;}
@@ -1313,7 +1326,7 @@
   function recoverAfterBattle(battle,clear,previousLevel=stats().level){
     if(!selectedCharacter||battle.localBossSkipped||(battle.storyCharacterId&&battle.storyCharacterId!==selectedCharacter.id))return;
     const stage=stages[selectedStage],chapter=stage?.storyChapter||1;
-    const finalStage=chapter<=3?7:chapter<=7?20:30;
+    const finalStage=chapter===13?40:chapter<=3?7:chapter<=7?20:30;
     const finalBossCleared=clear&&battle.story&&!battle.hiddenKind&&stage?.storyNumber===finalStage;
     if(!finalBossCleared&&stats().level<=previousLevel)return;
     const {hpMax,mpMax}=storyVitals(),vitals={hp:hpMax,mp:mpMax,hpMax,mpMax};
@@ -1513,9 +1526,9 @@
       const nodes=mapStages.map((stage,index)=>{
         const clear=stageCleared(stage.key),unlocked=available(stage),active=selected?.key===stage.key,position=map.positions[index],hidden=stage.chapter===5&&[9,19].includes(stage.number)&&worldFiveHiddenKind(stage.key);
         const cls=`story-map-node story-map-node-${stage.number} ${clear?'cleared':unlocked?'active':'locked'}${active?' selected':''}${hidden?' hidden-stage-glow':''}`;
-        const number=`<span class="story-map-node-number">${stage.number}${hidden?'<small class="hidden-stage-badge">히든</small>':''}${[8,9].includes(stage.chapter)&&[15,30].includes(stage.number)?' ⚔':''}${unlocked?'':'<span class="story-map-node-lock" aria-hidden="true">🔒</span>'}</span>`,check=clear?'<span class="story-map-node-check" aria-hidden="true">✓</span>':'';
-        if(!unlocked||!levelReady(stages[stage.key]))return `<span class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" aria-label="스테이지 ${stage.number} 잠김">${number}${check}</span>`;
-        return `<button type="button" class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" data-action="story-stage-select" data-stage="${stage.key}" aria-current="${active?'step':'false'}" aria-label="스테이지 ${stage.number}${hidden?' 히든 스테이지':clear?' 클리어, 다시 도전 가능':' 도전 가능'}">${number}${check}</button>`;
+        const number=`<span class="story-map-node-number">${stage.sideStory?`외${stage.number-40}`:stage.number}${stage.observatoryBoss?' ⚔':''}${hidden?'<small class="hidden-stage-badge">히든</small>':''}${[8,9].includes(stage.chapter)&&[15,30].includes(stage.number)?' ⚔':''}${unlocked?'':'<span class="story-map-node-lock" aria-hidden="true">🔒</span>'}</span>`,check=clear?'<span class="story-map-node-check" aria-hidden="true">✓</span>':'';
+        if(!unlocked||!levelReady(stages[stage.key]))return `<span class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" aria-label="${stage.displayStage||`스테이지 ${stage.number}`} 잠김">${number}${check}</span>`;
+        return `<button type="button" class="${cls}" style="--story-x:${position[0]};--story-y:${position[1]}" data-action="story-stage-select" data-stage="${stage.key}" aria-current="${active?'step':'false'}" aria-label="${stage.displayStage||`스테이지 ${stage.number}`}${hidden?' 히든 스테이지':clear?' 클리어, 다시 도전 가능':' 도전 가능'}">${number}${check}</button>`;
       }).join('');
       const mapTitle=world.parts&&world.number!==4?`<h2 class="story-map-part-title">${esc(map.name)} <span>${mapStages[0].number}–${mapStages.at(-1).number}단계</span></h2>`:'';
       return `${mapTitle}<section class="story-world-map story-world-map-${world.number}" aria-label="${esc(map.name)} 스테이지 지도"><img class="story-world-map-art" src="${esc(deployedAssetUrl(map.art))}" alt="${esc(map.name)}의 ${mapStages.length}개 크리스탈 스테이지 지도">${partIndex===0?worldNavigation:''}${world.number===1?'<span class="story-map-label story-map-label-library">별빛 도서관</span>':''}${nodes}${activeCharacter}</section>`;
@@ -1539,6 +1552,11 @@
     toast('같은 스테이지를 한 번 더 누르면 입장할 수 있어요.');
   }
   function bossIntroductionMarkup(stage){
+    if(stage.chapter===13&&stage.observatoryBoss){
+      const hp=stages[stage.key].trainingBossHp,kind=stage.observatoryBoss,hasArt=['lumen','seiran'].includes(kind);
+      const skills=kind==='lumen'?'20초마다 회전 방어 고리로 4초간 받는 피해가 절반이 돼요. HP 50%에서 양팔 충격파를 준비해요.':kind==='seiran'?'20초마다 반사 분신이 보기 위치를 바꿔요. HP 75%·50%·25%에서 지휘봉 광선을 준비해요.':'';
+      return `<div class="boss-introduction">${hasArt?`<img class="boss-introduction-art" src="assets/novel/characters/char_${kind}_world10_standing.webp" alt="${esc(stage.name)}">`:''}<h3>${esc(stage.name)}</h3><p>${stage.sideStory?'본편 진행에 필수가 아닌 번외 보스예요.':stage.number===20?'루멘을 멈추고 관측교 아래 경비병들을 구조해요.':'세이런을 제압하고 관측탑의 신호를 되찾아요.'}</p><div class="boss-introduction-stats"><span>HP ${hp} · Type C · DMG 피해</span><span>제한시간 ${window.WORDORIA_WORLD_NINE_BOSS.timeLimit(hp,bossAttackSteps())/1000}초</span></div>${skills?`<p>${skills}</p>`:''}<p>정답 공격이 닿으면 캐릭터 DMG만큼 피해를 줘요. 30문제 덱을 순환하며 HP 0까지 도전해요. 오답 시 HP 1 피해를 받고 같은 문제에 재도전해요.</p></div>`;
+    }
     if(stage.chapter===12&&[15,30].includes(stage.number)){
       const hp=stages[stage.key]?.trainingBossHp||window.WORDORIA_WORLD_NINE_BOSS.hpForStage(stage.number);
       const kind=stage.number===15?'griffin':'iris';
@@ -1569,7 +1587,7 @@
     selectedStoryStage=stage.key;selectedStoryWorld=stage.chapter||1;render();
     const world=storyWorlds[(stage.chapter||1)-1];
     const description=[11,12].includes(stage.chapter)?stages[stage.key].desc:stage.chapter===10&&stage.number===10?stages[stage.key].desc:stage.chapter===4?stages[stage.key].desc:stage.desc;
-    const goal=stage.chapter===12&&[15,30].includes(stage.number)?`정답마다 캐릭터 DMG만큼 공격 · 보스 HP ${stages[stage.key].trainingBossHp}을 0으로 만들기`:stage.chapter===12?'빈칸에 들어갈 스펠링을 4개 보기에서 선택 · 40문제':stage.chapter===11&&stage.number===30?'정답마다 캐릭터 DMG만큼 공격 · 바르가스 HP 180을 0으로 만들기':stage.chapter===11?'빈칸에 들어갈 스펠링을 4개 보기에서 선택 · 40문제':stage.chapter===10&&stage.number===10?'단어를 연결해 보스 격파':stage.chapter===10?'단어 30쌍 연결하기':[8,9].includes(stage.chapter)?[15,30].includes(stage.number)&&!(stage.chapter===8&&stage.number===15)?'단어를 연결해 보스 격파':'단어 30쌍 연결하기':'단어를 연결해 스테이지 클리어';
+    const goal=stage.chapter===13?(stages[stage.key].trainingBossHp?`정답마다 DMG 피해 · 보스 HP ${stages[stage.key].trainingBossHp}을 0으로 만들기 · 30문제 덱 순환`:'빈칸에 들어갈 스펠링을 4개 보기에서 선택 · 30문제'):stage.chapter===12&&[15,30].includes(stage.number)?`정답마다 캐릭터 DMG만큼 공격 · 보스 HP ${stages[stage.key].trainingBossHp}을 0으로 만들기`:stage.chapter===12?'빈칸에 들어갈 스펠링을 4개 보기에서 선택 · 40문제':stage.chapter===11&&stage.number===30?'정답마다 캐릭터 DMG만큼 공격 · 바르가스 HP 180을 0으로 만들기':stage.chapter===11?'빈칸에 들어갈 스펠링을 4개 보기에서 선택 · 40문제':stage.chapter===10&&stage.number===10?'단어를 연결해 보스 격파':stage.chapter===10?'단어 30쌍 연결하기':[8,9].includes(stage.chapter)?[15,30].includes(stage.number)&&!(stage.chapter===8&&stage.number===15)?'단어를 연결해 보스 격파':'단어 30쌍 연결하기':'단어를 연결해 스테이지 클리어';
     modal(`<div class="story-stage-introduction"><div class="eyebrow">STORY · WORLD ${esc(world.displayNumber||world.number)} · STAGE ${String(stage.number).padStart(2,'0')}</div><h2>${esc(stage.name)}</h2><p class="story-stage-introduction-desc">${esc(description)}</p><div class="story-stage-introduction-goal"><span>목표</span><b>${goal}</b></div>${bossIntroductionMarkup(stage)}${alreadyCleared?'<p class="notice">이미 클리어한 스테이지예요. 다시 플레이해도 보상은 없어요.</p>':''}<div class="actions story-enter-actions"><button type="button" class="primary" data-action="story-enter-confirm" data-stage="${stage.key}">입장하기</button><button type="button" class="secondary" data-action="story-enter-cancel">지도 보기</button></div></div>`);
   }
   function startStoryStage(stageKey){
@@ -1581,6 +1599,7 @@
     if(stage.chapter===5&&[9,19].includes(stage.number)&&worldFiveHiddenKind(stage.key)){void startWorldFiveHidden(worldFiveHiddenKind(stage.key));return;}
     if(stage.chapter===3&&stage.number===7&&hasWordCrystalSpirit()){showCrystalGhostEncounter();return;}
     if((stage.chapter||1)===1&&stage.number===7){run={story:true,directBossStage:true,storyReplay:stageCleared(stage.key),result:null};pendingStoryRun=null;storyDialogueIndex=0;go('storyEpilogue');return;}
+    if(stage.chapter===13&&[1,20,40,43].includes(stage.number)){storyDialogueIndex=0;go(stage.number===1?'storyChapterSevenIntro':stage.number===20?'storyChapterSevenMidbossStart':'storyChapterSevenBossStart');return;}
     if([11,12].includes(stage.chapter)&&[1,15,30].includes(stage.number)){storyDialogueIndex=0;go(stage.number===1?'storyChapterSevenIntro':stage.number===15?'storyChapterSevenMidbossStart':'storyChapterSevenBossStart');return;}
     if(stage.chapter===10&&[1,10,30].includes(stage.number)){storyDialogueIndex=0;go(stage.number===1?'storyChapterSevenIntro':stage.number===10?'storyChapterSevenMidbossStart':'storyChapterSevenBossStart');return;}
     if([8,9].includes(stage.chapter)&&[1,15,30].includes(stage.number)){storyDialogueIndex=0;go(stage.number===1?'storyChapterSevenIntro':stage.number===15?'storyChapterSevenMidbossStart':'storyChapterSevenBossStart');return;}
@@ -1664,7 +1683,7 @@
     if(source.story&&!storyEntryAllowed(selectedStage))return;
     const deck=buildQuestionDeck(source.storyChapter===8&&source.storyNumber===15?{...source,questionCount:KEURUS_BOSS.hp}:source);const cls=selectedCharacter?.class||'warrior',hpMax=cls==='mage'||cls==='ranger'?2:3;run={deck,index:0,correct:0,elapsed:0,locked:false,paused:false,done:false,clear:false,result:null,chest:false,treasure:0,resultStep:'summary',chestClicks:0,story:Boolean(source.story),fast:!source.story&&survivalFast,spelling:source.questionType==='C',wedgeMob:worldEightCommonMonster(source),trainingDummyVariant:worldNineTrainingDummyVariant(source),crystalSpider:Boolean(source.story&&source.storyChapter===5),banditMob:Boolean(source.story&&source.storyChapter===6),golemMob:Boolean(source.story&&source.storyChapter===7),sentryMob:Boolean(source.story&&source.storyChapter===10),lizardMob:storyLizardMob(source),skeletonMob:Boolean(storySkeletonVariant(source)),skeletonVariant:storySkeletonVariant(source),hp:hpMax,hpMax,mobs:[],mobInitialized:false,storyTimeLimit:deck.length*(source.questionTimeMs||3000),timeStopped:false,iceTimeActive:false,weavingStepActive:false,weavingStepDodging:false,fever:false,feverWords:[],feverNextSpawnAt:0,feverWordSequence:0,slashSkillUsed:false,mp:cls==='mage'?2:cls==='warrior'?1:0,mpMax:cls==='mage'?2:cls==='warrior'?1:0,slashCombo:0,slashBonus:0,slashWindowStartedAt:0,slashExpiresAt:0};
     if(source.story)Object.assign(run,storyVitals(),{storyCharacterId:selectedCharacter.id,storyStageKey:selectedStage});
-    if(source.trainingBossHp)Object.assign(run,window.WORDORIA_WORLD_NINE_BOSS.reset(source.storyNumber,bossAttackSteps()));
+    if(source.trainingBossHp)Object.assign(run,source.storyChapter===13?['lumen','seiran'].includes(source.observatoryBoss)?window.WORDORIA_WORLD_TEN_BOSS.reset(source.observatoryBoss,bossAttackSteps()):{...window.WORDORIA_WORLD_NINE_BOSS.reset(30,bossAttackSteps()),observatoryBoss:source.observatoryBoss,trainingKind:source.observatoryBoss,bossHp:source.trainingBossHp,bossMaxHp:source.trainingBossHp,storyTimeLimit:window.WORDORIA_WORLD_NINE_BOSS.timeLimit(source.trainingBossHp,bossAttackSteps())}:window.WORDORIA_WORLD_NINE_BOSS.reset(source.storyNumber,bossAttackSteps()));
     if(source.storyChapter===11&&source.storyNumber===15)Object.assign(run,window.WORDORIA_BLACKROOT_ELDER.reset(),{guardianReducedMotion:reducedMotion()});
     if(source.storyChapter===11&&source.storyNumber===30)Object.assign(run,window.WORDORIA_VARGAS.reset(bossAttackSteps(),source.questionTimeMs),{guardianReducedMotion:reducedMotion(),bossAttackSteps:bossAttackSteps()});
     if(source.storyChapter===8&&source.storyNumber===15)Object.assign(run,createKeurusBoss());
@@ -1844,7 +1863,7 @@
   function applyFireArrowDamage(amount){
     if(!run||run.done||run.paused||run.hp<=0||run.bossHp<=0)return;
     if(run.sealKnight){window.WORDORIA_SEAL_KNIGHT.damage(run,amount);run.skillBurnDirty=true;return;}
-    if(run.trainingBoss){window.WORDORIA_WORLD_NINE_BOSS.damage(run,amount);run.skillBurnDirty=true;return;}
+    if(run.trainingBoss){(run.worldTenBoss?window.WORDORIA_WORLD_TEN_BOSS:window.WORDORIA_WORLD_NINE_BOSS).damage(run,amount);run.skillBurnDirty=true;return;}
     if(run.vargas){window.WORDORIA_VARGAS.damage(run,amount);run.skillBurnDirty=true;return;}
     if(run.elliot&&window.WORDORIA_ELLIOT.shielded(run))return;
     const before=run.bossHp,damage=Math.min(before,amount);
@@ -3042,15 +3061,19 @@
     if(run.vargas)return renderVargasBattle();
     if(run.blackroot)return renderBlackrootBattle();
     const q=run.question,percent=Math.ceil(Math.max(0,run.storyTimeLimit-run.elapsed)/run.storyTimeLimit*100);
-    return `<div class="battle-top row"><div class="stage-copy"><div class="eyebrow">WORLD ${stages[selectedStage].storyChapter===12?'9':'8'} · TYPE C · ${run.index+1} / ${run.deck.length}</div><b>${esc(stages[selectedStage].name)}</b></div></div><div class="story-time-meter" id="story-time-meter" role="meter" aria-label="남은 시간 ${percent}%" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${percent}"><div class="story-time-meter-label"><small>TIME LEFT · 기본 ${Math.round(run.storyTimeLimit/1000)}초</small><strong id="timer">${percent}%</strong></div><div class="story-time-track"><i id="story-time-fill" style="width:${percent}%"></i></div></div><div class="arena forest-scene world-eight-arena ${run.iceTimeActive?'ice-time-active':''} ${run.paused?'paused':''} ${run.attack?'hit':''} ${(run.trainingPlayerHitMs>0||run.stunned)&&(!run.spiderAttacking||run.spiderContact||run.timeoutPending)?'wrong story-stunned':''}" id="arena"><div class="arena-floor"></div>${battleHeroMarkup()}${passiveBannerMarkup()}${storyVitalsMarkup()}<span class="enemy-label">${esc(run.trainingDummyVariant?trainingDummyName():run.wedgeMob?'잿빛 쐐기병':stages[selectedStage].encounterName||(stages[selectedStage].storyChapter===12?'새벽의 수련 크리스털':'은종 마을의 수호 크리스털'))}</span>${run.trainingBoss?worldNineBossMarkup():run.trainingDummyVariant?trainingDummyMarkup():run.wedgeMob?ashenWedgeSoldierMarkup():'<div class="enemy"></div>'}${run.trainingBoss?`<span class="bandit-hp-label" role="status">HP ${run.bossHp} / ${run.bossMaxHp} · DMG ${run.bossAttackSteps}</span>`:''}${iceTimeEffectMarkup()}${eagleEyeEffectMarkup()}<div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div><div class="arena-feedback" id="arena-feedback" role="status">${esc(run.matchFeedback||'')}</div></div><div class="xp"><i style="width:${run.index/run.deck.length*100}%"></i></div>${storyBattleActions()}<div class="question-card story-spelling-question"><small>${q.trainingExam?'결정봉 시험 · 오답 HP 1 · ':q.trainingWind?'바람길 전환 · ':run.trainingKind==='iris'?`교대 수련 · ${Math.floor(run.index/5)%2?'두':'한'} 글자 구간 · `:''}빈칸에 들어갈 ${q.hidden.length}글자를 고르세요</small><h1 class="${q.prompt.length>20?'long-question':''}">${esc(q.prompt)}</h1><p>${esc(q.meaning)}</p></div><div class="answers">${q.choices.map((choice,i)=>`<button type="button" class="answer" data-action="answer" data-index="${i}" ${run.locked||run.paused||run.timeoutPending?'disabled':''}><span>${i+1}</span>${esc([...choice].join(', '))}${run.eagleEyeActive&&choice===q.answer?'<small class="eagle-answer-hint" role="status">정답</small>':''}${run.sniperInsight?sniperAnswerHintMarkup(choice):''}${run.petHint?petAnswerHintMarkup(choice):''}</button>`).join('')}</div>`;
+    return `<div class="battle-top row"><div class="stage-copy"><div class="eyebrow">WORLD ${stages[selectedStage].storyChapter===13?'10':stages[selectedStage].storyChapter===12?'9':'8'} · TYPE C · ${run.index+1} / ${run.deck.length}</div><b>${esc(stages[selectedStage].name)}</b></div></div><div class="story-time-meter" id="story-time-meter" role="meter" aria-label="남은 시간 ${percent}%" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${percent}"><div class="story-time-meter-label"><small>TIME LEFT · 기본 ${Math.round(run.storyTimeLimit/1000)}초</small><strong id="timer">${percent}%</strong></div><div class="story-time-track"><i id="story-time-fill" style="width:${percent}%"></i></div></div><div class="arena forest-scene world-eight-arena ${run.iceTimeActive?'ice-time-active':''} ${run.paused?'paused':''} ${run.attack?'hit':''} ${(run.trainingPlayerHitMs>0||run.stunned)&&(!run.spiderAttacking||run.spiderContact||run.timeoutPending)?'wrong story-stunned':''}" id="arena"><div class="arena-floor"></div>${battleHeroMarkup()}${passiveBannerMarkup()}${storyVitalsMarkup()}<span class="enemy-label">${esc(run.trainingDummyVariant?trainingDummyName():run.wedgeMob?'잿빛 쐐기병':stages[selectedStage].encounterName||(stages[selectedStage].storyChapter===12?'새벽의 수련 크리스털':'은종 마을의 수호 크리스털'))}</span>${run.trainingBoss?worldNineBossMarkup():run.trainingDummyVariant?trainingDummyMarkup():run.wedgeMob?ashenWedgeSoldierMarkup():'<div class="enemy"></div>'}${run.trainingBoss?`<span class="bandit-hp-label" role="status">HP ${run.bossHp} / ${run.bossMaxHp} · DMG ${run.bossAttackSteps}</span>`:''}${iceTimeEffectMarkup()}${eagleEyeEffectMarkup()}<div class="crystal-strike" aria-hidden="true"></div><div class="crystal-shards" aria-hidden="true">${'<i></i>'.repeat(7)}</div><div class="arena-feedback" id="arena-feedback" role="status">${esc(run.matchFeedback||'')}</div></div><div class="xp"><i style="width:${run.index/run.deck.length*100}%"></i></div>${storyBattleActions()}<div class="question-card story-spelling-question"><small>${q.trainingExam?'결정봉 시험 · 오답 HP 1 · ':q.trainingWind?'바람길 전환 · ':run.trainingKind==='iris'?`교대 수련 · ${Math.floor(run.index/5)%2?'두':'한'} 글자 구간 · `:''}빈칸에 들어갈 ${q.hidden.length}글자를 고르세요</small><h1 class="${q.prompt.length>20?'long-question':''}">${esc(q.prompt)}</h1><p>${esc(q.meaning)}</p></div><div class="answers">${q.choices.map((choice,i)=>`<button type="button" class="answer" data-action="answer" data-index="${i}" ${run.locked||run.paused||run.timeoutPending?'disabled':''}><span>${i+1}</span>${esc([...choice].join(', '))}${run.eagleEyeActive&&choice===q.answer?'<small class="eagle-answer-hint" role="status">정답</small>':''}${run.sniperInsight?sniperAnswerHintMarkup(choice):''}${run.petHint?petAnswerHintMarkup(choice):''}</button>`).join('')}</div>`;
   }
   function worldNineBossMarkup(){
+    if(run.worldTenBoss)return worldTenBossMarkup();
+    if(run.observatoryBoss)return `<div class="enemy observatory-boss-placeholder" role="img" aria-label="${esc(stages[selectedStage].encounterName)} 임시 수정 표현"></div><div class="world-nine-boss-notice" role="status">${esc(run.trainingNotice||'')}</div>`;
     const kind=run.trainingKind,name=kind==='griffin'?'돌개바람 그리핀':'새벽의 사범 이리스';
     const visual=window.WORDORIA_WORLD_NINE_BOSS.visual(run),spriteStyle=`background-image:url(assets/monsters/world-9/${kind}/${kind}-sd-${visual.action}-strip.png);background-size:300% 100%;background-position:${visual.frame*50}% 0`;
     const lights=kind==='iris'?Math.min(4,Math.floor((1-run.bossHp/run.bossMaxHp)*4)):0;
     return `<div class="guardian-enemy world-nine-boss" data-kind="${kind}"><span class="world-nine-boss-sprite" style="${spriteStyle}" role="img" aria-label="${name}"></span></div><div class="world-nine-boss-notice" role="status">${esc(run.trainingNotice||'')}</div>${kind==='iris'?`<div class="dawn-training-lights" aria-label="새벽등 ${lights}/4"><span>${[0,1,2,3].map(i=>`<i class="${i<lights?'lit':''}">◆</i>`).join('')}</span>${lights===4?'새벽등 점등 · 시험 통과':''}</div>`:''}`;
   }
   function refreshWorldNineBossSprite(){
+    if(run.worldTenBoss){refreshWorldTenBossSprite();return;}
+    if(run.observatoryBoss)return;
     const sprite=document.querySelector('.world-nine-boss-sprite');if(!sprite)return;
     const visual=window.WORDORIA_WORLD_NINE_BOSS.visual(run),count=3;
     sprite.style.backgroundImage=`url("assets/monsters/world-9/${run.trainingKind}/${run.trainingKind}-sd-${visual.action}-strip.png")`;
@@ -3064,10 +3087,11 @@
     if(!correct&&run.weavingStepActive&&consumePugilistWeavingStep())return;
     if(correct){setHeroAttackTravel();speak(q.entry[0]);}
     run.matchFeedback=correct?'정답!':`정답: ${q.answer}`;
-    window.WORDORIA_WORLD_NINE_BOSS.answer(run,correct,battleContactDelay(),reducedMotion());
+    (run.worldTenBoss?window.WORDORIA_WORLD_TEN_BOSS:window.WORDORIA_WORLD_NINE_BOSS).answer(run,correct,battleContactDelay(),reducedMotion());
     render();
   }
   function advanceWorldNineBossBattle(delta){
+    if(run.worldTenBoss){advanceWorldTenBossBattle(delta);return;}
     const remaining=Math.max(0,run.storyTimeLimit-run.elapsed);
     const step=run.iceTimeActive||run.timeStopped||run.trainingVictoryMs!==null?delta:Math.min(delta,remaining);
     if(run.activeSkills?.advance(step))refreshNewSkillFeedback();
@@ -3092,6 +3116,52 @@
     if($('story-time-fill'))$('story-time-fill').style.width=`${percent}%`;
     $('story-time-meter')?.setAttribute('aria-valuenow',String(percent));
     $('story-time-meter')?.setAttribute('aria-label',`남은 시간 ${percent}%`);
+  }
+  function worldTenBossSpriteStyle(){
+    const visual=window.WORDORIA_WORLD_TEN_BOSS.visual(run);
+    return `background-image:url(assets/monsters/world-10/${run.trainingKind}/${run.trainingKind}-sd-${visual.action}-strip.png);background-size:300% 100%;background-position:${visual.frame*50}% 0`;
+  }
+  function worldTenBossMarkup(){
+    const kind=run.trainingKind,skill=run.trainingSkill;
+    return `<div class="guardian-enemy world-ten-boss ${run.shieldRemaining>0?'shielded':''}" data-kind="${kind}" data-skill="${skill?.kind||''}" data-contact="${Boolean(skill?.contact)}"><span class="world-ten-mirror mirror-left" aria-hidden="true" style="${worldTenBossSpriteStyle()}"></span><span class="world-ten-mirror mirror-right" aria-hidden="true" style="${worldTenBossSpriteStyle()}"></span><span class="world-ten-boss-sprite" style="${worldTenBossSpriteStyle()}" role="img" aria-label="${esc(stages[selectedStage].encounterName)}"></span><span class="world-ten-shield" aria-hidden="true"></span><span class="world-ten-beam" aria-hidden="true"></span><span class="world-ten-shockwave" aria-hidden="true"></span></div><div class="world-nine-boss-notice world-ten-boss-notice" role="status" aria-live="polite">${esc(run.trainingNotice||'')}</div>`;
+  }
+  function refreshWorldTenBossSprite(){
+    const wrap=document.querySelector('.world-ten-boss');if(!wrap)return;
+    const style=worldTenBossSpriteStyle();
+    for(const sprite of wrap.querySelectorAll('.world-ten-boss-sprite,.world-ten-mirror'))sprite.style.cssText=style;
+    wrap.classList.toggle('shielded',run.shieldRemaining>0);
+    wrap.dataset.skill=run.trainingSkill?.kind||'';wrap.dataset.contact=String(Boolean(run.trainingSkill?.contact));
+    const notice=document.querySelector('.world-ten-boss-notice');if(notice)notice.textContent=run.trainingNotice||'';
+    const arena=document.querySelector('#arena'),hit=Boolean(run.trainingPlayerHitMs>0||run.stunned);
+    arena?.classList.toggle('wrong',hit);arena?.classList.toggle('story-stunned',hit);
+  }
+  function advanceWorldTenBossBattle(delta){
+    if(!run||run.done||run.paused)return;
+    run.reducedMotion=reducedMotion();
+    const events=window.WORDORIA_WORLD_TEN_BOSS.advance(run,delta,delta,()=>{run.index++;prepareQuestion();});
+    for(const event of events){
+      if(event==='correct-contact')document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));
+      if(event==='wrong-contact'||event==='skill-contact')document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'error'}}));
+      if(event==='retry')run.matchFeedback='';
+      if(event==='shuffle')window.WORDORIA_WORLD_TEN_BOSS.shuffleChoices(run);
+      if(event==='victory'){finishBattle(true,'boss-defeated');return;}
+      if(event==='timeout'){finishBattle(false,'timeout');return;}
+      if(event==='defeat-player'){finishBattle(false,'hp-zero');return;}
+    }
+    if(events.length||run.skillBurnDirty){
+      run.skillBurnDirty=false;
+      const hero=run.attack&&selectedCharacter?.class!=='bard'?document.querySelector('.battle-hero'):null;
+      render();if(hero)document.querySelector('.battle-hero')?.replaceWith(hero);
+    }
+    refreshNewSkillFeedback();refreshWorldTenBossSprite();
+    const percent=Math.ceil(Math.max(0,run.storyTimeLimit-run.elapsed)/run.storyTimeLimit*100);
+    if($('timer'))$('timer').textContent=`${percent}%`;
+    if($('story-time-fill'))$('story-time-fill').style.width=`${percent}%`;
+    $('story-time-meter')?.setAttribute('aria-valuenow',String(percent));
+    $('story-time-meter')?.setAttribute('aria-label',`남은 시간 ${percent}%`);
+    $('story-time-meter')?.classList.toggle('danger',run.storyTimeLimit-run.elapsed<10000);
+    document.querySelector('.pet-time-status')?.toggleAttribute('hidden',!(run.petTimeMs>0));
+    document.querySelector('.pet-skill-notice')?.toggleAttribute('hidden',!(run.petNoticeMs>0));
   }
   function answerStorySpelling(index){
     if(run?.trainingBoss){answerWorldNineBossSpelling(index);return;}
@@ -3258,7 +3328,7 @@
   function rouletteSectorCenter(index){return ((STORY_ROULETTE_ENDS[index-1]||0)+STORY_ROULETTE_ENDS[index])*1.8;}
   function roulettePointerIndex(angle){return rouletteIndexAtPercent(((360-angle%360)%360)/3.6);}
   function storyRouletteEligible(battle=run){
-    return Boolean(battle?.story&&stages[selectedStage]?.storyChapter>=11&&!battle.hiddenKind&&!battle.boss&&!battle.guardian&&!battle.vargas&&!battle.blackroot&&!battle.keurus&&!battle.trainingBoss);
+    return Boolean(battle?.story&&[11,12].includes(stages[selectedStage]?.storyChapter)&&!battle.hiddenKind&&!battle.boss&&!battle.guardian&&!battle.vargas&&!battle.blackroot&&!battle.keurus&&!battle.trainingBoss);
   }
   function createStoryRoulette(){
     const durationMs=Number.isFinite(run.elapsed)?Math.max(0,Math.round(run.elapsed)):run.storyTimeLimit;
@@ -3442,7 +3512,7 @@
     if(run?.blackroot&&!run.done)window.WORDORIA_BLACKROOT_ELDER.clear(run);
     if(run&&!run.done)recoverAfterBattle(run,clear);
     if(run.done)return;if(run.hiddenKind){run.done=true;run.clear=clear;run.reason=reason;run.iceTimeActive=false;persistStoryBattleVitals();clearInterval(timerId);clearTimeout(nextTimer);cancelSpeech();await saveBattleResult(run,clear);selectedStoryWorld=5;selectedStoryStage=selectedStage;go('result');return;}if(run.guardian&&!run.sorcerus&&!run.redSkullKnight&&!run.banditChief&&!run.abyssGolem&&!run.morgana&&!run.elliot&&!run.darkTriton&&!run.arkaon&&!run.sealKnight&&!run.nereus){finishGuardianBattle(clear,reason);return;}if(run.boss){finishRoyalSlimeBattle(clear,reason);return;}persistStoryBattleVitals();run.weavingStepActive=false;run.weavingStepDodging=false;run.weavingStepNotice='';run.eagleEyeActive=false;run.eagleEyeRemoved=[];run.eagleEyePairId=null;run.iceTimeActive=false;run.petEffects?.clear();run.done=true;run.clear=clear;run.reason=reason;run.feedbackPending=false;clearInterval(timerId);clearTimeout(nextTimer);removeBattleReward();cancelSpeech();
-    if(run.trainingBoss){run.trainingAction=null;run.trainingVictoryMs=null;if(clear)run.deck=run.deck.slice(0,Math.max(1,run.correct));}
+    if(run.trainingBoss){if(run.worldTenBoss)window.WORDORIA_WORLD_TEN_BOSS.clear(run);run.trainingAction=null;run.trainingVictoryMs=null;if(clear)run.deck=run.deck.slice(0,Math.max(1,run.correct));}
     if(run.redSkullKnight){window.WORDORIA_RED_SKULL_KNIGHT.clear(run);if(clear)run.deck=run.deck.slice(0,run.correct);}
     if(run.darkTriton){window.WORDORIA_DARK_TRITON.clear(run);if(clear)run.deck=run.deck.slice(0,run.correct);}
     if(run.sealKnight){window.WORDORIA_SEAL_KNIGHT.clear(run);if(clear)run.deck=run.deck.slice(0,run.correct);}
@@ -3458,11 +3528,11 @@
     if(clear&&run.story)storyDialogueIndex=0;
     const storyIndex=storyStages.findIndex(stage=>stage.key===selectedStage),storyStage=storyStages[storyIndex];
     if(clear&&run.story&&storyStage){
-      const next=storyStages.find(stage=>(stage.chapter||1)===(storyStage.chapter||1)&&stage.number===storyStage.number+1);
+      const next=storyStages.find(stage=>(stage.chapter||1)===(storyStage.chapter||1)&&Boolean(stage.sideStory)===Boolean(storyStage.sideStory)&&stage.number===storyStage.number+1);
       selectedStoryStage=next?.key||storyStage.key;
       selectedStoryWorld=storyStage.chapter||1;
     }
-    go(clear&&run.arkaon?'storyChapterSevenMidbossEnd':clear&&run.story&&[8,9,10,11,12].includes(storyStage?.chapter)&&(storyStage?.chapter===10?[10,30]:[15,30]).includes(storyStage?.number)?(storyStage.number===(storyStage.chapter===10?10:15)?'storyChapterSevenMidbossEnd':'storyChapterSevenBossEnd'):clear&&run.story&&storyStage?.chapter===6&&storyStage?.number===20?'storyChapterSixBBossEnd':clear&&run.story&&storyStage?.chapter===6&&storyStage?.number===10?'storyChapterSixBMidbossEnd':clear&&run.story&&storyStage?.chapter===7&&storyStage?.number===20?'storyChapterSixABossEnd':clear&&run.story&&storyStage?.chapter===7&&storyStage?.number===10?'storyChapterSixAMidbossEnd':clear&&run.story&&storyStage?.chapter===5&&storyStage?.number===10?'storyChapterFiveMidbossEnd':clear&&run.story&&storyStage?.chapter===4&&storyStage?.number===20?'storyChapterFourBossEnd':clear&&run.story&&storyStage?.chapter===4&&storyStage?.number===10?'storyChapterFourMidbossEnd':clear&&run.story&&storyStage?.chapter===2&&storyStage?.number===7?'storyChapterTwoBossEnd':clear&&run.story&&(storyStage?.epilogue||((storyStage?.chapter||1)===1&&storyStage?.number===7))?'storyEpilogue':'result');
+    go(clear&&run.story&&storyStage?.chapter===13&&[20,40,43].includes(storyStage.number)?(storyStage.number===20?'storyChapterSevenMidbossEnd':'storyChapterSevenBossEnd'):clear&&run.arkaon?'storyChapterSevenMidbossEnd':clear&&run.story&&[8,9,10,11,12].includes(storyStage?.chapter)&&(storyStage?.chapter===10?[10,30]:[15,30]).includes(storyStage?.number)?(storyStage.number===(storyStage.chapter===10?10:15)?'storyChapterSevenMidbossEnd':'storyChapterSevenBossEnd'):clear&&run.story&&storyStage?.chapter===6&&storyStage?.number===20?'storyChapterSixBBossEnd':clear&&run.story&&storyStage?.chapter===6&&storyStage?.number===10?'storyChapterSixBMidbossEnd':clear&&run.story&&storyStage?.chapter===7&&storyStage?.number===20?'storyChapterSixABossEnd':clear&&run.story&&storyStage?.chapter===7&&storyStage?.number===10?'storyChapterSixAMidbossEnd':clear&&run.story&&storyStage?.chapter===5&&storyStage?.number===10?'storyChapterFiveMidbossEnd':clear&&run.story&&storyStage?.chapter===4&&storyStage?.number===20?'storyChapterFourBossEnd':clear&&run.story&&storyStage?.chapter===4&&storyStage?.number===10?'storyChapterFourMidbossEnd':clear&&run.story&&storyStage?.chapter===2&&storyStage?.number===7?'storyChapterTwoBossEnd':clear&&run.story&&(storyStage?.epilogue||((storyStage?.chapter||1)===1&&storyStage?.number===7))?'storyEpilogue':'result');
 
     if(clear){document.dispatchEvent(new CustomEvent('wordoria:haptic',{detail:{kind:'success'}}));}
   }
@@ -3495,7 +3565,7 @@
     if(run.abyssGolem){await saveAbyssGolemReward(run,clear);return;}
     run.saveError=false;run.saveRetryable=false;
     if(localMode){const id=`demo-${Date.now()}-${Math.random()}`,stage=stageRecordName(selectedStage),coins=run.storyReplay?0:earnedCoins(run.correct,clear)+Number(run.slashBonus||0)+Number(run.feverCollected||0);selectedCharacter.coins+=coins;run.result={game_score_id:id,coins_earned:coins,balance:selectedCharacter.coins};const row={id,player,stage,correct:run.correct,total:run.deck.length,cleared:clear,character_id:selectedCharacter.id,duration_ms:Math.round(run.elapsed),coins_earned:coins,created_at:new Date().toISOString()};demoState.records.unshift(row);records=demoState.records;saveDemo();}
-    else if(dbOnline){try{const rows=run.trainingBoss&&clear?await rpc('claim_world_nine_boss_result',{p_character_id:run.storyCharacterId,p_stage_number:stages[selectedStage].storyNumber,p_correct:run.correct,p_duration_ms:Math.max(1,Math.round(run.elapsed)),p_boss_hp:run.bossHp,p_slash_bonus:run.storyReplay?0:Number(run.slashBonus||0)}):await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stageRecordName(selectedStage),p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed),p_slash_bonus:run.storyReplay?0:Number(run.slashBonus||0),p_fever_bonus:run.storyReplay&&selectedStage!=='story-ch5-7'?0:Number(run.feverCollected||0)});run.result=rows?.[0]||null;if(!run.result?.game_score_id)throw new Error('보상 저장 결과를 확인하지 못했어요.');if(run.result){if(accountMode)accountCrystals=Number(run.result.balance);else selectedCharacter.coins=run.result.balance;if(clear&&run.story&&Number(run.result.coins_earned)===0)run.storyReplay=true;}}catch(error){console.error(error);run.saveError=true;run.saveRetryable=error.status>=400&&error.status<500&&error.status!==408;}if(run.result?.game_score_id){try{records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.warn('Adventure records refresh failed.',error);}}}
+    else if(dbOnline){try{const rows=run.trainingBoss&&!run.observatoryBoss&&clear?await rpc('claim_world_nine_boss_result',{p_character_id:run.storyCharacterId,p_stage_number:stages[selectedStage].storyNumber,p_correct:run.correct,p_duration_ms:Math.max(1,Math.round(run.elapsed)),p_boss_hp:run.bossHp,p_slash_bonus:run.storyReplay?0:Number(run.slashBonus||0)}):await rpc('award_game_result',{p_character_id:selectedCharacter.id,p_stage:stageRecordName(selectedStage),p_correct:run.correct,p_total:run.deck.length,p_cleared:clear,p_duration_ms:Math.round(run.elapsed),p_slash_bonus:run.storyReplay?0:Number(run.slashBonus||0),p_fever_bonus:run.storyReplay&&selectedStage!=='story-ch5-7'?0:Number(run.feverCollected||0)});run.result=rows?.[0]||null;if(!run.result?.game_score_id)throw new Error('보상 저장 결과를 확인하지 못했어요.');if(run.result){if(accountMode)accountCrystals=Number(run.result.balance);else selectedCharacter.coins=run.result.balance;if(clear&&run.story&&Number(run.result.coins_earned)===0)run.storyReplay=true;}}catch(error){console.error(error);run.saveError=true;run.saveRetryable=error.status>=400&&error.status<500&&error.status!==408;}if(run.result?.game_score_id){try{records=await apiGet('game_scores?select=player,stage,correct,total,cleared,created_at,character_id,duration_ms,coins_earned,id&order=created_at.desc&limit=1000');}catch(error){console.warn('Adventure records refresh failed.',error);}}}
     else{run.saveError=true;run.saveRetryable=true;}
   }
   async function saveVargasReward(battle){
