@@ -50,7 +50,7 @@ await cp(new URL('assets/', root), new URL('assets/', dist), { recursive: true, 
     && !/\/characters\/bard\/(?:source|source-frames|review|concept|(?:idle|attack|hit)-(?:male|female)|projectile)(?:\/|$)/.test(path)
     && !/\/monsters\/world-9\/training-dummy\/(?:source(?:\/|$)|(?:basic|advanced)\/(?:source-frames|review|idle|attack|hit)(?:\/|$))/.test(path)
     && !/\/monsters\/world-9\/(?:griffin|iris)\/(?:source|source-frames|review|idle|attack|hit|skill)(?:\/|$)/.test(path)
-    && !/\/monsters\/world-10\/(?:lumen|seiran|crystal-king)\/(?:source|source-frames|review|idle|attack|hit|skill|shield)(?:\/|$)/.test(path)
+    && !/\/monsters\/world-10\/(?:lumen|seiran|crystal-king|starlight-scout)\/(?:source|source-frames|review|idle|attack|hit|skill|shield)(?:\/|$)/.test(path)
     && !/\/novel\/characters\/source\/world-9(?:\/|$)/.test(path)
     && !/\/audio\/source\/roulette(?:\/|$)/.test(path)
     && !/\/story\/source\/world-9(?:\/|$)/.test(path);

@@ -1,0 +1,22 @@
+{
+  "name": "오염된 별빛 정찰병",
+  "world": 10,
+  "internalChapter": 13,
+  "stages": {"include": [[1, 19], [21, 39], [41, 42]], "excludeBosses": [20, 40, 43]},
+  "identity": "monster_starlight_scout_sd_identity.png",
+  "facing": "left",
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "safetyMarginPx": 8,
+  "actions": {
+    "idle": {"frames": ["ready", "lens-adjust"], "durationMs": [600, 600], "loop": true},
+    "attack": {"frames": ["ready", "anticipation", "punch-contact"], "durationMs": [120, 120, 260], "hitFrame": 2},
+    "hit": {"frames": ["notice", "impact", "complete-down"], "durationMs": [100, 100, 300], "holdLastFrame": true}
+  },
+  "effectBounds": "All armor, lens, fists and wedge remain within each cell; no detached effects.",
+  "contact": "Enemy punch damage at 240ms (90ms reduced); player attack uses battleContactDelay(). Hit final frame held until next question.",
+  "review": "Technical review is separate from user art approval; browser checks only when requested."
+}

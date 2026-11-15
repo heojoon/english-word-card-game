@@ -1262,6 +1262,14 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
 .ashen-wedge-soldier-mob .spider-attack-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-attack-strip.png')}
 .ashen-wedge-soldier-mob .spider-hit-strip{background-image:url('assets/monsters/world-8/ashen-wedge-soldier/ashen-wedge-soldier-sd-hit-strip.png')}
 /* World 9: training constructs use the shared contact, pause and Ice Time player. */
+/* World 10: ordinary observatory scouts, using the same contact and pause clock. */
+.world-eight-arena:has(.starlight-scout-mob) .enemy-label{top:12px;right:12px}
+.arena.world-eight-arena .enemy.story-mob.starlight-scout-mob{width:140px;height:140px;right:6px;bottom:20px;clip-path:none;background:none;box-shadow:none;animation:none;transform:none}
+.starlight-scout-mob .spider-idle-strip{background-image:url('assets/monsters/world-10/starlight-scout/starlight-scout-sd-idle-strip.png');animation-duration:.6s}
+.starlight-scout-mob .spider-attack-strip{background-image:url('assets/monsters/world-10/starlight-scout/starlight-scout-sd-attack-strip.png')}
+.starlight-scout-mob .spider-hit-strip{background-image:url('assets/monsters/world-10/starlight-scout/starlight-scout-sd-hit-strip.png')}
+.world-eight-arena.hit .starlight-scout-mob{animation:none!important;opacity:1;transform:none}
+@media(max-width:360px){.arena.world-eight-arena .enemy.story-mob.starlight-scout-mob{width:128px;height:128px;right:2px}}
 .world-eight-arena:has(.training-dummy-mob) .enemy-label{top:12px;right:12px}
 .arena.world-eight-arena .enemy.story-mob.training-dummy-mob{width:132px;height:132px;right:10px;bottom:20px;clip-path:none;background:none;box-shadow:none;animation:none;transform:none}
 .training-dummy-mob .spider-idle-strip{animation-duration:.3s}

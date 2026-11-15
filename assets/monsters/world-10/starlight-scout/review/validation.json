@@ -1,0 +1,110 @@
+{
+  "frameSize": [
+    320,
+    320
+  ],
+  "groundLinePx": 312,
+  "sourceFrameGapPx": 50,
+  "actions": {
+    "idle": {
+      "sourceSize": [
+        1795,
+        876
+      ],
+      "sourceBounds": [
+        [
+          160,
+          42,
+          675,
+          813
+        ],
+        [
+          1067,
+          58,
+          1580,
+          813
+        ]
+      ],
+      "scale": 0.37094682230869,
+      "runtimeSize": [
+        640,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    "attack": {
+      "sourceSize": [
+        1585,
+        992
+      ],
+      "sourceBounds": [
+        [
+          66,
+          204,
+          439,
+          779
+        ],
+        [
+          607,
+          206,
+          971,
+          779
+        ],
+        [
+          1055,
+          208,
+          1530,
+          778
+        ]
+      ],
+      "scale": 0.4973913043478261,
+      "runtimeSize": [
+        960,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    "hit": {
+      "sourceSize": [
+        1585,
+        992
+      ],
+      "sourceBounds": [
+        [
+          85,
+          239,
+          416,
+          749
+        ],
+        [
+          522,
+          263,
+          978,
+          748
+        ],
+        [
+          1022,
+          485,
+          1557,
+          746
+        ]
+      ],
+      "scale": 0.5607843137254902,
+      "runtimeSize": [
+        960,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    }
+  },
+  "sourceNote": "Generator returned different resolutions and approximate gutters. Exact 50px transparent gutters reconstructed in review sheets; runtime slots contiguous."
+}
