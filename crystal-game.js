@@ -3335,7 +3335,7 @@
   function rouletteSectorCenter(index){return ((STORY_ROULETTE_ENDS[index-1]||0)+STORY_ROULETTE_ENDS[index])*1.8;}
   function roulettePointerIndex(angle){return rouletteIndexAtPercent(((360-angle%360)%360)/3.6);}
   function storyRouletteEligible(battle=run){
-    return Boolean(battle?.story&&[11,12].includes(stages[selectedStage]?.storyChapter)&&!battle.hiddenKind&&!battle.boss&&!battle.guardian&&!battle.vargas&&!battle.blackroot&&!battle.keurus&&!battle.trainingBoss);
+    return Boolean(battle?.story&&[11,12,13].includes(stages[selectedStage]?.storyChapter)&&!battle.hiddenKind&&!battle.boss&&!battle.guardian&&!battle.vargas&&!battle.blackroot&&!battle.keurus&&!battle.trainingBoss);
   }
   function createStoryRoulette(){
     const durationMs=Number.isFinite(run.elapsed)?Math.max(0,Math.round(run.elapsed)):run.storyTimeLimit;

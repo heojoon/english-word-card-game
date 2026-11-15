@@ -23,8 +23,25 @@ test('only World 8+ ordinary Story clears are eligible; branches and bosses reta
   const c=context();assert.equal(c.storyRouletteEligible(),true);
   for(const chapter of [1,5,8,9,10]){c.stages[c.selectedStage].storyChapter=chapter;assert.equal(c.storyRouletteEligible(),false);}
   c.stages[c.selectedStage].storyChapter=12;assert.equal(c.storyRouletteEligible(),true);
+  c.stages[c.selectedStage].storyChapter=13;assert.equal(c.storyRouletteEligible(),true);
   for(const key of ['hiddenKind','boss','guardian','vargas','blackroot','keurus','trainingBoss']){c.run[key]=true;assert.equal(c.storyRouletteEligible(),false);delete c.run[key];}
   c.run.story=false;assert.equal(c.storyRouletteEligible(),false);
+});
+
+test('World 10 main and optional clears use the 30-question clock in account roulette requests',async()=>{
+  for(const key of ['story-ch10-1','story-ch10-15','story-ch10-21','story-ch10-extra-1','story-ch10-extra-2']){
+    const c=context(false);c.selectedStage=key;c.stages[key]={storyChapter:13};
+    Object.assign(c.run,{deck:Array(30).fill({}),correct:30,index:30,elapsed:120499,storyTimeLimit:180000});
+    assert.equal(c.storyRouletteEligible(),true);
+    c.rpc=async(name,args)=>{
+      assert.equal(name,'claim_story_roulette_reward');assert.equal(args.p_correct,30);assert.equal(args.p_total,30);
+      assert.equal(args.p_time_limit_ms,180000);assert.equal(args.p_duration_ms,120499);
+      return {index:5,bonus:89,result:{game_score_id:55,coins_earned:140,balance:140}};
+    };
+    c.run.roulette=c.createStoryRoulette();c.run.fever=true;assert.equal(c.run.roulette.remainingMs,59501);
+    await c.rouletteButton();await c.rouletteButton();assert.equal(c.run.roulette.phase,'stopping');assert.equal(c.run.feverCollected,89);
+    c.run.trainingBoss=true;assert.equal(c.storyRouletteEligible(),false);
+  }
 });
 test('real finish routing opens roulette before recovery or saving and real tick freezes the clear clock',async()=>{
   const c=context();let intros=0;
