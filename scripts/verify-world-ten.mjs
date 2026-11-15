@@ -25,7 +25,10 @@ test('World 10 registers 40 main stages plus 3 optional stages, 30 Type C questi
     }
     assert.equal(c.catalog['story-ch10-20'].encounterName,'관측교 수호병기 루멘');
     assert.equal(c.catalog['story-ch10-40'].encounterName,'거짓 별의 지휘관 세이런');
-    assert.ok(c.catalog[side.at(-1).key].trainingBossHp>0);
+    assert.equal(c.catalog[side.at(-1).key].trainingBossHp,180);
+    assert.equal(c.catalog[side.at(-1).key].observatoryBoss,'crystal-king');
+    assert.equal(c.catalog[side.at(-1).key].encounterName,'크리스털왕');
+    assert.equal(c.catalog[side.at(-1).key].recordName,'스토리 10장 번외 3 · 별빛이 끊긴 관측탑');
   }
 });
 test('Optional stages do not gate the main path and World 10 opens on either previous branch',()=>{
@@ -41,9 +44,9 @@ test('Optional stages do not gate the main path and World 10 opens on either pre
 test('World 10 HP bosses use contact damage and Ice Time without World 9 training skills',()=>{
   const c=vm.createContext({window:{}});vm.runInContext(readFileSync(new URL('../world-nine-boss.js',import.meta.url),'utf8'),c);
   vm.runInContext(readFileSync(new URL('../world-ten-boss.js',import.meta.url),'utf8'),c);
-  for(const [kind,hp] of [['lumen',200],['seiran',240],['astra',180]]){
-    const boss=kind==='astra'?c.window.WORDORIA_WORLD_NINE_BOSS:c.window.WORDORIA_WORLD_TEN_BOSS;
-    const s={...(kind==='astra'?boss.reset(30,4):boss.reset(kind,4)),observatoryBoss:kind,trainingKind:kind,bossHp:hp,bossMaxHp:hp,elapsed:0,correct:0,hp:3};
+  for(const [kind,hp] of [['lumen',200],['seiran',240],['crystal-king',180]]){
+    const boss=c.window.WORDORIA_WORLD_TEN_BOSS;
+    const s={...boss.reset(kind,4),elapsed:0,correct:0,hp:3};
     const base={entry:['signal','n','신호'],hidden:[2],answer:'g'};assert.equal(c.window.WORDORIA_WORLD_NINE_BOSS.question(s,base.entry,base),base);
     s.iceTimeActive=true;boss.advance(s,1000);assert.equal(s.elapsed,0);
     boss.answer(s,true,200);assert.equal(s.iceTimeActive,false);assert.equal(s.bossHp,hp);
@@ -58,5 +61,34 @@ test('World 10 main and optional story phases are generated from their source fi
   for(const phase of ['Prologue','MidbossStart','MidbossEnd','BossStart','BossEnd','ExtraStart','ExtraEnd']){
     const lines=c.window.WORDORIA_NOVELS[`world10${phase}`];assert.ok(lines?.length>5,phase);
     assert.ok(lines.every(line=>line.backgroundPath==='assets/story/chapter-10-observatory-map.webp'));
+  }
+  for(const phase of ['ExtraStart','ExtraEnd']){
+    const lines=c.window.WORDORIA_NOVELS[`world10${phase}`];
+    const king=lines.find(line=>line.speaker==='크리스털왕');assert.ok(king);
+    assert.equal(king.artPath,'assets/novel/characters/char_crystal-king_world10_standing.webp');
+    assert.ok(lines.every(line=>!line.text.includes('아스트라')));
+  }
+});
+
+function rewardContext(){
+  const c=vm.createContext({localMode:true,selectedStage:'story-ch10-20',selectedCharacter:{id:'one'},player:'p',demoState:{characters:[{id:'one',coins:0},{id:'two',coins:0}],records:[]},records:[],stageRecordName:k=>k,saveDemo(){},console:{error(){}}});
+  vm.runInContext(extract('  async function saveWorldTenReward(','  async function saveArkaonReward('),c);return c;
+}
+test('World 10 bosses pay exactly 500 each once across characters without extra bonuses',async()=>{
+  const c=rewardContext();
+  for(const key of ['story-ch10-20','story-ch10-40','story-ch10-extra-3']){
+    c.selectedStage=key;c.selectedCharacter.id='one';
+    const b={bossHp:0,correct:50,elapsed:1000,storyTimeLimit:10000,slashBonus:999};
+    await c.saveWorldTenReward(b);assert.equal(b.result.coins_earned,500);
+    await c.saveWorldTenReward(b);
+    c.selectedCharacter.id='two';const replay={...b,result:null};
+    await c.saveWorldTenReward(replay);assert.equal(replay.result.coins_earned,0);
+  }
+  assert.equal(c.demoState.characters[0].coins,1500);assert.equal(c.demoState.characters[1].coins,0);
+});
+test('World 10 reward rejects a living boss and an expired result',async()=>{
+  for(const change of [{bossHp:1},{elapsed:10001}]){
+    const c=rewardContext(),b={bossHp:0,correct:5,elapsed:1000,storyTimeLimit:10000,...change};
+    await c.saveWorldTenReward(b);assert.equal(b.saveError,true);assert.equal(c.demoState.characters[0].coins,0);
   }
 });

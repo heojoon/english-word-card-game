@@ -12,6 +12,16 @@ function setup(localMode=true){
   return c;
 }
 const battle=()=>({bossHp:0,correct:50,elapsed:120000});
+
+test('Arkaon replay does not pay again after a historical paid stage clear',async()=>{
+  const c=setup();
+  c.demoState.records.push({player:'player',stage:'story-ch7c-10',character_id:'one',cleared:true,coins_earned:58});
+  c.selectedCharacter.id='two';
+  const replay=battle();await c.saveArkaonReward(replay);
+  assert.equal(replay.result.coins_earned,0);
+  assert.equal(replay.storyReplay,true);
+  assert.equal(c.demoState.characters[1].coins,0);
+});
 test('Arkaon pays 400 once across characters; earlier ordinary clear does not consume reward',async()=>{
   const c=setup();c.demoState.records.push({player:'player',stage:'story-ch7c-10',cleared:true});
   const first=battle();await c.saveArkaonReward(first);assert.equal(first.result.coins_earned,400);

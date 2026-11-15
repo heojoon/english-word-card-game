@@ -392,10 +392,12 @@ export async function generateStoryNovel(){
   }
   for(const [phase,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end'],['ExtraStart','extra-start'],['ExtraEnd','extra-end']]){
     const lines=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-10-${file}.md`,import.meta.url),'utf8'),{world:'10',title:'별빛이 끊긴 관측탑',sceneName:'observatory',backgroundPath:'assets/story/chapter-10-observatory-map.webp'});
-    const lumenArt='assets/novel/characters/char_lumen_world10_standing.webp',seiranArt='assets/novel/characters/char_seiran_world10_standing.webp';
+    const lumenArt='assets/novel/characters/char_lumen_world10_standing.webp',seiranArt='assets/novel/characters/char_seiran_world10_standing.webp',kingArt='assets/novel/characters/char_crystal-king_world10_standing.webp';
     for(const line of lines)if(line.speaker==='세이런'){line.artPath=seiranArt;line.className='seiran';}
+    for(const line of lines)if(line.speaker==='크리스털왕'){line.artPath=kingArt;line.className='crystal-king';}
     if(phase==='MidbossStart')Object.assign(lines[0],{sceneArt:lumenArt,sceneArtName:'관측교 수호병기 루멘',sceneArtClass:'lumen'});
     if(phase==='BossStart')Object.assign(lines[0],{sceneArt:seiranArt,sceneArtName:'거짓 별의 지휘관 세이런',sceneArtClass:'seiran'});
+    if(phase==='ExtraStart')Object.assign(lines.find(line=>line.sceneNumber===2)||lines[0],{sceneArt:kingArt,sceneArtName:'크리스털왕',sceneArtClass:'crystal-king'});
     novels[`world10${phase}`]=lines;
   }
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));

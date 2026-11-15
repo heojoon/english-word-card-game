@@ -10,7 +10,7 @@ const boss=context.window.WORDORIA_WORLD_TEN_BOSS;
 const state=(kind='lumen',dmg=4)=>({...boss.reset(kind,dmg),elapsed:0,correct:0,hp:8,index:0});
 
 test('HP damage occurs exactly once at contact, independent of 30-question deck length',()=>{
-  for(const [kind,hp] of [['lumen',200],['seiran',240]]){
+  for(const [kind,hp] of [['lumen',200],['seiran',240],['crystal-king',180]]){
     const s=state(kind);assert.equal(s.bossHp,hp);assert.equal(s.storyTimeLimit,Math.ceil(hp/4)*6000);
     s.index=30;boss.answer(s,true,200);boss.answer(s,true,200);assert.equal(s.correct,1);
     boss.advance(s,199);assert.equal(s.bossHp,hp);boss.advance(s,1);assert.equal(s.bossHp,hp-4);
@@ -117,8 +117,8 @@ test('new-question mage passive runs before queued boss warning and cannot deadl
   assert.equal(boss.answer(s,true,200),true);assert.equal(s.timeStopped,false);
 });
 
-test('both World 10 bosses retain shared Ice Time MP cost, freeze, answer release and potion reuse',()=>{
-  for(const kind of ['lumen','seiran']){
+test('all World 10 bosses retain shared Ice Time MP cost, freeze, answer release and potion reuse',()=>{
+  for(const kind of ['lumen','seiran','crystal-king']){
     const s={...state(kind),story:true,spelling:true,mp:1};
     const c=vm.createContext({run:s,selectedCharacter:{class:'mage'},performance:{now:()=>100},render(){},setTimeout(){},document:{querySelector:()=>null}});
     vm.runInContext(extract('  function canActivateMageIceTime(','  function updateWarriorSlash('),c);
@@ -132,7 +132,7 @@ test('both World 10 bosses retain shared Ice Time MP cost, freeze, answer releas
 });
 
 test('boss strips keep RGBA, correct slot sizes, safe margins, contact metadata and held knockdown',()=>{
-  for(const kind of ['lumen','seiran'])for(const action of ['idle','attack','hit','skill',...(kind==='lumen'?['shield']:[])]){
+  for(const kind of ['lumen','seiran','crystal-king'])for(const action of ['idle','attack','hit','skill',...(kind==='lumen'?['shield']:[])]){
     const base=new URL(`../assets/monsters/world-10/${kind}/`,import.meta.url),m=JSON.parse(readFileSync(new URL(`${kind}-sd-${action}-strip.json`,base),'utf8'));
     const png=readFileSync(new URL(m.image,base));assert.equal(png.readUInt32BE(16),m.frameWidth*3);assert.equal(png.readUInt32BE(20),m.frameHeight);assert.equal(png[25],6);
     assert.equal(m.frameCount,3);assert.equal(m.facing,'left');assert.equal(m.anchor.y,.975);
@@ -160,11 +160,46 @@ test('production reset dispatch preserves Astra and World 9 and selects exact Wo
   const c=vm.createContext({window:{WORDORIA_WORLD_TEN_BOSS:boss},bossAttackSteps:()=>4});
   vm.runInContext(readFileSync(new URL('../world-nine-boss.js',import.meta.url),'utf8'),c);
   const resetLine=runtime.split('\n').find(line=>line.includes('if(source.trainingBossHp)Object.assign'));
-  for(const [kind,hp] of [['lumen',200],['seiran',240],['astra',180]]){
+  for(const [kind,hp] of [['lumen',200],['seiran',240],['astra',180],['crystal-king',180]]){
     c.run={hp:3,mp:1};c.source={storyChapter:13,observatoryBoss:kind,trainingBossHp:hp};vm.runInContext(resetLine,c);
     assert.equal(c.run.bossHp,hp);assert.equal(Boolean(c.run.worldTenBoss),kind!=='astra');assert.equal(c.run.hp,3);assert.equal(c.run.mp,1);
   }
   c.run={};c.source={storyChapter:12,storyNumber:15,trainingBossHp:200};vm.runInContext(resetLine,c);assert.equal(c.run.trainingKind,'griffin');assert.equal(c.run.worldTenBoss,undefined);
+});
+
+test('Crystal King warns every 20 seconds and once at half HP; summon uses shared defense only at contact',()=>{
+  const s=state('crystal-king');let hits=0;s.activeSkills={damage:n=>{hits+=n;}};
+  boss.advance(s,20000);assert.equal(s.trainingSkill.kind,'summon');assert.equal(boss.visual(s).action,'skill');
+  boss.advance(s,1199);assert.equal(hits,0);boss.advance(s,1);assert.equal(hits,1);assert.match(s.trainingNotice,/크리스털/);
+  boss.advance(s,300);assert.equal(s.locked,false);assert.equal(hits,1);
+  boss.damage(s,91);boss.damage(s,1);assert.equal(s.thresholds.join(','),'0.5');assert.equal(s.skillQueue.join(','),'summon');
+  boss.advance(s,0);assert.equal(s.trainingSkill.kind,'summon');boss.advance(s,1500);assert.equal(hits,2);
+  boss.advance(s,17000);assert.equal(s.trainingSkill.kind,'summon');assert.equal(s.trainingSkill.elapsed,0);
+});
+
+test('Crystal King summon freezes with Ice Time and pets, shortens under reduced motion and is canceled on exit or death',()=>{
+  const s=state('crystal-king');boss.advance(s,20000);boss.advance(s,500);
+  s.iceTimeActive=true;const time=s.elapsed,frame=boss.visual(s).frame;boss.advance(s,10000);
+  assert.equal(s.elapsed,time);assert.equal(s.trainingSkill.elapsed,500);assert.equal(boss.visual(s).frame,frame);
+  s.iceTimeActive=false;s.petTimeMs=1000;boss.advance(s,1000);assert.equal(s.trainingSkill.elapsed,500);
+  s.paused=true;boss.advance(s,1000);assert.equal(s.trainingSkill.elapsed,500);s.paused=false;
+  boss.advance(s,699);assert.equal(s.hp,8);boss.advance(s,1);assert.equal(s.hp,7);
+  boss.clear(s);boss.advance(s,10000);assert.equal(s.hp,7);assert.equal(s.trainingSkill,null);
+  const t=state('crystal-king');t.reducedMotion=true;boss.advance(t,20000);boss.advance(t,599);assert.equal(t.hp,8);
+  boss.advance(t,1);assert.equal(t.hp,7);boss.advance(t,150);assert.equal(t.locked,false);
+  boss.damage(t,180);assert.equal(t.skillQueue.length,0);assert.equal(t.trainingSkill,null);assert.match(t.trainingNotice,/크리스털왕/);
+  boss.advance(t,110);assert.equal(boss.visual(t).frame,2);boss.advance(t,390);assert.equal(boss.visual(t).frame,2);
+});
+
+test('Crystal King takes 45 DMG4 answers, continues after 30, and never applies a stale wrong-answer contact',()=>{
+  const s=state('crystal-king');s.hp=100;
+  while(s.bossHp>0){
+    while(s.locked)boss.advance(s,100);
+    boss.answer(s,true,200);boss.advance(s,980);
+    if(s.correct===30)assert.equal(s.bossHp,60);
+  }
+  assert.equal(s.correct,45);assert.equal(s.bossHp,0);assert.ok(boss.advance(s,500).includes('victory'));
+  const t=state('crystal-king');boss.answer(t,false,200);boss.clear(t);boss.advance(t,1000);assert.equal(t.hp,8);
 });
 
 test('direct navigation clears boss events and effects while preserving current HP and MP',()=>{

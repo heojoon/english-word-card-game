@@ -22221,7 +22221,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "경비병",
       "className": "scene",
-      "text": "옛 보조 신호소예요. 저쪽 수호기가 고장 난 뒤로 쓰지 않았어요. 탑으로 가는 길은 왼쪽입니다.",
+      "text": "옛 보조 신호소예요. 선이 끊긴 뒤로 아래쪽 수정 방에서 빛이 새어 나와요. 탑으로 가는 길은 왼쪽입니다.",
       "scene": "observatory",
       "sceneNumber": 1,
       "location": "관측교 보수 통로 · 보조 신호선",
@@ -22239,56 +22239,87 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(끊어진 선을 따라 내려가자, 세 개의 렌즈를 단 작은 수호기가 문을 가로막는다. 받침의 명판에 ‘아스트라 — 보조 신호 점검기’라고 적혀 있다.)",
+      "text": "(끊어진 선은 폐신호소 아래의 수정 방으로 이어졌다. 보라색 수정들이 작은 왕관 주위를 돌고 있었다. 흰 털이 달린 망토를 두른 수호자가 커다란 수정 검으로 문 앞을 가로막는다.)",
       "scene": "observatory",
       "sceneNumber": 2,
-      "location": "폐신호소 · 점검 마당",
-      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
-    },
-    {
-      "speaker": "소서러스",
-      "className": "mage",
-      "text": "쐐기는 없어. 부서진 신호선을 계속 점검하다가 멈춘 모양이야.",
-      "scene": "observatory",
-      "sceneNumber": 2,
-      "location": "폐신호소 · 점검 마당",
-      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
-    },
-    {
-      "speaker": "다크 소서러스",
-      "className": "mage",
-      "text": "전원이 살아 있다. 가까이 가면 방호 장치가 작동하겠어.",
-      "scene": "observatory",
-      "sceneNumber": 2,
-      "location": "폐신호소 · 점검 마당",
+      "location": "폐신호소 아래 · 수정 방",
       "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
-      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+      "sceneArt": "assets/novel/characters/char_crystal-king_world10_standing.webp",
+      "sceneArtName": "크리스털왕",
+      "sceneArtClass": "crystal-king"
     },
     {
-      "speaker": "바이올렛",
-      "className": "ranger",
-      "text": "뒤쪽에 수동 정지 손잡이가 있지만, 렌즈가 돌아가는 동안은 접근할 수 없어.",
+      "speaker": "크리스털왕",
+      "className": "crystal-king",
+      "text": "멈춰라! 이 방의 수정은 내 백성이다. 하나도 가져갈 수 없다!",
       "scene": "observatory",
       "sceneNumber": 2,
-      "location": "폐신호소 · 점검 마당",
-      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_crystal-king_world10_standing.webp"
     },
     {
       "speaker": "파이터",
       "className": "fighter",
-      "text": "먼저 움직임을 멈추고 손잡이를 내리자. 기록함은 건드리지 말고.",
+      "text": "왕이라고? 몸보다 검이 더 큰데…….",
       "scene": "observatory",
       "sceneNumber": 2,
-      "location": "폐신호소 · 점검 마당",
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "작다고 방심하지 마. 저 수정들이 검을 따라 움직여.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "우린 수정을 가져가러 온 게 아니야. 끊어진 신호선이 위험한지 확인하려고 왔어.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "크리스털왕",
+      "className": "crystal-king",
+      "text": "지난번에 온 자도 빛을 점검한다고 했다! 그 뒤부터 내 백성들이 쉬지 못하고 떨고 있다!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_crystal-king_world10_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "부서진 선에서 마력이 새고 있어. 먼저 검의 움직임을 멈춰야 가까이 갈 수 있겠어.",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 아래 · 수정 방",
       "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
     },
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(아스트라의 방호판이 펼쳐진다. 아서는 일행이 물러날 길을 확인하고 검을 세운다.)",
+      "text": "(크리스털왕이 검을 치켜든다. 머리 위에 모인 수정들이 일제히 아서 쪽으로 기울어진다.)",
       "scene": "observatory",
       "sceneNumber": 2,
-      "location": "폐신호소 · 점검 마당",
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "수정은 건드리지 마. 검을 받아 내고, 우리가 도우러 왔다는 걸 보여 주자!",
+      "scene": "observatory",
+      "sceneNumber": 2,
+      "location": "폐신호소 아래 · 수정 방",
       "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
     }
   ],
@@ -22296,34 +22327,81 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(아스트라의 방호판이 내려앉는다. 파이터가 수동 손잡이를 내리자 렌즈의 빛이 꺼진다. 소서러스는 남은 마력이 빠지는 것을 확인한 뒤에야 가까이 간다.)",
+      "text": "(커다란 검이 바닥에 닿는다. 망토 위에 주저앉은 크리스털왕 곁으로 수정들이 내려온다. 아서는 검을 거두고, 굴러온 작은 수정 하나를 왕의 곁에 조심스레 돌려놓는다.)",
       "scene": "observatory",
       "sceneNumber": 1,
-      "location": "폐신호소 · 점검 마당",
+      "location": "폐신호소 아래 · 수정 방",
       "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
     },
     {
-      "speaker": "바이올렛",
-      "className": "ranger",
-      "text": "이제 선을 밟아도 움직이지 않아. 수리가 필요하다는 표시를 남겨 둘게.",
+      "speaker": "크리스털왕",
+      "className": "crystal-king",
+      "text": "……가져가지 않는 건가?",
       "scene": "observatory",
       "sceneNumber": 1,
-      "location": "폐신호소 · 점검 마당",
-      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_crystal-king_world10_standing.webp"
     },
     {
       "speaker": "아서",
       "className": "warrior",
-      "text": "기록함은 네라 관측관님께 맡기자. 지금 우리가 열어 볼 이유는 없어.",
+      "text": "네가 지키던 거잖아. 우린 약속을 지키러 온 거야.",
       "scene": "observatory",
       "sceneNumber": 1,
-      "location": "폐신호소 · 점검 마당",
+      "location": "폐신호소 아래 · 수정 방",
       "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
     },
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(일행은 들어온 길로 돌아와 대피실 경비병에게 점검기의 정지를 알린다.)",
+      "text": "(소서러스가 끊어진 선을 점검한다. 바이올렛이 가리킨 옆벽에 보조 전원을 끊는 손잡이가 있었다. 파이터가 손잡이를 내리자, 수정 표면의 거친 빛이 천천히 잦아든다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이제 새는 마력이 멎었어. 선을 다시 연결하는 건 수리 담당자에게 맡기자.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "크리스털왕",
+      "className": "crystal-king",
+      "text": "내 백성들이…… 조용해졌다. 그대들은 그자와 다른 모양이군.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp",
+      "artPath": "assets/novel/characters/char_crystal-king_world10_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "나중에 수리하러 오는 사람에게는 검부터 들지 마. 우리가 이곳에 있었다고 전해 줄게.",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(크리스털왕이 왕관을 바로 쓰고 고개를 끄덕인다. 수정들이 길 양쪽으로 물러난다. 일행은 기록함과 수정을 그대로 두고 돌아선다.)",
+      "scene": "observatory",
+      "sceneNumber": 1,
+      "location": "폐신호소 아래 · 수정 방",
+      "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행은 들어온 길로 돌아와 대피실 경비병에게 새는 마력을 막았다고 알린다.)",
       "scene": "observatory",
       "sceneNumber": 2,
       "location": "대피실로 돌아오는 보수 통로",
@@ -22332,7 +22410,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "경비병",
       "className": "scene",
-      "text": "고맙습니다. 구조대가 도착하면 신호선 수리도 부탁하겠습니다.",
+      "text": "아래에 수정을 지키는 왕이 있었군요. 수리 담당자에게 꼭 전하겠습니다.",
       "scene": "observatory",
       "sceneNumber": 2,
       "location": "대피실로 돌아오는 보수 통로",
@@ -22359,7 +22437,7 @@ window.WORDORIA_NOVELS = {
     {
       "speaker": "내레이션",
       "className": "scene",
-      "text": "(네 사람은 관측탑으로 이어지는 본편 길로 돌아간다. 번외 길에서 새 유물이나 천사의 비밀을 얻지는 않는다.)",
+      "text": "(일행은 관측탑으로 이어지는 본편 길로 돌아간다. 수정 방은 조용해졌지만, 탑의 끊어진 신호는 아직 돌아오지 않았다.)",
       "scene": "observatory",
       "sceneNumber": 2,
       "location": "대피실로 돌아오는 보수 통로",

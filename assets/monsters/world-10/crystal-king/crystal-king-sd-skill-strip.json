@@ -1,0 +1,98 @@
+{
+  "image": "crystal-king-sd-skill-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "source": "source/skill-generated.png",
+  "sourceBounds": [
+    [
+      38,
+      79,
+      643,
+      604
+    ],
+    [
+      748,
+      23,
+      1366,
+      604
+    ],
+    [
+      1454,
+      79,
+      2124,
+      604
+    ]
+  ],
+  "sourceDimensions": [
+    2172,
+    724
+  ],
+  "sourceScale": 0.6090859332238643,
+  "sourceFrameGapPx": 50,
+  "sourceFrameGapScope": "Normalized source-frames and review masters; generator originals retain their measured variable gutters.",
+  "frameNames": [
+    "prepare",
+    "aim",
+    "contact"
+  ],
+  "durationsMs": [
+    600,
+    600,
+    300
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "contactMs": 1200,
+  "frames": [
+    {
+      "name": "prepare",
+      "durationMs": 600
+    },
+    {
+      "name": "aim",
+      "durationMs": 600
+    },
+    {
+      "name": "contact",
+      "durationMs": 300,
+      "hit": true
+    }
+  ],
+  "review": {
+    "alpha": "preserved generated RGBA; no color-key removal",
+    "runtimeBounds": [
+      [
+        39,
+        53,
+        408,
+        375
+      ],
+      [
+        35,
+        22,
+        411,
+        375
+      ],
+      [
+        22,
+        53,
+        429,
+        375
+      ]
+    ],
+    "sourceGutterForegroundCounts": [
+      0,
+      0
+    ],
+    "browser": "not run; only on user request",
+    "artApproval": "user approval not claimed"
+  },
+  "reducedMotionMultiplier": 0.5
+}

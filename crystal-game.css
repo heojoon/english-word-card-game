@@ -1221,6 +1221,12 @@ dialog .potion-purchase-actions>button{width:100%;min-height:46px;margin:0;white
 .world-ten-beam,.world-ten-shockwave{position:absolute;display:none;pointer-events:none}
 .world-ten-boss[data-skill="beam"][data-contact="true"] .world-ten-beam{display:block;right:76%;top:43%;width:100%;height:9px;border-radius:50%;background:linear-gradient(0deg,#7868ef00,#60d9cf,#f7f7ff,#60d9cf,#7868ef00);box-shadow:0 0 9px #7868ef99;transform:rotate(-6deg);transform-origin:right center}
 .world-ten-boss[data-skill="shockwave"][data-contact="true"] .world-ten-shockwave{display:block;right:70%;bottom:3%;width:90%;height:26px;border:3px solid #60d9cf;border-top-color:transparent;border-radius:50%;box-shadow:0 3px 5px #7868ef88}
+.world-ten-crystal-volley{position:absolute;display:none;right:76%;top:32%;width:105%;height:42%;pointer-events:none}
+.world-ten-boss[data-skill="summon"][data-contact="true"] .world-ten-crystal-volley{display:block}
+.world-ten-crystal-volley i{position:absolute;left:12%;top:40%;width:34px;height:19px;clip-path:polygon(0 50%,32% 0,76% 12%,100% 50%,76% 88%,32% 100%);background:linear-gradient(165deg,#f7f7ff 6%,#e799ff 30%,#b749ec 46%,#5751d8 52%,#e799ff 75%,#f7f7ff);transform:rotate(-8deg)}
+.world-ten-crystal-volley i:nth-child(2){left:40%;top:4%;transform:rotate(10deg)}
+.world-ten-crystal-volley i:nth-child(3){left:35%;top:75%;transform:rotate(-20deg)}
+.world-ten-crystal-volley::before{content:"";position:absolute;inset:15% 0;background:linear-gradient(90deg,#e799ff00,#e799ff66,#7868ef00);clip-path:polygon(0 50%,100% 0,100% 100%)}
 .arena.paused .world-ten-boss *{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.world-ten-boss-sprite,.world-ten-mirror,.world-ten-boss.shielded .world-ten-boss-sprite{filter:none}.world-ten-shield{box-shadow:none}.world-ten-beam{box-shadow:none}}
 .story-world-map-12 .story-map-node{height:2.025%;min-height:44px}

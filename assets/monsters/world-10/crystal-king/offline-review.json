@@ -1,0 +1,17 @@
+{
+  "status": "offline technical review passed; browser not requested; user artwork approval not claimed",
+  "identity": "User-provided Crystal King board: gold crown, violet/magenta crystals, white opaque fur, burgundy cape, crystal greatsword",
+  "standing": "assets/novel/characters/char_crystal-king_world10_standing.webp",
+  "runtime": {"frameWidth":448,"frameHeight":384,"framesPerAction":3,"actions":["idle","attack","hit","skill"],"facing":"left","anchor":{"x":0.5,"y":0.975}},
+  "sourceDimensions": "source-inspection.json records actual generated source dimensions and measured crop boxes; packing-review.json records shared scale",
+  "inspected": ["review/idle-light-violet.png","review/attack-light-violet.png","review/hit-light-violet.png","review/skill-light-violet.png","review/standing-light.png","review/standing-violet.png"],
+  "checks": {
+    "RGBA": "Generated alpha preserved; no color keying. Runtime strips RGBA color type6; opaque white fur retained.",
+    "margins": "All source split columns empty at foreground threshold; all 12 normalized cells retain safe margins. Exact 50px transparent gutters in source/review masters.",
+    "scale": "Single identity scale with source-action scale compensation and shared bottom baseline; no effect-driven per-frame shrinking.",
+    "poses": "Attack readable anticipation/contact; summon prepare/charge/release; hit notice/recoil/complete prone down, final frame held by runtime.",
+    "mobile": "All 12 frames visually inspected at 192x164 on Moon White and Crystal Violet backgrounds.",
+    "runtime": "Node regression covers HP/contact, 45 DMG4 hits, summon warnings/thresholds, shared defenses, Ice Time/potion reuse, pet freeze, pause, reduced motion, exit and lethal cancellation.",
+    "browser": "Not run; user has not requested browser verification."
+  }
+}

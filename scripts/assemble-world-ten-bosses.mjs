@@ -7,7 +7,9 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
-const contract=JSON.parse(readFileSync(path.join(root,'assets/monsters/world-10/boss-animation-contract.json'),'utf8'));
+const selectedKind=process.argv.find(arg=>arg.startsWith('--kind='))?.slice(7);
+assert.ok(!selectedKind||['lumen','seiran','crystal-king'].includes(selectedKind),'known boss kind required');
+const contract=JSON.parse(readFileSync(path.join(root,`assets/monsters/world-10/${selectedKind==='crystal-king'?'crystal-king/':''}boss-animation-contract.json`),'utf8'));
 const W=contract.frameWidth,H=contract.frameHeight,ground=Math.round(H*.975);
 function ff(args,input){const r=spawnSync('ffmpeg',['-v','error','-threads','1',...args],{input,maxBuffer:80*1024*1024});if(r.status!==0)throw new Error(r.stderr?.toString()||String(r.error));return r.stdout;}
 function load(filename){let png=readFileSync(filename);if(png.toString('ascii',1,4)!=='PNG')png=ff(['-i',filename,'-frames:v','1','-f','image2pipe','-c:v','png','pipe:1']);const w=png.readUInt32BE(16),h=png.readUInt32BE(20);const data=ff(['-i',filename,'-frames:v','1','-f','rawvideo','-pix_fmt','rgba','pipe:1']);assert.equal(data.length,w*h*4);return {w,h,data};}
@@ -52,7 +54,7 @@ function backdrop(im,color){
 }
 
 const report={};
-for(const kind of ['lumen','seiran']){
+for(const kind of selectedKind?[selectedKind]:['lumen','seiran']){
   const folder=path.join(root,'assets/monsters/world-10',kind),groups={};
   for(const action of Object.keys(contract.actions)){
     if(action==='shield'&&kind!=='lumen')continue;
@@ -99,6 +101,6 @@ for(const kind of ['lumen','seiran']){
   const base=path.join(folder,'idle/01.png');save(path.join(folder,'identity.png'),load(base));
   report[kind].runtime={frameWidth:W,frameHeight:H,sharedScale:scale,status:'packed; visual review pending'};
 }
-const reportPath=path.join(root,'assets/monsters/world-10',process.argv.includes('--inspect')?'source-inspection.json':'packing-review.json');
+const reportPath=path.join(root,'assets/monsters/world-10',...(selectedKind?[selectedKind]:[]),process.argv.includes('--inspect')?'source-inspection.json':'packing-review.json');
 writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));

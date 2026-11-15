@@ -1,0 +1,19 @@
+{
+  "status": "implementation authorized; offline technical review passed; browser not requested; user artwork approval not claimed",
+  "facing": "left",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "sourceFrameGapPx": 50,
+  "geometryReason": "Same world10 runtime cell; wide greatsword, orbit crystals and prone silhouette require wider bounds without shrinking body.",
+  "identities": {"crystal-king": "source/user-reference.png"},
+  "actions": {
+    "idle": {"frames": ["ready", "breathe", "settle"], "durationsMs": [325, 325, 325], "loop": true},
+    "attack": {"frames": ["ready", "anticipation", "contact"], "durationsMs": [200, 350, 430], "contactMs": 550},
+    "hit": {"frames": ["guard-notice", "impact-recoil", "complete-knockdown"], "durationsMs": [50, 60, 390], "holdLastFrame": true},
+    "skill": {"frames": ["prepare", "aim", "contact"], "durationsMs": [600, 600, 300], "contactMs": 1200}
+  },
+  "effects": "Character charge/release stays inside cells; separate runtime crystal volley joins king to hero at contact.",
+  "timingOverrides": {"reducedMotion": "attack and summon timings multiplied by .5"},
+  "review": "Offline RGBA, margins, stable scale and mobile light/violet composites; browser only on request. No user artwork approval claimed."
+}

@@ -1,7 +1,7 @@
 /* Observatory bosses: chronological contact, shield and skill clocks. */
 (() => {
   'use strict';
-  const HP={lumen:200,seiran:240},PERIOD=20000,EPS=1e-7;
+  const HP={lumen:200,seiran:240,'crystal-king':180},PERIOD=20000,EPS=1e-7;
   const timeLimit=(hp,damage)=>Math.ceil(hp/Math.max(1,damage))*6000;
   function reset(kind,damage=1){
     if(!HP[kind])throw new Error('Unknown observatory boss');
@@ -20,12 +20,12 @@
     if(s.bossHp<=0){
       s.trainingAction=null;s.trainingSkill=null;s.skillQueue=[];s.shieldRemaining=0;
       s.trainingVictoryMs=500;s.locked=true;s.attack=false;s.stunned=false;
-      s.iceTimeActive=false;s.timeStopped=false;s.trainingNotice=s.trainingKind==='lumen'?'루멘 정지 · 방어 고리 해제':'세이런 제압 · 거짓 신호 차단';
+      s.iceTimeActive=false;s.timeStopped=false;s.trainingNotice=s.trainingKind==='lumen'?'루멘 정지 · 방어 고리 해제':s.trainingKind==='crystal-king'?'크리스털왕 제압 · 부유 수정 진정':'세이런 제압 · 거짓 신호 차단';
       return;
     }
-    for(const threshold of s.trainingKind==='lumen'?[.5]:[.75,.5,.25]){
+    for(const threshold of s.trainingKind==='seiran'?[.75,.5,.25]:[.5]){
       if(before>s.bossMaxHp*threshold&&s.bossHp<=s.bossMaxHp*threshold&&!s.thresholds.includes(threshold)){
-        s.thresholds.push(threshold);s.skillQueue.push(s.trainingKind==='lumen'?'shockwave':'beam');
+        s.thresholds.push(threshold);s.skillQueue.push(s.trainingKind==='lumen'?'shockwave':s.trainingKind==='crystal-king'?'summon':'beam');
       }
     }
   }
@@ -42,7 +42,7 @@
     const kind=s.skillQueue.shift(),speed=s.reducedMotion?.5:1;
     s.trainingSkill={kind,elapsed:0,contact:false,contactMs:(kind==='shield'||kind==='mirror'?1000:1200)*speed,duration:(kind==='shield'||kind==='mirror'?1300:1500)*speed};
     s.locked=true;
-    s.trainingNotice={shield:'회전 방어 고리 · 방어 준비!',mirror:'반사 분신 · 보기 이동 준비!',shockwave:'양팔 충격파 · 공격 준비!',beam:'지휘봉 광선 · 공격 준비!'}[kind];
+    s.trainingNotice={shield:'회전 방어 고리 · 방어 준비!',mirror:'반사 분신 · 보기 이동 준비!',shockwave:'양팔 충격파 · 공격 준비!',beam:'지휘봉 광선 · 공격 준비!',summon:'크리스털 소환 · 부유 수정이 모여요!'}[kind];
     events.push('skill-start');
   }
   function playerDamage(s){
@@ -105,7 +105,7 @@
         skill.contact=true;
         if(skill.kind==='shield'){s.shieldRemaining=4000;s.trainingNotice='회전 방어 고리 · 받는 피해 50% 감소';events.push('shield');}
         else if(skill.kind==='mirror'){s.trainingNotice='반사 분신 · 보기 위치 변경';events.push('shuffle');}
-        else {playerDamage(s);s.trainingNotice=skill.kind==='beam'?'지휘봉 광선!':'양팔 충격파!';events.push('skill-contact');}
+        else {playerDamage(s);s.trainingNotice=skill.kind==='beam'?'지휘봉 광선!':skill.kind==='summon'?'크리스털 소환 · 수정 쇄도!':'양팔 충격파!';events.push('skill-contact');}
       }
       if(s.hp<=0){clear(s);events.push('defeat-player');return events;}
       if(a&&a.elapsed>=a.duration-EPS){
@@ -116,7 +116,7 @@
         if(a.correct)onNextQuestion?.();
       }
       if(skill&&skill.elapsed>=skill.duration-EPS){s.trainingSkill=null;s.locked=Boolean(s.trainingAction);s.trainingNotice=s.shieldRemaining>0?'회전 방어 고리 · 받는 피해 50% 감소':'';events.push('skill-end');}
-      if(rate>0&&s.elapsed>=s.nextSkillAt-EPS){s.nextSkillAt=(Math.floor(s.elapsed/PERIOD)+1)*PERIOD;const kind=s.trainingKind==='lumen'?'shield':'mirror';if(!s.skillQueue.includes(kind))s.skillQueue.push(kind);}
+      if(rate>0&&s.elapsed>=s.nextSkillAt-EPS){s.nextSkillAt=(Math.floor(s.elapsed/PERIOD)+1)*PERIOD;const kind=s.trainingKind==='lumen'?'shield':s.trainingKind==='crystal-king'?'summon':'mirror';if(!s.skillQueue.includes(kind))s.skillQueue.push(kind);}
       startSkill(s,events);
     }
     return events;
