@@ -1,0 +1,111 @@
+{
+  "image": "orden-sd-idle-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frameNames": [
+    "ready",
+    "breathe",
+    "ready"
+  ],
+  "durationsMs": [
+    400,
+    400,
+    400
+  ],
+  "frames": [
+    {
+      "name": "ready",
+      "durationMs": 400
+    },
+    {
+      "name": "breathe",
+      "durationMs": 400
+    },
+    {
+      "name": "ready",
+      "durationMs": 400
+    }
+  ],
+  "loop": true,
+  "holdLastFrame": false,
+  "source": "source/sprites-original.png",
+  "sourceFrameGapPx": 50,
+  "sourceSpacedMaster": "source/idle-spaced-master.png",
+  "sourceSpacedMasterDimensions": [
+    1444,
+    384
+  ],
+  "scale": 0.87,
+  "groundLinePx": 374,
+  "measurements": [
+    {
+      "sourceBounds": [
+        69,
+        13,
+        369,
+        410
+      ],
+      "runtimeBounds": [
+        93,
+        29,
+        354,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        93,
+        29
+      ],
+      "groundLinePx": 374
+    },
+    {
+      "sourceBounds": [
+        469,
+        11,
+        767,
+        410
+      ],
+      "runtimeBounds": [
+        94,
+        27,
+        353,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        94,
+        27
+      ],
+      "groundLinePx": 374
+    },
+    {
+      "sourceBounds": [
+        879,
+        15,
+        1174,
+        411
+      ],
+      "runtimeBounds": [
+        95,
+        29,
+        352,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        95,
+        29
+      ],
+      "groundLinePx": 374
+    }
+  ],
+  "alpha": "true RGBA inherited from generated original; no color key; alpha-component extraction with 5px antialias halo",
+  "reviewStatus": "all nine poses visually inspected on white/violet and 224x192 mobile groundline composite; props complete, scale stable, full knockdown third hit frame; browser review delegated to root"
+}

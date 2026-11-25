@@ -400,6 +400,16 @@ export async function generateStoryNovel(){
     if(phase==='ExtraStart')Object.assign(lines.find(line=>line.sceneNumber===2)||lines[0],{sceneArt:kingArt,sceneArtName:'크리스털왕',sceneArtClass:'crystal-king'});
     novels[`world10${phase}`]=lines;
   }
+  for(const [phase,file] of [['Prologue','1-prologue'],['MidbossStart','midboss-start'],['MidbossEnd','midboss-end'],['BossStart','boss-start'],['BossEnd','boss-end']]){
+    const lines=parseWorldEightNarrative(await readFile(new URL(`../assets/novel/world-11-${file}.md`,import.meta.url),'utf8'),{world:'11',title:'낙성 요새의 마지막 수송',sceneName:'fallen-star-fortress',backgroundPath:'assets/story/chapter-11-fallen-star-fortress-map.webp'});
+    for(const line of lines){
+      const kind=/가렐/.test(line.speaker)?'garel':/오르덴/.test(line.speaker)?'orden':null;
+      if(kind){line.artPath=`assets/novel/characters/char_${kind}_world11_standing.webp`;line.className=kind;}
+    }
+    const kind=phase==='MidbossStart'?'garel':phase==='BossStart'?'orden':null;
+    if(kind)Object.assign(lines[0],{sceneArt:`assets/novel/characters/char_${kind}_world11_standing.webp`,sceneArtName:kind==='garel'?'쇄문장 가렐':'병참관 오르덴',sceneArtClass:kind});
+    novels[`world11${phase}`]=lines;
+  }
   const potionEvents=JSON.parse(await readFile(new URL('../assets/novel/world-4-potion-events.json',import.meta.url),'utf8'));
   if(JSON.stringify(Object.keys(potionEvents))!==JSON.stringify(['4','8','12','16']))throw new Error('World 4 potion milestones must be exactly 4, 8, 12, 16');
   for(const milestone of [4,8,12,16]){

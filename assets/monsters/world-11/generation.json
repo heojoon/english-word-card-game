@@ -1,0 +1,438 @@
+{
+  "date": "2026-11-22",
+  "tool": "image_gen",
+  "model": "not exposed",
+  "styleReference": "assets/novel/characters/char_seiran_world10_standing.webp",
+  "reviewStatus": "Genuine-alpha originals preserved; nine silhouettes per boss extracted without losing any alpha>16 pixel. Shared scale0.87/ground374, 50px source gaps and runtime bounds validated. White/violet and mobile groundline composites visually reviewed; no cropped props, floating fragments or clothing holes. Third hit pose fully down. Browser integration is root responsibility; user visual approval remains false.",
+  "userVisualApproval": false,
+  "characters": {
+    "garel": {
+      "identityOriginal": "C:\\Users\\Administrator\\.codex\\generated_images\\01a200cd-fcfe-7bc0-9131-69fafeaddeda\\exec-0cbbf01a-f8ff-4e41-b441-5698646220c6.png",
+      "spriteOriginal": "C:\\Users\\Administrator\\.codex\\generated_images\\01a200cd-fcfe-7bc0-9131-69fafeaddeda\\exec-9b9295df-176f-48f7-b768-ce39b757c887.png",
+      "identityPrompt": "Use case: stylized-concept. Asset: Crystal Quest story boss full-body identity illustration for Garel, the fortress gate rear-guard captain. Image 1 is STYLE QUALITY only: polished youthful family-friendly Korean fantasy RPG full-body 2D illustration, clean delicate edges, soft lavender shadows, silver enamel armor and violet/cyan crystal accents, readable proportions. Create a DISTINCT character, not the referenced man: sturdy young adult man with short slate-blue hair and a teal scarf, broad rounded rectangular silver shield in his left arm, a long wooden-shaft IRON HOOK in his right hand (clear large hooked tip, NOT spear, NOT sword), practical worn silver-lavender fortress plate, dark boots. Calm stern regretful face, no evil smile. Standing three-quarter facing LEFT, complete boots/head/hook/shield inside canvas with generous transparent margin. A gate guard, not king or angel; no wings, crown, floating props, magic rings, writing, blood. Nonsexualized costume. Single character only, full-body tall portrait, genuinely transparent RGBA background. This becomes canonical identity art for subsequent SD sprites. No text, no ground plane.",
+      "spritePrompt": "Use case: stylized-concept. Create a SINGLE animation-source sheet for Crystal Quest boss garel. Image 1 is the canonical FULL-BODY IDENTITY reference; preserve the exact face, hair, costume, props and palette (slate short hair, teal scarf, broad silver shield and the long hooked pole), adapting it to youthful nonsexualized SD/chibi proportions with large readable head/hands, compact body and friendly premium 2D painted rendering. Exactly 9 complete characters in a rigid 3 COLUMN by 3 ROW GRID. Target square canvas 1536 x 1536. Each slot equally sized, one complete figure per slot, ample transparent internal padding; exactly 50px transparent gutters between all columns and rows. All figures face LEFT, remain at the SAME SCALE and their feet align to the SAME ground baseline within each slot. Head, hair, hands, coat, shield and entire long weapon must fit inside every individual slot, no overlap. No headings, text, numbers, dividing lines, scenery, shadows on a ground plane or attacker.\nROW 1 = IDLE: column1 ready stance, column2 slight breathing shift, column3 ready stance, prop held clearly. These three must remain nearly identical scale and ground line.\nROW 2 = ATTACK: column1 visible wind-up, column2 decisive LEFTWARD contact strike, column3 active follow-through. Sweep the iron hook horizontally with shield balanced. Do not shrink the figure to fit the weapon; compact poses to keep all within cell.\nROW 3 = HIT/KNOCKDOWN exactly THREE poses: column1 notices incoming impact and guards, column2 STRONGEST BACKWARD RECOIL, column3 COMPLETE KNOCKDOWN LYING FLAT ON THE GROUND (face left, body and weapon fully down), held defeat pose with no recovery.\nGenuinely TRANSPARENT RGBA background; opaque white/silver costume and bright crystals must remain solid. NO white background, NO checkerboard pattern, NO gray matte, NO pixel art, blood or wounds. Clean separated silhouettes with wide transparent safety space inside each cell. Exact nine pose count, exactly three equal slots per row.",
+      "runtimeAssembly": {
+        "frameSize": [
+          448,
+          384
+        ],
+        "stripSize": [
+          1344,
+          384
+        ],
+        "scale": 0.87,
+        "groundLinePx": 374,
+        "sourceFrameGapPx": 50,
+        "sourceOriginalAlphaRange": [
+          0,
+          255
+        ],
+        "opaquePixelsOutsideMajorComponents": 0,
+        "runtimeStrips": [
+          "assets/monsters/world-11/garel/garel-sd-idle-strip.png",
+          "assets/monsters/world-11/garel/garel-sd-attack-strip.png",
+          "assets/monsters/world-11/garel/garel-sd-hit-strip.png"
+        ],
+        "standing": "assets/novel/characters/char_garel_world11_standing.webp",
+        "measurements": [
+          {
+            "sourceBounds": [
+              56,
+              9,
+              366,
+              405
+            ],
+            "runtimeBounds": [
+              89,
+              29,
+              359,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              89,
+              29
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              474,
+              10,
+              784,
+              405
+            ],
+            "runtimeBounds": [
+              89,
+              30,
+              359,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              89,
+              30
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              892,
+              9,
+              1202,
+              404
+            ],
+            "runtimeBounds": [
+              89,
+              30,
+              359,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              89,
+              30
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              65,
+              433,
+              352,
+              801
+            ],
+            "runtimeBounds": [
+              99,
+              54,
+              349,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              99,
+              54
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              356,
+              452,
+              830,
+              799
+            ],
+            "runtimeBounds": [
+              18,
+              72,
+              430,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              18,
+              72
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              840,
+              465,
+              1247,
+              799
+            ],
+            "runtimeBounds": [
+              47,
+              83,
+              401,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              47,
+              83
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              61,
+              852,
+              381,
+              1224
+            ],
+            "runtimeBounds": [
+              85,
+              50,
+              363,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              85,
+              50
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              471,
+              845,
+              821,
+              1223
+            ],
+            "runtimeBounds": [
+              72,
+              45,
+              376,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              72,
+              45
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              813,
+              1053,
+              1250,
+              1222
+            ],
+            "runtimeBounds": [
+              34,
+              227,
+              414,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              34,
+              227
+            ],
+            "groundLinePx": 374
+          }
+        ]
+      },
+      "projectIdentityOriginal": "assets/monsters/world-11/garel/source/identity-original.png",
+      "projectSpriteOriginal": "assets/monsters/world-11/garel/source/sprites-original.png"
+    },
+    "orden": {
+      "identityOriginal": "C:\\Users\\Administrator\\.codex\\generated_images\\01a200cd-fcfe-7bc0-9131-69fafeaddeda\\exec-a7285705-5e86-4517-8e36-cb3e29d382b7.png",
+      "spriteOriginal": "C:\\Users\\Administrator\\.codex\\generated_images\\01a200cd-fcfe-7bc0-9131-69fafeaddeda\\exec-5a9b9e87-44c2-4f99-b2f4-631ea2c69f46.png",
+      "identityPrompt": "Use case: stylized-concept. Asset: Crystal Quest story boss full-body identity illustration for Orden, fortress quartermaster. Image 1 is STYLE QUALITY only: polished family-friendly Korean fantasy RPG 2D illustration, clean delicate edges, soft lavender shadows, silver enamel armor and violet/cyan crystal accents. Create a DISTINCT character, not the referenced man: broad-shouldered young adult human male with tied-back charcoal hair, serious eyes and a high-collared dark navy quartermaster coat with restrained silver stitching, two heavy violet translucent CRYSTAL GAUNTLETS and a thick plain IRON STAFF held diagonally in both hands. Straight blunt industrial iron staff, NOT sword or magic wand. Sturdy dark boots, lavender-silver chest protection, small supply-belt pouch. Facing LEFT in a stable full-body three-quarter standing stance. Head, feet, arms and staff entirely visible with generous transparent margins. No angel wings, halo, crown, ritual altar, floating props, blood, text or ground plane. Single character only, polished readable costume silhouette. Genuinely transparent RGBA background; this is canonical identity for later SD animation.",
+      "spritePrompt": "Use case: stylized-concept. Create a SINGLE animation-source sheet for Crystal Quest boss orden. Image 1 is the canonical FULL-BODY IDENTITY reference; preserve the exact face, hair, costume, props and palette (tied-back charcoal hair, navy quartermaster coat, huge violet crystal gauntlets and thick blunt iron staff), adapting it to youthful nonsexualized SD/chibi proportions with large readable head/hands, compact body and friendly premium 2D painted rendering. Exactly 9 complete characters in a rigid 3 COLUMN by 3 ROW GRID. Target square canvas 1536 x 1536. Each slot equally sized, one complete figure per slot, ample transparent internal padding; exactly 50px transparent gutters between all columns and rows. All figures face LEFT, remain at the SAME SCALE and their feet align to the SAME ground baseline within each slot. Head, hair, hands, coat, shield and entire long weapon must fit inside every individual slot, no overlap. No headings, text, numbers, dividing lines, scenery, shadows on a ground plane or attacker.\nROW 1 = IDLE: column1 ready stance, column2 slight breathing shift, column3 ready stance, prop held clearly. These three must remain nearly identical scale and ground line.\nROW 2 = ATTACK: column1 visible wind-up, column2 decisive LEFTWARD contact strike, column3 active follow-through. Strike leftward with the blunt iron staff, crystal gauntlets visible. Do not shrink the figure to fit the weapon; compact poses to keep all within cell.\nROW 3 = HIT/KNOCKDOWN exactly THREE poses: column1 notices incoming impact and guards, column2 STRONGEST BACKWARD RECOIL, column3 COMPLETE KNOCKDOWN LYING FLAT ON THE GROUND (face left, body and weapon fully down), held defeat pose with no recovery.\nGenuinely TRANSPARENT RGBA background; opaque white/silver costume and bright crystals must remain solid. NO white background, NO checkerboard pattern, NO gray matte, NO pixel art, blood or wounds. Clean separated silhouettes with wide transparent safety space inside each cell. Exact nine pose count, exactly three equal slots per row.",
+      "runtimeAssembly": {
+        "frameSize": [
+          448,
+          384
+        ],
+        "stripSize": [
+          1344,
+          384
+        ],
+        "scale": 0.87,
+        "groundLinePx": 374,
+        "sourceFrameGapPx": 50,
+        "sourceOriginalAlphaRange": [
+          0,
+          255
+        ],
+        "opaquePixelsOutsideMajorComponents": 0,
+        "runtimeStrips": [
+          "assets/monsters/world-11/orden/orden-sd-idle-strip.png",
+          "assets/monsters/world-11/orden/orden-sd-attack-strip.png",
+          "assets/monsters/world-11/orden/orden-sd-hit-strip.png"
+        ],
+        "standing": "assets/novel/characters/char_orden_world11_standing.webp",
+        "measurements": [
+          {
+            "sourceBounds": [
+              69,
+              13,
+              369,
+              410
+            ],
+            "runtimeBounds": [
+              93,
+              29,
+              354,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              93,
+              29
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              469,
+              11,
+              767,
+              410
+            ],
+            "runtimeBounds": [
+              94,
+              27,
+              353,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              94,
+              27
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              879,
+              15,
+              1174,
+              411
+            ],
+            "runtimeBounds": [
+              95,
+              29,
+              352,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              95,
+              29
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              84,
+              430,
+              379,
+              822
+            ],
+            "runtimeBounds": [
+              95,
+              33,
+              352,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              95,
+              33
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              397,
+              448,
+              810,
+              820
+            ],
+            "runtimeBounds": [
+              44,
+              50,
+              403,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              44,
+              50
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              839,
+              448,
+              1235,
+              821
+            ],
+            "runtimeBounds": [
+              51,
+              49,
+              396,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              51,
+              49
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              79,
+              858,
+              359,
+              1238
+            ],
+            "runtimeBounds": [
+              102,
+              43,
+              346,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              102,
+              43
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              408,
+              873,
+              824,
+              1238
+            ],
+            "runtimeBounds": [
+              43,
+              56,
+              405,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              43,
+              56
+            ],
+            "groundLinePx": 374
+          },
+          {
+            "sourceBounds": [
+              802,
+              1036,
+              1244,
+              1238
+            ],
+            "runtimeBounds": [
+              31,
+              198,
+              416,
+              374
+            ],
+            "scale": 0.87,
+            "placement": [
+              31,
+              198
+            ],
+            "groundLinePx": 374
+          }
+        ]
+      },
+      "projectIdentityOriginal": "assets/monsters/world-11/orden/source/identity-original.png",
+      "projectSpriteOriginal": "assets/monsters/world-11/orden/source/sprites-original.png"
+    }
+  }
+}

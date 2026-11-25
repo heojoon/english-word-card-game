@@ -22444,6 +22444,1848 @@ window.WORDORIA_NOVELS = {
       "backgroundPath": "assets/story/chapter-10-observatory-map.webp"
     }
   ],
+  "world11Prologue": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(좁은 길의 흙이 깊이 패여 있다. 파이터가 바퀴 자국 하나에 발을 넣어 본다. 바이올렛은 지도와 길 위를 번갈아 본다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "어제까지 버려진 길인 줄 알았는데. 엄청 무거운 게 지나갔나 봐.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "내려온 자국이랑 올라간 자국이 겹쳐 있어. 가장 위에 남은 건 내려오는 쪽이야.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "요새에서 누가 나오고 있다는 거네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(굽이 너머에서 나무를 두드리는 소리가 난다. 파이터가 앞으로 나가려다 아서와 속도를 맞춘다. 길가에 기울어진 작은 수레와 사람들이 보인다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "여자",
+      "className": "scene",
+      "text": "거기 서요. 오른쪽 가장자리는 밟지 말고!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(여자가 긴 측량봉으로 흙을 누른다. 길 끝이 허물어져 아래로 떨어진다. 파이터가 내밀었던 발을 거둔다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "……고마워요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "난 미레예요. 다친 데 없으면 이쪽 바퀴 좀 같이 들어 줄래요?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 아래 · 옛 보급로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서와 파이터가 수레를 든다. 인부가 바퀴 축에 새 쐐기를 끼운다. 소서러스는 앉아 있는 노인에게 물을 건넨다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "요새에서 오셨어요?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "산길 보수하러 왔다가 붙잡혔어요. 동쪽 수송로를 수레가 지날 수 있게 고치라고 했죠. 끝나면 공구와 품삯을 주겠다고 했는데, 아침에는 그냥 나가라더군요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "안에 다른 인부도 남아 있나요?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "없어요. 내가 마지막으로 작업장을 확인했어요. 걷기 힘든 분은 이 수레에 태웠고요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "병사들도 떠나고 있나요?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "큰 수레들은 먼저 동문으로 나갔어요. 우리가 나올 때는 마지막 짐을 싣고 있었고요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 먼 성벽을 올려다본다. 검을 잡았던 손이 천천히 내려간다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "늦었을지도 모르겠네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그 검은 날개도?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "나는 본 적 없어요. 밤에는 창고 밖으로 못 나왔으니까.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아직 모르는 거네. 가서 확인하자.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "길 안쪽의 넓은 턱",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(고친 수레가 천천히 움직인다. 바이올렛이 지도 여백에 역참으로 가는 갈림길을 그려 인부에게 건넨다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "아래 역참에 로엔 대장님이 있어요. 요새에서 나왔다고 말씀드리세요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "나는 여기서 지원대를 기다릴게요. 이 길 가장자리가 무너진 걸 모르고 올라오면 위험해요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저희는 옛 하역장부터 볼게요. 안으로 갈 수 없으면 돌아올게요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(미레가 허리 주머니에서 접은 종이를 꺼낸다. 닳은 도면 위에 새로 잰 길의 폭이 적혀 있다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "보수할 때 베낀 하역장 도면이에요. 지금도 그대로인지는 직접 봐야 해요. 동문 위는 돌이 벌어져 있어요. 그 아래 오래 서 있지 마요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 도면을 받는다. 소서러스는 갈림길 바위에 출발 시각과 네 사람의 행선지를 적은 종이를 고정한다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "이번엔 우리가 먼저 경고를 받네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그러니까 잘 듣자.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "보급로 갈림길",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(비어 있는 포대가 벽 밑에 쌓여 있다. 안쪽 문 너머로 수레가 덜컹거리는 소리가 난다. 방패를 든 남자가 통로 중앙으로 걸어 나온다. 긴 쇠갈고리 끝이 돌바닥을 긁는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "여기까지다. 돌아가라.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이 요새를 맡은 사람이 누구야? 검은 날개를 가진 자가 여기로 왔다는 기록을 봤어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "내가 대답할 일이 아니다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(그의 뒤에서 문을 당기는 사슬이 팽팽해진다. 가렐이 돌아본다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "아직 내 부대가 밖에 있다! 기다려!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쇠문이 조금 내려온다. 안쪽에서 대답 대신 걸쇠를 푸는 소리가 난다. 가렐이 이를 악물고 다시 방패를 세운다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "너도 두고 가려는 거잖아!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "그래도 너희를 통과시킬 생각은 없다!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(쇠갈고리가 바닥을 쓸고 들어온다. 네 사람이 양쪽으로 흩어진다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "낙성 요새 · 옛 하역장",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    }
+  ],
+  "world11MidbossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐이 방패를 앞으로 밀어붙인다. 아서가 검으로 받자 방패 옆으로 쇠갈고리가 뻗어 나온다. 아서는 검을 빼며 옆으로 물러난다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "sceneArt": "assets/novel/characters/char_garel_world11_standing.webp",
+      "sceneArtName": "쇄문장 가렐",
+      "sceneArtClass": "garel"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "무기를 걸어서 끌어당겨. 정면에서 붙잡히지 마!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 옆으로 파고든다. 가렐이 갈고리를 짧게 잡아 자루 끝으로 막는다. 파이터의 팔에 묵직한 소리가 난다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "가까이 가도 쓰네, 저거.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "방패 내릴 때 보자. 지금은 돌아 나가!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛의 화살이 방패 윗부분에 박힌다. 가렐이 고개를 낮춘 틈에 파이터가 빠져나온다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "안쪽 병사",
+      "className": "scene",
+      "text": "가렐 님! 병참관이 문을 닫으랍니다!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "내가 지키고 있다! 수레가 다 나갈 때까지 기다리라고 전해!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "안쪽 병사",
+      "className": "scene",
+      "text": "그게…… 지금 닫으라고…….",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(문이 한 뼘 더 내려온다. 가렐의 눈이 문 아래와 일행 사이를 오간다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "싸움을 멈추면 이쪽으로 나올 수 있어. 무기부터 내려놔.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "나가서? 너희에게 잡히라고?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 하지만 저 문 밑에 남겨 두진 않을 거야.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐이 방패로 바닥의 포대를 밀어낸다. 숨겨져 있던 좁은 배수 홈이 드러난다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "동정할 여유가 있으면 발밑이나 봐라!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(갈고리가 아서의 발목을 향한다. 소서러스의 짧은 실드가 갈고리를 옆으로 밀어낸다. 아서가 홈을 넘는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "거긴 딛지 마! 뒤쪽이 평평해!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오기 시작한 쇠문 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 문에서 몇 걸음 물러난다. 가렐은 방패를 앞세워 따라온다. 바이올렛이 뒤로 이동하며 빈 포대를 발로 치운다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "여기는 발 안 걸려. 아서, 이쪽!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "넓어졌다고 방심하지 마. 저 자루가 끝까지 돌아간다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "알아. 막은 다음에는 바로 꺼낼게.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(실드가 사라진다. 소서러스가 지팡이를 다시 잡는다. 파이터는 한 번 달려들었다가 방패가 돌아오는 것을 보고 멈춘다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "방패를 들면 오른발이 늦어. 다음엔 거기로 갈게.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "내가 갈고리 끝을 볼게. 너무 안으로 들어가진 마.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐이 갈고리를 크게 돌린다. 아서가 검을 세우고, 파이터가 옆으로 발을 옮긴다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 바깥 · 넓은 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    }
+  ],
+  "world11MidbossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐의 방패 가장자리가 갈라져 있다. 갈고리 자루에는 검에 찍힌 자국이 깊다. 가렐이 숨을 몰아쉬며 한 번 더 방패를 내민다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "오른쪽으로 받을게!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 비스듬히 검을 세운다. 방패가 검날을 타고 옆으로 미끄러진다. 바이올렛이 노출된 자루를 쏜다. 화살이 찍힌 틈을 벌린다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이터!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 갈고리 안쪽으로 들어가 자루를 쳐 올린다. 금이 간 나무가 부러진다. 가렐이 남은 자루를 놓고 방패를 휘두르려 한다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "뒤로!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(짧은 마법이 방패에 부딪힌다. 가렐이 한 발 밀려난다. 아서가 방패를 옆으로 눌러 길을 열고, 파이터의 주먹이 가슴 장갑을 때린다. 가렐이 문 앞에 쓰러진다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 하역장 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐이 팔꿈치로 몸을 밀지만 다리가 따라오지 않는다. 안쪽 병사의 발소리가 멀어진다. 문 아래로 드리운 그림자가 그의 몸을 덮는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "아서, 같이!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(두 사람이 가렐의 겨드랑이를 잡는다. 바이올렛이 부서진 방패를 발로 밀어 길 밖으로 치운다. 소서러스가 가렐의 망토 끝이 걸린 곳을 풀어 준다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "당겨!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(네 사람이 바깥으로 넘어진다. 쇠문이 바닥에 닿는다. 가렐이 떨어진 먼지를 보다가 고개를 돌린다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "……정말 끌어내는군.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그러겠다고 했잖아.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 가렐의 허리에서 짧은 칼을 빼낸다. 바이올렛이 밧줄을 건넨다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "손을 앞으로. 경비대가 오면 인계할 거야.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐이 빈손을 천천히 내민다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "내려오는 쇠문 아래",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 가렐의 팔 상처에 천을 감는다. 파이터는 손이 묶인 그의 곁을 지킨다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "오르덴은 수레만 내보내면 된다고 했다. 뒤를 막을 사람은 필요해도 데려갈 사람은 아니었군.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "안에 사람이 더 있어?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "병사 몇과 병참관. 인부들은 다 내보냈다. 짐이 나가면 동문을 무너뜨릴 거다. 너희 지원대가 와도 수레는 못 따라가게.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "검은 날개를 가진 자는?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "밤에 위층으로 드는 걸 봤다. 나오는 건 못 봤어. 그분의 출입을 묻는 건 내 일이 아니었다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그럼 아직 있는지도 모르는 거네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "오르덴에게 물어라. 대답해 준다면 말이지.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 도면을 벽에 댄다. 종이의 계단 표시와 벽 위로 이어지는 낡은 발판이 겹친다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "위층 점검로가 있어. 문을 부수는 것보다 저쪽부터 보자.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "하역장 벽의 그늘",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(멀리서 갑옷 소리가 들린다. 미레가 측량봉으로 안전한 바닥을 가리키며 경비병들을 안내한다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "하역장 바깥 · 보급로 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "경비대 부관",
+      "className": "scene",
+      "text": "역참에서 보낸 지원대다. 여기까지 길은 확인했다. 안은 어떤가?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "하역장 바깥 · 보급로 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 가렐과 압수한 무기를 넘기고, 동문 철거 계획을 알린다. 미레가 도면 위의 계단을 짚는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "하역장 바깥 · 보급로 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "아래 두 칸은 빠졌어요. 그 위는 내가 보수할 때 확인했어요. 그래도 올라가며 살펴봐요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "하역장 바깥 · 보급로 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "경비대 부관",
+      "className": "scene",
+      "text": "우리는 정문 걸쇠를 풀고 뒤따르겠다. 안에서 짐수레를 붙잡겠다고 성문 아래로 뛰어들지 마라.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "하역장 바깥 · 보급로 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네. 동문을 무너뜨리려는 사람부터 막을게요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "하역장 바깥 · 보급로 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 첫 발판을 당겨 본다. 바이올렛이 위를 살핀 뒤 밧줄을 올린다. 네 사람이 차례로 점검로에 오른다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "하역장 바깥 · 보급로 입구",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    }
+  ],
+  "world11BossStart": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(점검로 아래에 넓은 마당이 보인다. 바닥에는 큰 상자를 놓았던 네모난 자국들이 줄지어 있다. 동문 근처에 마지막 짐수레가 서 있다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "sceneArt": "assets/novel/characters/char_orden_world11_standing.webp",
+      "sceneArtName": "병참관 오르덴",
+      "sceneArtClass": "orden"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "거의 다 나갔어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "수레 옆의 줄 봐. 짐에 묶은 게 아니야.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(굵은 줄 두 개가 동문 옆 나무 지지대에서 마당의 권양기로 이어진다. 지지대 위에는 벌어진 석재들이 걸려 있다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저걸 당기면 받침이 빠지겠네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "문 앞에서 막으려 들면 돌에 깔린다. 당기는 쪽을 멈춰야겠어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(마당 중앙의 남자가 고개를 든다. 양팔을 감싼 결정 장갑이 낮게 빛난다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "가렐이 놓쳤나. 문까지 닫아 줬는데도.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 위층 점검로",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 계단을 내려온다. 오르덴이 병사 둘에게 손짓한다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "수레는 두고 동문으로 나가라. 짐보다 길을 끊는 게 먼저다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(병사들이 문 쪽으로 달린다. 바이올렛이 활을 들었다가 성문 위의 돌을 보고 방향을 바꾼다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "가렐은 살아 있어. 너도 무기를 놓으면 경비대에 데려갈 거야.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "항복을 받으러 여기까지 왔나?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "검은 날개의 행방을 찾으러 왔어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "그분은 여기서 다음 이동을 준비하셨다. 나는 길을 남기지 말라는 명령을 끝내면 된다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "그래서 네 편도 문밖에 남겼어?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "뒤를 지키는 자의 일이다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 주먹을 쥔다. 오르덴은 권양기 옆에 세워 둔 무거운 철봉을 들어 올린다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "네가 뒤에 남았어도 같은 말을 했을까?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "수송 마당 · 권양기 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오르덴이 철봉을 내리친다. 아서가 검으로 비껴 받지만 충격에 뒤로 밀린다. 철봉이 땅을 찍자 오르덴의 장갑에도 빛이 번쩍인다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "힘이 세! 정면에서 오래 못 받아!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 짧게 실드를 펼친다. 두 번째 타격을 흘린 뒤 바로 거둔다. 오르덴도 손가락을 폈다 다시 철봉을 잡는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "저쪽 손도 충격을 받아. 계속 휘두를 수는 없겠어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "오른쪽 장갑 이음새에 금이 있어. 막 때린 쪽.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 옆에서 들어가려 하자 오르덴이 철봉을 끌며 권양기로 물러난다. 다른 손이 작동 손잡이를 향한다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "줄 쪽!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(화살이 손잡이 앞의 나무에 박힌다. 오르덴이 손을 거둔다. 아서가 둘 사이로 들어선다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "우리 쪽으로 와. 문은 못 건드려.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "권양기 옆 돌바닥",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오르덴이 철봉을 수평으로 휘두른다. 네 사람이 물러난 자리에서 빈 상자가 부서진다. 소서러스가 상자 뒤를 확인한다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "수송 마당 중앙",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이쪽은 비었어. 마당 가운데서 싸우자.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "수송 마당 중앙",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "내가 돌아가면 저쪽이 비어. 아서, 같이 옮겨!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "수송 마당 중앙",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 권양기를 등지지 않도록 옆으로 움직인다. 바이올렛은 오르덴의 손과 줄을 한 시야에 넣는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "수송 마당 중앙",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "넷이 붙어도 이미 떠난 짐은 돌아오지 않는다!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "수송 마당 중앙",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "그래서 남은 길까지 잃을 생각은 없어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "수송 마당 중앙",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오르덴의 결정 장갑이 밝아진다. 철봉 끝이 다시 바닥에서 들린다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "수송 마당 중앙",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    }
+  ],
+  "world11BossEnd": [
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(철봉 끝이 비뚤어져 있다. 오르덴이 피가 밴 손으로 철봉을 고쳐 쥔다. 금이 간 오른쪽 장갑에서 빛이 새어 나온다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "비켜라!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(철봉이 아서를 향해 떨어진다. 불굴의 맹세의 빛이 검에 감긴다. 아서가 한쪽 무릎을 굽히며 버틴다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "지금! 다음 건 못 받아!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 활시위를 당긴다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "파이어 애로우!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(불꽃을 두른 화살이 벌어진 장갑 이음새에 박힌다. 오르덴이 팔을 비틀어 빼려 한다. 소서러스가 짧은 마법을 날려 들린 철봉 끝을 옆으로 친다. 아서가 검을 빼고 물러난다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "폭렬권!",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터의 주먹이 오르덴의 가슴 장갑에 닿는다. 오르덴이 뒤로 넘어지고 철봉이 돌바닥에 떨어진다. 오른쪽 결정 장갑이 깨져 팔에서 벌어진다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오르덴이 권양기 쪽으로 팔을 뻗는다. 바이올렛이 앞을 막는다. 아서가 철봉을 멀리 밀어낸다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "끝났어. 손 내려.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오르덴의 팔이 바닥으로 떨어진다. 소서러스가 거리를 두고 지팡이를 겨누는 동안 파이터가 그의 손을 묶는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 1,
+      "location": "낙성 요새 · 수송 마당",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(정문 쪽에서 경비대가 들어온다. 미레는 마당 바깥에서 기다렸다가 부관이 손짓하자 다가온다. 오르덴을 인계한 아서가 권양기를 가리킨다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "저 줄을 당기면 지지대가 빠져요. 아직 건드리지 않았어요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "잘했어요. 줄부터 자르면 지지대가 어느 쪽으로 기울지 몰라요. 먼저 움직이지 않게 묶죠.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(경비병들이 예비 밧줄로 지지대를 반대쪽 고리에 고정한다. 미레가 성문 아래에 출입을 막는 천을 건다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "문은 남았는데 못 지나가네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "지탱할 받침을 세우면 돼요. 고칠 수 있는 상태로 남았으니까.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(소서러스가 깨진 상자에 앉아 손을 편다. 지팡이를 오래 쥐었던 손가락이 떨린다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "이번엔 실드를 일찍 거뒀군.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "그래도 힘들어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "다크 소서러스",
+      "className": "mage",
+      "text": "그럼 쉬어. 이제 네가 문까지 들 필요는 없잖아.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 2,
+      "location": "동문 옆 · 멈춘 권양기",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_dark_sorcerus_world5_standing.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(경비병들이 마지막 수레의 짐을 내려놓는다. 말린 식량, 여분의 차축, 빈 나무 상자가 나온다. 바이올렛이 상자 안쪽을 들여다본다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "이건 처음부터 빈 상자가 아니었어. 바닥에 고정 나사가 남아 있어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(미레가 상자의 길이를 잰다. 손가락으로 바닥의 둥근 눌림 자국을 따라간다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "무겁고 바닥이 좁은 물건을 세워 옮겼네요. 길이 험해서 아래를 고정했어요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "창고 책상에서 장부를 찾았습니다. 가져갈 짐과 되돌려 쓸 포장 상자를 나눠 적어 놨습니다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(바이올렛이 장부를 펼친다. 같은 규격의 상자 번호 여섯 개가 앞장에 적혀 있다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "‘제단 받침. 여섯 기. 흰재 분지 옛 집하장 인도.’ 식량도 같은 곳으로 보냈어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "제단이면…… 천사가 뭘 하려는 거야?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "받침만으로는 모르겠어. 어떤 제단인지도 안 적혀 있고.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "오르덴한테 물어보자.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 3,
+      "location": "수송 마당 옆 창고",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(오르덴이 경비병 사이에 앉아 있다. 부관이 곁에서 듣는 동안 아서가 장부의 행선지를 보여 준다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "이 물건들이 흰재 분지로 갔어. 네 주인도 거기 있어?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "내가 옮긴 건 짐이다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "이 기록은 진짜야?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "오르덴",
+      "className": "orden",
+      "text": "그 상자들이 비었는지 직접 봤겠지.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_orden_world11_standing.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "대답하기 싫다는 거네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "경비대 부관",
+      "className": "scene",
+      "text": "더 묻는 건 우리가 맡겠다. 다친 곳부터 치료하고 진술을 기록하지.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(일행이 물러난다. 바이올렛이 장부의 날짜를 옛 지도 여백에 적는다. 미레가 옆에 앉아 보수했던 길을 그린다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "이 폭이면 먼저 나간 수레가 지나갈 수 있어요. 분지 입구까지는 우리가 고친 길이에요. 안쪽 집하장은 오래돼서 따로 확인해야 해요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "짐이 간 길은 확인됐네. 천사가 있는지는 가서 더 알아봐야 하고.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이번엔 거기서 뭘 준비하는지도 보자. 계속 발자국만 따라가면 또 늦을 수 있어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 4,
+      "location": "요새 경비실 앞",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(되찾은 공구 꾸러미가 미레 앞에 놓인다. 미레가 망치 손잡이의 이름을 확인한다. 경비병은 인부들의 피해와 미지급 품삯을 보고서에 적는다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "다 있네요. 내일은 제대로 받침을 세울 수 있겠어요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐이 경비병의 안내를 받아 지나간다. 그는 고친 수레가 서 있던 보급로 쪽을 보고 멈춘다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "가렐",
+      "className": "garel",
+      "text": "밖에 나온 인부들은?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+      "artPath": "assets/novel/characters/char_garel_world11_standing.webp"
+    },
+    {
+      "speaker": "경비병",
+      "className": "scene",
+      "text": "역참에 도착했다. 네가 진술할 일도 그분들한테 확인할 거다. 가자.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(가렐이 고개를 숙이고 걷는다. 파이터는 그가 사라진 뒤 남은 빵을 반으로 나눈다. 소서러스에게 큰 쪽을 건넨다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "왜 이쪽을 줘?",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "아까부터 손 떨리잖아.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "넌 벌써 하나 먹었고.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "그 얘기는 굳이 안 해도 되는데.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 웃으며 보고서에 마지막 줄을 적는다. ‘천사의 현재 위치는 확인하지 못함.’ 그 아래에 수송품과 행선지를 따로 적는다. 성흔의 파편을 감싼 주머니는 가방 안쪽에 그대로 있다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 5,
+      "location": "저녁 · 하역장 임시 숙영지",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(지지대 옆에 새 받침이 세워져 있다. 성문 아래에는 사람이 지날 수 있는 폭만큼 줄이 쳐져 있다. 미레가 한 사람씩 건너오라고 손짓한다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "미레",
+      "className": "scene",
+      "text": "수레는 아직이에요. 사람은 표시 안쪽으로만. 벽 쪽에는 붙지 말아요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(보고서를 든 전령이 서쪽 길로 떠난다. 경비대 부관이 네 사람에게 장부 사본을 건넨다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "경비대 부관",
+      "className": "scene",
+      "text": "요새와 포로는 우리가 맡는다. 분지 입구를 확인하면 이곳으로 소식을 보내라. 뒤따를 병력도 준비하겠다.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "네. 안쪽으로 들어가기 전에 길부터 살펴볼게요.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(파이터가 동문 바깥에 서서 기다린다. 소서러스가 나오고, 바이올렛이 지도와 산등성이를 맞춘다. 마지막으로 아서가 문을 지난다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "파이터",
+      "className": "fighter",
+      "text": "결국 검은 날개는 못 봤네.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "아서",
+      "className": "warrior",
+      "text": "응. 그래도 저 사람들이 하려던 일을 하나는 막았어.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(뒤에서 망치 소리가 난다. 인부들이 다음 받침을 옮기고 있다. 미레가 네 사람에게 측량봉을 들어 보인다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "바이올렛",
+      "className": "ranger",
+      "text": "다음 갈림길에서 북쪽. 물길을 건너면 분지 입구야.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "소서러스",
+      "className": "mage",
+      "text": "이번엔 도착한 짐도 찾아보자.",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    },
+    {
+      "speaker": "내레이션",
+      "className": "scene",
+      "text": "(아서가 고개를 끄덕인다. 네 사람이 수레 자국이 남은 길을 따라 걷는다. 요새의 문은 그들 뒤에서 열린 채 남아 있다.)",
+      "scene": "fallen-star-fortress",
+      "sceneNumber": 6,
+      "location": "다음 날 아침 · 낙성 요새 동문",
+      "backgroundPath": "assets/story/chapter-11-fallen-star-fortress-map.webp"
+    }
+  ],
   "world4Potion4": [
     {
       "speaker": "내레이션",

@@ -1,0 +1,20 @@
+{
+  "status": "production proposal authorized with world-eleven design; visual approval pending",
+  "characters": {
+    "garel": {"name": "쇄문장 가렐", "identity": "short slate hair, broad square shield, long iron hook, silver-lavender fortress armor, teal scarf"},
+    "orden": {"name": "병참관 오르덴", "identity": "dark tied-back hair, heavy iron staff, violet crystal gauntlets, navy quartermaster coat"}
+  },
+  "facing": "left",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "anchor": {"x": 0.5, "y": 0.975},
+  "effectBounds": "all pixels inside cell; transparent padding on all sides",
+  "sourceFrameGapPx": 50,
+  "actions": {
+    "idle": {"frames": ["ready", "breathe", "ready"], "durationMs": [400, 400, 400], "loop": true},
+    "attack": {"frames": ["anticipation", "contact", "follow-through"], "durationMs": [300, 250, 300], "hitFrame": 1, "contactMs": 550},
+    "hit": {"frames": ["notice", "strongest-recoil", "complete-knockdown"], "durationMs": [140, 180, 600], "loop": false, "holdLast": true}
+  },
+  "runtimePattern": "assets/monsters/world-11/<kind>/<kind>-sd-<action>-strip.png",
+  "standingPattern": "assets/novel/characters/char_<kind>_world11_standing.webp"
+}

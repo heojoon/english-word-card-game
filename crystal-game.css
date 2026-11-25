@@ -1429,3 +1429,14 @@ body[data-screen="battle"] .arena.world-seven-c-battle{background-image:url('ass
   .arena.hit:has(.battle-hero-bard) .enemy-label{animation:enemy-label-out .18s ease var(--bard-contact) both!important}
   .arena.hit:has(.battle-hero-bard) .crystal-shards i{animation:crystal-shard .18s ease-out var(--bard-contact) both!important}
 }
+.world-eleven-battle{background-image:linear-gradient(180deg,#413f7180,#958cc73b),url('assets/story/chapter-11-fallen-star-fortress-map.webp');background-size:cover;background-position:center 65%}
+.world-eleven-boss-arena .world-eleven-enemy{width:196px;height:168px;right:4px;bottom:24px;transform:none}
+.world-eleven-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;image-rendering:auto}
+.world-eleven-match-board .story-match-item{min-height:48px;overflow-wrap:anywhere;line-height:1.35;padding:9px 8px}
+.story-world-map-14{aspect-ratio:1/6;width:calc(100% + 32px);margin-inline:-16px}
+.story-world-map-14 .story-map-node{width:44px;height:44px;min-width:44px;min-height:44px;pointer-events:none}
+.story-world-map-14 button.story-map-node::after{content:'';position:absolute;inset:0;border-radius:50%;clip-path:circle(50%);pointer-events:auto}
+.story-world-map-14 .story-map-navigation{pointer-events:none}
+.story-world-map-14 .story-map-region{pointer-events:auto}
+@media(max-width:340px){.story-world-map-14{aspect-ratio:1/7.5}}
+@media(max-width:360px){.world-eleven-boss-arena .world-eleven-enemy{width:182px;height:156px;right:0}}

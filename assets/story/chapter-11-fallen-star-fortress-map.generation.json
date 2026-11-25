@@ -1,0 +1,1027 @@
+{
+  "date": "2026-11-22",
+  "world": 11,
+  "title": "낙성 요새의 마지막 수송",
+  "tool": "image_gen.imagegen (built-in)",
+  "model": "not disclosed by tool",
+  "styleReference": "assets/story/chapter-1-library-map.webp",
+  "layoutReference": "Approved World11 spec and story; previous original panel for material/road continuity. No existing World11 layout image.",
+  "guide": "WORLD_MAP_IMAGE_GUIDE.md",
+  "spec": "docs/superpowers/specs/2026-11-22-world-eleven-design.md",
+  "prompts": [
+    {
+      "panel": 1,
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\r\n\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, contiguous portrait scroll panel 1 of 4.\nScene: \"The Last Transport of Fallen Star Fortress.\" Bright old mountain supply road on an airy lush plateau, worn wheel ruts, small abandoned wooden repair cart, cream stone retaining walls and distant fortress parapets along sides. This is the TOP quarter of a very tall map. The route ENTERS from top CENTER and EXITS bottom CENTER, with compatible golden road at both edges. No large building across route. Regional progression in the full scroll is old supply road -> unloading yard -> chained gate at halfway -> upper maintenance walkways -> transport courtyard -> east gate at bottom.\nReference roles: Image 1 = authoritative painterly style only. Do not copy library buildings.\nComposition: 1024x1536 portrait panel, full bleed scene. IMPORTANT exactly ELEVEN individual violet-blue crystal waypoints, one per consecutive horizontal band. Make crystals 50 pixels tall and circular gold pedestal 70 pixels wide at this resolution. Each waypoint separated by roughly130px vertical distance. Scenic land spreads to both edges. Route snakes gently.\nGameplay contract: exactly 11 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals. Stage order and normalized centers, left-to-right x and top-to-bottom y percentages: stage 1: (50%,5%); stage 2: (70%,14%); stage 3: (76%,23%); stage 4: (58%,32%); stage 5: (34%,41%); stage 6: (24%,50%); stage 7: (36%,59%); stage 8: (60%,68%); stage 9: (76%,77%); stage 10: (64%,86%); stage 11: (50%,95%). These are world stages1-11. Build one continuous broad golden path through all centers in that order, NEVER retracing upward. Every waypoint center y strictly increases; no side branches or extra pedestals. The first crystal sits near the TOP; the last near BOTTOM. Crystal pedestal centers are the stated positions. Keep road broad enough for a game button, unobscured by plants. No text at all. NO NUMBERS.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\r\n",
+      "referenceRoles": [
+        "assets/story/chapter-1-library-map.webp: authoritative style"
+      ],
+      "toolOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29 as C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29\\exec-d78130a8-acb7-4c33-a0e1-539b4f66626f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "panel": 2,
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\r\n\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, scroll panel 2 of 4.\nScene: Fallen Star Fortress UNLOADING YARD and CHAINED PORTCULLIS. Elevated 3/4 view of a long narrow cream stone military service yard among lush cliffs. Along sides are neatly stacked wooden cargo crates, rolled ropes, a little handcart, loading awnings, battlements. The bottom destination is a substantial cream stone gateway with heavy iron portcullis, chain drums at sides. No grand palace, no library, no temple. Warm friendly painterly fantasy.\nReference roles: Image1 chapter1 authoritative STYLE; Image2 previous scroll panel topology/color continuity. Create entirely new panel, DO NOT reproduce image2 crystals or buildings.\nComposition: 1024x1536 portrait. Road ENTERS TOP CENTER at x50% and EXITS BOTTOM CENTER through gate. Entire artwork is the next quarter below image2. Exactly TEN crystals, ten only. Unlike image2, this panel needs TEN, NOT12. One crystal in each of ten listed bands. Individual gold bases no extra bases. Broad courtyard route descending continuously, winding across open space. Main chained gateway begins near bottom at y90%, tenth crystal is just before its opening at (50%,94%). Gate must be clearly visible and remain unbroken, not a closed wall hiding path.\nGameplay contract: exactly 10 distinct violet-blue crystal waypoints on gold-rimmed circular pedestals. Their ordered normalized pedestal centers: stage13 (50%,5%); stage14 (70%,15%); stage15 (72%,25%); stage16 (50%,35%); stage17 (28%,45%); stage18 (27%,55%); stage19 (50%,65%); stage20 (72%,75%); stage21 (67%,85%); stage22 boss gate (50%,94%). No additional waypoint in any gap. Centers y strictly increasing top to bottom, no upward reversal. All crystals unobscured. Crystals small enough for room at each landing, similar to reference2. No stage numerals or text.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\r\n",
+      "referenceRoles": [
+        "assets/story/chapter-1-library-map.webp: authoritative style",
+        "panel-01-original.png: previous panel material and route continuity"
+      ],
+      "toolOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29 as C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29\\exec-bbf5f501-9d6e-4587-901d-c8ef777e93ae.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "panel": 3,
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\r\n\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, contiguous portrait scroll panel3 of4.\nScene: Fallen Star Fortress upper MAINTENANCE WALKWAYS after the chained gate. Elevated 3/4 view, cream stone service ramparts winding down the visible image; inspection platforms and short wooden walkways anchored along fortress walls. High stone retaining walls, sparse wild flowers, sunny ivy-covered watchtowers along the SIDES, stored repair lumber and ropes. Same bright cloud-filled plateau world as reference. This is a maintained transportation fortress, NOT a temple or palace.\nReference roles: Image1 authoritative chapter1 style; Image2 is the previous unloading yard panel for continuity of sunlight and cream fortification stone. Do not copy image2 layout.\nComposition: 1024x1536 portrait full-bleed, land reaches left/right edges. One continuous golden rampart path ENTERS TOP CENTER x50%, exits BOTTOM CENTER x50%, all route progression always DOWN on page. No giant foreground gate obstructing the waypoints. Do not create additional rings/crystals for decoration.\nGameplay contract: exactly ELEVEN (11) violet-blue crystal waypoints on separate gold-rimmed circular pedestals. Put ONLY one in each listed consecutive y band. Normalized centers: stage23 (50%,5%), stage24 (70%,14%), stage25 (76%,23%), stage26 (58%,32%), stage27 (34%,41%), stage28 (24%,50%), stage29 (36%,59%), stage30 (60%,68%), stage31 (76%,77%), stage32 (64%,86%), stage33 (50%,95%). Precisely11, never12. Crystals55px tall, gold bases80px wide. Keep y strictly increasing. No UI or printed numerals. Each route landing clear at mobile size. Near bottom the walkway begins broadening into a service courtyard, with paved road continuing through center bottom edge.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\r\n",
+      "referenceRoles": [
+        "assets/story/chapter-1-library-map.webp: authoritative style",
+        "panel-02-original.png: previous panel material and route continuity"
+      ],
+      "toolOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29 as C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29\\exec-af69128e-a074-4c19-abe6-659c15c76f40.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "panel": 4,
+      "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\r\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\r\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\r\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\r\n\n\nUse case: stylized-concept.\nAsset type: Wordoria Crystal Quest story world map, contiguous portrait scroll panel4 of4, BOTTOM DESTINATION.\nScene: Fallen Star Fortress TRANSPORT COURTYARD and EAST GATE. Long descending cream paved courtyard with deep wheel ruts, freight crates and barrels along sides, one remaining modest wooden supply wagon at right, winch rope and braced repair timbers near gateway. Warm sunny safe fantasy atmosphere, lush ivy, no violence. Landmark EAST GATE at very bottom, strong arched cream stone military fortifications with iron-banded open wooden gate, restrained violet banners, roofless rampart, heavy demolition ropes and windlass to one side of gate. This is a practical logistics fortress not a palace/temple. Last waypoint marks quartermaster battle at the east gate.\nReference roles: Image1 authoritative chapter1 style; Image2 previous maintenance rampart panel, match materials/color and scale, DO NOT reproduce its buildings.\nComposition:1024x1536 portrait full-bleed. Road ENTERS TOP CENTER at x50%, snakes across a broad long transport courtyard through all11 waypoints before reaching EAST GATE at BOTTOM CENTER. Gate occupies lowest22% of panel; last crystal visible just in front/within open gate at95% of height. The gate must remain recognizable behind and around this last waypoint; do not cover crystal. No extra crystals or round plinths anywhere.\nGameplay contract: exactly ELEVEN (11) violet-blue crystal waypoints on gold-rimmed circular pedestals, all distinct and open. One per ordered location, no gaps with extra pedestals. Normalized target crystal centers: stage34(50%,5%), stage35(70%,13%), stage36(76%,21%), stage37(58%,29%), stage38(34%,37%), stage39(24%,45%), stage40(36%,53%), stage41(60%,61%), stage42(76%,69%), stage43(64%,77%), stage44 final east gate(50%,94%). Last crystal slightly larger, but all11 have room for touch buttons. y strictly increases down page. No upward retracing. Exactly11 crystals and11 gold pedestal bases. No letters, no numbers, no symbols resembling labels, no UI.\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\r\n",
+      "referenceRoles": [
+        "assets/story/chapter-1-library-map.webp: authoritative style",
+        "panel-03-original.png: previous panel material and route continuity"
+      ],
+      "toolOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29 as C:\\Users\\Administrator\\.codex\\generated_images\\01a200e9-c194-7772-a818-4e48d6022b29\\exec-bbc487fd-211a-40d0-9b20-a2797d9028fa.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ],
+  "original": "assets/story/source/world-11/world-eleven-assembled-original.png",
+  "runtime": "assets/story/chapter-11-fallen-star-fortress-map.webp",
+  "targetDimensions": [
+    1024,
+    6144
+  ],
+  "actualDimensions": [
+    1024,
+    6144
+  ],
+  "assembly": "Four original 1024x1536 generated panels directly stacked without resizing or repainting. All road entry/exit edges centered. Panel transitions are visible changes of scenery.",
+  "panels": [
+    {
+      "panel": 1,
+      "original": "assets/story/source/world-11/panel-01-original.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "count": 12,
+      "measuredWaypoints": [
+        {
+          "center": [
+            508.5,
+            94.5
+          ],
+          "violetBodyBounds": [
+            482,
+            70,
+            535,
+            119
+          ]
+        },
+        {
+          "center": [
+            692.5,
+            198
+          ],
+          "violetBodyBounds": [
+            666,
+            171,
+            719,
+            225
+          ]
+        },
+        {
+          "center": [
+            776,
+            303.5
+          ],
+          "violetBodyBounds": [
+            749,
+            273,
+            803,
+            334
+          ]
+        },
+        {
+          "center": [
+            564,
+            409
+          ],
+          "violetBodyBounds": [
+            535,
+            374,
+            593,
+            444
+          ]
+        },
+        {
+          "center": [
+            309.5,
+            513.5
+          ],
+          "violetBodyBounds": [
+            280,
+            481,
+            339,
+            546
+          ]
+        },
+        {
+          "center": [
+            205,
+            656.5
+          ],
+          "violetBodyBounds": [
+            175,
+            623,
+            235,
+            690
+          ]
+        },
+        {
+          "center": [
+            359,
+            766
+          ],
+          "violetBodyBounds": [
+            328,
+            735,
+            390,
+            797
+          ]
+        },
+        {
+          "center": [
+            573,
+            875
+          ],
+          "violetBodyBounds": [
+            541,
+            845,
+            605,
+            905
+          ]
+        },
+        {
+          "center": [
+            750,
+            1000.5
+          ],
+          "violetBodyBounds": [
+            719,
+            970,
+            781,
+            1031
+          ]
+        },
+        {
+          "center": [
+            568,
+            1124.5
+          ],
+          "violetBodyBounds": [
+            537,
+            1093,
+            599,
+            1156
+          ]
+        },
+        {
+          "center": [
+            410,
+            1290.5
+          ],
+          "violetBodyBounds": [
+            381,
+            1257,
+            439,
+            1324
+          ]
+        },
+        {
+          "center": [
+            511.5,
+            1436.5
+          ],
+          "violetBodyBounds": [
+            480,
+            1406,
+            543,
+            1467
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 2,
+      "original": "assets/story/source/world-11/panel-02-original.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "count": 10,
+      "measuredWaypoints": [
+        {
+          "center": [
+            509.5,
+            92
+          ],
+          "violetBodyBounds": [
+            481,
+            62,
+            538,
+            122
+          ]
+        },
+        {
+          "center": [
+            691.5,
+            186
+          ],
+          "violetBodyBounds": [
+            664,
+            156,
+            719,
+            216
+          ]
+        },
+        {
+          "center": [
+            742.5,
+            310
+          ],
+          "violetBodyBounds": [
+            714,
+            279,
+            771,
+            341
+          ]
+        },
+        {
+          "center": [
+            509,
+            428.5
+          ],
+          "violetBodyBounds": [
+            480,
+            403,
+            538,
+            454
+          ]
+        },
+        {
+          "center": [
+            277,
+            542
+          ],
+          "violetBodyBounds": [
+            249,
+            511,
+            305,
+            573
+          ]
+        },
+        {
+          "center": [
+            268,
+            672.5
+          ],
+          "violetBodyBounds": [
+            238,
+            641,
+            298,
+            704
+          ]
+        },
+        {
+          "center": [
+            510,
+            773.5
+          ],
+          "violetBodyBounds": [
+            481,
+            743,
+            539,
+            804
+          ]
+        },
+        {
+          "center": [
+            727.5,
+            871
+          ],
+          "violetBodyBounds": [
+            697,
+            841,
+            758,
+            901
+          ]
+        },
+        {
+          "center": [
+            630,
+            991
+          ],
+          "violetBodyBounds": [
+            600,
+            959,
+            660,
+            1023
+          ]
+        },
+        {
+          "center": [
+            510,
+            1400.5
+          ],
+          "violetBodyBounds": [
+            480,
+            1367,
+            540,
+            1434
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 3,
+      "original": "assets/story/source/world-11/panel-03-original.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "count": 11,
+      "measuredWaypoints": [
+        {
+          "center": [
+            510.5,
+            92
+          ],
+          "violetBodyBounds": [
+            482,
+            62,
+            539,
+            122
+          ]
+        },
+        {
+          "center": [
+            693,
+            182
+          ],
+          "violetBodyBounds": [
+            665,
+            148,
+            721,
+            216
+          ]
+        },
+        {
+          "center": [
+            768.5,
+            304.5
+          ],
+          "violetBodyBounds": [
+            739,
+            272,
+            798,
+            337
+          ]
+        },
+        {
+          "center": [
+            587.5,
+            415
+          ],
+          "violetBodyBounds": [
+            558,
+            388,
+            617,
+            442
+          ]
+        },
+        {
+          "center": [
+            363,
+            518.5
+          ],
+          "violetBodyBounds": [
+            334,
+            487,
+            392,
+            550
+          ]
+        },
+        {
+          "center": [
+            240,
+            669.5
+          ],
+          "violetBodyBounds": [
+            210,
+            636,
+            270,
+            703
+          ]
+        },
+        {
+          "center": [
+            365,
+            769
+          ],
+          "violetBodyBounds": [
+            334,
+            735,
+            396,
+            803
+          ]
+        },
+        {
+          "center": [
+            603,
+            872
+          ],
+          "violetBodyBounds": [
+            572,
+            839,
+            634,
+            905
+          ]
+        },
+        {
+          "center": [
+            770,
+            1008
+          ],
+          "violetBodyBounds": [
+            739,
+            976,
+            801,
+            1040
+          ]
+        },
+        {
+          "center": [
+            630,
+            1138
+          ],
+          "violetBodyBounds": [
+            598,
+            1105,
+            662,
+            1171
+          ]
+        },
+        {
+          "center": [
+            511.5,
+            1314
+          ],
+          "violetBodyBounds": [
+            480,
+            1281,
+            543,
+            1347
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 4,
+      "original": "assets/story/source/world-11/panel-04-original.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "count": 11,
+      "measuredWaypoints": [
+        {
+          "center": [
+            509.5,
+            90
+          ],
+          "violetBodyBounds": [
+            482,
+            60,
+            537,
+            120
+          ]
+        },
+        {
+          "center": [
+            685,
+            175.5
+          ],
+          "violetBodyBounds": [
+            657,
+            140,
+            713,
+            211
+          ]
+        },
+        {
+          "center": [
+            779.5,
+            279.5
+          ],
+          "violetBodyBounds": [
+            751,
+            247,
+            808,
+            312
+          ]
+        },
+        {
+          "center": [
+            613,
+            373
+          ],
+          "violetBodyBounds": [
+            583,
+            338,
+            643,
+            408
+          ]
+        },
+        {
+          "center": [
+            367.5,
+            448
+          ],
+          "violetBodyBounds": [
+            338,
+            416,
+            397,
+            480
+          ]
+        },
+        {
+          "center": [
+            236.5,
+            553
+          ],
+          "violetBodyBounds": [
+            207,
+            521,
+            266,
+            585
+          ]
+        },
+        {
+          "center": [
+            391,
+            662
+          ],
+          "violetBodyBounds": [
+            359,
+            629,
+            423,
+            695
+          ]
+        },
+        {
+          "center": [
+            620,
+            731.5
+          ],
+          "violetBodyBounds": [
+            589,
+            699,
+            651,
+            764
+          ]
+        },
+        {
+          "center": [
+            769.5,
+            826
+          ],
+          "violetBodyBounds": [
+            739,
+            794,
+            800,
+            858
+          ]
+        },
+        {
+          "center": [
+            613.5,
+            923.5
+          ],
+          "violetBodyBounds": [
+            582,
+            889,
+            645,
+            958
+          ]
+        },
+        {
+          "center": [
+            512,
+            1393
+          ],
+          "violetBodyBounds": [
+            480,
+            1356,
+            544,
+            1430
+          ]
+        }
+      ]
+    }
+  ],
+  "stageCount": 44,
+  "positions": [
+    [
+      "49.658%",
+      "1.538%"
+    ],
+    [
+      "67.627%",
+      "3.223%"
+    ],
+    [
+      "75.781%",
+      "4.940%"
+    ],
+    [
+      "55.078%",
+      "6.657%"
+    ],
+    [
+      "30.225%",
+      "8.358%"
+    ],
+    [
+      "20.020%",
+      "10.685%"
+    ],
+    [
+      "35.059%",
+      "12.467%"
+    ],
+    [
+      "55.957%",
+      "14.242%"
+    ],
+    [
+      "73.242%",
+      "16.284%"
+    ],
+    [
+      "55.469%",
+      "18.302%"
+    ],
+    [
+      "40.039%",
+      "21.004%"
+    ],
+    [
+      "49.951%",
+      "23.381%"
+    ],
+    [
+      "49.756%",
+      "26.497%"
+    ],
+    [
+      "67.529%",
+      "28.027%"
+    ],
+    [
+      "72.510%",
+      "30.046%"
+    ],
+    [
+      "49.707%",
+      "31.974%"
+    ],
+    [
+      "27.051%",
+      "33.822%"
+    ],
+    [
+      "26.172%",
+      "35.946%"
+    ],
+    [
+      "49.805%",
+      "37.590%"
+    ],
+    [
+      "71.045%",
+      "39.176%"
+    ],
+    [
+      "61.523%",
+      "41.130%"
+    ],
+    [
+      "49.805%",
+      "47.795%"
+    ],
+    [
+      "49.854%",
+      "51.497%"
+    ],
+    [
+      "67.676%",
+      "52.962%"
+    ],
+    [
+      "75.049%",
+      "54.956%"
+    ],
+    [
+      "57.373%",
+      "56.755%"
+    ],
+    [
+      "35.449%",
+      "58.439%"
+    ],
+    [
+      "23.438%",
+      "60.897%"
+    ],
+    [
+      "35.645%",
+      "62.516%"
+    ],
+    [
+      "58.887%",
+      "64.193%"
+    ],
+    [
+      "75.195%",
+      "66.406%"
+    ],
+    [
+      "61.523%",
+      "68.522%"
+    ],
+    [
+      "49.951%",
+      "71.387%"
+    ],
+    [
+      "49.756%",
+      "76.465%"
+    ],
+    [
+      "66.895%",
+      "77.856%"
+    ],
+    [
+      "76.123%",
+      "79.549%"
+    ],
+    [
+      "59.863%",
+      "81.071%"
+    ],
+    [
+      "35.889%",
+      "82.292%"
+    ],
+    [
+      "23.096%",
+      "84.001%"
+    ],
+    [
+      "38.184%",
+      "85.775%"
+    ],
+    [
+      "60.547%",
+      "86.906%"
+    ],
+    [
+      "75.146%",
+      "88.444%"
+    ],
+    [
+      "59.912%",
+      "90.031%"
+    ],
+    [
+      "50.000%",
+      "97.673%"
+    ]
+  ],
+  "measuredPixelCenters": [
+    [
+      508.5,
+      94.5
+    ],
+    [
+      692.5,
+      198
+    ],
+    [
+      776,
+      303.5
+    ],
+    [
+      564,
+      409
+    ],
+    [
+      309.5,
+      513.5
+    ],
+    [
+      205,
+      656.5
+    ],
+    [
+      359,
+      766
+    ],
+    [
+      573,
+      875
+    ],
+    [
+      750,
+      1000.5
+    ],
+    [
+      568,
+      1124.5
+    ],
+    [
+      410,
+      1290.5
+    ],
+    [
+      511.5,
+      1436.5
+    ],
+    [
+      509.5,
+      1628
+    ],
+    [
+      691.5,
+      1722
+    ],
+    [
+      742.5,
+      1846
+    ],
+    [
+      509,
+      1964.5
+    ],
+    [
+      277,
+      2078
+    ],
+    [
+      268,
+      2208.5
+    ],
+    [
+      510,
+      2309.5
+    ],
+    [
+      727.5,
+      2407
+    ],
+    [
+      630,
+      2527
+    ],
+    [
+      510,
+      2936.5
+    ],
+    [
+      510.5,
+      3164
+    ],
+    [
+      693,
+      3254
+    ],
+    [
+      768.5,
+      3376.5
+    ],
+    [
+      587.5,
+      3487
+    ],
+    [
+      363,
+      3590.5
+    ],
+    [
+      240,
+      3741.5
+    ],
+    [
+      365,
+      3841
+    ],
+    [
+      603,
+      3944
+    ],
+    [
+      770,
+      4080
+    ],
+    [
+      630,
+      4210
+    ],
+    [
+      511.5,
+      4386
+    ],
+    [
+      509.5,
+      4698
+    ],
+    [
+      685,
+      4783.5
+    ],
+    [
+      779.5,
+      4887.5
+    ],
+    [
+      613,
+      4981
+    ],
+    [
+      367.5,
+      5056
+    ],
+    [
+      236.5,
+      5161
+    ],
+    [
+      391,
+      5270
+    ],
+    [
+      620,
+      5339.5
+    ],
+    [
+      769.5,
+      5434
+    ],
+    [
+      613.5,
+      5531.5
+    ],
+    [
+      512,
+      6001
+    ]
+  ],
+  "measurement": "Visually counted gold-rimmed violet crystals; manually localized each body, then measured violet-body bounding-box center inside isolated ROI. Coordinates use crystal bodies, not pedestal bottoms.",
+  "progression": "Strictly increasing y: old supply road1-12; unloading yard13-21; chain gate22; maintenance ramparts23-33; courtyard34-43; bottom east gate44.",
+  "minimumCenterDistancePixels": 130.81,
+  "minimumCenterDistanceAt390CssPixels": 49.82,
+  "runtimeSha256": "47d5617ca5a0f04dca2480deba127117df7f8b3ff7ff2d746fe74504ed6ad1a2",
+  "review": {
+    "technical": "44 crystals counted (12+10+11+11); increasing measured y validated; no text/UI/people; no clipped waypoint; all original panels and 390px mobile annotated review inspected. All44 annotation circles align with crystal bodies. Panel boundaries have visible scenery transitions; central roads connect.",
+    "stage22": "Chained portcullis with side chain drums at waypoint22.",
+    "stage44": "Large open east gate with timber bracing and courtyard windlass at bottom waypoint44.",
+    "browserAlignment": "pending root integration review",
+    "userVisualApproval": "not requested or claimed",
+    "artReview": "Warm painterly cream stone, lush varied foliage, clouds and violet crystals compared to chapter1; cargo fortification landmarks preserve this region.",
+    "files": [
+      "assets/story/source/world-11/review-waypoints-44.jpg",
+      "assets/story/source/world-11/review-mobile-390.jpg",
+      "assets/story/source/world-11/review-mobile-art-390.jpg"
+    ]
+  },
+  "browserReview": {
+    "status": "passed",
+    "viewports": [
+      390,
+      360,
+      320
+    ],
+    "artifact": "assets/story/source/world-11/browser-map-review.json",
+    "checks": [
+      "44 nodes",
+      "strictly increasing stage y",
+      "44px circular tap targets do not overlap",
+      "stage 1/22/44 centers receive pointer hits",
+      "no page errors"
+    ],
+    "mobileLayout": "full-bleed width; original 1:6 ratio except viewport <=340px uses 1:7.5 for tap spacing",
+    "bossPlaytest": "not requested; offline sprite and logic checks performed"
+  },
+  "userVisualApproval": false
+}

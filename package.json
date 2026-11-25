@@ -5,9 +5,9 @@
   "description": "Wordoria Crystal Quest hybrid Android game",
   "scripts": {
     "dev": "node scripts/dev-server.mjs",
-    "test": "node --test scripts/verify-game.mjs scripts/verify-world-ten.mjs scripts/verify-world-ten-boss.mjs scripts/verify-world-ten-monster.mjs scripts/verify-world-eight.mjs scripts/verify-world-nine.mjs scripts/verify-world-nine-boss.mjs scripts/verify-world-nine-monster.mjs scripts/verify-active-skills.mjs scripts/verify-bard.mjs scripts/verify-bard-runtime.mjs scripts/verify-world-eight-monster.mjs scripts/verify-blackroot-elder.mjs scripts/verify-vargas.mjs scripts/verify-arkaon-reward.mjs scripts/verify-seal-knight.mjs scripts/verify-seal-knight-reward.mjs scripts/verify-fever-roulette.mjs scripts/verify-infinity-equipment.mjs",
+    "test": "node --test scripts/verify-game.mjs scripts/verify-world-ten.mjs scripts/verify-world-ten-boss.mjs scripts/verify-world-ten-monster.mjs scripts/verify-world-eight.mjs scripts/verify-world-nine.mjs scripts/verify-world-nine-boss.mjs scripts/verify-world-nine-monster.mjs scripts/verify-active-skills.mjs scripts/verify-bard.mjs scripts/verify-bard-runtime.mjs scripts/verify-world-eight-monster.mjs scripts/verify-blackroot-elder.mjs scripts/verify-vargas.mjs scripts/verify-arkaon-reward.mjs scripts/verify-seal-knight.mjs scripts/verify-seal-knight-reward.mjs scripts/verify-fever-roulette.mjs scripts/verify-infinity-equipment.mjs scripts/verify-world-eleven.mjs scripts/verify-world-eleven-content.mjs scripts/verify-world-eleven-rewards.mjs",
     "build": "npm run build:novel && node --check crystal-game.js && npm run build:content && npm run build:native && npm run build:auth && npm run build:creator && node scripts/build-web.mjs",
-    "build:content": "node scripts/generate-content-catalog.mjs",
+    "build:content": "node scripts/generate-world-eleven-content.mjs && node scripts/generate-content-catalog.mjs",
     "build:native": "esbuild mobile/native-entry.js --bundle --format=iife --minify --outfile=native-bridge.js",
     "build:auth": "esbuild title-screen-entry.js --bundle --format=iife --minify --outfile=title-screen.js",
     "build:creator": "esbuild map-creator-entry.js --bundle --format=iife --minify --outfile=map-creator.js",
@@ -15,7 +15,8 @@
     "android:open": "npm run android:sync && cap open android",
     "android:debug": "npm run android:sync && cd android && ./gradlew assembleDebug",
     "android:bundle": "npm run android:sync && cd android && ./gradlew bundleRelease",
-    "build:novel": "node scripts/generate-story-novel.mjs"
+    "build:novel": "node scripts/generate-story-novel.mjs",
+    "test:world11": "node --test scripts/verify-world-eleven.mjs scripts/verify-world-eleven-content.mjs scripts/verify-world-eleven-rewards.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.1",

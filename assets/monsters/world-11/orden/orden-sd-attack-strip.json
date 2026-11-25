@@ -1,0 +1,114 @@
+{
+  "image": "orden-sd-attack-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frameNames": [
+    "anticipation",
+    "contact",
+    "follow-through"
+  ],
+  "durationsMs": [
+    300,
+    250,
+    300
+  ],
+  "frames": [
+    {
+      "name": "anticipation",
+      "durationMs": 300
+    },
+    {
+      "name": "contact",
+      "durationMs": 250,
+      "hit": true
+    },
+    {
+      "name": "follow-through",
+      "durationMs": 300
+    }
+  ],
+  "loop": false,
+  "holdLastFrame": false,
+  "source": "source/sprites-original.png",
+  "sourceFrameGapPx": 50,
+  "sourceSpacedMaster": "source/attack-spaced-master.png",
+  "sourceSpacedMasterDimensions": [
+    1444,
+    384
+  ],
+  "scale": 0.87,
+  "groundLinePx": 374,
+  "measurements": [
+    {
+      "sourceBounds": [
+        84,
+        430,
+        379,
+        822
+      ],
+      "runtimeBounds": [
+        95,
+        33,
+        352,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        95,
+        33
+      ],
+      "groundLinePx": 374
+    },
+    {
+      "sourceBounds": [
+        397,
+        448,
+        810,
+        820
+      ],
+      "runtimeBounds": [
+        44,
+        50,
+        403,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        44,
+        50
+      ],
+      "groundLinePx": 374
+    },
+    {
+      "sourceBounds": [
+        839,
+        448,
+        1235,
+        821
+      ],
+      "runtimeBounds": [
+        51,
+        49,
+        396,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        51,
+        49
+      ],
+      "groundLinePx": 374
+    }
+  ],
+  "alpha": "true RGBA inherited from generated original; no color key; alpha-component extraction with 5px antialias halo",
+  "reviewStatus": "all nine poses visually inspected on white/violet and 224x192 mobile groundline composite; props complete, scale stable, full knockdown third hit frame; browser review delegated to root",
+  "hitFrame": 1,
+  "contactMs": 550
+}

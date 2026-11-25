@@ -1,0 +1,111 @@
+{
+  "image": "orden-sd-hit-strip.png",
+  "frameWidth": 448,
+  "frameHeight": 384,
+  "frameCount": 3,
+  "layout": "horizontal",
+  "facing": "left",
+  "anchor": {
+    "x": 0.5,
+    "y": 0.975
+  },
+  "frameNames": [
+    "notice",
+    "strongest-recoil",
+    "complete-knockdown"
+  ],
+  "durationsMs": [
+    140,
+    180,
+    600
+  ],
+  "frames": [
+    {
+      "name": "notice",
+      "durationMs": 140
+    },
+    {
+      "name": "strongest-recoil",
+      "durationMs": 180
+    },
+    {
+      "name": "complete-knockdown",
+      "durationMs": 600
+    }
+  ],
+  "loop": false,
+  "holdLastFrame": true,
+  "source": "source/sprites-original.png",
+  "sourceFrameGapPx": 50,
+  "sourceSpacedMaster": "source/hit-spaced-master.png",
+  "sourceSpacedMasterDimensions": [
+    1444,
+    384
+  ],
+  "scale": 0.87,
+  "groundLinePx": 374,
+  "measurements": [
+    {
+      "sourceBounds": [
+        79,
+        858,
+        359,
+        1238
+      ],
+      "runtimeBounds": [
+        102,
+        43,
+        346,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        102,
+        43
+      ],
+      "groundLinePx": 374
+    },
+    {
+      "sourceBounds": [
+        408,
+        873,
+        824,
+        1238
+      ],
+      "runtimeBounds": [
+        43,
+        56,
+        405,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        43,
+        56
+      ],
+      "groundLinePx": 374
+    },
+    {
+      "sourceBounds": [
+        802,
+        1036,
+        1244,
+        1238
+      ],
+      "runtimeBounds": [
+        31,
+        198,
+        416,
+        374
+      ],
+      "scale": 0.87,
+      "placement": [
+        31,
+        198
+      ],
+      "groundLinePx": 374
+    }
+  ],
+  "alpha": "true RGBA inherited from generated original; no color key; alpha-component extraction with 5px antialias halo",
+  "reviewStatus": "all nine poses visually inspected on white/violet and 224x192 mobile groundline composite; props complete, scale stable, full knockdown third hit frame; browser review delegated to root"
+}
