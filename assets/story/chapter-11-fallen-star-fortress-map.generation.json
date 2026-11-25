@@ -991,7 +991,7 @@
   "progression": "Strictly increasing y: old supply road1-12; unloading yard13-21; chain gate22; maintenance ramparts23-33; courtyard34-43; bottom east gate44.",
   "minimumCenterDistancePixels": 130.81,
   "minimumCenterDistanceAt390CssPixels": 49.82,
-  "runtimeSha256": "47d5617ca5a0f04dca2480deba127117df7f8b3ff7ff2d746fe74504ed6ad1a2",
+  "runtimeSha256": "b13051ed76a4cf226c929408e1e1b9e391994d8c01b1054b52b4d55cac88bd1a",
   "review": {
     "technical": "44 crystals counted (12+10+11+11); increasing measured y validated; no text/UI/people; no clipped waypoint; all original panels and 390px mobile annotated review inspected. All44 annotation circles align with crystal bodies. Panel boundaries have visible scenery transitions; central roads connect.",
     "stage22": "Chained portcullis with side chain drums at waypoint22.",
@@ -1023,5 +1023,98 @@
     "mobileLayout": "full-bleed width; original 1:6 ratio except viewport <=340px uses 1:7.5 for tap spacing",
     "bossPlaytest": "not requested; offline sprite and logic checks performed"
   },
-  "userVisualApproval": false
+  "userVisualApproval": false,
+  "continuityRevision": {
+    "date": "2026-11-25",
+    "tool": "image_gen.imagegen (built-in)",
+    "model": "not disclosed by tool",
+    "prompt": "STYLE LOCK — Crystal Quest Painterly World Map.\nUse the attached chapter-1-library-map.webp as the authoritative STYLE reference. Match its rendering, color relationships, material treatment, detail density and atmospheric depth, not its specific library building or geography.\nCreate a finely hand-painted premium fantasy mobile RPG world map. Use soft controlled painterly brush texture, delicate colored edges without black outlines, dimensional cream stone, naturally layered cliffs, nuanced lush foliage, tiny flowers and climbing ivy. Use warm sunlight, cool teal-violet shadows, golden paths, turquoise water where appropriate, blue atmospheric distance and softly billowing white clouds. Violet-blue crystals have translucent faceted surfaces, white highlights and restrained magical glow; gold is a restrained waypoint accent.\nUse an elevated three-quarter map view, clear destination architecture, readable winding routes, crisp nearby terrain and softer lower-contrast distant scenery. Keep navigation landmarks distinct at portrait mobile size. The image must look like another region painted by the same artist as the style reference. Preserve the region's own subject and geography rather than copying the reference's buildings.\n\nEDIT TARGET: Image 2 is a 1024x768 crop from a tall 44-stage fortress map. It has an ugly horizontal collage seam exactly at y=384 across the full width. Repair this into ONE seamless naturally continuous landscape. Image 1 is style authority only. Output exactly the same 4:3 composition, with all objects at the same pixel locations, same scale and view. Do NOT zoom or reframe. Edit primarily the horizontal band y=330..440: unify the road paving and edges, naturally interweave foliage and connect cliff faces, walls and trees across that line. Eliminate the straight horizontal cut across the ENTIRE width. Replace the abrupt distant sky restart with plausible continuing cliff/foliage behind the foreground terrain. Preserve the first and last 180 rows absolutely unchanged to allow seamless reintegration into the full scroll. Preserve all violet crystal waypoints, including partially cropped ones at edges, and their gold pedestals EXACTLY at current positions and shapes; no new crystals, no removal. Preserve boss gate structure and cargo landmarks if present. This is a localized terrain continuity repair, not a redesign. Top-to-bottom continuous road.\n\nAvoid coarse low-poly geometry, chunky toy-like 3D rendering, plastic surfaces, flat oversaturated green terrain, black cartoon outlines, pixel art, gritty photorealism, muddy dark palettes, excessive bloom and repetitive noisy detail. No characters, monsters, text, letters, numbers, UI, labels, logos, watermark, frames or black side borders. Do not obscure the route or waypoint crystals with foliage, clouds or effects. Do not introduce buildings or narrative elements unrelated to the requested world.\n",
+    "styleReference": "assets/story/chapter-1-library-map.webp",
+    "layoutReferences": [
+      "assets/story/source/world-11-continuity/seam-1-input.png",
+      "assets/story/source/world-11-continuity/seam-2-input.png",
+      "assets/story/source/world-11-continuity/seam-3-input.png"
+    ],
+    "previousRuntime": "assets/story/source/world-11-continuity/previous-runtime.webp",
+    "original": "assets/story/source/world-11-continuity/continuous-map-original.png",
+    "repairs": [
+      {
+        "seamY": 1536,
+        "cropBounds": [
+          0,
+          1152,
+          1024,
+          1920
+        ],
+        "generatedOriginal": "assets/story/source/world-11-continuity/seam-1-generated.png",
+        "generatedDimensions": [
+          1448,
+          1086
+        ],
+        "runtimeCropDimensions": [
+          1024,
+          768
+        ]
+      },
+      {
+        "seamY": 3072,
+        "cropBounds": [
+          0,
+          2688,
+          1024,
+          3456
+        ],
+        "generatedOriginal": "assets/story/source/world-11-continuity/seam-2-generated.png",
+        "generatedDimensions": [
+          1448,
+          1086
+        ],
+        "runtimeCropDimensions": [
+          1024,
+          768
+        ]
+      },
+      {
+        "seamY": 4608,
+        "cropBounds": [
+          0,
+          4224,
+          1024,
+          4992
+        ],
+        "generatedOriginal": "assets/story/source/world-11-continuity/seam-3-generated.png",
+        "generatedDimensions": [
+          1448,
+          1086
+        ],
+        "runtimeCropDimensions": [
+          1024,
+          768
+        ]
+      }
+    ],
+    "stageCount": 44,
+    "positionsChanged": false,
+    "method": "Generated terrain across all three panel cuts, normalized to input crop dimensions, feathered into unchanged surroundings; original waypoint regions protected.",
+    "technicalReview": "Passed: all three repaired joins inspected at full crop resolution and in 390px whole-map preview; roads, foliage and cliff faces connect without horizontal panel cuts. Original 44 waypoint coordinates preserved; stage22 gate and stage44 east gate preserved.",
+    "browserReview": {
+      "artifact": "assets/story/source/world-11-continuity/browser-map-review.json",
+      "viewports": [
+        320,
+        360,
+        390
+      ],
+      "stageCount": 44,
+      "imageLoaded": true,
+      "ordered": true,
+      "circularTargetsOverlap": false,
+      "pageErrors": [],
+      "sampledHitTargets": [
+        1,
+        22,
+        44
+      ]
+    },
+    "userVisualApproval": "not claimed"
+  }
 }
