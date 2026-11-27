@@ -36,8 +36,10 @@ begin
     values('월드검증','스토리 10장 40 · 별빛이 끊긴 관측탑',1,1,true,c,1000);
   for i in 1..21 loop
     stage:='스토리 11장 '||i||' · 낙성 요새의 마지막 수송';
-    select * into r from public.award_game_result(c,stage,30,30,true,100000);
-    if r.coins_earned<>46 then raise exception 'TEST: ordinary reward mismatch'; end if;
+    select * into r from public.award_game_result(c,stage,30,30,true,180000,0,10);
+    if r.coins_earned<>56 then raise exception 'TEST: ordinary fever reward mismatch'; end if;
+    if not exists(select 1 from public.coin_ledger where game_score_id=r.game_score_id and reason='fever_bonus' and amount=10) then
+      raise exception 'TEST: fever ledger missing'; end if;
   end loop;
   select * into r from public.award_game_result(c,boss22,35,40,false,100000);
   if r.coins_earned<>42 then raise exception 'TEST: failed boss standard reward mismatch'; end if;
@@ -49,10 +51,20 @@ begin
     perform public.award_game_result(c,boss22,35,40,false,100000,1);
     raise exception 'TEST: boss slash payout accepted';
   exception when others then if sqlerrm<>'world eleven boss has no slash payout' then raise; end if; end;
+  select * into r from public.award_game_result(c2,'스토리 11장 21 · 낙성 요새의 마지막 수송',30,30,true,180000,0,10);
+  if r.coins_earned<>0 then raise exception 'TEST: account replay fever paid'; end if;
   begin
-    perform public.award_game_result(c,'스토리 11장 21 · 낙성 요새의 마지막 수송',30,30,true,100000,0,1);
-    raise exception 'TEST: fever payout accepted';
-  exception when others then if sqlerrm<>'world eleven has no fever payout' then raise; end if; end;
+    perform public.award_game_result(c,boss22,30,30,true,100000,0,1);
+    raise exception 'TEST: boss fever payout accepted';
+  exception when others then if sqlerrm<>'world eleven boss has no fever payout' then raise; end if; end;
+  begin
+    perform public.award_game_result(c,'스토리 11장 21 · 낙성 요새의 마지막 수송',30,30,true,180000,0,165);
+    raise exception 'TEST: excessive fever accepted';
+  exception when others then if sqlerrm<>'fever bonus exceeds spawn limit' then raise; end if; end;
+  begin
+    perform public.award_game_result(c,'스토리 11장 21 · 낙성 요새의 마지막 수송',30,30,false,100000,0,1);
+    raise exception 'TEST: failed fever accepted';
+  exception when others then if sqlerrm<>'world eleven fever requires clear' then raise; end if; end;
   begin
     perform public.award_game_result(c,boss22,30,30,true,100000);
     raise exception 'TEST: generic boss clear accepted';

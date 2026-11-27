@@ -3510,7 +3510,7 @@
       run.locked=false;
       if(run.keurus&&run.bossHp<=0){run.iceTimeActive=false;finishBattle(true,'boss-defeated');return;}
       if(playQueuedStoryPair())return;
-      if(run.index>=run.deck.length){if(stages[selectedStage]?.storyChapter===14){finishBattle(true,'completed');return;}if(run.keurus){finishBattle(false,'deck-exhausted');return;}beginFeverIntro();return;}
+      if(run.index>=run.deck.length){if(run.keurus){finishBattle(false,'deck-exhausted');return;}beginFeverIntro();return;}
       if(run.index%STORY_QUESTIONS_PER_TURN===0)prepareQuestion();
       else run.locked=false;
       render();

@@ -93,7 +93,18 @@ test('World 11 novel phases and runtime integration use matching-specific routes
   assert.match(source,/storyChapter===14\?'11'/);assert.match(source,/stage\.chapter===14&&\[1,22,44\]/);
   assert.match(source,/run\?\.worldElevenBoss\)\{worldElevenPick/);assert.match(source,/if\(run\.worldElevenBoss\)\{advanceWorldElevenBattle/);
   const render=extract('  function renderWorldElevenBattle(','  function worldElevenPick(');assert.match(render,/iceTimeEffectMarkup\(\)/);assert.match(render,/battleHeroMarkup\(\)/);
-  assert.match(source,/chapter===14\?44/);assert.match(source,/storyChapter===14\)\{finishBattle\(true/);
+  assert.match(source,/chapter===14\?44/);assert.doesNotMatch(source,/storyChapter===14\)\{finishBattle\(true/);
+});
+
+test('World 11 ordinary clears enter crystal fever and collect one crystal after two taps',()=>{
+  const battle={story:true,deck:[{entry:['star','명','별']}],elapsed:60000,storyTimeLimit:180000,feverWordSequence:0,feverWords:[],mp:1};
+  const c=vm.createContext({run:battle,selectedStage:'story-ch11-1',stages:{'story-ch11-1':{storyChapter:14}},selectedCharacter:{class:'mage'},window:{},render(){},speak(){},emitAudio(){},reducedMotion:()=>true,setTimeout(){},document:{dispatchEvent(){}},CustomEvent:function(){}});
+  vm.runInContext(extract('  function advanceFeverCrystals(','  function renderFeverBattle(')+extract('  function storyRouletteEligible(','  function createStoryRoulette('),c);
+  c.beginFeverIntro();assert.equal(battle.feverTransition,true);assert.equal(battle.roulette,undefined);assert.equal(battle.iceTimeActive,false);
+  c.enterFeverTime();assert.equal(battle.fever,true);assert.equal(battle.feverTransition,false);assert.equal(battle.elapsed,60000);assert.equal(battle.storyTimeLimit,180000);
+  const id=battle.feverWords[0].id;c.collectFeverCrystal(id);assert.equal(battle.feverWords[0].state,'meaning');assert.equal(battle.feverCollected,0);
+  c.collectFeverCrystal(id);assert.equal(battle.feverCollected,1);c.collectFeverCrystal(id);assert.equal(battle.feverCollected,1);
+  battle.paused=true;c.advanceFeverCrystals();const next=battle.feverWords.find(w=>w.state==='word');if(next)c.collectFeverCrystal(next.id);assert.equal(battle.feverCollected,1);
 });
 test('World 11 matching bosses retain ranger hints and the spirit pet hint',()=>{
   const {s,c}=bossContext();Object.assign(c,{run:s,selectedCharacter:{class:'ranger'}});
